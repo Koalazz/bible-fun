@@ -397,6 +397,7 @@ function App() {
   const routePath = window.location.pathname.replace(/\/+$/, '');
 
   if (routePath === '/bible/acts/001') {
+    document.title = 'Acts Chapter 1 — Waiting for the Promise';
     return (
       <div className="chapter-route">
         <iframe className="chapter-frame" title="Acts Chapter 1" srcDoc={CHAPTER_001_HTML} />
