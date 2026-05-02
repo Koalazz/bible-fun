@@ -1,0 +1,325 @@
+{
+  "book": "Acts",
+  "chapter": 6,
+  "chapter_title": "Seven Chosen, One Accused",
+  "chapter_summary": "As the Jerusalem church grows rapidly, a dispute breaks out between two groups of Jewish believers over the fair distribution of food to widows. The apostles respond by appointing seven trusted men to manage this practical ministry, freeing the apostles to focus on prayer and preaching. One of the seven, a man named Stephen, begins performing miracles and debating in synagogues, which leads to false accusations and his arrest before the high council.",
+  "date_range": {
+    "approximate": "AD 31–33",
+    "notes": "Most scholars place the early Jerusalem church events of Acts 6 within two to three years of the crucifixion, though precise dating depends on whether AD 30 or AD 33 is accepted for the Passion."
+  },
+  "persons": [
+    {
+      "id": "the_twelve",
+      "name": "The Twelve (Apostles)",
+      "role": "Group — Apostles",
+      "first_mention_verse": "6:2",
+      "summary": "The twelve apostles, led by Peter, convene the whole community to address the widows dispute and propose the appointment of seven helpers. They clarify that their own calling is to prayer and the ministry of the word, not table service.",
+      "significance": "Their structured response to a social conflict reveals the early church's organizational maturity and sets a pattern of delegated leadership that will recur throughout Acts."
+    },
+    {
+      "id": "hellenistic_widows",
+      "name": "Hellenistic Widows",
+      "role": "Group — Marginalized Believers",
+      "first_mention_verse": "6:1",
+      "summary": "Greek-speaking Jewish Christian widows who were being overlooked in the daily distribution of food, sparking a complaint against the Hebrew-speaking majority. Their grievance triggers the first internal conflict recorded in Acts.",
+      "significance": "They represent the cultural diversity and social tensions already present in the early church, and their situation prompts an important structural reform."
+    },
+    {
+      "id": "hebrew_widows",
+      "name": "Hebrew-Speaking Widows",
+      "role": "Group — Believers",
+      "first_mention_verse": "6:1",
+      "summary": "Aramaic-speaking Jewish Christian widows who were receiving food distribution without complaint, belonging to the cultural majority of the Jerusalem church. Their favored position highlights the ethnic fault line within the community.",
+      "significance": "The contrast between the two groups of widows illustrates how cultural divisions from the broader Jewish world were replicated inside the early church."
+    },
+    {
+      "id": "stephen",
+      "name": "Stephen",
+      "role": "Deacon, Evangelist",
+      "first_mention_verse": "6:5",
+      "summary": "The first of the seven men chosen, described as full of faith and the Holy Spirit, Stephen quickly becomes far more than a table-server — he performs great wonders and signs among the people and engages in public theological debate. False witnesses are brought against him, accusing him of speaking against Moses and the Temple, leading to his arrest.",
+      "significance": "Stephen is the pivotal figure bridging Acts 6–7; his arrest, speech, and martyrdom mark the first Christian martyrdom and trigger the persecution that scatters the church, propelling the gospel outward."
+    },
+    {
+      "id": "philip_the_deacon",
+      "name": "Philip",
+      "role": "Deacon, Evangelist",
+      "first_mention_verse": "6:5",
+      "summary": "Listed second among the Seven, Philip is noted as part of the trusted group selected by the community. Though he has no active speaking role in chapter 6, his selection here sets up his major evangelistic work in chapter 8.",
+      "significance": "Philip will become the first evangelist to preach outside Jerusalem, reaching Samaria and an Ethiopian official, making him a key figure in the geographic expansion of Acts."
+    },
+    {
+      "id": "prochorus",
+      "name": "Prochorus",
+      "role": "Deacon",
+      "first_mention_verse": "6:5",
+      "summary": "One of the Seven chosen to oversee the food distribution, Prochorus is listed third in the group but receives no individual action in the text. He is presented as a trusted, Spirit-filled member of the community.",
+      "significance": "His inclusion among the Seven represents the church's choice to share leadership broadly and trust people outside the apostolic inner circle with official responsibility."
+    },
+    {
+      "id": "nicanor",
+      "name": "Nicanor",
+      "role": "Deacon",
+      "first_mention_verse": "6:5",
+      "summary": "Listed fourth among the Seven, Nicanor is chosen by the congregation as a man of good repute and full of the Spirit. He has no individual narrative role within this chapter.",
+      "significance": "His Greek name, like most of the Seven, suggests the deacons were drawn predominantly from the Hellenistic wing of the church, responding directly to where the complaint arose."
+    },
+    {
+      "id": "timon",
+      "name": "Timon",
+      "role": "Deacon",
+      "first_mention_verse": "6:5",
+      "summary": "Fifth in the list of the Seven, Timon is presented as meeting the community's criteria of good reputation and being Spirit-filled. He plays no individual speaking or action role in this chapter.",
+      "significance": "Along with the other deacons, Timon represents the principle that practical service in the church requires spiritual character, not merely administrative ability."
+    },
+    {
+      "id": "parmenas",
+      "name": "Parmenas",
+      "role": "Deacon",
+      "first_mention_verse": "6:5",
+      "summary": "Sixth in the list of the Seven, Parmenas meets the qualifications and is presented to the apostles with the others for the laying on of hands. He has no individual action in the chapter.",
+      "significance": "His presence in the list completes the picture of a diverse, Hellenistic-leaning deacon group entrusted to resolve a cultural conflict within the church."
+    },
+    {
+      "id": "nicolas_of_antioch",
+      "name": "Nicolas of Antioch",
+      "role": "Deacon, Proselyte",
+      "first_mention_verse": "6:5",
+      "summary": "The seventh and last named, Nicolas is specifically identified as a proselyte from Antioch — that is, a Gentile convert to Judaism who then became a Christian. This makes him the most ethnically distinctive of the Seven.",
+      "significance": "Nicolas's inclusion foreshadows the expansion of the church toward Gentiles and non-Jerusalem communities, a theme that dominates the rest of Acts."
+    },
+    {
+      "id": "synagogue_of_freedmen",
+      "name": "Members of the Synagogue of the Freedmen",
+      "role": "Group — Opponents",
+      "first_mention_verse": "6:9",
+      "summary": "Jews from the diaspora — from Cyrene, Alexandria, Cilicia, and Asia — who worshipped in a synagogue in Jerusalem and engaged Stephen in debate. Unable to refute his arguments, they secretly persuaded men to falsely accuse him of blasphemy.",
+      "significance": "This group represents the organized Jewish opposition that will escalate into the persecution of chapter 8; their tactics of false witness echo the trial of Jesus."
+    },
+    {
+      "id": "false_witnesses_ch6",
+      "name": "False Witnesses",
+      "role": "Group — Accusers",
+      "first_mention_verse": "6:13",
+      "summary": "Men stirred up by Stephen's synagogue opponents who stand before the Sanhedrin and claim that Stephen constantly spoke against the Temple and the Law of Moses. Their testimony is described as false, mirroring the false witnesses at Jesus's trial.",
+      "significance": "The false accusations set the legal and rhetorical stage for Stephen's great speech in chapter 7, in which he will reframe the entire history of Israel."
+    },
+    {
+      "id": "the_council_ch6",
+      "name": "The Council (Sanhedrin)",
+      "role": "Group — Jewish Ruling Body",
+      "first_mention_verse": "6:12",
+      "summary": "The supreme Jewish council of Jerusalem, composed of elders, scribes, and the high priest, who receive the charges brought against Stephen. They observe that his face looks like the face of an angel as he stands before them.",
+      "significance": "The Sanhedrin is the recurring institutional opponent in Acts, representing the religious establishment that repeatedly clashes with the apostles and now with Stephen."
+    }
+  ],
+  "locations": [
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The holy city and center of the early Christian community, where the dispute over widows, the appointment of the Seven, Stephen's debates, and his arrest all take place."
+    },
+    {
+      "id": "synagogue_of_freedmen",
+      "name": "Synagogue of the Freedmen",
+      "modern_name": "disputed",
+      "lat": 31.7750,
+      "lng": 35.2354,
+      "description": "A Jerusalem synagogue attended by diaspora Jews from Cyrene, Alexandria, Cilicia, and Asia, where Stephen's public debates sparked the opposition that led to his arrest."
+    },
+    {
+      "id": "sanhedrin_hall",
+      "name": "The Council (Sanhedrin Hall)",
+      "modern_name": "disputed",
+      "lat": 31.7754,
+      "lng": 35.2342,
+      "description": "The meeting hall of the supreme Jewish council in Jerusalem, where Stephen is brought to face the false accusations and where his face appears to shine like an angel."
+    }
+  ],
+  "events": [
+    {
+      "id": "widows_dispute",
+      "sequence": 1,
+      "verses": "6:1",
+      "title": "Complaint Over Widows' Food Distribution",
+      "description": "As the number of disciples multiplies in Jerusalem, Hellenistic (Greek-speaking) Jewish Christians raise a complaint that their widows are being overlooked in the daily food distribution, while the Hebrew-speaking widows are properly served. This is the first recorded internal conflict in the early church, revealing tension between two cultural communities within the same faith. The dispute is serious enough to require immediate attention from the apostles. It highlights the challenge of caring for vulnerable people across cultural lines.",
+      "location_id": "jerusalem",
+      "persons_present": ["hellenistic_widows", "hebrew_widows", "the_twelve"],
+      "timeline_label": "Widows' Dispute",
+      "scroll_anchor": "widows-dispute",
+      "visual_notes": "Illustrate two groups of women on opposite sides; stacks of bread or food bowls in the center with an unequal distribution; Jerusalem street market background."
+    },
+    {
+      "id": "seven_appointed",
+      "sequence": 2,
+      "verses": "6:2-6",
+      "title": "The Seven Deacons Appointed",
+      "description": "The Twelve gather the whole community and propose that seven men of good reputation, full of the Spirit and wisdom, be selected to oversee the practical food ministry, while the apostles focus on prayer and preaching the word. The whole community is pleased by this plan and chooses Stephen, Philip, Prochorus, Nicanor, Timon, Parmenas, and Nicolas. They are brought to the apostles, who pray and lay their hands on them as a formal commissioning. This act is one of the earliest examples of structured ministerial delegation in the church.",
+      "location_id": "jerusalem",
+      "persons_present": ["the_twelve", "stephen", "philip_the_deacon", "prochorus", "nicanor", "timon", "parmenas", "nicolas_of_antioch"],
+      "timeline_label": "Seven Appointed",
+      "scroll_anchor": "seven-appointed",
+      "visual_notes": "Show the apostles laying hands on seven men kneeling in a row; a large gathering of the community in the background watching; golden light suggesting the Spirit's presence."
+    },
+    {
+      "id": "church_growth_summary",
+      "sequence": 3,
+      "verses": "6:7",
+      "title": "The Word Spreads; Many Priests Believe",
+      "description": "Luke provides a brief summary statement noting that the word of God continued to spread and the number of disciples in Jerusalem increased greatly. Remarkably, a large number of Jewish priests also became obedient to the faith. This summary serves as a narrative marker, closing one phase of the Jerusalem story before the focus shifts to Stephen's individual ministry and crisis.",
+      "location_id": "jerusalem",
+      "persons_present": ["the_twelve"],
+      "timeline_label": "Church Grows",
+      "scroll_anchor": "church-growth-summary",
+      "visual_notes": "A wide-angle view of crowded Jerusalem streets with people streaming toward a gathering place; perhaps a priest in Temple robes walking toward the group."
+    },
+    {
+      "id": "stephen_signs_and_wonders",
+      "sequence": 4,
+      "verses": "6:8",
+      "title": "Stephen Performs Signs and Wonders",
+      "description": "Stephen, described as full of grace and power, begins performing great wonders and signs among the people of Jerusalem. This activity goes far beyond his appointed role of food distribution and marks him as a Spirit-empowered figure comparable to the apostles themselves. His public ministry makes him visible and controversial. The narrative signals that Stephen is not merely a social administrator but a powerful evangelist.",
+      "location_id": "jerusalem",
+      "persons_present": ["stephen"],
+      "timeline_label": "Stephen's Miracles",
+      "scroll_anchor": "stephen-signs-and-wonders",
+      "visual_notes": "Stephen standing in a Jerusalem plaza with hands raised; a crowd watching in amazement; visual cues of healing (someone rising from the ground) or exorcism."
+    },
+    {
+      "id": "synagogue_debate",
+      "sequence": 5,
+      "verses": "6:9-10",
+      "title": "Stephen Debates in the Synagogue",
+      "description": "Members of the Synagogue of the Freedmen — diaspora Jews from Cyrene, Alexandria, Cilicia, and Asia — begin arguing with Stephen. They are unable to withstand the wisdom and the Spirit with which he speaks. This public debate in a recognized religious venue intensifies opposition because Stephen is defeating his opponents on their own theological ground. The failure to rebut him drives his opponents to escalate their tactics.",
+      "location_id": "synagogue_of_freedmen",
+      "persons_present": ["stephen", "synagogue_of_freedmen"],
+      "timeline_label": "Synagogue Debate",
+      "scroll_anchor": "synagogue-debate",
+      "visual_notes": "Interior of a first-century synagogue; Stephen standing and gesturing while a group of robed men faces him with frustrated expressions; scrolls visible in the background."
+    },
+    {
+      "id": "false_accusation_arranged",
+      "sequence": 6,
+      "verses": "6:11-14",
+      "title": "False Witnesses Brought Against Stephen",
+      "description": "Unable to defeat Stephen in open debate, his opponents secretly persuade men to claim they heard him blaspheme Moses and God. They stir up the people, the elders, and the scribes, and have Stephen seized and brought before the Sanhedrin. False witnesses then testify that Stephen never stopped speaking against the holy place and the Law, alleging he claimed Jesus of Nazareth would destroy the Temple and change the customs Moses handed down. The accusations closely echo those made against Jesus at his own trial.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": ["stephen", "synagogue_of_freedmen", "false_witnesses_ch6", "the_council_ch6"],
+      "timeline_label": "Stephen Accused",
+      "scroll_anchor": "false-accusation-arranged",
+      "visual_notes": "Stephen standing calm before the semicircle of the Sanhedrin; accusers pointing fingers; the high priest seated at center looking stern."
+    },
+    {
+      "id": "stephens_face_shines",
+      "sequence": 7,
+      "verses": "6:15",
+      "title": "Stephen's Face Shines Like an Angel",
+      "description": "As all the members of the council stare at Stephen, they see that his face looks like the face of an angel. This supernatural detail at the close of the chapter creates a moment of awe before Stephen's long speech begins. It echoes Moses's shining face after meeting God on Sinai, subtly foreshadowing Stephen's argument in chapter 7 that he stands in the prophetic tradition of Moses. The image also contrasts his divine radiance with the corrupt proceedings against him.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": ["stephen", "the_council_ch6"],
+      "timeline_label": "Stephen's Angel Face",
+      "scroll_anchor": "stephens-face-shines",
+      "visual_notes": "Close-up of Stephen's face glowing with soft golden light; the council members shielding their eyes or leaning back in astonishment; dark stone hall contrasting the light."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "stephen",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "seven_appointed",
+          "note": "Commissioned by the apostles in Jerusalem as one of the Seven"
+        },
+        {
+          "order": 2,
+          "location_id": "jerusalem",
+          "event_id": "stephen_signs_and_wonders",
+          "note": "Ministers publicly with miracles among the Jerusalem population"
+        },
+        {
+          "order": 3,
+          "location_id": "synagogue_of_freedmen",
+          "event_id": "synagogue_debate",
+          "note": "Engages diaspora Jews in theological debate at their synagogue"
+        },
+        {
+          "order": 4,
+          "location_id": "sanhedrin_hall",
+          "event_id": "stephens_face_shines",
+          "note": "Brought under arrest before the Sanhedrin to face false charges"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "widows_dispute",
+      "position": 1,
+      "label": "Widows' Complaint",
+      "relative_time": "AD 31–33",
+      "absolute_time": "unknown"
+    },
+    {
+      "event_id": "seven_appointed",
+      "position": 2,
+      "label": "Seven Deacons Chosen",
+      "relative_time": "Shortly after",
+      "absolute_time": "unknown"
+    },
+    {
+      "event_id": "church_growth_summary",
+      "position": 3,
+      "label": "Church Grows; Priests Believe",
+      "relative_time": "Ongoing",
+      "absolute_time": "unknown"
+    },
+    {
+      "event_id": "stephen_signs_and_wonders",
+      "position": 4,
+      "label": "Stephen Works Miracles",
+      "relative_time": "AD 31–33",
+      "absolute_time": "unknown"
+    },
+    {
+      "event_id": "synagogue_debate",
+      "position": 5,
+      "label": "Stephen Debates Freedmen",
+      "relative_time": "Shortly after",
+      "absolute_time": "unknown"
+    },
+    {
+      "event_id": "false_accusation_arranged",
+      "position": 6,
+      "label": "False Charges Brought",
+      "relative_time": "Shortly after",
+      "absolute_time": "unknown"
+    },
+    {
+      "event_id": "stephens_face_shines",
+      "position": 7,
+      "label": "Angel Face Before Council",
+      "relative_time": "Same day as arrest",
+      "absolute_time": "unknown"
+    }
+  ],
+  "theological_themes": [
+    "The church's responsibility to care for the vulnerable and marginalized",
+    "Delegation of leadership and the origin of the diaconate",
+    "Cultural and ethnic tensions within the body of Christ",
+    "The Holy Spirit equipping ordinary believers for extraordinary witness",
+    "The pattern of opposition: legitimate debate escalating into false accusation",
+    "The glory of God visible in a faithful witness facing unjust trial"
+  ],
+  "discussion_questions": [
+    "What does the dispute over widows reveal about the challenges of unity in a diverse community, and how does the church's response model conflict resolution?",
+    "Why do you think the apostles chose to delegate table service rather than handle it themselves, and what does this say about different types of ministry?",
+    "Stephen was chosen to serve tables but ended up preaching and working miracles. What does this suggest about how God uses people beyond their assigned roles?",
+    "The false witnesses used distorted versions of Stephen's real teachings. How should a community protect itself and its leaders from misrepresentation?",
+    "What is the significance of Stephen's face shining 'like an angel' as he stands before the council?"
+  ]
+}

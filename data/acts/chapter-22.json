@@ -1,0 +1,352 @@
+{
+  "book": "Acts",
+  "chapter": 22,
+  "chapter_title": "Paul's Defense Before the Jerusalem Crowd",
+  "chapter_summary": "After being arrested at the Temple, Paul addresses a hostile Jerusalem crowd in Aramaic, recounting his dramatic encounter with the risen Jesus on the road to Damascus and his subsequent call to bring the gospel to the Gentiles. The crowd listens until Paul mentions his mission to non-Jews, at which point they erupt in fury and demand his death. The Roman commander intervenes, ordering Paul to be examined by flogging, but Paul reveals his Roman citizenship, halting the proceeding and leaving the commander uncertain about what charge to bring.",
+  "date_range": {
+    "approximate": "AD 57",
+    "notes": "Most scholars place Paul's arrest in Jerusalem during his fifth and final visit around AD 57, based on correlating the Pauline epistles' chronology with the Acts narrative and the tenure of Felix as governor."
+  },
+  "persons": [
+    {
+      "id": "paul",
+      "name": "Paul (Saul of Tarsus)",
+      "role": "Apostle",
+      "first_mention_verse": "22:1",
+      "summary": "A Jewish-born Roman citizen and former persecutor of Christians who became the leading apostle to the Gentiles. In this chapter he delivers a personal defense speech to an enraged Jerusalem mob, narrating his conversion and divine commission.",
+      "significance": "Paul is the central protagonist of Acts from chapter 9 onward; his arrest here initiates a years-long legal odyssey that ultimately carries him to Rome and fulfills Jesus's prophecy in Acts 9:15."
+    },
+    {
+      "id": "ananias_damascus",
+      "name": "Ananias (of Damascus)",
+      "role": "Disciple / Messenger",
+      "first_mention_verse": "22:12",
+      "summary": "A devout Jewish follower of Jesus living in Damascus who was directed by a vision to restore Paul's sight and baptize him. Paul cites Ananias's standing among the Jewish community in Damascus to establish his own credibility before the Jerusalem crowd.",
+      "significance": "Ananias serves as the pivotal human instrument in Paul's conversion, linking the heavenly vision to concrete community acceptance; his appearance in Paul's defense grounds Paul's transformation in recognizable Jewish piety."
+    },
+    {
+      "id": "the_lord_jesus",
+      "name": "The Lord Jesus (the Nazarene)",
+      "role": "Risen Christ / Divine Figure",
+      "first_mention_verse": "22:8",
+      "summary": "The risen Jesus appears to Paul in a blinding light on the Damascus road, identifying himself as 'Jesus of Nazareth, whom you are persecuting,' and later appears again in the Temple to commission Paul to the Gentiles. Though not physically present in the crowd scene, Jesus is the central figure in Paul's entire narrative.",
+      "significance": "Jesus's direct commissions to Paul authenticate his apostleship throughout Acts and anchor the theological claim that the Gentile mission is divinely ordered, not a human innovation."
+    },
+    {
+      "id": "claudius_lysias",
+      "name": "Claudius Lysias (the commander)",
+      "role": "Roman Tribune / Military Commander",
+      "first_mention_verse": "22:24",
+      "summary": "The Roman military tribune commanding the Jerusalem garrison who had rescued Paul from the mob; in this chapter he orders Paul's examination by flogging but stops the proceeding when Paul invokes his Roman citizenship. He is left puzzled about what legal charge the Jews actually have against Paul.",
+      "significance": "Lysias represents Roman authority as both a protector and an uncertain neutral; his confusion about Paul's legal status drives the narrative forward toward the Sanhedrin hearing in chapter 23."
+    },
+    {
+      "id": "jerusalem_crowd",
+      "name": "The Jerusalem Crowd",
+      "role": "Group / Hostile Audience",
+      "first_mention_verse": "22:1",
+      "summary": "A large assembly of Jewish pilgrims and residents who had nearly beaten Paul to death inside the Temple precincts; they listen in tense silence to Paul's speech in Aramaic until he announces his mission to the Gentiles, at which point they shout for his execution.",
+      "significance": "The crowd's violent reaction to the word 'Gentiles' dramatizes the core tension in Acts between Jewish exclusivity and the universal scope of the gospel, a conflict that drives the rest of Paul's imprisonment narrative."
+    },
+    {
+      "id": "roman_soldiers",
+      "name": "Roman Soldiers",
+      "role": "Group / Military",
+      "first_mention_verse": "22:24",
+      "summary": "The soldiers under Lysias's command who bind Paul and prepare to flog him in order to extract a confession. Their preparation is interrupted by Paul's declaration of Roman citizenship.",
+      "significance": "They embody Roman judicial process and the legal protections Paul will exploit repeatedly in the chapters that follow."
+    },
+    {
+      "id": "the_voice_of_god",
+      "name": "A Voice from Heaven",
+      "role": "Divine Voice",
+      "first_mention_verse": "22:7",
+      "summary": "The voice Paul heard on the Damascus road, identified as Jesus, which directed him first to Damascus and later, in a Temple trance, to leave Jerusalem and go to the Gentiles. The voice is central to Paul's self-understanding as an apostle.",
+      "significance": "Repeated auditions of the divine voice authenticate each major transition in Paul's mission within the theological framework of Acts."
+    }
+  ],
+  "locations": [
+    {
+      "id": "jerusalem_temple_steps",
+      "name": "The steps of the barracks (Temple stairs)",
+      "modern_name": "Jerusalem — Temple Mount area, near the Antonia Fortress",
+      "lat": 31.7781,
+      "lng": 35.2359,
+      "description": "The stone stairs connecting the outer Temple courts to the Antonia Fortress, where Roman troops were garrisoned; it is here that Paul stood in chains and addressed the crowd below."
+    },
+    {
+      "id": "damascus",
+      "name": "Damascus",
+      "modern_name": "Damascus, Syria",
+      "lat": 33.5138,
+      "lng": 36.2765,
+      "description": "The ancient capital of Syria where Paul was traveling to persecute Christians when he was struck down by a blinding light and where he was subsequently baptized by Ananias."
+    },
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel / Palestine",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The holy city of Judaism and the geographic center of the early Jesus movement; it is here that Paul prays in the Temple and receives a vision directing him to leave for the Gentiles."
+    },
+    {
+      "id": "tarsus",
+      "name": "Tarsus",
+      "modern_name": "Tarsus, Mersin Province, Turkey",
+      "lat": 36.9126,
+      "lng": 34.9000,
+      "description": "Paul's birthplace in Cilicia, mentioned in his speech to establish his identity; Tarsus was an important Hellenistic city and a Roman citizen's native city conferred legal privileges."
+    },
+    {
+      "id": "antonia_fortress",
+      "name": "The barracks (Antonia Fortress)",
+      "modern_name": "Jerusalem — site of the Antonia Fortress, now disputed",
+      "lat": 31.7790,
+      "lng": 35.2358,
+      "description": "The Roman garrison fortress adjacent to the Temple Mount where Lysias commands his troops and where Paul is brought after his rescue from the mob."
+    },
+    {
+      "id": "damascus_road",
+      "name": "The road to Damascus",
+      "modern_name": "Route between Jerusalem and Damascus (modern Syria)",
+      "lat": 33.0000,
+      "lng": 36.0000,
+      "description": "The travel route along which Paul was journeying to arrest Christians when the vision of Jesus appeared to him in blinding light; mentioned in Paul's defense speech as the site of his conversion."
+    }
+  ],
+  "events": [
+    {
+      "id": "paul_requests_permission_to_speak",
+      "sequence": 1,
+      "verses": "22:1-2",
+      "title": "Paul Addresses the Crowd in Aramaic",
+      "description": "Standing in chains on the steps of the Antonia Fortress, Paul raises his hand to quiet the mob that had been trying to beat him to death moments earlier. The commander grants him permission to speak. When the crowd hears Paul address them in Aramaic (their native Hebrew dialect), they grow quiet, giving Paul the silence he needs to deliver his defense. The very use of their own language signals that Paul is one of them, not a foreign agitator.",
+      "location_id": "jerusalem_temple_steps",
+      "persons_present": ["paul", "jerusalem_crowd", "claudius_lysias", "roman_soldiers"],
+      "timeline_label": "Paul gains silence",
+      "scroll_anchor": "paul-requests-permission-to-speak",
+      "visual_notes": "Wide shot of stone steps descending from a fortress gate; Paul in Roman-style chains stands elevated above a dense, upward-facing crowd; centurion visible in background."
+    },
+    {
+      "id": "paul_recounts_his_early_life",
+      "sequence": 2,
+      "verses": "22:3",
+      "title": "Paul Declares His Jewish Credentials",
+      "description": "Paul establishes his identity as a thoroughly Jewish man: born in Tarsus, raised in Jerusalem, educated at the feet of the renowned rabbi Gamaliel, and trained in the strictest interpretation of the ancestral law. He frames himself not as an outsider attacking Judaism but as a devoted insider who was once just as zealous for God as his accusers are in that very moment. This rhetorical strategy aims to defuse the crowd's assumption that Paul is an apostate or a Gentile sympathizer.",
+      "location_id": "jerusalem_temple_steps",
+      "persons_present": ["paul", "jerusalem_crowd"],
+      "timeline_label": "Jewish credentials established",
+      "scroll_anchor": "paul-recounts-his-early-life",
+      "visual_notes": "Close-up of Paul speaking with intensity; inset illustration of young Saul in a Jerusalem school studying scrolls under an elder rabbi."
+    },
+    {
+      "id": "paul_describes_persecuting_christians",
+      "sequence": 3,
+      "verses": "22:4-5",
+      "title": "Paul Confesses He Once Persecuted 'The Way'",
+      "description": "Paul openly admits that he once hunted down followers of 'The Way' (early Christians), binding and imprisoning both men and women, and even participating in their executions. He notes that the high priest and the entire council of elders can vouch for him, since they provided him letters authorizing him to travel to Damascus and arrest believers there. This admission of shared history with the Jerusalem authorities is meant to show he is being honest about his dramatic change, not concealing a shady past.",
+      "location_id": "jerusalem_temple_steps",
+      "persons_present": ["paul", "jerusalem_crowd"],
+      "timeline_label": "Former persecutor confessed",
+      "scroll_anchor": "paul-describes-persecuting-christians",
+      "visual_notes": "Flashback-style panel showing Saul in dark robes supervising the stoning of a figure; letters of authorization rolled in his hand."
+    },
+    {
+      "id": "damascus_road_vision",
+      "sequence": 4,
+      "verses": "22:6-11",
+      "title": "The Blinding Vision on the Road to Damascus",
+      "description": "Paul narrates how around noon a blazing light from heaven suddenly surrounded him as he neared Damascus. He fell to the ground and heard a voice saying, 'Saul, Saul, why are you persecuting me?' When Paul asked who was speaking, the voice identified itself as 'Jesus of Nazareth, whom you are persecuting.' Paul's companions saw the light but did not hear the voice clearly. Blinded by the intensity of the encounter, Paul had to be led by the hand into Damascus, where he remained for three days without sight, eating nothing.",
+      "location_id": "damascus_road",
+      "persons_present": ["paul", "the_lord_jesus"],
+      "timeline_label": "Damascus road vision",
+      "scroll_anchor": "damascus-road-vision",
+      "visual_notes": "Dramatic overhead view of a solitary figure on a desert road struck down by a pillar of white light descending from a clear sky; companions shielding their eyes around him."
+    },
+    {
+      "id": "ananias_restores_paul",
+      "sequence": 5,
+      "verses": "22:12-16",
+      "title": "Ananias Restores Paul's Sight and Baptizes Him",
+      "description": "Paul describes Ananias as a devout observer of the Jewish law who was well respected by the Damascus Jewish community — a detail carefully chosen to show the Jerusalem crowd that Paul was vouched for by one of their own. Ananias came to Paul, told him that the God of their ancestors had chosen Paul to know his will, to see 'the Righteous One,' and to hear words from his mouth. Ananias then instructed Paul to rise, be baptized, and wash away his sins, calling on the name of Jesus. Immediately Paul's sight returned.",
+      "location_id": "damascus",
+      "persons_present": ["paul", "ananias_damascus"],
+      "timeline_label": "Sight restored; Paul baptized",
+      "scroll_anchor": "ananias-restores-paul",
+      "visual_notes": "Interior of a modest first-century home; Ananias places hands on Paul's eyes; shafts of light from a small window; a water basin in the foreground."
+    },
+    {
+      "id": "temple_trance_vision",
+      "sequence": 6,
+      "verses": "22:17-21",
+      "title": "Vision in the Jerusalem Temple: 'Go to the Gentiles'",
+      "description": "Paul recounts that after returning to Jerusalem he fell into a trance while praying in the Temple and saw Jesus, who told him to leave Jerusalem quickly because the people there would not accept his testimony. Paul protested, arguing that his well-known history as a persecutor would make his conversion especially convincing. But Jesus overruled him, saying, 'Go — I will send you far away to the Gentiles.' This vision, delivered in the sacred heart of Judaism itself, frames Paul's Gentile mission as a divine directive, not a personal preference.",
+      "location_id": "jerusalem",
+      "persons_present": ["paul", "the_lord_jesus"],
+      "timeline_label": "Temple vision: mission to Gentiles",
+      "scroll_anchor": "temple-trance-vision",
+      "visual_notes": "Paul kneeling alone in the colonnaded Temple court, head bowed, a luminous presence standing before him; the massive stone walls of Herod's Temple in the background."
+    },
+    {
+      "id": "crowd_erupts_at_gentiles",
+      "sequence": 7,
+      "verses": "22:22-23",
+      "title": "The Crowd Erupts at the Word 'Gentiles'",
+      "description": "The moment Paul utters the word 'Gentiles,' the crowd's tense silence shatters into furious uproar. They shout that such a person does not deserve to live, tear off their outer garments, and fling dust into the air — traditional Jewish gestures of outrage and condemnation. The scene is chaotic: thousands of people screaming, clothing flying, the very air filled with dust and fury. Paul's entire carefully constructed speech collapses at this single word, revealing the depth of the crowd's conviction that including Gentiles fully in God's covenant is a blasphemy.",
+      "location_id": "jerusalem_temple_steps",
+      "persons_present": ["paul", "jerusalem_crowd", "claudius_lysias"],
+      "timeline_label": "Riot erupts over Gentiles",
+      "scroll_anchor": "crowd-erupts-at-gentiles",
+      "visual_notes": "Chaotic wide-angle view of a crowd in uproar: garments being torn, dust in the air, mouths open in shouts; Paul standing still at the top of the steps as the chaos surges below."
+    },
+    {
+      "id": "lysias_orders_flogging",
+      "sequence": 8,
+      "verses": "22:24-25",
+      "title": "The Commander Orders Paul Flogged",
+      "description": "Unable to understand what Paul said (the speech was in Aramaic) and needing to find out why the Jews hated this man so intensely, Commander Lysias orders Paul brought inside the fortress and examined by flogging — a brutal Roman interrogation technique using leather straps embedded with bone or metal. As the soldiers stretch Paul out and bind him for the whipping, Paul calmly asks the centurion standing by whether it is lawful to flog a Roman citizen who has not even been convicted of a crime. This single question stops the entire proceeding cold.",
+      "location_id": "antonia_fortress",
+      "persons_present": ["paul", "claudius_lysias", "roman_soldiers"],
+      "timeline_label": "Flogging ordered; citizenship invoked",
+      "scroll_anchor": "lysias-orders-flogging",
+      "visual_notes": "Stone-walled interior of a Roman barracks; Paul's wrists bound above him to a post; a soldier holding leather straps pauses, looking toward a centurion who is mid-turn toward Paul."
+    },
+    {
+      "id": "paul_invokes_roman_citizenship",
+      "sequence": 9,
+      "verses": "22:25-29",
+      "title": "Paul Invokes His Roman Citizenship",
+      "description": "The centurion immediately reports to Lysias that Paul is a Roman citizen. Lysias comes himself and asks Paul whether it is true. Paul confirms it, adding that he was born a citizen — an even higher status than Lysias, who had purchased his own citizenship at great cost. The tribune is alarmed: he has already had a Roman citizen bound in chains, which was a serious legal violation. The soldiers preparing the flogging back away at once. From this point on, the entire character of Paul's legal situation changes: Roman law now governs the proceedings, and Lysias must handle Paul with formal procedural care.",
+      "location_id": "antonia_fortress",
+      "persons_present": ["paul", "claudius_lysias", "roman_soldiers"],
+      "timeline_label": "Citizenship confirmed; soldiers withdraw",
+      "scroll_anchor": "paul-invokes-roman-citizenship",
+      "visual_notes": "Close-up two-shot: Lysias in military uniform leans toward Paul with a look of concern; Paul is still bound but composed; behind them soldiers are stepping back from their positions."
+    },
+    {
+      "id": "commander_convenes_sanhedrin",
+      "sequence": 10,
+      "verses": "22:30",
+      "title": "Lysias Convenes the Sanhedrin to Question Paul",
+      "description": "Uncertain of what Paul had actually done wrong — he still cannot understand the religious dispute — Lysias decides the next day to release Paul from his bonds and assemble the chief priests and the full Sanhedrin (the Jewish high court) to hear the case. The Romans sometimes granted Jewish courts the right to adjudicate matters of their own law, and Lysias is hoping the Sanhedrin will clarify the charge so he can make a proper Roman determination. This sets the stage for the dramatic Sanhedrin scene in chapter 23.",
+      "location_id": "antonia_fortress",
+      "persons_present": ["paul", "claudius_lysias"],
+      "timeline_label": "Sanhedrin convened for next day",
+      "scroll_anchor": "commander-convenes-sanhedrin",
+      "visual_notes": "Evening scene in the fortress: a Roman officer writing orders by lamplight; a guard leading Paul, no longer bound, to a guarded cell."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem_temple_steps",
+          "event_id": "paul_requests_permission_to_speak",
+          "note": "Paul is brought to the steps of the Antonia Fortress after being rescued from the mob in the Temple courts."
+        },
+        {
+          "order": 2,
+          "location_id": "antonia_fortress",
+          "event_id": "lysias_orders_flogging",
+          "note": "Paul is taken inside the fortress for examination by flogging after the crowd riots."
+        },
+        {
+          "order": 3,
+          "location_id": "antonia_fortress",
+          "event_id": "commander_convenes_sanhedrin",
+          "note": "Paul remains in Roman custody overnight as Lysias arranges the Sanhedrin hearing."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "paul_requests_permission_to_speak",
+      "position": 1,
+      "label": "Paul silences the crowd",
+      "relative_time": "Day of arrest — afternoon",
+      "absolute_time": "AD 57, spring (Pentecost season)"
+    },
+    {
+      "event_id": "paul_recounts_his_early_life",
+      "position": 2,
+      "label": "Jewish credentials",
+      "relative_time": "Continuous with speech",
+      "absolute_time": "AD 57"
+    },
+    {
+      "event_id": "paul_describes_persecuting_christians",
+      "position": 3,
+      "label": "Persecution confessed",
+      "relative_time": "Continuous with speech",
+      "absolute_time": "AD 57"
+    },
+    {
+      "event_id": "damascus_road_vision",
+      "position": 4,
+      "label": "Damascus vision narrated",
+      "relative_time": "Flashback to ~AD 34–36",
+      "absolute_time": "Narrated AD 57; event ~AD 34–36"
+    },
+    {
+      "event_id": "ananias_restores_paul",
+      "position": 5,
+      "label": "Ananias restores sight",
+      "relative_time": "Flashback to ~AD 34–36",
+      "absolute_time": "Narrated AD 57; event ~AD 34–36"
+    },
+    {
+      "event_id": "temple_trance_vision",
+      "position": 6,
+      "label": "Temple vision narrated",
+      "relative_time": "Flashback to ~AD 36–37",
+      "absolute_time": "Narrated AD 57; event ~AD 36–37"
+    },
+    {
+      "event_id": "crowd_erupts_at_gentiles",
+      "position": 7,
+      "label": "Riot at 'Gentiles'",
+      "relative_time": "Day of arrest — afternoon",
+      "absolute_time": "AD 57"
+    },
+    {
+      "event_id": "lysias_orders_flogging",
+      "position": 8,
+      "label": "Flogging ordered",
+      "relative_time": "Day of arrest — afternoon",
+      "absolute_time": "AD 57"
+    },
+    {
+      "event_id": "paul_invokes_roman_citizenship",
+      "position": 9,
+      "label": "Citizenship saves Paul",
+      "relative_time": "Day of arrest — afternoon",
+      "absolute_time": "AD 57"
+    },
+    {
+      "event_id": "commander_convenes_sanhedrin",
+      "position": 10,
+      "label": "Sanhedrin summoned",
+      "relative_time": "Evening of arrest day",
+      "absolute_time": "AD 57"
+    }
+  ],
+  "theological_themes": [
+    "Divine calling and personal testimony as witness",
+    "The universal scope of the gospel: Jew and Gentile",
+    "The tension between Jewish identity and the new Jesus movement",
+    "God's sovereignty in redirecting human plans",
+    "Roman citizenship as providential protection for Paul's mission",
+    "The cost of obedience: rejection by one's own people"
+  ],
+  "discussion_questions": [
+    "Why do you think Paul chose to address the crowd in Aramaic, and what does that choice tell us about the importance of cultural context in communication?",
+    "Paul's account of his own past as a persecutor seems designed to build credibility. Can a person's history of wrongdoing ever become an asset in their witness? How or why?",
+    "The crowd tolerates Paul's entire speech until he says 'Gentiles.' What does this reaction reveal about the deepest anxieties in his audience, and do similar 'trigger points' exist in religious communities today?",
+    "Paul uses his Roman citizenship to protect himself from an illegal flogging. Is there a tension between enduring suffering for faith and using legal rights for self-protection? How might you resolve it?",
+    "The Temple vision commands Paul to leave Jerusalem because the people there won't listen to him. How do you respond when your message is rejected by those you most want to reach?"
+  ]
+}

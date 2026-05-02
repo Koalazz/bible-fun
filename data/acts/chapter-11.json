@@ -1,0 +1,453 @@
+{
+  "book": "Acts",
+  "chapter": 11,
+  "chapter_title": "Defending the Open Door",
+  "chapter_summary": "When Peter returns to Jerusalem, Jewish believers confront him for eating with uncircumcised Gentiles. Peter responds by recounting the entire sequence of visions, the Spirit's command, and the undeniable outpouring of the Holy Spirit on Cornelius's household, and the Jerusalem church accepts the Gentile mission. The chapter then shifts to Antioch in Syria, where unnamed missionaries have already begun preaching to Greeks — the first time the gospel is deliberately offered to non-Jews — creating a vibrant new congregation. Barnabas is sent to assess the work, recruits Paul, and together they teach there for a year; it is in Antioch that followers of Jesus are first called 'Christians.' The chapter closes with a prophet named Agabus predicting a famine and the Antioch church sending relief to Jerusalem.",
+  "date_range": {
+    "approximate": "c. AD 37–46",
+    "notes": "The Jerusalem report likely follows immediately after Acts 10 (c. AD 37–41). The Antioch section probably spans AD 40–46, as Agabus's famine prophecy is linked by Luke to the reign of Claudius (AD 41–54); the famine in Judea is variously dated AD 46–48 by historians including Josephus."
+  },
+  "persons": [
+    {
+      "id": "peter",
+      "name": "Peter",
+      "role": "Apostle, Defender of the Gentile Mission",
+      "first_mention_verse": "11:2",
+      "summary": "Peter returns to Jerusalem and faces criticism from Jewish Christians who object to his association with uncircumcised Gentiles. He defends his actions by recounting the full sequence of divine visions, the Spirit's explicit command, and the visible outpouring of the Holy Spirit on Cornelius's household.",
+      "significance": "Peter's defense establishes the theological and historical precedent that the Jerusalem church accepts as the warrant for the Gentile mission — a precedent Paul will invoke and the council in Acts 15 will confirm."
+    },
+    {
+      "id": "circumcision_party",
+      "name": "The Circumcised Believers",
+      "role": "Group — Jewish Christian Critics",
+      "first_mention_verse": "11:2",
+      "summary": "A group of Jewish Christians in Jerusalem who insist that converts to the Jesus movement must first be circumcised according to Mosaic law; they challenge Peter for entering a Gentile household and eating with uncircumcised men.",
+      "significance": "This group represents a recurring tension in Acts and the broader New Testament about whether Gentiles must become Jews in order to follow Jesus; their challenge forces the first formal theological reckoning with the question."
+    },
+    {
+      "id": "six_jewish_witnesses",
+      "name": "The Six Jewish Believers",
+      "role": "Group — Eyewitnesses",
+      "first_mention_verse": "11:12",
+      "summary": "The six Jewish believers from Joppa who accompanied Peter to Caesarea are cited by Peter as witnesses before the Jerusalem church. Their testimony alongside Peter's account of the visions provides the decisive double-witness.",
+      "significance": "Their role underscores the importance of communal testimony in early Christian discernment; the church reaches its decision based not on one man's experience but on multiple corroborating witnesses."
+    },
+    {
+      "id": "barnabas",
+      "name": "Barnabas",
+      "role": "Apostolic Delegate, Encourager",
+      "first_mention_verse": "11:22",
+      "summary": "Barnabas, a Levite from Cyprus and respected figure in the Jerusalem church, is sent to Antioch to assess the new Gentile congregation. He responds with joy, encourages the believers, and then travels to Tarsus specifically to recruit Paul as a co-teacher.",
+      "significance": "Barnabas is the crucial human bridge between Paul and the wider church; his endorsement rehabilitates Paul, and his decision to include him in the Antioch mission directly initiates the missionary journeys that will occupy the rest of Acts."
+    },
+    {
+      "id": "paul",
+      "name": "Saul (Paul)",
+      "role": "Teacher, Future Missionary",
+      "first_mention_verse": "11:25",
+      "summary": "Barnabas travels to Tarsus to find Saul and brings him to Antioch, where the two of them teach together for an entire year, helping to form and instruct the first explicitly Gentile-majority congregation.",
+      "significance": "Paul's arrival at Antioch marks the beginning of his active partnership in the organized Gentile mission, which will culminate in the three missionary journeys and his eventual journey to Rome."
+    },
+    {
+      "id": "agabus",
+      "name": "Agabus",
+      "role": "Prophet",
+      "first_mention_verse": "11:28",
+      "summary": "Agabus is one of several prophets from Jerusalem who travel to Antioch; he stands up and through the Spirit predicts a severe famine that will strike the entire Roman world, which Luke notes occurred during the reign of Claudius.",
+      "significance": "Agabus reappears in Acts 21 to predict Paul's arrest; his accurate famine prophecy here establishes his credibility and triggers the first organized act of inter-church charitable giving in Christian history."
+    },
+    {
+      "id": "cypriote_and_cyrenian_missionaries",
+      "name": "Missionaries from Cyprus and Cyrene",
+      "role": "Group — Anonymous Evangelists",
+      "first_mention_verse": "11:20",
+      "summary": "Unnamed believers who had been scattered by the persecution after Stephen's death traveled as far as Antioch and, unlike most other refugees who spoke only to Jews, deliberately began speaking to Greeks about the Lord Jesus, sparking the first Gentile church.",
+      "significance": "These unnamed missionaries are among the most consequential figures in Christian history: their informal, unauthorized initiative to preach to Greeks directly creates the congregation that will become the launchpad for the entire Pauline mission."
+    },
+    {
+      "id": "antioch_disciples",
+      "name": "Disciples at Antioch",
+      "role": "Group — First Gentile-Majority Church",
+      "first_mention_verse": "11:21",
+      "summary": "A large number of Gentiles in Antioch believe and turn to the Lord as a result of the preaching of the Cypriot and Cyrenian missionaries. Under the teaching of Barnabas and Paul they are formed into a congregation that will become the base of the missionary movement.",
+      "significance": "The Antioch church is the first community where the name 'Christian' is applied, the first to send intentional missionaries, and the community whose delegate voices set the terms of debate at the Jerusalem Council in Acts 15."
+    },
+    {
+      "id": "jerusalem_prophets",
+      "name": "Prophets from Jerusalem",
+      "role": "Group — Itinerant Prophets",
+      "first_mention_verse": "11:27",
+      "summary": "A group of prophets travels from Jerusalem to Antioch, representing the ongoing connection between the mother church and the new Gentile congregation. Agabus is one of their number.",
+      "significance": "Their visit demonstrates that spiritual gifts and inter-church connection were features of early Christian community; prophets functioned as a recognized mobile ministry linking congregations."
+    },
+    {
+      "id": "elders_of_jerusalem",
+      "name": "Elders of Jerusalem",
+      "role": "Group — Church Leadership",
+      "first_mention_verse": "11:30",
+      "summary": "The elders of the Jerusalem church are the recipients of the famine relief sent by the Antioch congregation via Barnabas and Saul. This is the first mention of 'elders' as a formal leadership body in the Jerusalem church.",
+      "significance": "The Jerusalem elders become the authoritative body that the Antioch church reports to and that convenes the decisive council in Acts 15; their mention here signals a maturing institutional structure in the early movement."
+    }
+  ],
+  "locations": [
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel",
+      "lat": 31.778,
+      "lng": 35.235,
+      "description": "The holy city and headquarters of the earliest Jewish-Christian community; Peter returns here after Caesarea and must defend his actions before the leadership."
+    },
+    {
+      "id": "caesarea",
+      "name": "Caesarea",
+      "modern_name": "Caesarea Maritima (Qesarya, Israel)",
+      "lat": 32.5,
+      "lng": 34.9,
+      "description": "The Roman administrative city where Cornelius lived; referenced in Peter's retelling as the site of the Gentile outpouring."
+    },
+    {
+      "id": "joppa",
+      "name": "Joppa",
+      "modern_name": "Jaffa (Tel Aviv-Yafo, Israel)",
+      "lat": 32.054,
+      "lng": 34.751,
+      "description": "Peter's base before the Cornelius episode; mentioned in his retelling as the place where his rooftop vision occurred."
+    },
+    {
+      "id": "phoenicia",
+      "name": "Phoenicia",
+      "modern_name": "Coastal Lebanon",
+      "lat": 33.9,
+      "lng": 35.5,
+      "description": "The coastal region north of Israel (roughly modern Lebanon); one of the areas reached by scattered believers after the persecution in Jerusalem."
+    },
+    {
+      "id": "cyprus",
+      "name": "Cyprus",
+      "modern_name": "Cyprus",
+      "lat": 35.126,
+      "lng": 33.43,
+      "description": "The large Mediterranean island; origin of some of the scattered missionaries who eventually preached to Gentiles in Antioch, and home island of Barnabas."
+    },
+    {
+      "id": "antioch_syria",
+      "name": "Antioch",
+      "modern_name": "Antakya, Turkey",
+      "lat": 36.206,
+      "lng": 36.156,
+      "description": "The third largest city of the Roman Empire, located in Syria; site of the first deliberate preaching to Gentiles and the congregation where followers of Jesus are first called 'Christians.'"
+    },
+    {
+      "id": "tarsus",
+      "name": "Tarsus",
+      "modern_name": "Tarsus, Mersin Province, Turkey",
+      "lat": 36.917,
+      "lng": 34.892,
+      "description": "A major city in the province of Cilicia and the hometown of Paul; the place Barnabas travels to find Paul and recruit him for the Antioch ministry."
+    }
+  ],
+  "events": [
+    {
+      "id": "peter_confronted_in_jerusalem",
+      "sequence": 1,
+      "verses": "11:1-3",
+      "title": "Jerusalem Believers Challenge Peter",
+      "description": "News of what happened in Caesarea spreads quickly to Judea, and when Peter returns to Jerusalem, the circumcision party confronts him. Their complaint is pointed: Peter entered the house of uncircumcised men and ate with them. This was a serious breach of the social and ritual code that maintained Jewish identity. Their challenge sets the stage for the first theological debate in the Jerusalem church about Gentile inclusion.",
+      "location_id": "jerusalem",
+      "persons_present": ["peter", "circumcision_party"],
+      "timeline_label": "Peter Confronted",
+      "scroll_anchor": "peter-confronted-jerusalem",
+      "visual_notes": "A meeting space in Jerusalem — perhaps a synagogue courtyard or private home; a group of Jewish men in traditional dress facing Peter with gestures of accusation; Peter's posture calm but resolute."
+    },
+    {
+      "id": "peter_recounts_the_visions",
+      "sequence": 2,
+      "verses": "11:4-14",
+      "title": "Peter Retells the Visions in Order",
+      "description": "Peter takes the Jerusalem believers back through the whole sequence: his noon prayer on the rooftop, the vision of the descending sheet filled with unclean animals, the divine voice's three-fold command and explanation, the Spirit's direct instruction to go with the messengers without hesitation, and Cornelius's account of the angel who promised that Peter would bring words by which the household would be saved. He presents the entire chain of events as a coordinated divine initiative, not a personal decision.",
+      "location_id": "jerusalem",
+      "persons_present": ["peter", "circumcision_party", "six_jewish_witnesses"],
+      "timeline_label": "Peter's Defense",
+      "scroll_anchor": "peter-recounts-visions",
+      "visual_notes": "Peter standing in an assembly, hands raised as he describes the sheet vision; listeners leaning forward; the six Joppa witnesses visible at the sides as silent corroboration."
+    },
+    {
+      "id": "peter_cites_holy_spirit_evidence",
+      "sequence": 3,
+      "verses": "11:15-17",
+      "title": "Peter Cites the Spirit as the Decisive Evidence",
+      "description": "Peter reaches the climax of his defense: the Holy Spirit fell on Cornelius's household exactly as it fell on the disciples at Pentecost. He invokes Jesus's own words — 'John baptized with water, but you will be baptized with the Holy Spirit' — and asks the critical question: 'If God gave them the same gift he gave us when we believed in the Lord Jesus Christ, who was I to think that I could stand in God's way?' This frames his action not as human tolerance but as obedience to an act of God.",
+      "location_id": "jerusalem",
+      "persons_present": ["peter", "circumcision_party", "six_jewish_witnesses"],
+      "timeline_label": "Spirit Compared to Pentecost",
+      "scroll_anchor": "peter-cites-spirit-evidence",
+      "visual_notes": "Close-up of Peter's face; expressions of dawning recognition on the faces of his audience; the question hanging in the air — 'who was I to oppose God?'"
+    },
+    {
+      "id": "jerusalem_church_accepts_gentile_mission",
+      "sequence": 4,
+      "verses": "11:18",
+      "title": "Jerusalem Church Accepts the Gentile Mission",
+      "description": "The objectors fall silent; then they praise God, saying: 'So then, even to Gentiles God has granted repentance that leads to life.' Their acceptance is not merely grudging — it is expressed in praise. This brief verse is one of the pivotal moments in the entire book of Acts: the mother church formally endorses the principle that Gentiles can be fully included without circumcision.",
+      "location_id": "jerusalem",
+      "persons_present": ["circumcision_party", "peter", "six_jewish_witnesses"],
+      "timeline_label": "Jerusalem Accepts Gentile Mission",
+      "scroll_anchor": "jerusalem-accepts-gentile-mission",
+      "visual_notes": "A room full of people; expressions shifting from confrontation to wonder; some bowing their heads or looking upward in praise; a moment of relieved breakthrough."
+    },
+    {
+      "id": "scattered_believers_reach_antioch",
+      "sequence": 5,
+      "verses": "11:19-21",
+      "title": "Scattered Believers Plant a Church in Antioch",
+      "description": "The narrative jumps back in time to the persecution that followed Stephen's martyrdom. Scattered believers traveled as far as Phoenicia, Cyprus, and Antioch, preaching only to Jewish audiences. But some men from Cyprus and Cyrene — unnamed and acting on their own initiative — began speaking directly to Greeks in Antioch about the Lord Jesus. Their preaching was accompanied by the Lord's hand of power, and a large number of people believed and turned to the Lord.",
+      "location_id": "antioch_syria",
+      "persons_present": ["cypriote_and_cyrenian_missionaries", "antioch_disciples"],
+      "timeline_label": "Gospel Reaches Antioch Gentiles",
+      "scroll_anchor": "scattered-believers-antioch",
+      "visual_notes": "A busy Hellenistic marketplace in Antioch; diverse crowds; men in diaspora Jewish dress speaking animatedly to Greek-speaking locals; expressions of curiosity and receptivity."
+    },
+    {
+      "id": "barnabas_sent_to_antioch",
+      "sequence": 6,
+      "verses": "11:22-24",
+      "title": "Barnabas Is Sent to Assess Antioch",
+      "description": "News of the Antioch developments reaches Jerusalem, and the church sends Barnabas to investigate. When Barnabas arrives and sees the evidence of God's grace, he is glad and encourages them all to remain true to the Lord with all their hearts. Luke adds a character note: Barnabas was a good man, full of the Holy Spirit and faith. As a result, a great number of people were brought to the Lord.",
+      "location_id": "antioch_syria",
+      "persons_present": ["barnabas", "antioch_disciples"],
+      "timeline_label": "Barnabas Arrives at Antioch",
+      "scroll_anchor": "barnabas-sent-antioch",
+      "visual_notes": "Barnabas arriving at a gathering of mixed Jewish and Gentile believers; his face expressing genuine joy; hands raised in blessing or encouragement; the congregation growing as newcomers are drawn in."
+    },
+    {
+      "id": "barnabas_recruits_paul",
+      "sequence": 7,
+      "verses": "11:25-26a",
+      "title": "Barnabas Recruits Paul from Tarsus",
+      "description": "Recognizing that the work is larger than one person can handle, Barnabas travels to Tarsus to find Saul — the former persecutor who had been sent home after his early days in Jerusalem caused controversy. Barnabas brings him back to Antioch, and the two of them spend an entire year meeting with the church and teaching great numbers of people.",
+      "location_id": "tarsus",
+      "persons_present": ["barnabas", "paul"],
+      "timeline_label": "Barnabas Finds Paul",
+      "scroll_anchor": "barnabas-recruits-paul",
+      "visual_notes": "Barnabas traveling inland through the Taurus foothills; finding Paul in a domestic setting in Tarsus; a handshake or embrace of reunion; then the two walking together on the road back to Antioch."
+    },
+    {
+      "id": "disciples_called_christians",
+      "sequence": 8,
+      "verses": "11:26b",
+      "title": "Disciples First Called 'Christians' in Antioch",
+      "description": "Luke inserts a historically important note: it was in Antioch that the disciples were first called 'Christians.' The term — meaning 'followers of Christ' or 'belonging to Christ's party' — may have been given by outsiders, possibly as a somewhat dismissive label. Whatever its origin, it marks the point at which this movement was recognized as a distinct entity with its own identity, no longer simply a sect within Judaism.",
+      "location_id": "antioch_syria",
+      "persons_present": ["antioch_disciples", "barnabas", "paul"],
+      "timeline_label": "Name 'Christian' First Used",
+      "scroll_anchor": "disciples-called-christians",
+      "visual_notes": "A street scene or market in Antioch; a Greek-speaking Antiochene gesturing toward a group of believers; an inset text note reading 'Christianoi' in Greek letters; the diverse community of the congregation visible."
+    },
+    {
+      "id": "agabus_predicts_famine",
+      "sequence": 9,
+      "verses": "11:27-28",
+      "title": "Agabus Prophesies a Famine",
+      "description": "A group of prophets travels from Jerusalem to Antioch. One of them, Agabus, stands up and through the Spirit predicts that a severe famine will spread over the entire Roman world. Luke confirms the prophecy's accuracy with an editorial note — this happened during the reign of Claudius. The prediction would have been received as a solemn call to practical action.",
+      "location_id": "antioch_syria",
+      "persons_present": ["agabus", "jerusalem_prophets", "barnabas", "paul", "antioch_disciples"],
+      "timeline_label": "Agabus's Famine Prophecy",
+      "scroll_anchor": "agabus-predicts-famine",
+      "visual_notes": "Agabus standing in a gathered assembly, arm raised in prophetic gesture; the faces of the congregation showing concern; Barnabas and Paul visible in the crowd, listening intently."
+    },
+    {
+      "id": "antioch_sends_relief_to_jerusalem",
+      "sequence": 10,
+      "verses": "11:29-30",
+      "title": "Antioch Sends Relief to Jerusalem",
+      "description": "The disciples in Antioch, each according to their ability, decide to send relief to the brothers and sisters in Judea. They raise the contribution and send it to the Jerusalem elders via Barnabas and Saul. This action represents the first inter-church financial aid in Christian history and reverses the normal direction of influence: the young Gentile church providing for the mother Jewish church.",
+      "location_id": "jerusalem",
+      "persons_present": ["barnabas", "paul", "antioch_disciples", "elders_of_jerusalem"],
+      "timeline_label": "Antioch Relief Sent to Jerusalem",
+      "scroll_anchor": "antioch-relief-jerusalem",
+      "visual_notes": "Members of the Antioch congregation bringing goods, coins, and provisions; Barnabas and Paul receiving a collected bundle; then depicted on the road south toward Jerusalem carrying the relief; Jerusalem elders receiving the gift with gratitude."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "peter",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "caesarea",
+          "event_id": "peter_confronted_in_jerusalem",
+          "note": "Returns from Caesarea after the Cornelius episode."
+        },
+        {
+          "order": 2,
+          "location_id": "jerusalem",
+          "event_id": "peter_recounts_the_visions",
+          "note": "Arrives in Jerusalem to face the criticism and deliver his defense."
+        }
+      ]
+    },
+    {
+      "person_id": "barnabas",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "barnabas_sent_to_antioch",
+          "note": "Sent by the Jerusalem church to investigate the new Gentile congregation."
+        },
+        {
+          "order": 2,
+          "location_id": "antioch_syria",
+          "event_id": "barnabas_sent_to_antioch",
+          "note": "Arrives in Antioch and is moved by what he sees; begins teaching."
+        },
+        {
+          "order": 3,
+          "location_id": "tarsus",
+          "event_id": "barnabas_recruits_paul",
+          "note": "Travels to Tarsus specifically to find and recruit Saul."
+        },
+        {
+          "order": 4,
+          "location_id": "antioch_syria",
+          "event_id": "disciples_called_christians",
+          "note": "Returns with Paul; they teach together for a year in Antioch."
+        },
+        {
+          "order": 5,
+          "location_id": "jerusalem",
+          "event_id": "antioch_sends_relief_to_jerusalem",
+          "note": "Carries the Antioch relief fund to the Jerusalem elders."
+        }
+      ]
+    },
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "tarsus",
+          "event_id": "barnabas_recruits_paul",
+          "note": "Found by Barnabas in his hometown of Tarsus."
+        },
+        {
+          "order": 2,
+          "location_id": "antioch_syria",
+          "event_id": "disciples_called_christians",
+          "note": "Brought to Antioch and teaches with Barnabas for a year."
+        },
+        {
+          "order": 3,
+          "location_id": "jerusalem",
+          "event_id": "antioch_sends_relief_to_jerusalem",
+          "note": "Travels with Barnabas to deliver the famine relief to Jerusalem."
+        }
+      ]
+    },
+    {
+      "person_id": "agabus",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "agabus_predicts_famine",
+          "note": "Travels as part of a prophetic delegation from Jerusalem to Antioch."
+        },
+        {
+          "order": 2,
+          "location_id": "antioch_syria",
+          "event_id": "agabus_predicts_famine",
+          "note": "Delivers his famine prophecy in the Antioch congregation."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "scattered_believers_reach_antioch",
+      "position": 1,
+      "label": "Gospel Reaches Antioch",
+      "relative_time": "Background: after Stephen's martyrdom",
+      "absolute_time": "c. AD 36–37"
+    },
+    {
+      "event_id": "peter_confronted_in_jerusalem",
+      "position": 2,
+      "label": "Peter Challenged",
+      "relative_time": "After Cornelius episode",
+      "absolute_time": "c. AD 37–41"
+    },
+    {
+      "event_id": "peter_recounts_the_visions",
+      "position": 3,
+      "label": "Peter's Defense",
+      "relative_time": "Same meeting",
+      "absolute_time": "c. AD 37–41"
+    },
+    {
+      "event_id": "peter_cites_holy_spirit_evidence",
+      "position": 4,
+      "label": "Pentecost Parallel Cited",
+      "relative_time": "Same meeting, climax",
+      "absolute_time": "c. AD 37–41"
+    },
+    {
+      "event_id": "jerusalem_church_accepts_gentile_mission",
+      "position": 5,
+      "label": "Jerusalem Accepts Gentiles",
+      "relative_time": "Conclusion of same meeting",
+      "absolute_time": "c. AD 37–41"
+    },
+    {
+      "event_id": "barnabas_sent_to_antioch",
+      "position": 6,
+      "label": "Barnabas Investigates Antioch",
+      "relative_time": "Shortly after",
+      "absolute_time": "c. AD 40–42"
+    },
+    {
+      "event_id": "barnabas_recruits_paul",
+      "position": 7,
+      "label": "Barnabas Finds Paul",
+      "relative_time": "After establishing ministry",
+      "absolute_time": "c. AD 41–43"
+    },
+    {
+      "event_id": "disciples_called_christians",
+      "position": 8,
+      "label": "'Christian' Name First Used",
+      "relative_time": "During year of teaching",
+      "absolute_time": "c. AD 42–44"
+    },
+    {
+      "event_id": "agabus_predicts_famine",
+      "position": 9,
+      "label": "Famine Prophesied",
+      "relative_time": "Before famine under Claudius",
+      "absolute_time": "c. AD 44–46"
+    },
+    {
+      "event_id": "antioch_sends_relief_to_jerusalem",
+      "position": 10,
+      "label": "Relief Fund Sent",
+      "relative_time": "In response to prophecy",
+      "absolute_time": "c. AD 46"
+    }
+  ],
+  "theological_themes": [
+    "Divine initiative overriding human cultural barriers",
+    "The role of testimony and communal discernment in theological change",
+    "Anonymous, unauthorized mission as the engine of the church's growth",
+    "Identity and naming: what it means to be called 'Christian'",
+    "Material generosity as an expression of spiritual community",
+    "Prophecy as a practical gift serving the welfare of the community"
+  ],
+  "discussion_questions": [
+    "Peter's defense of his actions depended heavily on saying 'I saw what God did — I could not oppose it.' When, if ever, is personal spiritual experience a sufficient basis for challenging established community norms?",
+    "The Antioch church was founded by unnamed, scattered missionaries acting without official authorization. What does this suggest about where innovation in the church comes from, and how established leaders should respond to it?",
+    "Barnabas sought out Paul specifically because the work was too large for one person. What does his willingness to share credit and bring in a potentially threatening figure reveal about his character?",
+    "The disciples were first called 'Christians' in a majority pagan, Hellenistic city. What might it mean that the community needed an external nickname before it had an internal one?",
+    "The Antioch church sent money to Jerusalem — reversing the usual direction of cultural and religious authority. What does this act of inter-church generosity suggest about the relationship between newer and older faith communities?"
+  ]
+}

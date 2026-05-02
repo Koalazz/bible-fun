@@ -1,0 +1,470 @@
+{
+  "book": "Acts",
+  "chapter": 19,
+  "chapter_title": "The Great Riot at Ephesus",
+  "chapter_summary": "Paul arrives in Ephesus and launches his longest and most transformative urban mission, spending over two years in this wealthy capital of Asia Minor. He baptizes disciples who had received only John's baptism, performs extraordinary miracles, and sees the gospel spread so widely that the entire region is reached. The climax comes when a silversmith named Demetrius, fearing the collapse of his idol-making trade, incites a citywide riot in the famous theater, which Roman officials are only barely able to disperse.",
+  "date_range": {
+    "approximate": "AD 52–55",
+    "notes": "Paul's two-to-three year Ephesian ministry is generally dated AD 52–55; the precise start and end are debated, and Acts 19:10 suggests at least two years of teaching in the Hall of Tyrannus."
+  },
+  "persons": [
+    {
+      "id": "paul",
+      "name": "Paul",
+      "role": "Apostle / Missionary",
+      "first_mention_verse": "19:1",
+      "summary": "Paul spends over two years in Ephesus in what Acts presents as his most fruitful and dramatic mission, teaching daily, performing miracles, and seeing such a transformation of the city that the idol trade suffers economically. He also dispatches co-workers across the region and makes plans to travel to Jerusalem and Rome.",
+      "significance": "The Ephesian mission is the pivot of the entire second half of Acts; it produces the church from which the entire province of Asia is reached and sets in motion the chain of events leading to Paul's arrest and voyage to Rome."
+    },
+    {
+      "id": "twelve_disciples_ephesus",
+      "name": "Twelve Disciples at Ephesus",
+      "role": "Group / Incomplete Believers",
+      "first_mention_verse": "19:1",
+      "summary": "A group of about twelve men in Ephesus who had received only the baptism of John and were unaware of the Holy Spirit; Paul baptizes them in the name of Jesus and lays hands on them, after which they speak in tongues and prophesy.",
+      "significance": "Their experience mirrors the Samaritan Pentecost of Acts 8 and establishes that the gift of the Holy Spirit is inseparable from full Christian initiation; it also shows how diverse and incomplete early expressions of the Jesus movement could be."
+    },
+    {
+      "id": "demetrius",
+      "name": "Demetrius",
+      "role": "Silversmith / Riot Instigator",
+      "first_mention_verse": "19:24",
+      "summary": "A prosperous silversmith who makes silver shrines of the goddess Artemis and employs a large number of craftsmen. He calls a workers' meeting, frames the threat of Paul's preaching in economic and religious terms, and ignites the riot that fills the theater with thousands of chanting citizens.",
+      "significance": "Demetrius represents the intersection of economics and religion in the ancient world; his speech is one of Acts' most revealing portraits of how the gospel disrupted social and commercial orders, not just theological ones."
+    },
+    {
+      "id": "gaius",
+      "name": "Gaius",
+      "role": "Travel Companion of Paul",
+      "first_mention_verse": "19:29",
+      "summary": "A Macedonian travel companion of Paul who is seized by the mob and dragged into the theater during the riot. His presence in the theater puts him in immediate physical danger.",
+      "significance": "Gaius illustrates the collateral danger faced by Paul's associates; a man named Gaius from Derbe is mentioned in 20:4, though it is uncertain if this is the same person."
+    },
+    {
+      "id": "aristarchus",
+      "name": "Aristarchus",
+      "role": "Travel Companion of Paul",
+      "first_mention_verse": "19:29",
+      "summary": "Another Macedonian companion of Paul who is also seized and dragged into the theater with Gaius. He will later travel with Paul to Rome (27:2) and is mentioned in Colossians as a fellow prisoner.",
+      "significance": "Aristarchus is one of Paul's most loyal long-term companions, accompanying him from Macedonia to Jerusalem, to Rome, and beyond."
+    },
+    {
+      "id": "alexander_ephesus",
+      "name": "Alexander",
+      "role": "Jewish Spokesman (during riot)",
+      "first_mention_verse": "19:33",
+      "summary": "A Jewish man put forward by the Jewish community to speak to the crowd during the theater riot, apparently to distance Jews from Paul's activities. When the crowd realizes he is Jewish, they shout him down for two hours without letting him speak.",
+      "significance": "Alexander's failed intervention shows how Jews in Ephesus sought to separate themselves from the Christian movement, and how anti-Jewish sentiment in the crowd could be triggered independently of the Christian controversy."
+    },
+    {
+      "id": "city_clerk",
+      "name": "City Clerk (Grammateus)",
+      "role": "Civic Official of Ephesus",
+      "first_mention_verse": "19:35",
+      "summary": "The senior civic official of Ephesus who manages to calm the riotous crowd with a sophisticated speech appealing to civic pride, legal process, and the risk of Roman intervention. He points out that Paul and his companions have committed no provable offense and that grievances must be handled through courts and assemblies.",
+      "significance": "Like Gallio in chapter 18, the city clerk embodies the theme of Roman and civic authority inadvertently protecting the early church; his speech is widely regarded as one of Acts' most skillfully composed rhetorical set-pieces."
+    },
+    {
+      "id": "sceva_sons",
+      "name": "Seven Sons of Sceva",
+      "role": "Group / Jewish Exorcists",
+      "first_mention_verse": "19:14",
+      "summary": "Seven sons of a Jewish high priest named Sceva who attempt to invoke the name of Jesus as a magic formula to cast out demons, even though they have no personal relationship with Jesus. The demon-possessed man attacks and overpowers all seven of them, and they flee naked and wounded.",
+      "significance": "This episode sharply distinguishes genuine apostolic authority from mere use of Jesus's name as a magical incantation, and contributes to the climate of awe that leads many Ephesian practitioners of magic to burn their scrolls."
+    },
+    {
+      "id": "tyrannus",
+      "name": "Tyrannus",
+      "role": "Owner of the Hall / Teacher",
+      "first_mention_verse": "19:9",
+      "summary": "A man (possibly a teacher or philosopher) whose hall Paul uses daily for two years after being expelled from the synagogue; his identity and background are unknown beyond the name.",
+      "significance": "The Hall of Tyrannus represents a key missional innovation — using a neutral civic space for public teaching — and becomes the hub from which the gospel spreads throughout the entire province of Asia."
+    },
+    {
+      "id": "ephesian_craftsmen",
+      "name": "Craftsmen and Silversmiths of Ephesus",
+      "role": "Group / Riot Participants",
+      "first_mention_verse": "19:24",
+      "summary": "The tradespeople who made their living producing silver shrines of Artemis for pilgrims, gathered by Demetrius and whipped into a frenzy by fears that Paul's preaching was destroying their business.",
+      "significance": "They illustrate that the spread of the gospel had real economic consequences in cities where religion and commerce were deeply intertwined, particularly in a cult center like Ephesus."
+    },
+    {
+      "id": "ephesian_crowd",
+      "name": "Crowd in the Theater",
+      "role": "Group / Rioters",
+      "first_mention_verse": "19:29",
+      "summary": "A huge mob of Ephesian citizens who pour into the great theater, most of them not even knowing why they have gathered, and chant 'Great is Artemis of the Ephesians!' for two hours.",
+      "significance": "The crowd's confused enthusiasm shows the power of civic and religious identity in the ancient city; the theater scene is one of Acts' most vivid narrative set-pieces."
+    }
+  ],
+  "locations": [
+    {
+      "id": "ephesus",
+      "name": "Ephesus",
+      "modern_name": "Selçuk, Turkey (ancient ruins)",
+      "lat": 37.9396,
+      "lng": 27.3411,
+      "description": "The most important city of the Roman province of Asia, a massive commercial and religious metropolis home to the Temple of Artemis, one of the Seven Wonders of the Ancient World, and the site of Paul's most extended urban mission."
+    },
+    {
+      "id": "ephesus_synagogue",
+      "name": "Synagogue of Ephesus",
+      "modern_name": "Selçuk, Turkey (site uncertain)",
+      "lat": 37.9396,
+      "lng": 27.3411,
+      "description": "The Jewish meeting house in Ephesus where Paul teaches for three months before opposition forces him to relocate to the Hall of Tyrannus."
+    },
+    {
+      "id": "hall_of_tyrannus",
+      "name": "Hall of Tyrannus",
+      "modern_name": "Selçuk, Turkey (site unknown)",
+      "lat": 37.9396,
+      "lng": 27.341,
+      "description": "A lecture hall or school owned by a man named Tyrannus where Paul teaches daily for two years, turning it into the missional hub from which the gospel spreads to the whole province of Asia."
+    },
+    {
+      "id": "theater_of_ephesus",
+      "name": "Theater of Ephesus",
+      "modern_name": "Selçuk, Turkey (well-preserved ruins)",
+      "lat": 37.9396,
+      "lng": 27.3414,
+      "description": "The magnificent open-air theater of Ephesus, capable of holding over 20,000 people, which becomes the stage for the climactic riot instigated by Demetrius and his fellow craftsmen."
+    },
+    {
+      "id": "temple_of_artemis",
+      "name": "Temple of Artemis (Artemision)",
+      "modern_name": "Selçuk, Turkey (single column remains)",
+      "lat": 37.9498,
+      "lng": 27.3639,
+      "description": "One of the Seven Wonders of the Ancient World, the massive temple of the goddess Artemis of Ephesus, whose cult was the economic and religious center of the city and whose worship is threatened by Paul's preaching."
+    },
+    {
+      "id": "macedonia",
+      "name": "Macedonia",
+      "modern_name": "Northern Greece / North Macedonia",
+      "lat": 41.0,
+      "lng": 22.0,
+      "description": "The Roman province north of Greece where Paul plans to travel after his time in Ephesus, home to the churches at Philippi, Thessalonica, and Berea."
+    },
+    {
+      "id": "asia_province",
+      "name": "Province of Asia",
+      "modern_name": "Western Turkey",
+      "lat": 38.5,
+      "lng": 28.0,
+      "description": "The entire Roman province of western Asia Minor, which Acts says received the word of the Lord during Paul's two years of teaching in Ephesus — encompassing cities like Colossae, Laodicea, and Hierapolis."
+    }
+  ],
+  "events": [
+    {
+      "id": "paul_finds_incomplete_disciples",
+      "sequence": 1,
+      "verses": "19:1-3",
+      "title": "Paul Finds Disciples Who Received Only John's Baptism",
+      "description": "While Apollos is away in Corinth, Paul arrives in Ephesus and finds a group of about twelve believers who had received only the baptism of John — a baptism of repentance. When Paul asks if they received the Holy Spirit when they believed, they reply that they have not even heard that there is a Holy Spirit. This reveals a community that had come to faith through an earlier, incomplete strand of Jesus's movement.",
+      "location_id": "ephesus",
+      "persons_present": ["paul", "twelve_disciples_ephesus"],
+      "timeline_label": "Incomplete Disciples Found",
+      "scroll_anchor": "paul-finds-incomplete-disciples",
+      "visual_notes": "A small gathering in a modest room; Paul in conversation with twelve men, gesturing questioningly; their puzzled expressions convey the gap in their understanding."
+    },
+    {
+      "id": "baptism_laying_on_hands",
+      "sequence": 2,
+      "verses": "19:4-7",
+      "title": "Baptism in Jesus's Name and Gift of the Holy Spirit",
+      "description": "Paul explains that John's baptism was preparatory, pointing to the one coming after him — Jesus. Upon hearing this, the twelve are baptized in the name of Jesus. Paul then lays his hands on them, and the Holy Spirit comes upon them: they speak in tongues and prophesy. This is the third of Acts' 'Pentecost-type' events, completing the extension of the Spirit to this previously incomplete community.",
+      "location_id": "ephesus",
+      "persons_present": ["paul", "twelve_disciples_ephesus"],
+      "timeline_label": "Spirit Comes on Twelve",
+      "scroll_anchor": "baptism-laying-on-hands",
+      "visual_notes": "A water scene outdoors or a courtyard; Paul with hands raised over kneeling figures; visual indication of spiritual transformation, tongues of fire or radiant glow."
+    },
+    {
+      "id": "paul_in_ephesian_synagogue",
+      "sequence": 3,
+      "verses": "19:8",
+      "title": "Paul Teaches Three Months in the Synagogue",
+      "description": "Paul enters the Ephesian synagogue and for three months teaches boldly, reasoning and persuading people about the kingdom of God. His message focuses on the reality and nature of God's reign as inaugurated through Jesus. For three months he has a significant hearing, suggesting the Ephesian Jewish community was more open than many he had encountered elsewhere.",
+      "location_id": "ephesus_synagogue",
+      "persons_present": ["paul"],
+      "timeline_label": "Three Months in Synagogue",
+      "scroll_anchor": "paul-in-ephesian-synagogue",
+      "visual_notes": "Synagogue interior; Paul standing before scrolls, a mixed audience, some nodding, some skeptical, months passing indicated by subtle seasonal changes."
+    },
+    {
+      "id": "paul_moves_to_hall_of_tyrannus",
+      "sequence": 4,
+      "verses": "19:9-10",
+      "title": "Paul Moves to the Hall of Tyrannus for Two Years",
+      "description": "When some in the synagogue become hardened and publicly malign the Way, Paul withdraws with the disciples and begins holding daily discussions in the Hall of Tyrannus, a rented lecture space. This continues for two years. The result is extraordinary: Luke states that all the residents of the province of Asia, both Jews and Greeks, hear the word of the Lord — implying Paul's students carried the message outward to the whole region, planting churches like those at Colossae and Laodicea.",
+      "location_id": "hall_of_tyrannus",
+      "persons_present": ["paul", "tyrannus"],
+      "timeline_label": "Daily Teaching: Two Years",
+      "scroll_anchor": "paul-moves-to-hall-of-tyrannus",
+      "visual_notes": "A lecture hall with stone benches; Paul at the front with a group of attentive students; a map overlay showing arrows spreading outward from Ephesus to surrounding towns."
+    },
+    {
+      "id": "extraordinary_miracles",
+      "sequence": 5,
+      "verses": "19:11-12",
+      "title": "Extraordinary Miracles Through Paul's Handkerchiefs",
+      "description": "God performs unusual miracles through Paul during this period: handkerchiefs and work aprons that had touched Paul are carried to the sick and demon-possessed, and their diseases are healed and evil spirits driven out. Luke's description — 'extraordinary miracles' — signals that even by the standards of the apostolic mission, these were remarkable. The miracles confirm Paul's authority in a city steeped in magic and wonder-working traditions.",
+      "location_id": "ephesus",
+      "persons_present": ["paul"],
+      "timeline_label": "Miracles by Handkerchiefs",
+      "scroll_anchor": "extraordinary-miracles",
+      "visual_notes": "A street scene in Ephesus; cloths and aprons being carried through the city by believers; people lying sick on pallets rising healed; the scale and spread conveyed by multiple vignettes."
+    },
+    {
+      "id": "sons_of_sceva_defeated",
+      "sequence": 6,
+      "verses": "19:13-16",
+      "title": "The Sons of Sceva Overpowered by a Demon",
+      "description": "Seeing Paul's success in exorcism, seven Jewish exorcists — sons of a chief priest named Sceva — try to use Jesus's name as a magic formula: 'In the name of Jesus, whom Paul preaches, I command you!' The demon-possessed man answers, 'Jesus I know, and Paul I know about, but who are you?' He then attacks all seven of them with such ferocity that they flee the house naked and bleeding. The episode is both terrifying and darkly comic in Luke's telling.",
+      "location_id": "ephesus",
+      "persons_present": ["sceva_sons"],
+      "timeline_label": "Sons of Sceva Defeated",
+      "scroll_anchor": "sons-of-sceva-defeated",
+      "visual_notes": "Dramatic scene: seven robed men in a dark room, a figure throwing them off with superhuman force; three of them fleeing through a doorway, clothes torn; emphasis on chaotic energy."
+    },
+    {
+      "id": "fear_falls_on_ephesus",
+      "sequence": 7,
+      "verses": "19:17-18",
+      "title": "Fear Falls on Ephesus; Many Confess Their Practices",
+      "description": "News of the Sceva incident spreads rapidly through Ephesus and fills the city with fear and awe. The name of Jesus is held in great honor. Many who had believed now came forward and openly confessed their magical practices — an act of genuine spiritual transparency that would have carried significant social risk in a city where magic was both common and profitable.",
+      "location_id": "ephesus",
+      "persons_present": ["paul"],
+      "timeline_label": "City Filled with Fear",
+      "scroll_anchor": "fear-falls-on-ephesus",
+      "visual_notes": "Nighttime city scene; groups of citizens gathering in streets with fearful expressions; individuals coming to Paul's community and speaking confessions; an atmosphere of solemn awe."
+    },
+    {
+      "id": "burning_of_magic_scrolls",
+      "sequence": 8,
+      "verses": "19:19-20",
+      "title": "Burning of Magic Scrolls",
+      "description": "A large number of those who had practiced magic bring their scrolls and burn them publicly in a bonfire. Luke calculates the value of the scrolls at fifty thousand silver drachmas — a staggeringly large sum equivalent to about 50,000 days' wages. The voluntary destruction of such expensive property demonstrates the depth of the transformation and the city's break with its magical past.",
+      "location_id": "ephesus",
+      "persons_present": ["paul"],
+      "timeline_label": "Magic Scrolls Burned",
+      "scroll_anchor": "burning-of-magic-scrolls",
+      "visual_notes": "A large bonfire at night in a public square; figures tossing scrolls and papyrus sheets into the flames; Paul and community watching; the value of 50,000 drachmas suggested by the pile of expensive materials."
+    },
+    {
+      "id": "paul_plans_to_travel",
+      "sequence": 9,
+      "verses": "19:21-22",
+      "title": "Paul Plans His Future Journey to Rome",
+      "description": "In the Spirit, Paul resolves to travel through Macedonia and Achaia to Jerusalem, and then on to Rome. He sends Timothy and Erastus ahead to Macedonia while he stays in Asia a little longer. This passage reveals Paul's grand strategic vision: the mission must reach Rome, the capital of the world. This plan will govern the entire remainder of Acts.",
+      "location_id": "ephesus",
+      "persons_present": ["paul", "timothy"],
+      "timeline_label": "Paul Plans Journey to Rome",
+      "scroll_anchor": "paul-plans-to-travel",
+      "visual_notes": "Paul studying a map or pointing at a route; the word 'ROME' dominant; Timothy and another figure departing by road, Paul remaining behind."
+    },
+    {
+      "id": "demetrius_incites_craftsmen",
+      "sequence": 10,
+      "verses": "19:23-27",
+      "title": "Demetrius Calls a Meeting and Incites the Craftsmen",
+      "description": "A silversmith named Demetrius, who runs a profitable business making silver shrines of Artemis for pilgrims, calls together his workers and related tradespeople. He delivers a shrewd speech that mixes religious devotion with economic self-interest: Paul has persuaded thousands of people that man-made gods are no gods at all, threatening both their livelihoods and the prestige of the great goddess Artemis. The speech deliberately inflames the crowd.",
+      "location_id": "ephesus",
+      "persons_present": ["demetrius", "ephesian_craftsmen"],
+      "timeline_label": "Demetrius Stirs Up Craftsmen",
+      "scroll_anchor": "demetrius-incites-craftsmen",
+      "visual_notes": "A workshop interior with silver figurines on shelves; Demetrius gesturing passionately to a gathered crowd of craftsmen; faces moving from concern to anger."
+    },
+    {
+      "id": "riot_in_theater",
+      "sequence": 11,
+      "verses": "19:28-34",
+      "title": "The Great Riot: Thousands Fill the Theater",
+      "description": "The craftsmen's rage spreads instantly through the city. They seize Paul's companions Gaius and Aristarchus and drag them into the great theater. Paul wants to enter the theater to speak to the crowd but is restrained by the disciples and by sympathetic Asiarchs (provincial officials). Inside the theater, the crowd is in total confusion, most people not even knowing why they have gathered; for two hours they chant 'Great is Artemis of the Ephesians!' Alexander, a Jewish spokesman, is shouted down when the crowd realizes he is Jewish.",
+      "location_id": "theater_of_ephesus",
+      "persons_present": ["paul", "gaius", "aristarchus", "alexander_ephesus", "ephesian_crowd", "demetrius"],
+      "timeline_label": "Riot in the Theater",
+      "scroll_anchor": "riot-in-theater",
+      "visual_notes": "The massive stone theater of Ephesus filled with thousands of people; chanting crowds visible in aerial view; Gaius and Aristarchus surrounded at the bottom; Paul restrained outside; Alexander silenced on the stage."
+    },
+    {
+      "id": "city_clerk_disperses_crowd",
+      "sequence": 12,
+      "verses": "19:35-41",
+      "title": "The City Clerk Disperses the Crowd with a Legal Argument",
+      "description": "The city clerk (grammateus), the senior administrative official of Ephesus, finally gains the crowd's attention. He makes a calm, multi-point argument: Ephesus's guardianship of Artemis's image is universally acknowledged and not in question; these men have committed no recognizable crime; if Demetrius has a legitimate grievance, there are courts and proconsuls for that; and the current disorderly assembly puts the whole city at risk of Roman reprisal. The crowd disperses. Paul and his companions are safe.",
+      "location_id": "theater_of_ephesus",
+      "persons_present": ["city_clerk", "ephesian_crowd", "gaius", "aristarchus"],
+      "timeline_label": "City Clerk Ends Riot",
+      "scroll_anchor": "city-clerk-disperses-crowd",
+      "visual_notes": "The city clerk standing on the stage of the theater, hand raised, commanding the crowd's attention; the thousands of rioters gradually stilling; a dramatic shift from chaos to uneasy calm."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "ephesus",
+          "event_id": "paul_finds_incomplete_disciples",
+          "note": "Paul arrives in Ephesus at the start of his third journey."
+        },
+        {
+          "order": 2,
+          "location_id": "ephesus_synagogue",
+          "event_id": "paul_in_ephesian_synagogue",
+          "note": "Paul moves to the synagogue and teaches for three months."
+        },
+        {
+          "order": 3,
+          "location_id": "hall_of_tyrannus",
+          "event_id": "paul_moves_to_hall_of_tyrannus",
+          "note": "Paul withdraws from the synagogue to the Hall of Tyrannus."
+        },
+        {
+          "order": 4,
+          "location_id": "ephesus",
+          "event_id": "paul_plans_to_travel",
+          "note": "Paul remains in Ephesus while planning his next journey."
+        }
+      ]
+    },
+    {
+      "person_id": "gaius",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "ephesus",
+          "event_id": "riot_in_theater",
+          "note": "Gaius is seized by the mob and dragged to the theater."
+        },
+        {
+          "order": 2,
+          "location_id": "theater_of_ephesus",
+          "event_id": "city_clerk_disperses_crowd",
+          "note": "Gaius is present when the city clerk disperses the crowd."
+        }
+      ]
+    },
+    {
+      "person_id": "aristarchus",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "ephesus",
+          "event_id": "riot_in_theater",
+          "note": "Aristarchus is seized by the mob and dragged to the theater."
+        },
+        {
+          "order": 2,
+          "location_id": "theater_of_ephesus",
+          "event_id": "city_clerk_disperses_crowd",
+          "note": "Aristarchus is present when the city clerk disperses the crowd."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "paul_finds_incomplete_disciples",
+      "position": 1,
+      "label": "Arrival in Ephesus",
+      "relative_time": "Third missionary journey, c. AD 52",
+      "absolute_time": "c. AD 52"
+    },
+    {
+      "event_id": "baptism_laying_on_hands",
+      "position": 2,
+      "label": "Twelve Disciples Baptized",
+      "relative_time": "Third missionary journey, c. AD 52",
+      "absolute_time": "c. AD 52"
+    },
+    {
+      "event_id": "paul_in_ephesian_synagogue",
+      "position": 3,
+      "label": "Three Months in Synagogue",
+      "relative_time": "Third missionary journey, c. AD 52–53",
+      "absolute_time": "c. AD 52–53"
+    },
+    {
+      "event_id": "paul_moves_to_hall_of_tyrannus",
+      "position": 4,
+      "label": "Two Years in Hall of Tyrannus",
+      "relative_time": "Third missionary journey, c. AD 53–55",
+      "absolute_time": "c. AD 53–55"
+    },
+    {
+      "event_id": "extraordinary_miracles",
+      "position": 5,
+      "label": "Miracles Through Cloths",
+      "relative_time": "Third missionary journey, c. AD 53–55",
+      "absolute_time": "c. AD 53–55"
+    },
+    {
+      "event_id": "sons_of_sceva_defeated",
+      "position": 6,
+      "label": "Sons of Sceva Defeated",
+      "relative_time": "Third missionary journey, c. AD 53–55",
+      "absolute_time": "c. AD 53–55"
+    },
+    {
+      "event_id": "fear_falls_on_ephesus",
+      "position": 7,
+      "label": "Fear Spreads Through City",
+      "relative_time": "Third missionary journey, c. AD 53–55",
+      "absolute_time": "c. AD 53–55"
+    },
+    {
+      "event_id": "burning_of_magic_scrolls",
+      "position": 8,
+      "label": "Magic Scrolls Burned",
+      "relative_time": "Third missionary journey, c. AD 53–55",
+      "absolute_time": "c. AD 53–55"
+    },
+    {
+      "event_id": "paul_plans_to_travel",
+      "position": 9,
+      "label": "Paul Plans Journey to Rome",
+      "relative_time": "Third missionary journey, c. AD 55",
+      "absolute_time": "c. AD 55"
+    },
+    {
+      "event_id": "demetrius_incites_craftsmen",
+      "position": 10,
+      "label": "Demetrius Stirs Up Craftsmen",
+      "relative_time": "Third missionary journey, c. AD 55",
+      "absolute_time": "c. AD 55"
+    },
+    {
+      "event_id": "riot_in_theater",
+      "position": 11,
+      "label": "Great Riot in the Theater",
+      "relative_time": "Third missionary journey, c. AD 55",
+      "absolute_time": "c. AD 55"
+    },
+    {
+      "event_id": "city_clerk_disperses_crowd",
+      "position": 12,
+      "label": "City Clerk Ends Riot",
+      "relative_time": "Third missionary journey, c. AD 55",
+      "absolute_time": "c. AD 55"
+    }
+  ],
+  "theological_themes": [
+    "The power and uniqueness of the name of Jesus versus magical power",
+    "The Holy Spirit as essential to full Christian initiation",
+    "The gospel's economic disruption — transforming societies, not just souls",
+    "Civic order as an instrument of God's providential protection",
+    "Repentance as costly and public, not merely intellectual",
+    "Strategic urban mission as the center from which a region is reached"
+  ],
+  "discussion_questions": [
+    "Demetrius conflates economic loss with religious devotion. How do we recognize when our objections to the gospel are actually about material interests rather than genuine theological conviction?",
+    "The twelve disciples in Ephesus had real but incomplete faith. What does this story suggest about the relationship between baptism, the Spirit, and full Christian initiation?",
+    "The city clerk's appeal to legal process protects Paul's community. In what ways can Christians legitimately use civic institutions for protection, and what are the limits of that strategy?",
+    "The burning of magic scrolls worth fifty thousand drachmas was voluntary. What costly symbols from your own past might need to be renounced as part of genuine conversion?",
+    "Luke says 'all of Asia' heard the word through Paul's two years of daily teaching. What does this suggest about the multiplication model of ministry — training others versus direct evangelism?"
+  ]
+}

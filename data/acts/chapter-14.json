@@ -1,0 +1,430 @@
+{
+  "book": "Acts",
+  "chapter": 14,
+  "chapter_title": "Gods Among Us",
+  "chapter_summary": "Paul and Barnabas continue their first missionary journey through the cities of Iconium, Lystra, and Derbe, preaching the gospel and performing miracles — but facing intense opposition that culminates in a mob stoning Paul and leaving him for dead. Miraculously surviving, Paul rises and continues, and the pair eventually retraces their steps to strengthen new believers and appoint elders before returning to their sending church at Antioch.",
+  "date_range": {
+    "approximate": "AD 46–48",
+    "notes": "The first missionary journey is generally dated AD 46–48; the precise sequence of cities in this chapter fits within that range, though some scholars place the journey as late as AD 49."
+  },
+  "persons": [
+    {
+      "id": "paul",
+      "name": "Paul",
+      "role": "Apostle, Missionary",
+      "first_mention_verse": "14:1",
+      "summary": "Paul is the primary speaker and miracle-worker throughout this chapter, preaching in synagogues and public spaces across Iconium, Lystra, and Derbe. He heals a lame man, is mistaken for Hermes, survives a stoning, and leads the return journey to strengthen newly formed churches.",
+      "significance": "Paul is the central protagonist of Acts 13–28, and his persistence through violent opposition in this chapter establishes the pattern of suffering-and-endurance that characterizes his entire mission."
+    },
+    {
+      "id": "barnabas",
+      "name": "Barnabas",
+      "role": "Apostle, Missionary",
+      "first_mention_verse": "14:1",
+      "summary": "Barnabas travels alongside Paul throughout the chapter, co-preaching in each city and being mistaken by the Lystrans for Zeus. He participates in appointing elders and in the return journey back to Antioch.",
+      "significance": "Barnabas serves as Paul's co-equal partner on the first missionary journey and represents the Antioch church's sponsorship of Gentile mission; his later separation from Paul in Acts 15 makes this chapter one of their final joint scenes."
+    },
+    {
+      "id": "lame_man_lystra",
+      "name": "Lame Man of Lystra",
+      "role": "Recipient of Healing",
+      "first_mention_verse": "14:8",
+      "summary": "A man in Lystra who has been lame from birth and has never walked hears Paul speaking; Paul perceives his faith and commands him to stand, whereupon he leaps up and walks. His healing triggers the crowd's dramatic reaction of worship.",
+      "significance": "This healing directly echoes Peter's healing of the lame man in Acts 3, reinforcing Paul's apostolic legitimacy and equality with Peter as a Spirit-empowered witness."
+    },
+    {
+      "id": "zeus_priest",
+      "name": "Priest of Zeus",
+      "role": "Pagan Religious Official",
+      "first_mention_verse": "14:13",
+      "summary": "The priest of the local temple of Zeus, located just outside Lystra's city gate, leads a procession with oxen and garlands to offer sacrifice to Barnabas and Paul, whom the crowd believes to be the gods Zeus and Hermes. Paul and Barnabas forcefully stop him.",
+      "significance": "This figure represents the deeply embedded polytheism Paul's mission encountered in rural Anatolia, where Roman-era cults of Hermes and Zeus were locally prominent."
+    },
+    {
+      "id": "jewish_opponents",
+      "name": "Jews from Antioch and Iconium",
+      "role": "Group — Opponents",
+      "first_mention_verse": "14:19",
+      "summary": "Jewish opponents who had driven Paul from Antioch of Pisidia and Iconium travel to Lystra, win the crowd over against Paul, and instigate a stoning that leaves Paul apparently dead outside the city. Their pursuit illustrates the organized nature of opposition to Paul's mission.",
+      "significance": "These opponents represent the recurring pattern in Acts whereby Paul's Jewish adversaries follow him from city to city, foreshadowing the sustained Jewish opposition that will eventually bring him to Rome."
+    },
+    {
+      "id": "disciples_lystra",
+      "name": "Disciples at Lystra",
+      "role": "Group — New Believers",
+      "first_mention_verse": "14:20",
+      "summary": "A group of believers who had come to faith through Paul's preaching gather around him after the stoning, apparently mourning him as dead. Their surrounding of Paul coincides with his miraculous recovery.",
+      "significance": "These disciples represent the fruit of Paul's mission in Lystra and become the nucleus of the church there; Paul and Barnabas will return to strengthen them and appoint their first elder."
+    },
+    {
+      "id": "new_elders",
+      "name": "Appointed Elders",
+      "role": "Group — Church Leaders",
+      "first_mention_verse": "14:23",
+      "summary": "On their return journey, Paul and Barnabas appoint elders in each of the newly founded churches — Lystra, Iconium, and Antioch of Pisidia — through prayer and fasting, entrusting these leaders to the Lord. This is the first explicit appointment of local church leadership in Acts.",
+      "significance": "The appointment of elders marks a critical stage in Paul's missionary strategy: not just planting churches but establishing leadership structures that can sustain communities after the missionaries depart."
+    }
+  ],
+  "locations": [
+    {
+      "id": "iconium",
+      "name": "Iconium",
+      "modern_name": "Konya, Turkey",
+      "lat": 37.8713,
+      "lng": 32.4846,
+      "description": "A major city in the region of Phrygia-Galatia where Paul and Barnabas preach to great effect in the synagogue but are eventually forced to flee after a plot to stone them."
+    },
+    {
+      "id": "lystra",
+      "name": "Lystra",
+      "modern_name": "Hatunsaray (near Konya), Turkey",
+      "lat": 37.5833,
+      "lng": 32.4833,
+      "description": "A Roman colony in Lycaonia where Paul heals a lame man, the crowd mistakenly attempts to worship Paul and Barnabas as gods, and Paul is subsequently stoned by a mob and left for dead."
+    },
+    {
+      "id": "derbe",
+      "name": "Derbe",
+      "modern_name": "Kerti Höyük (near Karaman), Turkey",
+      "lat": 37.3583,
+      "lng": 33.4083,
+      "description": "The easternmost city on the first missionary journey, where Paul and Barnabas preach and make many disciples before beginning their return journey."
+    },
+    {
+      "id": "antioch_pisidia",
+      "name": "Antioch (of Pisidia)",
+      "modern_name": "Yalvaç, Turkey",
+      "lat": 38.2961,
+      "lng": 31.1583,
+      "description": "The city visited earlier in Acts 13 from which Paul and Barnabas had been expelled; they return here on their way back to strengthen the disciples and appoint an elder."
+    },
+    {
+      "id": "perga",
+      "name": "Perga",
+      "modern_name": "Murtina (near Antalya), Turkey",
+      "lat": 36.9608,
+      "lng": 30.8544,
+      "description": "A city in Pamphylia through which Paul and Barnabas pass on their return journey; Paul preaches here before moving on to Attalia."
+    },
+    {
+      "id": "attalia",
+      "name": "Attalia",
+      "modern_name": "Antalya, Turkey",
+      "lat": 36.8841,
+      "lng": 30.7056,
+      "description": "A port city in Pamphylia where Paul and Barnabas board a ship to sail back to Antioch of Syria, completing the first missionary journey."
+    },
+    {
+      "id": "antioch_syria",
+      "name": "Antioch (Syria)",
+      "modern_name": "Antakya, Turkey",
+      "lat": 36.2021,
+      "lng": 36.1604,
+      "description": "The sending church of the first missionary journey, located in Syria, where Paul and Barnabas return at the chapter's close to report everything God had done and the opening of a door of faith to the Gentiles."
+    }
+  ],
+  "events": [
+    {
+      "id": "preaching_iconium",
+      "sequence": 1,
+      "verses": "14:1-7",
+      "title": "Preaching and Opposition in Iconium",
+      "description": "Paul and Barnabas enter the Jewish synagogue in Iconium and preach so effectively that a large number of both Jews and Greeks believe. Unbelieving Jews, however, stir up the Gentiles and poison their minds against the missionaries. Despite the hostility, Paul and Barnabas remain for a long time, speaking boldly and performing signs and wonders. Eventually a plot is formed by both Jews and Gentiles to stone them, and the two flee to the Lycaonian cities of Lystra and Derbe.",
+      "location_id": "iconium",
+      "persons_present": ["paul", "barnabas", "jewish_opponents"],
+      "timeline_label": "Preaching in Iconium",
+      "scroll_anchor": "preaching-iconium",
+      "visual_notes": "Interior of a first-century synagogue; dual crowd of Jews and Greeks listening; then an exterior street scene with a hostile mob forming."
+    },
+    {
+      "id": "healing_lame_man",
+      "sequence": 2,
+      "verses": "14:8-10",
+      "title": "Healing a Man Lame from Birth",
+      "description": "In Lystra, Paul encounters a man who has been crippled since birth and has never walked. Paul gazes at him intently and, perceiving that the man has the faith to be healed, calls out in a loud voice for him to stand up on his feet. The man springs up and immediately begins to walk — his first steps ever in his life.",
+      "location_id": "lystra",
+      "persons_present": ["paul", "barnabas", "lame_man_lystra"],
+      "timeline_label": "Lame Man Healed",
+      "scroll_anchor": "healing-lame-man",
+      "visual_notes": "Public marketplace or street; a seated or lying man, obviously disabled; Paul's pointing gesture; the man leaping upright with an astonished crowd watching."
+    },
+    {
+      "id": "mistaken_for_gods",
+      "sequence": 3,
+      "verses": "14:11-13",
+      "title": "The Crowd Mistakes Paul and Barnabas for Gods",
+      "description": "When the crowd in Lystra witnesses the healing, they shout in the local Lycaonian language that the gods have come down in human form — identifying Barnabas as Zeus and Paul as Hermes (because Paul is the chief speaker). The priest of the temple of Zeus, located just outside the city gates, brings oxen decorated with garlands and prepares to offer sacrifices to them along with the crowd.",
+      "location_id": "lystra",
+      "persons_present": ["paul", "barnabas", "zeus_priest"],
+      "timeline_label": "Mistaken as Zeus and Hermes",
+      "scroll_anchor": "mistaken-for-gods",
+      "visual_notes": "Festive procession approaching; garlanded oxen; priest in ceremonial robes; Paul and Barnabas in the center looking alarmed as the crowd gestures reverently toward them."
+    },
+    {
+      "id": "paul_barnabas_protest",
+      "sequence": 4,
+      "verses": "14:14-18",
+      "title": "Paul and Barnabas Reject Divine Honors",
+      "description": "When Paul and Barnabas hear what is happening, they tear their clothes — a dramatic gesture of horror — and rush into the crowd, crying out that they are mere human beings. Paul delivers a short speech arguing that the true living God, who made heaven, earth, sea, and everything in them, had allowed the nations to go their own way in past generations but had never left himself without witness, giving rain and harvests and filling people's hearts with joy. Even with these words, they barely manage to restrain the crowd from sacrificing to them.",
+      "location_id": "lystra",
+      "persons_present": ["paul", "barnabas", "zeus_priest"],
+      "timeline_label": "Refusing Worship; Proclaiming the Living God",
+      "scroll_anchor": "paul-barnabas-protest",
+      "visual_notes": "Paul and Barnabas with torn garments, hands raised, standing before a large and bewildered crowd; scattered garlands on the ground; oxen being led away."
+    },
+    {
+      "id": "stoning_paul",
+      "sequence": 5,
+      "verses": "14:19-20",
+      "title": "Paul Is Stoned and Left for Dead",
+      "description": "Jewish opponents who had previously expelled Paul from Antioch of Pisidia and from Iconium arrive in Lystra and turn the fickle crowd against Paul. The mob stones Paul and drags his body outside the city, presuming he is dead. Disciples gather around him and, in what appears to be a miraculous recovery, Paul gets up and walks back into the city. The following day he and Barnabas depart for Derbe.",
+      "location_id": "lystra",
+      "persons_present": ["paul", "barnabas", "jewish_opponents", "disciples_lystra"],
+      "timeline_label": "Paul Stoned; Miraculously Rises",
+      "scroll_anchor": "stoning-paul",
+      "visual_notes": "Angry mob hurling stones at a fallen Paul; his body dragged through a city gate; disciples kneeling around him outside the walls; Paul standing up amid the shocked group."
+    },
+    {
+      "id": "mission_derbe",
+      "sequence": 6,
+      "verses": "14:20-21a",
+      "title": "Preaching in Derbe",
+      "description": "Paul and Barnabas travel to Derbe, the final city on their eastward journey. They preach the gospel there and win a large number of disciples. Derbe is notable as the furthest point reached on the first missionary journey and the turning point before the return trip.",
+      "location_id": "derbe",
+      "persons_present": ["paul", "barnabas"],
+      "timeline_label": "Disciples Made in Derbe",
+      "scroll_anchor": "mission-derbe",
+      "visual_notes": "Paul and Barnabas addressing a receptive crowd in a market; map inset showing Derbe as the easternmost point of the journey."
+    },
+    {
+      "id": "return_journey_strengthening",
+      "sequence": 7,
+      "verses": "14:21b-23",
+      "title": "Return Journey: Strengthening Churches and Appointing Elders",
+      "description": "Instead of taking the shorter overland route home through the Cilician Gates, Paul and Barnabas make the bold decision to retrace their steps through the hostile cities of Lystra, Iconium, and Antioch of Pisidia. In each place they strengthen the souls of the disciples, encourage them that many hardships are the normal path into God's kingdom, and appoint elders for each church through prayer and fasting.",
+      "location_id": "antioch_pisidia",
+      "persons_present": ["paul", "barnabas", "new_elders"],
+      "timeline_label": "Elders Appointed; Churches Strengthened",
+      "scroll_anchor": "return-journey-strengthening",
+      "visual_notes": "Map showing the reverse route through Lystra, Iconium, Antioch; Paul and Barnabas in a small gathering, laying hands on kneeling figures representing the new elders."
+    },
+    {
+      "id": "perga_attalia_departure",
+      "sequence": 8,
+      "verses": "14:24-26",
+      "title": "Through Perga and Attalia to the Sea",
+      "description": "Paul and Barnabas pass through Pisidia and come to Pamphylia, where they preach the word in Perga. From Perga they travel down to the port city of Attalia on the Mediterranean coast, where they board a ship bound for Antioch in Syria — the city from which they had been originally commissioned for this mission.",
+      "location_id": "attalia",
+      "persons_present": ["paul", "barnabas"],
+      "timeline_label": "Sailing for Antioch",
+      "scroll_anchor": "perga-attalia-departure",
+      "visual_notes": "Coastal scene at Attalia harbor; Paul and Barnabas boarding a merchant sailing vessel; the blue Mediterranean visible; a route map tracing their path to the coast."
+    },
+    {
+      "id": "report_antioch",
+      "sequence": 9,
+      "verses": "14:27-28",
+      "title": "Mission Report at Antioch",
+      "description": "Back in Antioch of Syria, Paul and Barnabas gather the whole church together and deliver a full account of their journey — reporting all that God had done through them and, most significantly, that God had opened a door of faith to the Gentiles. They remain in Antioch for a considerable time with the disciples, resting between missionary journeys.",
+      "location_id": "antioch_syria",
+      "persons_present": ["paul", "barnabas"],
+      "timeline_label": "Mission Report to the Church",
+      "scroll_anchor": "report-antioch",
+      "visual_notes": "A large indoor gathering with Paul and Barnabas at the front addressing an attentive congregation; expressions of joy and wonder on listeners' faces; a simple map on a wall or scroll illustrating the journey."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "iconium",
+          "event_id": "preaching_iconium",
+          "note": "Continuing from Antioch of Pisidia, Paul and Barnabas preach in Iconium's synagogue."
+        },
+        {
+          "order": 2,
+          "location_id": "lystra",
+          "event_id": "healing_lame_man",
+          "note": "Fleeing a stoning plot in Iconium, they travel to the Roman colony of Lystra."
+        },
+        {
+          "order": 3,
+          "location_id": "lystra",
+          "event_id": "mistaken_for_gods",
+          "note": "Remaining in Lystra after the healing miracle triggers a divine-honors episode."
+        },
+        {
+          "order": 4,
+          "location_id": "lystra",
+          "event_id": "stoning_paul",
+          "note": "Paul is stoned by a mob outside Lystra and miraculously survives."
+        },
+        {
+          "order": 5,
+          "location_id": "derbe",
+          "event_id": "mission_derbe",
+          "note": "Day after the stoning, Paul travels east to Derbe, the journey's far point."
+        },
+        {
+          "order": 6,
+          "location_id": "lystra",
+          "event_id": "return_journey_strengthening",
+          "note": "Deliberately returns to Lystra to strengthen believers and appoint an elder."
+        },
+        {
+          "order": 7,
+          "location_id": "iconium",
+          "event_id": "return_journey_strengthening",
+          "note": "Returns through Iconium to strengthen the church planted there."
+        },
+        {
+          "order": 8,
+          "location_id": "antioch_pisidia",
+          "event_id": "return_journey_strengthening",
+          "note": "Returns to Antioch of Pisidia, their first major mission city."
+        },
+        {
+          "order": 9,
+          "location_id": "perga",
+          "event_id": "perga_attalia_departure",
+          "note": "Passes through Perga and preaches the word there."
+        },
+        {
+          "order": 10,
+          "location_id": "attalia",
+          "event_id": "perga_attalia_departure",
+          "note": "Reaches the port of Attalia and boards a ship."
+        },
+        {
+          "order": 11,
+          "location_id": "antioch_syria",
+          "event_id": "report_antioch",
+          "note": "Returns to the sending church to report the results of the journey."
+        }
+      ]
+    },
+    {
+      "person_id": "barnabas",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "iconium",
+          "event_id": "preaching_iconium",
+          "note": "Co-preaching with Paul in Iconium."
+        },
+        {
+          "order": 2,
+          "location_id": "lystra",
+          "event_id": "healing_lame_man",
+          "note": "Travels with Paul to Lystra."
+        },
+        {
+          "order": 3,
+          "location_id": "derbe",
+          "event_id": "mission_derbe",
+          "note": "Travels with Paul to Derbe after the stoning."
+        },
+        {
+          "order": 4,
+          "location_id": "antioch_pisidia",
+          "event_id": "return_journey_strengthening",
+          "note": "Joins Paul in the return journey to strengthen the churches."
+        },
+        {
+          "order": 5,
+          "location_id": "attalia",
+          "event_id": "perga_attalia_departure",
+          "note": "Sails with Paul from Attalia."
+        },
+        {
+          "order": 6,
+          "location_id": "antioch_syria",
+          "event_id": "report_antioch",
+          "note": "Co-reports the mission to the Antioch church."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "preaching_iconium",
+      "position": 1,
+      "label": "Iconium: Success and Threat",
+      "relative_time": "First missionary journey, c. AD 47",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "healing_lame_man",
+      "position": 2,
+      "label": "Healing in Lystra",
+      "relative_time": "First missionary journey, c. AD 47",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "mistaken_for_gods",
+      "position": 3,
+      "label": "Zeus and Hermes Confusion",
+      "relative_time": "First missionary journey, c. AD 47",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "paul_barnabas_protest",
+      "position": 4,
+      "label": "The Living God Proclaimed",
+      "relative_time": "First missionary journey, c. AD 47",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "stoning_paul",
+      "position": 5,
+      "label": "Paul Stoned; Rises",
+      "relative_time": "First missionary journey, c. AD 47",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "mission_derbe",
+      "position": 6,
+      "label": "Derbe: Journey's End",
+      "relative_time": "First missionary journey, c. AD 47–48",
+      "absolute_time": "c. AD 47–48"
+    },
+    {
+      "event_id": "return_journey_strengthening",
+      "position": 7,
+      "label": "Churches Strengthened; Elders Appointed",
+      "relative_time": "First missionary journey, return leg, c. AD 48",
+      "absolute_time": "c. AD 48"
+    },
+    {
+      "event_id": "perga_attalia_departure",
+      "position": 8,
+      "label": "Sailing Home from Attalia",
+      "relative_time": "First missionary journey, c. AD 48",
+      "absolute_time": "c. AD 48"
+    },
+    {
+      "event_id": "report_antioch",
+      "position": 9,
+      "label": "Mission Report to Antioch",
+      "relative_time": "End of first missionary journey, c. AD 48",
+      "absolute_time": "c. AD 48"
+    }
+  ],
+  "theological_themes": [
+    "Apostolic authority demonstrated through miracles paralleling Peter's ministry",
+    "The living God versus idolatry: creation as natural revelation",
+    "Suffering as the normal path into the kingdom of God",
+    "The universal reach of the gospel across ethnic and cultural lines",
+    "Church-planting as a complete process: preaching, discipleship, and appointed leadership",
+    "Human fickleness: the same crowd that worships Paul later stones him"
+  ],
+  "discussion_questions": [
+    "Why do you think Paul and Barnabas chose to return through the same dangerous cities rather than take a safer route home?",
+    "What does Paul's short speech about the 'living God' (vv. 15–17) suggest about how the gospel should be contextualized for audiences with no biblical background?",
+    "How does the crowd's dramatic swing from treating Paul as a god to nearly killing him speak to the nature of popularity and human approval?",
+    "What does it mean that Paul 'perceived' the lame man had faith to be healed — and what role does faith play in this healing story?",
+    "The appointment of elders in new churches is described as accompanied by 'prayer and fasting' — what does this pattern suggest about how leadership should be established?"
+  ]
+}

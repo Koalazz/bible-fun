@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acts Chapter 1 — Waiting for the Promise</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Leaflet.js -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --cream:       #EDE3D5;
+      --cream-dark:  #D9CCBA;
+      --cream-white: #F7F2EC;
+      --ink:         #1C1409;
+      --ink-light:   #4A3728;
+      --orange:      #C85C2A;
+      --orange-warm: #E07840;
+      --orange-pale: #F5E6DC;
+
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      --sidebar-w: 268px;
+      --map-h:     260px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 3rem 2rem 2.5rem;
+      border-bottom: 3px solid var(--orange);
+    }
+
+    .masthead-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.45;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .masthead h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+
+    .masthead-subtitle {
+      font-size: 1rem;
+      opacity: 0.6;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .masthead-meta {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .meta-item strong {
+      color: var(--orange-warm);
+      font-weight: 500;
+      opacity: 1;
+    }
+
+    /* ── CHAPTER INTRO ── */
+    .chapter-intro {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 2rem;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .chapter-intro p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-light);
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding-right: 1.75rem;
+      padding-top: 1.5rem;
+    }
+
+    .sidebar-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Map */
+    #map {
+      width: 100%;
+      height: var(--map-h);
+      border: 1px solid var(--cream-dark);
+      flex-shrink: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Timeline */
+    .timeline-scroll {
+      flex: 1;
+      overflow-y: auto;
+      scrollbar-width: none;
+      padding-bottom: 2rem;
+    }
+
+    .timeline-scroll::-webkit-scrollbar { display: none; }
+
+    .timeline-list {
+      list-style: none;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .timeline-list::before {
+      content: '';
+      position: absolute;
+      left: 0.45rem;
+      top: 0.6rem;
+      bottom: 0.6rem;
+      width: 1px;
+      background: var(--cream-dark);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0.55rem 0 0.55rem 0.75rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.05rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      border: 1.5px solid var(--cream-dark);
+      transition: background 0.25s, border-color 0.25s, transform 0.25s;
+    }
+
+    .timeline-item.active::before {
+      background: var(--orange);
+      border-color: var(--orange);
+      transform: translateY(-50%) scale(1.25);
+    }
+
+    .timeline-item.active .tl-label {
+      color: var(--orange);
+    }
+
+    .tl-pos {
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      opacity: 0.4;
+      line-height: 1;
+    }
+
+    .tl-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.3;
+      transition: color 0.25s;
+    }
+
+    .tl-time {
+      font-size: 0.67rem;
+      color: var(--ink-light);
+      opacity: 0.5;
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    /* ── EVENTS COLUMN ── */
+    .events-column {
+      padding-left: 2.5rem;
+      padding-top: 1.5rem;
+    }
+
+    /* ── EVENT SECTION ── */
+    .event-section {
+      padding: 2.75rem 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .event-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .event-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .event-num {
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    .event-verses {
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      background: var(--orange-pale);
+      color: var(--orange);
+      padding: 0.2em 0.55em;
+      font-weight: 500;
+    }
+
+    .event-location-tag {
+      font-size: 0.68rem;
+      color: var(--ink-light);
+      opacity: 0.55;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .event-location-tag::before {
+      content: '◎';
+      font-size: 0.6rem;
+      color: var(--orange);
+      opacity: 0.6;
+    }
+
+    .event-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1.1rem;
+      font-weight: 400;
+    }
+
+    .event-body {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: var(--ink-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .event-footer {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .persons-present { flex: 1; min-width: 160px; }
+
+    .persons-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      opacity: 0.45;
+      margin-bottom: 0.4rem;
+    }
+
+    .person-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .person-tag {
+      font-size: 0.72rem;
+      border: 1px solid var(--cream-dark);
+      color: var(--ink);
+      padding: 0.18em 0.55em;
+      background: transparent;
+      font-weight: 400;
+    }
+
+    .timeline-callout {
+      background: var(--orange-pale);
+      border-left: 2px solid var(--orange);
+      padding: 0.65rem 1rem;
+      min-width: 170px;
+      max-width: 240px;
+    }
+
+    .callout-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .callout-text {
+      font-size: 0.78rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    /* ── SECTION BLOCKS ── */
+    .section-block {
+      padding: 3rem 0 2.5rem;
+      border-top: 2px solid var(--ink);
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+      color: var(--ink);
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    /* ── PERSONS GRID ── */
+    .persons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1px;
+      background: var(--cream-dark);
+    }
+
+    .person-card {
+      background: var(--cream-white);
+      padding: 1.2rem 1.25rem;
+    }
+
+    .person-card-name {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+      font-weight: 400;
+    }
+
+    .person-card-role {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .person-card-verses {
+      font-size: 0.67rem;
+      color: var(--ink-light);
+      opacity: 0.45;
+      margin-bottom: 0.5rem;
+    }
+
+    .person-card-summary {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--ink-light);
+    }
+
+    /* ── THEMES ── */
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--ink);
+    }
+
+    .theme-item {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .theme-bullet {
+      color: var(--orange-warm);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    .theme-text {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      font-weight: 300;
+    }
+
+    /* ── DISCUSSION ── */
+    .questions-list {
+      list-style: none;
+    }
+
+    .question-item {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--cream-dark);
+      align-items: flex-start;
+    }
+
+    .question-item:last-child { border-bottom: none; }
+
+    .q-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--cream-dark);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 2.5rem;
+      text-align: right;
+      font-weight: 400;
+      user-select: none;
+    }
+
+    .q-text {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--ink);
+      padding-top: 0.5rem;
+    }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.7rem;
+      opacity: 0.55;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .footer-nav a:hover { opacity: 1; color: var(--orange-warm); }
+
+    .footer-credit {
+      font-size: 0.72rem;
+      opacity: 0.3;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+        padding: 0 1rem 3rem;
+      }
+
+      .sidebar {
+        position: relative;
+        height: auto;
+        padding-right: 0;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--cream-dark);
+        margin-bottom: 1.5rem;
+      }
+
+      .timeline-scroll { max-height: 180px; }
+
+      .events-column {
+        padding-left: 0;
+        padding-top: 0;
+      }
+
+      .masthead { padding: 2rem 1rem 1.5rem; }
+    }
+
+    /* Leaflet tweaks */
+    .leaflet-container { font-family: var(--font-body) !important; }
+    .leaflet-popup-content-wrapper {
+      background: var(--ink) !important;
+      color: var(--cream) !important;
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+    }
+    .leaflet-popup-tip { background: var(--ink) !important; }
+    .leaflet-popup-content {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      line-height: 1.5;
+      margin: 0.6rem 0.8rem !important;
+    }
+    .leaflet-popup-content strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--orange-warm);
+      margin-bottom: 0.2rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="breadcrumb">Acts · Chapter 1</p>
+    <h1>Waiting for the Promise</h1>
+    <p class="masthead-subtitle">The risen Christ departs — and leaves a mission in his wake</p>
+    <div class="masthead-meta">
+      <span class="meta-item">Verses <strong>1–26</strong></span>
+      <span class="meta-item">Date <strong>c. Spring AD 30</strong></span>
+      <span class="meta-item">Persons <strong>11</strong></span>
+      <span class="meta-item">Locations <strong>3</strong></span>
+      <span class="meta-item">Events <strong>9</strong></span>
+    </div>
+  </div>
+</header>
+
+<!-- ── CHAPTER SUMMARY ── -->
+<section class="chapter-intro">
+  <p>After his resurrection, Jesus spends forty days with his followers, teaching them about God's kingdom and promising that the Holy Spirit will soon come upon them. He then ascends visibly into the sky from the Mount of Olives, leaving his disciples to return to Jerusalem, where they pray together and choose a twelfth apostle to replace Judas, who had betrayed Jesus and died.</p>
+</section>
+
+<!-- ── MAIN LAYOUT ── -->
+<div class="main-layout">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <p class="sidebar-label">Map</p>
+    <div id="map"></div>
+
+    <p class="sidebar-label">Timeline</p>
+    <div class="timeline-scroll">
+      <ol class="timeline-list" id="timeline-list">
+        <li class="timeline-item" data-event="prologue" onclick="scrollToEvent('prologue')">
+          <div class="tl-pos">01</div>
+          <div class="tl-label">Dedication to Theophilus</div>
+          <div class="tl-time">Narrated retrospectively</div>
+        </li>
+        <li class="timeline-item" data-event="forty-days-teaching" onclick="scrollToEvent('forty-days-teaching')">
+          <div class="tl-pos">02</div>
+          <div class="tl-label">40 Days of Appearances</div>
+          <div class="tl-time">April AD 30</div>
+        </li>
+        <li class="timeline-item" data-event="promise-of-the-spirit" onclick="scrollToEvent('promise-of-the-spirit')">
+          <div class="tl-pos">03</div>
+          <div class="tl-label">Final Meal &amp; Promise</div>
+          <div class="tl-time">Day 40</div>
+        </li>
+        <li class="timeline-item" data-event="kingdom-question" onclick="scrollToEvent('kingdom-question')">
+          <div class="tl-pos">04</div>
+          <div class="tl-label">Final Commission</div>
+          <div class="tl-time">Day 40 — before Ascension</div>
+        </li>
+        <li class="timeline-item" data-event="ascension" onclick="scrollToEvent('ascension')">
+          <div class="tl-pos">05</div>
+          <div class="tl-label">The Ascension</div>
+          <div class="tl-time">Late April / early May</div>
+        </li>
+        <li class="timeline-item" data-event="return-to-jerusalem" onclick="scrollToEvent('return-to-jerusalem')">
+          <div class="tl-pos">06</div>
+          <div class="tl-label">Return to Jerusalem</div>
+          <div class="tl-time">Day 40 — afternoon</div>
+        </li>
+        <li class="timeline-item" data-event="upper-room-prayer" onclick="scrollToEvent('upper-room-prayer')">
+          <div class="tl-pos">07</div>
+          <div class="tl-label">Waiting &amp; Praying</div>
+          <div class="tl-time">Days 40–50</div>
+        </li>
+        <li class="timeline-item" data-event="peter-addresses-community" onclick="scrollToEvent('peter-addresses-community')">
+          <div class="tl-pos">08</div>
+          <div class="tl-label">Peter's Speech</div>
+          <div class="tl-time">May AD 30</div>
+        </li>
+        <li class="timeline-item" data-event="matthias-chosen" onclick="scrollToEvent('matthias-chosen')">
+          <div class="tl-pos">09</div>
+          <div class="tl-label">Matthias Chosen</div>
+          <div class="tl-time">Before Pentecost</div>
+        </li>
+      </ol>
+    </div>
+  </aside>
+
+  <!-- ── EVENTS COLUMN ── -->
+  <main class="events-column">
+
+    <!-- Event 01 -->
+    <section class="event-section" id="prologue">
+      <div class="event-eyebrow">
+        <span class="event-num">Event 01</span>
+        <span class="event-verses">1:1–2</span>
+      </div>
+      <h2 class="event-title">Prologue: A Letter to Theophilus</h2>
+      <p class="event-body">The author opens by reminding his reader Theophilus of the first volume — the Gospel of Luke — which recorded all that Jesus "began to do and teach." This volume picks up where that one ended, with Jesus giving final instructions to his apostles through the Holy Spirit before his ascension. The brief prologue establishes Acts as a deliberate continuation of a larger story about Jesus.</p>
+      <div class="event-footer">
+        <div class="persons-present">
+          <p class="persons-label">Persons</p>
+          <div class="person-tags">
+            <span class="person-tag">Theophilus</span>
+          </div>
+        </div>
+        <div class="timeline-callout">
+          <p class="callout-label">Timeline</p>
+          <p class="callout-text">Opening dedication<br><em>Narrated retrospectively</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event 02 -->
+    <section class="event-section" id="forty-days-teaching">
+      <div class="event-eyebrow">
+        <span class="event-num">Event 02</span>
+        <span class="event-verses">1:3</span>
+        <span class="event-location-tag">Jerusalem</span>
+      </div>
+      <h2 class="event-title">Forty Days of Resurrection Appearances</h2>
+      <p class="event-body">After his death, Jesus appeared alive to his apostles many times over a period of forty days, giving them convincing proofs that he was truly risen. During these appearances he taught them about the kingdom of God. The forty-day period deliberately echoes Moses on Sinai and Jesus's forty days in the wilderness, framing this time as a sacred period of divine preparation.</p>
+      <div class="event-footer">
+        <div class="persons-present">
+          <p class="persons-label">Persons</p>
+          <div class="person-tags">
+            <span class="person-tag">Jesus</span>
+            <span class="person-tag">The Eleven</span>
+          </div>
+        </div>
+        <div class="timeline-callout">
+          <p class="callout-label">Timeline</p>
+          <p class="callout-text">Days 1–40 post-resurrection<br><em>April AD 30 (or AD 33)</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event 03 -->
+    <section class="event-section" id="promise-of-the-spirit">
+      <div class="event-eyebrow">
+        <span class="event-num">Event 03</span>
+        <span class="event-verses">1:4–5</span>
+        <span class="event-location-tag">Jerusalem</span>
+      </div>
+      <h2 class="event-title">The Promise of the Holy Spirit</h2>
+      <p class="event-body">While eating with his disciples, Jesus gives them a direct command: do not leave Jerusalem, but wait for the gift the Father has promised — the Holy Spirit. Jesus contrasts John's water baptism with the coming baptism in the Holy Spirit, which he says will happen within days. This command transforms Jerusalem from merely the end of one story into the launching pad for another.</p>
+      <div class="event-footer">
+        <div class="persons-present">
+          <p class="persons-label">Persons</p>
+          <div class="person-tags">
+            <span class="person-tag">Jesus</span>
+            <span class="person-tag">The Eleven</span>
+          </div>
+        </div>
+        <div class="timeline-callout">
+          <p class="callout-label">Timeline</p>
+          <p class="callout-text">Day 40 — final meal<br><em>Late April AD 30</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event 04 -->
+    <section class="event-section" id="kingdom-question">
+      <div class="event-eyebrow">
+        <span class="event-num">Event 04</span>
+        <span class="event-verses">1:6–8</span>
+        <span class="event-location-tag">Jerusalem</span>
+      </div>
+      <h2 class="event-title">"Will You Now Restore the Kingdom?"</h2>
+      <p class="event-body">The apostles ask Jesus whether he is about to restore the political kingdom of Israel — a question that reveals they still expected a nationalistic liberation. Jesus redirects them: the timing of such things is not theirs to know, but they will receive power when the Holy Spirit comes on them. He then gives them their mission: to be his witnesses in Jerusalem, all Judea, Samaria, and to the ends of the earth — a geographic outline that maps the entire book of Acts.</p>
+      <div class="event-footer">
+        <div class="persons-present">
+          <p class="persons-label">Persons</p>
+          <div class="person-tags">
+            <span class="person-tag">Jesus</span>
+            <span class="person-tag">The Eleven</span>
+          </div>
+        </div>
+        <div class="timeline-callout">
+          <p class="callout-label">Timeline</p>
+          <p class="callout-text">Day 40 — final commission<br><em>Moments before Ascension</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event 05 -->
+    <section class="event-section" id="ascension">
+      <div class="event-eyebrow">
+        <span class="event-num">Event 05</span>
+        <span class="event-verses">1:9–11</span>
+        <span class="event-location-tag">Mount of Olives</span>
+      </div>
+      <h2 class="event-title">The Ascension of Jesus</h2>
+      <p class="event-body">As the disciples watch, Jesus is taken up and a cloud hides him from their sight. They stand gazing upward into the sky, until two men dressed in white appear and tell them that Jesus has gone to heaven but will return in the same way they saw him go. The Ascension marks the decisive transition from the era of Jesus's earthly presence to the era of the Spirit and the church.</p>
+      <div class="event-footer">
+        <div class="persons-present">
+          <p class="persons-label">Persons</p>
+          <div class="person-tags">
+            <span class="person-tag">Jesus</span>
+            <span class="person-tag">The Eleven</span>
+            <span class="person-tag">Two Men in White</span>
+          </div>
+        </div>
+        <div class="timeline-callout">
+          <p class="callout-label">Timeline</p>
+          <p class="callout-text">Day 40 — Ascension Thursday<br><em>Late April / early May</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event 06 -->
+    <section class="event-section" id="return-to-jerusalem">
+      <div class="event-eyebrow">
+        <span class="event-num">Event 06</span>
+        <span class="event-verses">1:12</span>
+        <span class="event-location-tag">Mount of Olives → Jerusalem</span>
+      </div>
+      <h2 class="event-title">The Walk Back to Jerusalem</h2>
+      <p class="event-body">After the Ascension, the eleven apostles walk back to Jerusalem from the Mount of Olives — a distance described as a Sabbath day's walk, roughly 900 metres. This brief note grounds the story geographically and shows the disciples obeying Jesus's instruction to stay in Jerusalem rather than returning home to Galilee.</p>
+      <div class="event-footer">
+        <div class="persons-present">
+          <p class="persons-label">Persons</p>
+          <div class="person-tags">
+            <span class="person-tag">The Eleven</span>
+          </div>
+        </div>
+        <div class="timeline-callout">
+          <p class="callout-label">Timeline</p>
+          <p class="callout-text">Day 40 — afternoon<br><em>Same day as Ascension</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event 07 -->
+    <section class="event-section" id="upper-room-prayer">
+      <div class="event-eyebrow">
+        <span class="event-num">Event 07</span>
+        <span class="event-verses">1:13–14</span>
+        <span class="event-location-tag">Upper Room</span>
+      </div>
+      <h2 class="event-title">The Upper Room: United in Prayer</h2>
+      <p class="event-body">The eleven apostles go to the upper room of a house in Jerusalem, where they devote themselves continuously to prayer. They are joined by a larger group that includes the women who followed Jesus, Mary his mother, and his brothers. Luke names all eleven apostles, creating a formal roster that underlines their identity as the authorized witnesses of everything that follows.</p>
+      <div class="event-footer">
+        <div class="persons-present">
+          <p class="persons-label">Persons</p>
+          <div class="person-tags">
+            <span class="person-tag">Peter</span>
+            <span class="person-tag">The Eleven</span>
+            <span class="person-tag">The Women</span>
+            <span class="person-tag">Mary, mother of Jesus</span>
+            <span class="person-tag">Brothers of Jesus</span>
+          </div>
+        </div>
+        <div class="timeline-callout">
+          <p class="callout-label">Timeline</p>
+          <p class="callout-text">Days 40–50 — waiting in prayer<br><em>Late April – May AD 30</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event 08 -->
+    <section class="event-section" id="peter-addresses-community">
+      <div class="event-eyebrow">
+        <span class="event-num">Event 08</span>
+        <span class="event-verses">1:15–20</span>
+        <span class="event-location-tag">Upper Room</span>
+      </div>
+      <h2 class="event-title">Peter Speaks: The Fate of Judas</h2>
+      <p class="event-body">With about 120 believers gathered, Peter stands and addresses them. He cites two psalms to argue that scripture predicted both Judas's betrayal and the need to replace him. He describes how Judas used the money from betraying Jesus to buy a field, where he died in a gruesome way, and that the field became known as Akeldama — "Field of Blood." Peter's interpretation of scripture shows the early community reading the Old Testament through the lens of Jesus.</p>
+      <div class="event-footer">
+        <div class="persons-present">
+          <p class="persons-label">Persons</p>
+          <div class="person-tags">
+            <span class="person-tag">Peter</span>
+            <span class="person-tag">The Eleven</span>
+            <span class="person-tag">The Women</span>
+            <span class="person-tag">Mary, mother of Jesus</span>
+            <span class="person-tag">Brothers of Jesus</span>
+          </div>
+        </div>
+        <div class="timeline-callout">
+          <p class="callout-label">Timeline</p>
+          <p class="callout-text">Before Pentecost — Peter's speech<br><em>May AD 30</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event 09 -->
+    <section class="event-section" id="matthias-chosen">
+      <div class="event-eyebrow">
+        <span class="event-num">Event 09</span>
+        <span class="event-verses">1:21–26</span>
+        <span class="event-location-tag">Upper Room</span>
+      </div>
+      <h2 class="event-title">Matthias Chosen to Replace Judas</h2>
+      <p class="event-body">Peter outlines the qualifications for the replacement apostle: he must have accompanied Jesus from the baptism of John until the Ascension, and must be a witness to the resurrection. Two candidates emerge — Joseph Barsabbas and Matthias. The community prays, asking God to reveal his choice, then cast lots — an ancient method of discernment — and the lot falls to Matthias. He is added to the eleven, restoring the Twelve.</p>
+      <div class="event-footer">
+        <div class="persons-present">
+          <p class="persons-label">Persons</p>
+          <div class="person-tags">
+            <span class="person-tag">Peter</span>
+            <span class="person-tag">The Eleven</span>
+            <span class="person-tag">The Women</span>
+            <span class="person-tag">Mary, mother of Jesus</span>
+            <span class="person-tag">Matthias</span>
+            <span class="person-tag">Joseph Barsabbas</span>
+          </div>
+        </div>
+        <div class="timeline-callout">
+          <p class="callout-label">Timeline</p>
+          <p class="callout-text">Before Pentecost — Matthias chosen<br><em>May AD 30</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── KEY PERSONS ── -->
+    <section class="section-block">
+      <h2 class="section-heading">Key Persons</h2>
+      <div class="persons-grid">
+
+        <div class="person-card">
+          <h3 class="person-card-name">Jesus</h3>
+          <p class="person-card-role">Risen Lord</p>
+          <p class="person-card-verses">First mention: 1:1</p>
+          <p class="person-card-summary">Appears to his apostles over forty days after his resurrection, giving final instructions before ascending to heaven. His departure sets the entire story of Acts in motion.</p>
+        </div>
+
+        <div class="person-card">
+          <h3 class="person-card-name">Peter</h3>
+          <p class="person-card-role">Apostle, Leader</p>
+          <p class="person-card-verses">First mention: 1:13</p>
+          <p class="person-card-summary">Takes the lead in the Upper Room by addressing the group about replacing Judas. He cites scripture, outlines qualifications, and oversees the selection process.</p>
+        </div>
+
+        <div class="person-card">
+          <h3 class="person-card-name">The Eleven Apostles</h3>
+          <p class="person-card-role">Group — Apostles</p>
+          <p class="person-card-verses">First mention: 1:13</p>
+          <p class="person-card-summary">Witness the Ascension and return to Jerusalem together. They form the core leadership of the early church and will lead the community after Pentecost.</p>
+        </div>
+
+        <div class="person-card">
+          <h3 class="person-card-name">The Women</h3>
+          <p class="person-card-role">Group — Disciples</p>
+          <p class="person-card-verses">First mention: 1:14</p>
+          <p class="person-card-summary">Join the apostles in constant prayer in the Upper Room. Their presence signals that the early community included both men and women from the very beginning.</p>
+        </div>
+
+        <div class="person-card">
+          <h3 class="person-card-name">Mary, Mother of Jesus</h3>
+          <p class="person-card-role">Disciple</p>
+          <p class="person-card-verses">First mention: 1:14</p>
+          <p class="person-card-summary">Explicitly named among those gathered in the Upper Room in prayer. This is her final appearance in the New Testament narrative.</p>
+        </div>
+
+        <div class="person-card">
+          <h3 class="person-card-name">Brothers of Jesus</h3>
+          <p class="person-card-role">Group — Disciples</p>
+          <p class="person-card-verses">First mention: 1:14</p>
+          <p class="person-card-summary">Their presence in the prayer community marks a change of heart — they had been skeptical during Jesus's ministry. James will soon lead the Jerusalem church.</p>
+        </div>
+
+        <div class="person-card">
+          <h3 class="person-card-name">Matthias</h3>
+          <p class="person-card-role">Apostle — newly chosen</p>
+          <p class="person-card-verses">First mention: 1:23</p>
+          <p class="person-card-summary">Chosen by lot to fill the vacancy left by Judas. Had followed Jesus from the baptism of John all the way through the Ascension. His selection restores the Twelve.</p>
+        </div>
+
+        <div class="person-card">
+          <h3 class="person-card-name">Joseph Barsabbas</h3>
+          <p class="person-card-role">Disciple, candidate</p>
+          <p class="person-card-verses">First mention: 1:23</p>
+          <p class="person-card-summary">The other finalist considered to replace Judas. Though the lot falls to Matthias, his inclusion shows the wider community was large and well-qualified.</p>
+        </div>
+
+        <div class="person-card">
+          <h3 class="person-card-name">Judas Iscariot</h3>
+          <p class="person-card-role">Betrayer — referenced, deceased</p>
+          <p class="person-card-verses">First mention: 1:16</p>
+          <p class="person-card-summary">Betrayed Jesus and subsequently died in Akeldama, the Field of Blood. Peter recounts this story to explain why a replacement apostle is needed.</p>
+        </div>
+
+        <div class="person-card">
+          <h3 class="person-card-name">Two Men in White Robes</h3>
+          <p class="person-card-role">Angels — messengers</p>
+          <p class="person-card-verses">First mention: 1:10</p>
+          <p class="person-card-summary">Appear at the Ascension and promise Jesus will return. Their message redirects the disciples from gazing upward toward the mission ahead.</p>
+        </div>
+
+        <div class="person-card">
+          <h3 class="person-card-name">Theophilus</h3>
+          <p class="person-card-role">Addressee</p>
+          <p class="person-card-verses">First mention: 1:1</p>
+          <p class="person-card-summary">The book is dedicated to Theophilus — "friend of God" in Greek — the same recipient as Luke's Gospel. Acts is a sequel for this educated Greek-speaking reader.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── THEOLOGICAL THEMES ── -->
+    <section class="section-block">
+      <h2 class="section-heading">Theological Themes</h2>
+      <div class="themes-grid">
+        <div class="theme-item">
+          <span class="theme-bullet">◆</span>
+          <span class="theme-text">The promise and power of the Holy Spirit</span>
+        </div>
+        <div class="theme-item">
+          <span class="theme-bullet">◆</span>
+          <span class="theme-text">Continuity: Acts as the sequel to the Gospel of Luke</span>
+        </div>
+        <div class="theme-item">
+          <span class="theme-bullet">◆</span>
+          <span class="theme-text">Witness: being sent to the ends of the earth</span>
+        </div>
+        <div class="theme-item">
+          <span class="theme-bullet">◆</span>
+          <span class="theme-text">Scriptural fulfillment and the interpretation of the Old Testament</span>
+        </div>
+        <div class="theme-item">
+          <span class="theme-bullet">◆</span>
+          <span class="theme-text">Community, prayer, and shared waiting</span>
+        </div>
+        <div class="theme-item">
+          <span class="theme-bullet">◆</span>
+          <span class="theme-text">Restoration of the Twelve as a symbolic act</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DISCUSSION QUESTIONS ── -->
+    <section class="section-block">
+      <h2 class="section-heading">Discussion Questions</h2>
+      <ol class="questions-list">
+        <li class="question-item">
+          <span class="q-num">1</span>
+          <p class="q-text">The disciples asked Jesus when he would restore the kingdom. In what ways do people today misunderstand what God's kingdom looks like? How does Jesus's answer redirect their expectations?</p>
+        </li>
+        <li class="question-item">
+          <span class="q-num">2</span>
+          <p class="q-text">The community spent ten days in prayer between the Ascension and Pentecost. What does this waiting period suggest about how God's purposes unfold, and how does it challenge our desire for immediate results?</p>
+        </li>
+        <li class="question-item">
+          <span class="q-num">3</span>
+          <p class="q-text">Peter quotes from the Psalms to make sense of Judas's death and the need for a replacement. What does this tell us about how the early church read their scriptures, and how does it shape the way you read the Old Testament?</p>
+        </li>
+        <li class="question-item">
+          <span class="q-num">4</span>
+          <p class="q-text">Matthias was chosen by lot after prayer. What does this method of decision-making say about the community's trust in God, and how do you think about making decisions in your own community?</p>
+        </li>
+        <li class="question-item">
+          <span class="q-num">5</span>
+          <p class="q-text">The "ends of the earth" in Acts 1:8 was a phrase that meant Rome or beyond. What is your personal "end of the earth" — the place or person farthest from your natural circle that the Spirit might be calling you toward?</p>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="page-footer">
+  <nav class="footer-nav">
+    <a href="../index.html">All Books</a>
+    <a href="chapter-02.html">Chapter 2 →</a>
+  </nav>
+  <p class="footer-credit">Acts · Chapter 1 · bible-fun</p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── Location data ──
+  const LOCATIONS = {
+    jerusalem: {
+      lat: 31.7683, lng: 35.2137,
+      name: 'Jerusalem',
+      desc: 'The holy city and capital of Judea — both the end-point of Jesus\'s earthly ministry and the starting point of the apostles\' mission to the world.'
+    },
+    mount_of_olives: {
+      lat: 31.7781, lng: 35.2458,
+      name: 'Mount of Olives',
+      desc: 'Site of the Ascension. A ridge east of Jerusalem, a Sabbath day\'s walk (~900 m) from the city walls.'
+    },
+    upper_room: {
+      lat: 31.7717, lng: 35.2288,
+      name: 'The Upper Room',
+      desc: 'Traditional site on Mount Zion where the disciples gathered to pray after the Ascension.'
+    }
+  };
+
+  // ── Event → location mapping ──
+  const EVENT_LOCATION = {
+    'prologue':                null,
+    'forty-days-teaching':     'jerusalem',
+    'promise-of-the-spirit':   'jerusalem',
+    'kingdom-question':        'jerusalem',
+    'ascension':               'mount_of_olives',
+    'return-to-jerusalem':     'jerusalem',
+    'upper-room-prayer':       'upper_room',
+    'peter-addresses-community': 'upper_room',
+    'matthias-chosen':         'upper_room'
+  };
+
+  // ── Init Leaflet map ──
+  const map = L.map('map', {
+    center: [31.773, 35.228],
+    zoom: 14,
+    zoomControl: false,
+    scrollWheelZoom: false,
+    attributionControl: false
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    opacity: 0.6
+  }).addTo(map);
+
+  L.control.attribution({ prefix: false })
+    .addAttribution('© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>')
+    .addTo(map);
+
+  // Dot icon factory
+  function dotIcon(active) {
+    const bg = active ? '#C85C2A' : '#8a7060';
+    return L.divIcon({
+      className: '',
+      html: `<div style="width:10px;height:10px;border-radius:50%;background:${bg};border:2px solid #1C1409;box-shadow:0 1px 4px rgba(0,0,0,0.35);transition:all 0.3s ease"></div>`,
+      iconSize: [10, 10],
+      iconAnchor: [5, 5]
+    });
+  }
+
+  // Add location markers + labels
+  const markerMap = {};
+  Object.entries(LOCATIONS).forEach(([id, loc]) => {
+    const m = L.marker([loc.lat, loc.lng], { icon: dotIcon(false) })
+      .addTo(map)
+      .bindPopup(`<strong>${loc.name}</strong>${loc.desc}`);
+    markerMap[id] = m;
+
+    L.marker([loc.lat, loc.lng], {
+      icon: L.divIcon({
+        className: '',
+        html: `<span style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;color:#1C1409;white-space:nowrap;background:rgba(237,227,213,0.92);padding:1px 4px;margin-left:9px;display:inline-block">${loc.name}</span>`,
+        iconSize: [120, 18],
+        iconAnchor: [-2, 9]
+      }),
+      interactive: false
+    }).addTo(map);
+  });
+
+  // Route polyline: the Eleven's journey
+  L.polyline([
+    [LOCATIONS.jerusalem.lat,       LOCATIONS.jerusalem.lng],
+    [LOCATIONS.mount_of_olives.lat, LOCATIONS.mount_of_olives.lng],
+    [LOCATIONS.jerusalem.lat,       LOCATIONS.jerusalem.lng],
+    [LOCATIONS.upper_room.lat,      LOCATIONS.upper_room.lng]
+  ], {
+    color: '#C85C2A',
+    weight: 1.5,
+    opacity: 0.45,
+    dashArray: '5 5'
+  }).addTo(map);
+
+  // ── Highlight active location ──
+  function activateLocation(locationId) {
+    Object.entries(markerMap).forEach(([id, marker]) => {
+      const isActive = id === locationId;
+      marker.setIcon(dotIcon(isActive));
+    });
+    if (locationId && LOCATIONS[locationId]) {
+      map.panTo(
+        [LOCATIONS[locationId].lat, LOCATIONS[locationId].lng],
+        { animate: true, duration: 0.5 }
+      );
+    }
+  }
+
+  // ── IntersectionObserver: sync timeline + map ──
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  const eventSections = document.querySelectorAll('.event-section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+
+      // Highlight timeline
+      timelineItems.forEach(item => item.classList.remove('active'));
+      const active = document.querySelector(`.timeline-item[data-event="${id}"]`);
+      if (active) {
+        active.classList.add('active');
+        active.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      // Pan map
+      const locId = EVENT_LOCATION[id];
+      if (locId) activateLocation(locId);
+    });
+  }, {
+    rootMargin: '-15% 0px -65% 0px',
+    threshold: 0
+  });
+
+  eventSections.forEach(s => observer.observe(s));
+
+  // ── Click-to-scroll from timeline ──
+  window.scrollToEvent = function (anchor) {
+    const el = document.getElementById(anchor);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+})();
+</script>
+
+</body>
+</html>

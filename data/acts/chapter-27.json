@@ -1,0 +1,536 @@
+{
+  "book": "Acts",
+  "chapter": 27,
+  "chapter_title": "Storm, Shipwreck, and Providence: The Voyage to Rome",
+  "chapter_summary": "Paul is handed over to a Roman centurion named Julius and boards a ship at Caesarea bound ultimately for Rome. The voyage quickly turns treacherous: a violent storm called the Northeaster drives the ship off course for fourteen days across the Adriatic Sea, threatening to destroy it and kill all aboard. Paul, guided by an angelic vision, urges the crew to take courage and promises that no life will be lost even though the ship will be wrecked. The chapter ends with the ship running aground on the island of Malta, all 276 people on board escaping to shore alive — a dramatic demonstration of divine protection fulfilling Paul's prophetic word.",
+  "date_range": {
+    "approximate": "AD 59",
+    "notes": "The voyage is typically dated to autumn AD 59; ancient sources confirm that sailing in the Mediterranean became dangerous after the Festival of the Fast (Yom Kippur, mid-October) and nearly impossible from November to February."
+  },
+  "persons": [
+    {
+      "id": "paul",
+      "name": "Paul",
+      "role": "Apostle / Prisoner",
+      "first_mention_verse": "27:1",
+      "summary": "Paul is a prisoner being transported to Rome under Roman escort. Despite his captive status, he emerges as the true leader of the voyage — warning of danger before the storm, sustaining morale during it, and directing the crew's survival strategy throughout.",
+      "significance": "Paul's providential role in saving 276 lives demonstrates his prophetic authority and models Acts' central thesis that God's purpose cannot be thwarted; his arrival in Rome is divinely guaranteed."
+    },
+    {
+      "id": "julius",
+      "name": "Julius the Centurion",
+      "role": "Roman Centurion (of the Augustan Cohort)",
+      "first_mention_verse": "27:1",
+      "summary": "Julius is the Roman officer assigned to transport Paul and other prisoners to Rome. He treats Paul with unusual courtesy throughout the voyage — allowing him to visit friends in Sidon, ultimately heeding his counsel during the crisis, and protecting him from the soldiers who wanted to kill all prisoners when the ship foundered.",
+      "significance": "Julius represents the pattern in Acts of sympathetic Roman officials who recognize Paul's character and innocence; his protection of Paul ensures the apostle's survival and arrival in Rome."
+    },
+    {
+      "id": "luke",
+      "name": "Luke (the author / 'we')",
+      "role": "Companion of Paul / Narrator",
+      "first_mention_verse": "27:1",
+      "summary": "The author of Acts shifts to first-person plural ('we') indicating he is an eyewitness companion of Paul on this voyage. Luke's detailed nautical knowledge — ship types, sailing seasons, wind names, anchoring techniques — lends the account its extraordinary realism.",
+      "significance": "Luke's presence as a companion and eyewitness gives the voyage narrative its documentary texture and has been repeatedly validated by classical scholarship on ancient seamanship."
+    },
+    {
+      "id": "aristarchus",
+      "name": "Aristarchus",
+      "role": "Companion of Paul (Macedonian)",
+      "first_mention_verse": "27:2",
+      "summary": "Aristarchus of Thessalonica is a Macedonian colleague of Paul who sails with him from Caesarea. He appears to accompany Paul voluntarily, possibly as a servant or fellow prisoner, and provides Paul with human companionship on the dangerous journey.",
+      "significance": "Aristarchus is mentioned in Paul's letters (Colossians 4:10, Philemon 24) as a 'fellow prisoner,' confirming his historical association with Paul's Roman imprisonment period."
+    },
+    {
+      "id": "the_angel",
+      "name": "An Angel of God",
+      "role": "Divine Messenger",
+      "first_mention_verse": "27:23",
+      "summary": "In the heart of the storm, an angel of the God Paul serves appears to him at night and delivers the assurance that Paul must stand before Caesar and that God has granted him the lives of all his shipmates. The angel never appears to others — Paul reports the visitation to encourage the crew.",
+      "significance": "The angelic visitation echoes the pattern of divine intervention throughout Acts and grounds Paul's prophetic assurance in direct divine communication rather than mere optimism."
+    },
+    {
+      "id": "the_pilot_owner",
+      "name": "The Pilot and the Ship's Owner",
+      "role": "Nautical Experts / Decision-makers",
+      "first_mention_verse": "27:11",
+      "summary": "The pilot (helmsman) and the owner of the ship are the professional maritime voices whose advice the centurion Julius initially follows over Paul's warning not to leave Fair Havens. Their preference to winter at Phoenix leads directly to the voyage's catastrophe.",
+      "significance": "They represent worldly expertise pitted against prophetic wisdom; their poor judgment serves as a narrative counterpoint to Paul's divinely-guided counsel, teaching the cost of ignoring prophetic warning."
+    },
+    {
+      "id": "the_crew_passengers",
+      "name": "The Crew and Passengers",
+      "role": "Group / Sailors and passengers",
+      "first_mention_verse": "27:2",
+      "summary": "The 276 people on board — sailors, soldiers, prisoners, and other passengers — form the community whose survival hangs on the unfolding crisis. Their fear, their secret attempt to escape by lifeboat, and their eventual obedience to Paul's instructions all drive the dramatic tension of the chapter.",
+      "significance": "Their preservation despite deserving no special divine favor underlines the theme that Paul's apostolic mission creates a sphere of grace that extends to those around him."
+    }
+  ],
+  "locations": [
+    {
+      "id": "caesarea_maritima",
+      "name": "Caesarea",
+      "modern_name": "Caesarea Maritima (Qesarya), Israel",
+      "lat": 32.5,
+      "lng": 34.9,
+      "description": "The Roman administrative capital of Judea where Paul's imprisonment has been held; the departure point for the voyage to Rome."
+    },
+    {
+      "id": "sidon",
+      "name": "Sidon",
+      "modern_name": "Sidon (Saida), Lebanon",
+      "lat": 33.5606,
+      "lng": 35.3719,
+      "description": "A major Phoenician port city north of Caesarea; the first stop of the voyage, where Julius allows Paul to go ashore and be cared for by local friends."
+    },
+    {
+      "id": "myra",
+      "name": "Myra",
+      "modern_name": "Demre, Turkey",
+      "lat": 36.2419,
+      "lng": 29.9833,
+      "description": "A port city in Lycia (southwestern Asia Minor) where Julius transferred Paul and his companions from the coastal ship to a large Alexandrian grain freighter heading for Italy."
+    },
+    {
+      "id": "cnidus",
+      "name": "Cnidus",
+      "modern_name": "Cape Krio, Turkey",
+      "lat": 36.6756,
+      "lng": 27.3661,
+      "description": "A prominent headland on the southwestern tip of Asia Minor; the ship struggled to reach it against contrary winds, forcing a course change southward toward Crete."
+    },
+    {
+      "id": "fair_havens",
+      "name": "Fair Havens",
+      "modern_name": "Kaloi Limenes, Crete, Greece",
+      "lat": 34.9333,
+      "lng": 24.8,
+      "description": "A small bay on the southern coast of Crete near the town of Lasea; the ship sheltered here, and Paul warned against continuing the voyage, but was overruled."
+    },
+    {
+      "id": "phoenix",
+      "name": "Phoenix",
+      "modern_name": "Phineka (Loutro), Crete, Greece",
+      "lat": 35.2167,
+      "lng": 24.05,
+      "description": "A harbor on the western south coast of Crete considered more suitable for wintering than Fair Havens; the intended destination that the crew never reached due to the storm."
+    },
+    {
+      "id": "cauda",
+      "name": "Cauda",
+      "modern_name": "Gavdos island, Greece",
+      "lat": 34.8422,
+      "lng": 24.0836,
+      "description": "A small island south of Crete under whose lee the ship briefly found shelter, allowing the crew to haul in the lifeboat and take emergency measures to secure the hull."
+    },
+    {
+      "id": "adriatic_sea",
+      "name": "The Sea of Adria",
+      "modern_name": "Central Mediterranean (between Sicily, Malta, Crete, and North Africa)",
+      "lat": 36.0,
+      "lng": 18.0,
+      "description": "In ancient usage 'the Adriatic' referred to the central Mediterranean, not just the modern Adriatic Sea; the ship was driven across this body of water for fourteen days in the storm."
+    },
+    {
+      "id": "malta",
+      "name": "Malta",
+      "modern_name": "Malta",
+      "lat": 35.9375,
+      "lng": 14.3754,
+      "description": "The island where the ship ran aground and broke apart; the 276 survivors swam or floated to shore, and Paul and the others spent three months here before continuing to Rome."
+    }
+  ],
+  "events": [
+    {
+      "id": "departure_from_caesarea",
+      "sequence": 1,
+      "verses": "27:1-2",
+      "title": "Paul Handed Over and Departure from Caesarea",
+      "description": "The decision is made to send Paul by sea to Rome for his appeal to Caesar. He is handed over to Julius, a centurion of the Imperial Augustan Cohort, along with other prisoners. They board a ship from Adramyttium (a port in Asia Minor) that is heading along the coast. Paul's companion Aristarchus of Thessalonica embarks with him. The voyage begins on what appears to be a routine late-summer sailing.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers"],
+      "timeline_label": "Voyage begins",
+      "scroll_anchor": "departure-caesarea",
+      "visual_notes": "A Roman cargo vessel departing the harbor of Caesarea Maritima; Paul visible at the rail with Julius beside him; the city's lighthouse and breakwater in the background."
+    },
+    {
+      "id": "stop_at_sidon",
+      "sequence": 2,
+      "verses": "27:3",
+      "title": "Paul Visits Friends at Sidon",
+      "description": "The day after departing Caesarea the ship puts in at Sidon, a major Phoenician port on the Lebanese coast. Julius, showing kindness to Paul, allows him to go ashore to visit friends and receive their care — perhaps receiving supplies, money, or medical attention from the local Christian community. This brief stop establishes Julius's unusually humane treatment of his prisoner.",
+      "location_id": "sidon",
+      "persons_present": ["paul", "julius"],
+      "timeline_label": "Sidon: Paul visits friends",
+      "scroll_anchor": "stop-sidon",
+      "visual_notes": "Paul walking through the port market of Sidon accompanied by a Roman soldier; greeting a small group of people with evident warmth at the doorway of a house."
+    },
+    {
+      "id": "sailing_past_cyprus_to_myra",
+      "sequence": 3,
+      "verses": "27:4-5",
+      "title": "Slow Sailing to Myra via Cyprus and Asia Minor",
+      "description": "Leaving Sidon, the ship is unable to sail the direct westward route because of contrary winds; instead it takes the northern route, sailing in the shelter of the northeastern coast of Cyprus and then along the coasts of Cilicia and Pamphylia before arriving at Myra in Lycia. The struggling against headwinds is an early sign of the difficult conditions the voyage will face.",
+      "location_id": "myra",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers"],
+      "timeline_label": "Coastal passage to Myra",
+      "scroll_anchor": "sailing-cyprus-to-myra",
+      "visual_notes": "Map with animated route: ship hugging the northern coast of Cyprus and the Asia Minor coast; arrow indicating contrary westerly winds; arrival at Myra marked."
+    },
+    {
+      "id": "transfer_to_alexandrian_ship",
+      "sequence": 4,
+      "verses": "27:6",
+      "title": "Transfer to an Alexandrian Grain Ship at Myra",
+      "description": "At Myra, Julius finds an Alexandrian grain ship headed for Italy — one of the massive freighters that carried Egyptian grain to feed Rome — and transfers the prisoners and soldiers onto it. This ship is considerably larger than the first vessel, capable of carrying hundreds of people, and represents the primary transport for the remainder of the voyage. The Alexandrian grain fleet was among the most important commercial operations in the Roman empire.",
+      "location_id": "myra",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers", "the_pilot_owner"],
+      "timeline_label": "Boarding the Alexandrian freighter",
+      "scroll_anchor": "transfer-alexandrian-ship",
+      "visual_notes": "Side-by-side size comparison: the coastal ship versus the large Alexandrian grain freighter; soldiers and prisoners transferring via gangplank in the harbor of Myra."
+    },
+    {
+      "id": "slow_sailing_to_fair_havens",
+      "sequence": 5,
+      "verses": "27:7-8",
+      "title": "Difficult Passage to Fair Havens, Crete",
+      "description": "Progress from Myra is extremely slow; the ship struggles against headwinds for many days and barely manages to reach Cnidus at the southwestern tip of Asia Minor. Unable to proceed on the direct route, the ship turns south and runs along the lee of Crete, finally arriving at Fair Havens near the town of Lasea after passing the treacherous Cape Salmone. The difficult passage signals that the sailing season is deteriorating.",
+      "location_id": "fair_havens",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers", "the_pilot_owner"],
+      "timeline_label": "Slow passage to Fair Havens",
+      "scroll_anchor": "slow-sailing-fair-havens",
+      "visual_notes": "Nautical chart of the southeastern Mediterranean with the ship's labored course marked in red; Crete visible as a long island; Fair Havens marked with an anchor symbol."
+    },
+    {
+      "id": "paul_warns_against_sailing",
+      "sequence": 6,
+      "verses": "27:9-12",
+      "title": "Paul's Warning Ignored: The Decision to Press On",
+      "description": "Much time has passed and sailing has become dangerous — the Day of Atonement (Yom Kippur, late September or October) has already passed, marking the end of the safe sailing season. Paul warns the assembly that the voyage ahead will mean disaster and great loss for the ship, cargo, and lives. However, Julius follows the advice of the ship's pilot and owner rather than Paul's warning. The majority also prefer to press on to the more sheltered harbor of Phoenix on Crete's western coast for the winter. The decision is understandable by human logic but will prove catastrophic.",
+      "location_id": "fair_havens",
+      "persons_present": ["paul", "julius", "the_pilot_owner", "the_crew_passengers"],
+      "timeline_label": "Paul warns; majority votes to sail",
+      "scroll_anchor": "paul-warns-against-sailing",
+      "visual_notes": "A deliberative scene on deck: Paul gesturing emphatically to the horizon while the pilot and ship owner make their case to Julius; a calendar or scroll indicating the late season date visible in the corner."
+    },
+    {
+      "id": "northeaster_strikes",
+      "sequence": 7,
+      "verses": "27:13-15",
+      "title": "The Northeaster Storm Erupts",
+      "description": "When a gentle south wind begins to blow, the crew takes it as a good omen and weighs anchor, sailing close along the coast of Crete toward Phoenix. Then suddenly the Northeaster — Euroquilo, an infamous violent northeastern wind — comes rushing down from the island. The ship is caught broadside, unable to turn into the wind or hold course; the crew gives way entirely and is driven helplessly before the gale. The transition from gentle breeze to catastrophic storm is almost instantaneous, and the ship's fate passes out of human control.",
+      "location_id": "adriatic_sea",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers", "the_pilot_owner"],
+      "timeline_label": "Euroquilo: the storm strikes",
+      "scroll_anchor": "northeaster-strikes",
+      "visual_notes": "Dynamic painting of the ship caught in a violent storm: sails torn or furled, waves crashing over the deck, crew members clinging to rigging, dark churning skies lit by occasional lightning."
+    },
+    {
+      "id": "emergency_measures_at_cauda",
+      "sequence": 8,
+      "verses": "27:16-19",
+      "title": "Emergency Measures Under the Lee of Cauda",
+      "description": "The ship runs under the lee of a small island called Cauda, giving momentary shelter from the full force of the wind. The crew uses this brief respite to haul in the lifeboat that was being dragged behind (endangered by the waves), then pass ropes underneath the hull — a technique called 'frapping' or 'undergirding' to hold the hull planks together under the stress of the sea. They lower the sea anchor to slow the ship's drift. The next day cargo is jettisoned overboard. On the third day the ship's tackle and gear are also thrown into the sea to reduce topweight. Despite everything, the situation remains desperate.",
+      "location_id": "cauda",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers", "the_pilot_owner"],
+      "timeline_label": "Emergency repairs under Cauda",
+      "scroll_anchor": "emergency-measures-cauda",
+      "visual_notes": "Cross-section diagram of the ship showing sailors passing ropes under the hull; another panel shows cargo (amphorae, bales) being hurled into the sea; the small island of Cauda in the background."
+    },
+    {
+      "id": "days_of_despair",
+      "sequence": 9,
+      "verses": "27:20",
+      "title": "Two Weeks of Darkness and Despair",
+      "description": "For many days neither sun nor stars appear through the thick storm cloud — the only means of ancient navigation are gone. The violent storm continues unabated and all hope of survival fades among the crew and passengers. Luke's terse description ('all hope of our being saved was gradually abandoned') captures the collective psychological collapse of 276 people who have given up. This is the nadir of the voyage.",
+      "location_id": "adriatic_sea",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers"],
+      "timeline_label": "Hope abandoned",
+      "scroll_anchor": "days-of-despair",
+      "visual_notes": "The ship's interior below decks: exhausted, haggard figures huddled in darkness; above, the sky remains a solid wall of gray; a navigator stares at a compass with no star to sight."
+    },
+    {
+      "id": "paul_urges_courage_angel_vision",
+      "sequence": 10,
+      "verses": "27:21-26",
+      "title": "Paul Stands Up: The Angel's Promise of Survival",
+      "description": "After many days without food, Paul stands among the demoralized company and addresses them. First, he reminds them of his unheeded warning — not to rub it in but to establish his credibility for what he is about to say. Then he delivers extraordinary news: last night an angel of the God he serves appeared and told him that he must stand before Caesar, and God has graciously given him the lives of everyone sailing with him. Paul urges them to take courage and eat; he is confident that the ship will run aground on some island and that not a single life will be lost. The address transforms the atmosphere from despair to action.",
+      "location_id": "adriatic_sea",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers", "the_angel"],
+      "timeline_label": "Paul: 'Keep up your courage!'",
+      "scroll_anchor": "paul-angel-courage",
+      "visual_notes": "Paul standing upright on the storm-tossed deck, one hand gripping a rope for balance, the other raised in a commanding gesture; pale, starved faces turned toward him; above him a faint luminous figure barely visible in the storm cloud."
+    },
+    {
+      "id": "fourteenth_night_soundings",
+      "sequence": 11,
+      "verses": "27:27-29",
+      "title": "The Fourteenth Night: Sailors Detect Land",
+      "description": "On the fourteenth night of being driven across the Sea of Adria, the sailors sense — perhaps through the changed sound of breakers or the look of the water — that land is drawing near. They take soundings: twenty fathoms (36 meters), then fifteen fathoms (27 meters). The rapid shallowing signals that they are close to a rocky shore in the dark. Fearing they will be dashed on the rocks, they drop four anchors from the stern and pray for daylight.",
+      "location_id": "malta",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers", "the_pilot_owner"],
+      "timeline_label": "Land sensed; anchors dropped",
+      "scroll_anchor": "fourteenth-night-soundings",
+      "visual_notes": "Sailors with sounding lines dropping them overboard in the darkness; the shore of Malta barely visible as a dark mass; four anchor ropes taut behind the ship; anxious faces in torchlight."
+    },
+    {
+      "id": "sailors_attempt_to_escape",
+      "sequence": 12,
+      "verses": "27:30-32",
+      "title": "Sailors Attempt to Abandon Ship; Paul Warns Julius",
+      "description": "Some sailors, under the pretense of laying out anchors from the bow, begin to lower the lifeboat into the sea intending to escape to shore and leave everyone else to perish. Paul perceives their intent and warns Julius and the soldiers: unless these sailors stay in the ship, no one can be saved. The soldiers immediately cut the lifeboat's ropes and let it fall away. Paul's swift intervention is the practical outworking of his prophetic assurance — divine promise and human responsibility working together.",
+      "location_id": "malta",
+      "persons_present": ["paul", "julius", "the_crew_passengers", "the_pilot_owner"],
+      "timeline_label": "Lifeboat plot foiled",
+      "scroll_anchor": "sailors-escape-attempt",
+      "visual_notes": "A tense scene at the ship's rail at night: sailors lowering the lifeboat while others look on; Paul urgently speaking to Julius; soldiers drawing swords to cut the ropes; the lifeboat splashing away empty."
+    },
+    {
+      "id": "paul_breaks_bread_encourages",
+      "sequence": 13,
+      "verses": "27:33-38",
+      "title": "Paul Leads a Meal; Everyone Encouraged",
+      "description": "Just before dawn Paul urges everyone to eat — they have taken no food for fourteen days. His words have a sacramental quality: he takes bread, gives thanks to God in front of everyone, breaks it, and begins to eat. All 276 people are encouraged and take food themselves. After eating, they lighten the ship further by throwing the grain cargo into the sea to raise the hull as high as possible in preparation for beaching. Paul's hosting of a communal meal in the middle of the crisis is one of the most vivid scenes in Acts.",
+      "location_id": "malta",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers"],
+      "timeline_label": "Pre-dawn meal; 276 encouraged",
+      "scroll_anchor": "paul-breaks-bread",
+      "visual_notes": "Warm lamplight below decks: Paul standing with a loaf of bread raised above his head in a gesture of thanksgiving; exhausted but attentive faces of sailors, soldiers, and prisoners all turned toward him; the number 276 could appear as a caption."
+    },
+    {
+      "id": "ship_runs_aground",
+      "sequence": 14,
+      "verses": "27:39-41",
+      "title": "The Ship Runs Aground",
+      "description": "When daylight comes the crew sees a bay with a beach — an unknown coast — and decides to run the ship aground there if possible. They cut the stern anchors free, untie the steering oars, raise the foresail, and head for the beach. But the ship strikes a reef or sandbar where two seas meet: the bow embeds in the sand and holds fast, while the waves crash against the stern and begin to break the ship apart.",
+      "location_id": "malta",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers", "the_pilot_owner"],
+      "timeline_label": "Ship grounded; stern breaking up",
+      "scroll_anchor": "ship-runs-aground",
+      "visual_notes": "Aerial view: the Alexandrian grain ship bow-first into a sandbar with waves smashing the stern into splinters; figures already jumping overboard; the beach of Malta visible in the background."
+    },
+    {
+      "id": "all_escape_to_shore",
+      "sequence": 15,
+      "verses": "27:42-44",
+      "title": "All 276 Escape to Shore Alive",
+      "description": "The soldiers plan to kill the prisoners to prevent any from escaping, following standard Roman protocol. But Julius, wanting to save Paul's life, forbids them. He orders those who can swim to jump in and head for shore first, and the rest to follow on planks or pieces of the ship. In this chaotic scramble through the surf everyone makes it to shore safely — exactly as Paul promised. Not one life is lost. The fulfillment of Paul's angelic prophecy is total and exact.",
+      "location_id": "malta",
+      "persons_present": ["paul", "julius", "luke", "aristarchus", "the_crew_passengers"],
+      "timeline_label": "All 276 reach shore alive",
+      "scroll_anchor": "all-escape-to-shore",
+      "visual_notes": "Wide beach scene: dozens of figures staggering out of the surf onto sand; wreckage floating around them; Julius standing on the beach counting survivors; Paul among the last to emerge, exhausted but unharmed."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "caesarea_maritima",
+          "event_id": "departure_from_caesarea",
+          "note": "Departure point: Paul handed over to Julius and boards ship at Caesarea."
+        },
+        {
+          "order": 2,
+          "location_id": "sidon",
+          "event_id": "stop_at_sidon",
+          "note": "First port of call; Julius allows Paul to visit friends for care and supplies."
+        },
+        {
+          "order": 3,
+          "location_id": "myra",
+          "event_id": "transfer_to_alexandrian_ship",
+          "note": "After sailing north of Cyprus and along the Asia Minor coast; Paul transfers to Alexandrian grain freighter."
+        },
+        {
+          "order": 4,
+          "location_id": "cnidus",
+          "event_id": "slow_sailing_to_fair_havens",
+          "note": "Struggled against headwinds to reach Cnidus before turning south toward Crete."
+        },
+        {
+          "order": 5,
+          "location_id": "fair_havens",
+          "event_id": "paul_warns_against_sailing",
+          "note": "Sheltered at Fair Havens, Crete; Paul warns against continuing but is overruled."
+        },
+        {
+          "order": 6,
+          "location_id": "cauda",
+          "event_id": "emergency_measures_at_cauda",
+          "note": "Storm-driven south; brief shelter under Cauda island for emergency repairs."
+        },
+        {
+          "order": 7,
+          "location_id": "adriatic_sea",
+          "event_id": "days_of_despair",
+          "note": "Fourteen days driven helplessly across the open Sea of Adria."
+        },
+        {
+          "order": 8,
+          "location_id": "malta",
+          "event_id": "all_escape_to_shore",
+          "note": "Shipwrecked on Malta; all 276 survivors reach shore alive."
+        }
+      ]
+    },
+    {
+      "person_id": "julius",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "caesarea_maritima",
+          "event_id": "departure_from_caesarea",
+          "note": "Julius receives Paul and begins escorting him to Rome."
+        },
+        {
+          "order": 2,
+          "location_id": "sidon",
+          "event_id": "stop_at_sidon",
+          "note": "Grants Paul shore leave to visit friends — an act of unusual courtesy."
+        },
+        {
+          "order": 3,
+          "location_id": "myra",
+          "event_id": "transfer_to_alexandrian_ship",
+          "note": "Arranges transfer of prisoners to the Alexandrian freighter at Myra."
+        },
+        {
+          "order": 4,
+          "location_id": "fair_havens",
+          "event_id": "paul_warns_against_sailing",
+          "note": "Chooses pilot's advice over Paul's warning at Fair Havens — decision leads to the storm."
+        },
+        {
+          "order": 5,
+          "location_id": "malta",
+          "event_id": "all_escape_to_shore",
+          "note": "Overrules soldiers who want to kill prisoners; saves Paul's life; all survive."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "departure_from_caesarea",
+      "position": 1,
+      "label": "Voyage Begins",
+      "relative_time": "Early autumn AD 59",
+      "absolute_time": "c. late August / September AD 59"
+    },
+    {
+      "event_id": "stop_at_sidon",
+      "position": 2,
+      "label": "Sidon Stop",
+      "relative_time": "Day 2 of voyage",
+      "absolute_time": "c. September AD 59"
+    },
+    {
+      "event_id": "sailing_past_cyprus_to_myra",
+      "position": 3,
+      "label": "Cyprus to Myra",
+      "relative_time": "Days 3–14 of voyage (approx.)",
+      "absolute_time": "c. September AD 59"
+    },
+    {
+      "event_id": "transfer_to_alexandrian_ship",
+      "position": 4,
+      "label": "Transfer at Myra",
+      "relative_time": "Mid-voyage",
+      "absolute_time": "c. September AD 59"
+    },
+    {
+      "event_id": "slow_sailing_to_fair_havens",
+      "position": 5,
+      "label": "Difficult Passage to Crete",
+      "relative_time": "Weeks into voyage",
+      "absolute_time": "c. late September AD 59"
+    },
+    {
+      "event_id": "paul_warns_against_sailing",
+      "position": 6,
+      "label": "Fair Havens: Paul's Warning",
+      "relative_time": "After Day of Atonement (post late September)",
+      "absolute_time": "c. October AD 59"
+    },
+    {
+      "event_id": "northeaster_strikes",
+      "position": 7,
+      "label": "Storm Erupts",
+      "relative_time": "Shortly after leaving Fair Havens",
+      "absolute_time": "c. October AD 59"
+    },
+    {
+      "event_id": "emergency_measures_at_cauda",
+      "position": 8,
+      "label": "Emergency Measures at Cauda",
+      "relative_time": "Storm day 1",
+      "absolute_time": "c. October AD 59"
+    },
+    {
+      "event_id": "days_of_despair",
+      "position": 9,
+      "label": "Two Weeks Adrift",
+      "relative_time": "Storm days 2–14",
+      "absolute_time": "c. October–November AD 59"
+    },
+    {
+      "event_id": "paul_urges_courage_angel_vision",
+      "position": 10,
+      "label": "Angel's Promise",
+      "relative_time": "During the two-week storm",
+      "absolute_time": "c. October–November AD 59"
+    },
+    {
+      "event_id": "fourteenth_night_soundings",
+      "position": 11,
+      "label": "Land Sensed: Night 14",
+      "relative_time": "Storm night 14",
+      "absolute_time": "c. November AD 59"
+    },
+    {
+      "event_id": "sailors_attempt_to_escape",
+      "position": 12,
+      "label": "Lifeboat Plot Foiled",
+      "relative_time": "Storm night 14 (predawn)",
+      "absolute_time": "c. November AD 59"
+    },
+    {
+      "event_id": "paul_breaks_bread_encourages",
+      "position": 13,
+      "label": "Pre-dawn Meal",
+      "relative_time": "Storm day 15 (just before dawn)",
+      "absolute_time": "c. November AD 59"
+    },
+    {
+      "event_id": "ship_runs_aground",
+      "position": 14,
+      "label": "Ship Wrecked on Malta",
+      "relative_time": "Storm day 15 (dawn)",
+      "absolute_time": "c. November AD 59"
+    },
+    {
+      "event_id": "all_escape_to_shore",
+      "position": 15,
+      "label": "276 Survivors Reach Malta",
+      "relative_time": "Storm day 15 (morning)",
+      "absolute_time": "c. November AD 59"
+    }
+  ],
+  "theological_themes": [
+    "Divine providence preserving Paul's mission against all natural odds",
+    "The apostle as prophetic leader whose word sustains a community in crisis",
+    "Human expertise versus divine wisdom: the pilot's professional judgment overruled by Paul's prophetic counsel",
+    "Eucharistic overtones in the communal meal amid crisis",
+    "Vicarious salvation: God grants the lives of 276 people for the sake of one apostle's mission",
+    "The unstoppable forward movement of the gospel toward Rome and the ends of the earth"
+  ],
+  "discussion_questions": [
+    "Paul's prophetic warning at Fair Havens was overruled by the professionals — what does this suggest about the way human expertise and divine guidance interact?",
+    "How does the angelic vision in verse 23 ('God has granted you all those who sail with you') change the moral significance of Paul's leadership during the storm?",
+    "The communal meal in verses 33–38 echoes themes from Luke's Gospel and Acts 2. Is this a eucharistic scene, and what would that symbolism mean here?",
+    "Julius cuts the ropes on the lifeboat on Paul's advice, removing the crew's last physical escape option. What kind of faith does Paul demonstrate in this moment?",
+    "In what ways does Paul's entire role in Acts 27 subvert expected power structures — who is really 'in charge' on this ship?"
+  ]
+}
