@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 1 — Waiting for the Promise</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="acts-ch1-data.js"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body.theme-b {
+  --bg:        oklch(13% 0.018 255);
+  --bg-alt:    oklch(18% 0.02 255);
+  --bg-dark:   oklch(9% 0.015 255);
+  --fg:        oklch(93% 0.012 75);
+  --fg-muted:  oklch(58% 0.016 70);
+  --accent:    oklch(64% 0.19 46);
+  --border:    oklch(26% 0.02 255);
+  --card:      oklch(18% 0.018 255);
+  --map-water: oklch(32% 0.07 220);
+  --map-land:  oklch(28% 0.04 88);
+  --map-road:  oklch(42% 0.04 75);
+  --map-judea: oklch(25% 0.04 88);
+  --map-border:oklch(55% 0.08 50);
+  --tl-bg:     oklch(9% 0.015 255);
+  --tl-fg:     oklch(93% 0.012 75);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── PAGE SKELETON ── */
+/* header / [timeline | map] stacked vertically */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.theme-btns { display:flex; gap:6px; }
+.theme-btn {
+  font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase; padding:3px 13px;
+  border:1.5px solid oklch(36% .015 255); background:transparent;
+  color:oklch(60% .012 70); cursor:pointer; border-radius:2px; transition:all .2s;
+}
+.theme-btn.active { border-color:var(--accent); background:var(--accent); color:#fff; }
+
+/* ── BODY: timeline left, map right ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── TIMELINE COLUMN ── */
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+
+/* Chapter label strip */
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.tl-ch-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; line-height:1.1; color:var(--tl-fg);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+
+/* Scrollable event list */
+.tl-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+/* Vertical spine */
+.tl-spine {
+  padding: 8px 0 80px;
+  position: relative;
+}
+.tl-spine::before {
+  content:'';
+  position:absolute;
+  left: 38px;
+  top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent);
+}
+
+/* Year separator badge */
+.tl-year-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 6px 14px;
+  position: relative;
+  z-index: 2;
+}
+.tl-year-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(22% .018 255);
+  border: 1px solid oklch(36% .015 255);
+  padding: 2px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line {
+  flex: 1;
+  height: 1px;
+  background: oklch(30% .012 255);
+  opacity: .5;
+}
+
+/* Each item — tall so scroll is slow and deliberate */
+.tl-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s;
+  padding-right: 4px;
+  min-height: 130px;
+}
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+
+/* left: seq number + dot */
+.tl-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+.tl-seq {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  color: oklch(45% .01 255);
+  margin-bottom:5px;
+  letter-spacing:.05em;
+}
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%;
+  border:2px solid oklch(38% .015 255);
+  background: oklch(16% .018 255);
+  position:relative; z-index:1;
+  transition: all .28s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px oklch(58% .19 46 / .2);
+}
+.tl-dot-pip {
+  width:5px; height:5px; border-radius:50%; background:#fff;
+  opacity:0; transition:opacity .28s;
+}
+.tl-item.active .tl-dot-pip { opacity:1; }
+
+/* right: text */
+.tl-r {
+  padding: 22px 10px 22px 6px;
+  border-bottom: 1px solid oklch(24% .012 255);
+}
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date {
+  font-size:10px; font-weight:700; letter-spacing:.1em;
+  font-family:'Barlow Condensed',sans-serif;
+  color: oklch(55% .015 255); margin-bottom:2px;
+}
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time {
+  font-size:8px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+  color: oklch(36% .012 255); margin-bottom:5px;
+}
+.tl-item.active .tl-rel-time { color: oklch(55% .015 46); }
+.tl-ev-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:14px; font-weight:700; text-transform:uppercase;
+  line-height:1.15; color: var(--tl-fg);
+  margin-bottom: 3px;
+}
+.tl-ev-verses {
+  font-size:9px; font-weight:600; letter-spacing:.1em;
+  color: oklch(50% .015 255); margin-top:2px;
+}
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+
+/* ── MAP COLUMN ── */
+.map-col {
+  position: relative;
+  background: var(--map-land);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Event banner at top of map */
+.map-event-banner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  background: oklch(16% 0.02 55 / 0.92);
+  border-bottom: 2px solid var(--accent);
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 16px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: background .3s;
+}
+body.theme-b .map-event-banner {
+  background: oklch(9% 0.015 255 / 0.92);
+}
+.ban-verses {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.ban-content {}
+.ban-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:16px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; color:oklch(95% .012 78);
+  line-height:1.1; margin-bottom:2px;
+}
+.ban-desc {
+  font-family:'Lora',serif; font-style:italic;
+  font-size:11.5px; line-height:1.5;
+  color:oklch(65% .012 70);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ban-loc {
+  display:flex; align-items:center; gap:5px;
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:oklch(55% .012 70); white-space:nowrap;
+}
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+/* ── MAP SVG — fill panel, use xMidYMid slice so it always covers ── */
+.map-svg-wrap {
+  position: absolute;
+  inset: 0;
+}
+.map-svg {
+  width:100%; height:100%;
+}
+
+/* Person legend - bottom left of map */
+.map-person-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.map-leg-item {
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; font-weight:600; letter-spacing:.06em;
+  color: var(--fg);
+  background: var(--card);
+  padding: 3px 10px 3px 7px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  transition: opacity .5s, transform .4s;
+}
+body.theme-b .map-leg-item { color: var(--tl-fg); background: oklch(18% .018 255); border-color: oklch(28% .015 255); }
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-leg-item.entering { animation: legEnter .4s ease forwards; }
+@keyframes legEnter {
+  from { opacity:0; transform:translateX(-8px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+
+/* Map overlay labels */
+.map-corner-label {
+  position:absolute; bottom:18px; right:18px;
+  font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
+}
+
+/* Person dot pulse */
+@keyframes dotPulse {
+  0%,100% { r:7; opacity:.2; }
+  50%      { r:13; opacity:.06; }
+}
+.dot-active-ring { animation: dotPulse 2.2s ease-in-out infinite; }
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const DATA = ACTS_CH1;
+
+/* ── PERSON COLORS ── */
+const PCOLORS = {
+  jesus:               '#E8591A',
+  peter:               '#5B8FA8',
+  the_eleven:          '#A09070',
+  matthias:            '#6B8F71',
+  mary_mother_of_jesus:'#9B7EB0',
+  judas_iscariot:      '#A0746A',
+  the_women:           '#C68B6E',
+  brothers_of_jesus:   '#7A8FA0',
+  joseph_barsabbas:    '#7DAA7D',
+  two_men_in_white:    '#D4C4A0',
+  theophilus:          '#9A8F80',
+};
+
+/* ── MAP COORDINATES (SVG 1000×800 viewBox, zoomed tight to Jerusalem area) ── */
+const VW = 1000, VH = 800;
+const LOCS = {
+  jerusalem:       { x: 380, y: 420, label: 'Jerusalem' },
+  mount_of_olives: { x: 680, y: 210, label: 'Mount of Olives' },
+  upper_room:      { x: 310, y: 490, label: 'Upper Room (Mt Zion)' },
+};
+
+const ABSOLUTE_TIMES = {
+  prologue_to_theophilus:       { date: 'c. AD 62–80',        period: 'Date of composition' },
+  forty_days_teaching:          { date: 'April AD 30',         period: 'Days 1–40 post-resurrection' },
+  promise_of_the_spirit:        { date: 'Late April AD 30',    period: 'Day 40 — final meal' },
+  question_about_the_kingdom:   { date: 'Late April AD 30',    period: 'Day 40 — moments before Ascension' },
+  ascension:                    { date: 'May 18, AD 30',       period: 'Day 40 — Ascension Thursday' },
+  return_to_jerusalem:          { date: 'May 18, AD 30',       period: 'Day 40 — afternoon' },
+  upper_room_prayer:            { date: 'May 18–28, AD 30',    period: 'Days 40–50 — ten days of prayer' },
+  peter_addresses_the_community:{ date: 'Late May AD 30',      period: 'During the 10-day wait' },
+  selection_of_matthias:        { date: 'Late May AD 30',      period: 'Before Pentecost — Day 50' },
+};
+
+/* Build route stops with pixel coords */
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label,
+      stops: r.path.map(s => ({
+        ...s,
+        ...(LOCS[s.location_id] || { x: 360, y: 360 }),
+      })),
+    };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+/* Compute per-event person state */
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = {
+      color: route.color,
+      label: route.label,
+      pos:   { x: lastStop.x, y: lastStop.y },
+      active,
+      faded: !active,
+    };
+  });
+  return result;
+}
+
+/* ── MAP TERRAIN ── */
+function Terrain() {
+  return (
+    <g>
+      {/* Base land */}
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-land)" />
+
+      {/* ── REGION FILLS with distinct colors ── */}
+      {/* Judea — central region around Jerusalem */}
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 700 320 780 360 Q 820 380 820 440 Q 820 520 760 560 Q 700 600 580 620 Q 450 640 300 630 Q 180 620 100 580 Q 40 550 30 480 Q 20 420 50 300 Z"
+        fill="oklch(87% 0.055 90)" opacity="1" />
+      <text x="160" y="580" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(48% 0.07 75)" letterSpacing="3" opacity=".7">JUDEA</text>
+
+      {/* Peraea — east of Jordan */}
+      <path d="M 820 200 Q 860 220 920 260 Q 970 300 980 380 Q 990 450 960 520 Q 940 570 900 600 Q 870 620 840 600 Q 820 560 820 500 Q 820 420 820 360 Q 820 280 820 200 Z"
+        fill="oklch(82% 0.045 110)" opacity=".85" />
+      <text x="880" y="380" fontSize="11" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(42% 0.06 90)" letterSpacing="2" opacity=".65" transform="rotate(90,880,380)">PERAEA</text>
+
+      {/* Northern region hint */}
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 650 310 720 290 Q 780 270 820 200 Q 820 120 780 70 Q 700 30 500 20 Q 300 10 150 50 Q 60 80 40 160 Q 20 230 50 300 Z"
+        fill="oklch(85% 0.04 130)" opacity=".6" />
+      <text x="200" y="120" fontSize="12" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(40% 0.06 120)" letterSpacing="2" opacity=".55">SAMARIA ↑</text>
+
+      {/* ── REGION BORDERS — thick, clearly visible ── */}
+      {/* Judea north border */}
+      <path d="M 50 300 Q 200 265 380 272 Q 520 278 650 295 Q 730 308 790 330"
+        fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      {/* Judea east border — Jordan River / Dead Sea edge */}
+      <path d="M 790 330 Q 818 370 820 430 Q 820 500 800 560"
+        fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      {/* Peraea west border = Jordan */}
+      <path d="M 820 140 Q 828 220 825 320 Q 822 420 818 520 Q 815 580 820 650"
+        fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".7" strokeLinecap="round" />
+
+      {/* ── DEAD SEA ── */}
+      <path d="M 818 400 Q 835 390 870 400 Q 920 420 940 470 Q 960 520 940 570 Q 920 620 880 640 Q 850 650 830 630 Q 815 610 815 570 Q 814 500 818 400 Z"
+        fill="var(--map-water)" opacity=".85" />
+      <text x="880" y="520" textAnchor="middle" fontSize="11"
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(35% 0.06 220)"
+        letterSpacing="1.5" opacity=".8">DEAD SEA</text>
+
+      {/* ── JORDAN RIVER ── */}
+      <path d="M 825 30 C 832 120 830 220 825 320 C 821 390 818 420 818 450"
+        fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".75" strokeLinecap="round" />
+      <text x="842" y="200" fontSize="10" fill="oklch(38% 0.07 220)" opacity=".65"
+        fontFamily="Barlow" fontWeight="500" transform="rotate(84,842,200)">Jordan River</text>
+
+      {/* ── Mediterranean Sea (west edge hint) ── */}
+      <path d="M 0 0 L 0 800 L 40 800 Q 30 600 25 400 Q 20 200 40 0 Z"
+        fill="var(--map-water)" opacity=".5" />
+      <text x="18" y="400" fontSize="9" fill="oklch(35% 0.06 220)" opacity=".55"
+        fontFamily="Barlow Condensed" fontWeight="700" letterSpacing="1"
+        transform="rotate(-90,18,400)">MEDITERRANEAN ←</text>
+
+      {/* ── KIDRON VALLEY ── */}
+      <path d="M 660 80 Q 590 170 550 260 Q 525 330 515 400 Q 508 460 510 520"
+        fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="3.5" opacity=".4" />
+      <text x="560" y="290" fontSize="10" fill="oklch(42% 0.05 80)" opacity=".55"
+        fontFamily="Barlow" transform="rotate(68,560,290)">Kidron Valley</text>
+
+      {/* ── JERUSALEM CITY WALLS ── */}
+      <rect x="292" y="345" width="165" height="125" rx="8"
+        fill="oklch(80% 0.06 80)" opacity=".3"
+        stroke="oklch(42% 0.08 60)" strokeWidth="3" />
+      <rect x="292" y="345" width="165" height="125" rx="8"
+        fill="none" stroke="oklch(62% 0.09 55)" strokeWidth="1.5" opacity=".6" strokeDasharray="6 4" />
+
+      {/* ── TEMPLE MOUNT ── */}
+      <rect x="382" y="358" width="68" height="52" rx="4"
+        fill="oklch(75% 0.08 75)" opacity=".45"
+        stroke="oklch(48% 0.08 60)" strokeWidth="2" />
+      <text x="416" y="388" textAnchor="middle" fontSize="9.5"
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(30% 0.06 55)" opacity=".9">TEMPLE</text>
+
+      {/* ── ROAD: Mt Olives → Jerusalem ── */}
+      <path d="M 648 228 Q 600 275 560 315 Q 520 352 475 382 Q 445 400 410 413"
+        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".6"
+        strokeDasharray="10 6" strokeLinecap="round" />
+      <text x="545" y="335" fontSize="10" fill="oklch(38% 0.06 70)" opacity=".55"
+        fontFamily="Barlow" transform="rotate(44,545,335)">~900m walk</text>
+
+      {/* ── HINNOM VALLEY ── */}
+      <path d="M 140 565 Q 220 598 305 590 Q 348 586 378 572 Q 398 560 408 542"
+        fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="2.5" opacity=".35" />
+      <text x="220" y="625" fontSize="9.5" fill="oklch(42% 0.05 80)" opacity=".45"
+        fontFamily="Barlow">Hinnom Valley</text>
+
+      {/* ── AKELDAMA (Field of Blood) ── */}
+      <circle cx="355" cy="572" r="10"
+        fill="oklch(60% 0.14 30)" opacity=".25"
+        stroke="var(--accent)" strokeWidth="2" />
+      <text x="372" y="577" fontSize="10"
+        fill="var(--accent)" opacity=".7"
+        fontFamily="Barlow" fontStyle="italic" fontWeight="500">Akeldama</text>
+
+      {/* ── MOUNT OF OLIVES ridge ── */}
+      <ellipse cx="668" cy="255" rx="115" ry="85"
+        fill="oklch(82% 0.05 100)" opacity=".45"
+        stroke="oklch(55% 0.06 80)" strokeWidth="1.5" />
+      <text x="668" y="148" textAnchor="middle" fontSize="13"
+        fontFamily="Barlow Condensed" fontWeight="800" fill="oklch(35% 0.07 70)"
+        letterSpacing="1.5" opacity=".75">MOUNT OF OLIVES</text>
+
+      {/* ── Bethany ── */}
+      <circle cx="790" cy="240" r="6" fill="oklch(55% 0.07 80)" opacity=".45" />
+      <text x="802" y="244" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".6"
+        fontFamily="Barlow Condensed" fontWeight="600">Bethany</text>
+
+      {/* ── Bethlehem ── */}
+      <circle cx="310" cy="720" r="6" fill="oklch(55% 0.07 80)" opacity=".4" />
+      <text x="322" y="724" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".5"
+        fontFamily="Barlow Condensed" fontWeight="600">Bethlehem</text>
+
+      {/* ── Scale bar ── */}
+      <g transform="translate(60,755)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~1 km</text>
+      </g>
+
+      {/* ── North arrow ── */}
+      <g transform="translate(60,95)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
+          fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+
+/* ── ROUTE LINES — removed, dots animate instead ── */
+function RouteLines() { return null; }
+
+/* ── LOCATION MARKERS ── */
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7}
+              fill={on ? 'var(--accent)' : 'var(--fg-muted)'}
+              stroke="var(--map-land)" strokeWidth="3"
+              style={{ transition: 'r .3s' }}
+            />
+            <text x={loc.x + 16} y={loc.y + 5}
+              fontSize={on ? 17 : 14}
+              fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
+              fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
+              letterSpacing=".5"
+              style={{ transition: 'font-size .3s' }}
+            >{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/* ── PERSON DOTS — stable keys, trail effect ── */
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const offsetX = (myGroupIdx - (groupSize - 1) / 2) * 110;
+    return { x: s.pos.x + offsetX, y: s.pos.y - 70 };
+  };
+
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        const labelW = Math.max(64, (s.label?.length || 4) * 9 + 20);
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y}
+                  stroke={s.color} strokeWidth="3" strokeLinecap="round"
+                  strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            {s.active && (
+              <circle className="dot-active-ring" cx={cur.x} cy={cur.y} r="14" fill={s.color} opacity=".15" />
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR}
+              fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
+              style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
+            />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle"
+              fontSize={s.active ? 13 : 10} fontWeight="800" fill="white"
+              fontFamily="Barlow Condensed" pointerEvents="none"
+              style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              {(s.label || '?').charAt(0)}
+            </text>
+            {s.active && (
+              <g>
+                <rect x={cur.x - labelW/2} y={cur.y + dotR + 6} width={labelW} height={20} rx="4"
+                  fill={s.color} opacity=".93" />
+                <text x={cur.x} y={cur.y + dotR + 20} textAnchor="middle"
+                  fontSize="11" fontWeight="800" fill="white"
+                  fontFamily="Barlow Condensed" letterSpacing="1" pointerEvents="none">
+                  {s.label?.toUpperCase()}
+                </text>
+              </g>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+
+/* ── MAP PANEL ── */
+function MapPanel({ activeEventId }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+
+  // Track previous event's states to show trail
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+
+  const legendItems = Object.entries(states).sort((a,b) => b[1].active - a[1].active);
+
+  return (
+    <div className="map-col">
+      {/* Event banner */}
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && (
+          <div className="ban-loc">
+            <div className="ban-loc-dot" />
+            {loc.name}
+          </div>
+        )}
+      </div>
+
+      {/* Map */}
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid slice">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+
+      {/* Person legend */}
+      <div className="map-person-legend">
+        {legendItems.map(([pid, s]) => (
+          <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+            <div className="map-leg-dot" style={{ background: s.color }} />
+            <span>{s.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="map-corner-label">Jerusalem Region · c. AD 30</div>
+    </div>
+  );
+}
+
+/* ── TIMELINE PANEL ── */
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(true);
+
+  // IntersectionObserver: set active event as entries scroll into view
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) {
+      scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    }
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">Acts · Chapter 1</div>
+        <div className="tl-ch-title">Waiting for <em>the Promise</em></div>
+      </div>
+
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            // Year badges: one before prologue (composition date), one before the AD30 events
+            const showYearBadge = idx === 0 || idx === 1;
+            const yearLabel = idx === 0 ? 'c. AD 62–80 — Written' : 'Spring AD 30 — Events';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div
+                  ref={el => entryRefs.current[tl.event_id] = el}
+                  data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}
+                >
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          {/* bottom pad — extra tall so last item can fully scroll into the trigger zone */}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ── */
+function App() {
+  const [theme, setTheme]   = useState(() => localStorage.getItem('bf-theme') || 'a');
+  const [activeEv, setActiveEv] = useState(DATA.events[0]?.id);
+
+  useEffect(() => {
+    document.body.className = `theme-${theme}`;
+    localStorage.setItem('bf-theme', theme);
+  }, [theme]);
+
+  const [tweaks, setTweak] = useTweaks(/*EDITMODE-BEGIN*/{
+    "theme": "a"
+  }/*EDITMODE-END*/);
+
+  useEffect(() => { if (tweaks.theme) setTheme(tweaks.theme); }, [tweaks.theme]);
+  const handleTheme = t => { setTheme(t); setTweak('theme', t); };
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+
+  return (
+    <div className="app">
+      {/* Header */}
+      <div className="header">
+        <span className="hdr-book">Acts · Ch. 1</span>
+        <span className="hdr-title">Waiting for the Promise</span>
+        <span className="hdr-sub">— Spring AD 30</span>
+        <div className="hdr-space" />
+        <div className="theme-btns">
+          <button className={`theme-btn${theme==='a'?' active':''}`} onClick={()=>handleTheme('a')}>Light</button>
+          <button className={`theme-btn${theme==='b'?' active':''}`} onClick={()=>handleTheme('b')}>Dark</button>
+        </div>
+      </div>
+
+      {/* Body */}
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel activeEventId={activeEv} />
+      </div>
+
+      <TweaksPanel>
+        <TweakSection title="Theme">
+          <TweakRadio id="theme" label="Color Mode"
+            options={[{label:'Light',value:'a'},{label:'Dark',value:'b'}]}
+            value={tweaks.theme}
+            onChange={v => handleTheme(v)}
+          />
+        </TweakSection>
+      </TweaksPanel>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
