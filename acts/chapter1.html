@@ -9,7 +9,6 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="acts-ch1-data.js"></script>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, #root { height: 100%; overflow: hidden; }
@@ -31,23 +30,6 @@ body.theme-a {
   --map-border:oklch(55% 0.06 50);
   --tl-bg:     oklch(18% 0.02 55);
   --tl-fg:     oklch(95% 0.012 78);
-}
-body.theme-b {
-  --bg:        oklch(13% 0.018 255);
-  --bg-alt:    oklch(18% 0.02 255);
-  --bg-dark:   oklch(9% 0.015 255);
-  --fg:        oklch(93% 0.012 75);
-  --fg-muted:  oklch(58% 0.016 70);
-  --accent:    oklch(64% 0.19 46);
-  --border:    oklch(26% 0.02 255);
-  --card:      oklch(18% 0.018 255);
-  --map-water: oklch(32% 0.07 220);
-  --map-land:  oklch(28% 0.04 88);
-  --map-road:  oklch(42% 0.04 75);
-  --map-judea: oklch(25% 0.04 88);
-  --map-border:oklch(55% 0.08 50);
-  --tl-bg:     oklch(9% 0.015 255);
-  --tl-fg:     oklch(93% 0.012 75);
 }
 body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
 
@@ -76,15 +58,6 @@ body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg
 .hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
 .hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
 .hdr-space { flex:1; }
-.theme-btns { display:flex; gap:6px; }
-.theme-btn {
-  font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700;
-  letter-spacing:.1em; text-transform:uppercase; padding:3px 13px;
-  border:1.5px solid oklch(36% .015 255); background:transparent;
-  color:oklch(60% .012 70); cursor:pointer; border-radius:2px; transition:all .2s;
-}
-.theme-btn.active { border-color:var(--accent); background:var(--accent); color:#fff; }
-
 /* ── BODY: timeline left, map right ── */
 .body {
   display: grid;
@@ -282,9 +255,6 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   backdrop-filter: blur(6px);
   transition: background .3s;
 }
-body.theme-b .map-event-banner {
-  background: oklch(9% 0.015 255 / 0.92);
-}
 .ban-verses {
   font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
   color:var(--accent); white-space:nowrap;
@@ -342,7 +312,6 @@ body.theme-b .map-event-banner {
   border:1px solid var(--border);
   transition: opacity .5s, transform .4s;
 }
-body.theme-b .map-leg-item { color: var(--tl-fg); background: oklch(18% .018 255); border-color: oklch(28% .015 255); }
 .map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
 .map-leg-item.faded { opacity:.3; }
 .map-leg-item.entering { animation: legEnter .4s ease forwards; }
@@ -369,10 +338,6 @@ body.theme-b .map-leg-item { color: var(--tl-fg); background: oklch(18% .018 255
   box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
   padding: 10px 12px;
   backdrop-filter: blur(8px);
-}
-body.theme-b .map-playback {
-  background: oklch(13% 0.018 255 / .9);
-  border-color: oklch(28% .015 255);
 }
 .playback-top {
   display:flex;
@@ -406,7 +371,6 @@ body.theme-b .map-playback {
   cursor:pointer;
   line-height:1;
 }
-body.theme-b .playback-btn { background:oklch(18% .018 255); border-color:oklch(30% .015 255); color:var(--tl-fg); }
 .playback-track {
   position:relative;
   height:28px;
@@ -1025,21 +989,14 @@ function TimelinePanel({ activeEventId, onEventChange }) {
 
 /* ── APP ── */
 function App() {
-  const [theme, setTheme]   = useState(() => localStorage.getItem('bf-theme') || 'a');
   const firstMappedEvent = DATA.events.find(e => e.location_id)?.id || DATA.events[0]?.id;
   const [activeEv, setActiveEv] = useState(firstMappedEvent);
 
   useEffect(() => {
-    document.body.className = `theme-${theme}`;
-    localStorage.setItem('bf-theme', theme);
-  }, [theme]);
+    document.body.className = 'theme-a';
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
 
-  const [tweaks, setTweak] = useTweaks(/*EDITMODE-BEGIN*/{
-    "theme": "a"
-  }/*EDITMODE-END*/);
-
-  useEffect(() => { if (tweaks.theme) setTheme(tweaks.theme); }, [tweaks.theme]);
-  const handleTheme = t => { setTheme(t); setTweak('theme', t); };
   const handleEventChange = useCallback(id => setActiveEv(id), []);
   const stepEvent = useCallback((dir) => {
     setActiveEv(prev => {
@@ -1057,10 +1014,6 @@ function App() {
         <span className="hdr-title">Waiting for the Promise</span>
         <span className="hdr-sub">— Spring AD 30</span>
         <div className="hdr-space" />
-        <div className="theme-btns">
-          <button className={`theme-btn${theme==='a'?' active':''}`} onClick={()=>handleTheme('a')}>Light</button>
-          <button className={`theme-btn${theme==='b'?' active':''}`} onClick={()=>handleTheme('b')}>Dark</button>
-        </div>
       </div>
 
       {/* Body */}
@@ -1072,16 +1025,6 @@ function App() {
           onEventChange={handleEventChange}
         />
       </div>
-
-      <TweaksPanel>
-        <TweakSection label="Theme">
-          <TweakRadio id="theme" label="Color Mode"
-            options={[{label:'Light',value:'a'},{label:'Dark',value:'b'}]}
-            value={tweaks.theme}
-            onChange={v => handleTheme(v)}
-          />
-        </TweakSection>
-      </TweaksPanel>
     </div>
   );
 }
