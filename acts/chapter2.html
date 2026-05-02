@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Acts Chapter 1 — Waiting for the Promise</title>
+<title>Acts Chapter 2 — Fire from Heaven</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="acts-ch1-data.js"></script>
+<script src="acts-ch2-data.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, #root { height: 100%; overflow: hidden; }
@@ -490,54 +490,62 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 
 <script type="text/babel">
 const { useState, useEffect, useRef, useCallback, useMemo } = React;
-const DATA = ACTS_CH1;
+const DATA = ACTS_CH2;
 
 /* ── PERSON COLORS ── */
 const PCOLORS = {
-  jesus:               '#E8591A',
-  peter:               '#5B8FA8',
-  the_eleven:          '#A09070',
-  matthias:            '#6B8F71',
-  mary_mother_of_jesus:'#9B7EB0',
-  judas_iscariot:      '#A0746A',
-  the_women:           '#C68B6E',
-  brothers_of_jesus:   '#7A8FA0',
-  joseph_barsabbas:    '#7DAA7D',
-  two_men_in_white:    '#D4C4A0',
-  theophilus:          '#9A8F80',
+  holy_spirit:  '#E8591A',
+  peter:        '#5B8FA8',
+  the_eleven:   '#A09070',
+  devout_jews:  '#6B8F71',
+  mockers:      '#A0746A',
+  new_believers:'#7DAA7D',
+  david:        '#9B7EB0',
+  joel:         '#C68B6E',
 };
 
 /* ── MAP COORDINATES (SVG 1000×800 viewBox, zoomed tight to Jerusalem area) ── */
 const VW = 1000, VH = 800;
 const LOCS = {
-  jerusalem:       { x: 380, y: 420, label: 'Jerusalem' },
-  mount_of_olives: { x: 680, y: 210, label: 'Mount of Olives' },
-  upper_room:      { x: 310, y: 490, label: 'Upper Room (Mt Zion)' },
+  jerusalem:            { x: 380, y: 420, label: 'Jerusalem' },
+  upper_room_or_temple: { x: 315, y: 490, label: 'Pentecost House' },
+  temple_area:          { x: 425, y: 382, label: 'Temple Area' },
 };
 
-const ABSOLUTE_TIMES = {
-  prologue_to_theophilus:       { date: 'c. AD 62–80',        period: 'Date of composition' },
-  forty_days_teaching:          { date: 'April AD 30',         period: 'Days 1–40 post-resurrection' },
-  promise_of_the_spirit:        { date: 'Late April AD 30',    period: 'Day 40 — final meal' },
-  question_about_the_kingdom:   { date: 'Late April AD 30',    period: 'Day 40 — moments before Ascension' },
-  ascension:                    { date: 'May 18, AD 30',       period: 'Day 40 — Ascension Thursday' },
-  return_to_jerusalem:          { date: 'May 18, AD 30',       period: 'Day 40 — afternoon' },
-  upper_room_prayer:            { date: 'May 18–28, AD 30',    period: 'Days 40–50 — ten days of prayer' },
-  peter_addresses_the_community:{ date: 'Late May AD 30',      period: 'During the 10-day wait' },
-  selection_of_matthias:        { date: 'Late May AD 30',      period: 'Before Pentecost — Day 50' },
-};
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
 
 /* Build route stops with pixel coords */
 function buildRoutes() {
   const out = {};
   DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
     out[r.person_id] = {
       color: PCOLORS[r.person_id] || '#888',
-      label: r.label,
+      label: r.label || person?.name || r.person_id,
       stops: r.path.map(s => ({
         ...s,
         ...(LOCS[s.location_id] || { x: 360, y: 360 }),
       })),
+    };
+  });
+
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({
+        order: idx + 1,
+        location_id: ev.location_id,
+        event_id: ev.id,
+        ...(LOCS[ev.location_id] || { x: 360, y: 360 }),
+      }));
+    if (!stops.length) return;
+    out[person.id] = {
+      color: PCOLORS[person.id] || '#888',
+      label: person.name,
+      stops,
     };
   });
   return out;
@@ -886,7 +894,7 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
         </div>
       </div>
 
-      <div className="map-corner-label">Jerusalem Region · c. AD 30</div>
+      <div className="map-corner-label">Jerusalem · Pentecost</div>
     </div>
   );
 }
@@ -923,13 +931,6 @@ function TimelinePanel({ activeEventId, onEventChange }) {
     setTimeout(() => { observing.current = true; }, 800);
   }, [onEventChange]);
 
-  const handleWheel = useCallback((event) => {
-    const root = scrollRef.current;
-    if (!root || event.deltaY <= 0) return;
-    const nearBottom = root.scrollTop + root.clientHeight >= root.scrollHeight - 8;
-    if (nearBottom) window.top.location.href = '/bible/acts/002';
-  }, []);
-
   useEffect(() => {
     const el = entryRefs.current[activeEventId];
     const root = scrollRef.current;
@@ -943,11 +944,11 @@ function TimelinePanel({ activeEventId, onEventChange }) {
   return (
     <div className="tl-col">
       <div className="tl-chapter-strip">
-        <div className="tl-ch-label">Acts · Chapter 1</div>
-        <div className="tl-ch-title">Waiting for <em>the Promise</em></div>
+        <div className="tl-ch-label">Acts · Chapter 2</div>
+        <div className="tl-ch-title">Fire from <em>Heaven</em></div>
       </div>
 
-      <div className="tl-list" ref={scrollRef} onWheel={handleWheel}>
+      <div className="tl-list" ref={scrollRef}>
         <div className="tl-spine">
           {DATA.timeline.map((tl, idx) => {
             const ev = DATA.events.find(e => e.id === tl.event_id);
@@ -956,7 +957,7 @@ function TimelinePanel({ activeEventId, onEventChange }) {
             const timeInfo = ABSOLUTE_TIMES[tl.event_id];
             // Year badges: one before prologue (composition date), one before the AD30 events
             const showYearBadge = idx === 0 || idx === 1;
-            const yearLabel = idx === 0 ? 'c. AD 62–80 — Written' : 'Spring AD 30 — Events';
+            const yearLabel = idx === 0 ? 'Pentecost — Spirit Falls' : 'Jerusalem — Public Witness';
             return (
               <React.Fragment key={tl.event_id}>
                 {showYearBadge && (
@@ -1001,6 +1002,7 @@ function App() {
 
   useEffect(() => {
     document.body.className = 'theme-a';
+    document.title = 'Acts Chapter 2 — Fire from Heaven';
     localStorage.setItem('bf-theme', 'a');
   }, []);
 
@@ -1008,8 +1010,8 @@ function App() {
   const stepEvent = useCallback((dir) => {
     setActiveEv(prev => {
       const current = DATA.timeline.findIndex(t => t.event_id === prev);
-      if (dir > 0 && current === DATA.timeline.length - 1) {
-        window.top.location.href = '/bible/acts/002';
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/001';
         return prev;
       }
       const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
@@ -1021,9 +1023,9 @@ function App() {
     <div className="app">
       {/* Header */}
       <div className="header">
-        <span className="hdr-book">Acts · Ch. 1</span>
-        <span className="hdr-title">Waiting for the Promise</span>
-        <span className="hdr-sub">— Spring AD 30</span>
+        <span className="hdr-book">Acts · Ch. 2</span>
+        <span className="hdr-title">Fire from Heaven</span>
+        <span className="hdr-sub">— Pentecost · AD 30</span>
         <div className="hdr-space" />
       </div>
 
