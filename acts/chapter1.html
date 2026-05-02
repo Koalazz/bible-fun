@@ -801,7 +801,6 @@ function PersonDots({ personStates, prevStates }) {
         if (!cur) return null;
         const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
         const dotR = s.active ? 14 : 10;
-        const labelW = Math.max(64, (s.label?.length || 4) * 9 + 20);
         return (
           <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
             {hasMoved && (
@@ -825,17 +824,6 @@ function PersonDots({ personStates, prevStates }) {
             >
               {(s.label || '?').charAt(0)}
             </text>
-            {s.active && (
-              <g>
-                <rect x={cur.x - labelW/2} y={cur.y + dotR + 6} width={labelW} height={20} rx="4"
-                  fill={s.color} opacity=".93" />
-                <text x={cur.x} y={cur.y + dotR + 20} textAnchor="middle"
-                  fontSize="11" fontWeight="800" fill="white"
-                  fontFamily="Barlow Condensed" letterSpacing="1" pointerEvents="none">
-                  {s.label?.toUpperCase()}
-                </text>
-              </g>
-            )}
           </g>
         );
       })}
