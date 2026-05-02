@@ -357,12 +357,115 @@ body.theme-b .map-leg-item { color: var(--tl-fg); background: oklch(18% .018 255
   color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
 }
 
+.map-playback {
+  position: absolute;
+  right: 18px;
+  bottom: 42px;
+  z-index: 12;
+  width: min(460px, calc(100% - 36px));
+  background: oklch(99.5% 0.008 80 / .9);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+body.theme-b .map-playback {
+  background: oklch(13% 0.018 255 / .9);
+  border-color: oklch(28% .015 255);
+}
+.playback-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:9px;
+}
+.playback-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.playback-buttons { display:flex; gap:6px; flex-shrink:0; }
+.playback-btn {
+  width:30px;
+  height:26px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--fg);
+  border-radius:3px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  line-height:1;
+}
+.playback-btn.primary {
+  width:42px;
+  background:var(--accent);
+  color:#fff;
+  border-color:var(--accent);
+}
+body.theme-b .playback-btn { background:oklch(18% .018 255); border-color:oklch(30% .015 255); color:var(--tl-fg); }
+body.theme-b .playback-btn.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+.playback-track {
+  position:relative;
+  height:28px;
+  display:grid;
+  grid-template-columns:repeat(var(--step-count), 1fr);
+  align-items:center;
+  gap:0;
+}
+.playback-track::before {
+  content:'';
+  position:absolute;
+  left:10px; right:10px; top:13px;
+  height:2px;
+  background:var(--border);
+}
+.playback-step {
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  width:20px;
+  height:20px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.playback-step::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:var(--fg-muted);
+  opacity:.42;
+  transition:all .24s;
+}
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before {
+  inset:2px;
+  background:var(--accent);
+  opacity:1;
+  box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
+}
+
 /* Person dot pulse */
 @keyframes dotPulse {
   0%,100% { r:7; opacity:.2; }
   50%      { r:13; opacity:.06; }
 }
 .dot-active-ring { animation: dotPulse 2.2s ease-in-out infinite; }
+@keyframes eventPulse {
+  0%,100% { transform:scale(.82); opacity:.16; }
+  50% { transform:scale(1.18); opacity:.04; }
+}
 
 /* ── MOBILE ── */
 @media (max-width: 680px) {
@@ -406,6 +509,18 @@ body.theme-b .map-leg-item { color: var(--tl-fg); background: oklch(18% .018 255
   .map-leg-item { font-size: 9px; padding: 2px 8px 2px 5px; }
   .map-leg-dot  { width: 6px; height: 6px; }
   .map-corner-label { display: none; }
+  .map-playback {
+    right:8px;
+    bottom:8px;
+    width:calc(100% - 16px);
+    padding:8px;
+  }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:28px; height:24px; }
+  .playback-btn.primary { width:38px; }
+  .playback-track { height:22px; }
+  .playback-track::before { top:10px; }
+  .playback-step { width:18px; height:18px; }
 
   /* Timeline: full width, shorter items */
   .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
@@ -675,6 +790,19 @@ function LocationMarkers({ activeLocId }) {
   );
 }
 
+function ActiveEventPulse({ locId }) {
+  const loc = LOCS[locId];
+  if (!loc) return null;
+  return (
+    <g style={{ transformOrigin: `${loc.x}px ${loc.y}px` }}>
+      <circle cx={loc.x} cy={loc.y} r="58" fill="var(--accent)" opacity=".09"
+        style={{ animation: 'eventPulse 2.4s ease-in-out infinite' }} />
+      <circle cx={loc.x} cy={loc.y} r="34" fill="none" stroke="var(--accent)"
+        strokeWidth="3" opacity=".45" strokeDasharray="7 8" />
+    </g>
+  );
+}
+
 /* ── PERSON DOTS — stable keys, trail effect ── */
 function PersonDots({ personStates, prevStates }) {
   const pids = Object.keys(ROUTES);
@@ -752,11 +880,12 @@ function PersonDots({ personStates, prevStates }) {
 
 
 /* ── MAP PANEL ── */
-function MapPanel({ activeEventId }) {
+function MapPanel({ activeEventId, isPlaying, onTogglePlay, onStep, onEventChange }) {
   const ev      = DATA.events.find(e => e.id === activeEventId);
   const locId   = ev?.location_id;
   const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
   const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
 
   // Track previous event's states to show trail
   const prevStatesRef = useRef(null);
@@ -794,6 +923,7 @@ function MapPanel({ activeEventId }) {
       <div className="map-svg-wrap">
         <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid slice">
           <Terrain />
+          <ActiveEventPulse locId={locId} />
           <LocationMarkers activeLocId={locId} />
           <PersonDots personStates={states} prevStates={prevStates} />
         </svg>
@@ -807,6 +937,30 @@ function MapPanel({ activeEventId }) {
             <span>{s.label}</span>
           </div>
         ))}
+      </div>
+
+      <div className="map-playback">
+        <div className="playback-top">
+          <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+          <div className="playback-buttons">
+            <button className="playback-btn" type="button" aria-label="Previous event" onClick={() => onStep(-1)}>‹</button>
+            <button className="playback-btn primary" type="button" aria-label={isPlaying ? 'Pause timeline' : 'Play timeline'} onClick={onTogglePlay}>
+              {isPlaying ? 'II' : '▶'}
+            </button>
+            <button className="playback-btn" type="button" aria-label="Next event" onClick={() => onStep(1)}>›</button>
+          </div>
+        </div>
+        <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+          {DATA.timeline.map((tl, idx) => (
+            <button
+              key={tl.event_id}
+              type="button"
+              className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+              aria-label={`Go to ${tl.label}`}
+              onClick={() => onEventChange(tl.event_id)}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="map-corner-label">Jerusalem Region · c. AD 30</div>
@@ -845,6 +999,16 @@ function TimelinePanel({ activeEventId, onEventChange }) {
     }
     setTimeout(() => { observing.current = true; }, 800);
   }, [onEventChange]);
+
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
 
   return (
     <div className="tl-col">
@@ -903,7 +1067,9 @@ function TimelinePanel({ activeEventId, onEventChange }) {
 /* ── APP ── */
 function App() {
   const [theme, setTheme]   = useState(() => localStorage.getItem('bf-theme') || 'a');
-  const [activeEv, setActiveEv] = useState(DATA.events[0]?.id);
+  const firstMappedEvent = DATA.events.find(e => e.location_id)?.id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstMappedEvent);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
     document.body.className = `theme-${theme}`;
@@ -917,6 +1083,19 @@ function App() {
   useEffect(() => { if (tweaks.theme) setTheme(tweaks.theme); }, [tweaks.theme]);
   const handleTheme = t => { setTheme(t); setTweak('theme', t); };
   const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!isPlaying) return;
+    const timer = setInterval(() => stepEvent(1), 2600);
+    return () => clearInterval(timer);
+  }, [isPlaying, stepEvent]);
 
   return (
     <div className="app">
@@ -935,11 +1114,23 @@ function App() {
       {/* Body */}
       <div className="body">
         <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
-        <MapPanel activeEventId={activeEv} />
+        <MapPanel
+          activeEventId={activeEv}
+          isPlaying={isPlaying}
+          onTogglePlay={() => setIsPlaying(v => !v)}
+          onStep={(dir) => {
+            setIsPlaying(false);
+            stepEvent(dir);
+          }}
+          onEventChange={(id) => {
+            setIsPlaying(false);
+            handleEventChange(id);
+          }}
+        />
       </div>
 
       <TweaksPanel>
-        <TweakSection title="Theme">
+        <TweakSection label="Theme">
           <TweakRadio id="theme" label="Color Mode"
             options={[{label:'Light',value:'a'},{label:'Dark',value:'b'}]}
             value={tweaks.theme}
