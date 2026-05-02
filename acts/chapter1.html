@@ -788,7 +788,10 @@ function PersonDots({ personStates, prevStates }) {
     const myGroupIdx = siblings.indexOf(pid);
     const groupSize  = siblings.length;
     const offsetX = (myGroupIdx - (groupSize - 1) / 2) * 65;
-    return { x: s.pos.x + offsetX, y: s.pos.y - 70 };
+    const verticalOffset = s.pos.y < 300 ? 70 : -70;
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + offsetX));
+    const y = Math.max(140, Math.min(VH - 70, s.pos.y + verticalOffset));
+    return { x, y };
   };
 
   return (

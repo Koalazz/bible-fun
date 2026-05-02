@@ -77,7 +77,7 @@ const ACTS_CH1 = {
       "title": "The Ascension of Jesus",
       "description": "As the disciples watch, Jesus is taken up and a cloud hides him from sight. Two men in white appear and promise he will return in the same way he departed.",
       "location_id": "mount_of_olives",
-      "persons_present": ["jesus", "the_eleven", "two_men_in_white"],
+      "persons_present": ["jesus", "peter", "the_eleven", "two_men_in_white"],
       "timeline_label": "Day 40 — Ascension",
       "scroll_anchor": "ascension"
     },
@@ -88,7 +88,7 @@ const ACTS_CH1 = {
       "title": "The Walk Back to Jerusalem",
       "description": "The eleven apostles walk back from the Mount of Olives — a Sabbath day's walk of roughly 900 metres — obeying Jesus's instruction to stay in Jerusalem.",
       "location_id": "jerusalem",
-      "persons_present": ["the_eleven"],
+      "persons_present": ["peter", "the_eleven"],
       "timeline_label": "Day 40 — Return",
       "scroll_anchor": "return"
     },
