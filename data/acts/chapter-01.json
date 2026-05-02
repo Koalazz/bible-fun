@@ -1,0 +1,406 @@
+{
+  "book": "Acts",
+  "chapter": 1,
+  "chapter_title": "Waiting for the Promise",
+  "chapter_summary": "After his resurrection, Jesus spends forty days with his followers, teaching them about God's kingdom and promising that the Holy Spirit will soon come upon them. He then ascends visibly into the sky from the Mount of Olives, leaving his disciples to return to Jerusalem, where they pray together and choose a twelfth apostle to replace Judas, who had betrayed Jesus and died.",
+  "date_range": {
+    "approximate": "Spring AD 30 (or AD 33)",
+    "notes": "The crucifixion is dated by most scholars to either AD 30 or AD 33; the Ascension occurs 40 days after Easter, placing it in late April or mid-May. The replacement of Judas follows shortly before Pentecost."
+  },
+
+  "persons": [
+    {
+      "id": "jesus",
+      "name": "Jesus",
+      "role": "Risen Lord",
+      "first_mention_verse": "1:1",
+      "summary": "The central figure of the entire book, Jesus appears to his apostles over forty days after his resurrection, giving final instructions before ascending to heaven. His departure is the event that sets the entire story of Acts in motion.",
+      "significance": "Jesus is the source of the apostles' authority and mission; every speech and miracle in Acts is done in his name, and the book traces how his movement spreads from Jerusalem to Rome."
+    },
+    {
+      "id": "peter",
+      "name": "Peter",
+      "role": "Apostle, Leader",
+      "first_mention_verse": "1:13",
+      "summary": "The most prominent of the twelve apostles, Peter takes the lead in the Upper Room by standing up to address the group about replacing Judas. He cites scripture, outlines the qualifications for the new apostle, and oversees the selection process.",
+      "significance": "Peter is the primary human protagonist of the first half of Acts, leading the early church through its first sermons, healings, persecutions, and the pivotal question of Gentile inclusion."
+    },
+    {
+      "id": "the_eleven",
+      "name": "The Eleven (Apostles)",
+      "role": "Group — Apostles",
+      "first_mention_verse": "1:13",
+      "summary": "The eleven remaining apostles — Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James son of Alphaeus, Simon the Zealot, and Judas son of James — witness the Ascension and return to Jerusalem together. They gather in the Upper Room to pray and wait for the Holy Spirit.",
+      "significance": "As the core leadership of the early church, the Eleven are the eyewitnesses whose testimony grounds the entire Acts narrative and who will soon lead the community after Pentecost."
+    },
+    {
+      "id": "the_women",
+      "name": "The Women",
+      "role": "Group — Disciples",
+      "first_mention_verse": "1:14",
+      "summary": "An unnamed group of women, likely including Mary Magdalene and others who followed Jesus from Galilee, join the apostles in constant prayer in the Upper Room. Their presence signals that the early community included both men and women from the beginning.",
+      "significance": "These women represent the broader circle of disciples beyond the Twelve and will be among those who receive the Holy Spirit at Pentecost."
+    },
+    {
+      "id": "mary_mother_of_jesus",
+      "name": "Mary, mother of Jesus",
+      "role": "Disciple",
+      "first_mention_verse": "1:14",
+      "summary": "Mary, the mother of Jesus, is explicitly named among those gathered in the Upper Room in prayer. This is her final appearance in the New Testament narrative.",
+      "significance": "Her presence in the prayer community bridges the Gospel story with the Acts story and affirms the continuity of Jesus's followers."
+    },
+    {
+      "id": "brothers_of_jesus",
+      "name": "The Brothers of Jesus",
+      "role": "Group — Disciples",
+      "first_mention_verse": "1:14",
+      "summary": "Jesus's brothers (likely James, Joseph, Simon, and Judas — not the apostle) are mentioned as part of the praying group, a significant detail because the Gospels note they had been skeptical of Jesus during his ministry. Their presence here marks a change of heart after the resurrection.",
+      "significance": "James, the brother of Jesus, will soon become the leader of the Jerusalem church and a pivotal figure in Acts 15."
+    },
+    {
+      "id": "judas_iscariot",
+      "name": "Judas Iscariot",
+      "role": "Betrayer (referenced, deceased)",
+      "first_mention_verse": "1:16",
+      "summary": "Judas, who had been one of the Twelve, betrayed Jesus to the authorities and subsequently died — Acts describes him purchasing a field where he died violently. Peter recounts this story to explain why a replacement apostle is needed.",
+      "significance": "Judas's absence and the need to replace him drives the chapter's concluding action, and his fate serves as a warning about the consequences of betraying the community."
+    },
+    {
+      "id": "matthias",
+      "name": "Matthias",
+      "role": "Apostle (newly chosen)",
+      "first_mention_verse": "1:23",
+      "summary": "Matthias is chosen by lot from among the wider group of disciples to fill the vacancy left by Judas and restore the Twelve to their full number. He had been a follower of Jesus from the baptism of John all the way through the Ascension.",
+      "significance": "His selection restores the symbolic completeness of the Twelve, which mirrors the twelve tribes of Israel and signals the continuity of Jesus's original mission."
+    },
+    {
+      "id": "joseph_barsabbas",
+      "name": "Joseph called Barsabbas (Justus)",
+      "role": "Disciple, candidate",
+      "first_mention_verse": "1:23",
+      "summary": "Joseph Barsabbas, also known as Justus, is the other finalist considered to replace Judas alongside Matthias. Though the lot falls to Matthias, Joseph's presence signals that the wider community of disciples was large and qualified.",
+      "significance": "His inclusion as a legitimate candidate shows that the Twelve were drawn from a broader, faithful community of disciples who had followed Jesus throughout his ministry."
+    },
+    {
+      "id": "two_men_in_white",
+      "name": "Two Men in White Robes",
+      "role": "Angels (messengers)",
+      "first_mention_verse": "1:10",
+      "summary": "Two figures in white robes appear at the Ascension and address the disciples, asking why they are staring at the sky and promising that Jesus will return in the same way he departed. They function as interpreters of the Ascension event.",
+      "significance": "Their message redirects the disciples' attention from gazing upward toward the mission ahead, setting the tone for the entire book of Acts."
+    },
+    {
+      "id": "theophilus",
+      "name": "Theophilus",
+      "role": "Addressee",
+      "first_mention_verse": "1:1",
+      "summary": "The book is addressed to 'Theophilus,' the same recipient as the Gospel of Luke, indicating that Acts is a sequel intended for this individual or community. The name means 'friend of God' in Greek.",
+      "significance": "Theophilus frames the entire work as a carefully researched account meant for an educated Greek-speaking audience, shaping its literary style and apologetic goals."
+    }
+  ],
+
+  "locations": [
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The holy city and capital of Judea, Jerusalem is both the end-point of Jesus's earthly ministry and the starting point of the apostles' mission to the world."
+    },
+    {
+      "id": "mount_of_olives",
+      "name": "Mount of Olives",
+      "modern_name": "Har HaZeitim, East Jerusalem",
+      "lat": 31.7781,
+      "lng": 35.2458,
+      "description": "A ridge east of Jerusalem across the Kidron Valley, the Mount of Olives is the site of Jesus's Ascension into heaven and is described as a Sabbath day's walk (about 900 metres) from the city."
+    },
+    {
+      "id": "upper_room",
+      "name": "The Upper Room",
+      "modern_name": "Disputed — traditional site on Mount Zion, Jerusalem",
+      "lat": 31.7717,
+      "lng": 35.2288,
+      "description": "A large upstairs room in Jerusalem where the disciples gathered to pray after the Ascension; traditionally associated with the site of the Last Supper on the southwestern hill of the city."
+    }
+  ],
+
+  "events": [
+    {
+      "id": "prologue_to_theophilus",
+      "sequence": 1,
+      "verses": "1:1-2",
+      "title": "Prologue: A Letter to Theophilus",
+      "description": "The author opens by reminding his reader Theophilus of the first volume — the Gospel of Luke — which recorded all that Jesus 'began to do and teach.' This volume picks up where that one ended, with Jesus giving final instructions to his apostles through the Holy Spirit before his ascension. The brief prologue establishes Acts as a deliberate continuation of a larger story about Jesus.",
+      "location_id": null,
+      "persons_present": ["theophilus"],
+      "timeline_label": "Opening dedication",
+      "scroll_anchor": "prologue",
+      "visual_notes": "Illustrate an ancient scroll or codex being unrolled, with the name 'Theophilus' visible at the top — evoking a formal letter in the Greco-Roman literary tradition."
+    },
+    {
+      "id": "forty_days_teaching",
+      "sequence": 2,
+      "verses": "1:3",
+      "title": "Forty Days of Resurrection Appearances",
+      "description": "After his death, Jesus appeared alive to his apostles many times over a period of forty days, giving them convincing proofs that he was truly risen. During these appearances he taught them about the kingdom of God. The forty-day period deliberately echoes Moses on Sinai and Jesus's forty days in the wilderness, framing this time as a sacred period of divine preparation.",
+      "location_id": "jerusalem",
+      "persons_present": ["jesus", "the_eleven"],
+      "timeline_label": "Days 1–40 post-resurrection",
+      "scroll_anchor": "forty-days-teaching",
+      "visual_notes": "Map shows Jerusalem with a soft radial glow indicating multiple appearance locations over time. Illustrate Jesus walking and speaking with a small group of disciples on a hillside path."
+    },
+    {
+      "id": "promise_of_the_spirit",
+      "sequence": 3,
+      "verses": "1:4-5",
+      "title": "The Promise of the Holy Spirit",
+      "description": "While eating with his disciples, Jesus gives them a direct command: do not leave Jerusalem, but wait for the gift the Father has promised — the Holy Spirit. Jesus contrasts John's water baptism with the coming baptism in the Holy Spirit, which he says will happen within days. This command transforms Jerusalem from merely the end of one story into the launching pad for another.",
+      "location_id": "jerusalem",
+      "persons_present": ["jesus", "the_eleven"],
+      "timeline_label": "Day 40 — final meal",
+      "scroll_anchor": "promise-of-the-spirit",
+      "visual_notes": "Show Jesus reclining at a table with the apostles in a warm interior space; a subtle golden light or dove symbol in the upper portion of the illustration hints at the coming Spirit."
+    },
+    {
+      "id": "question_about_the_kingdom",
+      "sequence": 4,
+      "verses": "1:6-8",
+      "title": "\"Will You Now Restore the Kingdom?\"",
+      "description": "The apostles ask Jesus whether he is about to restore the political kingdom of Israel — a question that reveals they still expected a nationalistic liberation. Jesus redirects them: the timing of such things is not theirs to know, but they will receive power when the Holy Spirit comes on them. He then gives them their mission: to be his witnesses in Jerusalem, all Judea, Samaria, and to the ends of the earth — a geographic outline that maps the entire book of Acts.",
+      "location_id": "jerusalem",
+      "persons_present": ["jesus", "the_eleven"],
+      "timeline_label": "Day 40 — final commission",
+      "scroll_anchor": "kingdom-question",
+      "visual_notes": "Illustrate a map expanding outward from Jerusalem in concentric rings labeled: Jerusalem → Judea → Samaria → Ends of the Earth. This functions as both an illustration and a navigation metaphor for the whole book."
+    },
+    {
+      "id": "ascension",
+      "sequence": 5,
+      "verses": "1:9-11",
+      "title": "The Ascension of Jesus",
+      "description": "As the disciples watch, Jesus is taken up and a cloud hides him from their sight. They stand gazing upward into the sky, until two men dressed in white appear and tell them that Jesus has gone to heaven but will return in the same way they saw him go. The Ascension marks the decisive transition from the era of Jesus's earthly presence to the era of the Spirit and the church.",
+      "location_id": "mount_of_olives",
+      "persons_present": ["jesus", "the_eleven", "two_men_in_white"],
+      "timeline_label": "Day 40 — Ascension",
+      "scroll_anchor": "ascension",
+      "visual_notes": "Show Jesus rising into a cloud above the Mount of Olives, viewed from below by the eleven disciples. Two white-robed figures stand among them looking upward. The Jerusalem skyline is visible in the background across the Kidron Valley. Use a vertical composition to emphasize the upward movement."
+    },
+    {
+      "id": "return_to_jerusalem",
+      "sequence": 6,
+      "verses": "1:12",
+      "title": "The Walk Back to Jerusalem",
+      "description": "After the Ascension, the eleven apostles walk back to Jerusalem from the Mount of Olives — a distance described as a Sabbath day's walk, roughly 900 metres. This brief note grounds the story geographically and shows the disciples obeying Jesus's instruction to stay in Jerusalem rather than returning home to Galilee.",
+      "location_id": "jerusalem",
+      "persons_present": ["the_eleven"],
+      "timeline_label": "Day 40 — return to the city",
+      "scroll_anchor": "return-to-jerusalem",
+      "visual_notes": "Animate a path on the map from Mount of Olives westward over the Kidron Valley into Jerusalem. The eleven figures walk together as a tight group on a dirt road with the city walls ahead."
+    },
+    {
+      "id": "upper_room_prayer",
+      "sequence": 7,
+      "verses": "1:13-14",
+      "title": "The Upper Room: United in Prayer",
+      "description": "The eleven apostles go to the upper room of a house in Jerusalem, where they devote themselves continuously to prayer. They are joined by a larger group that includes the women who followed Jesus, Mary his mother, and his brothers. Luke names all eleven apostles, creating a formal roster that underlines their identity as the authorized witnesses of everything that follows.",
+      "location_id": "upper_room",
+      "persons_present": ["peter", "the_eleven", "the_women", "mary_mother_of_jesus", "brothers_of_jesus"],
+      "timeline_label": "Days 40–50 — waiting in prayer",
+      "scroll_anchor": "upper-room-prayer",
+      "visual_notes": "Illustrate roughly 120 people gathered in a large lamplit upper room. Men and women mixed together, seated on the floor and on benches. Mary is identifiable near the center. The atmosphere is quiet and expectant, not festive."
+    },
+    {
+      "id": "peter_addresses_the_community",
+      "sequence": 8,
+      "verses": "1:15-20",
+      "title": "Peter Speaks: The Fate of Judas",
+      "description": "With about 120 believers gathered, Peter stands and addresses them. He cites two psalms to argue that scripture predicted both Judas's betrayal and the need to replace him. He describes how Judas used the money from betraying Jesus to buy a field, where he died in a gruesome way, and that the field became known as Akeldama — 'Field of Blood.' Peter's interpretation of scripture shows the early community reading the Old Testament through the lens of Jesus.",
+      "location_id": "upper_room",
+      "persons_present": ["peter", "the_eleven", "the_women", "mary_mother_of_jesus", "brothers_of_jesus"],
+      "timeline_label": "Before Pentecost — Peter's speech",
+      "scroll_anchor": "peter-addresses-community",
+      "visual_notes": "Peter stands at the front of the room, scroll in hand, speaking to a seated crowd of about 120. Add a small inset map or callout showing the location of Akeldama — traditionally placed south of Jerusalem in the Hinnom Valley."
+    },
+    {
+      "id": "selection_of_matthias",
+      "sequence": 9,
+      "verses": "1:21-26",
+      "title": "Matthias Chosen to Replace Judas",
+      "description": "Peter outlines the qualifications for the replacement apostle: he must have accompanied Jesus from the baptism of John until the Ascension, and must be a witness to the resurrection. Two candidates emerge — Joseph Barsabbas and Matthias. The community prays, asking God to reveal his choice, then cast lots — an ancient method of discernment — and the lot falls to Matthias. He is added to the eleven, restoring the Twelve.",
+      "location_id": "upper_room",
+      "persons_present": ["peter", "the_eleven", "the_women", "mary_mother_of_jesus", "brothers_of_jesus", "matthias", "joseph_barsabbas"],
+      "timeline_label": "Before Pentecost — Matthias chosen",
+      "scroll_anchor": "matthias-chosen",
+      "visual_notes": "Show two men standing before the group — Matthias on the left, Joseph Barsabbas on the right — while others observe from behind. A pair of lots (small stones or sticks) is being drawn from a vessel. Matthias's expression could suggest calm surprise; Joseph accepts gracefully."
+    }
+  ],
+
+  "routes": [
+    {
+      "person_id": "jesus",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "forty_days_teaching",
+          "note": "Multiple resurrection appearances in and around Jerusalem over 40 days"
+        },
+        {
+          "order": 2,
+          "location_id": "jerusalem",
+          "event_id": "promise_of_the_spirit",
+          "note": "Final meal and promise of the Holy Spirit"
+        },
+        {
+          "order": 3,
+          "location_id": "mount_of_olives",
+          "event_id": "ascension",
+          "note": "Led disciples out to the Mount of Olives where he ascended"
+        }
+      ]
+    },
+    {
+      "person_id": "the_eleven",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "forty_days_teaching",
+          "note": "Received resurrection appearances throughout Jerusalem"
+        },
+        {
+          "order": 2,
+          "location_id": "mount_of_olives",
+          "event_id": "ascension",
+          "note": "Followed Jesus to the Mount of Olives"
+        },
+        {
+          "order": 3,
+          "location_id": "jerusalem",
+          "event_id": "return_to_jerusalem",
+          "note": "Walked back to Jerusalem as instructed"
+        },
+        {
+          "order": 4,
+          "location_id": "upper_room",
+          "event_id": "upper_room_prayer",
+          "note": "Gathered in the Upper Room to pray and wait"
+        }
+      ]
+    },
+    {
+      "person_id": "peter",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "mount_of_olives",
+          "event_id": "ascension",
+          "note": "Witnessed the Ascension with the others"
+        },
+        {
+          "order": 2,
+          "location_id": "upper_room",
+          "event_id": "upper_room_prayer",
+          "note": "Led the gathered community in prayer"
+        },
+        {
+          "order": 3,
+          "location_id": "upper_room",
+          "event_id": "peter_addresses_the_community",
+          "note": "Stood up to address the 120 and interpret scripture"
+        },
+        {
+          "order": 4,
+          "location_id": "upper_room",
+          "event_id": "selection_of_matthias",
+          "note": "Oversaw the selection of Matthias"
+        }
+      ]
+    }
+  ],
+
+  "timeline": [
+    {
+      "event_id": "prologue_to_theophilus",
+      "position": 1,
+      "label": "Dedication",
+      "relative_time": "Narrated retrospectively",
+      "absolute_time": "c. AD 62–80 (date of composition)"
+    },
+    {
+      "event_id": "forty_days_teaching",
+      "position": 2,
+      "label": "40 Days of Appearances",
+      "relative_time": "Days 1–40 post-resurrection",
+      "absolute_time": "April AD 30 (or AD 33)"
+    },
+    {
+      "event_id": "promise_of_the_spirit",
+      "position": 3,
+      "label": "Final Meal & Promise",
+      "relative_time": "Day 40",
+      "absolute_time": "Late April AD 30 (or May AD 33)"
+    },
+    {
+      "event_id": "question_about_the_kingdom",
+      "position": 4,
+      "label": "Final Commission",
+      "relative_time": "Day 40 — moments before Ascension",
+      "absolute_time": "Late April / early May AD 30 or 33"
+    },
+    {
+      "event_id": "ascension",
+      "position": 5,
+      "label": "The Ascension",
+      "relative_time": "Day 40 — Ascension Thursday",
+      "absolute_time": "Late April / early May AD 30 or 33"
+    },
+    {
+      "event_id": "return_to_jerusalem",
+      "position": 6,
+      "label": "Return to Jerusalem",
+      "relative_time": "Day 40 — afternoon",
+      "absolute_time": "Same day as Ascension"
+    },
+    {
+      "event_id": "upper_room_prayer",
+      "position": 7,
+      "label": "Waiting & Praying",
+      "relative_time": "Days 40–50 — ten days of prayer",
+      "absolute_time": "Late April – May AD 30 or 33"
+    },
+    {
+      "event_id": "peter_addresses_the_community",
+      "position": 8,
+      "label": "Peter's Speech",
+      "relative_time": "During the 10-day wait",
+      "absolute_time": "May AD 30 or 33"
+    },
+    {
+      "event_id": "selection_of_matthias",
+      "position": 9,
+      "label": "Matthias Chosen",
+      "relative_time": "Before Pentecost (Day 50)",
+      "absolute_time": "May AD 30 or 33"
+    }
+  ],
+
+  "theological_themes": [
+    "The promise and power of the Holy Spirit",
+    "Continuity: Acts as the sequel to the Gospel of Luke",
+    "Witness: being sent to the ends of the earth",
+    "Scriptural fulfillment and the interpretation of the Old Testament",
+    "Community, prayer, and shared waiting",
+    "Restoration of the Twelve as a symbolic act"
+  ],
+
+  "discussion_questions": [
+    "The disciples asked Jesus when he would restore the kingdom. In what ways do people today misunderstand what God's kingdom looks like? How does Jesus's answer redirect their expectations?",
+    "The community spent ten days in prayer between the Ascension and Pentecost. What does this waiting period suggest about how God's purposes unfold, and how does it challenge our desire for immediate results?",
+    "Peter quotes from the Psalms to make sense of Judas's death and the need for a replacement. What does this tell us about how the early church read their scriptures, and how does it shape the way you read the Old Testament?",
+    "Matthias was chosen by lot after prayer. What does this method of decision-making say about the community's trust in God, and how do you think about making decisions in your own community?",
+    "The 'ends of the earth' in Acts 1:8 was a phrase that meant Rome or beyond. What is your personal 'end of the earth' — the place or person farthest from your natural circle that the Spirit might be calling you toward?"
+  ]
+}
