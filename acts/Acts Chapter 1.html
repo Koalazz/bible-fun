@@ -363,6 +363,65 @@ body.theme-b .map-leg-item { color: var(--tl-fg); background: oklch(18% .018 255
   50%      { r:13; opacity:.06; }
 }
 .dot-active-ring { animation: dotPulse 2.2s ease-in-out infinite; }
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  /* Stack: map on top, timeline on bottom */
+  .app { grid-template-rows: 44px 1fr; }
+
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 42vh 1fr;
+  }
+
+  /* Map moves to top row */
+  .map-col { order: -1; }
+
+  /* Tighten header */
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+
+  /* Event banner: single compact row */
+  .map-event-banner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 8px 12px;
+    gap: 2px;
+  }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title  { font-size: 13px; }
+  .ban-desc   { display: none; }
+  .ban-loc    { display: none; }
+
+  /* Legend: horizontal row at bottom */
+  .map-person-legend {
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    gap: 4px;
+  }
+  .map-leg-item { font-size: 9px; padding: 2px 8px 2px 5px; }
+  .map-leg-dot  { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+
+  /* Timeline: full width, shorter items */
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
 </style>
 </head>
 <body class="theme-a">
@@ -632,7 +691,7 @@ function PersonDots({ personStates, prevStates }) {
     });
     const myGroupIdx = siblings.indexOf(pid);
     const groupSize  = siblings.length;
-    const offsetX = (myGroupIdx - (groupSize - 1) / 2) * 110;
+    const offsetX = (myGroupIdx - (groupSize - 1) / 2) * 65;
     return { x: s.pos.x + offsetX, y: s.pos.y - 70 };
   };
 
@@ -712,7 +771,7 @@ function MapPanel({ activeEventId }) {
     }
   }, [activeEventId, states]);
 
-  const legendItems = Object.entries(states).sort((a,b) => b[1].active - a[1].active);
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
 
   return (
     <div className="map-col">

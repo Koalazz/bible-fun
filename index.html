@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bible Fun</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:       oklch(96% 0.018 78);
+  --bg-alt:   oklch(91% 0.022 74);
+  --bg-dark:  oklch(16% 0.02 55);
+  --fg:       oklch(18% 0.02 55);
+  --fg-muted: oklch(50% 0.018 60);
+  --accent:   oklch(58% 0.19 46);
+  --border:   oklch(84% 0.022 72);
+  --card:     oklch(99.5% 0.008 80);
+  --tl-bg:    oklch(18% 0.02 55);
+  --tl-fg:    oklch(95% 0.012 78);
+}
+body.theme-b {
+  --bg:       oklch(13% 0.018 255);
+  --bg-alt:   oklch(18% 0.02 255);
+  --bg-dark:  oklch(9% 0.015 255);
+  --fg:       oklch(93% 0.012 75);
+  --fg-muted: oklch(58% 0.016 70);
+  --accent:   oklch(64% 0.19 46);
+  --border:   oklch(26% 0.02 255);
+  --card:     oklch(18% 0.018 255);
+  --tl-bg:    oklch(9% 0.015 255);
+  --tl-fg:    oklch(93% 0.012 75);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── LAYOUT ── */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-brand { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); }
+.hdr-space { flex:1; }
+.theme-btns { display:flex; gap:6px; }
+.theme-btn {
+  font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase; padding:3px 13px;
+  border:1.5px solid oklch(36% .015 255); background:transparent;
+  color:oklch(60% .012 70); cursor:pointer; border-radius:2px; transition:all .2s;
+}
+.theme-btn.active { border-color:var(--accent); background:var(--accent); color:#fff; }
+
+/* ── BODY ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── BOOK COLUMN (left) ── */
+.book-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+}
+
+.book-col-header {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.book-col-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.book-col-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; color:var(--tl-fg); line-height:1.1;
+}
+
+.book-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+.book-list::-webkit-scrollbar { width:3px; }
+.book-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+.book-item {
+  padding: 14px 18px;
+  cursor: pointer;
+  border-bottom: 1px solid oklch(24% .012 255);
+  transition: background .15s;
+  position: relative;
+}
+.book-item:last-child { border-bottom: none; }
+.book-item:hover { background: oklch(22% .015 255 / 0.6); }
+.book-item.active { background: oklch(22% .018 255 / 0.85); }
+body.theme-a .book-item:hover { background: oklch(22% .015 55 / 0.4); }
+body.theme-a .book-item.active { background: oklch(20% .018 55 / 0.75); }
+
+.book-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--accent);
+}
+
+.book-testament {
+  font-size: 9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color: var(--accent); margin-bottom: 3px;
+}
+.book-name {
+  font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:800;
+  text-transform:uppercase; letter-spacing:.04em; line-height:1.1;
+  color: var(--tl-fg); margin-bottom: 2px;
+}
+.book-subtitle {
+  font-family:'Lora',serif; font-style:italic; font-size:11px;
+  color: oklch(55% .012 70); margin-bottom: 4px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.book-meta {
+  display: flex; gap: 8px; align-items: center;
+  font-size: 9px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+  color: oklch(42% .012 255);
+}
+.book-meta-avail { color: var(--accent); }
+body.theme-a .book-meta { color: oklch(52% .012 55); }
+
+/* ── CHAPTER COLUMN (right) ── */
+.chapter-col {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.chapter-col-header {
+  padding: 18px 28px 16px;
+  border-bottom: 2px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+body.theme-b .chapter-col-header { border-color: oklch(24% .015 255); }
+
+.ch-testament {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom: 3px;
+}
+.ch-book-name {
+  font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:800;
+  text-transform:uppercase; letter-spacing:.04em; line-height:1; color: var(--fg);
+}
+.ch-book-full {
+  font-family:'Lora',serif; font-style:italic; font-size:13px;
+  color: var(--fg-muted); margin-top: 3px;
+}
+.ch-stats {
+  font-size: 11px; font-weight:600; letter-spacing:.08em;
+  color: var(--fg-muted); white-space:nowrap;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+}
+.ch-stats-avail { color: var(--accent); font-weight:700; }
+
+/* Chapter list */
+.chapter-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px 0;
+}
+.chapter-list::-webkit-scrollbar { width:4px; }
+.chapter-list::-webkit-scrollbar-thumb { background: var(--border); border-radius:2px; }
+
+/* Each chapter row */
+.ch-row {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 0;
+  padding: 0 28px;
+  min-height: 60px;
+  border-bottom: 1px solid var(--border);
+  transition: background .15s;
+  text-decoration: none;
+  color: inherit;
+}
+body.theme-b .ch-row { border-color: oklch(20% .012 255); }
+.ch-row:last-child { border-bottom: none; }
+
+.ch-row.available {
+  cursor: pointer;
+}
+.ch-row.available:hover {
+  background: oklch(58% .19 46 / .06);
+}
+.ch-row.unavailable {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.ch-row-num {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size: 22px; font-weight:800; letter-spacing:.02em;
+  color: var(--fg-muted);
+  line-height: 1;
+}
+.ch-row.available .ch-row-num { color: var(--accent); }
+
+.ch-row-body {}
+.ch-row-label {
+  font-size: 9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color: var(--fg-muted); margin-bottom: 2px;
+}
+.ch-row.available .ch-row-label { color: oklch(55% .015 46); }
+.ch-row-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size: 15px; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
+  line-height:1.15; color: var(--fg);
+}
+.ch-row.unavailable .ch-row-title { color: var(--fg-muted); }
+
+.ch-row-action {
+  font-size: 10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+}
+.ch-row-arrow {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:20px; font-weight:800;
+  color: var(--accent); opacity:.7;
+  transition: opacity .2s, transform .2s;
+}
+.ch-row.available:hover .ch-row-arrow { opacity: 1; transform: translateX(3px); }
+.ch-row-soon {
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color: oklch(38% .01 255); background: oklch(22% .01 255 / .6);
+  padding: 2px 8px; border-radius:2px;
+}
+body.theme-a .ch-row-soon { background: oklch(88% .01 70 / .8); color: oklch(55% .01 55); }
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  html, body, #root { overflow: auto; height: auto; min-height: 100%; }
+
+  .app { height: auto; min-height: 100svh; grid-template-rows: 44px auto; }
+
+  /* Header: tighten up */
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-title { display: none; }
+
+  /* Body: single column, book row on top */
+  .body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: auto; }
+
+  /* Book column: horizontal pill strip */
+  .book-col {
+    border-right: none;
+    border-bottom: 1px solid oklch(24% .012 255);
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    overflow: visible;
+  }
+  .book-col-header { display: none; }
+  .book-list {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 12px;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: visible;
+    flex: 1;
+  }
+  .book-list::-webkit-scrollbar { display: none; }
+
+  .book-item {
+    flex-shrink: 0;
+    padding: 8px 14px;
+    border-bottom: none;
+    border-radius: 4px;
+    border: 1.5px solid oklch(28% .015 255);
+  }
+  .book-item.active { border-color: var(--accent); }
+  .book-item.active::before { display: none; }
+  .book-subtitle, .book-meta { display: none; }
+  .book-name { font-size: 15px; margin-bottom: 0; }
+  .book-testament { font-size: 8px; margin-bottom: 1px; }
+
+  /* Chapter col header: stack vertically, smaller */
+  .chapter-col-header {
+    padding: 12px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .ch-book-name { font-size: 22px; }
+  .ch-book-full { display: none; }
+  .ch-stats { align-items: flex-start; flex-direction: row; gap: 8px; }
+
+  /* Chapter rows: tighter */
+  .ch-row { padding: 0 16px; min-height: 52px; grid-template-columns: 44px 1fr auto; }
+  .ch-row-num { font-size: 18px; }
+  .ch-row-title { font-size: 13px; }
+  .ch-row-label { display: none; }
+}
+</style>
+</head>
+<body class="theme-b">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+const BOOKS = [
+  {
+    id: 'acts',
+    name: 'Acts',
+    fullName: 'Acts of the Apostles',
+    testament: 'New Testament',
+    chapters: [
+      { n:  1, title: 'Waiting for the Promise',                              href: 'acts/Acts%20Chapter%201.html' },
+      { n:  2, title: 'Fire from Heaven' },
+      { n:  3, title: 'The Lame Man Walks' },
+      { n:  4, title: 'Bold Before the Council' },
+      { n:  5, title: null },
+      { n:  6, title: 'Seven Chosen, One Accused' },
+      { n:  7, title: 'The Speech That Cost Everything' },
+      { n:  8, title: 'Scattered Seed' },
+      { n:  9, title: null },
+      { n: 10, title: 'The Door Opens to the Gentiles' },
+      { n: 11, title: 'Defending the Open Door' },
+      { n: 12, title: null },
+      { n: 13, title: null },
+      { n: 14, title: 'Gods Among Us' },
+      { n: 15, title: 'The Council That Changed Everything' },
+      { n: 16, title: null },
+      { n: 17, title: null },
+      { n: 18, title: 'The Tentmaker of Corinth' },
+      { n: 19, title: 'The Great Riot at Ephesus' },
+      { n: 20, title: null },
+      { n: 21, title: null },
+      { n: 22, title: "Paul's Defense Before the Jerusalem Crowd" },
+      { n: 23, title: 'Conspiracy, Visions, and a Secret Transfer' },
+      { n: 24, title: null },
+      { n: 25, title: null },
+      { n: 26, title: "Paul Before Agrippa: The Defense of a Life Transformed" },
+      { n: 27, title: 'Storm, Shipwreck, and Providence' },
+      { n: 28, title: null },
+    ]
+  }
+];
+
+function App() {
+  const [theme, setTheme]   = useState(() => localStorage.getItem('bf-theme') || 'b');
+  const [activeBook, setActiveBook] = useState(BOOKS[0]);
+
+  useEffect(() => {
+    document.body.className = `theme-${theme}`;
+    localStorage.setItem('bf-theme', theme);
+  }, [theme]);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-brand">Bible Fun</span>
+        <span className="hdr-title">Interactive Bible Study</span>
+        <div className="hdr-space" />
+        <div className="theme-btns">
+          <button className={`theme-btn${theme==='a'?' active':''}`} onClick={()=>setTheme('a')}>Light</button>
+          <button className={`theme-btn${theme==='b'?' active':''}`} onClick={()=>setTheme('b')}>Dark</button>
+        </div>
+      </div>
+
+      <div className="body">
+        <BookColumn books={BOOKS} active={activeBook} onSelect={setActiveBook} />
+        <ChapterColumn book={activeBook} />
+      </div>
+    </div>
+  );
+}
+
+function BookColumn({ books, active, onSelect }) {
+  return (
+    <div className="book-col">
+      <div className="book-col-header">
+        <div className="book-col-label">Library</div>
+        <div className="book-col-title">Select a Book</div>
+      </div>
+      <div className="book-list">
+        {books.map(book => {
+          const available = book.chapters.filter(c => c.href).length;
+          const isActive = active?.id === book.id;
+          return (
+            <div
+              key={book.id}
+              className={`book-item${isActive ? ' active' : ''}`}
+              onClick={() => onSelect(book)}
+            >
+              <div className="book-testament">{book.testament.toUpperCase()}</div>
+              <div className="book-name">{book.name}</div>
+              <div className="book-subtitle">{book.fullName}</div>
+              <div className="book-meta">
+                <span className="book-meta-avail">{available} ready</span>
+                <span>·</span>
+                <span>{book.chapters.length} chapters</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function ChapterColumn({ book }) {
+  if (!book) return <div className="chapter-col" />;
+  const available = book.chapters.filter(c => c.href).length;
+
+  return (
+    <div className="chapter-col">
+      <div className="chapter-col-header">
+        <div>
+          <div className="ch-testament">{book.testament.toUpperCase()}</div>
+          <div className="ch-book-name">{book.name}</div>
+          <div className="ch-book-full">{book.fullName}</div>
+        </div>
+        <div className="ch-stats">
+          <span className="ch-stats-avail">{available} chapter{available !== 1 ? 's' : ''} available</span>
+          <span>{book.chapters.length} total chapters</span>
+        </div>
+      </div>
+
+      <div className="chapter-list">
+        {book.chapters.map(ch => {
+          const hasLink = !!ch.href;
+          return hasLink ? (
+            <a key={ch.n} href={ch.href} className="ch-row available">
+              <div className="ch-row-num">{String(ch.n).padStart(2, '0')}</div>
+              <div className="ch-row-body">
+                <div className="ch-row-label">Chapter {ch.n}</div>
+                <div className="ch-row-title">{ch.title || `Chapter ${ch.n}`}</div>
+              </div>
+              <div className="ch-row-arrow">→</div>
+            </a>
+          ) : (
+            <div key={ch.n} className="ch-row unavailable">
+              <div className="ch-row-num">{String(ch.n).padStart(2, '0')}</div>
+              <div className="ch-row-body">
+                <div className="ch-row-label">Chapter {ch.n}</div>
+                <div className="ch-row-title">{ch.title || `Chapter ${ch.n}`}</div>
+              </div>
+              <div className="ch-row-soon">Soon</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
