@@ -794,8 +794,9 @@ function PersonDots({ personStates, prevStates }) {
     const spacing = 30;
     const offsetX = (col - (cols - 1) / 2) * spacing;
     const offsetY = (row - (rows - 1) / 2) * spacing;
-    const x = Math.max(70, Math.min(VW - 70, s.pos.x + offsetX));
-    const y = Math.max(120, Math.min(VH - 70, s.pos.y + offsetY));
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
     return { x, y };
   };
 
