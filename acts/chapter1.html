@@ -405,14 +405,7 @@ body.theme-b .map-playback {
   cursor:pointer;
   line-height:1;
 }
-.playback-btn.primary {
-  width:42px;
-  background:var(--accent);
-  color:#fff;
-  border-color:var(--accent);
-}
 body.theme-b .playback-btn { background:oklch(18% .018 255); border-color:oklch(30% .015 255); color:var(--tl-fg); }
-body.theme-b .playback-btn.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
 .playback-track {
   position:relative;
   height:28px;
@@ -454,17 +447,6 @@ body.theme-b .playback-btn.primary { background:var(--accent); border-color:var(
   background:var(--accent);
   opacity:1;
   box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
-}
-
-/* Person dot pulse */
-@keyframes dotPulse {
-  0%,100% { r:7; opacity:.2; }
-  50%      { r:13; opacity:.06; }
-}
-.dot-active-ring { animation: dotPulse 2.2s ease-in-out infinite; }
-@keyframes eventPulse {
-  0%,100% { transform:scale(.82); opacity:.16; }
-  50% { transform:scale(1.18); opacity:.04; }
 }
 
 /* ── MOBILE ── */
@@ -517,7 +499,6 @@ body.theme-b .playback-btn.primary { background:var(--accent); border-color:var(
   }
   .playback-label { font-size:10px; }
   .playback-btn { width:28px; height:24px; }
-  .playback-btn.primary { width:38px; }
   .playback-track { height:22px; }
   .playback-track::before { top:10px; }
   .playback-step { width:18px; height:18px; }
@@ -790,19 +771,6 @@ function LocationMarkers({ activeLocId }) {
   );
 }
 
-function ActiveEventPulse({ locId }) {
-  const loc = LOCS[locId];
-  if (!loc) return null;
-  return (
-    <g style={{ transformOrigin: `${loc.x}px ${loc.y}px` }}>
-      <circle cx={loc.x} cy={loc.y} r="58" fill="var(--accent)" opacity=".09"
-        style={{ animation: 'eventPulse 2.4s ease-in-out infinite' }} />
-      <circle cx={loc.x} cy={loc.y} r="34" fill="none" stroke="var(--accent)"
-        strokeWidth="3" opacity=".45" strokeDasharray="7 8" />
-    </g>
-  );
-}
-
 /* ── PERSON DOTS — stable keys, trail effect ── */
 function PersonDots({ personStates, prevStates }) {
   const pids = Object.keys(ROUTES);
@@ -846,9 +814,6 @@ function PersonDots({ personStates, prevStates }) {
                 <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
               </g>
             )}
-            {s.active && (
-              <circle className="dot-active-ring" cx={cur.x} cy={cur.y} r="14" fill={s.color} opacity=".15" />
-            )}
             <circle cx={cur.x} cy={cur.y} r={dotR}
               fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
               style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
@@ -880,7 +845,7 @@ function PersonDots({ personStates, prevStates }) {
 
 
 /* ── MAP PANEL ── */
-function MapPanel({ activeEventId, isPlaying, onTogglePlay, onStep, onEventChange }) {
+function MapPanel({ activeEventId, onStep, onEventChange }) {
   const ev      = DATA.events.find(e => e.id === activeEventId);
   const locId   = ev?.location_id;
   const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
@@ -923,7 +888,6 @@ function MapPanel({ activeEventId, isPlaying, onTogglePlay, onStep, onEventChang
       <div className="map-svg-wrap">
         <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid slice">
           <Terrain />
-          <ActiveEventPulse locId={locId} />
           <LocationMarkers activeLocId={locId} />
           <PersonDots personStates={states} prevStates={prevStates} />
         </svg>
@@ -944,9 +908,6 @@ function MapPanel({ activeEventId, isPlaying, onTogglePlay, onStep, onEventChang
           <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
           <div className="playback-buttons">
             <button className="playback-btn" type="button" aria-label="Previous event" onClick={() => onStep(-1)}>‹</button>
-            <button className="playback-btn primary" type="button" aria-label={isPlaying ? 'Pause timeline' : 'Play timeline'} onClick={onTogglePlay}>
-              {isPlaying ? 'II' : '▶'}
-            </button>
             <button className="playback-btn" type="button" aria-label="Next event" onClick={() => onStep(1)}>›</button>
           </div>
         </div>
@@ -1069,7 +1030,6 @@ function App() {
   const [theme, setTheme]   = useState(() => localStorage.getItem('bf-theme') || 'a');
   const firstMappedEvent = DATA.events.find(e => e.location_id)?.id || DATA.events[0]?.id;
   const [activeEv, setActiveEv] = useState(firstMappedEvent);
-  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
     document.body.className = `theme-${theme}`;
@@ -1091,12 +1051,6 @@ function App() {
     });
   }, []);
 
-  useEffect(() => {
-    if (!isPlaying) return;
-    const timer = setInterval(() => stepEvent(1), 2600);
-    return () => clearInterval(timer);
-  }, [isPlaying, stepEvent]);
-
   return (
     <div className="app">
       {/* Header */}
@@ -1116,16 +1070,8 @@ function App() {
         <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
         <MapPanel
           activeEventId={activeEv}
-          isPlaying={isPlaying}
-          onTogglePlay={() => setIsPlaying(v => !v)}
-          onStep={(dir) => {
-            setIsPlaying(false);
-            stepEvent(dir);
-          }}
-          onEventChange={(id) => {
-            setIsPlaying(false);
-            handleEventChange(id);
-          }}
+          onStep={stepEvent}
+          onEventChange={handleEventChange}
         />
       </div>
 
