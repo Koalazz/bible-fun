@@ -1,0 +1,366 @@
+{
+  "book": "Acts",
+  "chapter": 25,
+  "chapter_title": "Festus, the Appeal to Caesar, and Agrippa's Arrival",
+  "chapter_summary": "The new governor Porcius Festus arrives in Caesarea and immediately travels to Jerusalem, where the chief priests and Jewish leaders renew their campaign against Paul — requesting he be transferred to Jerusalem for trial (intending to ambush and kill him en route). Festus refuses the transfer but invites the accusers to come to Caesarea. Back in Caesarea, Festus reopens Paul's case; faced with charges he cannot substantiate and a governor who seems willing to hand him to Jerusalem, Paul invokes his right as a Roman citizen and formally appeals to Caesar. Festus grants the appeal. Shortly afterward, King Agrippa II and his sister Bernice arrive for a state visit, and Festus shares Paul's puzzling case with Agrippa, who expresses a desire to hear Paul himself. The chapter ends with a grand ceremonial hearing being arranged for the following day.",
+  "date_range": {
+    "approximate": "AD 59",
+    "notes": "Festus is generally believed to have taken office around AD 59–60, replacing Felix. The events of this chapter — the Jerusalem visit, the Caesarea hearing, and Agrippa's state visit — all take place in a compressed window of a few weeks to months at the start of Festus's tenure."
+  },
+  "persons": [
+    {
+      "id": "festus",
+      "name": "Porcius Festus",
+      "role": "Roman Governor (Procurator of Judea)",
+      "first_mention_verse": "25:1",
+      "summary": "Festus is the new Roman procurator who replaces Felix. He travels to Jerusalem within three days of arriving in Caesarea, hears the renewed charges against Paul, and then presides over a fresh hearing in Caesarea. When Paul makes his appeal to Caesar, Festus grants it immediately. He later shares the confusing case with Agrippa, freely admitting he has no clear Roman charge to send with Paul to Caesar. He is portrayed as more conscientious than Felix but still willing to use Paul as a political bargaining chip.",
+      "significance": "Festus's inability to formulate a charge against Paul drives the narrative forward in two ways: it forces Paul's appeal to Caesar and sets up the elaborate hearing before Agrippa designed to give Festus something to write in his official report. His administrative competence contrasted with legal helplessness highlights Paul's genuine innocence under Roman law."
+    },
+    {
+      "id": "paul",
+      "name": "Paul",
+      "role": "Apostle / Prisoner",
+      "first_mention_verse": "25:6",
+      "summary": "Paul stands again before a new Roman governor facing the same charges he has already answered. When Festus — trying to please the Jewish leaders — suggests moving the trial to Jerusalem, Paul invokes his Roman citizenship and formally appeals to Caesar. The appeal is the decisive legal move that ensures Paul will travel to Rome. He then reappears at the end of the chapter as the subject of Festus's briefing to Agrippa, still in custody but about to receive his most prominent audience yet.",
+      "significance": "Paul's appeal to Caesar is the pivotal legal event of the Acts imprisonment narrative: it removes his case from local Jewish-Roman politics, places it before the supreme authority of the empire, and fulfills the divine promise that Paul will testify in Rome."
+    },
+    {
+      "id": "agrippa",
+      "name": "King Agrippa (Herod Agrippa II)",
+      "role": "Client King / Expert Consultant",
+      "first_mention_verse": "25:13",
+      "summary": "Agrippa II, Rome's client king over parts of northern Palestine and given custodianship over the Jerusalem Temple and the right to appoint its high priest, arrives in Caesarea with his sister Bernice to pay a formal visit to the new governor Festus. When Festus describes Paul's case, Agrippa — as a recognized expert on Jewish law and custom — immediately asks to hear Paul in person. He arranges a formal hearing for the following day.",
+      "significance": "Agrippa's arrival and interest in Paul set up the climactic defense speech of Acts 26 and fulfill the divine promise that Paul would testify before kings. His Jewish expertise gives him a unique ability to grasp the theological content of Paul's message in a way Festus cannot."
+    },
+    {
+      "id": "bernice",
+      "name": "Bernice",
+      "role": "Client Queen / Agrippa's Sister",
+      "first_mention_verse": "25:13",
+      "summary": "Bernice is the eldest sister of Agrippa II and a figure of considerable controversy in ancient sources — twice widowed, allegedly living with her brother Agrippa in a scandalous relationship, and later a consort of Emperor Titus. She accompanies Agrippa throughout his visit to Festus and will be present at Paul's hearing.",
+      "significance": "Bernice's presence adds royal splendor to the proceedings and signals the political and social prominence of the occasion. Historically, she represents the intersection of Jewish royalty and Roman imperial ambition — a fascinating background figure to Paul's defense."
+    },
+    {
+      "id": "chief_priests_jewish_leaders",
+      "name": "Chief Priests and Jewish Leaders",
+      "role": "Group / Accusers",
+      "first_mention_verse": "25:2",
+      "summary": "The Jerusalem-based chief priests and prominent Jewish leaders immediately petition the new governor Festus against Paul, requesting his transfer to Jerusalem for trial while simultaneously planning an ambush to kill him on the road. When Festus declines the transfer but invites them to Caesarea, they appear at the renewed hearing, surrounding Paul and leveling serious charges they cannot prove.",
+      "significance": "The Jewish leadership's renewed campaign against Paul at the start of Festus's tenure shows the depth and persistence of their hostility and their willingness to manipulate Roman administrative transitions for their own purposes."
+    }
+  ],
+  "locations": [
+    {
+      "id": "caesarea_maritima",
+      "name": "Caesarea",
+      "modern_name": "Caesarea Maritima (Qesarya), Israel",
+      "lat": 32.5023,
+      "lng": 34.9057,
+      "description": "The Roman administrative capital of Judea on the Mediterranean coast. Festus's base of operations, where Paul has been held for two years and where the renewed hearing, the appeal to Caesar, and Agrippa's state visit all occur."
+    },
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel / Palestine",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The city Festus visits within three days of arriving in Caesarea; where the chief priests and Jewish leaders formally petition him against Paul and propose moving the trial to Jerusalem."
+    },
+    {
+      "id": "rome",
+      "name": "Rome (referenced)",
+      "modern_name": "Rome, Italy",
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "description": "The imperial capital referenced as the destination of Paul's appeal to Caesar; never depicted directly in this chapter but looming as the narrative goal toward which the entire legal process now points."
+    },
+    {
+      "id": "herods_praetorium",
+      "name": "Herod's Praetorium (Audience Hall)",
+      "modern_name": "Caesarea Maritima — palace site, Israel",
+      "lat": 32.4997,
+      "lng": 34.9048,
+      "description": "The former palace of Herod the Great, serving as the governor's residence and the setting for both the formal hearing before Festus and the subsequent grand assembly before Agrippa and Bernice."
+    }
+  ],
+  "events": [
+    {
+      "id": "festus_visits_jerusalem",
+      "sequence": 1,
+      "verses": "25:1-3",
+      "title": "Festus Visits Jerusalem; Jewish Leaders Petition Against Paul",
+      "description": "Three days after arriving in Caesarea, the new governor Festus travels to Jerusalem as part of the customary introduction to his province. Immediately the chief priests and Jewish leaders press their case against Paul, urgently requesting that Festus transfer Paul to Jerusalem for trial. Their real motive — though unspoken to Festus — is to set up a roadside ambush and kill Paul before he can reach a courtroom. The combination of legal request and murderous intent echoes the conspiracy of chapter 23.",
+      "location_id": "jerusalem",
+      "persons_present": ["festus", "chief_priests_jewish_leaders"],
+      "timeline_label": "Festus in Jerusalem; ambush request made",
+      "scroll_anchor": "festus-visits-jerusalem",
+      "visual_notes": "A meeting in the Jerusalem high-priestly quarters: Festus in Roman official dress seated across from a group of urgently gesturing Jewish leaders; through a window in the background the Temple Mount is visible."
+    },
+    {
+      "id": "festus_declines_transfer",
+      "sequence": 2,
+      "verses": "25:4-5",
+      "title": "Festus Declines the Transfer; Invites Accusers to Caesarea",
+      "description": "Festus declines to transfer Paul to Jerusalem, replying that Paul is being held in Caesarea and that he himself will be returning there shortly. He invites the Jewish leaders — if they have a genuine legal case — to send their capable men to Caesarea and present charges against Paul there. It is unclear whether Festus suspects the transfer request is a pretext, or whether he is simply following proper Roman administrative procedure. Either way, his refusal inadvertently saves Paul's life again.",
+      "location_id": "jerusalem",
+      "persons_present": ["festus", "chief_priests_jewish_leaders"],
+      "timeline_label": "Transfer request refused",
+      "scroll_anchor": "festus-declines-transfer",
+      "visual_notes": "Festus standing to leave the meeting, hand raised in a 'no' gesture toward the petitioners; his face neutral and administrative; the Jewish leaders exchanging frustrated glances behind him."
+    },
+    {
+      "id": "hearing_reopened_caesarea",
+      "sequence": 3,
+      "verses": "25:6-7",
+      "title": "Festus Returns to Caesarea; Hearing Reopened",
+      "description": "After spending eight to ten days in Jerusalem, Festus returns to Caesarea. The very next day he takes his seat on the tribunal and orders Paul brought in. The Jewish leaders who have come from Jerusalem immediately surround Paul with serious charges — charges that Luke reports they cannot prove. The scene echoes the chapter 24 hearing before Felix, but with a new governor who has no prior knowledge of the case and is starting fresh.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["festus", "paul", "chief_priests_jewish_leaders"],
+      "timeline_label": "Hearing reopened; charges repeated",
+      "scroll_anchor": "hearing-reopened-caesarea",
+      "visual_notes": "Festus on the tribunal, newly arrived, looking unfamiliar with the case; Paul brought in by a centurion; the Jewish delegation surrounding him in a semicircle, gesturing accusingly; Festus watching with the focused but slightly overwhelmed expression of a new administrator."
+    },
+    {
+      "id": "paul_defends_himself_briefly",
+      "sequence": 4,
+      "verses": "25:8",
+      "title": "Paul's Brief Defense: No Offense Against Law, Temple, or Caesar",
+      "description": "Paul responds with a concise summary defense: he has not sinned against the Jewish law, against the Temple, or against Caesar. The addition of 'Caesar' is new and pointed — Paul is explicitly placing himself inside Roman law's protection and signaling that he is not a rebel against Roman authority. This three-point denial mirrors the three charges of Tertullus (Acts 24) and sets up his forthcoming appeal to Caesar's court.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["paul", "festus", "chief_priests_jewish_leaders"],
+      "timeline_label": "Paul: not guilty against law, Temple, or Caesar",
+      "scroll_anchor": "paul-defends-himself-briefly",
+      "visual_notes": "Paul standing calmly in the center of an accusatory semicircle, holding up three fingers as he enumerates his three denials; his posture calm and confident; the Jewish accusers gesturing to contradict him."
+    },
+    {
+      "id": "festus_proposes_jerusalem",
+      "sequence": 5,
+      "verses": "25:9",
+      "title": "Festus Proposes Moving the Trial to Jerusalem",
+      "description": "Festus, wishing to do the Jews a favor — using the same language Acts used to describe Felix's accommodation of Jewish leaders in chapter 24 — asks Paul whether he is willing to go to Jerusalem and be tried there before Festus himself. This proposal is at minimum naively careless and at worst deliberately yielding to political pressure at Paul's expense. Whatever Festus's motive, the suggestion is legally and morally questionable: it would return Paul to the exact jurisdiction his enemies control and where assassination plans have already been laid.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["festus", "paul", "chief_priests_jewish_leaders"],
+      "timeline_label": "Festus proposes Jerusalem trial",
+      "scroll_anchor": "festus-proposes-jerusalem",
+      "visual_notes": "Festus leaning toward Paul with a conciliatory gesture, apparently expecting Paul to accept as a reasonable compromise; Paul's expression sharpening as he recognizes the danger of the proposal."
+    },
+    {
+      "id": "paul_appeals_to_caesar",
+      "sequence": 6,
+      "verses": "25:10-12",
+      "title": "Paul Invokes His Right: 'I Appeal to Caesar!'",
+      "description": "Paul refuses the Jerusalem proposal with a decisive legal move. He is standing at Caesar's tribunal — the correct venue for a Roman citizen — and that is where he should be tried. He has done no wrong to the Jews, as Festus himself knows very well. If there were genuine criminal charges deserving death, he would not refuse to die. But since none of the accusations are true, no one has the right to hand him over to his accusers as a favor. Then comes the declaration: 'I appeal to Caesar.' Festus confers briefly with his legal council (the consilium, or advisory panel) and then pronounces: 'You have appealed to Caesar. To Caesar you will go.'",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["paul", "festus"],
+      "timeline_label": "Appeal to Caesar granted",
+      "scroll_anchor": "paul-appeals-to-caesar",
+      "visual_notes": "A dramatic courtroom moment: Paul pointing upward as he makes his appeal, the universal Roman gesture of invoking the emperor's authority; Festus frozen mid-sentence; the Jewish delegation visibly stunned; Festus conferring with advisors before pronouncing 'To Caesar you will go.'"
+    },
+    {
+      "id": "agrippa_bernice_arrive",
+      "sequence": 7,
+      "verses": "25:13",
+      "title": "Agrippa and Bernice Arrive for a State Visit",
+      "description": "Some days after Paul's appeal, King Agrippa II and his sister Bernice arrive in Caesarea to pay their respects to the new governor Festus. Agrippa is Rome's client king over the territories of Philip and Lysanias, with the added honor of supervising the Temple and appointing the high priest — making him technically the most knowledgeable available person on matters of Jewish law and theology. Their state visit is a normal social obligation between Roman client rulers and new provincial governors.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["agrippa", "bernice", "festus"],
+      "timeline_label": "Agrippa and Bernice arrive",
+      "scroll_anchor": "agrippa-bernice-arrive",
+      "visual_notes": "A formal entry procession into Caesarea: Agrippa and Bernice in royal dress on horseback or in a litter; Roman soldiers lining the route; Festus waiting at the praetorium entrance to receive them."
+    },
+    {
+      "id": "festus_briefs_agrippa",
+      "sequence": 8,
+      "verses": "25:14-21",
+      "title": "Festus Briefs Agrippa on the Puzzling Case of Paul",
+      "description": "During the state visit, Festus takes the opportunity to lay Paul's case before Agrippa, describing it as one he finds genuinely perplexing. He recounts: the Jewish accusations, the Roman hearing at which he found no charges deserving death, his suggestion to move the trial to Jerusalem, Paul's appeal to Caesar, and his own uncertainty about what to write in the official report to the emperor. Notably, Festus characterizes the dispute as being about Paul's religion and about 'a dead man named Jesus, whom Paul claims is alive' — a remarkable summary of the gospel from an outside Roman perspective.",
+      "location_id": "herods_praetorium",
+      "persons_present": ["festus", "agrippa", "bernice"],
+      "timeline_label": "Festus explains the Paul puzzle to Agrippa",
+      "scroll_anchor": "festus-briefs-agrippa",
+      "visual_notes": "An intimate state dinner or reception setting: Festus leaning toward Agrippa and Bernice across a table, speaking with hands spread in a 'what do I do?' gesture; Agrippa listening attentively with growing interest."
+    },
+    {
+      "id": "agrippa_asks_to_hear_paul",
+      "sequence": 9,
+      "verses": "25:22",
+      "title": "Agrippa: 'I Would Like to Hear This Man Myself'",
+      "description": "Agrippa responds immediately to Festus's account with a simple request: 'I would like to hear this man myself.' Festus replies, 'Tomorrow you will hear him.' The exchange is brief but consequential: Agrippa's Jewish expertise and personal curiosity ensure that Paul will receive the most prestigious and theologically competent audience of his imprisonment — an audience that will also produce the occasion for his most autobiographical and comprehensive speech in Acts.",
+      "location_id": "herods_praetorium",
+      "persons_present": ["agrippa", "festus"],
+      "timeline_label": "Agrippa asks to hear Paul",
+      "scroll_anchor": "agrippa-asks-hear-paul",
+      "visual_notes": "Agrippa leaning forward across the table with evident curiosity; Festus nodding with visible relief that someone with Jewish expertise is willing to weigh in; Bernice watching with a composed but attentive expression."
+    },
+    {
+      "id": "grand_ceremonial_hearing_assembled",
+      "sequence": 10,
+      "verses": "25:23-27",
+      "title": "Grand Assembly Convened; Festus Explains His Dilemma",
+      "description": "The next day a grand and ceremonially elaborate assembly is convened: Agrippa and Bernice enter with great pomp, accompanied by the senior military commanders (chiliarchs) of Caesarea and the prominent men of the city. Paul is brought in. Before Paul speaks, Festus addresses the assembly and explains why he has called this extraordinary gathering: he needs help formulating a charge to send with Paul to Caesar, because sending a prisoner without specifying the crimes against him seems unreasonable, and he has found no capital offenses. He is, in effect, using the assembled expertise of Agrippa and the city's leadership to solve his legal embarrassment.",
+      "location_id": "herods_praetorium",
+      "persons_present": ["agrippa", "bernice", "festus", "paul", "chief_priests_jewish_leaders"],
+      "timeline_label": "Grand assembly; Festus states his dilemma",
+      "scroll_anchor": "grand-ceremonial-hearing-assembled",
+      "visual_notes": "The most lavish scene in Acts: the great audience hall of Herod's praetorium filled with military officers in armor, robed city dignitaries, Agrippa and Bernice on elevated thrones in royal dress; Paul standing in chains before them all; Festus addressing the assembly from the tribunal."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "festus",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "caesarea_maritima",
+          "event_id": "agrippa_bernice_arrive",
+          "note": "Festus's base of operations throughout the chapter."
+        },
+        {
+          "order": 2,
+          "location_id": "jerusalem",
+          "event_id": "festus_visits_jerusalem",
+          "note": "Festus travels to Jerusalem within three days of arriving in Caesarea."
+        },
+        {
+          "order": 3,
+          "location_id": "caesarea_maritima",
+          "event_id": "hearing_reopened_caesarea",
+          "note": "Festus returns to Caesarea and immediately reopens Paul's case."
+        }
+      ]
+    },
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "herods_praetorium",
+          "event_id": "hearing_reopened_caesarea",
+          "note": "Paul is brought from custody to the hearing before Festus."
+        },
+        {
+          "order": 2,
+          "location_id": "caesarea_maritima",
+          "event_id": "paul_appeals_to_caesar",
+          "note": "Paul makes his formal appeal to Caesar before Festus's tribunal."
+        },
+        {
+          "order": 3,
+          "location_id": "herods_praetorium",
+          "event_id": "grand_ceremonial_hearing_assembled",
+          "note": "Paul is brought before the grand assembly of Agrippa, Bernice, and city leaders."
+        }
+      ]
+    },
+    {
+      "person_id": "agrippa",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "caesarea_maritima",
+          "event_id": "agrippa_bernice_arrive",
+          "note": "Agrippa and Bernice arrive in Caesarea for a state visit to Festus."
+        },
+        {
+          "order": 2,
+          "location_id": "herods_praetorium",
+          "event_id": "festus_briefs_agrippa",
+          "note": "Festus briefs Agrippa on Paul's case during the visit."
+        },
+        {
+          "order": 3,
+          "location_id": "herods_praetorium",
+          "event_id": "grand_ceremonial_hearing_assembled",
+          "note": "Agrippa presides at the grand assembly where Paul will speak."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "festus_visits_jerusalem",
+      "position": 1,
+      "label": "Festus visits Jerusalem; ambush request",
+      "relative_time": "Days 1–3 of Festus's tenure",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "festus_declines_transfer",
+      "position": 2,
+      "label": "Transfer to Jerusalem refused",
+      "relative_time": "Days 1–10 in Jerusalem",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "hearing_reopened_caesarea",
+      "position": 3,
+      "label": "Hearing reopened in Caesarea",
+      "relative_time": "Day after returning to Caesarea",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "paul_defends_himself_briefly",
+      "position": 4,
+      "label": "Paul: not guilty (law, Temple, Caesar)",
+      "relative_time": "The hearing",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "festus_proposes_jerusalem",
+      "position": 5,
+      "label": "Festus proposes Jerusalem trial",
+      "relative_time": "The hearing",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "paul_appeals_to_caesar",
+      "position": 6,
+      "label": "Paul appeals to Caesar — granted",
+      "relative_time": "The hearing — decisive moment",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "agrippa_bernice_arrive",
+      "position": 7,
+      "label": "Agrippa and Bernice arrive for state visit",
+      "relative_time": "Some days after the hearing",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "festus_briefs_agrippa",
+      "position": 8,
+      "label": "Festus briefs Agrippa on Paul",
+      "relative_time": "During state visit",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "agrippa_asks_to_hear_paul",
+      "position": 9,
+      "label": "Agrippa: 'I want to hear him'",
+      "relative_time": "During state visit",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "grand_ceremonial_hearing_assembled",
+      "position": 10,
+      "label": "Grand assembly convened — Paul before Agrippa",
+      "relative_time": "The following day",
+      "absolute_time": "c. AD 59"
+    }
+  ],
+  "theological_themes": [
+    "Divine protection through Roman legal process: the empire's procedures preserve the apostle",
+    "The gospel before kings: Paul's witness reaches the highest social and political levels",
+    "The appeal to Caesar as the fulfillment of Jesus's promise that Paul must testify in Rome",
+    "Political accommodation and the compromise of justice: Festus doing Jews a 'favor' at Paul's expense",
+    "The puzzlement of secular power before the resurrection claim: Festus cannot even articulate the charges",
+    "Providence hidden in bureaucratic delay: legal confusion in Caesarea positions Paul for Rome"
+  ],
+  "discussion_questions": [
+    "Paul's appeal to Caesar is a decisive legal move that removes him from local Jewish-Roman politics. What does this decision reveal about his understanding of Roman citizenship as a tool for gospel mission?",
+    "Festus characterizes the dispute as being about 'a dead man named Jesus, whom Paul claims is alive.' What does this outsider summary reveal about how the resurrection appeared to Roman legal minds, and why does it both clarify and miss the point?",
+    "Festus proposes the Jerusalem trial partly 'to do the Jews a favor.' How do you evaluate political leaders who bend legal procedure to maintain good relations with powerful constituencies?",
+    "Agrippa wants to hear Paul immediately upon learning about him. What does this hunger to hear Paul suggest about the power of Paul's story and message, even in the retelling?",
+    "The chapter ends with Paul in chains before a grand assembly convened because a governor doesn't know what to write. How does this image of institutional confusion around a chained apostle subvert expectations of power and truth?"
+  ]
+}

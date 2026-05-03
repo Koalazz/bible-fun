@@ -58,6 +58,30 @@ body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg
 .hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
 .hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
 .hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
 /* ── BODY: timeline left, map right ── */
 .body {
   display: grid;
@@ -270,10 +294,8 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   font-family:'Lora',serif; font-style:normal;
   font-size:13px; line-height:1.55;
   color:oklch(88% .014 78);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  display: block;
+  overflow: visible;
 }
 .ban-loc {
   display:flex; align-items:center; gap:5px;
@@ -319,6 +341,7 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   from { opacity:0; transform:translateX(-8px); }
   to   { opacity:1; transform:translateX(0); }
 }
+.map-controls-panel { display: contents; }
 
 /* Map overlay labels */
 .map-corner-label {
@@ -413,60 +436,153 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   opacity:1;
   box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
 }
+.playback-step-time { display: none; }
+.loc-label {
+  paint-order: stroke;
+  stroke: oklch(98% 0.008 80 / .82);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.person-name-label {
+  display: none;
+  paint-order: stroke;
+  stroke: oklch(16% 0.02 55 / .62);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
 
 /* ── MOBILE ── */
 @media (max-width: 680px) {
   /* Stack: map on top, timeline on bottom */
-  .app { grid-template-rows: 44px 1fr; }
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: 44px auto;
+    overflow: visible;
+  }
 
   .body {
     grid-template-columns: 1fr;
-    grid-template-rows: 42vh 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
   }
 
   /* Map moves to top row */
-  .map-col { order: -1; }
+  .map-col {
+    order: -1;
+    overflow: visible;
+  }
 
   /* Tighten header */
   .header { padding: 0 14px; gap: 8px; }
   .hdr-sub { display: none; }
   .hdr-title { font-size: 16px; }
+  .home-link,
+  .lang-btn {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
 
-  /* Event banner: single compact row */
+  /* Event banner with title, description, then map below */
   .map-event-banner {
+    position: relative;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    padding: 8px 12px;
-    gap: 2px;
+    flex: 0 0 auto;
+    padding: 8px 12px 9px;
+    gap: 3px;
   }
   .ban-verses { font-size: 9px; margin-bottom: 1px; }
-  .ban-title  { font-size: 13px; }
-  .ban-desc   { display: none; }
+  .ban-title  { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc {
+    display: block;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow: visible;
+  }
   .ban-loc    { display: none; }
+  .map-svg-wrap {
+    position: relative;
+    inset: auto;
+    flex: 0 0 clamp(300px, 46dvh, 430px);
+    min-height: clamp(300px, 46dvh, 430px);
+  }
+  .loc-label {
+    font-size: 28px;
+    font-weight: 800;
+    stroke-width: 5px;
+  }
+  .person-name-label { display: block; font-size: 18px; }
 
-  /* Legend: horizontal row at bottom */
+  .map-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: oklch(93% 0.025 82);
+    border-top: 1px solid var(--border);
+  }
+
+  /* Legend: separate panel above the playback controls */
   .map-person-legend {
+    position: relative;
     flex-direction: row;
     flex-wrap: wrap;
-    bottom: 8px;
-    left: 8px;
-    right: 8px;
+    bottom: auto;
+    left: auto;
+    right: auto;
     gap: 4px;
+    z-index: 14;
+    max-height: none;
+    overflow-y: auto;
+    padding: 5px;
+    background: oklch(99.5% 0.008 80 / .88);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px oklch(10% 0.02 55 / .12);
+    backdrop-filter: blur(8px);
   }
-  .map-leg-item { font-size: 9px; padding: 2px 8px 2px 5px; }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
   .map-leg-dot  { width: 6px; height: 6px; }
   .map-corner-label { display: none; }
   .map-playback {
-    right:8px;
-    bottom:8px;
-    width:calc(100% - 16px);
-    padding:8px;
+    position: relative;
+    right:auto;
+    bottom:auto;
+    width:100%;
+    padding:7px 8px;
   }
   .playback-label { font-size:10px; }
-  .playback-btn { width:28px; height:24px; }
-  .playback-track { height:22px; }
-  .playback-track::before { top:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track {
+    height: 38px;
+    align-items: start;
+  }
+  .playback-track::before { top:8px; }
   .playback-step { width:18px; height:18px; }
+  .playback-step-time {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 42px;
+    color: var(--fg-muted);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: .02em;
+    line-height: 1.05;
+    text-align: center;
+    pointer-events: none;
+  }
+  .playback-step.active .playback-step-time { color: var(--accent); }
+  .person-name-label { display: none; }
 
   /* Timeline: full width, shorter items */
   .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
@@ -490,7 +606,133 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 
 <script type="text/babel">
 const { useState, useEffect, useRef, useCallback, useMemo } = React;
-const DATA = ACTS_CH1;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {
+  da: {
+    book: 'Apostlenes Gerninger',
+    shortBook: 'ApG',
+    chapterTitle: 'Venter på løftet',
+    headerSub: '— Jerusalem · ca. år 30',
+    timelineTitle: ['Venter på', 'løftet'],
+    mapCorner: 'Jerusalem-området · ca. år 30',
+    yearBadges: ['ca. år 62-80 — Skrevet', 'Forår år 30 — Begivenheder'],
+    map: {
+      JUDEA: 'JUDÆA',
+      PERAEA: 'PERÆA',
+      SAMARIA: 'SAMARIA ↑',
+      DEAD_SEA: 'DET DØDE HAV',
+      JORDAN_RIVER: 'Jordanfloden',
+      MEDITERRANEAN: 'MIDDELHAVET ←',
+      KIDRON_VALLEY: 'Kidrondalen',
+      TEMPLE: 'TEMPLET',
+      WALK: '~900 m vandring',
+      HINNOM_VALLEY: 'Hinnoms dal',
+      MOUNT_OF_OLIVES: 'OLIEBJERGET',
+      BETHANY: 'Betania',
+      BETHLEHEM: 'Betlehem'
+    },
+    locations: {
+      jerusalem: { name: 'Jerusalem' },
+      mount_of_olives: { name: 'Oliebjerget' },
+      upper_room: { name: 'Øvresalen' }
+    },
+    persons: {
+      jesus: 'Jesus',
+      peter: 'Peter',
+      the_eleven: 'De elleve',
+      the_women: 'Kvinderne',
+      mary_mother_of_jesus: 'Maria',
+      brothers_of_jesus: 'Jesu brødre',
+      matthias: 'Matthias',
+      joseph_barsabbas: 'Josef Barsabbas',
+      two_men_in_white: 'To mænd i hvidt',
+      judas_iscariot: 'Judas Iskariot',
+      theophilus: 'Theofilus'
+    },
+    events: {
+      prologue_to_theophilus: { title: 'Prolog: Et brev til Theofilus', description: 'Forfatteren åbner med at minde Theofilus om det første bind, Lukasevangeliet, og viser at Apostlenes Gerninger er en bevidst fortsættelse af den større fortælling om Jesus.', timeline_label: 'Indledende tilegnelse' },
+      forty_days_teaching: { title: 'Fyrre dage med opstandelsesvidnesbyrd', description: 'Efter sin død viste Jesus sig levende for apostlene mange gange gennem fyrre dage. Han gav overbevisende beviser på sin opstandelse og underviste om Guds rige.', timeline_label: 'Dag 1-40' },
+      promise_of_the_spirit: { title: 'Løftet om Helligånden', description: 'Mens Jesus spiser sammen med disciplene, befaler han dem ikke at forlade Jerusalem, men at vente på den gave Faderen har lovet: Helligånden, som snart skal komme.', timeline_label: 'Dag 40 — sidste måltid' },
+      question_about_the_kingdom: { title: '"Genopretter du riget nu?"', description: 'Apostlene spørger, om Jesus nu vil genoprette riget for Israel. Han retter deres blik mod missionen: De skal få kraft, når Helligånden kommer, og være hans vidner i Jerusalem, Judæa, Samaria og til jordens ende.', timeline_label: 'Dag 40 — sidste udsendelse' },
+      ascension: { title: 'Jesu himmelfart', description: 'Mens disciplene ser på, bliver Jesus løftet op, og en sky skjuler ham for deres øjne. To mænd i hvidt viser sig og lover, at han vil komme igen på samme måde, som han gik bort.', timeline_label: 'Dag 40 — himmelfart' },
+      return_to_jerusalem: { title: 'Tilbage til Jerusalem', description: 'De elleve apostle går tilbage fra Oliebjerget, omtrent en sabbatsvej på 900 meter, i lydighed mod Jesu befaling om at blive i Jerusalem.', timeline_label: 'Dag 40 — tilbage' },
+      upper_room_prayer: { title: 'Øvresalen: Forenet i bøn', description: 'De elleve apostle holder ud i bøn i øvresalen sammen med kvinderne, Maria, Jesu mor, og hans brødre. Gruppen tæller omkring 120 mennesker.', timeline_label: 'Dag 40-50 — bøn' },
+      peter_addresses_the_community: { title: 'Peter taler: Judas’ skæbne', description: 'Peter står frem for de 120 troende og citerer to salmer for at forklare, at Skriften forudsagde Judas’ forræderi og behovet for en afløser. Han fortæller også om Judas’ død og marken Akeldama, Blodmarken.', timeline_label: 'Før pinse' },
+      selection_of_matthias: { title: 'Matthias vælges til at erstatte Judas', description: 'To kandidater træder frem: Josef Barsabbas og Matthias. Efter bøn kaster fællesskabet lod; loddet falder på Matthias, som bliver regnet med blandt de elleve og genopretter De Tolv.', timeline_label: 'Før pinse' }
+    },
+    timeline: {
+      prologue_to_theophilus: { label: 'Tilegnelse', relative_time: 'Fortalt tilbageblik' },
+      forty_days_teaching: { label: '40 dage', relative_time: 'Dag 1-40 efter opstandelsen' },
+      promise_of_the_spirit: { label: 'Sidste måltid', relative_time: 'Dag 40' },
+      question_about_the_kingdom: { label: 'Udsendelse', relative_time: 'Dag 40' },
+      ascension: { label: 'Himmelfart', relative_time: 'Dag 40 — Kristi himmelfartsdag' },
+      return_to_jerusalem: { label: 'Tilbage', relative_time: 'Dag 40 — eftermiddag' },
+      upper_room_prayer: { label: 'Ventetid', relative_time: 'Dag 40-50' },
+      peter_addresses_the_community: { label: 'Peters tale', relative_time: 'Under ventetiden' },
+      selection_of_matthias: { label: 'Matthias', relative_time: 'Før pinse' }
+    },
+    times: {
+      prologue_to_theophilus: { date: 'ca. år 62-80', period: 'Affattelsestidspunkt' },
+      forty_days_teaching: { date: 'april år 30', period: 'Dag 1-40 efter opstandelsen' },
+      promise_of_the_spirit: { date: 'sidst i april år 30', period: 'Dag 40 — sidste måltid' },
+      question_about_the_kingdom: { date: 'sidst i april år 30', period: 'Dag 40 — kort før himmelfarten' },
+      ascension: { date: '18. maj år 30', period: 'Dag 40 — Kristi himmelfartsdag' },
+      return_to_jerusalem: { date: '18. maj år 30', period: 'Dag 40 — eftermiddag' },
+      upper_room_prayer: { date: '18.-28. maj år 30', period: 'Dag 40-50 — ti dages bøn' },
+      peter_addresses_the_community: { date: 'sidst i maj år 30', period: 'Under de ti dages venten' },
+      selection_of_matthias: { date: 'sidst i maj år 30', period: 'Før pinse — dag 50' }
+    }
+  }
+};
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH1, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shortLabel = value
+    .replace(/^c\.\s*/, '')
+    .replace(/Late /, '')
+    .replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '')
+    .replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '')
+    .trim();
+  return includeYear && marker ? `${marker} ${shortLabel}`.trim() : (shortLabel || marker);
+}
+
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
 
 /* ── PERSON COLORS ── */
 const PCOLORS = {
@@ -510,12 +752,12 @@ const PCOLORS = {
 /* ── MAP COORDINATES (SVG 1000×800 viewBox, zoomed tight to Jerusalem area) ── */
 const VW = 1000, VH = 800;
 const LOCS = {
-  jerusalem:       { x: 380, y: 420, label: 'Jerusalem' },
-  mount_of_olives: { x: 680, y: 210, label: 'Mount of Olives' },
-  upper_room:      { x: 310, y: 490, label: 'Upper Room (Mt Zion)' },
+  jerusalem:       { x: 380, y: 420, label: DATA.locations.find(l => l.id === 'jerusalem')?.name || 'Jerusalem' },
+  mount_of_olives: { x: 680, y: 210, label: DATA.locations.find(l => l.id === 'mount_of_olives')?.name || 'Mount of Olives' },
+  upper_room:      { x: 310, y: 490, label: INITIAL_LANG === 'da' ? 'Øvresalen (Zions bjerg)' : 'Upper Room (Mt Zion)' },
 };
 
-const ABSOLUTE_TIMES = {
+const ABSOLUTE_TIMES = UI_TEXT.times || {
   prologue_to_theophilus:       { date: 'c. AD 62–80',        period: 'Date of composition' },
   forty_days_teaching:          { date: 'April AD 30',         period: 'Days 1–40 post-resurrection' },
   promise_of_the_spirit:        { date: 'Late April AD 30',    period: 'Day 40 — final meal' },
@@ -581,19 +823,19 @@ function Terrain() {
       <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 700 320 780 360 Q 820 380 820 440 Q 820 520 760 560 Q 700 600 580 620 Q 450 640 300 630 Q 180 620 100 580 Q 40 550 30 480 Q 20 420 50 300 Z"
         fill="oklch(87% 0.055 90)" opacity="1" />
       <text x="160" y="580" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
-        fill="oklch(48% 0.07 75)" letterSpacing="3" opacity=".7">JUDEA</text>
+        fill="oklch(48% 0.07 75)" letterSpacing="3" opacity=".7">{mapText('JUDEA')}</text>
 
       {/* Peraea — east of Jordan */}
       <path d="M 820 200 Q 860 220 920 260 Q 970 300 980 380 Q 990 450 960 520 Q 940 570 900 600 Q 870 620 840 600 Q 820 560 820 500 Q 820 420 820 360 Q 820 280 820 200 Z"
         fill="oklch(82% 0.045 110)" opacity=".85" />
       <text x="880" y="380" fontSize="11" fontFamily="Barlow Condensed" fontWeight="700"
-        fill="oklch(42% 0.06 90)" letterSpacing="2" opacity=".65" transform="rotate(90,880,380)">PERAEA</text>
+        fill="oklch(42% 0.06 90)" letterSpacing="2" opacity=".65" transform="rotate(90,880,380)">{mapText('PERAEA')}</text>
 
       {/* Northern region hint */}
       <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 650 310 720 290 Q 780 270 820 200 Q 820 120 780 70 Q 700 30 500 20 Q 300 10 150 50 Q 60 80 40 160 Q 20 230 50 300 Z"
         fill="oklch(85% 0.04 130)" opacity=".6" />
       <text x="200" y="120" fontSize="12" fontFamily="Barlow Condensed" fontWeight="700"
-        fill="oklch(40% 0.06 120)" letterSpacing="2" opacity=".55">SAMARIA ↑</text>
+        fill="oklch(40% 0.06 120)" letterSpacing="2" opacity=".55">{mapText('SAMARIA')}</text>
 
       {/* ── REGION BORDERS — thick, clearly visible ── */}
       {/* Judea north border */}
@@ -611,26 +853,26 @@ function Terrain() {
         fill="var(--map-water)" opacity=".85" />
       <text x="880" y="520" textAnchor="middle" fontSize="11"
         fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(35% 0.06 220)"
-        letterSpacing="1.5" opacity=".8">DEAD SEA</text>
+        letterSpacing="1.5" opacity=".8">{mapText('DEAD_SEA')}</text>
 
       {/* ── JORDAN RIVER ── */}
       <path d="M 825 30 C 832 120 830 220 825 320 C 821 390 818 420 818 450"
         fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".75" strokeLinecap="round" />
       <text x="842" y="200" fontSize="10" fill="oklch(38% 0.07 220)" opacity=".65"
-        fontFamily="Barlow" fontWeight="500" transform="rotate(84,842,200)">Jordan River</text>
+        fontFamily="Barlow" fontWeight="500" transform="rotate(84,842,200)">{mapText('JORDAN_RIVER')}</text>
 
       {/* ── Mediterranean Sea (west edge hint) ── */}
       <path d="M 0 0 L 0 800 L 40 800 Q 30 600 25 400 Q 20 200 40 0 Z"
         fill="var(--map-water)" opacity=".5" />
       <text x="18" y="400" fontSize="9" fill="oklch(35% 0.06 220)" opacity=".55"
         fontFamily="Barlow Condensed" fontWeight="700" letterSpacing="1"
-        transform="rotate(-90,18,400)">MEDITERRANEAN ←</text>
+        transform="rotate(-90,18,400)">{mapText('MEDITERRANEAN')}</text>
 
       {/* ── KIDRON VALLEY ── */}
       <path d="M 660 80 Q 590 170 550 260 Q 525 330 515 400 Q 508 460 510 520"
         fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="3.5" opacity=".4" />
       <text x="560" y="290" fontSize="10" fill="oklch(42% 0.05 80)" opacity=".55"
-        fontFamily="Barlow" transform="rotate(68,560,290)">Kidron Valley</text>
+        fontFamily="Barlow" transform="rotate(68,560,290)">{mapText('KIDRON_VALLEY')}</text>
 
       {/* ── JERUSALEM CITY WALLS ── */}
       <rect x="292" y="345" width="165" height="125" rx="8"
@@ -644,20 +886,20 @@ function Terrain() {
         fill="oklch(75% 0.08 75)" opacity=".45"
         stroke="oklch(48% 0.08 60)" strokeWidth="2" />
       <text x="416" y="388" textAnchor="middle" fontSize="9.5"
-        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(30% 0.06 55)" opacity=".9">TEMPLE</text>
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(30% 0.06 55)" opacity=".9">{mapText('TEMPLE')}</text>
 
       {/* ── ROAD: Mt Olives → Jerusalem ── */}
       <path d="M 648 228 Q 600 275 560 315 Q 520 352 475 382 Q 445 400 410 413"
         fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".6"
         strokeDasharray="10 6" strokeLinecap="round" />
       <text x="545" y="335" fontSize="10" fill="oklch(38% 0.06 70)" opacity=".55"
-        fontFamily="Barlow" transform="rotate(44,545,335)">~900m walk</text>
+        fontFamily="Barlow" transform="rotate(44,545,335)">{mapText('WALK')}</text>
 
       {/* ── HINNOM VALLEY ── */}
       <path d="M 140 565 Q 220 598 305 590 Q 348 586 378 572 Q 398 560 408 542"
         fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="2.5" opacity=".35" />
       <text x="220" y="625" fontSize="9.5" fill="oklch(42% 0.05 80)" opacity=".45"
-        fontFamily="Barlow">Hinnom Valley</text>
+        fontFamily="Barlow">{mapText('HINNOM_VALLEY')}</text>
 
       {/* ── AKELDAMA (Field of Blood) ── */}
       <circle cx="355" cy="572" r="10"
@@ -673,17 +915,17 @@ function Terrain() {
         stroke="oklch(55% 0.06 80)" strokeWidth="1.5" />
       <text x="668" y="148" textAnchor="middle" fontSize="13"
         fontFamily="Barlow Condensed" fontWeight="800" fill="oklch(35% 0.07 70)"
-        letterSpacing="1.5" opacity=".75">MOUNT OF OLIVES</text>
+        letterSpacing="1.5" opacity=".75">{mapText('MOUNT_OF_OLIVES')}</text>
 
       {/* ── Bethany ── */}
       <circle cx="790" cy="240" r="6" fill="oklch(55% 0.07 80)" opacity=".45" />
       <text x="802" y="244" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".6"
-        fontFamily="Barlow Condensed" fontWeight="600">Bethany</text>
+        fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHANY')}</text>
 
       {/* ── Bethlehem ── */}
       <circle cx="310" cy="720" r="6" fill="oklch(55% 0.07 80)" opacity=".4" />
       <text x="322" y="724" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".5"
-        fontFamily="Barlow Condensed" fontWeight="600">Bethlehem</text>
+        fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHLEHEM')}</text>
 
       {/* ── Scale bar ── */}
       <g transform="translate(60,755)">
@@ -722,7 +964,7 @@ function LocationMarkers({ activeLocId }) {
               stroke="var(--map-land)" strokeWidth="3"
               style={{ transition: 'r .3s' }}
             />
-            <text x={loc.x + 16} y={loc.y + 5}
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5}
               fontSize={on ? 17 : 14}
               fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
               fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
@@ -798,6 +1040,15 @@ function PersonDots({ personStates, prevStates }) {
             >
               {(s.label || '?').charAt(0)}
             </text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle"
+                fontSize="12" fontWeight="800" fill={s.color}
+                fontFamily="Barlow Condensed" pointerEvents="none"
+                style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+              >
+                {s.label}
+              </text>
+            )}
           </g>
         );
       })}
@@ -848,45 +1099,49 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
 
       {/* Map */}
       <div className="map-svg-wrap">
-        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid slice">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
           <Terrain />
           <LocationMarkers activeLocId={locId} />
           <PersonDots personStates={states} prevStates={prevStates} />
         </svg>
       </div>
 
-      {/* Person legend */}
-      <div className="map-person-legend">
-        {legendItems.map(([pid, s]) => (
-          <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
-            <div className="map-leg-dot" style={{ background: s.color }} />
-            <span>{s.label}</span>
-          </div>
-        ))}
-      </div>
-
-      <div className="map-playback">
-        <div className="playback-top">
-          <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
-          <div className="playback-buttons">
-            <button className="playback-btn" type="button" aria-label="Previous event" onClick={() => onStep(-1)}>‹</button>
-            <button className="playback-btn" type="button" aria-label="Next event" onClick={() => onStep(1)}>›</button>
-          </div>
-        </div>
-        <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
-          {DATA.timeline.map((tl, idx) => (
-            <button
-              key={tl.event_id}
-              type="button"
-              className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
-              aria-label={`Go to ${tl.label}`}
-              onClick={() => onEventChange(tl.event_id)}
-            />
+      <div className="map-controls-panel">
+        {/* Person legend */}
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
           ))}
         </div>
+
+        <div className="map-playback">
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button
+                key={tl.event_id}
+                type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}
+              >
+                <span className="playback-step-time">{compactTimeLabel(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time, shouldShowYear(tl, idx))}</span>
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="map-corner-label">Jerusalem Region · c. AD 30</div>
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem Region · c. AD 30'}</div>
     </div>
   );
 }
@@ -895,7 +1150,7 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
 function TimelinePanel({ activeEventId, onEventChange }) {
   const scrollRef = useRef(null);
   const entryRefs = useRef({});
-  const observing = useRef(true);
+  const observing = useRef(false);
 
   // IntersectionObserver: set active event as entries scroll into view
   useEffect(() => {
@@ -943,8 +1198,8 @@ function TimelinePanel({ activeEventId, onEventChange }) {
   return (
     <div className="tl-col">
       <div className="tl-chapter-strip">
-        <div className="tl-ch-label">Acts · Chapter 1</div>
-        <div className="tl-ch-title">Waiting for <em>the Promise</em></div>
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} 1</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Waiting for <em>the Promise</em></>}</div>
       </div>
 
       <div className="tl-list" ref={scrollRef} onWheel={handleWheel}>
@@ -956,7 +1211,7 @@ function TimelinePanel({ activeEventId, onEventChange }) {
             const timeInfo = ABSOLUTE_TIMES[tl.event_id];
             // Year badges: one before prologue (composition date), one before the AD30 events
             const showYearBadge = idx === 0 || idx === 1;
-            const yearLabel = idx === 0 ? 'c. AD 62–80 — Written' : 'Spring AD 30 — Events';
+            const yearLabel = UI_TEXT.yearBadges?.[idx === 0 ? 0 : 1] || (idx === 0 ? 'c. AD 62–80 — Written' : 'Spring AD 30 — Events');
             return (
               <React.Fragment key={tl.event_id}>
                 {showYearBadge && (
@@ -996,11 +1251,13 @@ function TimelinePanel({ activeEventId, onEventChange }) {
 
 /* ── APP ── */
 function App() {
-  const firstMappedEvent = DATA.events.find(e => e.location_id)?.id || DATA.events[0]?.id;
-  const [activeEv, setActiveEv] = useState(firstMappedEvent);
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
 
   useEffect(() => {
     document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} 1 — ${DATA.chapter_title}`;
     localStorage.setItem('bf-theme', 'a');
   }, []);
 
@@ -1021,10 +1278,16 @@ function App() {
     <div className="app">
       {/* Header */}
       <div className="header">
-        <span className="hdr-book">Acts · Ch. 1</span>
-        <span className="hdr-title">Waiting for the Promise</span>
-        <span className="hdr-sub">— Spring AD 30</span>
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} 1</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '— Spring AD 30'}</span>
         <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">
+          {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
+        </a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>
+          {INITIAL_LANG === 'da' ? 'En' : 'Da'}
+        </button>
       </div>
 
       {/* Body */}
