@@ -1,4 +1,4 @@
-{
+const ACTS_CH6 = {
   "book": "Acts",
   "chapter": 6,
   "chapter_title": "Seven Chosen, One Accused",
@@ -126,7 +126,7 @@
       "id": "synagogue_of_freedmen",
       "name": "Synagogue of the Freedmen",
       "modern_name": "disputed",
-      "lat": 31.7750,
+      "lat": 31.775,
       "lng": 35.2354,
       "description": "A Jerusalem synagogue attended by diaspora Jews from Cyrene, Alexandria, Cilicia, and Asia, where Stephen's public debates sparked the opposition that led to his arrest."
     },
@@ -147,7 +147,11 @@
       "title": "Complaint Over Widows' Food Distribution",
       "description": "As the number of disciples multiplies in Jerusalem, Hellenistic (Greek-speaking) Jewish Christians raise a complaint that their widows are being overlooked in the daily food distribution, while the Hebrew-speaking widows are properly served. This is the first recorded internal conflict in the early church, revealing tension between two cultural communities within the same faith. The dispute is serious enough to require immediate attention from the apostles. It highlights the challenge of caring for vulnerable people across cultural lines.",
       "location_id": "jerusalem",
-      "persons_present": ["hellenistic_widows", "hebrew_widows", "the_twelve"],
+      "persons_present": [
+        "hellenistic_widows",
+        "hebrew_widows",
+        "the_twelve"
+      ],
       "timeline_label": "Widows' Dispute",
       "scroll_anchor": "widows-dispute",
       "visual_notes": "Illustrate two groups of women on opposite sides; stacks of bread or food bowls in the center with an unequal distribution; Jerusalem street market background."
@@ -159,7 +163,16 @@
       "title": "The Seven Deacons Appointed",
       "description": "The Twelve gather the whole community and propose that seven men of good reputation, full of the Spirit and wisdom, be selected to oversee the practical food ministry, while the apostles focus on prayer and preaching the word. The whole community is pleased by this plan and chooses Stephen, Philip, Prochorus, Nicanor, Timon, Parmenas, and Nicolas. They are brought to the apostles, who pray and lay their hands on them as a formal commissioning. This act is one of the earliest examples of structured ministerial delegation in the church.",
       "location_id": "jerusalem",
-      "persons_present": ["the_twelve", "stephen", "philip_the_deacon", "prochorus", "nicanor", "timon", "parmenas", "nicolas_of_antioch"],
+      "persons_present": [
+        "the_twelve",
+        "stephen",
+        "philip_the_deacon",
+        "prochorus",
+        "nicanor",
+        "timon",
+        "parmenas",
+        "nicolas_of_antioch"
+      ],
       "timeline_label": "Seven Appointed",
       "scroll_anchor": "seven-appointed",
       "visual_notes": "Show the apostles laying hands on seven men kneeling in a row; a large gathering of the community in the background watching; golden light suggesting the Spirit's presence."
@@ -171,7 +184,9 @@
       "title": "The Word Spreads; Many Priests Believe",
       "description": "Luke provides a brief summary statement noting that the word of God continued to spread and the number of disciples in Jerusalem increased greatly. Remarkably, a large number of Jewish priests also became obedient to the faith. This summary serves as a narrative marker, closing one phase of the Jerusalem story before the focus shifts to Stephen's individual ministry and crisis.",
       "location_id": "jerusalem",
-      "persons_present": ["the_twelve"],
+      "persons_present": [
+        "the_twelve"
+      ],
       "timeline_label": "Church Grows",
       "scroll_anchor": "church-growth-summary",
       "visual_notes": "A wide-angle view of crowded Jerusalem streets with people streaming toward a gathering place; perhaps a priest in Temple robes walking toward the group."
@@ -183,7 +198,9 @@
       "title": "Stephen Performs Signs and Wonders",
       "description": "Stephen, described as full of grace and power, begins performing great wonders and signs among the people of Jerusalem. This activity goes far beyond his appointed role of food distribution and marks him as a Spirit-empowered figure comparable to the apostles themselves. His public ministry makes him visible and controversial. The narrative signals that Stephen is not merely a social administrator but a powerful evangelist.",
       "location_id": "jerusalem",
-      "persons_present": ["stephen"],
+      "persons_present": [
+        "stephen"
+      ],
       "timeline_label": "Stephen's Miracles",
       "scroll_anchor": "stephen-signs-and-wonders",
       "visual_notes": "Stephen standing in a Jerusalem plaza with hands raised; a crowd watching in amazement; visual cues of healing (someone rising from the ground) or exorcism."
@@ -195,7 +212,10 @@
       "title": "Stephen Debates in the Synagogue",
       "description": "Members of the Synagogue of the Freedmen — diaspora Jews from Cyrene, Alexandria, Cilicia, and Asia — begin arguing with Stephen. They are unable to withstand the wisdom and the Spirit with which he speaks. This public debate in a recognized religious venue intensifies opposition because Stephen is defeating his opponents on their own theological ground. The failure to rebut him drives his opponents to escalate their tactics.",
       "location_id": "synagogue_of_freedmen",
-      "persons_present": ["stephen", "synagogue_of_freedmen"],
+      "persons_present": [
+        "stephen",
+        "synagogue_of_freedmen"
+      ],
       "timeline_label": "Synagogue Debate",
       "scroll_anchor": "synagogue-debate",
       "visual_notes": "Interior of a first-century synagogue; Stephen standing and gesturing while a group of robed men faces him with frustrated expressions; scrolls visible in the background."
@@ -207,7 +227,12 @@
       "title": "False Witnesses Brought Against Stephen",
       "description": "Unable to defeat Stephen in open debate, his opponents secretly persuade men to claim they heard him blaspheme Moses and God. They stir up the people, the elders, and the scribes, and have Stephen seized and brought before the Sanhedrin. False witnesses then testify that Stephen never stopped speaking against the holy place and the Law, alleging he claimed Jesus of Nazareth would destroy the Temple and change the customs Moses handed down. The accusations closely echo those made against Jesus at his own trial.",
       "location_id": "sanhedrin_hall",
-      "persons_present": ["stephen", "synagogue_of_freedmen", "false_witnesses_ch6", "the_council_ch6"],
+      "persons_present": [
+        "stephen",
+        "synagogue_of_freedmen",
+        "false_witnesses_ch6",
+        "the_council_ch6"
+      ],
       "timeline_label": "Stephen Accused",
       "scroll_anchor": "false-accusation-arranged",
       "visual_notes": "Stephen standing calm before the semicircle of the Sanhedrin; accusers pointing fingers; the high priest seated at center looking stern."
@@ -219,7 +244,10 @@
       "title": "Stephen's Face Shines Like an Angel",
       "description": "As all the members of the council stare at Stephen, they see that his face looks like the face of an angel. This supernatural detail at the close of the chapter creates a moment of awe before Stephen's long speech begins. It echoes Moses's shining face after meeting God on Sinai, subtly foreshadowing Stephen's argument in chapter 7 that he stands in the prophetic tradition of Moses. The image also contrasts his divine radiance with the corrupt proceedings against him.",
       "location_id": "sanhedrin_hall",
-      "persons_present": ["stephen", "the_council_ch6"],
+      "persons_present": [
+        "stephen",
+        "the_council_ch6"
+      ],
       "timeline_label": "Stephen's Angel Face",
       "scroll_anchor": "stephens-face-shines",
       "visual_notes": "Close-up of Stephen's face glowing with soft golden light; the council members shielding their eyes or leaning back in astonishment; dark stone hall contrasting the light."
@@ -322,4 +350,4 @@
     "The false witnesses used distorted versions of Stephen's real teachings. How should a community protect itself and its leaders from misrepresentation?",
     "What is the significance of Stephen's face shining 'like an angel' as he stands before the council?"
   ]
-}
+};

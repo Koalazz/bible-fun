@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 12 — Chains, Angels, and a King's Ruin</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script>
+const ACTS_CH12 = {
+  "book": "Acts",
+  "chapter": 12,
+  "chapter_title": "Chains, Angels, and a King's Ruin",
+  "chapter_summary": "King Herod Agrippa I violently attacks the early church in Jerusalem, executing the apostle James and imprisoning Peter. On the night before Peter's trial, an angel miraculously frees him from prison, leading him to safety while the church prays. The chapter closes with Herod's dramatic death at Caesarea — struck down by God for accepting divine praise — while the gospel message continues to spread.",
+  "date_range": {
+    "approximate": "Spring–Summer AD 44",
+    "notes": "Herod Agrippa I's death is reliably dated by Josephus (Antiquities 19.8.2) to AD 44. The Festival of Unleavened Bread anchors Peter's arrest to the spring of that year. Some scholars place the broader sequence in AD 43–44; the death of Herod is among the best-attested dates in Acts due to the Josephus parallel."
+  },
+  "persons": [
+    {
+      "id": "herod_agrippa",
+      "name": "Herod Agrippa I",
+      "role": "King",
+      "first_mention_verse": "12:1",
+      "summary": "Grandson of Herod the Great and Roman-appointed king over Judea, Herod Agrippa launches a deliberate persecution of the Jerusalem church to court favor with the Jewish religious establishment. He executes James, imprisons Peter, and later dies at Caesarea after accepting acclamation as a god — the judgment Luke presents as immediate and divine.",
+      "significance": "Herod's rise and fall frames a key turning point in Acts: state opposition cannot ultimately stop the church, and those who set themselves against God face divine judgment rather than triumph."
+    },
+    {
+      "id": "james_zebedee",
+      "name": "James son of Zebedee",
+      "role": "Apostle",
+      "first_mention_verse": "12:2",
+      "summary": "One of Jesus's innermost circle of disciples and the brother of the apostle John, James is executed by Herod's sword, becoming the first of the twelve apostles to be martyred as recorded in the New Testament. His death establishes the lethal stakes of Herod's persecution and sets the context for Peter's subsequent arrest.",
+      "significance": "James's martyrdom is the first apostolic death in Acts, underscoring that faithful witness can lead to death and that the mission continues even through loss."
+    },
+    {
+      "id": "peter",
+      "name": "Peter",
+      "role": "Apostle",
+      "first_mention_verse": "12:3",
+      "summary": "The leading apostle of the Jerusalem church, Peter is arrested by Herod and held under maximum-security guard, but is supernaturally freed by an angel the night before his scheduled trial. After confirming his freedom at Mary's house and charging the believers to inform James, he departs to an unnamed safe location.",
+      "significance": "Peter's miraculous escape is the climactic episode of his story in Acts; from chapter 13 onward the narrative shifts to Paul, making this Peter's effective farewell from the center of Luke's account."
+    },
+    {
+      "id": "angel_of_the_lord",
+      "name": "Angel of the Lord",
+      "role": "Angel",
+      "first_mention_verse": "12:7",
+      "summary": "A heavenly messenger who appears twice in this chapter: first to free Peter from prison by dissolving his chains and guiding him unseen past the guards, and later to strike Herod dead for accepting divine honors from the crowd. The angel serves as the instrument of both miraculous rescue and divine retribution.",
+      "significance": "The angel's dual role — delivering the faithful and judging the proud — reinforces Acts' overarching theme that God is the sovereign director of history, not earthly rulers."
+    },
+    {
+      "id": "rhoda",
+      "name": "Rhoda",
+      "role": "Servant",
+      "first_mention_verse": "12:13",
+      "summary": "A young servant girl in Mary's household who answers the gate when Peter knocks, recognizes his voice with such joy that she forgets to open the gate and runs back inside to announce him; the assembled believers refuse to believe her, insisting she must be mad or seeing his angel. Her joyful certainty contrasts with the group's stunned disbelief.",
+      "significance": "Rhoda's role adds a humanizing, even comedic texture to the narrative and highlights the gap between the church's fervent prayer and their genuine expectation of an immediate answer."
+    },
+    {
+      "id": "mary_mother_of_john_mark",
+      "name": "Mary, mother of John Mark",
+      "role": "Believer / Host",
+      "first_mention_verse": "12:12",
+      "summary": "A woman of sufficient means in Jerusalem whose home serves as a gathering place for the early church; believers crowd her house in fervent prayer for Peter when he arrives after his escape. She is identified specifically as the mother of John Mark, linking her to the wider missionary network.",
+      "significance": "Her household represents the house-church model central to early Christianity, and her identification as John Mark's mother places that future missionary within a prominent Jerusalem family connected to the apostolic circle."
+    },
+    {
+      "id": "john_mark",
+      "name": "John (called Mark)",
+      "role": "Believer / Missionary Companion",
+      "first_mention_verse": "12:12",
+      "summary": "The son of Mary and a cousin of Barnabas, John Mark is introduced in this chapter and departs with Barnabas and Saul when they return to Antioch after their relief mission. His inclusion in the team sets up a significant subplot in Acts 13–15.",
+      "significance": "John Mark's introduction here and his later departure from the first missionary journey (Acts 13:13) will ultimately cause a sharp dispute between Paul and Barnabas, splitting the mission team."
+    },
+    {
+      "id": "barnabas",
+      "name": "Barnabas",
+      "role": "Apostle / Missionary",
+      "first_mention_verse": "12:25",
+      "summary": "A senior leader of the Antioch church and close companion of Saul, Barnabas completes a famine-relief mission to Jerusalem during the chapter's events and returns north with Saul and John Mark. His brief appearance at the chapter's close connects the Jerusalem crisis to the coming Gentile mission.",
+      "significance": "Barnabas serves throughout Acts as a bridge figure between Jewish and Gentile Christianity; his mentorship of both Paul and John Mark shapes the early missionary movement in profound ways."
+    },
+    {
+      "id": "saul",
+      "name": "Saul",
+      "role": "Apostle / Missionary",
+      "first_mention_verse": "12:25",
+      "summary": "The apostle later known as Paul, Saul is briefly mentioned completing the Jerusalem relief mission alongside Barnabas and then returning with John Mark to Antioch. Though largely offstage in this chapter, his return signals the imminent launch of the first missionary journey beginning in Acts 13.",
+      "significance": "Acts 12 functions as a narrative hinge: Peter's story effectively concludes here and Saul's great missionary career is about to begin, marking a shift in the book's focus."
+    },
+    {
+      "id": "james_brother_of_jesus",
+      "name": "James (brother of the Lord)",
+      "role": "Church Leader",
+      "first_mention_verse": "12:17",
+      "summary": "The leader of the Jerusalem church, distinct from the apostle James who was executed; Peter specifically instructs the believers at Mary's house to report his miraculous escape to this James, indicating his recognized authority over the Jerusalem community. He is not present at the gathering but is clearly the most important person to be informed.",
+      "significance": "James the Lord's brother is emerging as the primary leader of the Jerusalem church, a role confirmed throughout the rest of Acts and corroborated by Paul's letters; his emergence here marks the transition of Jerusalem leadership."
+    },
+    {
+      "id": "blastus",
+      "name": "Blastus",
+      "role": "Royal Official",
+      "first_mention_verse": "12:20",
+      "summary": "The personal chamberlain of King Herod Agrippa, Blastus is persuaded by the Tyrian and Sidonian delegation to act as their intermediary in gaining access to the king for a diplomatic audience. His role is minor but illustrates the patronage networks of Herodian court politics.",
+      "significance": "Blastus's brokerage sets the stage for the public audience where Herod accepts divine honors, making him an unwitting participant in the event that triggers divine judgment on the king."
+    },
+    {
+      "id": "jerusalem_church",
+      "name": "The Jerusalem Church",
+      "role": "Group / Believers",
+      "first_mention_verse": "12:5",
+      "summary": "The community of Jesus-followers gathered in Jerusalem, who pray earnestly and continuously for Peter throughout his imprisonment. Their disbelieving reaction to Rhoda's announcement — despite praying for exactly this — is noted with gentle narrative irony.",
+      "significance": "The church's corporate prayer is the human side of the divine intervention that frees Peter, modeling in Acts the partnership between faithful human intercession and sovereign divine action."
+    },
+    {
+      "id": "people_of_tyre_sidon",
+      "name": "People of Tyre and Sidon",
+      "role": "Group / Foreign Delegation",
+      "first_mention_verse": "12:20",
+      "summary": "A diplomatic delegation from the Phoenician coastal cities of Tyre and Sidon who seek reconciliation with Herod after a political dispute, since their food supply depended on Herod's territory. It is their flattering acclamation — 'the voice of a god, not of a man' — that occasions divine judgment on Herod.",
+      "significance": "Their acclamation of Herod as a god provides the occasion for God's judgment, contrasting the blasphemy of human hubris with the humility that true faith requires; they function as instruments of Herod's downfall without intending to be."
+    }
+  ],
+  "locations": [
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The holy city and center of early Jewish Christianity, where Herod carries out his persecution of the church, executes James, and imprisons Peter during Passover."
+    },
+    {
+      "id": "prison_jerusalem",
+      "name": "The Prison (Jerusalem)",
+      "modern_name": "Jerusalem, Israel (exact site unknown)",
+      "lat": 31.7750,
+      "lng": 35.2290,
+      "description": "The Jerusalem prison where Peter is held under guard by four squads of soldiers, chained between two men, the site of his miraculous angelic deliverance."
+    },
+    {
+      "id": "mary_house_jerusalem",
+      "name": "House of Mary (mother of John Mark)",
+      "modern_name": "Jerusalem, Israel (exact site unknown)",
+      "lat": 31.7720,
+      "lng": 35.2100,
+      "description": "A spacious private home in Jerusalem serving as a church meeting place, where believers pray for Peter through the night and where he appears unexpectedly after his escape."
+    },
+    {
+      "id": "caesarea_maritima",
+      "name": "Caesarea",
+      "modern_name": "Caesarea Maritima, Israel",
+      "lat": 32.5000,
+      "lng": 34.8974,
+      "description": "The Roman administrative capital of Judea on the Mediterranean coast, where Herod holds court, receives the Tyrian and Sidonian delegation, delivers his fatal oration, and dies."
+    },
+    {
+      "id": "tyre",
+      "name": "Tyre",
+      "modern_name": "Tyre (Sur), Lebanon",
+      "lat": 33.2742,
+      "lng": 35.1958,
+      "description": "An ancient Phoenician port city north of Caesarea whose people, dependent on Herodian territory for their food supply, send envoys to seek peace with the king."
+    },
+    {
+      "id": "sidon",
+      "name": "Sidon",
+      "modern_name": "Sidon (Saida), Lebanon",
+      "lat": 33.5628,
+      "lng": 35.3713,
+      "description": "A Phoenician coastal city paired with Tyre in the joint delegation that travels to Caesarea to negotiate reconciliation with Herod."
+    },
+    {
+      "id": "antioch_syria",
+      "name": "Antioch",
+      "modern_name": "Antakya, Turkey",
+      "lat": 36.2021,
+      "lng": 36.1600,
+      "description": "The major Syrian city on the Orontes River that serves as the home base of the Gentile mission and the sending church of Barnabas and Saul, to which they return at the chapter's close."
+    },
+    {
+      "id": "another_place",
+      "name": "Another place",
+      "modern_name": "unknown",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The unnamed location to which Peter departs after his briefing at Mary's house; the deliberate vagueness likely protects him from authorities, and tradition variously suggests Rome, Antioch, or Caesarea Philippi."
+    }
+  ],
+  "events": [
+    {
+      "id": "herod_kills_james",
+      "sequence": 1,
+      "verses": "12:1-2",
+      "title": "Herod Executes James",
+      "description": "King Herod Agrippa I launches a targeted persecution of the Jerusalem church's leadership. He arrests James, one of Jesus's twelve apostles and the brother of John, and has him killed with the sword — the standard Roman method of decapitation used for capital executions of non-Roman citizens. This is the first recorded execution of one of the twelve apostles in the New Testament. Herod's motive is explicitly political: he seeks to win favor with Jewish religious leaders who remained hostile to the Jesus movement. The speed and success of the action emboldens him to strike again.",
+      "location_id": "jerusalem",
+      "persons_present": ["herod_agrippa", "james_zebedee"],
+      "timeline_label": "James martyred",
+      "scroll_anchor": "herod-kills-james",
+      "visual_notes": "Show Herod enthroned or standing in a Jerusalem courtyard, flanked by Roman soldiers; James is present in the foreground, the act of execution implied rather than depicted graphically; the mood is cold, official, state-sanctioned violence against an unarmed man."
+    },
+    {
+      "id": "peter_arrested",
+      "sequence": 2,
+      "verses": "12:3-4",
+      "title": "Peter Arrested During Passover",
+      "description": "Encouraged by the popular approval James's execution generated, Herod moves quickly to arrest Peter as well. He times the arrest to the Festival of Unleavened Bread — the seven-day Passover celebration that drew enormous crowds to Jerusalem and elevated the political significance of any public action. Herod places Peter under maximum security: four squads of four soldiers each rotate guard duty around the clock, with Peter chained between two guards while two more stand at the cell door. He intends to bring Peter to public trial after the feast concludes, almost certainly planning an identical execution.",
+      "location_id": "prison_jerusalem",
+      "persons_present": ["herod_agrippa", "peter"],
+      "timeline_label": "Peter imprisoned",
+      "scroll_anchor": "peter-arrested",
+      "visual_notes": "Depict a heavy stone cell with Peter seated on the floor, iron chains connecting his wrists to two soldiers on either side who sleep against the wall; two more guards stand at a massive iron-barred door; torchlight in a dark corridor suggests inescapable confinement."
+    },
+    {
+      "id": "church_prays_for_peter",
+      "sequence": 3,
+      "verses": "12:5",
+      "title": "The Church Prays Earnestly",
+      "description": "While Peter sits in prison awaiting almost certain death, the Jerusalem church responds with persistent, corporate intercession on his behalf. The Greek word translated 'earnestly' (ektenos) conveys sustained, straining intensity — the same word used of Jesus praying in Gethsemane. The gathering at Mary's house is presented as representative of a wider pattern of prayer throughout the church. Luke deliberately juxtaposes the iron machinery of Roman military detention with the gathered prayers of an unarmed community, setting up the dramatic reversal to follow. The human response to persecution here is not resistance or flight but prayer.",
+      "location_id": "mary_house_jerusalem",
+      "persons_present": ["jerusalem_church", "mary_mother_of_john_mark", "john_mark"],
+      "timeline_label": "Church prays through the night",
+      "scroll_anchor": "church-prays-for-peter",
+      "visual_notes": "A candlelit interior room crowded with men and women of various ages — kneeling, seated, some with faces to the floor; contrast in a split-panel with the dark, silent prison cell; the warmth of gathered community against the cold stone of captivity."
+    },
+    {
+      "id": "angel_frees_peter",
+      "sequence": 4,
+      "verses": "12:6-10",
+      "title": "An Angel Frees Peter",
+      "description": "The very night before his scheduled trial, Peter is asleep between his two guard-companions, both chains attached, when a brilliant light floods the cell and an angel taps him awake. The chains fall from his wrists without explanation. The angel leads him step by step — dress, wrap your cloak, follow me — in a sequence so methodical it reads almost like sleepwalking. Peter follows in a dissociative state, unsure whether this is a vision or real. They pass the first guard post and then the second without challenge. When they reach the large iron gate that opens onto the city, it swings open of its own accord. They walk the length of one street before the angel vanishes as suddenly as he appeared, leaving Peter alone, unshackled, and standing in a Jerusalem alley.",
+      "location_id": "prison_jerusalem",
+      "persons_present": ["peter", "angel_of_the_lord"],
+      "timeline_label": "Angelic jailbreak",
+      "scroll_anchor": "angel-frees-peter",
+      "visual_notes": "A radiant figure in white standing in a stone cell; two soldiers asleep on either side of Peter; iron chains lying open on the ground; the heavy iron gate to the city standing ajar with cool blue moonlight spilling through; the overall impression is quiet, unhurried, supernatural inevitability."
+    },
+    {
+      "id": "peter_realizes_freedom",
+      "sequence": 5,
+      "verses": "12:11-12",
+      "title": "Peter Comes to Himself",
+      "description": "Standing alone in a Jerusalem street with the prison gate behind him, Peter snaps back to full consciousness and grasps what has happened: 'Now I know for certain that the Lord has sent his angel and rescued me from Herod's grasp and from everything the Jewish people were expecting.' His first clear-headed thought is theological — this was not luck or a prison break but divine deliverance. His second thought is practical: he knows where to find the community and heads immediately for Mary's house. The walk through dark, probably deserted streets would have been extraordinary — a man presumed as good as dead, moving freely through the city.",
+      "location_id": "jerusalem",
+      "persons_present": ["peter"],
+      "timeline_label": "Peter grasps his freedom",
+      "scroll_anchor": "peter-realizes-freedom",
+      "visual_notes": "Peter standing alone in a narrow Jerusalem alley at night, staring at his own unshackled wrists with an expression of dawning wonder; the dark archway of the prison gate visible behind him, a starlit sky overhead, the empty street ahead — solitude and astonishment."
+    },
+    {
+      "id": "rhoda_and_disbelief",
+      "sequence": 6,
+      "verses": "12:13-16",
+      "title": "Rhoda's Joyful Mistake",
+      "description": "Peter arrives at Mary's house and knocks at the outer courtyard gate. A servant girl named Rhoda comes to answer. She recognizes Peter's voice before she opens the gate, and is so overwhelmed with joy that she turns and runs back to the prayer meeting without letting him in. She bursts in with the news: 'Peter is at the gate!' The assembled believers refuse to believe her. First they say she has lost her mind; then, when she insists, they suggest it must be his guardian angel. Meanwhile, outside in the dark, Peter keeps knocking. When they finally open the gate and see him standing there, they are struck with astonishment — the same community that had been praying for exactly this outcome cannot process the answer when it appears.",
+      "location_id": "mary_house_jerusalem",
+      "persons_present": ["peter", "rhoda", "jerusalem_church", "mary_mother_of_john_mark"],
+      "timeline_label": "Rhoda's announcement and the group's disbelief",
+      "scroll_anchor": "rhoda-and-disbelief",
+      "visual_notes": "A three-panel composition: left — Rhoda at the wooden gate, mouth open in recognition, hand never reaching the latch; center — Peter waiting patiently outside in the dark, visible through a grated window; right — the crowd of believers inside, faces showing skepticism and then astonishment as the door opens."
+    },
+    {
+      "id": "peter_departs",
+      "sequence": 7,
+      "verses": "12:17",
+      "title": "Peter's Farewell and Departure",
+      "description": "Peter gestures urgently for the excited, noisy crowd to be quiet, then gives them a rapid account of how the Lord led him out of prison. He delivers one specific instruction: 'Report these things to James and to the brothers.' The James he names is James the Lord's brother, who leads the Jerusalem church — not the James who was just executed. With this deliberate handoff of news and implicitly of authority, Peter slips out into the night and goes to 'another place.' The text is deliberately vague, almost certainly to protect Peter's location from Herod's informants. This is effectively Peter's final scene as the central character of Acts.",
+      "location_id": "mary_house_jerusalem",
+      "persons_present": ["peter", "jerusalem_church", "mary_mother_of_john_mark"],
+      "timeline_label": "Peter departs Jerusalem",
+      "scroll_anchor": "peter-departs",
+      "visual_notes": "Peter at the threshold between the lit interior and the dark street outside — one hand raised to quiet the crowd gathered in the doorway behind him, his face turned toward the dark road ahead; a cloaked figure stepping from light into shadow."
+    },
+    {
+      "id": "guards_executed",
+      "sequence": 8,
+      "verses": "12:18-19",
+      "title": "Herod Executes the Guards",
+      "description": "With the dawn comes chaos in the prison: Peter is gone and the soldiers cannot account for it. When news reaches Herod, he orders a thorough search; finding nothing, he interrogates the guards. Under Roman military law, soldiers who allowed a prisoner to escape were subject to the same penalty the prisoner would have faced. Herod follows this protocol precisely: he commands that the guards be led away and executed. The men who stood watch over Peter with their lives pay with their lives for his absence. The chapter's first oppressor cannot escape the bitter irony of his own system.",
+      "location_id": "prison_jerusalem",
+      "persons_present": ["herod_agrippa"],
+      "timeline_label": "Guards searched and put to death",
+      "scroll_anchor": "guards-executed",
+      "visual_notes": "The empty prison cell in morning light — chains lying open on the ground, the door ajar — while in a courtyard outside, soldiers kneel before a furious Herod surrounded by his officials; the contrast between the empty cell and the fatal accountability of the guards."
+    },
+    {
+      "id": "herod_moves_to_caesarea",
+      "sequence": 9,
+      "verses": "12:19",
+      "title": "Herod Moves to Caesarea",
+      "description": "After executing the guards, Herod departs Jerusalem and travels to Caesarea Maritima, the Roman administrative capital on the Mediterranean coast built by his grandfather Herod the Great. The move likely reflects political calculation after public embarrassment: Caesarea was the seat of Roman imperial authority in the region and a more comfortable base for the king. The geographic shift also moves the narrative from the center of Jewish Christianity to a thoroughly Gentile, Roman urban setting — the stage on which Herod will meet his end.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["herod_agrippa"],
+      "timeline_label": "Herod relocates to Caesarea",
+      "scroll_anchor": "herod-moves-to-caesarea",
+      "visual_notes": "A map route tracing Herod's movement from Jerusalem westward and then northwest along the coastal plain to Caesarea Maritima; arrival scene showing the Herodian harbor city with its colonnaded streets and the Mediterranean harbor backdrop."
+    },
+    {
+      "id": "tyre_sidon_delegation",
+      "sequence": 10,
+      "verses": "12:20",
+      "title": "Delegation from Tyre and Sidon",
+      "description": "Herod is engaged in a serious political quarrel with the coastal Phoenician cities of Tyre and Sidon, though the cause of the dispute is not given. The stakes are existential for those cities: they depended on grain and produce from Herod's fertile Galilean and Judean hinterland for their food supply. Unable to sustain the hostility, a joint delegation arrives at Caesarea. They win over Blastus, the king's personal chamberlain, to gain access to the royal court. Blastus's cooperation secures them a formal public audience — the scene that becomes the occasion for Herod's destruction.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["herod_agrippa", "blastus", "people_of_tyre_sidon"],
+      "timeline_label": "Coastal cities seek peace with Herod",
+      "scroll_anchor": "tyre-sidon-delegation",
+      "visual_notes": "A group of richly dressed Phoenician envoys waiting in a colonnaded anteroom of the Caesarean palace; Blastus visible in conversation with the lead envoy, gesturing toward an inner chamber; through the arches, the glittering Mediterranean harbor visible in the distance."
+    },
+    {
+      "id": "herod_struck_down",
+      "sequence": 11,
+      "verses": "12:21-23",
+      "title": "Herod Accepts Divine Honors and Dies",
+      "description": "On the appointed day of the public audience, Herod dresses in his royal robes — described by the historian Josephus as a garment woven entirely of silver thread that blazed in the sunlight — and takes his seat on the judgment platform before the assembled crowd. He delivers a formal oration to the delegation and the assembled audience. The crowd erupts in repeated shouts: 'This is the voice of a god, not of a man!' Herod accepts the divine acclamation without protest or redirection to God — a decisive act of pride. The narrator immediately reports: an angel of the Lord struck him down, and he was eaten by worms and died. Josephus provides a strikingly parallel account (Antiquities 19.8.2), recording that Herod suffered severe abdominal pain beginning at that moment and died five days later.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["herod_agrippa", "angel_of_the_lord", "people_of_tyre_sidon", "blastus"],
+      "timeline_label": "Herod struck dead by God",
+      "scroll_anchor": "herod-struck-down",
+      "visual_notes": "Herod in gleaming silver robes on an elevated stone tribunal, arms slightly raised as the crowd below clamors with upturned faces; a subtle divine light or shadow from above suggests the angel's presence; the next panel shows the throne empty, Herod collapsed — the contrast between dazzling splendor and sudden ruin."
+    },
+    {
+      "id": "word_of_god_grows",
+      "sequence": 12,
+      "verses": "12:24",
+      "title": "The Word of God Flourishes",
+      "description": "In stark, deliberate contrast to Herod's sudden death, Luke offers a single summary sentence: the word of God continued to grow and multiply. This is a recurring formulaic progress report in Acts — appearing also at 6:7 and 19:20 — that functions as a narrative marker signaling the triumph of the gospel over every attempt to suppress it. The persecutor who killed one apostle and imprisoned another is dead. The church he attacked is not. The gospel's advance is organic, unstoppable, and ultimately unaffected by political violence.",
+      "location_id": null,
+      "persons_present": ["jerusalem_church"],
+      "timeline_label": "Gospel advances despite opposition",
+      "scroll_anchor": "word-of-god-grows",
+      "visual_notes": "An abstract visual — a glowing vine or network of light radiating outward from Jerusalem across a map of the Mediterranean world; or a stylized image of an overturned throne with green growth pushing up through the stone; the sense of life persisting past power."
+    },
+    {
+      "id": "barnabas_saul_return",
+      "sequence": 13,
+      "verses": "12:25",
+      "title": "Barnabas and Saul Return to Antioch",
+      "description": "Having completed their relief mission to Jerusalem — delivering funds raised by the Antioch church for Judean believers facing famine, as described at the end of Acts 11 — Barnabas and Saul return north to Antioch. They bring John Mark with them. This brief verse functions as a literary hinge in Acts: the Jerusalem story is closed, the stage is set for Acts 13, and the first great missionary journey is about to begin. John Mark's inclusion is quietly significant, as his presence will later become a point of serious conflict.",
+      "location_id": "antioch_syria",
+      "persons_present": ["barnabas", "saul", "john_mark"],
+      "timeline_label": "Barnabas and Saul return to Antioch",
+      "scroll_anchor": "barnabas-saul-return",
+      "visual_notes": "A map route running from Jerusalem northward through Samaria and Syria to Antioch on the Orontes River; three figures arriving at a prosperous city gate; the Mediterranean visible in the background to the west — missionaries returning to a sending church ahead of an even larger journey."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "herod_agrippa",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "herod_kills_james",
+          "note": "Herod conducts his persecution from Jerusalem, executing James and then arresting Peter."
+        },
+        {
+          "order": 2,
+          "location_id": "prison_jerusalem",
+          "event_id": "peter_arrested",
+          "note": "Herod oversees Peter's detention under heavy guard in the Jerusalem prison."
+        },
+        {
+          "order": 3,
+          "location_id": "prison_jerusalem",
+          "event_id": "guards_executed",
+          "note": "Following Peter's escape, Herod interrogates and executes the guards at the prison."
+        },
+        {
+          "order": 4,
+          "location_id": "caesarea_maritima",
+          "event_id": "herod_moves_to_caesarea",
+          "note": "After the embarrassment of Peter's escape, Herod moves his court to the Roman administrative capital."
+        },
+        {
+          "order": 5,
+          "location_id": "caesarea_maritima",
+          "event_id": "herod_struck_down",
+          "note": "Herod delivers his public oration at Caesarea and is struck down by God after accepting divine honors."
+        }
+      ]
+    },
+    {
+      "person_id": "peter",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "prison_jerusalem",
+          "event_id": "peter_arrested",
+          "note": "Peter is arrested and confined in the Jerusalem prison under four-squad guard."
+        },
+        {
+          "order": 2,
+          "location_id": "prison_jerusalem",
+          "event_id": "angel_frees_peter",
+          "note": "An angel appears, breaks Peter's chains, and leads him out through the prison gate."
+        },
+        {
+          "order": 3,
+          "location_id": "jerusalem",
+          "event_id": "peter_realizes_freedom",
+          "note": "Peter stands in the street outside the prison and grasps that his deliverance is real."
+        },
+        {
+          "order": 4,
+          "location_id": "mary_house_jerusalem",
+          "event_id": "rhoda_and_disbelief",
+          "note": "Peter walks to Mary's house, where the praying church is gathered, and knocks at the gate."
+        },
+        {
+          "order": 5,
+          "location_id": "another_place",
+          "event_id": "peter_departs",
+          "note": "Peter departs to an unspecified safe location after briefing the community and charging them to inform James."
+        }
+      ]
+    },
+    {
+      "person_id": "barnabas",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "barnabas_saul_return",
+          "note": "Barnabas completes the famine-relief mission in Jerusalem (carried out during the events of this chapter, per Acts 11:27-30)."
+        },
+        {
+          "order": 2,
+          "location_id": "antioch_syria",
+          "event_id": "barnabas_saul_return",
+          "note": "Barnabas returns to the Antioch home church with Saul and John Mark."
+        }
+      ]
+    },
+    {
+      "person_id": "saul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "barnabas_saul_return",
+          "note": "Saul completes the famine-relief mission in Jerusalem alongside Barnabas."
+        },
+        {
+          "order": 2,
+          "location_id": "antioch_syria",
+          "event_id": "barnabas_saul_return",
+          "note": "Saul returns to Antioch, where the first missionary journey will soon be commissioned."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "herod_kills_james",
+      "position": 1,
+      "label": "James Executed",
+      "relative_time": "Chapter opening",
+      "absolute_time": "Spring AD 44"
+    },
+    {
+      "event_id": "peter_arrested",
+      "position": 2,
+      "label": "Peter Imprisoned",
+      "relative_time": "Shortly after James's death, during Passover week",
+      "absolute_time": "Passover, Spring AD 44"
+    },
+    {
+      "event_id": "church_prays_for_peter",
+      "position": 3,
+      "label": "Continuous Prayer Vigil",
+      "relative_time": "Throughout Peter's imprisonment",
+      "absolute_time": "Passover week, Spring AD 44"
+    },
+    {
+      "event_id": "angel_frees_peter",
+      "position": 4,
+      "label": "Angel Breaks the Chains",
+      "relative_time": "The night before Peter's trial",
+      "absolute_time": "Night, Passover week, Spring AD 44"
+    },
+    {
+      "event_id": "peter_realizes_freedom",
+      "position": 5,
+      "label": "Peter in the Street",
+      "relative_time": "Minutes after the escape",
+      "absolute_time": "Same night, Spring AD 44"
+    },
+    {
+      "event_id": "rhoda_and_disbelief",
+      "position": 6,
+      "label": "Rhoda's Announcement",
+      "relative_time": "Shortly after Peter's escape — still that same night",
+      "absolute_time": "Same night, Spring AD 44"
+    },
+    {
+      "event_id": "peter_departs",
+      "position": 7,
+      "label": "Peter's Farewell",
+      "relative_time": "Same night, after addressing the gathered believers",
+      "absolute_time": "Same night, Spring AD 44"
+    },
+    {
+      "event_id": "guards_executed",
+      "position": 8,
+      "label": "Guards Interrogated and Killed",
+      "relative_time": "The following morning",
+      "absolute_time": "Day after Peter's escape, Spring AD 44"
+    },
+    {
+      "event_id": "herod_moves_to_caesarea",
+      "position": 9,
+      "label": "Herod at Caesarea",
+      "relative_time": "Some days after the guards' execution",
+      "absolute_time": "Spring–Summer AD 44"
+    },
+    {
+      "event_id": "tyre_sidon_delegation",
+      "position": 10,
+      "label": "Coastal Delegation Arrives",
+      "relative_time": "After Herod establishes himself at Caesarea",
+      "absolute_time": "Summer AD 44"
+    },
+    {
+      "event_id": "herod_struck_down",
+      "position": 11,
+      "label": "Herod Dies",
+      "relative_time": "On the appointed day of the public oration",
+      "absolute_time": "Summer AD 44 (Josephus: onset of symptoms, death five days later)"
+    },
+    {
+      "event_id": "word_of_god_grows",
+      "position": 12,
+      "label": "Gospel Advances",
+      "relative_time": "Ongoing in the aftermath of Herod's death",
+      "absolute_time": "AD 44 onward"
+    },
+    {
+      "event_id": "barnabas_saul_return",
+      "position": 13,
+      "label": "Mission Team to Antioch",
+      "relative_time": "After completion of the Jerusalem relief visit",
+      "absolute_time": "c. AD 44"
+    }
+  ],
+  "theological_themes": [
+    "Divine sovereignty over rulers and empires",
+    "Prayer as partnership in God's redemptive action",
+    "Judgment of the proud and deliverance of the humble",
+    "The unstoppable advance of God's word",
+    "Martyrdom and costly witness",
+    "Transition and continuity of church leadership"
+  ],
+  "discussion_questions": [
+    "James was executed while Peter was miraculously freed — both were faithful apostles. What does this teach us about the relationship between genuine faith, earnest prayer, and outcomes we cannot control?",
+    "The Jerusalem church prayed continuously for Peter yet struggled to believe he was at the door when their prayer was answered. In what ways do we pray for things we are not quite prepared to receive?",
+    "Herod died because he accepted divine honor without redirecting it to God. In what subtle or not-so-subtle ways might people today — or institutions — absorb glory that rightly belongs elsewhere?",
+    "Peter departs to 'another place' and James the Lord's brother steps into greater leadership responsibility. How do you see God using forced transitions and unexpected departures to develop new leaders in communities today?",
+    "The chapter ends with the simple declaration that 'the word of God continued to grow and multiply' — after an execution, an imprisonment, and a royal death. What current obstacles to the gospel feel most insurmountable, and what does this chapter's rhythm of crisis and advance say to them?"
+  ]
+};
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── PAGE SKELETON ── */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* ── BODY: timeline left, map right ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── TIMELINE COLUMN ── */
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+
+/* Chapter label strip */
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.tl-ch-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; line-height:1.1; color:var(--tl-fg);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+
+/* Scrollable event list */
+.tl-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+/* Vertical spine */
+.tl-spine {
+  padding: 8px 0 80px;
+  position: relative;
+}
+.tl-spine::before {
+  content:'';
+  position:absolute;
+  left: 38px;
+  top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent);
+}
+
+/* Year separator badge */
+.tl-year-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 6px 14px;
+  position: relative;
+  z-index: 2;
+}
+.tl-year-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(22% .018 255);
+  border: 1px solid oklch(36% .015 255);
+  padding: 2px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line {
+  flex: 1;
+  height: 1px;
+  background: oklch(30% .012 255);
+  opacity: .5;
+}
+
+/* Each item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s;
+  padding-right: 4px;
+  min-height: 130px;
+}
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+
+/* left: seq number + dot */
+.tl-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+.tl-seq {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  color: oklch(45% .01 255);
+  margin-bottom:5px;
+  letter-spacing:.05em;
+}
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%;
+  border:2px solid oklch(38% .015 255);
+  background: oklch(16% .018 255);
+  position:relative; z-index:1;
+  transition: all .28s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px oklch(58% .19 46 / .2);
+}
+.tl-dot-pip {
+  width:5px; height:5px; border-radius:50%; background:#fff;
+  opacity:0; transition:opacity .28s;
+}
+.tl-item.active .tl-dot-pip { opacity:1; }
+
+/* right: text */
+.tl-r {
+  padding: 22px 10px 22px 6px;
+  border-bottom: 1px solid oklch(24% .012 255);
+}
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date {
+  font-size:11px; font-weight:800; letter-spacing:.1em;
+  font-family:'Barlow Condensed',sans-serif;
+  color: oklch(70% .018 76); margin-bottom:3px;
+}
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time {
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  line-height:1.35;
+  color: oklch(72% .014 78); margin-bottom:6px;
+}
+.tl-item.active .tl-rel-time { color: oklch(82% .035 74); }
+.tl-ev-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px; font-weight:800; text-transform:uppercase;
+  line-height:1.18; color: var(--tl-fg);
+  margin-bottom: 4px;
+}
+.tl-ev-verses {
+  font-size:10px; font-weight:700; letter-spacing:.1em;
+  color: oklch(68% .018 76); margin-top:2px;
+}
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+
+/* ── MAP COLUMN ── */
+.map-col {
+  position: relative;
+  background: var(--map-land);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Event banner at top of map */
+.map-event-banner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  background: oklch(16% 0.02 55 / 0.92);
+  border-bottom: 2px solid var(--accent);
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 16px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: background .3s;
+}
+.ban-verses {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.ban-content {}
+.ban-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; color:oklch(95% .012 78);
+  line-height:1.1; margin-bottom:4px;
+}
+.ban-desc {
+  font-family:'Lora',serif; font-style:normal;
+  font-size:13px; line-height:1.55;
+  color:oklch(88% .014 78);
+  display: block;
+  overflow: visible;
+}
+.ban-loc {
+  display:flex; align-items:center; gap:5px;
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:oklch(55% .012 70); white-space:nowrap;
+}
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+/* ── MAP SVG ── */
+.map-svg-wrap {
+  position: absolute;
+  inset: 0;
+}
+.map-svg {
+  width:100%; height:100%;
+}
+
+/* Person legend - bottom left of map */
+.map-person-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.map-leg-item {
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; font-weight:600; letter-spacing:.06em;
+  color: var(--fg);
+  background: var(--card);
+  padding: 3px 10px 3px 7px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  transition: opacity .5s, transform .4s;
+}
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-leg-item.entering { animation: legEnter .4s ease forwards; }
+@keyframes legEnter {
+  from { opacity:0; transform:translateX(-8px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+.map-controls-panel { display: contents; }
+
+/* Map overlay labels */
+.map-corner-label {
+  position:absolute; bottom:18px; right:18px;
+  font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
+}
+
+.map-playback {
+  position: absolute;
+  right: 18px;
+  bottom: 42px;
+  z-index: 12;
+  width: min(460px, calc(100% - 36px));
+  background: oklch(99.5% 0.008 80 / .9);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+.playback-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:9px;
+}
+.playback-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.playback-buttons { display:flex; gap:6px; flex-shrink:0; }
+.playback-btn {
+  width:30px;
+  height:26px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--fg);
+  border-radius:3px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  line-height:1;
+}
+.playback-track {
+  position:relative;
+  height:28px;
+  display:grid;
+  grid-template-columns:repeat(var(--step-count), 1fr);
+  align-items:center;
+  gap:0;
+}
+.playback-track::before {
+  content:'';
+  position:absolute;
+  left:10px; right:10px; top:13px;
+  height:2px;
+  background:var(--border);
+}
+.playback-step {
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  width:20px;
+  height:20px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.playback-step::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:var(--fg-muted);
+  opacity:.42;
+  transition:all .24s;
+}
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before {
+  inset:2px;
+  background:var(--accent);
+  opacity:1;
+  box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
+}
+.playback-step-time { display: none; }
+.loc-label {
+  paint-order: stroke;
+  stroke: oklch(98% 0.008 80 / .82);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.person-name-label {
+  display: none;
+  paint-order: stroke;
+  stroke: oklch(16% 0.02 55 / .62);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: 44px auto;
+    overflow: visible;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
+  }
+
+  .map-col {
+    order: -1;
+    overflow: visible;
+  }
+
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+  .home-link,
+  .lang-btn {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .map-event-banner {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    flex: 0 0 auto;
+    padding: 8px 12px 9px;
+    gap: 3px;
+  }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title  { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc {
+    display: block;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow: visible;
+  }
+  .ban-loc    { display: none; }
+  .map-svg-wrap {
+    position: relative;
+    inset: auto;
+    flex: 0 0 clamp(300px, 46dvh, 430px);
+    min-height: clamp(300px, 46dvh, 430px);
+  }
+  .loc-label {
+    font-size: 28px;
+    font-weight: 800;
+    stroke-width: 5px;
+  }
+  .person-name-label { display: block; font-size: 18px; }
+
+  .map-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: oklch(93% 0.025 82);
+    border-top: 1px solid var(--border);
+  }
+
+  .map-person-legend {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    gap: 4px;
+    z-index: 14;
+    max-height: none;
+    overflow-y: auto;
+    padding: 5px;
+    background: oklch(99.5% 0.008 80 / .88);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px oklch(10% 0.02 55 / .12);
+    backdrop-filter: blur(8px);
+  }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
+  .map-leg-dot  { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+  .map-playback {
+    position: relative;
+    right:auto;
+    bottom:auto;
+    width:100%;
+    padding:8px 8px 10px;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track {
+    min-width: max(100%, calc(var(--step-count) * 92px));
+    height: 70px;
+    align-items: start;
+  }
+  .playback-track::before { top:8px; }
+  .playback-step { width:18px; height:18px; }
+  .playback-step-time {
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 84px;
+    color: var(--fg);
+    background: oklch(99.5% 0.008 80 / .92);
+    border: 1px solid oklch(84% 0.022 72 / .8);
+    border-radius: 3px;
+    padding: 3px 4px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    pointer-events: none;
+    box-shadow: 0 2px 8px oklch(10% 0.02 55 / .1);
+  }
+  .playback-step.active .playback-step-time {
+    color: oklch(99% 0.008 80);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .person-name-label { display: none; }
+
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {
+  da: {
+    book: 'Apostlenes Gerninger',
+    shortBook: 'ApG',
+    chapterTitle: 'Lænker, engle og en konges fald',
+    headerSub: '— Jerusalem, Cæsarea, Tyrus, Sidon og Antiokia · forår–sommer år 44',
+    timelineTitle: ['Lænker', 'og engle'],
+    mapCorner: 'Jerusalem · Cæsarea · Tyrus · Sidon · Antiokia',
+    yearBadges: ['Forfølgelse begynder', 'Mirakuløs flugt', 'Konsekvenserne', 'Guddommelig dom', 'Mod Antiokia'],
+    map: {
+      JUDEA: 'JUDÆA',
+      PERAEA: 'PERÆA',
+      SAMARIA: 'SAMARIA',
+      DEAD_SEA: 'DET DØDE HAV',
+      JORDAN_RIVER: 'Jordanfloden',
+      MEDITERRANEAN: 'MIDDELHAVET',
+      KIDRON_VALLEY: 'Kidrondalen',
+      TEMPLE: 'TEMPLET',
+      WALK: 'vejen',
+      HINNOM_VALLEY: 'Hinnoms dal',
+      MOUNT_OF_OLIVES: 'OLIEBJERGET',
+      BETHANY: 'Betania',
+      BETHLEHEM: 'Betlehem'
+    },
+    persons: {
+      herod_agrippa: 'Herodes Agrippa I',
+      james_zebedee: 'Jakob, Zebedæus\' søn',
+      peter: 'Peter',
+      angel_of_the_lord: 'En Herrens engel',
+      rhoda: 'Rhoda',
+      mary_mother_of_john_mark: 'Maria, Markus\' mor',
+      john_mark: 'Johannes (kaldet Markus)',
+      barnabas: 'Barnabas',
+      saul: 'Saul',
+      james_brother_of_jesus: 'Jakob (Herrens bror)',
+      blastus: 'Blastus',
+      jerusalem_church: 'Menigheden i Jerusalem',
+      people_of_tyre_sidon: 'Folk fra Tyrus og Sidon'
+    },
+    locations: {
+      jerusalem: { name: 'Jerusalem' },
+      prison_jerusalem: { name: 'Fængslet i Jerusalem' },
+      mary_house_jerusalem: { name: 'Marias hus' },
+      caesarea_maritima: { name: 'Cæsarea' },
+      tyre: { name: 'Tyrus' },
+      sidon: { name: 'Sidon' },
+      antioch_syria: { name: 'Antiokia' },
+      another_place: { name: 'Et andet sted' }
+    },
+    events: {
+      herod_kills_james: {
+        title: 'Herodes henretter Jakob',
+        description: 'Kong Herodes Agrippa I starter en målrettet forfølgelse af lederne i menigheden i Jerusalem. Han arresterer Jakob, en af Jesu tolv apostle og bror til Johannes, og lader ham henrette med sværd – den almindelige romerske metode til halshugning af ikke-romerske borgere. Det er den første registrerede henrettelse af en af de tolv apostle i Det Nye Testamente. Herodes\' motiv er udtalt politisk: han vil vinde de jødiske religiøse lederes gunst. Handlingens hurtighed og succes ansporer ham til at slå til igen.',
+        timeline_label: 'Jakob henrettes'
+      },
+      peter_arrested: {
+        title: 'Peter arresteres under påsken',
+        description: 'Opmuntret af den folkelige bifald henrettelsen af Jakob skabte, skynder Herodes sig at arrestere Peter også. Han tidsætter arrestationen til de usyrede brøds fest – den syvdages påskefejring, der trak enorme menneskemængder til Jerusalem og forhøjede den politiske betydning af enhver offentlig handling. Herodes anbringer Peter under maksimal sikkerhed: fire vagtskift af fire soldater, med Peter lænket mellem to soldater, mens to andre står ved cellens dør. Han planlægger at føre Peter til offentlig retssag efter festens afslutning.',
+        timeline_label: 'Peter fængsles'
+      },
+      church_prays_for_peter: {
+        title: 'Menigheden beder inderligt',
+        description: 'Mens Peter sidder i fængsel og afventer en næsten sikker død, svarer menigheden i Jerusalem med vedholdende fælles forbøn. Det græske ord oversat \'inderligt\' (ektenos) udtrykker vedvarende, anstrengende intensitet – det samme ord, der bruges om Jesu bøn i Getsemane. Forsamlingen i Marias hus repræsenterer et bredere bønsmønster i menigheden. Lukas stiller bevidst romersk militærs jernmaskineri op imod en ubevæbnet menigheds samlede bønner.',
+        timeline_label: 'Menigheden beder gennem natten'
+      },
+      angel_frees_peter: {
+        title: 'En engel befrier Peter',
+        description: 'Selve natten før hans planlagte retssag sover Peter mellem sine to vagter, begge lænker fastgjort, da et strålende lys fylder cellen, og en engel vækker ham med et tryk. Lænkerne falder fra hans håndled. Englen leder ham trin for trin – klæd dig på, tag kappen om dig, følg mig – i en så metodisk sekvens, at det næsten virker som søvngængeri. De passerer den første vagtpost og dernæst den anden uden at blive stoppet. Da de når den store jernport ud mod byen, åbner den sig af sig selv. De går en gade igennem, hvorefter englen forsvinder lige så pludseligt, som han kom – og Peter står alene, uden lænker, i en gyde i Jerusalem.',
+        timeline_label: 'Englens befrielse'
+      },
+      peter_realizes_freedom: {
+        title: 'Peter kommer til sig selv',
+        description: 'Stående alene i en gade i Jerusalem med fængselsporten bag sig vågner Peter helt og forstår, hvad der er sket: \'Nu ved jeg med sikkerhed, at Herren har sendt sin engel og reddet mig fra Herodes\' magt og fra alt, hvad det jødiske folk forventede.\' Hans første klare tanke er teologisk – det var ikke held eller en flugtplan, men guddommelig udfrielse. Hans anden tanke er praktisk: han ved, hvor menigheden samles, og går straks mod Marias hus. Vandringen gennem mørke, sandsynligvis tomme gader, ville være ekstraordinær – en mand, alle troede så godt som død, bevæger sig frit gennem byen.',
+        timeline_label: 'Peter forstår sin frihed'
+      },
+      rhoda_and_disbelief: {
+        title: 'Rhodas glædelige fejltagelse',
+        description: 'Peter ankommer til Marias hus og banker på den ydre gårdport. En tjenestepige ved navn Rhoda kommer for at åbne. Hun genkender Peters stemme, før hun åbner porten, og bliver så overvældet af glæde, at hun løber tilbage til bønnemødet uden at lukke ham ind. Hun stormer ind med nyheden: \'Peter står ved porten!\' De forsamlede troende vil ikke tro hende. Først siger de, hun har mistet forstanden; da hun insisterer, foreslår de, at det må være hans skytsengel. Imens står Peter udenfor i mørket og fortsætter med at banke. Da de endelig åbner porten og ser ham stå der, bliver de slået med forundring – den samme menighed, der havde bedt for netop dette resultat, kan ikke begribe svaret, da det viser sig.',
+        timeline_label: 'Rhodas meddelelse og menighedens vantro'
+      },
+      peter_departs: {
+        title: 'Peters farvel og bortrejse',
+        description: 'Peter gør et hurtigt tegn til den ophidsede flok om at være stille og fortæller dem så kort, hvordan Herren har ført ham ud af fængslet. Han giver én bestemt instruktion: \'Fortæl dette til Jakob og brødrene.\' Den Jakob, han nævner, er Jakob, Herrens bror, som leder menigheden i Jerusalem – ikke den Jakob, der lige er blevet henrettet. Med denne bevidste overdragelse af både nyhed og indirekte autoritet glider Peter ud i natten og rejser til \'et andet sted\'. Teksten er bevidst vag, sandsynligvis for at beskytte Peters opholdssted. Dette er reelt Peters sidste scene som hovedperson i Apostlenes Gerninger.',
+        timeline_label: 'Peter forlader Jerusalem'
+      },
+      guards_executed: {
+        title: 'Herodes henretter vagterne',
+        description: 'Med daggryets komme bryder kaos ud i fængslet: Peter er væk, og soldaterne kan ikke gøre rede for det. Da nyheden når Herodes, befaler han en grundig eftersøgning; da intet findes, forhører han vagterne. Under romersk militærret var soldater, der lod en fange undslippe, underlagt samme straf, som fangen ville have lidt. Herodes følger denne procedure præcist: han befaler, at vagterne skal føres bort og henrettes. De mænd, der vogtede Peter med deres liv, betaler med deres liv for hans fravær.',
+        timeline_label: 'Vagterne forhøres og dræbes'
+      },
+      herod_moves_to_caesarea: {
+        title: 'Herodes flytter til Cæsarea',
+        description: 'Efter at have henrettet vagterne forlader Herodes Jerusalem og rejser til Cæsarea Maritima, den romerske administrative hovedstad ved Middelhavskysten, bygget af hans bedstefar Herodes den Store. Flytningen afspejler sandsynligvis politisk beregning efter offentlig forlegenhed: Cæsarea var sæde for romersk kejserlig myndighed i regionen og en mere bekvem base for kongen. Den geografiske forskydning flytter også fortællingen fra centrum af jødisk kristendom til en gennemført hedensk, romersk by – scenen, hvor Herodes vil møde sin ende.',
+        timeline_label: 'Herodes til Cæsarea'
+      },
+      tyre_sidon_delegation: {
+        title: 'Delegation fra Tyrus og Sidon',
+        description: 'Herodes er i alvorlig politisk strid med de fønikiske kystbyer Tyrus og Sidon, selvom årsagen til striden ikke nævnes. Indsatsen er eksistentiel for de byer: de var afhængige af korn og afgrøder fra Herodes\' frugtbare områder i Galilæa og Judæa. Ude af stand til at opretholde fjendskabet ankommer en fælles delegation til Cæsarea. De vinder Blastus, kongens kammerherre, for at få adgang til hoffet. Blastus\' samarbejde sikrer dem en formel offentlig audiens – scenen, der bliver anledningen til Herodes\' fald.',
+        timeline_label: 'Kystbyerne søger fred med Herodes'
+      },
+      herod_struck_down: {
+        title: 'Herodes modtager guddommelig hyldest og dør',
+        description: 'På den fastsatte dag for den offentlige audiens klæder Herodes sig i sine kongelige klæder – beskrevet af historikeren Josefus som en dragt vævet helt af sølvtråd, der strålede i sollyset – og indtager sin plads på dommerstolen foran den forsamlede skare. Han holder en formel tale til delegationen og publikum. Mængden råber gentagne gange: \'Det er en guds røst, ikke et menneskes!\' Herodes accepterer den guddommelige hyldest uden at protestere eller henvise til Gud – en afgørende stolthedshandling. Fortælleren rapporterer straks: en Herrens engel slog ham, og han blev fortæret af orme og døde. Josefus giver en slående parallel beretning (Antikvit. 19.8.2) og noterer, at Herodes fik svære mavesmerter fra det øjeblik og døde fem dage senere.',
+        timeline_label: 'Herodes slås ihjel af Gud'
+      },
+      word_of_god_grows: {
+        title: 'Guds ord vokser',
+        description: 'I skarp, bevidst kontrast til Herodes\' pludselige død giver Lukas en enkelt opsummerende sætning: Guds ord fortsatte med at vokse og brede sig. Dette er en tilbagevendende formulariske statusrapport i Apostlenes Gerninger – findes også i 6:7 og 19:20 – som fungerer som et fortællende mærke, der signalerer evangeliets sejr over ethvert forsøg på at undertrykke det. Forfølgeren, der dræbte én apostel og fængslede en anden, er død. Den menighed, han angreb, er ikke. Evangeliets fremgang er organisk, ustoppelig og i sidste ende upåvirket af politisk vold.',
+        timeline_label: 'Evangeliet vokser trods modstand'
+      },
+      barnabas_saul_return: {
+        title: 'Barnabas og Saul vender tilbage til Antiokia',
+        description: 'Efter at have fuldført deres hjælpemission til Jerusalem – ved at levere midler indsamlet af menigheden i Antiokia til judæiske troende, der står over for hungersnød, som beskrevet i slutningen af ApG 11 – vender Barnabas og Saul nordpå tilbage til Antiokia. De tager Johannes Markus med. Dette korte vers fungerer som et litterært drejepunkt i Apostlenes Gerninger: Jerusalem-historien er afsluttet, scenen er sat for ApG 13, og den første store missionsrejse er ved at begynde. Johannes Markus\' deltagelse er stille betydningsfuld, da hans tilstedeværelse senere bliver et alvorligt stridspunkt.',
+        timeline_label: 'Barnabas og Saul vender tilbage'
+      }
+    },
+    timeline: {
+      herod_kills_james: { label: 'Jakob henrettet', relative_time: 'Kapitlets begyndelse' },
+      peter_arrested: { label: 'Peter fængslet', relative_time: 'Kort efter Jakobs død, under påskeugen' },
+      church_prays_for_peter: { label: 'Vedvarende bønnevagt', relative_time: 'Under hele Peters fængsling' },
+      angel_frees_peter: { label: 'Englen bryder lænkerne', relative_time: 'Natten før Peters retssag' },
+      peter_realizes_freedom: { label: 'Peter på gaden', relative_time: 'Få minutter efter flugten' },
+      rhoda_and_disbelief: { label: 'Rhodas meddelelse', relative_time: 'Kort efter Peters flugt – samme nat' },
+      peter_departs: { label: 'Peters farvel', relative_time: 'Samme nat, efter samtalen med menigheden' },
+      guards_executed: { label: 'Vagterne forhøres og dræbes', relative_time: 'Næste morgen' },
+      herod_moves_to_caesarea: { label: 'Herodes ved Cæsarea', relative_time: 'Nogle dage efter vagternes død' },
+      tyre_sidon_delegation: { label: 'Kystdelegation ankommer', relative_time: 'Efter Herodes har slået sig ned i Cæsarea' },
+      herod_struck_down: { label: 'Herodes dør', relative_time: 'På den fastsatte dag for talen' },
+      word_of_god_grows: { label: 'Evangeliet vokser', relative_time: 'I tiden efter Herodes\' død' },
+      barnabas_saul_return: { label: 'Missionsteam til Antiokia', relative_time: 'Efter hjælpemissionen' }
+    }
+  }
+};
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH12, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shortLabel = value
+    .replace(/^c\.\s*/, '')
+    .replace(/Late /, '')
+    .replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '')
+    .replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '')
+    .trim();
+  return includeYear && marker ? `${marker} ${shortLabel}`.trim() : (shortLabel || marker);
+}
+
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
+
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  if (marker && yearMarker(base) === marker) return base;
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
+/* ── PERSON COLORS ── */
+const PCOLORS = {
+  "herod_agrippa": "#A82F1A",
+  "james_zebedee": "#9F8252",
+  "peter": "#E8591A",
+  "angel_of_the_lord": "#D4A24C",
+  "rhoda": "#C896BC",
+  "mary_mother_of_john_mark": "#B57C9A",
+  "john_mark": "#5B8FA8",
+  "barnabas": "#6B8F71",
+  "saul": "#7A6BB0",
+  "james_brother_of_jesus": "#88735A",
+  "blastus": "#6F8790",
+  "jerusalem_church": "#8C6F5A",
+  "people_of_tyre_sidon": "#4F9A8A",
+};
+
+/* ── MAP COORDINATES (SVG 1000x800 viewBox, schematic eastern Mediterranean route map) ── */
+const VW = 1000, VH = 800;
+const locLabel = (id, fallback) => DATA.locations.find(l => l.id === id)?.name || fallback;
+const LOCS = {
+  jerusalem: { x: 365, y: 410, label: locLabel('jerusalem', 'Jerusalem') },
+  prison_jerusalem: { x: 415, y: 380, label: locLabel('prison_jerusalem', 'Prison') },
+  mary_house_jerusalem: { x: 320, y: 445, label: locLabel('mary_house_jerusalem', 'Mary\'s House') },
+  caesarea_maritima: { x: 195, y: 265, label: locLabel('caesarea_maritima', 'Caesarea') },
+  tyre: { x: 215, y: 175, label: locLabel('tyre', 'Tyre') },
+  sidon: { x: 245, y: 110, label: locLabel('sidon', 'Sidon') },
+  antioch_syria: { x: 610, y: 95, label: locLabel('antioch_syria', 'Antioch') },
+  another_place: { x: 720, y: 540, label: locLabel('another_place', 'Another Place') },
+};
+
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
+
+/* Build route stops with pixel coords */
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label || person?.name || r.person_id,
+      stops: r.path.map(s => ({
+        ...s,
+        ...(LOCS[s.location_id] || { x: 360, y: 360 }),
+      })),
+    };
+  });
+
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({
+        order: idx + 1,
+        location_id: ev.location_id,
+        event_id: ev.id,
+        ...(LOCS[ev.location_id] || { x: 360, y: 360 }),
+      }));
+    if (!stops.length) return;
+    out[person.id] = {
+      color: PCOLORS[person.id] || '#888',
+      label: person.name,
+      stops,
+    };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+/* Compute per-event person state */
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = {
+      color: route.color,
+      label: route.label,
+      pos:   { x: lastStop.x, y: lastStop.y },
+      active,
+      faded: !active,
+    };
+  });
+  return result;
+}
+
+/* ── MAP TERRAIN ── */
+function Terrain() {
+  return (
+    <g>
+      {/* Base land */}
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-land)" />
+
+      {/* Judea */}
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 700 320 780 360 Q 820 380 820 440 Q 820 520 760 560 Q 700 600 580 620 Q 450 640 300 630 Q 180 620 100 580 Q 40 550 30 480 Q 20 420 50 300 Z"
+        fill="oklch(87% 0.055 90)" opacity="1" />
+      <text x="160" y="580" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(48% 0.07 75)" letterSpacing="3" opacity=".7">{mapText('JUDEA')}</text>
+
+      {/* Peraea */}
+      <path d="M 820 200 Q 860 220 920 260 Q 970 300 980 380 Q 990 450 960 520 Q 940 570 900 600 Q 870 620 840 600 Q 820 560 820 500 Q 820 420 820 360 Q 820 280 820 200 Z"
+        fill="oklch(82% 0.045 110)" opacity=".85" />
+      <text x="880" y="380" fontSize="11" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(42% 0.06 90)" letterSpacing="2" opacity=".65" transform="rotate(90,880,380)">{mapText('PERAEA')}</text>
+
+      {/* Northern region */}
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 650 310 720 290 Q 780 270 820 200 Q 820 120 780 70 Q 700 30 500 20 Q 300 10 150 50 Q 60 80 40 160 Q 20 230 50 300 Z"
+        fill="oklch(85% 0.04 130)" opacity=".6" />
+      <text x="200" y="120" fontSize="12" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(40% 0.06 120)" letterSpacing="2" opacity=".55">{mapText('SAMARIA')}</text>
+
+      {/* Region borders */}
+      <path d="M 50 300 Q 200 265 380 272 Q 520 278 650 295 Q 730 308 790 330"
+        fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      <path d="M 790 330 Q 818 370 820 430 Q 820 500 800 560"
+        fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      <path d="M 820 140 Q 828 220 825 320 Q 822 420 818 520 Q 815 580 820 650"
+        fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".7" strokeLinecap="round" />
+
+      {/* Dead Sea */}
+      <path d="M 818 400 Q 835 390 870 400 Q 920 420 940 470 Q 960 520 940 570 Q 920 620 880 640 Q 850 650 830 630 Q 815 610 815 570 Q 814 500 818 400 Z"
+        fill="var(--map-water)" opacity=".85" />
+      <text x="880" y="520" textAnchor="middle" fontSize="11"
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(35% 0.06 220)"
+        letterSpacing="1.5" opacity=".8">{mapText('DEAD_SEA')}</text>
+
+      {/* Jordan River */}
+      <path d="M 825 30 C 832 120 830 220 825 320 C 821 390 818 420 818 450"
+        fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".75" strokeLinecap="round" />
+      <text x="842" y="200" fontSize="10" fill="oklch(38% 0.07 220)" opacity=".65"
+        fontFamily="Barlow" fontWeight="500" transform="rotate(84,842,200)">{mapText('JORDAN_RIVER')}</text>
+
+      {/* Mediterranean Sea */}
+      <path d="M 0 0 L 0 800 L 40 800 Q 30 600 25 400 Q 20 200 40 0 Z"
+        fill="var(--map-water)" opacity=".5" />
+      <text x="18" y="400" fontSize="9" fill="oklch(35% 0.06 220)" opacity=".55"
+        fontFamily="Barlow Condensed" fontWeight="700" letterSpacing="1"
+        transform="rotate(-90,18,400)">{mapText('MEDITERRANEAN')}</text>
+
+      {/* Coastal road from Caesarea up to Tyre/Sidon */}
+      <path d="M 195 265 Q 205 230 215 175 Q 230 145 245 110"
+        fill="none" stroke="var(--map-road)" strokeWidth="4" opacity=".45"
+        strokeDasharray="8 5" strokeLinecap="round" />
+
+      {/* Inland route from Caesarea to Jerusalem */}
+      <path d="M 195 265 Q 250 320 320 365 Q 350 390 365 410"
+        fill="none" stroke="var(--map-road)" strokeWidth="4" opacity=".4"
+        strokeDasharray="8 5" strokeLinecap="round" />
+
+      {/* Kidron Valley */}
+      <path d="M 660 80 Q 590 170 550 260 Q 525 330 515 400 Q 508 460 510 520"
+        fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="3.5" opacity=".4" />
+      <text x="560" y="290" fontSize="10" fill="oklch(42% 0.05 80)" opacity=".55"
+        fontFamily="Barlow" transform="rotate(68,560,290)">{mapText('KIDRON_VALLEY')}</text>
+
+      {/* Jerusalem city walls */}
+      <rect x="292" y="345" width="165" height="125" rx="8"
+        fill="oklch(80% 0.06 80)" opacity=".3"
+        stroke="oklch(42% 0.08 60)" strokeWidth="3" />
+      <rect x="292" y="345" width="165" height="125" rx="8"
+        fill="none" stroke="oklch(62% 0.09 55)" strokeWidth="1.5" opacity=".6" strokeDasharray="6 4" />
+
+      {/* Temple Mount */}
+      <rect x="382" y="358" width="68" height="52" rx="4"
+        fill="oklch(75% 0.08 75)" opacity=".45"
+        stroke="oklch(48% 0.08 60)" strokeWidth="2" />
+      <text x="416" y="388" textAnchor="middle" fontSize="9.5"
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(30% 0.06 55)" opacity=".9">{mapText('TEMPLE')}</text>
+
+      {/* Hinnom Valley */}
+      <path d="M 140 565 Q 220 598 305 590 Q 348 586 378 572 Q 398 560 408 542"
+        fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="2.5" opacity=".35" />
+      <text x="220" y="625" fontSize="9.5" fill="oklch(42% 0.05 80)" opacity=".45"
+        fontFamily="Barlow">{mapText('HINNOM_VALLEY')}</text>
+
+      {/* Mount of Olives */}
+      <ellipse cx="668" cy="255" rx="115" ry="85"
+        fill="oklch(82% 0.05 100)" opacity=".45"
+        stroke="oklch(55% 0.06 80)" strokeWidth="1.5" />
+      <text x="668" y="148" textAnchor="middle" fontSize="13"
+        fontFamily="Barlow Condensed" fontWeight="800" fill="oklch(35% 0.07 70)"
+        letterSpacing="1.5" opacity=".75">{mapText('MOUNT_OF_OLIVES')}</text>
+
+      {/* Bethany */}
+      <circle cx="790" cy="240" r="6" fill="oklch(55% 0.07 80)" opacity=".45" />
+      <text x="802" y="244" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".6"
+        fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHANY')}</text>
+
+      {/* Bethlehem */}
+      <circle cx="310" cy="720" r="6" fill="oklch(55% 0.07 80)" opacity=".4" />
+      <text x="322" y="724" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".5"
+        fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHLEHEM')}</text>
+
+      {/* Scale bar */}
+      <g transform="translate(60,755)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~50 km</text>
+      </g>
+
+      {/* North arrow */}
+      <g transform="translate(60,95)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
+          fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+
+function RouteLines() { return null; }
+
+/* ── LOCATION MARKERS ── */
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7}
+              fill={on ? 'var(--accent)' : 'var(--fg-muted)'}
+              stroke="var(--map-land)" strokeWidth="3"
+              style={{ transition: 'r .3s' }}
+            />
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5}
+              fontSize={on ? 17 : 14}
+              fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
+              fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
+              letterSpacing=".5"
+              style={{ transition: 'font-size .3s' }}
+            >{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/* ── PERSON DOTS ── */
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const cols = Math.min(3, groupSize);
+    const row = Math.floor(myGroupIdx / cols);
+    const col = myGroupIdx % cols;
+    const rows = Math.ceil(groupSize / cols);
+    const spacing = 30;
+    const offsetX = (col - (cols - 1) / 2) * spacing;
+    const offsetY = (row - (rows - 1) / 2) * spacing;
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
+    return { x, y };
+  };
+
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y}
+                  stroke={s.color} strokeWidth="3" strokeLinecap="round"
+                  strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR}
+              fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
+              style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
+            />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle"
+              fontSize={s.active ? 13 : 10} fontWeight="800" fill="white"
+              fontFamily="Barlow Condensed" pointerEvents="none"
+              style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              {(s.label || '?').charAt(0)}
+            </text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle"
+                fontSize="12" fontWeight="800" fill={s.color}
+                fontFamily="Barlow Condensed" pointerEvents="none"
+                style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+              >
+                {s.label}
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+
+/* ── MAP PANEL ── */
+function MapPanel({ activeEventId, onStep, onEventChange }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
+
+  return (
+    <div className="map-col">
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && (
+          <div className="ban-loc">
+            <div className="ban-loc-dot" />
+            {loc.name}
+          </div>
+        )}
+      </div>
+
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+
+      <div className="map-controls-panel">
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="map-playback">
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button
+                key={tl.event_id}
+                type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}
+              >
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Caesarea · Tyre · Sidon · Antioch'}</div>
+    </div>
+  );
+}
+
+/* ── TIMELINE PANEL ── */
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(false);
+
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) {
+      scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    }
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
+
+  /* Badges mark Herod's persecution, Peter's escape, the aftermath, divine judgment, and the Antioch hinge. */
+  const BADGE_POSITIONS = { 0: 0, 3: 1, 7: 2, 10: 3, 12: 4 };
+  const DEFAULT_BADGES = ['Herod\'s Persecution', 'Miraculous Escape', 'Aftermath', 'Divine Judgment', 'Antioch Hinge'];
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Chains <em>and Angels</em></>}</div>
+      </div>
+
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div
+                  ref={el => entryRefs.current[tl.event_id] = el}
+                  data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}
+                >
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ── */
+function App() {
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
+
+  useEffect(() => {
+    document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
+
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/011';
+        return prev;
+      }
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '— Jerusalem, Caesarea, Tyre, Sidon, and Antioch · Spring–Summer AD 44'}</span>
+        <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">
+          {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
+        </a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>
+          {INITIAL_LANG === 'da' ? 'En' : 'Da'}
+        </button>
+      </div>
+
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel
+          activeEventId={activeEv}
+          onStep={stepEvent}
+          onEventChange={handleEventChange}
+        />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

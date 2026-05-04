@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 5 — Judgment, Jailbreak, and the Unstoppable Word</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script>
+const ACTS_CH5 = {
+  "book": "Acts",
+  "chapter": 5,
+  "chapter_title": "Judgment, Jailbreak, and the Unstoppable Word",
+  "chapter_summary": "Acts 5 opens with the sudden deaths of two members of the early Jerusalem church, Ananias and Sapphira, who lied about a property sale — a sobering sign that the new community is held to absolute integrity before God. The apostles then draw enormous crowds through miraculous healings, prompting the Sadducean authorities to arrest and imprison them, only for an angel to free them overnight with orders to keep preaching. After a second confrontation before the full Sanhedrin, the wise Pharisee Gamaliel persuades the council to release the apostles; flogged but jubilant, they return immediately to daily teaching in the temple and in homes across Jerusalem.",
+  "date_range": {
+    "approximate": "c. Spring–Summer AD 30 (or AD 33)",
+    "notes": "Scholars divide primarily between AD 30 and AD 33 for the crucifixion and Pentecost that launched the Jerusalem church. Acts 5 is set in the weeks or months following that Pentecost."
+  },
+  "persons": [
+    { "id": "ananias", "name": "Ananias", "role": "Believer (Deceased)", "first_mention_verse": "5:1", "summary": "A member of the early Jerusalem church who, with his wife Sapphira, sold a field and secretly withheld part of the proceeds while presenting the rest as the full sale price. When Peter confronted him about lying to the Holy Spirit rather than to human beings, Ananias fell dead on the spot.", "significance": "His death establishes a sharp boundary for the new community: deception of God within the church is treated with the same gravity as pagan sacrilege." },
+    { "id": "sapphira", "name": "Sapphira", "role": "Believer (Deceased)", "first_mention_verse": "5:1", "summary": "The wife of Ananias and a willing co-conspirator in the deception; she was fully aware of the price withheld. Arriving about three hours after her husband's death and unaware of what had happened, she confirmed the lie to Peter under direct questioning and likewise fell dead at his feet.", "significance": "Her separate condemnation establishes that she bore independent moral responsibility." },
+    { "id": "peter", "name": "Peter", "role": "Apostle", "first_mention_verse": "5:3", "summary": "The leading apostle of the Jerusalem church, who confronts both Ananias and Sapphira with apparent prophetic insight, and who later defends the apostolic mission before the Sanhedrin with the declaration 'We must obey God rather than men.'", "significance": "Peter is the dominant human figure in the first half of Acts, embodying apostolic authority, prophetic discernment, and fearless proclamation." },
+    { "id": "john", "name": "John", "role": "Apostle", "first_mention_verse": "5:29", "summary": "One of Jesus' inner circle and Peter's consistent ministry partner throughout Acts 1–8. Though John speaks no individual words in this chapter, he is included among the apostles arrested, miraculously freed, brought before the Sanhedrin, and flogged.", "significance": "John's consistent presence alongside Peter reinforces the collegial and communal nature of apostolic leadership in Acts." },
+    { "id": "the_apostles", "name": "The Apostles", "role": "Group — Apostles", "first_mention_verse": "5:12", "summary": "The collective body of Jesus' commissioned witnesses who operate together in Solomon's Portico performing signs and wonders, endure arrest and imprisonment as a unit, and leave the Sanhedrin rejoicing that they were 'counted worthy to suffer dishonor for the name.'", "significance": "As a group the apostles model Spirit-empowered communal witness under persecution." },
+    { "id": "high_priest", "name": "The High Priest", "role": "Jewish Religious Authority", "first_mention_verse": "5:17", "summary": "The unnamed head of the Jerusalem priesthood — almost certainly Caiaphas — who leads the Sadducean opposition against the apostles out of jealousy at their popular influence, orders their arrest, presides over the Sanhedrin hearing, and ultimately approves their flogging.", "significance": "The high priest represents the established religious order that perceives the apostolic movement as both a theological challenge and a political threat." },
+    { "id": "sadducees", "name": "The Sadducees", "role": "Group — Jewish Religious Party", "first_mention_verse": "5:17", "summary": "The priestly aristocratic party aligned with the high priest who are described as 'filled with jealousy' at the apostles' popularity. They are the driving force behind the arrests.", "significance": "The Sadducees' opposition introduces the recurring dynamic in Acts where the resurrection of Jesus serves simultaneously as the gospel's core claim and the precise point of maximum institutional resistance." },
+    { "id": "angel_of_the_lord", "name": "An Angel of the Lord", "role": "Heavenly Messenger", "first_mention_verse": "5:19", "summary": "A divine messenger who appears at night, opens the locked prison doors, leads the apostles out, and commands them to return to the temple to speak 'all the words of this Life.'", "significance": "The angelic jailbreak signals divine endorsement of the apostolic mission and establishes a pattern repeated later in Acts." },
+    { "id": "gamaliel", "name": "Gamaliel", "role": "Pharisee / Teacher of the Law", "first_mention_verse": "5:34", "summary": "A widely respected Pharisee, member of the Sanhedrin, and legal scholar who intervenes to prevent the apostles' execution by arguing that human opposition to a divine movement is futile.", "significance": "Gamaliel's counsel saves the apostles' lives and introduces a principle of theological caution. Acts 22:3 later reveals that Saul of Tarsus — who would become Paul — was one of Gamaliel's own students." },
+    { "id": "captain_of_the_temple", "name": "The Captain of the Temple Guard", "role": "Temple Security Official", "first_mention_verse": "5:24", "summary": "The commander of the Levitical police force responsible for order on the Temple Mount, who is deeply perplexed when the prison is found empty, and who subsequently retrieves the apostles from the temple — carefully, without force, because he fears the crowd might stone his officers.", "significance": "His cautious approach illustrates that the apostles' popular support among ordinary Jerusalemites already constrains the authorities' power over them." },
+    { "id": "young_men", "name": "The Young Men", "role": "Group — Church Members", "first_mention_verse": "5:6", "summary": "Unnamed members of the Jerusalem community who wrap Ananias's body immediately after his death and carry him out for burial; a separate group returns three hours later to do the same for Sapphira.", "significance": "Their prompt, organized action indicates that the early church already had informal roles and communal practices for handling the dead." }
+  ],
+  "locations": [
+    { "id": "jerusalem", "name": "Jerusalem", "modern_name": "Jerusalem, Israel", "lat": 31.7767, "lng": 35.2345, "description": "The holy city and capital of Judea, seat of the early church and the setting for every event in Acts 5." },
+    { "id": "solomons_colonnade", "name": "Solomon's Portico", "modern_name": "Eastern wall of Temple Mount, Jerusalem", "lat": 31.7781, "lng": 35.2363, "description": "A long roofed colonnade running along the eastern edge of the Temple's outer court, used by the apostles as their regular public gathering place." },
+    { "id": "temple", "name": "The Temple", "modern_name": "Temple Mount, Jerusalem", "lat": 31.7782, "lng": 35.2354, "description": "Herod's great sanctuary complex at the heart of Jerusalem, where the apostles continued to teach at daybreak after their angelic release from prison." },
+    { "id": "public_prison", "name": "The Public Prison", "modern_name": "Unknown (Jerusalem area)", "lat": 31.7773, "lng": 35.2337, "description": "The common civic jail of Jerusalem where the apostles were held overnight after their arrest by the Sadducees, from which an angel freed them by opening locked doors." },
+    { "id": "council_chamber", "name": "The Council (Sanhedrin)", "modern_name": "Unknown (traditionally near Temple Mount, Jerusalem)", "lat": 31.7776, "lng": 35.2341, "description": "The meeting place of the Sanhedrin where the apostles were interrogated twice, heard Gamaliel's pivotal defense speech, and were flogged before being released." }
+  ],
+  "events": [
+    { "id": "ananias_deception_and_death", "sequence": 1, "verses": "5:1-6", "title": "Ananias Lies and Dies", "description": "Ananias and his wife Sapphira sell a piece of property and bring part of the proceeds to the apostles, secretly pretending the partial payment represents the full sale price. Peter confronts Ananias directly, making clear that the sin is not keeping money — which was his right — but lying about it to the Holy Spirit, and therefore to God. The moment Peter finishes speaking, Ananias collapses and dies. Young men from the congregation wrap his body, carry him out, and bury him.", "location_id": "jerusalem", "persons_present": ["ananias", "peter", "the_apostles", "young_men"], "timeline_label": "Day 1 — Morning", "scroll_anchor": "ananias-deception-and-death" },
+    { "id": "sapphira_deception_and_death", "sequence": 2, "verses": "5:7-11", "title": "Sapphira Confirms the Lie and Dies", "description": "About three hours after her husband's death, Sapphira arrives at the gathering with no knowledge of what has happened. Peter tests her with a single question: 'Is this the price you and Ananias received for the land?' She confirms the deception without hesitation. Peter announces that the same men who buried her husband are at the door and will carry her out as well. Immediately she falls at his feet and dies. Great fear sweeps over the whole church and everyone who hears the story.", "location_id": "jerusalem", "persons_present": ["sapphira", "peter", "the_apostles", "young_men"], "timeline_label": "Day 1 — ~3 hours later", "scroll_anchor": "sapphira-deception-and-death" },
+    { "id": "signs_wonders_at_colonnade", "sequence": 3, "verses": "5:12-16", "title": "Mass Healings at Solomon's Portico", "description": "The apostles gather regularly in Solomon's Portico where they perform many signs and wonders. Their reputation grows so extraordinary that people carry the sick into the surrounding streets on cots and sleeping mats, hoping that even Peter's shadow might fall on them as he passes by. Crowds stream in from towns around Jerusalem, bringing those with diseases and those tormented by unclean spirits. The text states plainly that all of them are healed.", "location_id": "solomons_colonnade", "persons_present": ["peter", "john", "the_apostles"], "timeline_label": "Days following — ongoing ministry", "scroll_anchor": "signs-wonders-at-colonnade" },
+    { "id": "apostles_arrested", "sequence": 4, "verses": "5:17-18", "title": "The Apostles Are Arrested", "description": "The high priest and his Sadducean allies, consumed with jealousy at the apostles' explosive popular influence, decide to act. They arrest the entire group of apostles and have them thrown into the public prison. No specific legal charge is recorded in the text — the apostles' growing influence and their proclamation of resurrection are sufficient to motivate the crackdown.", "location_id": "public_prison", "persons_present": ["high_priest", "sadducees", "captain_of_the_temple", "the_apostles", "peter", "john"], "timeline_label": "A subsequent day — arrest", "scroll_anchor": "apostles-arrested" },
+    { "id": "angel_frees_apostles", "sequence": 5, "verses": "5:19-20", "title": "An Angel Opens the Prison", "description": "During the night, an angel of the Lord appears at the prison, opens the locked doors, and leads the apostles out. The angel's instruction is striking for what it does not say: it does not tell them to flee or hide. Instead it commands them to return to the temple and 'speak to the people all the words of this Life' — resuming the very activity that caused their arrest. The guards remain at their posts, the doors stay apparently locked, and no alarm is raised.", "location_id": "public_prison", "persons_present": ["angel_of_the_lord", "the_apostles", "peter", "john"], "timeline_label": "That night — miraculous release", "scroll_anchor": "angel-frees-apostles" },
+    { "id": "apostles_teach_at_dawn", "sequence": 6, "verses": "5:21", "title": "Back in the Temple at Daybreak", "description": "Obeying the angel's command without delay, the apostles enter the temple at first light and begin to teach. This single verse is brief but dramatic: the same men who were in prison hours earlier are now publicly instructing crowds in the most prominent religious site in Jerusalem, before the authorities have even assembled. Their immediate obedience underscores the mission's absolute priority over personal safety.", "location_id": "temple", "persons_present": ["the_apostles", "peter", "john"], "timeline_label": "Next morning — dawn teaching", "scroll_anchor": "apostles-teach-at-dawn" },
+    { "id": "sanhedrin_assembles_finds_prison_empty", "sequence": 7, "verses": "5:21-25", "title": "Empty Cells, Baffled Rulers", "description": "The high priest convenes the full Sanhedrin and sends officers to the prison to bring the apostles for formal trial. The officers return empty-handed and baffled: the prison is securely locked, the guards are at their posts, but the cells are completely empty. Then a messenger arrives: 'The men you put in prison are standing in the temple and teaching the people.' The council's impotence in the face of a divinely protected mission is exposed in the most concrete possible terms.", "location_id": "council_chamber", "persons_present": ["high_priest", "sadducees", "captain_of_the_temple"], "timeline_label": "Next morning — council convenes", "scroll_anchor": "sanhedrin-assembles-finds-prison-empty" },
+    { "id": "apostles_brought_before_sanhedrin", "sequence": 8, "verses": "5:26-32", "title": "Apostles Before the Council", "description": "The captain goes to the temple and brings the apostles back without using force — he fears the crowd might stone his officers. Before the council, the high priest rebukes the apostles for defying the earlier prohibition on teaching in Jesus' name. Peter responds for all of them: 'We must obey God rather than men.' He then delivers a compressed proclamation — Jesus was killed by human hands, raised by God, exalted as Leader and Savior, and now offers repentance and forgiveness to Israel through the Holy Spirit.", "location_id": "council_chamber", "persons_present": ["the_apostles", "peter", "john", "high_priest", "sadducees", "captain_of_the_temple"], "timeline_label": "Morning — trial before Sanhedrin", "scroll_anchor": "apostles-brought-before-sanhedrin" },
+    { "id": "gamaliel_counsel", "sequence": 9, "verses": "5:33-39", "title": "Gamaliel's Wise Warning", "description": "The council is furious enough to order the apostles killed. But Gamaliel — a Pharisee, respected legal scholar, and member of the Sanhedrin — has the apostles temporarily removed and delivers a careful argument. He cites two recent examples of messianic movements that collapsed after their founders died: Theudas and Judas the Galilean. The logic: if this movement is merely human, it will collapse on its own. But if it is from God, the council cannot stop it without 'fighting against God.' The council is persuaded.", "location_id": "council_chamber", "persons_present": ["gamaliel", "high_priest", "sadducees"], "timeline_label": "Morning — Gamaliel intervenes", "scroll_anchor": "gamaliel-counsel" },
+    { "id": "apostles_flogged_and_released", "sequence": 10, "verses": "5:40-42", "title": "Flogged but Fearless", "description": "Following Gamaliel's counsel, the council calls the apostles back in, has them flogged — the painful punishment of thirty-nine lashes — renews the prohibition on speaking in Jesus' name, and releases them. Rather than leaving in humiliation or defeat, the apostles depart rejoicing that they were 'counted worthy to suffer dishonor for the name.' Every single day, in the temple courts and from house to house, they continue teaching and proclaiming Jesus as the Messiah.", "location_id": "council_chamber", "persons_present": ["the_apostles", "peter", "john", "high_priest", "sadducees"], "timeline_label": "Morning — released; daily preaching resumes", "scroll_anchor": "apostles-flogged-and-released" }
+  ],
+  "routes": [
+    { "person_id": "peter", "path": [
+      { "order": 1, "location_id": "jerusalem", "event_id": "ananias_deception_and_death" },
+      { "order": 2, "location_id": "jerusalem", "event_id": "sapphira_deception_and_death" },
+      { "order": 3, "location_id": "solomons_colonnade", "event_id": "signs_wonders_at_colonnade" },
+      { "order": 4, "location_id": "public_prison", "event_id": "apostles_arrested" },
+      { "order": 5, "location_id": "temple", "event_id": "apostles_teach_at_dawn" },
+      { "order": 6, "location_id": "council_chamber", "event_id": "apostles_brought_before_sanhedrin" },
+      { "order": 7, "location_id": "council_chamber", "event_id": "apostles_flogged_and_released" }
+    ]},
+    { "person_id": "the_apostles", "path": [
+      { "order": 1, "location_id": "solomons_colonnade", "event_id": "signs_wonders_at_colonnade" },
+      { "order": 2, "location_id": "public_prison", "event_id": "apostles_arrested" },
+      { "order": 3, "location_id": "temple", "event_id": "apostles_teach_at_dawn" },
+      { "order": 4, "location_id": "council_chamber", "event_id": "apostles_brought_before_sanhedrin" },
+      { "order": 5, "location_id": "council_chamber", "event_id": "apostles_flogged_and_released" }
+    ]},
+    { "person_id": "ananias", "path": [
+      { "order": 1, "location_id": "jerusalem", "event_id": "ananias_deception_and_death" }
+    ]},
+    { "person_id": "sapphira", "path": [
+      { "order": 1, "location_id": "jerusalem", "event_id": "sapphira_deception_and_death" }
+    ]},
+    { "person_id": "high_priest", "path": [
+      { "order": 1, "location_id": "public_prison", "event_id": "apostles_arrested" },
+      { "order": 2, "location_id": "council_chamber", "event_id": "sanhedrin_assembles_finds_prison_empty" },
+      { "order": 3, "location_id": "council_chamber", "event_id": "apostles_brought_before_sanhedrin" },
+      { "order": 4, "location_id": "council_chamber", "event_id": "apostles_flogged_and_released" }
+    ]},
+    { "person_id": "gamaliel", "path": [
+      { "order": 1, "location_id": "council_chamber", "event_id": "gamaliel_counsel" }
+    ]}
+  ],
+  "timeline": [
+    { "event_id": "ananias_deception_and_death", "position": 1, "label": "Ananias Dies", "relative_time": "Day 1 — Morning", "absolute_time": "c. Spring–Summer AD 30 (or AD 33)" },
+    { "event_id": "sapphira_deception_and_death", "position": 2, "label": "Sapphira Dies", "relative_time": "Day 1 — ~3 hours later", "absolute_time": "c. Spring–Summer AD 30 (or AD 33)" },
+    { "event_id": "signs_wonders_at_colonnade", "position": 3, "label": "Mass Healings at the Temple", "relative_time": "Days following — ongoing", "absolute_time": "c. Spring–Summer AD 30 (or AD 33)" },
+    { "event_id": "apostles_arrested", "position": 4, "label": "Apostles Imprisoned", "relative_time": "A subsequent day", "absolute_time": "c. Spring–Summer AD 30 (or AD 33)" },
+    { "event_id": "angel_frees_apostles", "position": 5, "label": "Angel Opens Prison", "relative_time": "That night", "absolute_time": "c. Spring–Summer AD 30 (or AD 33)" },
+    { "event_id": "apostles_teach_at_dawn", "position": 6, "label": "Teaching at Daybreak", "relative_time": "Next morning — dawn", "absolute_time": "c. Spring–Summer AD 30 (or AD 33)" },
+    { "event_id": "sanhedrin_assembles_finds_prison_empty", "position": 7, "label": "Council Finds Empty Prison", "relative_time": "Next morning — shortly after dawn", "absolute_time": "c. Spring–Summer AD 30 (or AD 33)" },
+    { "event_id": "apostles_brought_before_sanhedrin", "position": 8, "label": "Trial Before the Sanhedrin", "relative_time": "Next morning — mid-morning", "absolute_time": "c. Spring–Summer AD 30 (or AD 33)" },
+    { "event_id": "gamaliel_counsel", "position": 9, "label": "Gamaliel's Defense", "relative_time": "Same morning — during trial", "absolute_time": "c. Spring–Summer AD 30 (or AD 33)" },
+    { "event_id": "apostles_flogged_and_released", "position": 10, "label": "Flogged, Freed, and Still Preaching", "relative_time": "Same morning — conclusion of trial", "absolute_time": "c. Spring–Summer AD 30 (or AD 33)" }
+  ],
+  "theological_themes": [
+    "Divine holiness and the integrity of the covenant community",
+    "Apostolic authority grounded in the Holy Spirit",
+    "Human institutional opposition to God's purposes",
+    "Miraculous divine intervention on behalf of the mission",
+    "Suffering as honor and participation in Christ",
+    "The unstoppable advance of the gospel"
+  ],
+  "discussion_questions": [
+    "Ananias and Sapphira were not required to give all the money. What does their punishment reveal about why honesty matters more than the amount given?",
+    "The angel told the freed apostles not to escape or hide, but to go back and preach the very message that got them arrested. What does that suggest about the relationship between personal safety and calling?",
+    "Gamaliel's argument is essentially 'wait and see.' Is that a sufficient way to discern what is truly from God?",
+    "The apostles left the Sanhedrin 'rejoicing that they were counted worthy to suffer dishonor for the name.' What kind of value system produces that reaction?",
+    "Acts 5 hits the early church with two crises simultaneously — internal corruption and external persecution. How does the community respond to each?"
+  ]
+};
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label { font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color: var(--accent); margin-bottom:4px; }
+.tl-ch-title { font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800; text-transform:uppercase; line-height:1.1; color:var(--tl-fg); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+.tl-list { flex: 1; overflow-y: auto; overflow-x: hidden; position: relative; }
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+.tl-spine { padding: 8px 0 80px; position: relative; }
+.tl-spine::before { content:''; position:absolute; left: 38px; top:0; bottom:0; width:2px; background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent); }
+.tl-year-sep { display: flex; align-items: center; gap: 10px; padding: 10px 10px 6px 14px; position: relative; z-index: 2; }
+.tl-year-badge { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); background: oklch(22% .018 255); border: 1px solid oklch(36% .015 255); padding: 2px 10px; border-radius: 2px; white-space: nowrap; position: relative; z-index: 2; }
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line { flex: 1; height: 1px; background: oklch(30% .012 255); opacity: .5; }
+.tl-item { display: grid; grid-template-columns: 76px 1fr; cursor: pointer; position: relative; transition: background .15s; padding-right: 4px; min-height: 130px; }
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+.tl-l { display: flex; flex-direction: column; align-items: center; padding-top: 14px; }
+.tl-seq { font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:700; color: oklch(45% .01 255); margin-bottom:5px; letter-spacing:.05em; }
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot { width:16px; height:16px; border-radius:50%; border:2px solid oklch(38% .015 255); background: oklch(16% .018 255); position:relative; z-index:1; transition: all .28s; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 0 3px oklch(58% .19 46 / .2); }
+.tl-dot-pip { width:5px; height:5px; border-radius:50%; background:#fff; opacity:0; transition:opacity .28s; }
+.tl-item.active .tl-dot-pip { opacity:1; }
+.tl-r { padding: 22px 10px 22px 6px; border-bottom: 1px solid oklch(24% .012 255); }
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date { font-size:11px; font-weight:800; letter-spacing:.1em; font-family:'Barlow Condensed',sans-serif; color: oklch(70% .018 76); margin-bottom:3px; }
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; line-height:1.35; color: oklch(72% .014 78); margin-bottom:6px; }
+.tl-item.active .tl-rel-time { color: oklch(82% .035 74); }
+.tl-ev-title { font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:800; text-transform:uppercase; line-height:1.18; color: var(--tl-fg); margin-bottom: 4px; }
+.tl-ev-verses { font-size:10px; font-weight:700; letter-spacing:.1em; color: oklch(68% .018 76); margin-top:2px; }
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+.map-col { position: relative; background: var(--map-land); overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.map-event-banner { position: absolute; top: 0; left: 0; right: 0; z-index: 10; background: oklch(16% 0.02 55 / 0.92); border-bottom: 2px solid var(--accent); padding: 12px 20px; display: grid; grid-template-columns: auto 1fr auto; gap: 0 16px; align-items: center; backdrop-filter: blur(6px); transition: background .3s; }
+.ban-verses { font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); white-space:nowrap; }
+.ban-title { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); line-height:1.1; margin-bottom:4px; }
+.ban-desc { font-family:'Lora',serif; font-style:normal; font-size:13px; line-height:1.55; color:oklch(88% .014 78); display: block; overflow: visible; }
+.ban-loc { display:flex; align-items:center; gap:5px; font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:oklch(55% .012 70); white-space:nowrap; }
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+.map-svg-wrap { position: absolute; inset: 0; }
+.map-svg { width:100%; height:100%; }
+.map-person-legend { position: absolute; bottom: 18px; left: 18px; display: flex; flex-direction: column; gap: 5px; z-index: 10; pointer-events: none; }
+.map-leg-item { display:flex; align-items:center; gap:7px; font-size:10px; font-weight:600; letter-spacing:.06em; color: var(--fg); background: var(--card); padding: 3px 10px 3px 7px; border-radius:20px; border:1px solid var(--border); transition: opacity .5s, transform .4s; }
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-controls-panel { display: contents; }
+.map-corner-label { position:absolute; bottom:18px; right:18px; font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none; }
+.map-playback { position: absolute; right: 18px; bottom: 42px; z-index: 12; width: min(460px, calc(100% - 36px)); background: oklch(99.5% 0.008 80 / .9); border: 1px solid var(--border); box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14); padding: 10px 12px; backdrop-filter: blur(8px); }
+.playback-top { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:9px; }
+.playback-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--fg-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.playback-buttons { display:flex; gap:6px; flex-shrink:0; }
+.playback-btn { width:30px; height:26px; border:1px solid var(--border); background:var(--card); color:var(--fg); border-radius:3px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:800; cursor:pointer; line-height:1; }
+.playback-track { position:relative; height:28px; display:grid; grid-template-columns:repeat(var(--step-count), 1fr); align-items:center; gap:0; }
+.playback-track::before { content:''; position:absolute; left:10px; right:10px; top:13px; height:2px; background:var(--border); }
+.playback-step { position:relative; z-index:1; justify-self:center; width:20px; height:20px; border:0; border-radius:50%; background:transparent; cursor:pointer; }
+.playback-step::before { content:''; position:absolute; inset:5px; border-radius:50%; background:var(--fg-muted); opacity:.42; transition:all .24s; }
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before { inset:2px; background:var(--accent); opacity:1; box-shadow:0 0 0 5px oklch(58% .19 46 / .18); }
+.playback-step-time { display: none; }
+.loc-label { paint-order: stroke; stroke: oklch(98% 0.008 80 / .82); stroke-width: 3px; stroke-linejoin: round; }
+.person-name-label { display: none; paint-order: stroke; stroke: oklch(16% 0.02 55 / .62); stroke-width: 4px; stroke-linejoin: round; }
+
+@media (max-width: 680px) {
+  html, body, #root { height: auto; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
+  .app { height: auto; min-height: 100svh; grid-template-rows: 44px auto; overflow: visible; }
+  .body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; overflow: visible; }
+  .map-col { order: -1; overflow: visible; }
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+  .home-link, .lang-btn { padding: 5px 7px; font-size: 9px; }
+  .map-event-banner { position: relative; grid-template-columns: 1fr; flex: 0 0 auto; padding: 8px 12px 9px; gap: 3px; }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc { display: block; font-size: 11px; line-height: 1.35; overflow: visible; }
+  .ban-loc { display: none; }
+  .map-svg-wrap { position: relative; inset: auto; flex: 0 0 clamp(300px, 46dvh, 430px); min-height: clamp(300px, 46dvh, 430px); }
+  .loc-label { font-size: 28px; font-weight: 800; stroke-width: 5px; }
+  .person-name-label { display: block; font-size: 18px; }
+  .map-controls-panel { display: flex; flex-direction: column; gap: 8px; padding: 8px; background: oklch(93% 0.025 82); border-top: 1px solid var(--border); }
+  .map-person-legend { position: relative; flex-direction: row; flex-wrap: wrap; bottom: auto; left: auto; right: auto; gap: 4px; z-index: 14; padding: 5px; background: oklch(99.5% 0.008 80 / .88); border: 1px solid var(--border); backdrop-filter: blur(8px); }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
+  .map-leg-dot { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+  .map-playback { position: relative; right:auto; bottom:auto; width:100%; padding:7px 8px; }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track { height: 38px; align-items: start; }
+  .playback-track::before { top:8px; }
+  .playback-step { width:18px; height:18px; }
+  .playback-step-time { display: block; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 42px; color: var(--fg-muted); font-size: 7px; font-weight: 800; letter-spacing: .02em; line-height: 1.05; text-align: center; pointer-events: none; }
+  .playback-step.active .playback-step-time { color: var(--accent); }
+  .person-name-label { display: none; }
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {
+  da: {
+    book: 'Apostlenes Gerninger',
+    shortBook: 'ApG',
+    chapterTitle: 'Dom, flugt og det ustoppelige ord',
+    headerSub: '— Jerusalem · år 30',
+    timelineTitle: ['Dom, flugt og', 'det ustoppelige ord'],
+    mapCorner: 'Jerusalem · tempelområdet',
+    yearBadges: ['Dag 1 — Dom i menigheden', 'Fængsling og engelfrigivelse', 'Rådsforhøret om morgenen'],
+    map: {
+      JUDEA: 'JUDÆA', PERAEA: 'PERÆA', SAMARIA: 'SAMARIA ↑', DEAD_SEA: 'DET DØDE HAV',
+      JORDAN_RIVER: 'Jordanfloden', MEDITERRANEAN: 'MIDDELHAVET ←', KIDRON_VALLEY: 'Kidrondalen',
+      TEMPLE: 'TEMPLET', WALK: 'bevægelse gennem byen', HINNOM_VALLEY: 'Hinnoms dal',
+      MOUNT_OF_OLIVES: 'OLIEBJERGET', BETHANY: 'Betania', BETHLEHEM: 'Betlehem'
+    },
+    locations: {
+      jerusalem: { name: 'Jerusalem' },
+      solomons_colonnade: { name: 'Salomos søjlegang' },
+      temple: { name: 'Templet' },
+      public_prison: { name: 'Det offentlige fængsel' },
+      council_chamber: { name: 'Rådet (Sanhedrin)' }
+    },
+    persons: {
+      peter: 'Peter', john: 'Johannes', the_apostles: 'Apostlene',
+      ananias: 'Ananias', sapphira: 'Sapfira', high_priest: 'Ypperstepræsten',
+      sadducees: 'Saddukæerne', angel_of_the_lord: 'Herrens engel',
+      gamaliel: 'Gamaliel', captain_of_the_temple: 'Tempelvagtens anfører',
+      young_men: 'De unge mænd'
+    },
+    events: {
+      ananias_deception_and_death: { title: 'Ananias lyver og dør', description: 'Ananias sælger sin ejendom, men tilbageholder hemmeligt en del af pengene — og lægger resten for apostlenes fødder. Peter konfronterer ham: han har løjet mod Helligånden. Ananias falder om og dør.', timeline_label: 'Dag 1 — Morgen' },
+      sapphira_deception_and_death: { title: 'Sapfira bekræfter løgnen og dør', description: 'Tre timer efter kommer Sapfira — uvidende om sin mands død. Peter spørger hende om prisen. Hun gentager løgnen. Peter proklamerer hendes dom, og hun falder død om ved hans fødder.', timeline_label: 'Dag 1 — ca. 3 timer senere' },
+      signs_wonders_at_colonnade: { title: 'Massehelbredelser i Salomons søjlegang', description: 'Apostlene fortsætter med at samles i Salomons søjlegang. Folk bærer de syge ud på gaderne, og selv Peters skygge helbreder dem. Skarer strømmer til fra byer rundt om Jerusalem.', timeline_label: 'Dagene derefter — løbende' },
+      apostles_arrested: { title: 'Apostlene arresteres', description: 'Ypperstepræsten og saddukæerne, fyldt af jalousi, rejser sig og lader apostlene fængsle i det offentlige fængsel.', timeline_label: 'En efterfølgende dag' },
+      angel_frees_apostles: { title: 'En engel åbner fængslet', description: 'Om natten åbner en Herrens engel fængslets porte og fører apostlene ud — og befaler dem: "Gå hen og bliv stående i templet og tal alt dette livets ord til folket."', timeline_label: 'Den nat' },
+      apostles_teach_at_dawn: { title: 'Tilbage i templet ved daggry', description: 'Apostlene adlyder straks og begynder at undervise i templet ved daggry, mens rådet endnu ikke ved, at de er frigivet.', timeline_label: 'Næste morgen — ved daggry' },
+      sanhedrin_assembles_finds_prison_empty: { title: 'Tomme celler, forvirrede herskere', description: 'Rådet samles, sender bud til fængslet — og opdager, at fængslet er låst og vagtmændene ved dørene, men cellerne er tomme. Så melder nogen: mændene er i templet og underviser folket.', timeline_label: 'Næste morgen — rådet samles' },
+      apostles_brought_before_sanhedrin: { title: 'Apostlene for rådet', description: 'Tempelvagtens anfører bringer apostlene — uden vold, af frygt for stening — for rådet. Ypperstepræsten konfronterer dem: "Vi forbød jer strengt at undervise i dette navn, og se, I har fyldt Jerusalem med jeres lære."', timeline_label: 'Morgen — retssag' },
+      gamaliel_counsel: { title: 'Gamaliels kloge advarsel', description: 'Gamaliel — en farisæer og anset lovlærer — befaler, at apostlene fjernes kortvarigt, og advarer rådet: Lad disse mænd gå. Hvis dette forehavende er af mennesker, vil det gå i opløsning; er det af Gud, kan I ikke styrte dem — og I ville finde jer selv at kæmpe mod Gud.', timeline_label: 'Morgen — Gamaliel taler' },
+      apostles_flogged_and_released: { title: 'Pisket men frimodige', description: 'Rådet lader apostlene piske, befaler dem ikke at tale i Jesu navn og løslader dem. Apostlene forlader rådet og glæder sig over, at de var blevet anset værdige til at lide vanære for Jesu skyld — og de holder ikke op med at undervise og forkynde Kristus Jesus.', timeline_label: 'Morgen — løsladt' }
+    },
+    timeline: {
+      ananias_deception_and_death: { label: 'Ananias dør', relative_time: 'Dag 1 — Morgen' },
+      sapphira_deception_and_death: { label: 'Sapfira dør', relative_time: 'Dag 1 — ca. 3 timer senere' },
+      signs_wonders_at_colonnade: { label: 'Massehelbredelser ved templet', relative_time: 'Dagene derefter — løbende' },
+      apostles_arrested: { label: 'Apostlene fængsles', relative_time: 'En efterfølgende dag' },
+      angel_frees_apostles: { label: 'Engel åbner fængslet', relative_time: 'Den nat' },
+      apostles_teach_at_dawn: { label: 'Undervisning ved daggry', relative_time: 'Næste morgen — ved daggry' },
+      sanhedrin_assembles_finds_prison_empty: { label: 'Rådet finder tomme celler', relative_time: 'Næste morgen — kort efter daggry' },
+      apostles_brought_before_sanhedrin: { label: 'Retssagen for rådet', relative_time: 'Næste morgen — midt på formiddagen' },
+      gamaliel_counsel: { label: 'Gamaliels forsvar', relative_time: 'Samme morgen — under retssagen' },
+      apostles_flogged_and_released: { label: 'Pisket, fri og stadig prædikende', relative_time: 'Samme morgen — afslutning' }
+    }
+  }
+};
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH5, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shortLabel = value
+    .replace(/^c\.\s*/, '').replace(/Late /, '').replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '').replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '').trim();
+  return includeYear && marker ? `${marker} ${shortLabel}`.trim() : (shortLabel || marker);
+}
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
+
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
+const PCOLORS = {
+  peter: '#5B8FA8', john: '#A09070', the_apostles: '#6B9B7E',
+  ananias: '#C47A5A', sapphira: '#B87090', high_priest: '#8C6F5A',
+  sadducees: '#7A8FA0', angel_of_the_lord: '#D4C060', gamaliel: '#9B7EB0',
+  captain_of_the_temple: '#A0746A', young_men: '#7A8A7A',
+};
+
+const VW = 1000, VH = 800;
+const LOCS = {
+  jerusalem:          { x: 318, y: 438, label: DATA.locations.find(l => l.id === 'jerusalem')?.name || 'Jerusalem' },
+  solomons_colonnade: { x: 548, y: 374, label: DATA.locations.find(l => l.id === 'solomons_colonnade')?.name || "Solomon's Portico" },
+  temple:             { x: 455, y: 386, label: DATA.locations.find(l => l.id === 'temple')?.name || 'The Temple' },
+  public_prison:      { x: 365, y: 460, label: DATA.locations.find(l => l.id === 'public_prison')?.name || 'Public Prison' },
+  council_chamber:    { x: 415, y: 410, label: DATA.locations.find(l => l.id === 'council_chamber')?.name || 'The Council' },
+};
+
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
+
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label || person?.name || r.person_id,
+      stops: r.path.map(s => ({ ...s, ...(LOCS[s.location_id] || { x: 360, y: 360 }) })),
+    };
+  });
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({ order: idx + 1, location_id: ev.location_id, event_id: ev.id, ...(LOCS[ev.location_id] || { x: 360, y: 360 }) }));
+    if (!stops.length) return;
+    out[person.id] = { color: PCOLORS[person.id] || '#888', label: person.name, stops };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = { color: route.color, label: route.label, pos: { x: lastStop.x, y: lastStop.y }, active, faded: !active };
+  });
+  return result;
+}
+
+function Terrain() {
+  return (
+    <g>
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-land)" />
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 700 320 780 360 Q 820 380 820 440 Q 820 520 760 560 Q 700 600 580 620 Q 450 640 300 630 Q 180 620 100 580 Q 40 550 30 480 Q 20 420 50 300 Z" fill="oklch(87% 0.055 90)" opacity="1" />
+      <text x="160" y="580" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800" fill="oklch(48% 0.07 75)" letterSpacing="3" opacity=".7">{mapText('JUDEA')}</text>
+      <path d="M 820 200 Q 860 220 920 260 Q 970 300 980 380 Q 990 450 960 520 Q 940 570 900 600 Q 870 620 840 600 Q 820 560 820 500 Q 820 420 820 360 Q 820 280 820 200 Z" fill="oklch(82% 0.045 110)" opacity=".85" />
+      <text x="880" y="380" fontSize="11" fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(42% 0.06 90)" letterSpacing="2" opacity=".65" transform="rotate(90,880,380)">{mapText('PERAEA')}</text>
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 650 310 720 290 Q 780 270 820 200 Q 820 120 780 70 Q 700 30 500 20 Q 300 10 150 50 Q 60 80 40 160 Q 20 230 50 300 Z" fill="oklch(85% 0.04 130)" opacity=".6" />
+      <text x="200" y="120" fontSize="12" fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(40% 0.06 120)" letterSpacing="2" opacity=".55">{mapText('SAMARIA')}</text>
+      <path d="M 50 300 Q 200 265 380 272 Q 520 278 650 295 Q 730 308 790 330" fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      <path d="M 790 330 Q 818 370 820 430 Q 820 500 800 560" fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      <path d="M 820 140 Q 828 220 825 320 Q 822 420 818 520 Q 815 580 820 650" fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".7" strokeLinecap="round" />
+      <path d="M 818 400 Q 835 390 870 400 Q 920 420 940 470 Q 960 520 940 570 Q 920 620 880 640 Q 850 650 830 630 Q 815 610 815 570 Q 814 500 818 400 Z" fill="var(--map-water)" opacity=".85" />
+      <text x="880" y="520" textAnchor="middle" fontSize="11" fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(35% 0.06 220)" letterSpacing="1.5" opacity=".8">{mapText('DEAD_SEA')}</text>
+      <path d="M 825 30 C 832 120 830 220 825 320 C 821 390 818 420 818 450" fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".75" strokeLinecap="round" />
+      <text x="842" y="200" fontSize="10" fill="oklch(38% 0.07 220)" opacity=".65" fontFamily="Barlow" fontWeight="500" transform="rotate(84,842,200)">{mapText('JORDAN_RIVER')}</text>
+      <path d="M 0 0 L 0 800 L 40 800 Q 30 600 25 400 Q 20 200 40 0 Z" fill="var(--map-water)" opacity=".5" />
+      <text x="18" y="400" fontSize="9" fill="oklch(35% 0.06 220)" opacity=".55" fontFamily="Barlow Condensed" fontWeight="700" letterSpacing="1" transform="rotate(-90,18,400)">{mapText('MEDITERRANEAN')}</text>
+      <path d="M 660 80 Q 590 170 550 260 Q 525 330 515 400 Q 508 460 510 520" fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="3.5" opacity=".4" />
+      <text x="560" y="290" fontSize="10" fill="oklch(42% 0.05 80)" opacity=".55" fontFamily="Barlow" transform="rotate(68,560,290)">{mapText('KIDRON_VALLEY')}</text>
+      <rect x="292" y="345" width="165" height="125" rx="8" fill="oklch(80% 0.06 80)" opacity=".3" stroke="oklch(42% 0.08 60)" strokeWidth="3" />
+      <rect x="292" y="345" width="165" height="125" rx="8" fill="none" stroke="oklch(62% 0.09 55)" strokeWidth="1.5" opacity=".6" strokeDasharray="6 4" />
+      <rect x="382" y="358" width="68" height="52" rx="4" fill="oklch(75% 0.08 75)" opacity=".45" stroke="oklch(48% 0.08 60)" strokeWidth="2" />
+      <text x="416" y="388" textAnchor="middle" fontSize="9.5" fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(30% 0.06 55)" opacity=".9">{mapText('TEMPLE')}</text>
+      <path d="M 648 228 Q 600 275 560 315 Q 520 352 475 382 Q 445 400 410 413" fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".6" strokeDasharray="10 6" strokeLinecap="round" />
+      <text x="545" y="335" fontSize="10" fill="oklch(38% 0.06 70)" opacity=".55" fontFamily="Barlow" transform="rotate(44,545,335)">{mapText('WALK')}</text>
+      <path d="M 140 565 Q 220 598 305 590 Q 348 586 378 572 Q 398 560 408 542" fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="2.5" opacity=".35" />
+      <text x="220" y="625" fontSize="9.5" fill="oklch(42% 0.05 80)" opacity=".45" fontFamily="Barlow">{mapText('HINNOM_VALLEY')}</text>
+      <circle cx="355" cy="572" r="10" fill="oklch(60% 0.14 30)" opacity=".25" stroke="var(--accent)" strokeWidth="2" />
+      <text x="372" y="577" fontSize="10" fill="var(--accent)" opacity=".7" fontFamily="Barlow" fontStyle="italic" fontWeight="500">Akeldama</text>
+      <ellipse cx="668" cy="255" rx="115" ry="85" fill="oklch(82% 0.05 100)" opacity=".45" stroke="oklch(55% 0.06 80)" strokeWidth="1.5" />
+      <text x="668" y="148" textAnchor="middle" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800" fill="oklch(35% 0.07 70)" letterSpacing="1.5" opacity=".75">{mapText('MOUNT_OF_OLIVES')}</text>
+      <circle cx="790" cy="240" r="6" fill="oklch(55% 0.07 80)" opacity=".45" />
+      <text x="802" y="244" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".6" fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHANY')}</text>
+      <circle cx="310" cy="720" r="6" fill="oklch(55% 0.07 80)" opacity=".4" />
+      <text x="322" y="724" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".5" fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHLEHEM')}</text>
+      <g transform="translate(60,755)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~1 km</text>
+      </g>
+      <g transform="translate(60,95)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+
+function RouteLines() { return null; }
+
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7} fill={on ? 'var(--accent)' : 'var(--fg-muted)'} stroke="var(--map-land)" strokeWidth="3" style={{ transition: 'r .3s' }} />
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5} fontSize={on ? 17 : 14} fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'} fill={on ? 'var(--fg)' : 'var(--fg-muted)'} letterSpacing=".5" style={{ transition: 'font-size .3s' }}>{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const cols = Math.min(3, groupSize);
+    const row = Math.floor(myGroupIdx / cols);
+    const col = myGroupIdx % cols;
+    const rows = Math.ceil(groupSize / cols);
+    const spacing = 30;
+    const offsetX = (col - (cols - 1) / 2) * spacing;
+    const offsetY = (row - (rows - 1) / 2) * spacing;
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
+    return { x, y };
+  };
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y} stroke={s.color} strokeWidth="3" strokeLinecap="round" strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR} fill={s.color} stroke="var(--map-land)" strokeWidth="2.5" style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }} />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle" fontSize={s.active ? 13 : 10} fontWeight="800" fill="white" fontFamily="Barlow Condensed" pointerEvents="none" style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}>{(s.label || '?').charAt(0)}</text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle" fontSize="12" fontWeight="800" fill={s.color} fontFamily="Barlow Condensed" pointerEvents="none" style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}>{s.label}</text>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+function MapPanel({ activeEventId, onStep, onEventChange }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
+  return (
+    <div className="map-col">
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && <div className="ban-loc"><div className="ban-loc-dot" />{loc.name}</div>}
+      </div>
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+      <div className="map-controls-panel">
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+        <div className="map-playback">
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button key={tl.event_id} type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}>
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Temple Area'}</div>
+    </div>
+  );
+}
+
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(false);
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
+
+  const BADGE_POSITIONS = { 0: 0, 3: 1, 5: 2 };
+  const DEFAULT_BADGES = ['Day 1 — Judgment in the Community', 'Arrest and Angelic Release', 'Morning Trial'];
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Judgment, Jailbreak, <em>Unstoppable Word</em></>}</div>
+      </div>
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div ref={el => entryRefs.current[tl.event_id] = el} data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}>
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
+  useEffect(() => {
+    document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/004';
+        return prev;
+      }
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '— Jerusalem · AD 30'}</span>
+        <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">{INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}</a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>{INITIAL_LANG === 'da' ? 'En' : 'Da'}</button>
+      </div>
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel activeEventId={activeEv} onStep={stepEvent} onEventChange={handleEventChange} />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+const ACTS_CH3 = {
+  "book": "Acts",
+  "chapter": 3,
+  "chapter_title": "The Lame Man Walks",
+  "chapter_summary": "Peter and John encounter a man who has been unable to walk since birth as they enter the Jerusalem temple for afternoon prayer. Instead of giving money, Peter invokes the name of Jesus and the man is instantly healed, causing a sensation throughout the temple complex. Peter uses the gathered crowd's amazement as an opportunity to preach again, explaining that it was not his own power but faith in Jesus — whom God raised from the dead — that healed the man, and calling the crowd to repent and turn back to God.",
+  "date_range": {
+    "approximate": "Summer–Autumn AD 30 (or AD 33)",
+    "notes": "No specific date is given; the event follows shortly after Pentecost in the narrative, likely within the first weeks or months of the new community's existence."
+  },
+  "persons": [
+    {
+      "id": "peter",
+      "name": "Peter",
+      "role": "Apostle, Healer, Preacher",
+      "first_mention_verse": "3:1",
+      "summary": "Peter, accompanied by John, encounters the lame beggar at the temple gate and heals him in the name of Jesus Christ of Nazareth. He then addresses the astonished crowd with a sermon that explains the healing as evidence of Jesus's resurrection and calls the people to repentance.",
+      "significance": "Peter's healing ministry and public preaching in chapters 3 and 4 establish him as the primary spokesperson and miracle-worker of the early church, directly paralleling the ministry of Jesus."
+    },
+    {
+      "id": "john",
+      "name": "John (son of Zebedee)",
+      "role": "Apostle",
+      "first_mention_verse": "3:1",
+      "summary": "John accompanies Peter to the temple for the afternoon prayer hour and is present throughout the healing and subsequent sermon, though he speaks no independent words in this chapter. He stands alongside Peter in the confrontation with temple authorities that follows in chapter 4.",
+      "significance": "John's consistent pairing with Peter underscores the apostolic partnership model and links the church's mission to the inner circle of Jesus's original disciples."
+    },
+    {
+      "id": "lame_man",
+      "name": "The Lame Man",
+      "role": "Recipient of Healing",
+      "first_mention_verse": "3:2",
+      "summary": "A man who has been lame from birth is carried daily to the Beautiful Gate of the temple to beg for alms. Peter and John's encounter with him results in his instantaneous and complete healing — he enters the temple walking, leaping, and praising God — which draws the astonished crowd.",
+      "significance": "The healed man's leap from complete disability to dancing in the temple is a vivid sign-act that validates the apostles' authority and provokes both popular amazement and official hostility, driving the narrative into chapter 4."
+    },
+    {
+      "id": "temple_crowd",
+      "name": "The Temple Crowd",
+      "role": "Audience, Group",
+      "first_mention_verse": "3:9",
+      "summary": "The people in the temple courts who witness the healed man walking and hear Peter's sermon. They are filled with wonder and amazement, recognizing the man who used to beg at the Beautiful Gate.",
+      "significance": "Their amazed response provides the narrative energy that drives Peter's second major sermon and, as the audience grows, the attention of the temple authorities who will arrest him in chapter 4."
+    },
+    {
+      "id": "moses",
+      "name": "Moses",
+      "role": "Prophet, Lawgiver (referenced)",
+      "first_mention_verse": "3:22",
+      "summary": "Peter quotes Moses's prediction in Deuteronomy that God would raise up a prophet like himself from among the people, arguing that this prophecy finds its fulfillment in Jesus. Moses is invoked as the foundational prophetic authority of the Jewish tradition.",
+      "significance": "Positioning Jesus as the prophet-like-Moses frames Christianity as the culmination of the Mosaic covenant, not its abandonment — a key argument in Acts' engagement with Jewish audiences."
+    },
+    {
+      "id": "abraham",
+      "name": "Abraham",
+      "role": "Patriarch (referenced)",
+      "first_mention_verse": "3:13",
+      "summary": "Peter refers to God as 'the God of Abraham, Isaac, and Jacob' and invokes the Abrahamic covenant — that all peoples on earth will be blessed through Abraham's offspring — as the framework within which Jesus's ministry must be understood.",
+      "significance": "The Abrahamic framing shows that the gospel's reach to all nations is not innovation but fulfillment of the oldest promise in Israel's scriptures, a thread that runs throughout Acts and Paul's letters."
+    },
+    {
+      "id": "samuel",
+      "name": "Samuel and the Prophets",
+      "role": "Prophets (referenced)",
+      "first_mention_verse": "3:24",
+      "summary": "Peter sweepingly declares that all the prophets from Samuel onward have spoken about the days the crowd is now living in. Samuel represents the beginning of the prophetic movement in Israel's history.",
+      "significance": "The appeal to 'all the prophets' provides a cumulative prophetic weight to Peter's christological argument, presenting Jesus as the convergence point of Israel's entire prophetic tradition."
+    }
+  ],
+  "locations": [
+    {
+      "id": "beautiful_gate",
+      "name": "The Beautiful Gate",
+      "modern_name": "disputed",
+      "lat": 31.7782,
+      "lng": 35.2354,
+      "description": "A prominent gate of the Jerusalem temple, likely the Nicanor Gate between the Court of the Gentiles and the Court of Women, where the lame man sat daily begging from worshippers."
+    },
+    {
+      "id": "solomons_portico",
+      "name": "Solomon's Portico",
+      "modern_name": "Temple Mount, Jerusalem (eastern colonnade)",
+      "lat": 31.7781,
+      "lng": 35.2361,
+      "description": "A covered colonnade running along the eastern edge of the temple's outer court, where the healed man clings to Peter and John, the crowd gathers, and Peter delivers his second sermon."
+    },
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The central city of the narrative, where all events of chapters 1–7 take place, and the required starting point of the disciples' mission according to Jesus's command."
+    }
+  ],
+  "events": [
+    {
+      "id": "going_to_temple",
+      "sequence": 1,
+      "verses": "3:1",
+      "title": "Peter and John Go to the Temple",
+      "description": "Peter and John are on their way to the Jerusalem temple for the three o'clock afternoon prayer, one of the three fixed daily prayer times in Jewish practice. This detail situates the apostles as observant Jews continuing to worship at the temple even as they lead the new movement. Their journey to the temple sets up the chance encounter that will change everything.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "peter",
+        "john"
+      ],
+      "timeline_label": "To the Temple",
+      "scroll_anchor": "going-to-temple",
+      "visual_notes": "Two men in first-century Jewish dress walking through a Jerusalem street toward the monumental temple gates, late afternoon sun casting long shadows; busy street with other worshippers."
+    },
+    {
+      "id": "lame_man_begging",
+      "sequence": 2,
+      "verses": "3:2-3",
+      "title": "The Lame Beggar at the Beautiful Gate",
+      "description": "A man who has been lame from birth is being carried and placed at the Beautiful Gate of the temple. This is his daily routine — friends or family bring him each day so he can ask for money from the people going in to worship. When he sees Peter and John about to enter, he begs them for money. The detail that he has been lame 'from birth' intensifies the miracle's drama, indicating no natural recovery was possible.",
+      "location_id": "beautiful_gate",
+      "persons_present": [
+        "lame_man",
+        "peter",
+        "john"
+      ],
+      "timeline_label": "Beggar at the Gate",
+      "scroll_anchor": "lame-man-begging",
+      "visual_notes": "Man seated or lying at the base of a massive carved gate, hands outstretched toward two approaching figures; architectural grandeur of the gate contrasting with the beggar's lowly position."
+    },
+    {
+      "id": "healing_of_lame_man",
+      "sequence": 3,
+      "verses": "3:4-8",
+      "title": "Peter Heals the Lame Man",
+      "description": "Peter looks directly at the man and tells him to look at them. The beggar gives his full attention, expecting to receive money. Peter says he has no silver or gold, but gives what he does have: in the name of Jesus Christ of Nazareth, the man is to walk. Peter takes him by the right hand and helps him up. Immediately the man's feet and ankles become strong, and he jumps up, stands, and begins to walk. He enters the temple with them, walking, leaping, and praising God — a dramatic transformation from decades of immobility.",
+      "location_id": "beautiful_gate",
+      "persons_present": [
+        "peter",
+        "john",
+        "lame_man"
+      ],
+      "timeline_label": "Healing",
+      "scroll_anchor": "healing-of-lame-man",
+      "visual_notes": "Dramatic sequence: Peter grasping the man's hand, the man rising; close-up of feet and ankles straightening; then the man mid-leap inside the temple, arms raised, face joyful; warm afternoon light flooding through the gate."
+    },
+    {
+      "id": "crowd_amazed",
+      "sequence": 4,
+      "verses": "3:9-11",
+      "title": "The Crowd Recognizes the Healed Man",
+      "description": "All the people in the temple courts see the formerly lame man walking and praising God. They recognize him as the man who used to sit begging at the Beautiful Gate, and they are filled with wonder and amazement at what has happened to him. The healed man clings to Peter and John in Solomon's Portico, and the astonished people run to them there. The crowd's recognition that they know this man makes the miracle undeniable.",
+      "location_id": "solomons_portico",
+      "persons_present": [
+        "lame_man",
+        "peter",
+        "john",
+        "temple_crowd"
+      ],
+      "timeline_label": "Crowd Gathers",
+      "scroll_anchor": "crowd-amazed",
+      "visual_notes": "Temple courtyard filling with running figures; the healed man gripping Peter's arm, still dancing; wide shot showing the colonnade of Solomon's Portico with a swelling crowd converging from multiple directions."
+    },
+    {
+      "id": "peters_second_sermon",
+      "sequence": 5,
+      "verses": "3:12-26",
+      "title": "Peter Preaches in Solomon's Portico",
+      "description": "Seeing the crowd's astonishment, Peter addresses them and immediately deflects credit: it was not their own power or godliness that healed the man. It was the God of Abraham, Isaac, and Jacob who glorified his servant Jesus — the one this very crowd handed over and disowned before Pilate. Peter says they acted in ignorance, but now calls them to repent and turn to God so their sins may be wiped out and times of refreshing may come. He quotes Moses (Deuteronomy 18) predicting a coming prophet who must be obeyed, and states that all the prophets from Samuel onward foretold these days. He concludes by reminding them they are heirs of the covenant God made with Abraham, and that Jesus was sent to them first to bless them by turning each of them from their wicked ways.",
+      "location_id": "solomons_portico",
+      "persons_present": [
+        "peter",
+        "john",
+        "temple_crowd",
+        "lame_man"
+      ],
+      "timeline_label": "Second Sermon",
+      "scroll_anchor": "peters-second-sermon",
+      "visual_notes": "Peter standing in the colonnade, crowd packed around him, healed man visible at his side as living evidence; shafts of late afternoon light through the portico columns; scroll references floating beside key quotes (Deut 18, Gen 22)."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "peter",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "going_to_temple",
+          "note": "Traveling from wherever the community was gathered toward the temple"
+        },
+        {
+          "order": 2,
+          "location_id": "beautiful_gate",
+          "event_id": "lame_man_begging",
+          "note": "Arrives at the temple entrance where the beggar is stationed"
+        },
+        {
+          "order": 3,
+          "location_id": "beautiful_gate",
+          "event_id": "healing_of_lame_man",
+          "note": "Stops at the gate to heal the man"
+        },
+        {
+          "order": 4,
+          "location_id": "solomons_portico",
+          "event_id": "crowd_amazed",
+          "note": "Moves inside to Solomon's Portico as the crowd gathers"
+        },
+        {
+          "order": 5,
+          "location_id": "solomons_portico",
+          "event_id": "peters_second_sermon",
+          "note": "Addresses the crowd gathered in the portico"
+        }
+      ]
+    },
+    {
+      "person_id": "john",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "going_to_temple",
+          "note": "Walking with Peter to the afternoon prayer"
+        },
+        {
+          "order": 2,
+          "location_id": "beautiful_gate",
+          "event_id": "healing_of_lame_man",
+          "note": "Present at the healing"
+        },
+        {
+          "order": 3,
+          "location_id": "solomons_portico",
+          "event_id": "peters_second_sermon",
+          "note": "Stands with Peter during the sermon"
+        }
+      ]
+    },
+    {
+      "person_id": "lame_man",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "beautiful_gate",
+          "event_id": "lame_man_begging",
+          "note": "Placed at the gate by others, unable to walk"
+        },
+        {
+          "order": 2,
+          "location_id": "beautiful_gate",
+          "event_id": "healing_of_lame_man",
+          "note": "Healed at the gate and stands for the first time"
+        },
+        {
+          "order": 3,
+          "location_id": "solomons_portico",
+          "event_id": "crowd_amazed",
+          "note": "Walks, leaps, and praises God; clings to Peter and John in the portico"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "going_to_temple",
+      "position": 1,
+      "label": "Heading to Prayer",
+      "relative_time": "3pm (ninth hour)",
+      "absolute_time": "Sometime after Pentecost, AD 30 or 33"
+    },
+    {
+      "event_id": "lame_man_begging",
+      "position": 2,
+      "label": "Beggar Encountered",
+      "relative_time": "At 3pm prayer hour",
+      "absolute_time": "Same day"
+    },
+    {
+      "event_id": "healing_of_lame_man",
+      "position": 3,
+      "label": "Healing Performed",
+      "relative_time": "3pm, at the gate",
+      "absolute_time": "Same day"
+    },
+    {
+      "event_id": "crowd_amazed",
+      "position": 4,
+      "label": "Crowd Recognizes Miracle",
+      "relative_time": "Immediately after healing",
+      "absolute_time": "Same day"
+    },
+    {
+      "event_id": "peters_second_sermon",
+      "position": 5,
+      "label": "Sermon in the Portico",
+      "relative_time": "Shortly after the healing",
+      "absolute_time": "Same afternoon"
+    }
+  ],
+  "theological_themes": [
+    "Healing as a sign of the kingdom of God",
+    "The name of Jesus as the source of saving power",
+    "Jesus as the fulfillment of Israel's prophetic tradition",
+    "Repentance as the appropriate human response to divine action",
+    "Continuity between the God of the Old Testament and the God revealed in Jesus"
+  ],
+  "discussion_questions": [
+    "Peter says he has 'no silver or gold' but gives something more valuable — what does that imply about what the church has to offer the world?",
+    "Peter tells the crowd they acted in ignorance when they handed Jesus over (3:17) — why is this distinction between ignorance and deliberate sin important?",
+    "The man leaps and praises God in the temple — what is the symbolic significance of a previously excluded person now freely entering the sacred space?",
+    "How does Peter's appeal to Abraham ('you are heirs of the prophets and of the covenant', 3:25) shape the relationship between the new Jesus movement and Judaism?",
+    "What does 'times of refreshing' (3:19) suggest about what repentance is supposed to lead to — is it personal, cosmic, or both?"
+  ]
+};

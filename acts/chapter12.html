@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Acts Chapter 2 — Fire from Heaven</title>
+<title>Acts Chapter 12 — Chains, Angels, and a King's Ruin</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="acts-ch2-data.js"></script>
+<script src="acts-ch12-data.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, #root { height: 100%; overflow: hidden; }
@@ -34,7 +34,6 @@ body.theme-a {
 body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
 
 /* ── PAGE SKELETON ── */
-/* header / [timeline | map] stacked vertically */
 .app {
   height: 100vh;
   display: grid;
@@ -173,7 +172,7 @@ body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklc
   opacity: .5;
 }
 
-/* Each item — tall so scroll is slow and deliberate */
+/* Each item */
 .tl-item {
   display: grid;
   grid-template-columns: 76px 1fr;
@@ -304,7 +303,7 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 }
 .ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
 
-/* ── MAP SVG — fill panel, use xMidYMid slice so it always covers ── */
+/* ── MAP SVG ── */
 .map-svg-wrap {
   position: absolute;
   inset: 0;
@@ -453,7 +452,6 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 
 /* ── MOBILE ── */
 @media (max-width: 680px) {
-  /* Stack: map on top, timeline on bottom */
   html, body, #root {
     height: auto;
     min-height: 100%;
@@ -474,13 +472,11 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
     overflow: visible;
   }
 
-  /* Map moves to top row */
   .map-col {
     order: -1;
     overflow: visible;
   }
 
-  /* Tighten header */
   .header { padding: 0 14px; gap: 8px; }
   .hdr-sub { display: none; }
   .hdr-title { font-size: 16px; }
@@ -490,7 +486,6 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
     font-size: 9px;
   }
 
-  /* Event banner with title, description, then map below */
   .map-event-banner {
     position: relative;
     grid-template-columns: 1fr;
@@ -530,7 +525,6 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
     border-top: 1px solid var(--border);
   }
 
-  /* Legend: separate panel above the playback controls */
   .map-person-legend {
     position: relative;
     flex-direction: row;
@@ -556,12 +550,15 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
     right:auto;
     bottom:auto;
     width:100%;
-    padding:7px 8px;
+    padding:8px 8px 10px;
+    overflow-x: auto;
+    overflow-y: visible;
   }
   .playback-label { font-size:10px; }
   .playback-btn { width:38px; height:34px; font-size:20px; }
   .playback-track {
-    height: 38px;
+    min-width: max(100%, calc(var(--step-count) * 92px));
+    height: 70px;
     align-items: start;
   }
   .playback-track::before { top:8px; }
@@ -569,22 +566,33 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   .playback-step-time {
     display: block;
     position: absolute;
-    top: 20px;
+    top: 22px;
     left: 50%;
     transform: translateX(-50%);
-    width: 42px;
-    color: var(--fg-muted);
-    font-size: 7px;
+    width: 84px;
+    color: var(--fg);
+    background: oklch(99.5% 0.008 80 / .92);
+    border: 1px solid oklch(84% 0.022 72 / .8);
+    border-radius: 3px;
+    padding: 3px 4px;
+    font-size: 8.5px;
     font-weight: 800;
-    letter-spacing: .02em;
-    line-height: 1.05;
+    letter-spacing: 0;
+    line-height: 1.15;
     text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
     pointer-events: none;
+    box-shadow: 0 2px 8px oklch(10% 0.02 55 / .1);
   }
-  .playback-step.active .playback-step-time { color: var(--accent); }
+  .playback-step.active .playback-step-time {
+    color: oklch(99% 0.008 80);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
   .person-name-label { display: none; }
 
-  /* Timeline: full width, shorter items */
   .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
   .tl-chapter-strip { padding: 10px 14px 8px; }
   .tl-ch-title { font-size: 13px; }
@@ -612,56 +620,132 @@ const CHAPTER_TEXT = {
   da: {
     book: 'Apostlenes Gerninger',
     shortBook: 'ApG',
-    chapterTitle: 'Ild fra himlen',
-    headerSub: '— Pinse · år 30',
-    timelineTitle: ['Ild fra', 'himlen'],
-    mapCorner: 'Jerusalem · pinse',
-    yearBadges: ['Pinse — Ånden falder', 'Jerusalem — offentligt vidnesbyrd'],
+    chapterTitle: 'Lænker, engle og en konges fald',
+    headerSub: '— Jerusalem, Cæsarea, Tyrus, Sidon og Antiokia · forår–sommer år 44',
+    timelineTitle: ['Lænker', 'og engle'],
+    mapCorner: 'Jerusalem · Cæsarea · Tyrus · Sidon · Antiokia',
+    yearBadges: ['Forfølgelse begynder', 'Mirakuløs flugt', 'Konsekvenserne', 'Guddommelig dom', 'Mod Antiokia'],
     map: {
       JUDEA: 'JUDÆA',
       PERAEA: 'PERÆA',
-      SAMARIA: 'SAMARIA ↑',
+      SAMARIA: 'SAMARIA',
       DEAD_SEA: 'DET DØDE HAV',
       JORDAN_RIVER: 'Jordanfloden',
-      MEDITERRANEAN: 'MIDDELHAVET ←',
+      MEDITERRANEAN: 'MIDDELHAVET',
       KIDRON_VALLEY: 'Kidrondalen',
       TEMPLE: 'TEMPLET',
-      WALK: '~900 m vandring',
+      WALK: 'vejen',
       HINNOM_VALLEY: 'Hinnoms dal',
       MOUNT_OF_OLIVES: 'OLIEBJERGET',
       BETHANY: 'Betania',
       BETHLEHEM: 'Betlehem'
     },
+    persons: {
+      herod_agrippa: 'Herodes Agrippa I',
+      james_zebedee: 'Jakob, Zebedæus\' søn',
+      peter: 'Peter',
+      angel_of_the_lord: 'En Herrens engel',
+      rhoda: 'Rhoda',
+      mary_mother_of_john_mark: 'Maria, Markus\' mor',
+      john_mark: 'Johannes (kaldet Markus)',
+      barnabas: 'Barnabas',
+      saul: 'Saul',
+      james_brother_of_jesus: 'Jakob (Herrens bror)',
+      blastus: 'Blastus',
+      jerusalem_church: 'Menigheden i Jerusalem',
+      people_of_tyre_sidon: 'Folk fra Tyrus og Sidon'
+    },
     locations: {
       jerusalem: { name: 'Jerusalem' },
-      upper_room_or_temple: { name: 'Huset hvor de sad' },
-      temple_area: { name: 'Tempelområdet / Salomos søjlegang' }
-    },
-    persons: {
-      holy_spirit: 'Helligånden',
-      peter: 'Peter',
-      the_eleven: 'De elleve apostle',
-      devout_jews: 'Fromme jøder fra alle folkeslag',
-      david: 'David',
-      joel: 'Joel',
-      new_believers: 'De tre tusind omvendte',
-      mockers: 'Spottere i mængden'
+      prison_jerusalem: { name: 'Fængslet i Jerusalem' },
+      mary_house_jerusalem: { name: 'Marias hus' },
+      caesarea_maritima: { name: 'Cæsarea' },
+      tyre: { name: 'Tyrus' },
+      sidon: { name: 'Sidon' },
+      antioch_syria: { name: 'Antiokia' },
+      another_place: { name: 'Et andet sted' }
     },
     events: {
-      spirit_descends: { title: 'Helligånden falder på pinsedagen', description: 'Mens alle de troende er samlet på pinsedagen, fylder en lyd som et kraftigt vindstød hele huset. Tunger som af ild fordeler sig og sætter sig på hver enkelt. Alle bliver fyldt af Helligånden og begynder at tale på andre sprog, sådan som Ånden giver dem at tale. Det opfylder Jesu løfte om, at disciplene skulle døbes med Helligånden.', timeline_label: 'Ånden falder' },
-      crowd_gathers: { title: 'Den flersprogede skare samles', description: 'Lyden tiltrækker en stor skare jødiske pilgrimme fra alle folkeslag, som opholder sig i Jerusalem til festen. Hver enkelt hører disciplene tale på sit eget modersmål, og mængden bliver forvirret og forundret. De nævner områder som Partien, Medien, Mesopotamien, Egypten, Rom, Kreta og Arabien og spørger, hvad det betyder. Nogle afviser dog det hele og siger, at disciplene er berusede.', timeline_label: 'Skaren samles' },
-      peters_sermon: { title: 'Peters pinseprædiken', description: 'Peter træder frem sammen med de elleve og taler højt til mængden. Han afviser beskyldningen om beruselse ved at pege på, at det kun er tredje time på dagen. Derefter citerer han profeten Joel for at forklare, at Åndens udgydelse opfylder profetien om de sidste dage. Han vidner om Jesus, hans undere, hans korsfæstelse og hans opstandelse, sådan som David forudsagde i Salmerne. Peter slutter med at erklære, at Gud har gjort Jesus til både Herre og Kristus.', timeline_label: 'Peter prædiker' },
-      crowd_responds: { title: 'Skaren rammes i hjertet', description: 'Mængden bliver dybt berørt og spørger Peter og de andre apostle, hvad de skal gøre. Peter siger, at de skal omvende sig og lade sig døbe i Jesu Kristi navn til syndernes forladelse, og at de også skal få Helligåndens gave. Han forklarer, at løftet gælder dem, deres børn og alle, som Herren kalder.', timeline_label: 'Kald til omvendelse' },
-      mass_baptism: { title: 'Tre tusind bliver døbt', description: 'Omkring tre tusind mennesker tager imod Peters ord, bliver døbt og føjes til fællesskabet samme dag. Denne ene dags høst viser, at forkyndelsen i Åndens kraft får en afgørende offentlig virkning.', timeline_label: '3.000 døbt' },
-      community_life: { title: 'Det første kristne fællesskab', description: 'De nye troende holder fast ved apostlenes lære, fællesskabet, brødsbrydelsen og bønnerne. Apostlene gør mange tegn og undere, og ærefrygt fylder byen. De troende deler deres ejendele, mødes dagligt på tempelpladsen og spiser sammen i hjemmene med glæde og oprigtigt hjerte, mens Herren hver dag føjer nye til.', timeline_label: 'Fællesskabet formes' }
+      herod_kills_james: {
+        title: 'Herodes henretter Jakob',
+        description: 'Kong Herodes Agrippa I starter en målrettet forfølgelse af lederne i menigheden i Jerusalem. Han arresterer Jakob, en af Jesu tolv apostle og bror til Johannes, og lader ham henrette med sværd – den almindelige romerske metode til halshugning af ikke-romerske borgere. Det er den første registrerede henrettelse af en af de tolv apostle i Det Nye Testamente. Herodes\' motiv er udtalt politisk: han vil vinde de jødiske religiøse lederes gunst. Handlingens hurtighed og succes ansporer ham til at slå til igen.',
+        timeline_label: 'Jakob henrettes'
+      },
+      peter_arrested: {
+        title: 'Peter arresteres under påsken',
+        description: 'Opmuntret af den folkelige bifald henrettelsen af Jakob skabte, skynder Herodes sig at arrestere Peter også. Han tidsætter arrestationen til de usyrede brøds fest – den syvdages påskefejring, der trak enorme menneskemængder til Jerusalem og forhøjede den politiske betydning af enhver offentlig handling. Herodes anbringer Peter under maksimal sikkerhed: fire vagtskift af fire soldater, med Peter lænket mellem to soldater, mens to andre står ved cellens dør. Han planlægger at føre Peter til offentlig retssag efter festens afslutning.',
+        timeline_label: 'Peter fængsles'
+      },
+      church_prays_for_peter: {
+        title: 'Menigheden beder inderligt',
+        description: 'Mens Peter sidder i fængsel og afventer en næsten sikker død, svarer menigheden i Jerusalem med vedholdende fælles forbøn. Det græske ord oversat \'inderligt\' (ektenos) udtrykker vedvarende, anstrengende intensitet – det samme ord, der bruges om Jesu bøn i Getsemane. Forsamlingen i Marias hus repræsenterer et bredere bønsmønster i menigheden. Lukas stiller bevidst romersk militærs jernmaskineri op imod en ubevæbnet menigheds samlede bønner.',
+        timeline_label: 'Menigheden beder gennem natten'
+      },
+      angel_frees_peter: {
+        title: 'En engel befrier Peter',
+        description: 'Selve natten før hans planlagte retssag sover Peter mellem sine to vagter, begge lænker fastgjort, da et strålende lys fylder cellen, og en engel vækker ham med et tryk. Lænkerne falder fra hans håndled. Englen leder ham trin for trin – klæd dig på, tag kappen om dig, følg mig – i en så metodisk sekvens, at det næsten virker som søvngængeri. De passerer den første vagtpost og dernæst den anden uden at blive stoppet. Da de når den store jernport ud mod byen, åbner den sig af sig selv. De går en gade igennem, hvorefter englen forsvinder lige så pludseligt, som han kom – og Peter står alene, uden lænker, i en gyde i Jerusalem.',
+        timeline_label: 'Englens befrielse'
+      },
+      peter_realizes_freedom: {
+        title: 'Peter kommer til sig selv',
+        description: 'Stående alene i en gade i Jerusalem med fængselsporten bag sig vågner Peter helt og forstår, hvad der er sket: \'Nu ved jeg med sikkerhed, at Herren har sendt sin engel og reddet mig fra Herodes\' magt og fra alt, hvad det jødiske folk forventede.\' Hans første klare tanke er teologisk – det var ikke held eller en flugtplan, men guddommelig udfrielse. Hans anden tanke er praktisk: han ved, hvor menigheden samles, og går straks mod Marias hus. Vandringen gennem mørke, sandsynligvis tomme gader, ville være ekstraordinær – en mand, alle troede så godt som død, bevæger sig frit gennem byen.',
+        timeline_label: 'Peter forstår sin frihed'
+      },
+      rhoda_and_disbelief: {
+        title: 'Rhodas glædelige fejltagelse',
+        description: 'Peter ankommer til Marias hus og banker på den ydre gårdport. En tjenestepige ved navn Rhoda kommer for at åbne. Hun genkender Peters stemme, før hun åbner porten, og bliver så overvældet af glæde, at hun løber tilbage til bønnemødet uden at lukke ham ind. Hun stormer ind med nyheden: \'Peter står ved porten!\' De forsamlede troende vil ikke tro hende. Først siger de, hun har mistet forstanden; da hun insisterer, foreslår de, at det må være hans skytsengel. Imens står Peter udenfor i mørket og fortsætter med at banke. Da de endelig åbner porten og ser ham stå der, bliver de slået med forundring – den samme menighed, der havde bedt for netop dette resultat, kan ikke begribe svaret, da det viser sig.',
+        timeline_label: 'Rhodas meddelelse og menighedens vantro'
+      },
+      peter_departs: {
+        title: 'Peters farvel og bortrejse',
+        description: 'Peter gør et hurtigt tegn til den ophidsede flok om at være stille og fortæller dem så kort, hvordan Herren har ført ham ud af fængslet. Han giver én bestemt instruktion: \'Fortæl dette til Jakob og brødrene.\' Den Jakob, han nævner, er Jakob, Herrens bror, som leder menigheden i Jerusalem – ikke den Jakob, der lige er blevet henrettet. Med denne bevidste overdragelse af både nyhed og indirekte autoritet glider Peter ud i natten og rejser til \'et andet sted\'. Teksten er bevidst vag, sandsynligvis for at beskytte Peters opholdssted. Dette er reelt Peters sidste scene som hovedperson i Apostlenes Gerninger.',
+        timeline_label: 'Peter forlader Jerusalem'
+      },
+      guards_executed: {
+        title: 'Herodes henretter vagterne',
+        description: 'Med daggryets komme bryder kaos ud i fængslet: Peter er væk, og soldaterne kan ikke gøre rede for det. Da nyheden når Herodes, befaler han en grundig eftersøgning; da intet findes, forhører han vagterne. Under romersk militærret var soldater, der lod en fange undslippe, underlagt samme straf, som fangen ville have lidt. Herodes følger denne procedure præcist: han befaler, at vagterne skal føres bort og henrettes. De mænd, der vogtede Peter med deres liv, betaler med deres liv for hans fravær.',
+        timeline_label: 'Vagterne forhøres og dræbes'
+      },
+      herod_moves_to_caesarea: {
+        title: 'Herodes flytter til Cæsarea',
+        description: 'Efter at have henrettet vagterne forlader Herodes Jerusalem og rejser til Cæsarea Maritima, den romerske administrative hovedstad ved Middelhavskysten, bygget af hans bedstefar Herodes den Store. Flytningen afspejler sandsynligvis politisk beregning efter offentlig forlegenhed: Cæsarea var sæde for romersk kejserlig myndighed i regionen og en mere bekvem base for kongen. Den geografiske forskydning flytter også fortællingen fra centrum af jødisk kristendom til en gennemført hedensk, romersk by – scenen, hvor Herodes vil møde sin ende.',
+        timeline_label: 'Herodes til Cæsarea'
+      },
+      tyre_sidon_delegation: {
+        title: 'Delegation fra Tyrus og Sidon',
+        description: 'Herodes er i alvorlig politisk strid med de fønikiske kystbyer Tyrus og Sidon, selvom årsagen til striden ikke nævnes. Indsatsen er eksistentiel for de byer: de var afhængige af korn og afgrøder fra Herodes\' frugtbare områder i Galilæa og Judæa. Ude af stand til at opretholde fjendskabet ankommer en fælles delegation til Cæsarea. De vinder Blastus, kongens kammerherre, for at få adgang til hoffet. Blastus\' samarbejde sikrer dem en formel offentlig audiens – scenen, der bliver anledningen til Herodes\' fald.',
+        timeline_label: 'Kystbyerne søger fred med Herodes'
+      },
+      herod_struck_down: {
+        title: 'Herodes modtager guddommelig hyldest og dør',
+        description: 'På den fastsatte dag for den offentlige audiens klæder Herodes sig i sine kongelige klæder – beskrevet af historikeren Josefus som en dragt vævet helt af sølvtråd, der strålede i sollyset – og indtager sin plads på dommerstolen foran den forsamlede skare. Han holder en formel tale til delegationen og publikum. Mængden råber gentagne gange: \'Det er en guds røst, ikke et menneskes!\' Herodes accepterer den guddommelige hyldest uden at protestere eller henvise til Gud – en afgørende stolthedshandling. Fortælleren rapporterer straks: en Herrens engel slog ham, og han blev fortæret af orme og døde. Josefus giver en slående parallel beretning (Antikvit. 19.8.2) og noterer, at Herodes fik svære mavesmerter fra det øjeblik og døde fem dage senere.',
+        timeline_label: 'Herodes slås ihjel af Gud'
+      },
+      word_of_god_grows: {
+        title: 'Guds ord vokser',
+        description: 'I skarp, bevidst kontrast til Herodes\' pludselige død giver Lukas en enkelt opsummerende sætning: Guds ord fortsatte med at vokse og brede sig. Dette er en tilbagevendende formulariske statusrapport i Apostlenes Gerninger – findes også i 6:7 og 19:20 – som fungerer som et fortællende mærke, der signalerer evangeliets sejr over ethvert forsøg på at undertrykke det. Forfølgeren, der dræbte én apostel og fængslede en anden, er død. Den menighed, han angreb, er ikke. Evangeliets fremgang er organisk, ustoppelig og i sidste ende upåvirket af politisk vold.',
+        timeline_label: 'Evangeliet vokser trods modstand'
+      },
+      barnabas_saul_return: {
+        title: 'Barnabas og Saul vender tilbage til Antiokia',
+        description: 'Efter at have fuldført deres hjælpemission til Jerusalem – ved at levere midler indsamlet af menigheden i Antiokia til judæiske troende, der står over for hungersnød, som beskrevet i slutningen af ApG 11 – vender Barnabas og Saul nordpå tilbage til Antiokia. De tager Johannes Markus med. Dette korte vers fungerer som et litterært drejepunkt i Apostlenes Gerninger: Jerusalem-historien er afsluttet, scenen er sat for ApG 13, og den første store missionsrejse er ved at begynde. Johannes Markus\' deltagelse er stille betydningsfuld, da hans tilstedeværelse senere bliver et alvorligt stridspunkt.',
+        timeline_label: 'Barnabas og Saul vender tilbage'
+      }
     },
     timeline: {
-      spirit_descends: { label: 'Ånden falder', relative_time: 'Pinsedag — morgen' },
-      crowd_gathers: { label: 'Skaren samles', relative_time: 'Kort efter lyden' },
-      peters_sermon: { label: 'Peter prædiker', relative_time: 'Tredje time på dagen' },
-      crowd_responds: { label: 'Omvendelse', relative_time: 'Efter prædikenen' },
-      mass_baptism: { label: '3.000 døbt', relative_time: 'Samme dag' },
-      community_life: { label: 'Fællesskab', relative_time: 'Dagligt efter pinse' }
+      herod_kills_james: { label: 'Jakob henrettet', relative_time: 'Kapitlets begyndelse' },
+      peter_arrested: { label: 'Peter fængslet', relative_time: 'Kort efter Jakobs død, under påskeugen' },
+      church_prays_for_peter: { label: 'Vedvarende bønnevagt', relative_time: 'Under hele Peters fængsling' },
+      angel_frees_peter: { label: 'Englen bryder lænkerne', relative_time: 'Natten før Peters retssag' },
+      peter_realizes_freedom: { label: 'Peter på gaden', relative_time: 'Få minutter efter flugten' },
+      rhoda_and_disbelief: { label: 'Rhodas meddelelse', relative_time: 'Kort efter Peters flugt – samme nat' },
+      peter_departs: { label: 'Peters farvel', relative_time: 'Samme nat, efter samtalen med menigheden' },
+      guards_executed: { label: 'Vagterne forhøres og dræbes', relative_time: 'Næste morgen' },
+      herod_moves_to_caesarea: { label: 'Herodes ved Cæsarea', relative_time: 'Nogle dage efter vagternes død' },
+      tyre_sidon_delegation: { label: 'Kystdelegation ankommer', relative_time: 'Efter Herodes har slået sig ned i Cæsarea' },
+      herod_struck_down: { label: 'Herodes dør', relative_time: 'På den fastsatte dag for talen' },
+      word_of_god_grows: { label: 'Evangeliet vokser', relative_time: 'I tiden efter Herodes\' død' },
+      barnabas_saul_return: { label: 'Missionsteam til Antiokia', relative_time: 'Efter hjælpemissionen' }
     }
   }
 };
@@ -681,7 +765,7 @@ function localizeChapter(base, lang) {
   };
 }
 
-const DATA = localizeChapter(ACTS_CH2, INITIAL_LANG);
+const DATA = localizeChapter(ACTS_CH12, INITIAL_LANG);
 const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
 const MAP_TEXT = UI_TEXT.map || {};
 const mapText = key => MAP_TEXT[key] || key;
@@ -714,24 +798,42 @@ function shouldShowYear(tl, idx) {
   return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
 }
 
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  if (marker && yearMarker(base) === marker) return base;
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
 /* ── PERSON COLORS ── */
 const PCOLORS = {
-  holy_spirit:  '#E8591A',
-  peter:        '#5B8FA8',
-  the_eleven:   '#A09070',
-  devout_jews:  '#6B8F71',
-  mockers:      '#A0746A',
-  new_believers:'#7DAA7D',
-  david:        '#9B7EB0',
-  joel:         '#C68B6E',
+  "herod_agrippa": "#A82F1A",
+  "james_zebedee": "#9F8252",
+  "peter": "#E8591A",
+  "angel_of_the_lord": "#D4A24C",
+  "rhoda": "#C896BC",
+  "mary_mother_of_john_mark": "#B57C9A",
+  "john_mark": "#5B8FA8",
+  "barnabas": "#6B8F71",
+  "saul": "#7A6BB0",
+  "james_brother_of_jesus": "#88735A",
+  "blastus": "#6F8790",
+  "jerusalem_church": "#8C6F5A",
+  "people_of_tyre_sidon": "#4F9A8A",
 };
 
-/* ── MAP COORDINATES (SVG 1000×800 viewBox, zoomed tight to Jerusalem area) ── */
+/* ── MAP COORDINATES (SVG 1000x800 viewBox, schematic eastern Mediterranean route map) ── */
 const VW = 1000, VH = 800;
+const locLabel = (id, fallback) => DATA.locations.find(l => l.id === id)?.name || fallback;
 const LOCS = {
-  jerusalem:            { x: 380, y: 420, label: DATA.locations.find(l => l.id === 'jerusalem')?.name || 'Jerusalem' },
-  upper_room_or_temple: { x: 315, y: 490, label: DATA.locations.find(l => l.id === 'upper_room_or_temple')?.name || 'Pentecost House' },
-  temple_area:          { x: 425, y: 382, label: DATA.locations.find(l => l.id === 'temple_area')?.name || 'Temple Area' },
+  jerusalem: { x: 365, y: 410, label: locLabel('jerusalem', 'Jerusalem') },
+  prison_jerusalem: { x: 415, y: 380, label: locLabel('prison_jerusalem', 'Prison') },
+  mary_house_jerusalem: { x: 320, y: 445, label: locLabel('mary_house_jerusalem', 'Mary\'s House') },
+  caesarea_maritima: { x: 195, y: 265, label: locLabel('caesarea_maritima', 'Caesarea') },
+  tyre: { x: 215, y: 175, label: locLabel('tyre', 'Tyre') },
+  sidon: { x: 245, y: 110, label: locLabel('sidon', 'Sidon') },
+  antioch_syria: { x: 610, y: 95, label: locLabel('antioch_syria', 'Antioch') },
+  another_place: { x: 720, y: 540, label: locLabel('another_place', 'Another Place') },
 };
 
 const ABSOLUTE_TIMES = Object.fromEntries(
@@ -806,98 +908,89 @@ function Terrain() {
       {/* Base land */}
       <rect x="0" y="0" width={VW} height={VH} fill="var(--map-land)" />
 
-      {/* ── REGION FILLS with distinct colors ── */}
-      {/* Judea — central region around Jerusalem */}
+      {/* Judea */}
       <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 700 320 780 360 Q 820 380 820 440 Q 820 520 760 560 Q 700 600 580 620 Q 450 640 300 630 Q 180 620 100 580 Q 40 550 30 480 Q 20 420 50 300 Z"
         fill="oklch(87% 0.055 90)" opacity="1" />
       <text x="160" y="580" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
         fill="oklch(48% 0.07 75)" letterSpacing="3" opacity=".7">{mapText('JUDEA')}</text>
 
-      {/* Peraea — east of Jordan */}
+      {/* Peraea */}
       <path d="M 820 200 Q 860 220 920 260 Q 970 300 980 380 Q 990 450 960 520 Q 940 570 900 600 Q 870 620 840 600 Q 820 560 820 500 Q 820 420 820 360 Q 820 280 820 200 Z"
         fill="oklch(82% 0.045 110)" opacity=".85" />
       <text x="880" y="380" fontSize="11" fontFamily="Barlow Condensed" fontWeight="700"
         fill="oklch(42% 0.06 90)" letterSpacing="2" opacity=".65" transform="rotate(90,880,380)">{mapText('PERAEA')}</text>
 
-      {/* Northern region hint */}
+      {/* Northern region */}
       <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 650 310 720 290 Q 780 270 820 200 Q 820 120 780 70 Q 700 30 500 20 Q 300 10 150 50 Q 60 80 40 160 Q 20 230 50 300 Z"
         fill="oklch(85% 0.04 130)" opacity=".6" />
       <text x="200" y="120" fontSize="12" fontFamily="Barlow Condensed" fontWeight="700"
         fill="oklch(40% 0.06 120)" letterSpacing="2" opacity=".55">{mapText('SAMARIA')}</text>
 
-      {/* ── REGION BORDERS — thick, clearly visible ── */}
-      {/* Judea north border */}
+      {/* Region borders */}
       <path d="M 50 300 Q 200 265 380 272 Q 520 278 650 295 Q 730 308 790 330"
         fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
-      {/* Judea east border — Jordan River / Dead Sea edge */}
       <path d="M 790 330 Q 818 370 820 430 Q 820 500 800 560"
         fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
-      {/* Peraea west border = Jordan */}
       <path d="M 820 140 Q 828 220 825 320 Q 822 420 818 520 Q 815 580 820 650"
         fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".7" strokeLinecap="round" />
 
-      {/* ── DEAD SEA ── */}
+      {/* Dead Sea */}
       <path d="M 818 400 Q 835 390 870 400 Q 920 420 940 470 Q 960 520 940 570 Q 920 620 880 640 Q 850 650 830 630 Q 815 610 815 570 Q 814 500 818 400 Z"
         fill="var(--map-water)" opacity=".85" />
       <text x="880" y="520" textAnchor="middle" fontSize="11"
         fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(35% 0.06 220)"
         letterSpacing="1.5" opacity=".8">{mapText('DEAD_SEA')}</text>
 
-      {/* ── JORDAN RIVER ── */}
+      {/* Jordan River */}
       <path d="M 825 30 C 832 120 830 220 825 320 C 821 390 818 420 818 450"
         fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".75" strokeLinecap="round" />
       <text x="842" y="200" fontSize="10" fill="oklch(38% 0.07 220)" opacity=".65"
         fontFamily="Barlow" fontWeight="500" transform="rotate(84,842,200)">{mapText('JORDAN_RIVER')}</text>
 
-      {/* ── Mediterranean Sea (west edge hint) ── */}
+      {/* Mediterranean Sea */}
       <path d="M 0 0 L 0 800 L 40 800 Q 30 600 25 400 Q 20 200 40 0 Z"
         fill="var(--map-water)" opacity=".5" />
       <text x="18" y="400" fontSize="9" fill="oklch(35% 0.06 220)" opacity=".55"
         fontFamily="Barlow Condensed" fontWeight="700" letterSpacing="1"
         transform="rotate(-90,18,400)">{mapText('MEDITERRANEAN')}</text>
 
-      {/* ── KIDRON VALLEY ── */}
+      {/* Coastal road from Caesarea up to Tyre/Sidon */}
+      <path d="M 195 265 Q 205 230 215 175 Q 230 145 245 110"
+        fill="none" stroke="var(--map-road)" strokeWidth="4" opacity=".45"
+        strokeDasharray="8 5" strokeLinecap="round" />
+
+      {/* Inland route from Caesarea to Jerusalem */}
+      <path d="M 195 265 Q 250 320 320 365 Q 350 390 365 410"
+        fill="none" stroke="var(--map-road)" strokeWidth="4" opacity=".4"
+        strokeDasharray="8 5" strokeLinecap="round" />
+
+      {/* Kidron Valley */}
       <path d="M 660 80 Q 590 170 550 260 Q 525 330 515 400 Q 508 460 510 520"
         fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="3.5" opacity=".4" />
       <text x="560" y="290" fontSize="10" fill="oklch(42% 0.05 80)" opacity=".55"
         fontFamily="Barlow" transform="rotate(68,560,290)">{mapText('KIDRON_VALLEY')}</text>
 
-      {/* ── JERUSALEM CITY WALLS ── */}
+      {/* Jerusalem city walls */}
       <rect x="292" y="345" width="165" height="125" rx="8"
         fill="oklch(80% 0.06 80)" opacity=".3"
         stroke="oklch(42% 0.08 60)" strokeWidth="3" />
       <rect x="292" y="345" width="165" height="125" rx="8"
         fill="none" stroke="oklch(62% 0.09 55)" strokeWidth="1.5" opacity=".6" strokeDasharray="6 4" />
 
-      {/* ── TEMPLE MOUNT ── */}
+      {/* Temple Mount */}
       <rect x="382" y="358" width="68" height="52" rx="4"
         fill="oklch(75% 0.08 75)" opacity=".45"
         stroke="oklch(48% 0.08 60)" strokeWidth="2" />
       <text x="416" y="388" textAnchor="middle" fontSize="9.5"
         fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(30% 0.06 55)" opacity=".9">{mapText('TEMPLE')}</text>
 
-      {/* ── ROAD: Mt Olives → Jerusalem ── */}
-      <path d="M 648 228 Q 600 275 560 315 Q 520 352 475 382 Q 445 400 410 413"
-        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".6"
-        strokeDasharray="10 6" strokeLinecap="round" />
-      <text x="545" y="335" fontSize="10" fill="oklch(38% 0.06 70)" opacity=".55"
-        fontFamily="Barlow" transform="rotate(44,545,335)">{mapText('WALK')}</text>
-
-      {/* ── HINNOM VALLEY ── */}
+      {/* Hinnom Valley */}
       <path d="M 140 565 Q 220 598 305 590 Q 348 586 378 572 Q 398 560 408 542"
         fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="2.5" opacity=".35" />
       <text x="220" y="625" fontSize="9.5" fill="oklch(42% 0.05 80)" opacity=".45"
         fontFamily="Barlow">{mapText('HINNOM_VALLEY')}</text>
 
-      {/* ── AKELDAMA (Field of Blood) ── */}
-      <circle cx="355" cy="572" r="10"
-        fill="oklch(60% 0.14 30)" opacity=".25"
-        stroke="var(--accent)" strokeWidth="2" />
-      <text x="372" y="577" fontSize="10"
-        fill="var(--accent)" opacity=".7"
-        fontFamily="Barlow" fontStyle="italic" fontWeight="500">Akeldama</text>
-
-      {/* ── MOUNT OF OLIVES ridge ── */}
+      {/* Mount of Olives */}
       <ellipse cx="668" cy="255" rx="115" ry="85"
         fill="oklch(82% 0.05 100)" opacity=".45"
         stroke="oklch(55% 0.06 80)" strokeWidth="1.5" />
@@ -905,25 +998,25 @@ function Terrain() {
         fontFamily="Barlow Condensed" fontWeight="800" fill="oklch(35% 0.07 70)"
         letterSpacing="1.5" opacity=".75">{mapText('MOUNT_OF_OLIVES')}</text>
 
-      {/* ── Bethany ── */}
+      {/* Bethany */}
       <circle cx="790" cy="240" r="6" fill="oklch(55% 0.07 80)" opacity=".45" />
       <text x="802" y="244" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".6"
         fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHANY')}</text>
 
-      {/* ── Bethlehem ── */}
+      {/* Bethlehem */}
       <circle cx="310" cy="720" r="6" fill="oklch(55% 0.07 80)" opacity=".4" />
       <text x="322" y="724" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".5"
         fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHLEHEM')}</text>
 
-      {/* ── Scale bar ── */}
+      {/* Scale bar */}
       <g transform="translate(60,755)">
         <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
         <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
         <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
-        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~1 km</text>
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~50 km</text>
       </g>
 
-      {/* ── North arrow ── */}
+      {/* North arrow */}
       <g transform="translate(60,95)">
         <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
         <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
@@ -934,7 +1027,6 @@ function Terrain() {
   );
 }
 
-/* ── ROUTE LINES — removed, dots animate instead ── */
 function RouteLines() { return null; }
 
 /* ── LOCATION MARKERS ── */
@@ -966,7 +1058,7 @@ function LocationMarkers({ activeLocId }) {
   );
 }
 
-/* ── PERSON DOTS — stable keys, trail effect ── */
+/* ── PERSON DOTS ── */
 function PersonDots({ personStates, prevStates }) {
   const pids = Object.keys(ROUTES);
 
@@ -1053,7 +1145,6 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
   const loc     = DATA.locations.find(l => l.id === locId);
   const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
 
-  // Track previous event's states to show trail
   const prevStatesRef = useRef(null);
   const prevEventRef  = useRef(null);
   const [prevStates, setPrevStates] = useState(null);
@@ -1070,7 +1161,6 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
 
   return (
     <div className="map-col">
-      {/* Event banner */}
       <div className="map-event-banner">
         <div className="ban-verses">{ev?.verses}</div>
         <div className="ban-content">
@@ -1085,7 +1175,6 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
         )}
       </div>
 
-      {/* Map */}
       <div className="map-svg-wrap">
         <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
           <Terrain />
@@ -1095,7 +1184,6 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
       </div>
 
       <div className="map-controls-panel">
-        {/* Person legend */}
         <div className="map-person-legend">
           {legendItems.map(([pid, s]) => (
             <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
@@ -1122,14 +1210,14 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
                 aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
                 onClick={() => onEventChange(tl.event_id)}
               >
-                <span className="playback-step-time">{compactTimeLabel(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time, shouldShowYear(tl, idx))}</span>
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
               </button>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Pentecost'}</div>
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Caesarea · Tyre · Sidon · Antioch'}</div>
     </div>
   );
 }
@@ -1140,7 +1228,6 @@ function TimelinePanel({ activeEventId, onEventChange }) {
   const entryRefs = useRef({});
   const observing = useRef(false);
 
-  // IntersectionObserver: set active event as entries scroll into view
   useEffect(() => {
     const root = scrollRef.current;
     if (!root) return;
@@ -1176,11 +1263,15 @@ function TimelinePanel({ activeEventId, onEventChange }) {
     return () => clearTimeout(timer);
   }, [activeEventId]);
 
+  /* Badges mark Herod's persecution, Peter's escape, the aftermath, divine judgment, and the Antioch hinge. */
+  const BADGE_POSITIONS = { 0: 0, 3: 1, 7: 2, 10: 3, 12: 4 };
+  const DEFAULT_BADGES = ['Herod\'s Persecution', 'Miraculous Escape', 'Aftermath', 'Divine Judgment', 'Antioch Hinge'];
+
   return (
     <div className="tl-col">
       <div className="tl-chapter-strip">
-        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} 2</div>
-        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Fire from <em>Heaven</em></>}</div>
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Chains <em>and Angels</em></>}</div>
       </div>
 
       <div className="tl-list" ref={scrollRef}>
@@ -1190,9 +1281,10 @@ function TimelinePanel({ activeEventId, onEventChange }) {
             if (!ev) return null;
             const active = activeEventId === tl.event_id;
             const timeInfo = ABSOLUTE_TIMES[tl.event_id];
-            // Year badges: one before prologue (composition date), one before the AD30 events
-            const showYearBadge = idx === 0 || idx === 1;
-            const yearLabel = UI_TEXT.yearBadges?.[idx === 0 ? 0 : 1] || (idx === 0 ? 'Pentecost — Spirit Falls' : 'Jerusalem — Public Witness');
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
             return (
               <React.Fragment key={tl.event_id}>
                 {showYearBadge && (
@@ -1222,7 +1314,6 @@ function TimelinePanel({ activeEventId, onEventChange }) {
               </React.Fragment>
             );
           })}
-          {/* bottom pad — extra tall so last item can fully scroll into the trigger zone */}
           <div style={{ height: 'calc(100vh - 200px)' }} />
         </div>
       </div>
@@ -1238,7 +1329,7 @@ function App() {
   useEffect(() => {
     document.body.className = 'theme-a';
     document.documentElement.lang = INITIAL_LANG;
-    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} 2 — ${DATA.chapter_title}`;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
     localStorage.setItem('bf-theme', 'a');
   }, []);
 
@@ -1247,11 +1338,7 @@ function App() {
     setActiveEv(prev => {
       const current = DATA.timeline.findIndex(t => t.event_id === prev);
       if (dir < 0 && current === 0) {
-        window.top.location.href = '/bible/acts/001';
-        return prev;
-      }
-      if (dir > 0 && current === DATA.timeline.length - 1) {
-        window.top.location.href = '/bible/acts/003';
+        window.top.location.href = '/bible/acts/011';
         return prev;
       }
       const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
@@ -1261,11 +1348,10 @@ function App() {
 
   return (
     <div className="app">
-      {/* Header */}
       <div className="header">
-        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} 2</span>
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
         <span className="hdr-title">{DATA.chapter_title}</span>
-        <span className="hdr-sub">{UI_TEXT.headerSub || '— Pentecost · AD 30'}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '— Jerusalem, Caesarea, Tyre, Sidon, and Antioch · Spring–Summer AD 44'}</span>
         <div className="hdr-space" />
         <a className="home-link" href="/bible" target="_top">
           {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
@@ -1275,7 +1361,6 @@ function App() {
         </button>
       </div>
 
-      {/* Body */}
       <div className="body">
         <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
         <MapPanel

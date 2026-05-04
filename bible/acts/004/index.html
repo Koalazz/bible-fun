@@ -3,12 +3,435 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Acts Chapter 2 — Fire from Heaven</title>
+<title>Acts Chapter 4 — Bold Before the Council</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="acts-ch2-data.js"></script>
+<script>
+const ACTS_CH4 = {
+  "book": "Acts",
+  "chapter": 4,
+  "chapter_title": "Bold Before the Council",
+  "chapter_summary": "The Jerusalem temple authorities arrest Peter and John after their sermon in Solomon's Portico and hold them overnight, but despite the crackdown the number of believers grows to about five thousand. The next day the apostles are brought before the Sanhedrin — the supreme Jewish council — where Peter boldly declares that salvation is found only in Jesus Christ, leaving the council at a loss because they cannot deny the healing of the lame man. Released with a warning to stop speaking in Jesus's name, Peter and John return to the community, which responds with a prayer for even greater boldness, and the Spirit shakes the meeting place. The chapter closes with a picture of radical communal generosity, including the example of a man named Barnabas.",
+  "date_range": {
+    "approximate": "Summer–Autumn AD 30 (or AD 33)",
+    "notes": "Continuous with the events of chapter 3; the arrest, overnight detention, and trial take place over a span of less than two days, shortly after Pentecost."
+  },
+  "persons": [
+    {
+      "id": "peter",
+      "name": "Peter",
+      "role": "Apostle, Defendant, Preacher",
+      "first_mention_verse": "4:1",
+      "summary": "Peter, filled with the Holy Spirit, answers the Sanhedrin's interrogation with a bold declaration that the healing was performed in the name of Jesus Christ of Nazareth, whom God raised from the dead and who is the only source of salvation. His courage astonishes the council, which had expected frightened fishermen.",
+      "significance": "Peter's fearless testimony before the highest Jewish court demonstrates the Holy Spirit's fulfillment of Jesus's promise that followers would not need to worry about what to say when brought before authorities (Luke 12:11-12)."
+    },
+    {
+      "id": "john",
+      "name": "John (son of Zebedee)",
+      "role": "Apostle, Defendant",
+      "first_mention_verse": "4:1",
+      "summary": "John is arrested alongside Peter and stands with him before the Sanhedrin the next day. The council notes that both Peter and John are 'unschooled, ordinary men' who show remarkable courage, recognizing that they had been with Jesus.",
+      "significance": "John's joint arrest and trial with Peter establishes the apostolic partnership as a model of courageous witness under official pressure, a pattern that will repeat throughout Acts."
+    },
+    {
+      "id": "priests_and_captain",
+      "name": "The Priests, the Captain of the Temple Guard, and the Sadducees",
+      "role": "Temple Authorities, Antagonists, Group",
+      "first_mention_verse": "4:1",
+      "summary": "These religious and security officials are disturbed by the apostles' teaching because it proclaims Jesus's resurrection from the dead — a doctrine the Sadducees specifically rejected. They seize Peter and John and have them detained overnight until a formal hearing can be arranged.",
+      "significance": "They represent the first formal institutional opposition to the Jesus movement, establishing the pattern of religious-authority persecution that drives much of Acts."
+    },
+    {
+      "id": "annas",
+      "name": "Annas the High Priest",
+      "role": "High Priest (former)",
+      "first_mention_verse": "4:6",
+      "summary": "Annas, the former high priest who retained enormous authority even after his official tenure ended, is among those present at the Sanhedrin hearing against Peter and John. He is named first, indicating his seniority in the council.",
+      "significance": "Annas is linked to the earlier trial of Jesus in the Gospel of John, connecting the opposition to the disciples with the same power structures that condemned their master."
+    },
+    {
+      "id": "caiaphas",
+      "name": "Caiaphas",
+      "role": "High Priest (ruling)",
+      "first_mention_verse": "4:6",
+      "summary": "Caiaphas is the sitting high priest and the official head of the Sanhedrin, present at the hearing of Peter and John. He was the same official who presided over Jesus's trial and condemned him.",
+      "significance": "Caiaphas's presence draws an explicit parallel between the treatment of Jesus and the treatment of his followers, reinforcing the Lukan theme that the church shares in Jesus's suffering and vindication."
+    },
+    {
+      "id": "sanhedrin",
+      "name": "The Sanhedrin (Jerusalem Council)",
+      "role": "Ruling Council, Antagonists, Group",
+      "first_mention_verse": "4:5",
+      "summary": "The full assembly of rulers, elders, and teachers of the law gathers in Jerusalem to interrogate Peter and John. After hearing Peter's bold defense and seeing the healed man standing beside them, they can find no way to punish the apostles without causing a public outcry.",
+      "significance": "The Sanhedrin's impotence in the face of an undeniable miracle and a Spirit-filled defense is a pivotal narrative moment showing that no human authority can halt the mission God has set in motion."
+    },
+    {
+      "id": "healed_lame_man",
+      "name": "The Formerly Lame Man",
+      "role": "Living Evidence",
+      "first_mention_verse": "4:10",
+      "summary": "The man healed in chapter 3 stands alongside Peter and John before the Sanhedrin, his physical presence making any denial of the miracle impossible. He is mentioned as standing with the apostles, a silent but powerful witness.",
+      "significance": "His presence transforms the legal hearing into an exhibition of divine power — the council cannot argue with a man who, by all their knowledge, should still be unable to stand."
+    },
+    {
+      "id": "early_community",
+      "name": "The Believing Community",
+      "role": "Community, Group",
+      "first_mention_verse": "4:23",
+      "summary": "When Peter and John are released, they return to the gathered community and report what happened. The group responds by praying aloud together — a prayer recorded in some detail — and the place where they are meeting is shaken as the Spirit fills them afresh and they speak the word of God boldly.",
+      "significance": "The community's corporate prayer and Spirit-filling models the church as a praying organism whose boldness is collectively renewed, not just an aggregate of individually brave leaders."
+    },
+    {
+      "id": "barnabas",
+      "name": "Barnabas (Joseph, a Levite from Cyprus)",
+      "role": "Believer, Example of Generosity",
+      "first_mention_verse": "4:36",
+      "summary": "Barnabas is introduced at the end of the chapter as a Levite from Cyprus who sells a field and brings the money to the apostles — a concrete embodiment of the community's generous sharing. The apostles have given him the nickname Barnabas, meaning 'Son of Encouragement.'",
+      "significance": "Barnabas will become one of the most important secondary figures in Acts, Paul's first ministry partner and the person who vouches for Paul's conversion to the skeptical Jerusalem church."
+    }
+  ],
+  "locations": [
+    {
+      "id": "solomons_portico",
+      "name": "Solomon's Portico",
+      "modern_name": "Temple Mount, Jerusalem (eastern colonnade)",
+      "lat": 31.7781,
+      "lng": 35.2361,
+      "description": "The colonnade where Peter was preaching when the authorities arrive to arrest him and John at the end of the previous chapter."
+    },
+    {
+      "id": "jerusalem_jail",
+      "name": "The Jail (in Jerusalem)",
+      "modern_name": "disputed",
+      "lat": 31.776,
+      "lng": 35.234,
+      "description": "Peter and John are detained overnight in Jerusalem before their appearance before the Sanhedrin the next morning; the exact location within the city is not specified."
+    },
+    {
+      "id": "sanhedrin_hall",
+      "name": "The Meeting Hall of the Rulers (Jerusalem)",
+      "modern_name": "disputed",
+      "lat": 31.775,
+      "lng": 35.231,
+      "description": "The room in Jerusalem where the Sanhedrin convened, traditionally associated with the Chamber of Hewn Stone near the temple, where Peter and John are interrogated."
+    },
+    {
+      "id": "community_gathering_place",
+      "name": "Their Own People (Gathering Place)",
+      "modern_name": "disputed",
+      "lat": 31.772,
+      "lng": 35.229,
+      "description": "The place where the community of believers gathered after Peter and John's release, likely connected to the Upper Room tradition, shaken by the Spirit during the corporate prayer."
+    },
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The city where all these events unfold, still the geographic center of the early church's activity in Acts 1–7."
+    }
+  ],
+  "events": [
+    {
+      "id": "arrest_of_apostles",
+      "sequence": 1,
+      "verses": "4:1-4",
+      "title": "Peter and John Are Arrested",
+      "description": "While Peter is still speaking in Solomon's Portico, the priests, the captain of the temple guard, and the Sadducees arrive and are greatly disturbed. Their specific concern is that the apostles are teaching the people and 'proclaiming in Jesus the resurrection of the dead' — a doctrine the Sadducees reject on principle. The authorities seize Peter and John and, since it is already evening, put them in jail until the next day. Despite the arrest, the number of men who believed reaches about five thousand — a striking detail showing the movement cannot simply be stopped by locking up its leaders.",
+      "location_id": "solomons_portico",
+      "persons_present": [
+        "peter",
+        "john",
+        "priests_and_captain",
+        "early_community"
+      ],
+      "timeline_label": "Apostles Arrested",
+      "scroll_anchor": "arrest-of-apostles",
+      "visual_notes": "Armed temple guards pushing through a crowd, hands gripping Peter and John; background crowd watching in alarm; late evening golden-orange light shifting toward dusk."
+    },
+    {
+      "id": "overnight_detention",
+      "sequence": 2,
+      "verses": "4:3",
+      "title": "Overnight in Custody",
+      "description": "Because it is already evening, the authorities cannot hold a formal hearing until the next day, so Peter and John spend the night in custody. The juxtaposition with verse 4 — that the number of believers grows to five thousand despite or because of the arrest — signals that imprisonment cannot stop the word from spreading.",
+      "location_id": "jerusalem_jail",
+      "persons_present": [
+        "peter",
+        "john"
+      ],
+      "timeline_label": "Night in Jail",
+      "scroll_anchor": "overnight-detention",
+      "visual_notes": "Two figures in a darkened cell or guardroom, stone walls, small light source; tranquil rather than distressed expressions, suggesting inner peace despite confinement."
+    },
+    {
+      "id": "sanhedrin_convenes",
+      "sequence": 3,
+      "verses": "4:5-7",
+      "title": "The Sanhedrin Convenes",
+      "description": "The next day, the rulers, elders, and teachers of the law assemble in Jerusalem along with the high priest Annas, his son-in-law Caiaphas, and other members of the high-priestly family. Peter and John are brought before them and asked: 'By what power or what name did you do this?' The question is a legal challenge — if the apostles claim any sacred authority, the council can evaluate and potentially condemn them for acting without sanction.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "peter",
+        "john",
+        "annas",
+        "caiaphas",
+        "sanhedrin",
+        "healed_lame_man"
+      ],
+      "timeline_label": "Council Hearing",
+      "scroll_anchor": "sanhedrin-convenes",
+      "visual_notes": "Semicircular council chamber in stone, robed officials seated in rows, Peter and John standing in the center, the healed man visible beside them; formal, charged atmosphere."
+    },
+    {
+      "id": "peters_defense",
+      "sequence": 4,
+      "verses": "4:8-12",
+      "title": "Peter's Spirit-Filled Defense",
+      "description": "Filled with the Holy Spirit, Peter addresses the council as 'rulers and elders of the people' — a formal, respectful opening that signals he is not afraid. He states plainly that the man stands before them healed through the name of Jesus Christ of Nazareth, whom they crucified but whom God raised from the dead. Using Psalm 118's image of a rejected stone becoming the cornerstone, Peter declares that Jesus is the cornerstone, and that 'salvation is found in no one else — there is no other name under heaven given to mankind by which we must be saved.' This final statement becomes one of the most quoted theological affirmations in the book.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "peter",
+        "john",
+        "annas",
+        "caiaphas",
+        "sanhedrin",
+        "healed_lame_man"
+      ],
+      "timeline_label": "Peter's Declaration",
+      "scroll_anchor": "peters-defense",
+      "visual_notes": "Peter mid-speech, posture upright and unintimidated, council members leaning forward or exchanging glances; the healed man standing to one side as living proof; shaft of morning light illuminating Peter's face."
+    },
+    {
+      "id": "council_deliberates",
+      "sequence": 5,
+      "verses": "4:13-22",
+      "title": "The Council's Dilemma",
+      "description": "The council members are astonished at the boldness of Peter and John and realize they are 'unschooled, ordinary men' — yet they recognize that they had been with Jesus. Seeing the healed man standing there, they can say nothing against the miracle. They send the apostles out of the room and debate among themselves: the miracle is undeniable and the whole city knows about it, so they cannot deny it. They decide to warn the apostles to speak no more in the name of Jesus, threatening them to prevent further spread. When they call them back in and give this order, Peter and John respond that they must obey God rather than human beings and that they cannot stop speaking about what they have seen and heard. After further threats, the council releases them, finding no way to punish them without provoking the people who are all praising God for what happened.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "sanhedrin",
+        "annas",
+        "caiaphas",
+        "peter",
+        "john"
+      ],
+      "timeline_label": "Council Debates",
+      "scroll_anchor": "council-deliberates",
+      "visual_notes": "Split-frame: left shows huddled council members in whispered debate, right shows Peter and John waiting calmly outside; then reunion scene, Peter replying firmly to officials who look frustrated."
+    },
+    {
+      "id": "apostles_return",
+      "sequence": 6,
+      "verses": "4:23-24",
+      "title": "Released Apostles Return to the Community",
+      "description": "Peter and John are released and go straight back to their own people, reporting everything the chief priests and elders had said to them. The community's immediate response is to lift their voices together to God. Their solidarity with the apostles and their instinct to pray rather than panic or strategize politically marks them as a community shaped by dependence on God.",
+      "location_id": "community_gathering_place",
+      "persons_present": [
+        "peter",
+        "john",
+        "early_community"
+      ],
+      "timeline_label": "Return and Report",
+      "scroll_anchor": "apostles-return",
+      "visual_notes": "Joyful reunion, Peter and John walking into a room full of people; faces showing relief mixed with determination; people reaching out to embrace them."
+    },
+    {
+      "id": "community_prayer",
+      "sequence": 7,
+      "verses": "4:24-31",
+      "title": "The Community Prays for Boldness",
+      "description": "The community prays together in a theologically rich prayer that begins by addressing God as the Creator of heaven, earth, sea, and everything in them. They cite Psalm 2 and apply it to the recent events — Herod, Pontius Pilate, the Gentiles, and the people of Israel conspired against Jesus, doing what God's power and will had decided beforehand should happen. They then ask not for safety or the removal of opposition, but for boldness to speak God's word, and for God to stretch out his hand in healing and miraculous signs through the name of Jesus. When they finish praying, the place where they are meeting is shaken, they are all filled with the Holy Spirit, and they speak the word of God boldly.",
+      "location_id": "community_gathering_place",
+      "persons_present": [
+        "early_community",
+        "peter",
+        "john"
+      ],
+      "timeline_label": "Prayer and Spirit",
+      "scroll_anchor": "community-prayer",
+      "visual_notes": "Group of people with hands raised or heads bowed, some kneeling; stone building slightly trembling, dust from ceiling; warm glow representing the Spirit's filling; dynamic, energetic composition."
+    },
+    {
+      "id": "communal_generosity",
+      "sequence": 8,
+      "verses": "4:32-37",
+      "title": "Radical Sharing in the Community",
+      "description": "The narrator describes the community as unified in heart and mind, with no one claiming any possessions as their own. The apostles continue to testify to Jesus's resurrection with great power, and God's grace is powerfully at work among them. No one in the community is needy because those who own land or houses sell them and bring the proceeds to the apostles for distribution to those in need. The section closes with the specific example of Barnabas, a Levite from Cyprus, who sells a field and brings the full proceeds to the apostles.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "early_community",
+        "barnabas",
+        "peter",
+        "john"
+      ],
+      "timeline_label": "Radical Generosity",
+      "scroll_anchor": "communal-generosity",
+      "visual_notes": "Barnabas kneeling and placing a bag of coins at the feet of the apostles; background showing community members distributing food and goods to others; warm, inviting communal interior with diverse faces."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "peter",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "solomons_portico",
+          "event_id": "arrest_of_apostles",
+          "note": "Arrested while preaching in the portico"
+        },
+        {
+          "order": 2,
+          "location_id": "jerusalem_jail",
+          "event_id": "overnight_detention",
+          "note": "Held overnight in custody"
+        },
+        {
+          "order": 3,
+          "location_id": "sanhedrin_hall",
+          "event_id": "sanhedrin_convenes",
+          "note": "Brought before the Sanhedrin the next morning"
+        },
+        {
+          "order": 4,
+          "location_id": "sanhedrin_hall",
+          "event_id": "peters_defense",
+          "note": "Delivers Spirit-filled defense before the council"
+        },
+        {
+          "order": 5,
+          "location_id": "community_gathering_place",
+          "event_id": "apostles_return",
+          "note": "Returns to the community after release"
+        },
+        {
+          "order": 6,
+          "location_id": "community_gathering_place",
+          "event_id": "community_prayer",
+          "note": "Prays with the community and is refilled with the Spirit"
+        }
+      ]
+    },
+    {
+      "person_id": "john",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "solomons_portico",
+          "event_id": "arrest_of_apostles",
+          "note": "Arrested with Peter"
+        },
+        {
+          "order": 2,
+          "location_id": "jerusalem_jail",
+          "event_id": "overnight_detention",
+          "note": "Detained overnight"
+        },
+        {
+          "order": 3,
+          "location_id": "sanhedrin_hall",
+          "event_id": "sanhedrin_convenes",
+          "note": "Stands trial with Peter"
+        },
+        {
+          "order": 4,
+          "location_id": "community_gathering_place",
+          "event_id": "apostles_return",
+          "note": "Returns with Peter to the community"
+        }
+      ]
+    },
+    {
+      "person_id": "barnabas",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "communal_generosity",
+          "note": "Sells field and brings proceeds to the apostles in Jerusalem"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "arrest_of_apostles",
+      "position": 1,
+      "label": "Arrest at Evening",
+      "relative_time": "Evening of the healing day",
+      "absolute_time": "Sometime after Pentecost, AD 30 or 33"
+    },
+    {
+      "event_id": "overnight_detention",
+      "position": 2,
+      "label": "Overnight in Custody",
+      "relative_time": "That night",
+      "absolute_time": "Same night"
+    },
+    {
+      "event_id": "sanhedrin_convenes",
+      "position": 3,
+      "label": "Morning Trial",
+      "relative_time": "Next morning",
+      "absolute_time": "Following day"
+    },
+    {
+      "event_id": "peters_defense",
+      "position": 4,
+      "label": "Spirit-Filled Defense",
+      "relative_time": "During the morning hearing",
+      "absolute_time": "Same morning"
+    },
+    {
+      "event_id": "council_deliberates",
+      "position": 5,
+      "label": "Council's Failed Threat",
+      "relative_time": "Later that morning",
+      "absolute_time": "Same morning"
+    },
+    {
+      "event_id": "apostles_return",
+      "position": 6,
+      "label": "Release and Return",
+      "relative_time": "That day",
+      "absolute_time": "Same day"
+    },
+    {
+      "event_id": "community_prayer",
+      "position": 7,
+      "label": "Boldness Prayer",
+      "relative_time": "Shortly after the apostles return",
+      "absolute_time": "Same day"
+    },
+    {
+      "event_id": "communal_generosity",
+      "position": 8,
+      "label": "Community Sharing Described",
+      "relative_time": "Ongoing in the days following",
+      "absolute_time": "Summer–Autumn AD 30 or 33"
+    }
+  ],
+  "theological_themes": [
+    "Exclusive salvation through Jesus Christ alone",
+    "The church as a praying community that seeks boldness, not safety",
+    "Fulfillment of Psalm 118 (cornerstone) and Psalm 2 (rulers against the Lord's anointed)",
+    "The tension between obedience to God and obedience to human authorities",
+    "Communal generosity as a visible expression of the Spirit's work",
+    "The Holy Spirit as the source of apostolic courage under interrogation"
+  ],
+  "discussion_questions": [
+    "Peter's declaration in 4:12 — 'no other name under heaven' — is one of the most contested verses in the book. What is its rhetorical function in the specific courtroom context where it is spoken?",
+    "The community's prayer asks for boldness rather than protection or justice — what does this reveal about their values and their understanding of their mission?",
+    "Why do you think Luke includes the detail that Peter and John were 'unschooled, ordinary men' — and what does the council's astonishment at their courage suggest?",
+    "What is the difference between Barnabas's act of generosity in 4:36-37 and Ananias and Sapphira's act in the next chapter? What makes one praiseworthy and the other deadly?",
+    "The apostles say 'we cannot help speaking about what we have seen and heard' (4:20) — what is the relationship between personal testimony and formal theology in their proclamation?"
+  ]
+};
+
+</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, #root { height: 100%; overflow: hidden; }
@@ -612,11 +1035,11 @@ const CHAPTER_TEXT = {
   da: {
     book: 'Apostlenes Gerninger',
     shortBook: 'ApG',
-    chapterTitle: 'Ild fra himlen',
-    headerSub: '— Pinse · år 30',
-    timelineTitle: ['Ild fra', 'himlen'],
-    mapCorner: 'Jerusalem · pinse',
-    yearBadges: ['Pinse — Ånden falder', 'Jerusalem — offentligt vidnesbyrd'],
+    chapterTitle: 'Frimodige foran rådet',
+    headerSub: '— Rådsforhør · år 30',
+    timelineTitle: ['Frimodige foran', 'rådet'],
+    mapCorner: 'Jerusalem · tempelområdet',
+    yearBadges: ['Efter pinse — arrestation og natten', 'Rådet og menigheden'],
     map: {
       JUDEA: 'JUDÆA',
       PERAEA: 'PERÆA',
@@ -626,7 +1049,7 @@ const CHAPTER_TEXT = {
       MEDITERRANEAN: 'MIDDELHAVET ←',
       KIDRON_VALLEY: 'Kidrondalen',
       TEMPLE: 'TEMPLET',
-      WALK: '~900 m vandring',
+      WALK: 'bevægelse gennem byen',
       HINNOM_VALLEY: 'Hinnoms dal',
       MOUNT_OF_OLIVES: 'OLIEBJERGET',
       BETHANY: 'Betania',
@@ -634,34 +1057,41 @@ const CHAPTER_TEXT = {
     },
     locations: {
       jerusalem: { name: 'Jerusalem' },
-      upper_room_or_temple: { name: 'Huset hvor de sad' },
-      temple_area: { name: 'Tempelområdet / Salomos søjlegang' }
+      solomons_portico: { name: 'Salomos søjlegang' },
+      jerusalem_jail: { name: 'Fængslet i Jerusalem' },
+      sanhedrin_hall: { name: 'Rådets mødesal' },
+      community_gathering_place: { name: 'Menighedens samlingssted' }
     },
     persons: {
-      holy_spirit: 'Helligånden',
       peter: 'Peter',
-      the_eleven: 'De elleve apostle',
-      devout_jews: 'Fromme jøder fra alle folkeslag',
-      david: 'David',
-      joel: 'Joel',
-      new_believers: 'De tre tusind omvendte',
-      mockers: 'Spottere i mængden'
+      john: 'Johannes',
+      priests_and_captain: 'Præsterne, tempelvagtens anfører og saddukæerne',
+      annas: 'Annas',
+      caiaphas: 'Kajfas',
+      sanhedrin: 'Rådet',
+      healed_lame_man: 'Den helbredte mand',
+      early_community: 'Den troende menighed',
+      barnabas: 'Barnabas'
     },
     events: {
-      spirit_descends: { title: 'Helligånden falder på pinsedagen', description: 'Mens alle de troende er samlet på pinsedagen, fylder en lyd som et kraftigt vindstød hele huset. Tunger som af ild fordeler sig og sætter sig på hver enkelt. Alle bliver fyldt af Helligånden og begynder at tale på andre sprog, sådan som Ånden giver dem at tale. Det opfylder Jesu løfte om, at disciplene skulle døbes med Helligånden.', timeline_label: 'Ånden falder' },
-      crowd_gathers: { title: 'Den flersprogede skare samles', description: 'Lyden tiltrækker en stor skare jødiske pilgrimme fra alle folkeslag, som opholder sig i Jerusalem til festen. Hver enkelt hører disciplene tale på sit eget modersmål, og mængden bliver forvirret og forundret. De nævner områder som Partien, Medien, Mesopotamien, Egypten, Rom, Kreta og Arabien og spørger, hvad det betyder. Nogle afviser dog det hele og siger, at disciplene er berusede.', timeline_label: 'Skaren samles' },
-      peters_sermon: { title: 'Peters pinseprædiken', description: 'Peter træder frem sammen med de elleve og taler højt til mængden. Han afviser beskyldningen om beruselse ved at pege på, at det kun er tredje time på dagen. Derefter citerer han profeten Joel for at forklare, at Åndens udgydelse opfylder profetien om de sidste dage. Han vidner om Jesus, hans undere, hans korsfæstelse og hans opstandelse, sådan som David forudsagde i Salmerne. Peter slutter med at erklære, at Gud har gjort Jesus til både Herre og Kristus.', timeline_label: 'Peter prædiker' },
-      crowd_responds: { title: 'Skaren rammes i hjertet', description: 'Mængden bliver dybt berørt og spørger Peter og de andre apostle, hvad de skal gøre. Peter siger, at de skal omvende sig og lade sig døbe i Jesu Kristi navn til syndernes forladelse, og at de også skal få Helligåndens gave. Han forklarer, at løftet gælder dem, deres børn og alle, som Herren kalder.', timeline_label: 'Kald til omvendelse' },
-      mass_baptism: { title: 'Tre tusind bliver døbt', description: 'Omkring tre tusind mennesker tager imod Peters ord, bliver døbt og føjes til fællesskabet samme dag. Denne ene dags høst viser, at forkyndelsen i Åndens kraft får en afgørende offentlig virkning.', timeline_label: '3.000 døbt' },
-      community_life: { title: 'Det første kristne fællesskab', description: 'De nye troende holder fast ved apostlenes lære, fællesskabet, brødsbrydelsen og bønnerne. Apostlene gør mange tegn og undere, og ærefrygt fylder byen. De troende deler deres ejendele, mødes dagligt på tempelpladsen og spiser sammen i hjemmene med glæde og oprigtigt hjerte, mens Herren hver dag føjer nye til.', timeline_label: 'Fællesskabet formes' }
+      arrest_of_apostles: { title: 'Peter og Johannes arresteres', description: 'Mens Peter og Johannes talte til folket, kom præsterne, tempelvagtens anfører og saddukæerne og tog dem i forvaring til næste dag.', timeline_label: 'Apostlene arresteres' },
+      overnight_detention: { title: 'Natten i varetægt', description: 'Selvom de to apostle var fængslede, troede mange af dem, der hørte ordet — nu var antallet af mænd vokset til omkring fem tusind.', timeline_label: 'Natten i fængslet' },
+      sanhedrin_convenes: { title: 'Rådet samles til forhør', description: 'Næste dag samlede lederne, de ældste og de skriftlærde sig i Jerusalem — Annas ypperstepræsten, Kajfas, Johannes, Alexander og alle af ypperstepræstens slægt.', timeline_label: 'Rådsforhøret' },
+      peters_defense: { title: 'Peters åndsfyldte forsvar', description: 'Fyldt af Helligånden erklærede Peter, at helbredelsen skete ved Jesu Kristi af Nazarets navn — ham, I korsfæstede, og som Gud opvakte fra de døde.', timeline_label: 'Peters erklæring' },
+      council_deliberates: { title: 'Rådets dilemma', description: 'Da rådet så Peters og Johannes\' frimodighed og indså, at de var ulærde og jævne mænd, undrede de sig. De kendte dem som Jesu ledsagere. Fordi de ikke kunne nægte miraklet, befalede de dem at holde op med at tale i Jesu navn.', timeline_label: 'Rådet debatterer' },
+      apostles_return: { title: 'De løsladte apostle vender hjem', description: 'Peter og Johannes vendte tilbage til de andre og fortalte alt, hvad ypperstepræsterne og de ældste havde sagt til dem.', timeline_label: 'Hjemkomst og beretning' },
+      community_prayer: { title: 'Menigheden beder om frimodighed', description: 'Da de hørte det, bad de alle med én røst til Gud og bad om mod til at tale hans ord dristigt. Det sted rystede, alle blev fyldt af Helligånden og talte Guds ord med frimodighed.', timeline_label: 'Bøn og Ånd' },
+      communal_generosity: { title: 'Radikal deling i menigheden', description: 'Ingen i menigheden manglede noget, fordi de, der ejede jord eller huse, solgte dem og lagde pengene ved apostlenes fødder til fordeling. Barnabas sælger en mark og bringer det fulde beløb.', timeline_label: 'Radikal gavmildhed' }
     },
     timeline: {
-      spirit_descends: { label: 'Ånden falder', relative_time: 'Pinsedag — morgen' },
-      crowd_gathers: { label: 'Skaren samles', relative_time: 'Kort efter lyden' },
-      peters_sermon: { label: 'Peter prædiker', relative_time: 'Tredje time på dagen' },
-      crowd_responds: { label: 'Omvendelse', relative_time: 'Efter prædikenen' },
-      mass_baptism: { label: '3.000 døbt', relative_time: 'Samme dag' },
-      community_life: { label: 'Fællesskab', relative_time: 'Dagligt efter pinse' }
+      arrest_of_apostles: { label: 'Arrestation om aftenen', relative_time: 'Aftenen på helbredelsesdagen' },
+      overnight_detention: { label: 'Natten i varetægt', relative_time: 'Den nat' },
+      sanhedrin_convenes: { label: 'Morgensretssagen', relative_time: 'Næste morgen' },
+      peters_defense: { label: 'Åndsfyldt forsvar', relative_time: 'Under forhøret' },
+      council_deliberates: { label: 'Rådets mislykkede trussel', relative_time: 'Samme morgen' },
+      apostles_return: { label: 'Frigivelse og hjemkomst', relative_time: 'Den dag' },
+      community_prayer: { label: 'Bøn om frimodighed', relative_time: 'Snart efter' },
+      communal_generosity: { label: 'Menighedens deling beskrives', relative_time: 'I dagene der fulgte' }
     }
   }
 };
@@ -681,7 +1111,7 @@ function localizeChapter(base, lang) {
   };
 }
 
-const DATA = localizeChapter(ACTS_CH2, INITIAL_LANG);
+const DATA = localizeChapter(ACTS_CH4, INITIAL_LANG);
 const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
 const MAP_TEXT = UI_TEXT.map || {};
 const mapText = key => MAP_TEXT[key] || key;
@@ -714,24 +1144,33 @@ function shouldShowYear(tl, idx) {
   return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
 }
 
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
 /* ── PERSON COLORS ── */
 const PCOLORS = {
-  holy_spirit:  '#E8591A',
-  peter:        '#5B8FA8',
-  the_eleven:   '#A09070',
-  devout_jews:  '#6B8F71',
-  mockers:      '#A0746A',
-  new_believers:'#7DAA7D',
-  david:        '#9B7EB0',
-  joel:         '#C68B6E',
+  peter:              '#5B8FA8',
+  john:               '#A09070',
+  priests_and_captain:'#A0746A',
+  annas:              '#9B7EB0',
+  caiaphas:           '#7A8FA0',
+  sanhedrin:          '#8C6F5A',
+  healed_lame_man:    '#6B8F71',
+  early_community:    '#C68B6E',
+  barnabas:           '#7DAA7D',
 };
 
 /* ── MAP COORDINATES (SVG 1000×800 viewBox, zoomed tight to Jerusalem area) ── */
 const VW = 1000, VH = 800;
 const LOCS = {
-  jerusalem:            { x: 380, y: 420, label: DATA.locations.find(l => l.id === 'jerusalem')?.name || 'Jerusalem' },
-  upper_room_or_temple: { x: 315, y: 490, label: DATA.locations.find(l => l.id === 'upper_room_or_temple')?.name || 'Pentecost House' },
-  temple_area:          { x: 425, y: 382, label: DATA.locations.find(l => l.id === 'temple_area')?.name || 'Temple Area' },
+  jerusalem:                  { x: 350, y: 438, label: DATA.locations.find(l => l.id === 'jerusalem')?.name || 'Jerusalem' },
+  solomons_portico:           { x: 548, y: 374, label: DATA.locations.find(l => l.id === 'solomons_portico')?.name || "Solomon's Portico" },
+  jerusalem_jail:             { x: 365, y: 460, label: DATA.locations.find(l => l.id === 'jerusalem_jail')?.name || 'Jerusalem Jail' },
+  sanhedrin_hall:             { x: 415, y: 410, label: DATA.locations.find(l => l.id === 'sanhedrin_hall')?.name || 'Sanhedrin Hall' },
+  community_gathering_place:  { x: 318, y: 438, label: DATA.locations.find(l => l.id === 'community_gathering_place')?.name || 'Gathering Place' },
 };
 
 const ABSOLUTE_TIMES = Object.fromEntries(
@@ -1122,14 +1561,14 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
                 aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
                 onClick={() => onEventChange(tl.event_id)}
               >
-                <span className="playback-step-time">{compactTimeLabel(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time, shouldShowYear(tl, idx))}</span>
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
               </button>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Pentecost'}</div>
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Temple Area'}</div>
     </div>
   );
 }
@@ -1179,8 +1618,8 @@ function TimelinePanel({ activeEventId, onEventChange }) {
   return (
     <div className="tl-col">
       <div className="tl-chapter-strip">
-        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} 2</div>
-        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Fire from <em>Heaven</em></>}</div>
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Bold Before <em>the Council</em></>}</div>
       </div>
 
       <div className="tl-list" ref={scrollRef}>
@@ -1190,9 +1629,9 @@ function TimelinePanel({ activeEventId, onEventChange }) {
             if (!ev) return null;
             const active = activeEventId === tl.event_id;
             const timeInfo = ABSOLUTE_TIMES[tl.event_id];
-            // Year badges: one before prologue (composition date), one before the AD30 events
+            // Year badges divide the initial temple approach from the public witness.
             const showYearBadge = idx === 0 || idx === 1;
-            const yearLabel = UI_TEXT.yearBadges?.[idx === 0 ? 0 : 1] || (idx === 0 ? 'Pentecost — Spirit Falls' : 'Jerusalem — Public Witness');
+            const yearLabel = UI_TEXT.yearBadges?.[idx === 0 ? 0 : 1] || (idx === 0 ? 'After Pentecost — Arrest and Night' : 'Council and Community');
             return (
               <React.Fragment key={tl.event_id}>
                 {showYearBadge && (
@@ -1238,7 +1677,7 @@ function App() {
   useEffect(() => {
     document.body.className = 'theme-a';
     document.documentElement.lang = INITIAL_LANG;
-    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} 2 — ${DATA.chapter_title}`;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
     localStorage.setItem('bf-theme', 'a');
   }, []);
 
@@ -1247,10 +1686,6 @@ function App() {
     setActiveEv(prev => {
       const current = DATA.timeline.findIndex(t => t.event_id === prev);
       if (dir < 0 && current === 0) {
-        window.top.location.href = '/bible/acts/001';
-        return prev;
-      }
-      if (dir > 0 && current === DATA.timeline.length - 1) {
         window.top.location.href = '/bible/acts/003';
         return prev;
       }
@@ -1263,9 +1698,9 @@ function App() {
     <div className="app">
       {/* Header */}
       <div className="header">
-        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} 2</span>
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
         <span className="hdr-title">{DATA.chapter_title}</span>
-        <span className="hdr-sub">{UI_TEXT.headerSub || '— Pentecost · AD 30'}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '— Council hearing · AD 30'}</span>
         <div className="hdr-space" />
         <a className="home-link" href="/bible" target="_top">
           {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}

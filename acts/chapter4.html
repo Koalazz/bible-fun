@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Acts Chapter 2 — Fire from Heaven</title>
+<title>Acts Chapter 4 — Bold Before the Council</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="acts-ch2-data.js"></script>
+<script src="acts-ch4-data.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, #root { height: 100%; overflow: hidden; }
@@ -612,11 +612,11 @@ const CHAPTER_TEXT = {
   da: {
     book: 'Apostlenes Gerninger',
     shortBook: 'ApG',
-    chapterTitle: 'Ild fra himlen',
-    headerSub: '— Pinse · år 30',
-    timelineTitle: ['Ild fra', 'himlen'],
-    mapCorner: 'Jerusalem · pinse',
-    yearBadges: ['Pinse — Ånden falder', 'Jerusalem — offentligt vidnesbyrd'],
+    chapterTitle: 'Frimodige foran rådet',
+    headerSub: '— Rådsforhør · år 30',
+    timelineTitle: ['Frimodige foran', 'rådet'],
+    mapCorner: 'Jerusalem · tempelområdet',
+    yearBadges: ['Efter pinse — arrestation og natten', 'Rådet og menigheden'],
     map: {
       JUDEA: 'JUDÆA',
       PERAEA: 'PERÆA',
@@ -626,7 +626,7 @@ const CHAPTER_TEXT = {
       MEDITERRANEAN: 'MIDDELHAVET ←',
       KIDRON_VALLEY: 'Kidrondalen',
       TEMPLE: 'TEMPLET',
-      WALK: '~900 m vandring',
+      WALK: 'bevægelse gennem byen',
       HINNOM_VALLEY: 'Hinnoms dal',
       MOUNT_OF_OLIVES: 'OLIEBJERGET',
       BETHANY: 'Betania',
@@ -634,34 +634,41 @@ const CHAPTER_TEXT = {
     },
     locations: {
       jerusalem: { name: 'Jerusalem' },
-      upper_room_or_temple: { name: 'Huset hvor de sad' },
-      temple_area: { name: 'Tempelområdet / Salomos søjlegang' }
+      solomons_portico: { name: 'Salomos søjlegang' },
+      jerusalem_jail: { name: 'Fængslet i Jerusalem' },
+      sanhedrin_hall: { name: 'Rådets mødesal' },
+      community_gathering_place: { name: 'Menighedens samlingssted' }
     },
     persons: {
-      holy_spirit: 'Helligånden',
       peter: 'Peter',
-      the_eleven: 'De elleve apostle',
-      devout_jews: 'Fromme jøder fra alle folkeslag',
-      david: 'David',
-      joel: 'Joel',
-      new_believers: 'De tre tusind omvendte',
-      mockers: 'Spottere i mængden'
+      john: 'Johannes',
+      priests_and_captain: 'Præsterne, tempelvagtens anfører og saddukæerne',
+      annas: 'Annas',
+      caiaphas: 'Kajfas',
+      sanhedrin: 'Rådet',
+      healed_lame_man: 'Den helbredte mand',
+      early_community: 'Den troende menighed',
+      barnabas: 'Barnabas'
     },
     events: {
-      spirit_descends: { title: 'Helligånden falder på pinsedagen', description: 'Mens alle de troende er samlet på pinsedagen, fylder en lyd som et kraftigt vindstød hele huset. Tunger som af ild fordeler sig og sætter sig på hver enkelt. Alle bliver fyldt af Helligånden og begynder at tale på andre sprog, sådan som Ånden giver dem at tale. Det opfylder Jesu løfte om, at disciplene skulle døbes med Helligånden.', timeline_label: 'Ånden falder' },
-      crowd_gathers: { title: 'Den flersprogede skare samles', description: 'Lyden tiltrækker en stor skare jødiske pilgrimme fra alle folkeslag, som opholder sig i Jerusalem til festen. Hver enkelt hører disciplene tale på sit eget modersmål, og mængden bliver forvirret og forundret. De nævner områder som Partien, Medien, Mesopotamien, Egypten, Rom, Kreta og Arabien og spørger, hvad det betyder. Nogle afviser dog det hele og siger, at disciplene er berusede.', timeline_label: 'Skaren samles' },
-      peters_sermon: { title: 'Peters pinseprædiken', description: 'Peter træder frem sammen med de elleve og taler højt til mængden. Han afviser beskyldningen om beruselse ved at pege på, at det kun er tredje time på dagen. Derefter citerer han profeten Joel for at forklare, at Åndens udgydelse opfylder profetien om de sidste dage. Han vidner om Jesus, hans undere, hans korsfæstelse og hans opstandelse, sådan som David forudsagde i Salmerne. Peter slutter med at erklære, at Gud har gjort Jesus til både Herre og Kristus.', timeline_label: 'Peter prædiker' },
-      crowd_responds: { title: 'Skaren rammes i hjertet', description: 'Mængden bliver dybt berørt og spørger Peter og de andre apostle, hvad de skal gøre. Peter siger, at de skal omvende sig og lade sig døbe i Jesu Kristi navn til syndernes forladelse, og at de også skal få Helligåndens gave. Han forklarer, at løftet gælder dem, deres børn og alle, som Herren kalder.', timeline_label: 'Kald til omvendelse' },
-      mass_baptism: { title: 'Tre tusind bliver døbt', description: 'Omkring tre tusind mennesker tager imod Peters ord, bliver døbt og føjes til fællesskabet samme dag. Denne ene dags høst viser, at forkyndelsen i Åndens kraft får en afgørende offentlig virkning.', timeline_label: '3.000 døbt' },
-      community_life: { title: 'Det første kristne fællesskab', description: 'De nye troende holder fast ved apostlenes lære, fællesskabet, brødsbrydelsen og bønnerne. Apostlene gør mange tegn og undere, og ærefrygt fylder byen. De troende deler deres ejendele, mødes dagligt på tempelpladsen og spiser sammen i hjemmene med glæde og oprigtigt hjerte, mens Herren hver dag føjer nye til.', timeline_label: 'Fællesskabet formes' }
+      arrest_of_apostles: { title: 'Peter og Johannes arresteres', description: 'Mens Peter og Johannes taler til folket, ankommer præsterne, tempelvagtens anfører og saddukæerne. Forargede over, at apostlene underviser folket og forkynder opstandelsen i Jesu navn, lader de dem arrestere. Trods arrestationen vokser antallet af troende til omkring fem tusinde mænd.', timeline_label: 'Apostlene arresteres' },
+      overnight_detention: { title: 'Natten i varetægt', description: 'Peter og Johannes tilbringer natten i fængsling, mens de afventer forhør dagen efter. Det er den første nat, apostlene holdes i fangenskab for evangeliets skyld. Menigheden vokser stadig trods forfølgelsen.', timeline_label: 'Natten i fængslet' },
+      sanhedrin_convenes: { title: 'Rådet samles til forhør', description: 'Dagen efter samles rådet i Jerusalem med ypperstepræsterne Annas og Kajfas og andre fremtrædende personligheder. Peter og Johannes stilles frem midt iblandt dem. Rådet stiller det direkte spørgsmål: Hvilken kraft eller hvilket navn har I handlet i?', timeline_label: 'Rådsforhøret' },
+      peters_defense: { title: 'Peters åndsfyldte forsvar', description: 'Fyldt af Helligånden erklærer Peter, at helbredelsen skete i Jesu Kristi nasaræerens navn — ham som I korsfæstede, men Gud oprejste. Jesus er hjørnestenen som bygmestrene forkastede. Der er intet andet navn under himlen, ved hvilket vi kan frelses. Rådets medlemmer forundres over apostlenes frimodighed og genkender dem som Jesu ledsagere.', timeline_label: 'Peters erklæring' },
+      council_deliberates: { title: 'Rådets dilemma', description: 'Rådet trækker sig tilbage til privat rådslagning. De kan ikke nægte helbredelsen — den helbredte mand er synlig for alle. De kalder Peter og Johannes ind igen og forbyder dem strengt at tale i Jesu navn. Apostlene nægter: Hvem skal vi adlyde mest — Gud eller jer? Rådet truer dem yderligere, men tør ikke straffe dem på grund af folket.', timeline_label: 'Rådet debatterer' },
+      apostles_return: { title: 'De løsladte apostle vender hjem', description: 'Frigivet vender Peter og Johannes tilbage til de øvrige og fortæller alt, hvad ypperstepræsterne og de ældste har sagt dem. Fællesskabets første reaktion er fælles bøn — ikke frygt. De citerer Salme 2 og forstår forfølgelsen som en opfyldelse af Guds evige plan.', timeline_label: 'Hjemkomst og beretning' },
+      community_prayer: { title: 'Menigheden beder om frimodighed', description: 'Under bønnen ryster det sted, de er forsamlet, og de fyldes alle af Helligånden og taler Guds ord med frimodighed. Bønnen anerkender Guds suverænitet og beder ikke om beskyttelse, men om tegn og endnu større frimodighed til at forkynde.', timeline_label: 'Bøn og Ånd' },
+      communal_generosity: { title: 'Radikal deling i menigheden', description: 'Menighedens enhed viser sig i materiel fællesskab: ingen kalder noget sit eget. De med jord og huse sælger dem og lægger pengene for apostlenes fødder til fordeling efter behov. Et eksempel er Josef fra Cypern, kaldet Barnabas — søn af trøst — der sælger en mark og bringer pengene til apostlene.', timeline_label: 'Radikal gavmildhed' }
     },
     timeline: {
-      spirit_descends: { label: 'Ånden falder', relative_time: 'Pinsedag — morgen' },
-      crowd_gathers: { label: 'Skaren samles', relative_time: 'Kort efter lyden' },
-      peters_sermon: { label: 'Peter prædiker', relative_time: 'Tredje time på dagen' },
-      crowd_responds: { label: 'Omvendelse', relative_time: 'Efter prædikenen' },
-      mass_baptism: { label: '3.000 døbt', relative_time: 'Samme dag' },
-      community_life: { label: 'Fællesskab', relative_time: 'Dagligt efter pinse' }
+      arrest_of_apostles: { label: 'Arrestation om aftenen', relative_time: 'Aftenen på helbredelsesdagen' },
+      overnight_detention: { label: 'Natten i varetægt', relative_time: 'Den nat' },
+      sanhedrin_convenes: { label: 'Morgensretssagen', relative_time: 'Næste morgen' },
+      peters_defense: { label: 'Åndsfyldt forsvar', relative_time: 'Under forhøret' },
+      council_deliberates: { label: 'Rådets mislykkede trussel', relative_time: 'Samme morgen' },
+      apostles_return: { label: 'Frigivelse og hjemkomst', relative_time: 'Den dag' },
+      community_prayer: { label: 'Bøn om frimodighed', relative_time: 'Snart efter' },
+      communal_generosity: { label: 'Menighedens deling beskrives', relative_time: 'I dagene der fulgte' }
     }
   }
 };
@@ -681,7 +688,7 @@ function localizeChapter(base, lang) {
   };
 }
 
-const DATA = localizeChapter(ACTS_CH2, INITIAL_LANG);
+const DATA = localizeChapter(ACTS_CH4, INITIAL_LANG);
 const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
 const MAP_TEXT = UI_TEXT.map || {};
 const mapText = key => MAP_TEXT[key] || key;
@@ -714,24 +721,33 @@ function shouldShowYear(tl, idx) {
   return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
 }
 
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
 /* ── PERSON COLORS ── */
 const PCOLORS = {
-  holy_spirit:  '#E8591A',
-  peter:        '#5B8FA8',
-  the_eleven:   '#A09070',
-  devout_jews:  '#6B8F71',
-  mockers:      '#A0746A',
-  new_believers:'#7DAA7D',
-  david:        '#9B7EB0',
-  joel:         '#C68B6E',
+  peter:              '#5B8FA8',
+  john:               '#A09070',
+  priests_and_captain:'#A0746A',
+  annas:              '#9B7EB0',
+  caiaphas:           '#7A8FA0',
+  sanhedrin:          '#8C6F5A',
+  healed_lame_man:    '#6B8F71',
+  early_community:    '#C68B6E',
+  barnabas:           '#7DAA7D',
 };
 
 /* ── MAP COORDINATES (SVG 1000×800 viewBox, zoomed tight to Jerusalem area) ── */
 const VW = 1000, VH = 800;
 const LOCS = {
-  jerusalem:            { x: 380, y: 420, label: DATA.locations.find(l => l.id === 'jerusalem')?.name || 'Jerusalem' },
-  upper_room_or_temple: { x: 315, y: 490, label: DATA.locations.find(l => l.id === 'upper_room_or_temple')?.name || 'Pentecost House' },
-  temple_area:          { x: 425, y: 382, label: DATA.locations.find(l => l.id === 'temple_area')?.name || 'Temple Area' },
+  jerusalem:                  { x: 350, y: 438, label: DATA.locations.find(l => l.id === 'jerusalem')?.name || 'Jerusalem' },
+  solomons_portico:           { x: 548, y: 374, label: DATA.locations.find(l => l.id === 'solomons_portico')?.name || "Solomon's Portico" },
+  jerusalem_jail:             { x: 365, y: 460, label: DATA.locations.find(l => l.id === 'jerusalem_jail')?.name || 'Jerusalem Jail' },
+  sanhedrin_hall:             { x: 415, y: 410, label: DATA.locations.find(l => l.id === 'sanhedrin_hall')?.name || 'Sanhedrin Hall' },
+  community_gathering_place:  { x: 318, y: 438, label: DATA.locations.find(l => l.id === 'community_gathering_place')?.name || 'Gathering Place' },
 };
 
 const ABSOLUTE_TIMES = Object.fromEntries(
@@ -1122,14 +1138,14 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
                 aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
                 onClick={() => onEventChange(tl.event_id)}
               >
-                <span className="playback-step-time">{compactTimeLabel(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time, shouldShowYear(tl, idx))}</span>
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
               </button>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Pentecost'}</div>
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Temple Area'}</div>
     </div>
   );
 }
@@ -1179,8 +1195,8 @@ function TimelinePanel({ activeEventId, onEventChange }) {
   return (
     <div className="tl-col">
       <div className="tl-chapter-strip">
-        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} 2</div>
-        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Fire from <em>Heaven</em></>}</div>
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Bold Before <em>the Council</em></>}</div>
       </div>
 
       <div className="tl-list" ref={scrollRef}>
@@ -1190,9 +1206,9 @@ function TimelinePanel({ activeEventId, onEventChange }) {
             if (!ev) return null;
             const active = activeEventId === tl.event_id;
             const timeInfo = ABSOLUTE_TIMES[tl.event_id];
-            // Year badges: one before prologue (composition date), one before the AD30 events
+            // Year badges divide the initial temple approach from the public witness.
             const showYearBadge = idx === 0 || idx === 1;
-            const yearLabel = UI_TEXT.yearBadges?.[idx === 0 ? 0 : 1] || (idx === 0 ? 'Pentecost — Spirit Falls' : 'Jerusalem — Public Witness');
+            const yearLabel = UI_TEXT.yearBadges?.[idx === 0 ? 0 : 1] || (idx === 0 ? 'After Pentecost — Arrest and Night' : 'Council and Community');
             return (
               <React.Fragment key={tl.event_id}>
                 {showYearBadge && (
@@ -1238,7 +1254,7 @@ function App() {
   useEffect(() => {
     document.body.className = 'theme-a';
     document.documentElement.lang = INITIAL_LANG;
-    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} 2 — ${DATA.chapter_title}`;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
     localStorage.setItem('bf-theme', 'a');
   }, []);
 
@@ -1247,10 +1263,6 @@ function App() {
     setActiveEv(prev => {
       const current = DATA.timeline.findIndex(t => t.event_id === prev);
       if (dir < 0 && current === 0) {
-        window.top.location.href = '/bible/acts/001';
-        return prev;
-      }
-      if (dir > 0 && current === DATA.timeline.length - 1) {
         window.top.location.href = '/bible/acts/003';
         return prev;
       }
@@ -1263,9 +1275,9 @@ function App() {
     <div className="app">
       {/* Header */}
       <div className="header">
-        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} 2</span>
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
         <span className="hdr-title">{DATA.chapter_title}</span>
-        <span className="hdr-sub">{UI_TEXT.headerSub || '— Pentecost · AD 30'}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '— Council hearing · AD 30'}</span>
         <div className="hdr-space" />
         <a className="home-link" href="/bible" target="_top">
           {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}

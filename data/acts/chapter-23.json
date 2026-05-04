@@ -87,6 +87,14 @@
       "first_mention_verse": "23:23",
       "summary": "Lysias assigns two centurions to lead the military escort transporting Paul to Caesarea: a force of 200 infantry soldiers, 70 cavalry, and 200 spearmen, reflecting how seriously the commander takes the threat to Paul's life.",
       "significance": "The massive escort underscores Roman determination to protect a Roman citizen from extra-judicial violence, and the sheer scale of the force dramatizes the danger Paul faces."
+    },
+    {
+      "id": "roman_soldiers",
+      "name": "Roman Soldiers",
+      "role": "Group / Military Escort",
+      "first_mention_verse": "23:23",
+      "summary": "The infantry, cavalry, and spearmen assigned to escort Paul safely from Jerusalem toward Caesarea by night.",
+      "significance": "Their presence dramatizes both the seriousness of the assassination threat and Rome's obligation to protect a citizen in custody."
     }
   ],
   "locations": [

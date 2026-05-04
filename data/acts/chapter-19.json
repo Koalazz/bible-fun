@@ -25,6 +25,14 @@
       "significance": "Their experience mirrors the Samaritan Pentecost of Acts 8 and establishes that the gift of the Holy Spirit is inseparable from full Christian initiation; it also shows how diverse and incomplete early expressions of the Jesus movement could be."
     },
     {
+      "id": "timothy",
+      "name": "Timothy",
+      "role": "Co-worker of Paul",
+      "first_mention_verse": "19:22",
+      "summary": "Timothy is one of Paul's trusted co-workers sent ahead into Macedonia while Paul remains in Asia for a time.",
+      "significance": "His dispatch shows Paul's mission operating through a wider team rather than through Paul's presence alone."
+    },
+    {
       "id": "demetrius",
       "name": "Demetrius",
       "role": "Silversmith / Riot Instigator",

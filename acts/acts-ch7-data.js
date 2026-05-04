@@ -1,4 +1,4 @@
-{
+const ACTS_CH7 = {
   "book": "Acts",
   "chapter": 7,
   "chapter_title": "The Speech That Cost Everything",
@@ -426,4 +426,4 @@
     "Saul is introduced standing silently at the edge of a murder, approving it. What does this tell us about complicity, and how does it set up the rest of his story in Acts?",
     "Is Stephen's speech a defense, a sermon, or a prosecution? What genre best describes it, and does the distinction matter?"
   ]
-}
+};

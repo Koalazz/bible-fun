@@ -1,4 +1,4 @@
-{
+const ACTS_CH8 = {
   "book": "Acts",
   "chapter": 8,
   "chapter_title": "Scattered Seed",
@@ -534,4 +534,4 @@
     "The Ethiopian official asks, 'What is to prevent me from being baptized?' — implying he expected exclusion. As a eunuch and a foreigner, he would have been barred from full Temple participation. What does his baptism signal about the nature of the new community?",
     "Philip is supernaturally transported away immediately after the baptism, leaving the new believer without a teacher or a church. What does the Ethiopian official's continuing joy suggest about where the source of faith actually lies?"
   ]
-}
+};

@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Acts Chapter 2 — Fire from Heaven</title>
+<title>Acts Chapter 3 — The Lame Man Walks</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="acts-ch2-data.js"></script>
+<script src="acts-ch3-data.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, #root { height: 100%; overflow: hidden; }
@@ -612,11 +612,11 @@ const CHAPTER_TEXT = {
   da: {
     book: 'Apostlenes Gerninger',
     shortBook: 'ApG',
-    chapterTitle: 'Ild fra himlen',
-    headerSub: '— Pinse · år 30',
-    timelineTitle: ['Ild fra', 'himlen'],
-    mapCorner: 'Jerusalem · pinse',
-    yearBadges: ['Pinse — Ånden falder', 'Jerusalem — offentligt vidnesbyrd'],
+    chapterTitle: 'Den lamme mand går',
+    headerSub: '— Tempelhelbredelse · år 30',
+    timelineTitle: ['Den lamme', 'går'],
+    mapCorner: 'Jerusalem · tempelområdet',
+    yearBadges: ['Efter pinse — bønnetimen', 'Templet — offentligt vidnesbyrd'],
     map: {
       JUDEA: 'JUDÆA',
       PERAEA: 'PERÆA',
@@ -634,34 +634,31 @@ const CHAPTER_TEXT = {
     },
     locations: {
       jerusalem: { name: 'Jerusalem' },
-      upper_room_or_temple: { name: 'Huset hvor de sad' },
-      temple_area: { name: 'Tempelområdet / Salomos søjlegang' }
+      beautiful_gate: { name: 'Den Skønne Port' },
+      solomons_portico: { name: 'Salomos søjlegang' }
     },
     persons: {
-      holy_spirit: 'Helligånden',
       peter: 'Peter',
-      the_eleven: 'De elleve apostle',
-      devout_jews: 'Fromme jøder fra alle folkeslag',
-      david: 'David',
-      joel: 'Joel',
-      new_believers: 'De tre tusind omvendte',
-      mockers: 'Spottere i mængden'
+      john: 'Johannes',
+      lame_man: 'Den lamme mand',
+      temple_crowd: 'Tempelskaren',
+      moses: 'Moses',
+      abraham: 'Abraham',
+      samuel: 'Samuel og profeterne'
     },
     events: {
-      spirit_descends: { title: 'Helligånden falder på pinsedagen', description: 'Mens alle de troende er samlet på pinsedagen, fylder en lyd som et kraftigt vindstød hele huset. Tunger som af ild fordeler sig og sætter sig på hver enkelt. Alle bliver fyldt af Helligånden og begynder at tale på andre sprog, sådan som Ånden giver dem at tale. Det opfylder Jesu løfte om, at disciplene skulle døbes med Helligånden.', timeline_label: 'Ånden falder' },
-      crowd_gathers: { title: 'Den flersprogede skare samles', description: 'Lyden tiltrækker en stor skare jødiske pilgrimme fra alle folkeslag, som opholder sig i Jerusalem til festen. Hver enkelt hører disciplene tale på sit eget modersmål, og mængden bliver forvirret og forundret. De nævner områder som Partien, Medien, Mesopotamien, Egypten, Rom, Kreta og Arabien og spørger, hvad det betyder. Nogle afviser dog det hele og siger, at disciplene er berusede.', timeline_label: 'Skaren samles' },
-      peters_sermon: { title: 'Peters pinseprædiken', description: 'Peter træder frem sammen med de elleve og taler højt til mængden. Han afviser beskyldningen om beruselse ved at pege på, at det kun er tredje time på dagen. Derefter citerer han profeten Joel for at forklare, at Åndens udgydelse opfylder profetien om de sidste dage. Han vidner om Jesus, hans undere, hans korsfæstelse og hans opstandelse, sådan som David forudsagde i Salmerne. Peter slutter med at erklære, at Gud har gjort Jesus til både Herre og Kristus.', timeline_label: 'Peter prædiker' },
-      crowd_responds: { title: 'Skaren rammes i hjertet', description: 'Mængden bliver dybt berørt og spørger Peter og de andre apostle, hvad de skal gøre. Peter siger, at de skal omvende sig og lade sig døbe i Jesu Kristi navn til syndernes forladelse, og at de også skal få Helligåndens gave. Han forklarer, at løftet gælder dem, deres børn og alle, som Herren kalder.', timeline_label: 'Kald til omvendelse' },
-      mass_baptism: { title: 'Tre tusind bliver døbt', description: 'Omkring tre tusind mennesker tager imod Peters ord, bliver døbt og føjes til fællesskabet samme dag. Denne ene dags høst viser, at forkyndelsen i Åndens kraft får en afgørende offentlig virkning.', timeline_label: '3.000 døbt' },
-      community_life: { title: 'Det første kristne fællesskab', description: 'De nye troende holder fast ved apostlenes lære, fællesskabet, brødsbrydelsen og bønnerne. Apostlene gør mange tegn og undere, og ærefrygt fylder byen. De troende deler deres ejendele, mødes dagligt på tempelpladsen og spiser sammen i hjemmene med glæde og oprigtigt hjerte, mens Herren hver dag føjer nye til.', timeline_label: 'Fællesskabet formes' }
+      going_to_temple: { title: 'Peter og Johannes går til templet', description: 'Peter og Johannes er på vej til templet i Jerusalem ved den niende time, bønnetimen omkring klokken tre. Apostlene fremstilles stadig som jøder, der deltager i templets bønneliv, og denne daglige rytme fører dem til mødet ved porten.', timeline_label: 'Til templet' },
+      lame_man_begging: { title: 'Den lamme tigger ved Den Skønne Port', description: 'En mand, der har været lam fra fødslen, bæres hver dag til templets Skønne Port for at bede de forbipasserende om almisse. Da han ser Peter og Johannes på vej ind, beder han dem om penge.', timeline_label: 'Tigger ved porten' },
+      healing_of_lame_man: { title: 'Peter helbreder den lamme mand', description: 'Peter ser på manden og siger, at han ikke har sølv eller guld, men giver ham det, han har: i Jesu Kristi, nazaræerens, navn skal han gå. Peter tager ham ved hånden, og straks styrkes hans fødder og ankler. Han springer op, går ind i templet og priser Gud.', timeline_label: 'Helbredelse' },
+      crowd_amazed: { title: 'Skaren genkender den helbredte mand', description: 'Folk i tempelområdet ser manden gå omkring og prise Gud. De genkender ham som den, der plejede at sidde ved Den Skønne Port, og fyldes af undren. Manden holder sig tæt til Peter og Johannes i Salomos søjlegang, mens skaren løber sammen.', timeline_label: 'Skaren samles' },
+      peters_second_sermon: { title: 'Peter prædiker i Salomos søjlegang', description: 'Peter afviser straks, at helbredelsen skyldes apostlenes egen kraft eller fromhed. Han peger på Israels Gud, som har herliggjort sin tjener Jesus, den samme Jesus som folket forkastede, men som Gud oprejste. Peter kalder dem til omvendelse og viser ud fra Moses, profeterne og Abrahams pagt, at Jesus opfylder Israels håb.', timeline_label: 'Anden prædiken' }
     },
     timeline: {
-      spirit_descends: { label: 'Ånden falder', relative_time: 'Pinsedag — morgen' },
-      crowd_gathers: { label: 'Skaren samles', relative_time: 'Kort efter lyden' },
-      peters_sermon: { label: 'Peter prædiker', relative_time: 'Tredje time på dagen' },
-      crowd_responds: { label: 'Omvendelse', relative_time: 'Efter prædikenen' },
-      mass_baptism: { label: '3.000 døbt', relative_time: 'Samme dag' },
-      community_life: { label: 'Fællesskab', relative_time: 'Dagligt efter pinse' }
+      going_to_temple: { label: 'På vej til bøn', relative_time: 'Kl. 15 (niende time)' },
+      lame_man_begging: { label: 'Tiggeren mødes', relative_time: 'Ved bønnetimen' },
+      healing_of_lame_man: { label: 'Helbredelsen sker', relative_time: 'Ved porten' },
+      crowd_amazed: { label: 'Skaren ser tegnet', relative_time: 'Straks efter' },
+      peters_second_sermon: { label: 'Prædiken i søjlegangen', relative_time: 'Samme eftermiddag' }
     }
   }
 };
@@ -681,7 +678,7 @@ function localizeChapter(base, lang) {
   };
 }
 
-const DATA = localizeChapter(ACTS_CH2, INITIAL_LANG);
+const DATA = localizeChapter(ACTS_CH3, INITIAL_LANG);
 const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
 const MAP_TEXT = UI_TEXT.map || {};
 const mapText = key => MAP_TEXT[key] || key;
@@ -716,22 +713,21 @@ function shouldShowYear(tl, idx) {
 
 /* ── PERSON COLORS ── */
 const PCOLORS = {
-  holy_spirit:  '#E8591A',
   peter:        '#5B8FA8',
-  the_eleven:   '#A09070',
-  devout_jews:  '#6B8F71',
-  mockers:      '#A0746A',
-  new_believers:'#7DAA7D',
-  david:        '#9B7EB0',
-  joel:         '#C68B6E',
+  john:         '#A09070',
+  lame_man:     '#6B8F71',
+  temple_crowd: '#C68B6E',
+  moses:        '#9B7EB0',
+  abraham:      '#7DAA7D',
+  samuel:       '#A0746A',
 };
 
 /* ── MAP COORDINATES (SVG 1000×800 viewBox, zoomed tight to Jerusalem area) ── */
 const VW = 1000, VH = 800;
 const LOCS = {
-  jerusalem:            { x: 380, y: 420, label: DATA.locations.find(l => l.id === 'jerusalem')?.name || 'Jerusalem' },
-  upper_room_or_temple: { x: 315, y: 490, label: DATA.locations.find(l => l.id === 'upper_room_or_temple')?.name || 'Pentecost House' },
-  temple_area:          { x: 425, y: 382, label: DATA.locations.find(l => l.id === 'temple_area')?.name || 'Temple Area' },
+  jerusalem:         { x: 350, y: 438, label: DATA.locations.find(l => l.id === 'jerusalem')?.name || 'Jerusalem' },
+  beautiful_gate:    { x: 452, y: 405, label: DATA.locations.find(l => l.id === 'beautiful_gate')?.name || 'Beautiful Gate' },
+  solomons_portico:  { x: 548, y: 374, label: DATA.locations.find(l => l.id === 'solomons_portico')?.name || "Solomon's Portico" },
 };
 
 const ABSOLUTE_TIMES = Object.fromEntries(
@@ -1129,7 +1125,7 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
         </div>
       </div>
 
-      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Pentecost'}</div>
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Temple Area'}</div>
     </div>
   );
 }
@@ -1179,8 +1175,8 @@ function TimelinePanel({ activeEventId, onEventChange }) {
   return (
     <div className="tl-col">
       <div className="tl-chapter-strip">
-        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} 2</div>
-        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Fire from <em>Heaven</em></>}</div>
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>The Lame Man <em>Walks</em></>}</div>
       </div>
 
       <div className="tl-list" ref={scrollRef}>
@@ -1190,9 +1186,9 @@ function TimelinePanel({ activeEventId, onEventChange }) {
             if (!ev) return null;
             const active = activeEventId === tl.event_id;
             const timeInfo = ABSOLUTE_TIMES[tl.event_id];
-            // Year badges: one before prologue (composition date), one before the AD30 events
+            // Year badges divide the initial temple approach from the public witness.
             const showYearBadge = idx === 0 || idx === 1;
-            const yearLabel = UI_TEXT.yearBadges?.[idx === 0 ? 0 : 1] || (idx === 0 ? 'Pentecost — Spirit Falls' : 'Jerusalem — Public Witness');
+            const yearLabel = UI_TEXT.yearBadges?.[idx === 0 ? 0 : 1] || (idx === 0 ? 'After Pentecost — Hour of Prayer' : 'Temple — Public Witness');
             return (
               <React.Fragment key={tl.event_id}>
                 {showYearBadge && (
@@ -1238,7 +1234,7 @@ function App() {
   useEffect(() => {
     document.body.className = 'theme-a';
     document.documentElement.lang = INITIAL_LANG;
-    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} 2 — ${DATA.chapter_title}`;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
     localStorage.setItem('bf-theme', 'a');
   }, []);
 
@@ -1247,11 +1243,7 @@ function App() {
     setActiveEv(prev => {
       const current = DATA.timeline.findIndex(t => t.event_id === prev);
       if (dir < 0 && current === 0) {
-        window.top.location.href = '/bible/acts/001';
-        return prev;
-      }
-      if (dir > 0 && current === DATA.timeline.length - 1) {
-        window.top.location.href = '/bible/acts/003';
+        window.top.location.href = '/bible/acts/002';
         return prev;
       }
       const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
@@ -1263,9 +1255,9 @@ function App() {
     <div className="app">
       {/* Header */}
       <div className="header">
-        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} 2</span>
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
         <span className="hdr-title">{DATA.chapter_title}</span>
-        <span className="hdr-sub">{UI_TEXT.headerSub || '— Pentecost · AD 30'}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '— Temple healing · AD 30'}</span>
         <div className="hdr-space" />
         <a className="home-link" href="/bible" target="_top">
           {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
