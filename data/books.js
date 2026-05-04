@@ -140,7 +140,9 @@ window.BOOKS_MANIFEST = {
         {
           "n": 20,
           "title": "Farewell to the West",
-          "status": "soon"
+          "title_da": "Farvel til vesten",
+          "status": "implemented",
+          "href": "/bible/acts/020"
         },
         {
           "n": 21,

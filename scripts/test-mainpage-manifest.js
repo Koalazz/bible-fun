@@ -38,8 +38,8 @@ assert.equal(acts.chapters.length, 28, 'Acts should list 28 chapters');
 
 const implemented = acts.chapters.filter(ch => ch.status === 'implemented');
 const soon = acts.chapters.filter(ch => ch.status === 'soon');
-assert.deepEqual(Array.from(implemented, ch => ch.n), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], 'Acts 1-19 should be implemented');
-assert.equal(soon.length, 9, 'Acts 20-28 should remain Soon');
+assert.deepEqual(Array.from(implemented, ch => ch.n), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], 'Acts 1-20 should be implemented');
+assert.equal(soon.length, 8, 'Acts 21-28 should remain Soon');
 assert.ok(implemented.every(ch => ch.href), 'implemented chapters should have href values');
 assert.ok(soon.every(ch => !ch.href), 'Soon chapters should not have href values');
 
@@ -68,7 +68,7 @@ assert.equal(actsDa.name, 'ApG', 'Danish book button should use ApG');
 assert.equal(actsDa.fullName, 'Apostlenes Gerninger', 'Danish chapter heading should have the full book name');
 assert.equal(actsDa.chapters[0].title, 'Venter på løftet');
 assert.equal(actsDa.chapters[2].title, 'Den lamme mand går');
-assert.equal(actsDa.chapters.filter(ch => ch.href).length, 19, 'localized Danish data should keep 19 clickable chapters');
+assert.equal(actsDa.chapters.filter(ch => ch.href).length, 20, 'localized Danish data should keep 20 clickable chapters');
 
 assert.ok(indexHtml.includes('className="ch-row available"'), 'main page should render available chapter rows');
 assert.ok(indexHtml.includes('className="ch-row unavailable"'), 'main page should render unavailable chapter rows');
