@@ -162,7 +162,8 @@ window.BOOKS_MANIFEST = {
           "n": 23,
           "title": "Conspiracy, Visions, and a Secret Transfer",
           "title_da": "Sammensværgelse, syner og en hemmelig overførsel",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/023"
         },
         {
           "n": 24,
