@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 25 - Festus, the Appeal to Caesar, and Agrippa's Arrival</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script>
+const ACTS_CH25 = {
+  "book": "Acts",
+  "chapter": 25,
+  "chapter_title": "Festus, the Appeal to Caesar, and Agrippa's Arrival",
+  "chapter_summary": "The new governor Porcius Festus arrives in Caesarea and immediately travels to Jerusalem, where the chief priests and Jewish leaders renew their campaign against Paul — requesting he be transferred to Jerusalem for trial (intending to ambush and kill him en route). Festus refuses the transfer but invites the accusers to come to Caesarea. Back in Caesarea, Festus reopens Paul's case; faced with charges he cannot substantiate and a governor who seems willing to hand him to Jerusalem, Paul invokes his right as a Roman citizen and formally appeals to Caesar. Festus grants the appeal. Shortly afterward, King Agrippa II and his sister Bernice arrive for a state visit, and Festus shares Paul's puzzling case with Agrippa, who expresses a desire to hear Paul himself. The chapter ends with a grand ceremonial hearing being arranged for the following day.",
+  "date_range": {
+    "approximate": "AD 59",
+    "notes": "Festus is generally believed to have taken office around AD 59–60, replacing Felix. The events of this chapter — the Jerusalem visit, the Caesarea hearing, and Agrippa's state visit — all take place in a compressed window of a few weeks to months at the start of Festus's tenure."
+  },
+  "persons": [
+    {
+      "id": "festus",
+      "name": "Porcius Festus",
+      "role": "Roman Governor (Procurator of Judea)",
+      "first_mention_verse": "25:1",
+      "summary": "Festus is the new Roman procurator who replaces Felix. He travels to Jerusalem within three days of arriving in Caesarea, hears the renewed charges against Paul, and then presides over a fresh hearing in Caesarea. When Paul makes his appeal to Caesar, Festus grants it immediately. He later shares the confusing case with Agrippa, freely admitting he has no clear Roman charge to send with Paul to Caesar. He is portrayed as more conscientious than Felix but still willing to use Paul as a political bargaining chip.",
+      "significance": "Festus's inability to formulate a charge against Paul drives the narrative forward in two ways: it forces Paul's appeal to Caesar and sets up the elaborate hearing before Agrippa designed to give Festus something to write in his official report. His administrative competence contrasted with legal helplessness highlights Paul's genuine innocence under Roman law."
+    },
+    {
+      "id": "paul",
+      "name": "Paul",
+      "role": "Apostle / Prisoner",
+      "first_mention_verse": "25:6",
+      "summary": "Paul stands again before a new Roman governor facing the same charges he has already answered. When Festus — trying to please the Jewish leaders — suggests moving the trial to Jerusalem, Paul invokes his Roman citizenship and formally appeals to Caesar. The appeal is the decisive legal move that ensures Paul will travel to Rome. He then reappears at the end of the chapter as the subject of Festus's briefing to Agrippa, still in custody but about to receive his most prominent audience yet.",
+      "significance": "Paul's appeal to Caesar is the pivotal legal event of the Acts imprisonment narrative: it removes his case from local Jewish-Roman politics, places it before the supreme authority of the empire, and fulfills the divine promise that Paul will testify in Rome."
+    },
+    {
+      "id": "agrippa",
+      "name": "King Agrippa (Herod Agrippa II)",
+      "role": "Client King / Expert Consultant",
+      "first_mention_verse": "25:13",
+      "summary": "Agrippa II, Rome's client king over parts of northern Palestine and given custodianship over the Jerusalem Temple and the right to appoint its high priest, arrives in Caesarea with his sister Bernice to pay a formal visit to the new governor Festus. When Festus describes Paul's case, Agrippa — as a recognized expert on Jewish law and custom — immediately asks to hear Paul in person. He arranges a formal hearing for the following day.",
+      "significance": "Agrippa's arrival and interest in Paul set up the climactic defense speech of Acts 26 and fulfill the divine promise that Paul would testify before kings. His Jewish expertise gives him a unique ability to grasp the theological content of Paul's message in a way Festus cannot."
+    },
+    {
+      "id": "bernice",
+      "name": "Bernice",
+      "role": "Client Queen / Agrippa's Sister",
+      "first_mention_verse": "25:13",
+      "summary": "Bernice is the eldest sister of Agrippa II and a figure of considerable controversy in ancient sources — twice widowed, allegedly living with her brother Agrippa in a scandalous relationship, and later a consort of Emperor Titus. She accompanies Agrippa throughout his visit to Festus and will be present at Paul's hearing.",
+      "significance": "Bernice's presence adds royal splendor to the proceedings and signals the political and social prominence of the occasion. Historically, she represents the intersection of Jewish royalty and Roman imperial ambition — a fascinating background figure to Paul's defense."
+    },
+    {
+      "id": "chief_priests_jewish_leaders",
+      "name": "Chief Priests and Jewish Leaders",
+      "role": "Group / Accusers",
+      "first_mention_verse": "25:2",
+      "summary": "The Jerusalem-based chief priests and prominent Jewish leaders immediately petition the new governor Festus against Paul, requesting his transfer to Jerusalem for trial while simultaneously planning an ambush to kill him on the road. When Festus declines the transfer but invites them to Caesarea, they appear at the renewed hearing, surrounding Paul and leveling serious charges they cannot prove.",
+      "significance": "The Jewish leadership's renewed campaign against Paul at the start of Festus's tenure shows the depth and persistence of their hostility and their willingness to manipulate Roman administrative transitions for their own purposes."
+    }
+  ],
+  "locations": [
+    {
+      "id": "caesarea_maritima",
+      "name": "Caesarea",
+      "modern_name": "Caesarea Maritima (Qesarya), Israel",
+      "lat": 32.5023,
+      "lng": 34.9057,
+      "description": "The Roman administrative capital of Judea on the Mediterranean coast. Festus's base of operations, where Paul has been held for two years and where the renewed hearing, the appeal to Caesar, and Agrippa's state visit all occur."
+    },
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel / Palestine",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The city Festus visits within three days of arriving in Caesarea; where the chief priests and Jewish leaders formally petition him against Paul and propose moving the trial to Jerusalem."
+    },
+    {
+      "id": "rome",
+      "name": "Rome (referenced)",
+      "modern_name": "Rome, Italy",
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "description": "The imperial capital referenced as the destination of Paul's appeal to Caesar; never depicted directly in this chapter but looming as the narrative goal toward which the entire legal process now points."
+    },
+    {
+      "id": "herods_praetorium",
+      "name": "Herod's Praetorium (Audience Hall)",
+      "modern_name": "Caesarea Maritima — palace site, Israel",
+      "lat": 32.4997,
+      "lng": 34.9048,
+      "description": "The former palace of Herod the Great, serving as the governor's residence and the setting for both the formal hearing before Festus and the subsequent grand assembly before Agrippa and Bernice."
+    }
+  ],
+  "events": [
+    {
+      "id": "festus_visits_jerusalem",
+      "sequence": 1,
+      "verses": "25:1-3",
+      "title": "Festus Visits Jerusalem; Jewish Leaders Petition Against Paul",
+      "description": "Three days after arriving in Caesarea, the new governor Festus travels to Jerusalem as part of the customary introduction to his province. Immediately the chief priests and Jewish leaders press their case against Paul, urgently requesting that Festus transfer Paul to Jerusalem for trial. Their real motive — though unspoken to Festus — is to set up a roadside ambush and kill Paul before he can reach a courtroom. The combination of legal request and murderous intent echoes the conspiracy of chapter 23.",
+      "location_id": "jerusalem",
+      "persons_present": ["festus", "chief_priests_jewish_leaders"],
+      "timeline_label": "Festus in Jerusalem; ambush request made",
+      "scroll_anchor": "festus-visits-jerusalem",
+      "visual_notes": "A meeting in the Jerusalem high-priestly quarters: Festus in Roman official dress seated across from a group of urgently gesturing Jewish leaders; through a window in the background the Temple Mount is visible."
+    },
+    {
+      "id": "festus_declines_transfer",
+      "sequence": 2,
+      "verses": "25:4-5",
+      "title": "Festus Declines the Transfer; Invites Accusers to Caesarea",
+      "description": "Festus declines to transfer Paul to Jerusalem, replying that Paul is being held in Caesarea and that he himself will be returning there shortly. He invites the Jewish leaders — if they have a genuine legal case — to send their capable men to Caesarea and present charges against Paul there. It is unclear whether Festus suspects the transfer request is a pretext, or whether he is simply following proper Roman administrative procedure. Either way, his refusal inadvertently saves Paul's life again.",
+      "location_id": "jerusalem",
+      "persons_present": ["festus", "chief_priests_jewish_leaders"],
+      "timeline_label": "Transfer request refused",
+      "scroll_anchor": "festus-declines-transfer",
+      "visual_notes": "Festus standing to leave the meeting, hand raised in a 'no' gesture toward the petitioners; his face neutral and administrative; the Jewish leaders exchanging frustrated glances behind him."
+    },
+    {
+      "id": "hearing_reopened_caesarea",
+      "sequence": 3,
+      "verses": "25:6-7",
+      "title": "Festus Returns to Caesarea; Hearing Reopened",
+      "description": "After spending eight to ten days in Jerusalem, Festus returns to Caesarea. The very next day he takes his seat on the tribunal and orders Paul brought in. The Jewish leaders who have come from Jerusalem immediately surround Paul with serious charges — charges that Luke reports they cannot prove. The scene echoes the chapter 24 hearing before Felix, but with a new governor who has no prior knowledge of the case and is starting fresh.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["festus", "paul", "chief_priests_jewish_leaders"],
+      "timeline_label": "Hearing reopened; charges repeated",
+      "scroll_anchor": "hearing-reopened-caesarea",
+      "visual_notes": "Festus on the tribunal, newly arrived, looking unfamiliar with the case; Paul brought in by a centurion; the Jewish delegation surrounding him in a semicircle, gesturing accusingly; Festus watching with the focused but slightly overwhelmed expression of a new administrator."
+    },
+    {
+      "id": "paul_defends_himself_briefly",
+      "sequence": 4,
+      "verses": "25:8",
+      "title": "Paul's Brief Defense: No Offense Against Law, Temple, or Caesar",
+      "description": "Paul responds with a concise summary defense: he has not sinned against the Jewish law, against the Temple, or against Caesar. The addition of 'Caesar' is new and pointed — Paul is explicitly placing himself inside Roman law's protection and signaling that he is not a rebel against Roman authority. This three-point denial mirrors the three charges of Tertullus (Acts 24) and sets up his forthcoming appeal to Caesar's court.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["paul", "festus", "chief_priests_jewish_leaders"],
+      "timeline_label": "Paul: not guilty against law, Temple, or Caesar",
+      "scroll_anchor": "paul-defends-himself-briefly",
+      "visual_notes": "Paul standing calmly in the center of an accusatory semicircle, holding up three fingers as he enumerates his three denials; his posture calm and confident; the Jewish accusers gesturing to contradict him."
+    },
+    {
+      "id": "festus_proposes_jerusalem",
+      "sequence": 5,
+      "verses": "25:9",
+      "title": "Festus Proposes Moving the Trial to Jerusalem",
+      "description": "Festus, wishing to do the Jews a favor — using the same language Acts used to describe Felix's accommodation of Jewish leaders in chapter 24 — asks Paul whether he is willing to go to Jerusalem and be tried there before Festus himself. This proposal is at minimum naively careless and at worst deliberately yielding to political pressure at Paul's expense. Whatever Festus's motive, the suggestion is legally and morally questionable: it would return Paul to the exact jurisdiction his enemies control and where assassination plans have already been laid.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["festus", "paul", "chief_priests_jewish_leaders"],
+      "timeline_label": "Festus proposes Jerusalem trial",
+      "scroll_anchor": "festus-proposes-jerusalem",
+      "visual_notes": "Festus leaning toward Paul with a conciliatory gesture, apparently expecting Paul to accept as a reasonable compromise; Paul's expression sharpening as he recognizes the danger of the proposal."
+    },
+    {
+      "id": "paul_appeals_to_caesar",
+      "sequence": 6,
+      "verses": "25:10-12",
+      "title": "Paul Invokes His Right: 'I Appeal to Caesar!'",
+      "description": "Paul refuses the Jerusalem proposal with a decisive legal move. He is standing at Caesar's tribunal — the correct venue for a Roman citizen — and that is where he should be tried. He has done no wrong to the Jews, as Festus himself knows very well. If there were genuine criminal charges deserving death, he would not refuse to die. But since none of the accusations are true, no one has the right to hand him over to his accusers as a favor. Then comes the declaration: 'I appeal to Caesar.' Festus confers briefly with his legal council (the consilium, or advisory panel) and then pronounces: 'You have appealed to Caesar. To Caesar you will go.'",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["paul", "festus"],
+      "timeline_label": "Appeal to Caesar granted",
+      "scroll_anchor": "paul-appeals-to-caesar",
+      "visual_notes": "A dramatic courtroom moment: Paul pointing upward as he makes his appeal, the universal Roman gesture of invoking the emperor's authority; Festus frozen mid-sentence; the Jewish delegation visibly stunned; Festus conferring with advisors before pronouncing 'To Caesar you will go.'"
+    },
+    {
+      "id": "agrippa_bernice_arrive",
+      "sequence": 7,
+      "verses": "25:13",
+      "title": "Agrippa and Bernice Arrive for a State Visit",
+      "description": "Some days after Paul's appeal, King Agrippa II and his sister Bernice arrive in Caesarea to pay their respects to the new governor Festus. Agrippa is Rome's client king over the territories of Philip and Lysanias, with the added honor of supervising the Temple and appointing the high priest — making him technically the most knowledgeable available person on matters of Jewish law and theology. Their state visit is a normal social obligation between Roman client rulers and new provincial governors.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["agrippa", "bernice", "festus"],
+      "timeline_label": "Agrippa and Bernice arrive",
+      "scroll_anchor": "agrippa-bernice-arrive",
+      "visual_notes": "A formal entry procession into Caesarea: Agrippa and Bernice in royal dress on horseback or in a litter; Roman soldiers lining the route; Festus waiting at the praetorium entrance to receive them."
+    },
+    {
+      "id": "festus_briefs_agrippa",
+      "sequence": 8,
+      "verses": "25:14-21",
+      "title": "Festus Briefs Agrippa on the Puzzling Case of Paul",
+      "description": "During the state visit, Festus takes the opportunity to lay Paul's case before Agrippa, describing it as one he finds genuinely perplexing. He recounts: the Jewish accusations, the Roman hearing at which he found no charges deserving death, his suggestion to move the trial to Jerusalem, Paul's appeal to Caesar, and his own uncertainty about what to write in the official report to the emperor. Notably, Festus characterizes the dispute as being about Paul's religion and about 'a dead man named Jesus, whom Paul claims is alive' — a remarkable summary of the gospel from an outside Roman perspective.",
+      "location_id": "herods_praetorium",
+      "persons_present": ["festus", "agrippa", "bernice"],
+      "timeline_label": "Festus explains the Paul puzzle to Agrippa",
+      "scroll_anchor": "festus-briefs-agrippa",
+      "visual_notes": "An intimate state dinner or reception setting: Festus leaning toward Agrippa and Bernice across a table, speaking with hands spread in a 'what do I do?' gesture; Agrippa listening attentively with growing interest."
+    },
+    {
+      "id": "agrippa_asks_to_hear_paul",
+      "sequence": 9,
+      "verses": "25:22",
+      "title": "Agrippa: 'I Would Like to Hear This Man Myself'",
+      "description": "Agrippa responds immediately to Festus's account with a simple request: 'I would like to hear this man myself.' Festus replies, 'Tomorrow you will hear him.' The exchange is brief but consequential: Agrippa's Jewish expertise and personal curiosity ensure that Paul will receive the most prestigious and theologically competent audience of his imprisonment — an audience that will also produce the occasion for his most autobiographical and comprehensive speech in Acts.",
+      "location_id": "herods_praetorium",
+      "persons_present": ["agrippa", "festus"],
+      "timeline_label": "Agrippa asks to hear Paul",
+      "scroll_anchor": "agrippa-asks-hear-paul",
+      "visual_notes": "Agrippa leaning forward across the table with evident curiosity; Festus nodding with visible relief that someone with Jewish expertise is willing to weigh in; Bernice watching with a composed but attentive expression."
+    },
+    {
+      "id": "grand_ceremonial_hearing_assembled",
+      "sequence": 10,
+      "verses": "25:23-27",
+      "title": "Grand Assembly Convened; Festus Explains His Dilemma",
+      "description": "The next day a grand and ceremonially elaborate assembly is convened: Agrippa and Bernice enter with great pomp, accompanied by the senior military commanders (chiliarchs) of Caesarea and the prominent men of the city. Paul is brought in. Before Paul speaks, Festus addresses the assembly and explains why he has called this extraordinary gathering: he needs help formulating a charge to send with Paul to Caesar, because sending a prisoner without specifying the crimes against him seems unreasonable, and he has found no capital offenses. He is, in effect, using the assembled expertise of Agrippa and the city's leadership to solve his legal embarrassment.",
+      "location_id": "herods_praetorium",
+      "persons_present": ["agrippa", "bernice", "festus", "paul", "chief_priests_jewish_leaders"],
+      "timeline_label": "Grand assembly; Festus states his dilemma",
+      "scroll_anchor": "grand-ceremonial-hearing-assembled",
+      "visual_notes": "The most lavish scene in Acts: the great audience hall of Herod's praetorium filled with military officers in armor, robed city dignitaries, Agrippa and Bernice on elevated thrones in royal dress; Paul standing in chains before them all; Festus addressing the assembly from the tribunal."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "festus",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "caesarea_maritima",
+          "event_id": "agrippa_bernice_arrive",
+          "note": "Festus's base of operations throughout the chapter."
+        },
+        {
+          "order": 2,
+          "location_id": "jerusalem",
+          "event_id": "festus_visits_jerusalem",
+          "note": "Festus travels to Jerusalem within three days of arriving in Caesarea."
+        },
+        {
+          "order": 3,
+          "location_id": "caesarea_maritima",
+          "event_id": "hearing_reopened_caesarea",
+          "note": "Festus returns to Caesarea and immediately reopens Paul's case."
+        }
+      ]
+    },
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "herods_praetorium",
+          "event_id": "hearing_reopened_caesarea",
+          "note": "Paul is brought from custody to the hearing before Festus."
+        },
+        {
+          "order": 2,
+          "location_id": "caesarea_maritima",
+          "event_id": "paul_appeals_to_caesar",
+          "note": "Paul makes his formal appeal to Caesar before Festus's tribunal."
+        },
+        {
+          "order": 3,
+          "location_id": "herods_praetorium",
+          "event_id": "grand_ceremonial_hearing_assembled",
+          "note": "Paul is brought before the grand assembly of Agrippa, Bernice, and city leaders."
+        }
+      ]
+    },
+    {
+      "person_id": "agrippa",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "caesarea_maritima",
+          "event_id": "agrippa_bernice_arrive",
+          "note": "Agrippa and Bernice arrive in Caesarea for a state visit to Festus."
+        },
+        {
+          "order": 2,
+          "location_id": "herods_praetorium",
+          "event_id": "festus_briefs_agrippa",
+          "note": "Festus briefs Agrippa on Paul's case during the visit."
+        },
+        {
+          "order": 3,
+          "location_id": "herods_praetorium",
+          "event_id": "grand_ceremonial_hearing_assembled",
+          "note": "Agrippa presides at the grand assembly where Paul will speak."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "festus_visits_jerusalem",
+      "position": 1,
+      "label": "Festus visits Jerusalem; ambush request",
+      "relative_time": "Days 1–3 of Festus's tenure",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "festus_declines_transfer",
+      "position": 2,
+      "label": "Transfer to Jerusalem refused",
+      "relative_time": "Days 1–10 in Jerusalem",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "hearing_reopened_caesarea",
+      "position": 3,
+      "label": "Hearing reopened in Caesarea",
+      "relative_time": "Day after returning to Caesarea",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "paul_defends_himself_briefly",
+      "position": 4,
+      "label": "Paul: not guilty (law, Temple, Caesar)",
+      "relative_time": "The hearing",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "festus_proposes_jerusalem",
+      "position": 5,
+      "label": "Festus proposes Jerusalem trial",
+      "relative_time": "The hearing",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "paul_appeals_to_caesar",
+      "position": 6,
+      "label": "Paul appeals to Caesar — granted",
+      "relative_time": "The hearing — decisive moment",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "agrippa_bernice_arrive",
+      "position": 7,
+      "label": "Agrippa and Bernice arrive for state visit",
+      "relative_time": "Some days after the hearing",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "festus_briefs_agrippa",
+      "position": 8,
+      "label": "Festus briefs Agrippa on Paul",
+      "relative_time": "During state visit",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "agrippa_asks_to_hear_paul",
+      "position": 9,
+      "label": "Agrippa: 'I want to hear him'",
+      "relative_time": "During state visit",
+      "absolute_time": "c. AD 59"
+    },
+    {
+      "event_id": "grand_ceremonial_hearing_assembled",
+      "position": 10,
+      "label": "Grand assembly convened — Paul before Agrippa",
+      "relative_time": "The following day",
+      "absolute_time": "c. AD 59"
+    }
+  ],
+  "theological_themes": [
+    "Divine protection through Roman legal process: the empire's procedures preserve the apostle",
+    "The gospel before kings: Paul's witness reaches the highest social and political levels",
+    "The appeal to Caesar as the fulfillment of Jesus's promise that Paul must testify in Rome",
+    "Political accommodation and the compromise of justice: Festus doing Jews a 'favor' at Paul's expense",
+    "The puzzlement of secular power before the resurrection claim: Festus cannot even articulate the charges",
+    "Providence hidden in bureaucratic delay: legal confusion in Caesarea positions Paul for Rome"
+  ],
+  "discussion_questions": [
+    "Paul's appeal to Caesar is a decisive legal move that removes him from local Jewish-Roman politics. What does this decision reveal about his understanding of Roman citizenship as a tool for gospel mission?",
+    "Festus characterizes the dispute as being about 'a dead man named Jesus, whom Paul claims is alive.' What does this outsider summary reveal about how the resurrection appeared to Roman legal minds, and why does it both clarify and miss the point?",
+    "Festus proposes the Jerusalem trial partly 'to do the Jews a favor.' How do you evaluate political leaders who bend legal procedure to maintain good relations with powerful constituencies?",
+    "Agrippa wants to hear Paul immediately upon learning about him. What does this hunger to hear Paul suggest about the power of Paul's story and message, even in the retelling?",
+    "The chapter ends with Paul in chains before a grand assembly convened because a governor doesn't know what to write. How does this image of institutional confusion around a chained apostle subvert expectations of power and truth?"
+  ]
+};
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── PAGE SKELETON ── */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* ── BODY: timeline left, map right ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── TIMELINE COLUMN ── */
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+
+/* Chapter label strip */
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.tl-ch-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; line-height:1.1; color:var(--tl-fg);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+
+/* Scrollable event list */
+.tl-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+/* Vertical spine */
+.tl-spine {
+  padding: 8px 0 80px;
+  position: relative;
+}
+.tl-spine::before {
+  content:'';
+  position:absolute;
+  left: 38px;
+  top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent);
+}
+
+/* Year separator badge */
+.tl-year-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 6px 14px;
+  position: relative;
+  z-index: 2;
+}
+.tl-year-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(22% .018 255);
+  border: 1px solid oklch(36% .015 255);
+  padding: 2px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line {
+  flex: 1;
+  height: 1px;
+  background: oklch(30% .012 255);
+  opacity: .5;
+}
+
+/* Each item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s;
+  padding-right: 4px;
+  min-height: 130px;
+}
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+
+/* left: seq number + dot */
+.tl-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+.tl-seq {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  color: oklch(45% .01 255);
+  margin-bottom:5px;
+  letter-spacing:.05em;
+}
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%;
+  border:2px solid oklch(38% .015 255);
+  background: oklch(16% .018 255);
+  position:relative; z-index:1;
+  transition: all .28s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px oklch(58% .19 46 / .2);
+}
+.tl-dot-pip {
+  width:5px; height:5px; border-radius:50%; background:#fff;
+  opacity:0; transition:opacity .28s;
+}
+.tl-item.active .tl-dot-pip { opacity:1; }
+
+/* right: text */
+.tl-r {
+  padding: 22px 10px 22px 6px;
+  border-bottom: 1px solid oklch(24% .012 255);
+}
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date {
+  font-size:11px; font-weight:800; letter-spacing:.1em;
+  font-family:'Barlow Condensed',sans-serif;
+  color: oklch(70% .018 76); margin-bottom:3px;
+}
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time {
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  line-height:1.35;
+  color: oklch(72% .014 78); margin-bottom:6px;
+}
+.tl-item.active .tl-rel-time { color: oklch(82% .035 74); }
+.tl-ev-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px; font-weight:800; text-transform:uppercase;
+  line-height:1.18; color: var(--tl-fg);
+  margin-bottom: 4px;
+}
+.tl-ev-verses {
+  font-size:10px; font-weight:700; letter-spacing:.1em;
+  color: oklch(68% .018 76); margin-top:2px;
+}
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+
+/* ── MAP COLUMN ── */
+.map-col {
+  position: relative;
+  background: var(--map-land);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Event banner at top of map */
+.map-event-banner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  background: oklch(16% 0.02 55 / 0.92);
+  border-bottom: 2px solid var(--accent);
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 16px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: background .3s;
+}
+.ban-verses {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.ban-content {}
+.ban-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; color:oklch(95% .012 78);
+  line-height:1.1; margin-bottom:4px;
+}
+.ban-desc {
+  font-family:'Lora',serif; font-style:normal;
+  font-size:13px; line-height:1.55;
+  color:oklch(88% .014 78);
+  display: block;
+  overflow: visible;
+}
+.ban-loc {
+  display:flex; align-items:center; gap:5px;
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:oklch(55% .012 70); white-space:nowrap;
+}
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+/* ── MAP SVG ── */
+.map-svg-wrap {
+  position: absolute;
+  inset: 0;
+}
+.map-svg {
+  width:100%; height:100%;
+}
+
+/* Person legend - bottom left of map */
+.map-person-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.map-leg-item {
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; font-weight:600; letter-spacing:.06em;
+  color: var(--fg);
+  background: var(--card);
+  padding: 3px 10px 3px 7px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  transition: opacity .5s, transform .4s;
+}
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-leg-item.entering { animation: legEnter .4s ease forwards; }
+@keyframes legEnter {
+  from { opacity:0; transform:translateX(-8px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+.map-controls-panel { display: contents; }
+
+/* Map overlay labels */
+.map-corner-label {
+  position:absolute; bottom:18px; right:18px;
+  font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
+}
+
+.map-playback {
+  position: absolute;
+  right: 18px;
+  bottom: 42px;
+  z-index: 12;
+  width: min(460px, calc(100% - 36px));
+  background: oklch(99.5% 0.008 80 / .9);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+.playback-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:9px;
+}
+.playback-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.playback-buttons { display:flex; gap:6px; flex-shrink:0; }
+.playback-btn {
+  width:30px;
+  height:26px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--fg);
+  border-radius:3px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  line-height:1;
+}
+.playback-track {
+  position:relative;
+  height:28px;
+  display:grid;
+  grid-template-columns:repeat(var(--step-count), 1fr);
+  align-items:center;
+  gap:0;
+}
+.playback-track::before {
+  content:'';
+  position:absolute;
+  left:10px; right:10px; top:13px;
+  height:2px;
+  background:var(--border);
+}
+.playback-step {
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  width:20px;
+  height:20px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.playback-step::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:var(--fg-muted);
+  opacity:.42;
+  transition:all .24s;
+}
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before {
+  inset:2px;
+  background:var(--accent);
+  opacity:1;
+  box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
+}
+.playback-step-time { display: none; }
+.loc-label {
+  paint-order: stroke;
+  stroke: oklch(98% 0.008 80 / .82);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.person-name-label {
+  display: none;
+  paint-order: stroke;
+  stroke: oklch(16% 0.02 55 / .62);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: 44px auto;
+    overflow: visible;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
+  }
+
+  .map-col {
+    order: -1;
+    overflow: visible;
+  }
+
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+  .home-link,
+  .lang-btn {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .map-event-banner {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    flex: 0 0 auto;
+    padding: 8px 12px 9px;
+    gap: 3px;
+  }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title  { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc {
+    display: block;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow: visible;
+  }
+  .ban-loc    { display: none; }
+  .map-svg-wrap {
+    position: relative;
+    inset: auto;
+    flex: 0 0 clamp(300px, 46dvh, 430px);
+    min-height: clamp(300px, 46dvh, 430px);
+  }
+  .loc-label {
+    font-size: 28px;
+    font-weight: 800;
+    stroke-width: 5px;
+  }
+  .person-name-label { display: block; font-size: 18px; }
+
+  .map-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: oklch(93% 0.025 82);
+    border-top: 1px solid var(--border);
+  }
+
+  .map-person-legend {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    gap: 4px;
+    z-index: 14;
+    max-height: none;
+    overflow-y: auto;
+    padding: 5px;
+    background: oklch(99.5% 0.008 80 / .88);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px oklch(10% 0.02 55 / .12);
+    backdrop-filter: blur(8px);
+  }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
+  .map-leg-dot  { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+  .map-playback {
+    position: relative;
+    right:auto;
+    bottom:auto;
+    width:100%;
+    padding:8px 8px 10px;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track {
+    min-width: max(100%, calc(var(--step-count) * 92px));
+    height: 70px;
+    align-items: start;
+  }
+  .playback-track::before { top:8px; }
+  .playback-step { width:18px; height:18px; }
+  .playback-step-time {
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 84px;
+    color: var(--fg);
+    background: oklch(99.5% 0.008 80 / .92);
+    border: 1px solid oklch(84% 0.022 72 / .8);
+    border-radius: 3px;
+    padding: 3px 4px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    pointer-events: none;
+    box-shadow: 0 2px 8px oklch(10% 0.02 55 / .1);
+  }
+  .playback-step.active .playback-step-time {
+    color: oklch(99% 0.008 80);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .person-name-label { display: none; }
+
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {
+  "da": {
+    "book": "Apostlenes Gerninger",
+    "chapterTitle": "Festus, appellen til Cæsar og Agrippas ankomst",
+    "chapterSummary": "Den nye guvernør Porkius Festus ankommer til Cæsarea og rejser straks til Jerusalem, hvor ypperstepræsterne og de jødiske ledere igen presser sagen mod Paulus. De beder om at få Paulus overført til Jerusalem, mens de i virkeligheden planlægger et baghold på vejen. Festus afslår overførslen og inviterer dem i stedet til Cæsarea. Da sagen genoptages, møder Paulus anklager, som ikke kan bevises, og en guvernør, der synes villig til at bruge ham som politisk tjeneste. Derfor bruger Paulus sin ret som romersk borger og appellerer til Cæsar. Festus godkender appellen. Kort efter ankommer kong Agrippa II og Bernike, og kapitlet slutter med en storslået høring arrangeret til næste dag.",
+    "shortBook": "ApG",
+    "headerSub": "- Cæsarea, Jerusalem og Herodes' prætorium · år 59",
+    "mapCorner": "Cæsarea · Herodes' prætorium",
+    "timelineTitle": ["Appel til", "Cæsar"],
+    "yearBadges": ["Jerusalem", "Høringen", "Appellen", "Agrippa"],
+    "persons": {
+      "festus": "Porkius Festus",
+      "paul": "Paulus",
+      "agrippa": "Kong Agrippa",
+      "bernice": "Bernike",
+      "chief_priests_jewish_leaders": "Ypperstepræster og jødiske ledere"
+    },
+    "locations": {
+      "caesarea_maritima": { "name": "Cæsarea" },
+      "jerusalem": { "name": "Jerusalem" },
+      "rome": { "name": "Rom (omtalt)" },
+      "herods_praetorium": { "name": "Herodes' prætorium" }
+    },
+    "events": {
+      "festus_visits_jerusalem": {
+        "title": "Festus besøger Jerusalem; de jødiske ledere klager over Paulus",
+        "description": "Tre dage efter sin ankomst til Cæsarea rejser den nye guvernør Festus til Jerusalem. Straks presser ypperstepræsterne og de jødiske ledere deres sag mod Paulus og beder om, at han bliver overført til Jerusalem. Deres egentlige plan er et baghold på vejen, hvor Paulus skal dræbes, før han når frem til retten.",
+        "timeline_label": "Festus i Jerusalem; ønske om baghold fremsættes"
+      },
+      "festus_declines_transfer": {
+        "title": "Festus afslår overførslen og inviterer anklagerne til Cæsarea",
+        "description": "Festus afslår at overføre Paulus til Jerusalem. Han svarer, at Paulus holdes i Cæsarea, og at han selv snart vender tilbage dertil. Hvis lederne har en reel sag, kan deres dygtige mænd rejse med og fremlægge anklagerne i Cæsarea. Afslaget redder igen Paulus' liv.",
+        "timeline_label": "Overførslen nægtes"
+      },
+      "hearing_reopened_caesarea": {
+        "title": "Festus vender tilbage til Cæsarea; høringen genoptages",
+        "description": "Efter otte til ti dage i Jerusalem vender Festus tilbage til Cæsarea. Næste dag sætter han sig på dommersædet og befaler Paulus ført frem. De jødiske ledere omringer Paulus med alvorlige anklager, men Lukas understreger, at de ikke kan bevise dem.",
+        "timeline_label": "Høringen genoptages; anklagerne gentages"
+      },
+      "paul_defends_himself_briefly": {
+        "title": "Paulus' korte forsvar: ingen forbrydelse mod loven, templet eller Cæsar",
+        "description": "Paulus svarer kort: Han har ikke syndet mod jødernes lov, mod templet eller mod Cæsar. Ved at nævne Cæsar placerer han sig tydeligt under romersk retsbeskyttelse og viser, at han ikke er oprører mod romersk myndighed.",
+        "timeline_label": "Paulus: ikke skyldig mod lov, tempel eller Cæsar"
+      },
+      "festus_proposes_jerusalem": {
+        "title": "Festus foreslår at flytte retssagen til Jerusalem",
+        "description": "Festus ønsker at gøre jøderne en tjeneste og spørger Paulus, om han vil tage til Jerusalem og lade sagen prøve der foran Festus. Forslaget er farligt, fordi det ville føre Paulus tilbage til et område, hans fjender kontrollerer, og hvor mordplaner allerede er lagt.",
+        "timeline_label": "Festus foreslår retssag i Jerusalem"
+      },
+      "paul_appeals_to_caesar": {
+        "title": "Paulus bruger sin ret: Jeg appellerer til Cæsar",
+        "description": "Paulus afviser Jerusalem-forslaget med et afgørende juridisk træk. Han står ved Cæsars domstol, det rette sted for en romersk borger. Hvis han havde gjort noget, der fortjente døden, ville han ikke nægte at dø; men ingen må udlevere ham som en tjeneste, når anklagerne ikke er sande. Derfor siger han: Jeg appellerer til Cæsar. Festus rådfører sig med sit råd og godkender appellen.",
+        "timeline_label": "Appellen til Cæsar godkendes"
+      },
+      "agrippa_bernice_arrive": {
+        "title": "Agrippa og Bernike ankommer på høflighedsbesøg",
+        "description": "Nogle dage efter Paulus' appel ankommer kong Agrippa II og hans søster Bernike til Cæsarea for at hilse på den nye guvernør Festus. Agrippa har ansvar for templet og udnævnelsen af ypperstepræsten, så han er en oplagt rådgiver i spørgsmål om jødisk lov og tro.",
+        "timeline_label": "Agrippa og Bernike ankommer"
+      },
+      "festus_briefs_agrippa": {
+        "title": "Festus orienterer Agrippa om Paulus' forvirrende sag",
+        "description": "Festus lægger Paulus' sag frem for Agrippa, fordi han ikke ved, hvad han skal skrive til kejseren. Han fortæller om de jødiske anklager, den romerske høring, Paulus' appel og sin egen usikkerhed. For Festus handler striden især om jødernes religion og om en død mand ved navn Jesus, som Paulus påstår er levende.",
+        "timeline_label": "Festus forklarer Paulus-gåden for Agrippa"
+      },
+      "agrippa_asks_to_hear_paul": {
+        "title": "Agrippa: Jeg vil gerne selv høre den mand",
+        "description": "Agrippa reagerer straks på Festus' beretning og siger, at han gerne selv vil høre Paulus. Festus svarer, at han får ham at høre næste dag. Agrippas kendskab til jødiske forhold og hans nysgerrighed giver Paulus en meget fremtrædende tilhørergruppe.",
+        "timeline_label": "Agrippa beder om at høre Paulus"
+      },
+      "grand_ceremonial_hearing_assembled": {
+        "title": "Den store forsamling samles; Festus forklarer sit dilemma",
+        "description": "Næste dag træder Agrippa og Bernike ind med stor pragt sammen med officerer og byens fornemme mænd. Paulus føres ind. Festus forklarer, at han har brug for hjælp til at formulere en anklage, der kan sendes med Paulus til Cæsar, for det virker urimeligt at sende en fange uden at angive forbrydelsen.",
+        "timeline_label": "Stor forsamling; Festus fremlægger sit dilemma"
+      }
+    },
+    "timeline": {
+      "festus_visits_jerusalem": { "label": "Festus besøger Jerusalem; ønske om baghold", "relative_time": "Dag 1-3 i Festus' embedsperiode" },
+      "festus_declines_transfer": { "label": "Overførsel til Jerusalem afslås", "relative_time": "Dag 1-10 i Jerusalem" },
+      "hearing_reopened_caesarea": { "label": "Høringen genoptages i Cæsarea", "relative_time": "Dagen efter hjemkomsten til Cæsarea" },
+      "paul_defends_himself_briefly": { "label": "Paulus: ikke skyldig mod lov, tempel, Cæsar", "relative_time": "Under høringen" },
+      "festus_proposes_jerusalem": { "label": "Festus foreslår retssag i Jerusalem", "relative_time": "Under høringen" },
+      "paul_appeals_to_caesar": { "label": "Paulus appellerer til Cæsar - godkendt", "relative_time": "Høringens afgørende øjeblik" },
+      "agrippa_bernice_arrive": { "label": "Agrippa og Bernike ankommer", "relative_time": "Nogle dage efter høringen" },
+      "festus_briefs_agrippa": { "label": "Festus orienterer Agrippa om Paulus", "relative_time": "Under statsbesøget" },
+      "agrippa_asks_to_hear_paul": { "label": "Agrippa: Jeg vil høre ham", "relative_time": "Under statsbesøget" },
+      "grand_ceremonial_hearing_assembled": { "label": "Stor forsamling - Paulus foran Agrippa", "relative_time": "Den følgende dag" }
+    }
+  }
+};
+
+
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    chapter_summary: t.chapterSummary || base.chapter_summary,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH25, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shørtLabel = value
+    .replace(/^c\.\s*/, '')
+    .replace(/Late /, '')
+    .replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '')
+    .replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '')
+    .trim();
+  return includeYear && marker ? `${marker} ${shørtLabel}`.trim() : (shørtLabel || marker);
+}
+
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
+
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  if (marker && yearMarker(base) === marker) return base;
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
+/* ── PERSON COLORS ── */
+const PCOLORS = {
+  festus: '#56586E',
+  paul: '#7A6BB0',
+  agrippa: '#8A5A2F',
+  bernice: '#9A4F7A',
+  chief_priests_jewish_leaders: '#5C3030',
+};
+
+/* ── MAP COORDINATES (SVG 1000x800 viewBox, schematic Jerusalem→Caesarea corridor) ── */
+const VW = 1000, VH = 800;
+const locLabel = (id, fallback) => DATA.locations.find(l => l.id === id)?.name || fallback;
+const LOCS = {
+  caesarea_maritima:        { x: 220, y: 220, label: locLabel('caesarea_maritima', 'Caesarea') },
+  herods_praetorium:        { x: 285, y: 260, label: locLabel('herods_praetorium', "Herod's Praetorium") },
+  jerusalem:                { x: 720, y: 600, label: locLabel('jerusalem', 'Jerusalem') },
+};
+
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
+
+/* Build route stops with pixel coords */
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label || person?.name || r.person_id,
+      stops: r.path.map(s => ({
+        ...s,
+        ...(LOCS[s.location_id] || { x: 360, y: 360 }),
+      })),
+    };
+  });
+
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({
+        order: idx + 1,
+        location_id: ev.location_id,
+        event_id: ev.id,
+        ...(LOCS[ev.location_id] || { x: 360, y: 360 }),
+      }));
+    if (!stops.length) return;
+    out[person.id] = {
+      color: PCOLORS[person.id] || '#888',
+      label: person.name,
+      stops,
+    };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+/* Compute per-event person state */
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = {
+      color: route.color,
+      label: route.label,
+      pos:   { x: lastStop.x, y: lastStop.y },
+      active,
+      faded: !active,
+    };
+  });
+  return result;
+}
+
+/* ── MAP TERRAIN ── */
+function Terrain() {
+  return (
+    <g>
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-water)" opacity=".58" />
+      {/* Land mass: Levantine coast curving from NW down to SE */}
+      <path d="M 90 0 Q 150 80 220 200 Q 290 320 380 400 Q 470 470 580 510 Q 700 545 800 615 Q 900 690 1000 760 L 1000 800 L 0 800 L 0 0 Z"
+        fill="oklch(86% 0.048 92)" opacity="1" />
+      {/* Inland highlands (Judean / Samarian hills) */}
+      <path d="M 520 800 Q 560 700 620 620 Q 700 540 780 500 Q 870 470 960 460 L 1000 460 L 1000 800 Z"
+        fill="oklch(87% 0.055 90)" opacity=".75" />
+      {/* Coastal road (Via Maris) */}
+      <path d="M 240 200 Q 360 295 470 380 Q 580 460 700 540"
+        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".55" strokeDasharray="9 6" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Road from Jerusalem to Caesarea used by the prosecution delegation. */}
+      <path d="M 720 595 Q 580 510 430 380 Q 320 290 220 220"
+        fill="none" stroke="oklch(56% 0.16 46)" strokeWidth="6" opacity=".7" strokeDasharray="12 7" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Caesarea harbor curve */}
+      <path d="M 200 245 Q 165 285 165 335"
+        fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="14" opacity=".32" strokeLinecap="round" />
+      {/* Region labels */}
+      <text x="135" y="430" textAnchor="middle" fontSize="15" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(35% 0.06 220)" letterSpacing="6" opacity=".55">MEDITERRANEAN</text>
+      <text x="780" y="200" textAnchor="middle" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="5" opacity=".5">SAMARIA</text>
+      <text x="850" y="730" textAnchor="middle" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="5" opacity=".5">JUDEA</text>
+      <text x="380" y="525" textAnchor="middle" fontSize="11" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(40% 0.07 70)" letterSpacing="3" opacity=".42">SHARON PLAIN</text>
+      {/* Scale (~110 km Jerusalem → Caesarea) */}
+      <g transform="translate(70,735)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~50 km</text>
+      </g>
+      <g transform="translate(70,120)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
+          fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+function RouteLines() { return null; }
+
+/* ── LOCATION MARKERS ── */
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7}
+              fill={on ? 'var(--accent)' : 'var(--fg-muted)'}
+              stroke="var(--map-land)" strokeWidth="3"
+              style={{ transition: 'r .3s' }}
+            />
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5}
+              fontSize={on ? 17 : 14}
+              fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
+              fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
+              letterSpacing=".5"
+              style={{ transition: 'font-size .3s' }}
+            >{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/* ── PERSON DOTS ── */
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const cols = Math.min(3, groupSize);
+    const row = Math.floor(myGroupIdx / cols);
+    const col = myGroupIdx % cols;
+    const rows = Math.ceil(groupSize / cols);
+    const spacing = 30;
+    const offsetX = (col - (cols - 1) / 2) * spacing;
+    const offsetY = (row - (rows - 1) / 2) * spacing;
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
+    return { x, y };
+  };
+
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y}
+                  stroke={s.color} strokeWidth="3" strokeLinecap="round"
+                  strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR}
+              fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
+              style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
+            />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle"
+              fontSize={s.active ? 13 : 10} fontWeight="800" fill="white"
+              fontFamily="Barlow Condensed" pointerEvents="none"
+              style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              {(s.label || '?').charAt(0)}
+            </text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle"
+                fontSize="12" fontWeight="800" fill={s.color}
+                fontFamily="Barlow Condensed" pointerEvents="none"
+                style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+              >
+                {s.label}
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+
+/* ── MAP PANEL ── */
+function MapPanel({ activeEventId, onStep, onEventChange }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
+
+  return (
+    <div className="map-col">
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && (
+          <div className="ban-loc">
+            <div className="ban-loc-dot" />
+            {loc.name}
+          </div>
+        )}
+      </div>
+
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+
+      <div className="map-controls-panel">
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="map-playback">
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button
+                key={tl.event_id}
+                type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}
+              >
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="map-corner-label">{UI_TEXT.mapCorner || "Caesarea · Herod's Praetorium"}</div>
+    </div>
+  );
+}
+
+/* ── TIMELINE PANEL ── */
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(false);
+
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) {
+      scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    }
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
+
+  /* Badges mark the chapter phases: Jerusalem request, Caesarea hearing, appeal, and Agrippa. */
+  const BADGE_POSITIONS = { 0: 0, 3: 1, 6: 2, 8: 3 };
+  const DEFAULT_BADGES = ['Jerusalem', 'Hearing', 'Appeal', 'Agrippa'];
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Appeal to <em>Caesar</em></>}</div>
+      </div>
+
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div
+                  ref={el => entryRefs.current[tl.event_id] = el}
+                  data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}
+                >
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ── */
+function App() {
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
+
+  useEffect(() => {
+    document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
+
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/024';
+        return prev;
+      }
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || "- Caesarea and Herod's Praetorium · AD 59"}</span>
+        <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">
+          {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
+        </a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>
+          {INITIAL_LANG === 'da' ? 'En' : 'Da'}
+        </button>
+      </div>
+
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel
+          activeEventId={activeEv}
+          onStep={stepEvent}
+          onEventChange={handleEventChange}
+        />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

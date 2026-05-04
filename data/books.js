@@ -175,7 +175,9 @@ window.BOOKS_MANIFEST = {
         {
           "n": 25,
           "title": "Festus, the Appeal to Caesar, and Agrippa's Arrival",
-          "status": "soon"
+          "title_da": "Festus, appellen til Cæsar og Agrippas ankomst",
+          "status": "implemented",
+          "href": "/bible/acts/025"
         },
         {
           "n": 26,
