@@ -190,7 +190,8 @@ window.BOOKS_MANIFEST = {
           "n": 27,
           "title": "Storm, Shipwreck, and Providence: The Voyage to Rome",
           "title_da": "Storm, skibbrud og forsyn",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/027"
         },
         {
           "n": 28,
