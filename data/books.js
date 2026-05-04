@@ -134,7 +134,8 @@ window.BOOKS_MANIFEST = {
           "n": 19,
           "title": "The Great Riot at Ephesus",
           "title_da": "Det store oprør i Efesos",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/019"
         },
         {
           "n": 20,
