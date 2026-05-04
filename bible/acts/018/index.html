@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 18 — The Tentmaker of Corinth</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script>
+const ACTS_CH18 = {
+  "book": "Acts",
+  "chapter": 18,
+  "chapter_title": "The Tentmaker of Corinth",
+  "chapter_summary": "Paul arrives in the bustling port city of Corinth, where he meets Aquila and Priscilla, Jewish tentmakers recently expelled from Rome, and together they establish a Christian community over eighteen months. Despite fierce opposition from the local Jewish synagogue, Paul receives a divine vision assuring him of protection and continues preaching until he is dragged before the Roman proconsul Gallio, who dismisses the case. Paul then travels east through Ephesus and back to Antioch, completing his second missionary journey, before setting out on his third.",
+  "date_range": {
+    "approximate": "AD 50–52",
+    "notes": "The mention of proconsul Gallio (v.12) is one of the most precise anchor points in Acts chronology; an inscription at Delphi dates Gallio's term to approximately AD 51–52, placing Paul's Corinth stay around AD 50–51."
+  },
+  "persons": [
+    {
+      "id": "paul",
+      "name": "Paul",
+      "role": "Apostle / Missionary",
+      "first_mention_verse": "18:1",
+      "summary": "The central figure of Acts, Paul arrives in Corinth after his experiences in Athens and spends about eighteen months there planting a church. He works as a tentmaker, preaches in the synagogue, faces a Roman tribunal, and then travels back toward his home base in Antioch.",
+      "significance": "Paul's extended stay in Corinth produced one of the most important early Christian communities and his later letters to the Corinthians; his appearance before Gallio establishes a firm historical date for the mission."
+    },
+    {
+      "id": "aquila",
+      "name": "Aquila",
+      "role": "Tentmaker / Fellow Missionary",
+      "first_mention_verse": "18:2",
+      "summary": "A Jewish man from Pontus who, along with his wife Priscilla, had been expelled from Rome under Claudius's edict and resettled in Corinth. He shares Paul's trade and his home, becoming one of Paul's most trusted co-workers.",
+      "significance": "Aquila and Priscilla represent the mobile, trade-based network that spread early Christianity throughout the Roman Empire; they later appear in Ephesus and Rome (Romans 16:3)."
+    },
+    {
+      "id": "priscilla",
+      "name": "Priscilla",
+      "role": "Tentmaker / Teacher / Fellow Missionary",
+      "first_mention_verse": "18:2",
+      "summary": "Wife of Aquila and an equally prominent partner in ministry; she hosts Paul and later, with Aquila, gives the gifted Apollos a more complete grounding in Christian teaching. Acts unusually lists her before her husband in two of three references, hinting at her leadership.",
+      "significance": "Priscilla is one of the most visible women in early Christian mission; her theological instruction of Apollos shaped a key subsequent preacher of the faith."
+    },
+    {
+      "id": "silas",
+      "name": "Silas",
+      "role": "Missionary / Co-worker of Paul",
+      "first_mention_verse": "18:5",
+      "summary": "Silas arrives from Macedonia with Timothy and rejoins Paul's mission in Corinth, freeing Paul to devote himself entirely to preaching. He had been Paul's companion since the start of the second journey.",
+      "significance": "Silas (also called Silvanus) is associated with Paul's letters to the Thessalonians and represents continuity of the Antioch mission team through the second journey."
+    },
+    {
+      "id": "timothy",
+      "name": "Timothy",
+      "role": "Missionary / Paul's Associate",
+      "first_mention_verse": "18:5",
+      "summary": "Timothy arrives with Silas from Macedonia, bringing news and likely financial support from the Philippian church, enabling Paul to focus exclusively on preaching in Corinth.",
+      "significance": "Timothy is Paul's most trusted younger associate; the pastoral letters bearing his name show the depth of their relationship, and he remains a central figure through the end of Acts."
+    },
+    {
+      "id": "crispus",
+      "name": "Crispus",
+      "role": "Synagogue Official",
+      "first_mention_verse": "18:8",
+      "summary": "The leader of the Jewish synagogue in Corinth who, together with his entire household, comes to believe in Jesus. His conversion is a dramatic moment, as a synagogue ruler publicly aligning with Paul carries significant social weight.",
+      "significance": "Paul mentions baptizing Crispus personally (1 Corinthians 1:14), marking him as one of the few individuals Paul baptized directly; his conversion exemplifies breakthrough within the Jewish community."
+    },
+    {
+      "id": "gallio",
+      "name": "Gallio",
+      "role": "Roman Proconsul of Achaia",
+      "first_mention_verse": "18:12",
+      "summary": "The Roman governor of the province of Achaia who dismisses the Jewish leaders' charges against Paul, ruling that their dispute is a matter of Jewish law rather than Roman criminal law. His refusal to prosecute sets an important precedent.",
+      "significance": "Gallio's decision implies official Roman tolerance of Christianity as a Jewish sect, and his dated inscription at Delphi provides scholars the clearest fixed chronological anchor in all of Acts."
+    },
+    {
+      "id": "sosthenes",
+      "name": "Sosthenes",
+      "role": "Synagogue Official",
+      "first_mention_verse": "18:17",
+      "summary": "The synagogue ruler who is beaten by the crowd in front of Gallio's tribunal after the case against Paul collapses. Whether the crowd is Greek anti-Semites or disgruntled Jewish members venting frustration is debated.",
+      "significance": "A man named Sosthenes is listed as co-author of 1 Corinthians (1:1), raising the intriguing possibility that this official later became a Christian believer."
+    },
+    {
+      "id": "apollos",
+      "name": "Apollos",
+      "role": "Preacher / Teacher",
+      "first_mention_verse": "18:24",
+      "summary": "A highly educated Jewish man from Alexandria who arrives in Ephesus with accurate knowledge about Jesus and a passionate preaching style, but only knowing the baptism of John. Priscilla and Aquila privately complete his theological education.",
+      "significance": "Apollos becomes a major figure in Corinth (1 Corinthians 1:12) and is held up as an example of how gifted teachers can still grow in understanding; his Alexandrian background suggests early Christianity spread to Egypt very early."
+    },
+    {
+      "id": "jewish_opposition_corinth",
+      "name": "Jews who opposed Paul in Corinth",
+      "role": "Group / Opponents",
+      "first_mention_verse": "18:6",
+      "summary": "A faction of the Corinthian synagogue that resists and abuses Paul's message, prompting him to formally renounce further ministry to them and turn fully to Gentiles. They later collectively drag Paul before Gallio.",
+      "significance": "Their opposition and Gallio's dismissal of their complaint together illustrate the recurring pattern in Acts: Jewish rejection of the gospel opens the door to Gentile mission."
+    },
+    {
+      "id": "ephesian_jews",
+      "name": "Jews of Ephesus",
+      "role": "Group / Audience",
+      "first_mention_verse": "18:19",
+      "summary": "The Jewish community in Ephesus who hear Paul briefly in their synagogue during his stopover. They respond positively and ask him to stay longer, but he declines.",
+      "significance": "Their receptive response foreshadows the extended and fruitful Ephesian mission of Acts 19, contrasting sharply with the hostile reception at Corinth."
+    },
+    {
+      "id": "disciples_of_john_ephesus",
+      "name": "Disciples at Ephesus (of John's baptism)",
+      "role": "Group / Incomplete Believers",
+      "first_mention_verse": "18:25",
+      "summary": "Though technically introduced through the Apollos passage, this group (more fully addressed in 19:1–7) represents people in Ephesus who had received only John's baptism and lacked full knowledge of the Holy Spirit.",
+      "significance": "Their incomplete faith illustrates a transitional stage in early Christianity where the boundaries of the movement were still being defined and extended."
+    }
+  ],
+  "locations": [
+    {
+      "id": "corinth",
+      "name": "Corinth",
+      "modern_name": "Korinthos, Greece",
+      "lat": 37.9067,
+      "lng": 22.8785,
+      "description": "A major Roman commercial city on the isthmus of Greece, famed for its wealth and notorious vices, where Paul spent approximately eighteen months establishing one of his most significant churches."
+    },
+    {
+      "id": "athens",
+      "name": "Athens",
+      "modern_name": "Athens, Greece",
+      "lat": 37.9838,
+      "lng": 23.7275,
+      "description": "The intellectual capital of Greece where Paul had just preached on the Areopagus; mentioned as the departure point as Paul moves southwest to Corinth."
+    },
+    {
+      "id": "corinth_synagogue",
+      "name": "Synagogue (Corinth)",
+      "modern_name": "Korinthos, Greece (site uncertain)",
+      "lat": 37.9067,
+      "lng": 22.8785,
+      "description": "The Jewish meeting house in Corinth where Paul preached every Sabbath for months before Jewish opposition forced him to relocate next door."
+    },
+    {
+      "id": "titius_justus_house",
+      "name": "House of Titius Justus",
+      "modern_name": "Korinthos, Greece (site unknown)",
+      "lat": 37.9067,
+      "lng": 22.8785,
+      "description": "The home of a Gentile God-fearer located immediately next to the synagogue, which Paul used as his base of operations after leaving the synagogue; its proximity was likely deliberate."
+    },
+    {
+      "id": "bema_corinth",
+      "name": "Bema (Judgment Seat) of Corinth",
+      "modern_name": "Korinthos, Greece (archaeological remains preserved)",
+      "lat": 37.9075,
+      "lng": 22.8793,
+      "description": "The large raised stone platform in the Corinthian forum where the proconsul Gallio held court and dismissed the charges brought against Paul, a site archaeologists have identified."
+    },
+    {
+      "id": "cenchreae",
+      "name": "Cenchreae",
+      "modern_name": "Kechries, Greece",
+      "lat": 37.8833,
+      "lng": 23.0028,
+      "description": "The eastern port of Corinth on the Saronic Gulf where Paul shaved his head to fulfill a Nazirite vow before sailing for Syria; later mentioned as home to the deaconess Phoebe (Romans 16:1)."
+    },
+    {
+      "id": "ephesus",
+      "name": "Ephesus",
+      "modern_name": "Selçuk, Turkey (ancient ruins)",
+      "lat": 37.9396,
+      "lng": 27.3411,
+      "description": "The most prominent city on the western coast of Asia Minor and a major religious and commercial hub, where Paul briefly visits on his return journey and leaves Priscilla and Aquila."
+    },
+    {
+      "id": "caesarea_maritima",
+      "name": "Caesarea",
+      "modern_name": "Caesarea Maritima, Israel",
+      "lat": 32.5019,
+      "lng": 34.8977,
+      "description": "The Roman administrative capital of Judea and major seaport where Paul lands after leaving Ephesus, visits the church, and then proceeds north to Antioch."
+    },
+    {
+      "id": "antioch_syria",
+      "name": "Antioch",
+      "modern_name": "Antakya, Turkey",
+      "lat": 36.2021,
+      "lng": 36.1603,
+      "description": "The church in Syrian Antioch served as Paul's home base and sending community; he returns here at the conclusion of his second missionary journey before promptly launching his third."
+    },
+    {
+      "id": "galatia_phrygia",
+      "name": "Galatia and Phrygia",
+      "modern_name": "Central Turkey (region)",
+      "lat": 39,
+      "lng": 32.5,
+      "description": "The inland regions of Asia Minor through which Paul travels at the start of his third journey, strengthening the disciples he had planted on earlier journeys."
+    }
+  ],
+  "events": [
+    {
+      "id": "paul_arrives_corinth",
+      "sequence": 1,
+      "verses": "18:1-2",
+      "title": "Paul Arrives in Corinth; Meets Aquila and Priscilla",
+      "description": "After his time in Athens, Paul travels to the thriving commercial city of Corinth, one of the Roman Empire's most important ports. There he meets Aquila and his wife Priscilla, Jewish tentmakers who had recently been expelled from Rome when Emperor Claudius ordered all Jews out of the city. The two are immediately linked by their shared trade and likely their shared faith. Paul moves in with them and begins his work in Corinth.",
+      "location_id": "corinth",
+      "persons_present": [
+        "paul",
+        "aquila",
+        "priscilla"
+      ],
+      "timeline_label": "Paul Arrives in Corinth",
+      "scroll_anchor": "paul-arrives-corinth",
+      "visual_notes": "Busy harbor city scene; a workshop with leather and cloth, two figures working side by side, cityscape of Roman Corinth with Acrocorinth hill in background."
+    },
+    {
+      "id": "paul_preaches_synagogue_corinth",
+      "sequence": 2,
+      "verses": "18:3-4",
+      "title": "Paul Works and Preaches in the Synagogue",
+      "description": "Paul works with Aquila and Priscilla as a tentmaker to support himself while he preaches every Sabbath in the Corinthian synagogue. He debates with both Jews and Greeks (God-fearers who attended the synagogue), trying to persuade them about Jesus being the Messiah. This dual approach — manual labor alongside intellectual argument — characterizes Paul's ministry strategy in Corinth.",
+      "location_id": "corinth_synagogue",
+      "persons_present": [
+        "paul",
+        "aquila",
+        "priscilla"
+      ],
+      "timeline_label": "Synagogue Preaching Begins",
+      "scroll_anchor": "paul-preaches-synagogue-corinth",
+      "visual_notes": "Interior of a first-century synagogue with scrolls; Paul standing, gesturing to an attentive mixed audience of Jewish men and Greek-dressed Gentiles."
+    },
+    {
+      "id": "silas_timothy_arrive",
+      "sequence": 3,
+      "verses": "18:5",
+      "title": "Silas and Timothy Arrive from Macedonia",
+      "description": "When Silas and Timothy arrive from the Macedonian churches (probably bringing financial support from Philippi, as Paul later indicates in 2 Corinthians 11:9), Paul is able to stop tentmaking and devote himself entirely to teaching and preaching. The reinforcement of his team and the financial relief allow Paul to intensify his gospel proclamation, focusing his message on proving to the Jews that Jesus is the Messiah.",
+      "location_id": "corinth",
+      "persons_present": [
+        "paul",
+        "silas",
+        "timothy"
+      ],
+      "timeline_label": "Team Reunited",
+      "scroll_anchor": "silas-timothy-arrive",
+      "visual_notes": "Street scene of reunion, travel-worn figures arriving, the city gate of Corinth in the distance, Paul stepping out of a workshop to greet them."
+    },
+    {
+      "id": "paul_turns_to_gentiles",
+      "sequence": 4,
+      "verses": "18:6",
+      "title": "Paul Shakes Out His Garments and Turns to the Gentiles",
+      "description": "Faced with intensifying Jewish opposition and abuse, Paul performs a symbolic act rooted in Jewish practice: he shakes out his clothing, signifying that he is clean of responsibility for those who reject the message. He declares, 'Your blood be on your own heads! I am innocent of it. From now on I will go to the Gentiles.' This is not a permanent abandonment but a local pivot in strategy, reflecting the pattern throughout Acts where Jewish rejection opens the door to Gentile mission.",
+      "location_id": "corinth_synagogue",
+      "persons_present": [
+        "paul",
+        "jewish_opposition_corinth"
+      ],
+      "timeline_label": "Turn to the Gentiles",
+      "scroll_anchor": "paul-turns-to-gentiles",
+      "visual_notes": "Dramatic moment: Paul standing at the synagogue entrance, arms raised shaking his garment, crowd of hostile faces inside, open street behind him."
+    },
+    {
+      "id": "paul_moves_to_titius_justus",
+      "sequence": 5,
+      "verses": "18:7-8",
+      "title": "Paul Moves Next Door; Crispus Believes",
+      "description": "Paul relocates his base of operations to the house of Titius Justus, a Gentile worshiper of God whose house literally shares a wall with the synagogue — a provocative choice. Almost immediately, Crispus, the synagogue ruler himself, together with his entire household, comes to believe in Jesus and is baptized. This high-profile conversion encourages many other Corinthians to believe and be baptized.",
+      "location_id": "titius_justus_house",
+      "persons_present": [
+        "paul",
+        "crispus"
+      ],
+      "timeline_label": "Crispus Converts",
+      "scroll_anchor": "paul-moves-titius-justus",
+      "visual_notes": "Split-scene illustration: left side is the synagogue, right side is the adjacent house church; Crispus in synagogue leader's robes crossing the threshold."
+    },
+    {
+      "id": "vision_stay_in_corinth",
+      "sequence": 6,
+      "verses": "18:9-11",
+      "title": "Divine Vision: 'Do Not Be Afraid, Keep Speaking'",
+      "description": "The Lord speaks to Paul at night in a vision, telling him not to be afraid and to keep speaking boldly, for God has many people in the city. Paul is promised divine protection from harm. Emboldened by this assurance, Paul remains in Corinth for a total of eighteen months, the longest stay recorded in Acts aside from his Roman imprisonment. This extended period produces deep roots for the Corinthian church.",
+      "location_id": "corinth",
+      "persons_present": [
+        "paul"
+      ],
+      "timeline_label": "Vision: Stay in Corinth",
+      "scroll_anchor": "vision-stay-in-corinth",
+      "visual_notes": "Night scene; Paul asleep or kneeling, a luminous figure above him, the darkened cityscape of Corinth visible through a window; atmosphere of divine calm amid surrounding threat."
+    },
+    {
+      "id": "paul_before_gallio",
+      "sequence": 7,
+      "verses": "18:12-16",
+      "title": "Paul Dragged Before Proconsul Gallio",
+      "description": "When Gallio becomes the new proconsul of Achaia, the Jewish opposition seizes the opportunity to bring Paul before the official Roman court (the bema). They accuse him of persuading people to worship God contrary to the law. Before Paul can even speak in his defense, Gallio interrupts and dismisses the case entirely, ruling that it is an internal dispute about Jewish words and names — not a criminal matter under Roman law. He physically drives them away from the court.",
+      "location_id": "bema_corinth",
+      "persons_present": [
+        "paul",
+        "gallio",
+        "jewish_opposition_corinth"
+      ],
+      "timeline_label": "Before Proconsul Gallio",
+      "scroll_anchor": "paul-before-gallio",
+      "visual_notes": "The large raised stone bema platform of Corinth's forum; Gallio in Roman magistrate's toga gesturing dismissively; crowd of accusers and Paul's figure below the steps."
+    },
+    {
+      "id": "sosthenes_beaten",
+      "sequence": 8,
+      "verses": "18:17",
+      "title": "Sosthenes Is Beaten Before the Court",
+      "description": "After Gallio's dismissal, the crowd turns on Sosthenes, the synagogue ruler, and beats him in front of the bema. Gallio pays no attention to this, underlining his complete indifference to Jewish-Christian disputes. The identity of the attackers is debated — they may be anti-Semitic Greeks venting frustration, or perhaps even disgruntled members of Sosthenes's own community angry at the failed case.",
+      "location_id": "bema_corinth",
+      "persons_present": [
+        "sosthenes",
+        "gallio"
+      ],
+      "timeline_label": "Sosthenes Beaten",
+      "scroll_anchor": "sosthenes-beaten",
+      "visual_notes": "Chaotic scene at the foot of the bema; a robed synagogue official surrounded by hostile crowd, Roman guards and officials turning away unconcerned."
+    },
+    {
+      "id": "paul_departs_corinth",
+      "sequence": 9,
+      "verses": "18:18",
+      "title": "Paul Departs Corinth with a Vow",
+      "description": "After many days Paul says farewell to the Corinthian brothers and sisters and sails from Cenchreae, Corinth's eastern port, accompanied by Priscilla and Aquila. Before embarking, Paul shaves his head at Cenchreae because of a vow he had made, suggesting he had taken a temporary Nazirite vow of dedication to God during his period of danger in Corinth.",
+      "location_id": "cenchreae",
+      "persons_present": [
+        "paul",
+        "priscilla",
+        "aquila"
+      ],
+      "timeline_label": "Paul Sails from Cenchreae",
+      "scroll_anchor": "paul-departs-corinth",
+      "visual_notes": "Harbor of Cenchreae; a Roman merchant vessel being loaded, Paul with shorn head, three figures boarding, the Corinthian isthmus in the background at dusk."
+    },
+    {
+      "id": "paul_visits_ephesus",
+      "sequence": 10,
+      "verses": "18:19-21",
+      "title": "Brief Visit to Ephesus; Leaves Priscilla and Aquila",
+      "description": "Paul stops at Ephesus and leaves Priscilla and Aquila there while he himself enters the synagogue and debates with the Jewish community. The Ephesians respond enthusiastically and urge him to stay longer, but Paul declines, saying he must keep a feast in Jerusalem if God wills, and that he will return. He bids them farewell and sails on, but his promise of return sets up the major Ephesian mission of chapter 19.",
+      "location_id": "ephesus",
+      "persons_present": [
+        "paul",
+        "priscilla",
+        "aquila",
+        "ephesian_jews"
+      ],
+      "timeline_label": "Stopover in Ephesus",
+      "scroll_anchor": "paul-visits-ephesus",
+      "visual_notes": "The grand colonnade of ancient Ephesus; a synagogue interior, warm farewell scene, Priscilla and Aquila watching Paul's ship leave the harbor."
+    },
+    {
+      "id": "paul_returns_antioch",
+      "sequence": 11,
+      "verses": "18:22",
+      "title": "Paul Returns to Caesarea and Antioch",
+      "description": "Paul sails to Caesarea Maritima, the main Roman port of Judea, goes up to greet the church (almost certainly a reference to Jerusalem, which was uphill), and then travels down to Antioch, completing his second missionary journey. This brief return to his home base church provides rest, reconnection, and likely a report on the journey's outcomes.",
+      "location_id": "caesarea_maritima",
+      "persons_present": [
+        "paul"
+      ],
+      "timeline_label": "Second Journey Ends",
+      "scroll_anchor": "paul-returns-antioch",
+      "visual_notes": "Map view of the Mediterranean showing the return arc; Caesarea harbor with Roman architecture; Paul greeting church elders."
+    },
+    {
+      "id": "paul_begins_third_journey",
+      "sequence": 12,
+      "verses": "18:23",
+      "title": "Paul Sets Out on His Third Missionary Journey",
+      "description": "After spending some time in Antioch, Paul leaves again and travels systematically through the Galatian and Phrygian regions, strengthening and encouraging all the disciples he had previously planted. This verse marks the quiet beginning of the third missionary journey, with no dramatic call or vision but simply the ongoing rhythm of itinerant pastoral care.",
+      "location_id": "galatia_phrygia",
+      "persons_present": [
+        "paul"
+      ],
+      "timeline_label": "Third Journey Begins",
+      "scroll_anchor": "paul-begins-third-journey",
+      "visual_notes": "Overland road through the Anatolian plateau, Paul and unnamed companions on the Roman road, small village churches in the rolling landscape."
+    },
+    {
+      "id": "apollos_in_ephesus",
+      "sequence": 13,
+      "verses": "18:24-25",
+      "title": "Apollos Arrives in Ephesus — Learned but Incomplete",
+      "description": "A Jewish man named Apollos arrives in Ephesus from Alexandria. He is eloquent and thoroughly knowledgeable in the Hebrew scriptures, teaches accurately about Jesus, and proclaims the message with great fervor. However, his theological knowledge extends only as far as the baptism of John — he does not yet know about the full gift of the Holy Spirit inaugurated at Pentecost.",
+      "location_id": "ephesus",
+      "persons_present": [
+        "apollos"
+      ],
+      "timeline_label": "Apollos in Ephesus",
+      "scroll_anchor": "apollos-in-ephesus",
+      "visual_notes": "A dramatic preacher in a crowded Ephesian synagogue, scroll in hand, gesturing with authority; the contrast between his eloquence and the incomplete teaching visually shown."
+    },
+    {
+      "id": "priscilla_aquila_instruct_apollos",
+      "sequence": 14,
+      "verses": "18:26",
+      "title": "Priscilla and Aquila Take Apollos Aside",
+      "description": "When Priscilla and Aquila hear Apollos teaching boldly in the synagogue, they take him privately aside and explain to him the way of God more accurately and completely. This private, respectful instruction bridges the gap in his understanding without public embarrassment. It is a remarkable portrait of lay theological mentoring, particularly notable because Priscilla is listed first.",
+      "location_id": "ephesus",
+      "persons_present": [
+        "priscilla",
+        "aquila",
+        "apollos"
+      ],
+      "timeline_label": "Apollos Instructed",
+      "scroll_anchor": "priscilla-aquila-instruct-apollos",
+      "visual_notes": "Intimate indoor scene, perhaps a home, three figures around a table with scrolls open between them; Priscilla prominent, gesturing to a passage."
+    },
+    {
+      "id": "apollos_goes_to_achaia",
+      "sequence": 15,
+      "verses": "18:27-28",
+      "title": "Apollos Sent to Achaia with Letters of Recommendation",
+      "description": "When Apollos wants to cross over to Achaia (the region of Greece including Corinth), the Ephesian brothers and sisters encourage him and write letters of recommendation to the disciples there. In Achaia, Apollos proves to be of great help to those who had come to believe through grace, vigorously refuting the Jewish opposition in public debates by demonstrating from the scriptures that Jesus is the Messiah.",
+      "location_id": "corinth",
+      "persons_present": [
+        "apollos"
+      ],
+      "timeline_label": "Apollos to Corinth",
+      "scroll_anchor": "apollos-goes-to-achaia",
+      "visual_notes": "Apollos stepping off a boat into the port of Corinth holding a letter; then a debate scene in a public hall, Apollos with open scroll arguing passionately against opponents."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "athens",
+          "event_id": "paul_arrives_corinth",
+          "note": "Paul departs Athens after limited success and travels to Corinth."
+        },
+        {
+          "order": 2,
+          "location_id": "corinth",
+          "event_id": "paul_preaches_synagogue_corinth",
+          "note": "Paul settles in Corinth for eighteen months."
+        },
+        {
+          "order": 3,
+          "location_id": "cenchreae",
+          "event_id": "paul_departs_corinth",
+          "note": "Paul sails from Corinth's eastern port after making a vow."
+        },
+        {
+          "order": 4,
+          "location_id": "ephesus",
+          "event_id": "paul_visits_ephesus",
+          "note": "Brief stopover; Paul debates in the synagogue and declines to stay."
+        },
+        {
+          "order": 5,
+          "location_id": "caesarea_maritima",
+          "event_id": "paul_returns_antioch",
+          "note": "Paul lands at Caesarea and greets the Jerusalem church."
+        },
+        {
+          "order": 6,
+          "location_id": "antioch_syria",
+          "event_id": "paul_returns_antioch",
+          "note": "Paul returns to his home base, ending the second journey."
+        },
+        {
+          "order": 7,
+          "location_id": "galatia_phrygia",
+          "event_id": "paul_begins_third_journey",
+          "note": "Paul sets out overland through Galatia and Phrygia on his third journey."
+        }
+      ]
+    },
+    {
+      "person_id": "priscilla",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "corinth",
+          "event_id": "paul_arrives_corinth",
+          "note": "Priscilla and Aquila are already in Corinth, having been expelled from Rome."
+        },
+        {
+          "order": 2,
+          "location_id": "cenchreae",
+          "event_id": "paul_departs_corinth",
+          "note": "Priscilla accompanies Paul when he sails from Cenchreae."
+        },
+        {
+          "order": 3,
+          "location_id": "ephesus",
+          "event_id": "paul_visits_ephesus",
+          "note": "Paul leaves Priscilla and Aquila in Ephesus as he continues his journey."
+        },
+        {
+          "order": 4,
+          "location_id": "ephesus",
+          "event_id": "priscilla_aquila_instruct_apollos",
+          "note": "Priscilla and Aquila remain in Ephesus and instruct Apollos."
+        }
+      ]
+    },
+    {
+      "person_id": "apollos",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "ephesus",
+          "event_id": "apollos_in_ephesus",
+          "note": "Apollos arrives from Alexandria and begins preaching in the Ephesian synagogue."
+        },
+        {
+          "order": 2,
+          "location_id": "ephesus",
+          "event_id": "priscilla_aquila_instruct_apollos",
+          "note": "Apollos receives private instruction from Priscilla and Aquila."
+        },
+        {
+          "order": 3,
+          "location_id": "corinth",
+          "event_id": "apollos_goes_to_achaia",
+          "note": "Apollos crosses to Achaia with letters of recommendation and ministers in Corinth."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "paul_arrives_corinth",
+      "position": 1,
+      "label": "Paul Arrives in Corinth",
+      "relative_time": "Second missionary journey, c. AD 50",
+      "absolute_time": "c. AD 50"
+    },
+    {
+      "event_id": "paul_preaches_synagogue_corinth",
+      "position": 2,
+      "label": "Sabbath Preaching Begins",
+      "relative_time": "Second missionary journey, c. AD 50",
+      "absolute_time": "c. AD 50"
+    },
+    {
+      "event_id": "silas_timothy_arrive",
+      "position": 3,
+      "label": "Team Reunited",
+      "relative_time": "Second missionary journey, c. AD 50",
+      "absolute_time": "c. AD 50"
+    },
+    {
+      "event_id": "paul_turns_to_gentiles",
+      "position": 4,
+      "label": "Turns to Gentiles",
+      "relative_time": "Second missionary journey, c. AD 50",
+      "absolute_time": "c. AD 50"
+    },
+    {
+      "event_id": "paul_moves_to_titius_justus",
+      "position": 5,
+      "label": "Crispus Converts",
+      "relative_time": "Second missionary journey, c. AD 50",
+      "absolute_time": "c. AD 50"
+    },
+    {
+      "event_id": "vision_stay_in_corinth",
+      "position": 6,
+      "label": "Vision: Stay in Corinth",
+      "relative_time": "Second missionary journey, c. AD 50",
+      "absolute_time": "c. AD 50"
+    },
+    {
+      "event_id": "paul_before_gallio",
+      "position": 7,
+      "label": "Trial Before Gallio",
+      "relative_time": "Second missionary journey, c. AD 51–52",
+      "absolute_time": "c. AD 51–52"
+    },
+    {
+      "event_id": "sosthenes_beaten",
+      "position": 8,
+      "label": "Sosthenes Beaten",
+      "relative_time": "Second missionary journey, c. AD 51–52",
+      "absolute_time": "c. AD 51–52"
+    },
+    {
+      "event_id": "paul_departs_corinth",
+      "position": 9,
+      "label": "Departure from Cenchreae",
+      "relative_time": "Second missionary journey, c. AD 51–52",
+      "absolute_time": "c. AD 51–52"
+    },
+    {
+      "event_id": "paul_visits_ephesus",
+      "position": 10,
+      "label": "Stopover in Ephesus",
+      "relative_time": "Second missionary journey, c. AD 51–52",
+      "absolute_time": "c. AD 51–52"
+    },
+    {
+      "event_id": "paul_returns_antioch",
+      "position": 11,
+      "label": "Second Journey Ends",
+      "relative_time": "Second missionary journey ends, c. AD 52",
+      "absolute_time": "c. AD 52"
+    },
+    {
+      "event_id": "paul_begins_third_journey",
+      "position": 12,
+      "label": "Third Journey Begins",
+      "relative_time": "Third missionary journey, c. AD 52–53",
+      "absolute_time": "c. AD 52–53"
+    },
+    {
+      "event_id": "apollos_in_ephesus",
+      "position": 13,
+      "label": "Apollos Arrives in Ephesus",
+      "relative_time": "Third missionary journey, c. AD 52–53",
+      "absolute_time": "c. AD 52–53"
+    },
+    {
+      "event_id": "priscilla_aquila_instruct_apollos",
+      "position": 14,
+      "label": "Apollos Instructed",
+      "relative_time": "Third missionary journey, c. AD 52–53",
+      "absolute_time": "c. AD 52–53"
+    },
+    {
+      "event_id": "apollos_goes_to_achaia",
+      "position": 15,
+      "label": "Apollos to Corinth",
+      "relative_time": "Third missionary journey, c. AD 52–53",
+      "absolute_time": "c. AD 52–53"
+    }
+  ],
+  "theological_themes": [
+    "Divine protection and providential guidance in mission",
+    "The gospel moving from Jewish audiences to Gentiles",
+    "Lay discipleship and mentoring (Priscilla and Aquila instructing Apollos)",
+    "The role of Roman law as an inadvertent protector of early Christianity",
+    "Incomplete faith and the need for fuller understanding of the Holy Spirit",
+    "Tentmaking ministry: the integration of work and witness"
+  ],
+  "discussion_questions": [
+    "Why do you think Paul chose to make tents for a living rather than relying on the congregation for support, and what might that say about his ministry philosophy?",
+    "Gallio's dismissal of Paul's case is presented neutrally in Acts, yet it had profound consequences. Can human institutions unintentionally serve divine purposes?",
+    "Priscilla and Aquila correct Apollos privately and respectfully rather than publicly rebuking him. What does this model teach about how we should handle theological disagreement within the church?",
+    "Paul receives a vision assuring him of God's presence and protection, yet he still faces real opposition. How does divine assurance coexist with ongoing hardship?",
+    "The chapter shows Christianity spreading through a combination of synagogue debate, house-based community, and trade networks. Which of these seem most relevant for spreading faith today?"
+  ]
+};
+
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── PAGE SKELETON ── */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* ── BODY: timeline left, map right ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── TIMELINE COLUMN ── */
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+
+/* Chapter label strip */
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.tl-ch-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; line-height:1.1; color:var(--tl-fg);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+
+/* Scrollable event list */
+.tl-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+/* Vertical spine */
+.tl-spine {
+  padding: 8px 0 80px;
+  position: relative;
+}
+.tl-spine::before {
+  content:'';
+  position:absolute;
+  left: 38px;
+  top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent);
+}
+
+/* Year separator badge */
+.tl-year-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 6px 14px;
+  position: relative;
+  z-index: 2;
+}
+.tl-year-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(22% .018 255);
+  border: 1px solid oklch(36% .015 255);
+  padding: 2px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line {
+  flex: 1;
+  height: 1px;
+  background: oklch(30% .012 255);
+  opacity: .5;
+}
+
+/* Each item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s;
+  padding-right: 4px;
+  min-height: 130px;
+}
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+
+/* left: seq number + dot */
+.tl-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+.tl-seq {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  color: oklch(45% .01 255);
+  margin-bottom:5px;
+  letter-spacing:.05em;
+}
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%;
+  border:2px solid oklch(38% .015 255);
+  background: oklch(16% .018 255);
+  position:relative; z-index:1;
+  transition: all .28s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px oklch(58% .19 46 / .2);
+}
+.tl-dot-pip {
+  width:5px; height:5px; border-radius:50%; background:#fff;
+  opacity:0; transition:opacity .28s;
+}
+.tl-item.active .tl-dot-pip { opacity:1; }
+
+/* right: text */
+.tl-r {
+  padding: 22px 10px 22px 6px;
+  border-bottom: 1px solid oklch(24% .012 255);
+}
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date {
+  font-size:11px; font-weight:800; letter-spacing:.1em;
+  font-family:'Barlow Condensed',sans-serif;
+  color: oklch(70% .018 76); margin-bottom:3px;
+}
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time {
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  line-height:1.35;
+  color: oklch(72% .014 78); margin-bottom:6px;
+}
+.tl-item.active .tl-rel-time { color: oklch(82% .035 74); }
+.tl-ev-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px; font-weight:800; text-transform:uppercase;
+  line-height:1.18; color: var(--tl-fg);
+  margin-bottom: 4px;
+}
+.tl-ev-verses {
+  font-size:10px; font-weight:700; letter-spacing:.1em;
+  color: oklch(68% .018 76); margin-top:2px;
+}
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+
+/* ── MAP COLUMN ── */
+.map-col {
+  position: relative;
+  background: var(--map-land);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Event banner at top of map */
+.map-event-banner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  background: oklch(16% 0.02 55 / 0.92);
+  border-bottom: 2px solid var(--accent);
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 16px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: background .3s;
+}
+.ban-verses {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.ban-content {}
+.ban-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; color:oklch(95% .012 78);
+  line-height:1.1; margin-bottom:4px;
+}
+.ban-desc {
+  font-family:'Lora',serif; font-style:normal;
+  font-size:13px; line-height:1.55;
+  color:oklch(88% .014 78);
+  display: block;
+  overflow: visible;
+}
+.ban-loc {
+  display:flex; align-items:center; gap:5px;
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:oklch(55% .012 70); white-space:nowrap;
+}
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+/* ── MAP SVG ── */
+.map-svg-wrap {
+  position: absolute;
+  inset: 0;
+}
+.map-svg {
+  width:100%; height:100%;
+}
+
+/* Person legend - bottom left of map */
+.map-person-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.map-leg-item {
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; font-weight:600; letter-spacing:.06em;
+  color: var(--fg);
+  background: var(--card);
+  padding: 3px 10px 3px 7px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  transition: opacity .5s, transform .4s;
+}
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-leg-item.entering { animation: legEnter .4s ease forwards; }
+@keyframes legEnter {
+  from { opacity:0; transform:translateX(-8px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+.map-controls-panel { display: contents; }
+
+/* Map overlay labels */
+.map-corner-label {
+  position:absolute; bottom:18px; right:18px;
+  font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
+}
+
+.map-playback {
+  position: absolute;
+  right: 18px;
+  bottom: 42px;
+  z-index: 12;
+  width: min(460px, calc(100% - 36px));
+  background: oklch(99.5% 0.008 80 / .9);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+.playback-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:9px;
+}
+.playback-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.playback-buttons { display:flex; gap:6px; flex-shrink:0; }
+.playback-btn {
+  width:30px;
+  height:26px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--fg);
+  border-radius:3px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  line-height:1;
+}
+.playback-track {
+  position:relative;
+  height:28px;
+  display:grid;
+  grid-template-columns:repeat(var(--step-count), 1fr);
+  align-items:center;
+  gap:0;
+}
+.playback-track::before {
+  content:'';
+  position:absolute;
+  left:10px; right:10px; top:13px;
+  height:2px;
+  background:var(--border);
+}
+.playback-step {
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  width:20px;
+  height:20px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.playback-step::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:var(--fg-muted);
+  opacity:.42;
+  transition:all .24s;
+}
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before {
+  inset:2px;
+  background:var(--accent);
+  opacity:1;
+  box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
+}
+.playback-step-time { display: none; }
+.loc-label {
+  paint-order: stroke;
+  stroke: oklch(98% 0.008 80 / .82);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.person-name-label {
+  display: none;
+  paint-order: stroke;
+  stroke: oklch(16% 0.02 55 / .62);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: 44px auto;
+    overflow: visible;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
+  }
+
+  .map-col {
+    order: -1;
+    overflow: visible;
+  }
+
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+  .home-link,
+  .lang-btn {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .map-event-banner {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    flex: 0 0 auto;
+    padding: 8px 12px 9px;
+    gap: 3px;
+  }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title  { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc {
+    display: block;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow: visible;
+  }
+  .ban-loc    { display: none; }
+  .map-svg-wrap {
+    position: relative;
+    inset: auto;
+    flex: 0 0 clamp(300px, 46dvh, 430px);
+    min-height: clamp(300px, 46dvh, 430px);
+  }
+  .loc-label {
+    font-size: 28px;
+    font-weight: 800;
+    stroke-width: 5px;
+  }
+  .person-name-label { display: block; font-size: 18px; }
+
+  .map-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: oklch(93% 0.025 82);
+    border-top: 1px solid var(--border);
+  }
+
+  .map-person-legend {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    gap: 4px;
+    z-index: 14;
+    max-height: none;
+    overflow-y: auto;
+    padding: 5px;
+    background: oklch(99.5% 0.008 80 / .88);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px oklch(10% 0.02 55 / .12);
+    backdrop-filter: blur(8px);
+  }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
+  .map-leg-dot  { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+  .map-playback {
+    position: relative;
+    right:auto;
+    bottom:auto;
+    width:100%;
+    padding:8px 8px 10px;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track {
+    min-width: max(100%, calc(var(--step-count) * 92px));
+    height: 70px;
+    align-items: start;
+  }
+  .playback-track::before { top:8px; }
+  .playback-step { width:18px; height:18px; }
+  .playback-step-time {
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 84px;
+    color: var(--fg);
+    background: oklch(99.5% 0.008 80 / .92);
+    border: 1px solid oklch(84% 0.022 72 / .8);
+    border-radius: 3px;
+    padding: 3px 4px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    pointer-events: none;
+    box-shadow: 0 2px 8px oklch(10% 0.02 55 / .1);
+  }
+  .playback-step.active .playback-step-time {
+    color: oklch(99% 0.008 80);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .person-name-label { display: none; }
+
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {
+  da: {
+    book: 'Apostlenes Gerninger',
+    chapterTitle: 'Teltmageren fra Korinth',
+    shortBook: 'ApG',
+    headerSub: '- Korinth, Efesos og Akaja · ca. år 50-53',
+    mapCorner: 'Korinth · Efesos · Akaja',
+    timelineTitle: ['Korinth til', 'Efesos'],
+    yearBadges: ['Korinth', 'Gallio', 'Hjemrejse', 'Apollos'],
+    persons: {
+      paul: 'Paulus',
+      aquila: 'Akvila',
+      priscilla: 'Priskilla',
+      silas: 'Silas',
+      timothy: 'Timotheus',
+      crispus: 'Krispus',
+      gallio: 'Gallio',
+      sosthenes: 'Sosthenes',
+      apollos: 'Apollos',
+      jewish_opposition_corinth: 'Jødiske modstandere i Korinth',
+      ephesian_jews: 'Jøderne i Efesos',
+      disciples_of_john_ephesus: 'Johannes-disciple i Efesos'
+    },
+    locations: {
+      corinth: { name: 'Korinth' },
+      athens: { name: 'Athen' },
+      corinth_synagogue: { name: 'Synagogen i Korinth' },
+      titius_justus_house: { name: 'Titius Justus’ hus' },
+      bema_corinth: { name: 'Domstolen i Korinth' },
+      cenchreae: { name: 'Kenkreæ' },
+      ephesus: { name: 'Efesos' },
+      caesarea_maritima: { name: 'Cæsarea' },
+      antioch_syria: { name: 'Antiokia' },
+      galatia_phrygia: { name: 'Galatien og Frygien' }
+    },
+    events: {
+      paul_arrives_corinth: {
+        title: 'Paulus kommer til Korinth og møder Akvila og Priskilla',
+        description: 'Efter tiden i Athen rejser Paulus til handelsbyen Korinth. Der møder han Akvila og Priskilla, jødiske teltmagere der for nylig er blevet fordrevet fra Rom under kejser Claudius. De deler både håndværk og mission, og Paulus flytter ind hos dem.',
+        timeline_label: 'Paulus kommer til Korinth'
+      },
+      paul_preaches_synagogue_corinth: {
+        title: 'Paulus arbejder og forkynder i synagogen',
+        description: 'Paulus arbejder sammen med Akvila og Priskilla som teltmager og forsørger sig selv, mens han hver sabbat taler i synagogen. Han prøver at overbevise både jøder og græske gudfrygtige om, at Jesus er Messias.',
+        timeline_label: 'Forkyndelsen i synagogen begynder'
+      },
+      silas_timothy_arrive: {
+        title: 'Silas og Timotheus ankommer fra Makedonien',
+        description: 'Da Silas og Timotheus kommer fra menighederne i Makedonien, kan Paulus hellige sig forkyndelsen mere fuldt. Teamet er samlet igen, og Paulus intensiverer vidnesbyrdet om, at Jesus er Messias.',
+        timeline_label: 'Teamet samles igen'
+      },
+      paul_turns_to_gentiles: {
+        title: 'Paulus ryster støvet af tøjet og vender sig til hedningerne',
+        description: 'Da modstanden og spotten bliver hårdere, ryster Paulus sit tøj som et tegn på, at ansvaret nu ligger hos dem, der afviser budskabet. Han erklærer, at han fremover vil gå til hedningerne i Korinth.',
+        timeline_label: 'Vender sig til hedningerne'
+      },
+      paul_moves_to_titius_justus: {
+        title: 'Paulus flytter ind ved siden af synagogen; Krispus tror',
+        description: 'Paulus flytter sin base til Titius Justus’ hus, en gudfrygtig hedning der bor lige ved siden af synagogen. Kort efter kommer synagogeforstanderen Krispus og hele hans husstand til tro, og mange korinthere bliver døbt.',
+        timeline_label: 'Krispus kommer til tro'
+      },
+      vision_stay_in_corinth: {
+        title: 'Synet om natten: Frygt ikke, men tal videre',
+        description: 'Herren taler til Paulus i et syn og siger, at han ikke skal frygte, men blive ved med at tale. Gud lover ham nærvær og beskyttelse, fordi der er mange i byen, som tilhører ham. Derfor bliver Paulus i Korinth i halvandet år.',
+        timeline_label: 'Synet: Bliv i Korinth'
+      },
+      paul_before_gallio: {
+        title: 'Paulus slæbes for prokonsulen Gallio',
+        description: 'Da Gallio bliver prokonsul i Akaja, fører Paulus’ modstandere ham for den romerske domstol. De anklager ham for forkert gudsdyrkelse, men Gallio afviser sagen som et internt jødisk spørgsmål og nægter at dømme Paulus.',
+        timeline_label: 'For prokonsulen Gallio'
+      },
+      sosthenes_beaten: {
+        title: 'Sosthenes bliver slået foran domstolen',
+        description: 'Efter Gallios afvisning vender mængden sig mod Sosthenes, synagogeforstanderen, og slår ham foran domstolen. Gallio griber ikke ind, hvilket viser hans ligegyldighed over for striden.',
+        timeline_label: 'Sosthenes bliver slået'
+      },
+      paul_departs_corinth: {
+        title: 'Paulus forlader Korinth med et løfte',
+        description: 'Efter endnu nogen tid tager Paulus afsked med brødrene og søstrene og sejler fra Kenkreæ sammen med Priskilla og Akvila. Inden afrejsen lader han sit hår klippe på grund af et løfte.',
+        timeline_label: 'Paulus sejler fra Kenkreæ'
+      },
+      paul_visits_ephesus: {
+        title: 'Kort besøg i Efesos; Priskilla og Akvila bliver tilbage',
+        description: 'Paulus standser i Efesos, efterlader Priskilla og Akvila der og taler selv i synagogen. Jøderne beder ham blive længere, men han siger farvel med løftet om at vende tilbage, hvis Gud vil.',
+        timeline_label: 'Ophold i Efesos'
+      },
+      paul_returns_antioch: {
+        title: 'Paulus vender tilbage til Cæsarea og Antiokia',
+        description: 'Paulus sejler til Cæsarea, går op og hilser menigheden og rejser derfra ned til Antiokia. Dermed afsluttes den anden missionsrejse, før en ny rejse snart begynder.',
+        timeline_label: 'Den anden rejse slutter'
+      },
+      paul_begins_third_journey: {
+        title: 'Paulus begynder sin tredje missionsrejse',
+        description: 'Efter nogen tid i Antiokia drager Paulus ud igen og rejser gennem Galatien og Frygien. Han styrker de disciple, der allerede er blevet plantet gennem tidligere mission.',
+        timeline_label: 'Den tredje rejse begynder'
+      },
+      apollos_in_ephesus: {
+        title: 'Apollos kommer til Efesos, lærd men ufuldstændigt undervist',
+        description: 'Apollos, en veltalende jøde fra Alexandria, kommer til Efesos. Han kender Skrifterne grundigt og underviser brændende om Jesus, men hans forståelse rækker kun til Johannes’ dåb.',
+        timeline_label: 'Apollos i Efesos'
+      },
+      priscilla_aquila_instruct_apollos: {
+        title: 'Priskilla og Akvila tager Apollos til side',
+        description: 'Da Priskilla og Akvila hører Apollos tale frimodigt i synagogen, tager de ham diskret til side og forklarer Guds vej mere nøjagtigt. Rettelsen sker respektfuldt og gør hans tjeneste stærkere.',
+        timeline_label: 'Apollos undervises'
+      },
+      apollos_goes_to_achaia: {
+        title: 'Apollos sendes til Akaja med anbefalingsbreve',
+        description: 'Da Apollos ønsker at rejse over til Akaja, opmuntrer menigheden ham og sender breve med. I Korinth bliver han til stor hjælp for de troende og viser offentligt ud fra Skrifterne, at Jesus er Messias.',
+        timeline_label: 'Apollos til Korinth'
+      }
+    },
+    timeline: {
+      paul_arrives_corinth: { label: 'Paulus kommer til Korinth', relative_time: 'Anden missionsrejse, ca. år 50' },
+      paul_preaches_synagogue_corinth: { label: 'Sabbatsforkyndelse begynder', relative_time: 'Anden missionsrejse, ca. år 50' },
+      silas_timothy_arrive: { label: 'Teamet samles igen', relative_time: 'Anden missionsrejse, ca. år 50' },
+      paul_turns_to_gentiles: { label: 'Vender sig til hedninger', relative_time: 'Anden missionsrejse, ca. år 50' },
+      paul_moves_to_titius_justus: { label: 'Krispus kommer til tro', relative_time: 'Anden missionsrejse, ca. år 50' },
+      vision_stay_in_corinth: { label: 'Syn: Bliv i Korinth', relative_time: 'Anden missionsrejse, ca. år 50' },
+      paul_before_gallio: { label: 'For Gallios domstol', relative_time: 'Anden missionsrejse, ca. år 51-52' },
+      sosthenes_beaten: { label: 'Sosthenes bliver slået', relative_time: 'Anden missionsrejse, ca. år 51-52' },
+      paul_departs_corinth: { label: 'Afrejse fra Kenkreæ', relative_time: 'Anden missionsrejse, ca. år 51-52' },
+      paul_visits_ephesus: { label: 'Ophold i Efesos', relative_time: 'Anden missionsrejse, ca. år 51-52' },
+      paul_returns_antioch: { label: 'Anden rejse slutter', relative_time: 'Anden missionsrejse slutter, ca. år 52' },
+      paul_begins_third_journey: { label: 'Tredje rejse begynder', relative_time: 'Tredje missionsrejse, ca. år 52-53' },
+      apollos_in_ephesus: { label: 'Apollos kommer til Efesos', relative_time: 'Tredje missionsrejse, ca. år 52-53' },
+      priscilla_aquila_instruct_apollos: { label: 'Apollos undervises', relative_time: 'Tredje missionsrejse, ca. år 52-53' },
+      apollos_goes_to_achaia: { label: 'Apollos til Korinth', relative_time: 'Tredje missionsrejse, ca. år 52-53' }
+    }
+  }
+};
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH18, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shortLabel = value
+    .replace(/^c\.\s*/, '')
+    .replace(/Late /, '')
+    .replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '')
+    .replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '')
+    .trim();
+  return includeYear && marker ? `${marker} ${shortLabel}`.trim() : (shortLabel || marker);
+}
+
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
+
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  if (marker && yearMarker(base) === marker) return base;
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
+/* ── PERSON COLORS ── */
+const PCOLORS = {
+  paul: "#7A6BB0",
+  aquila: "#4F9A8A",
+  priscilla: "#B86B8A",
+  silas: "#4F8FA8",
+  timothy: "#6B8F71",
+  crispus: "#D4A24C",
+  gallio: "#6E7890",
+  sosthenes: "#A87A2D",
+  apollos: "#C65A2E",
+  jewish_opposition_corinth: "#A82F1A",
+  ephesian_jews: "#8A6BB0",
+  disciples_of_john_ephesus: "#7A8FA0",
+};
+
+/* ── MAP COORDINATES (SVG 1000x800 viewBox, schematic Aegean route) ── */
+const VW = 1000, VH = 800;
+const locLabel = (id, fallback) => DATA.locations.find(l => l.id === id)?.name || fallback;
+const LOCS = {
+  athens: { x: 140, y: 590, label: locLabel('athens', 'Athens') },
+  corinth: { x: 260, y: 600, label: locLabel('corinth', 'Corinth') },
+  corinth_synagogue: { x: 285, y: 575, label: locLabel('corinth_synagogue', 'Synagogue') },
+  titius_justus_house: { x: 310, y: 612, label: locLabel('titius_justus_house', 'Justus House') },
+  bema_corinth: { x: 250, y: 635, label: locLabel('bema_corinth', 'Bema') },
+  cenchreae: { x: 355, y: 610, label: locLabel('cenchreae', 'Cenchreae') },
+  ephesus: { x: 660, y: 410, label: locLabel('ephesus', 'Ephesus') },
+  caesarea_maritima: { x: 795, y: 675, label: locLabel('caesarea_maritima', 'Caesarea') },
+  antioch_syria: { x: 895, y: 545, label: locLabel('antioch_syria', 'Antioch') },
+  galatia_phrygia: { x: 785, y: 235, label: locLabel('galatia_phrygia', 'Galatia & Phrygia') },
+};
+
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
+
+/* Build route stops with pixel coords */
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label || person?.name || r.person_id,
+      stops: r.path.map(s => ({
+        ...s,
+        ...(LOCS[s.location_id] || { x: 360, y: 360 }),
+      })),
+    };
+  });
+
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({
+        order: idx + 1,
+        location_id: ev.location_id,
+        event_id: ev.id,
+        ...(LOCS[ev.location_id] || { x: 360, y: 360 }),
+      }));
+    if (!stops.length) return;
+    out[person.id] = {
+      color: PCOLORS[person.id] || '#888',
+      label: person.name,
+      stops,
+    };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+/* Compute per-event person state */
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = {
+      color: route.color,
+      label: route.label,
+      pos:   { x: lastStop.x, y: lastStop.y },
+      active,
+      faded: !active,
+    };
+  });
+  return result;
+}
+
+/* ── MAP TERRAIN ── */
+function Terrain() {
+  return (
+    <g>
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-water)" opacity=".58" />
+      <path d="M 0 430 Q 95 375 210 410 Q 290 435 392 520 Q 430 585 372 660 Q 265 760 0 800 Z"
+        fill="oklch(86% 0.048 92)" opacity="1" />
+      <path d="M 520 0 H 1000 V 800 H 742 Q 705 710 748 612 Q 785 525 735 460 Q 675 382 700 290 Q 735 160 520 0 Z"
+        fill="oklch(87% 0.055 90)" opacity="1" />
+      <path d="M 210 700 Q 292 642 355 610 Q 495 535 660 410 Q 740 345 785 235"
+        fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="5" opacity=".5" strokeDasharray="11 7" strokeLinecap="round" />
+      <path d="M 660 410 Q 750 505 795 675"
+        fill="none" stroke="oklch(78% 0.075 225)" strokeWidth="18" opacity=".34" strokeLinecap="round" />
+      <path d="M 140 590 L 260 600 L 285 575 L 310 612 L 250 635 L 355 610"
+        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".68" strokeDasharray="9 6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 355 610 Q 520 515 660 410 Q 735 505 795 675 Q 855 625 895 545"
+        fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="5" opacity=".48" strokeDasharray="11 7" strokeLinecap="round" />
+      <path d="M 895 545 Q 840 410 785 235"
+        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".68" strokeDasharray="9 6" strokeLinecap="round" strokeLinejoin="round" />
+      <text x="170" y="715" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">ACHAIA</text>
+      <text x="705" y="120" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">ASIA MINOR</text>
+      <text x="520" y="520" textAnchor="middle" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(35% 0.06 220)" letterSpacing="4" opacity=".55">AEGEAN SEA</text>
+      <g transform="translate(70,735)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~150 km</text>
+      </g>
+      <g transform="translate(70,120)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
+          fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+function RouteLines() { return null; }
+
+/* ── LOCATION MARKERS ── */
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7}
+              fill={on ? 'var(--accent)' : 'var(--fg-muted)'}
+              stroke="var(--map-land)" strokeWidth="3"
+              style={{ transition: 'r .3s' }}
+            />
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5}
+              fontSize={on ? 17 : 14}
+              fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
+              fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
+              letterSpacing=".5"
+              style={{ transition: 'font-size .3s' }}
+            >{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/* ── PERSON DOTS ── */
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const cols = Math.min(3, groupSize);
+    const row = Math.floor(myGroupIdx / cols);
+    const col = myGroupIdx % cols;
+    const rows = Math.ceil(groupSize / cols);
+    const spacing = 30;
+    const offsetX = (col - (cols - 1) / 2) * spacing;
+    const offsetY = (row - (rows - 1) / 2) * spacing;
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
+    return { x, y };
+  };
+
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y}
+                  stroke={s.color} strokeWidth="3" strokeLinecap="round"
+                  strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR}
+              fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
+              style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
+            />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle"
+              fontSize={s.active ? 13 : 10} fontWeight="800" fill="white"
+              fontFamily="Barlow Condensed" pointerEvents="none"
+              style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              {(s.label || '?').charAt(0)}
+            </text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle"
+                fontSize="12" fontWeight="800" fill={s.color}
+                fontFamily="Barlow Condensed" pointerEvents="none"
+                style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+              >
+                {s.label}
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+
+/* ── MAP PANEL ── */
+function MapPanel({ activeEventId, onStep, onEventChange }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
+
+  return (
+    <div className="map-col">
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && (
+          <div className="ban-loc">
+            <div className="ban-loc-dot" />
+            {loc.name}
+          </div>
+        )}
+      </div>
+
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+
+      <div className="map-controls-panel">
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="map-playback">
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button
+                key={tl.event_id}
+                type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}
+              >
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Corinth · Ephesus · Achaia'}</div>
+    </div>
+  );
+}
+
+/* ── TIMELINE PANEL ── */
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(false);
+
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) {
+      scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    }
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
+
+  /* Badges mark the Corinth stay, Gallio hearing, return leg, and Apollos handoff. */
+  const BADGE_POSITIONS = { 0: 0, 6: 1, 9: 2, 12: 3 };
+  const DEFAULT_BADGES = ['Corinth', 'Gallio', 'Return', 'Apollos'];
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Corinth to <em>Ephesus</em></>}</div>
+      </div>
+
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div
+                  ref={el => entryRefs.current[tl.event_id] = el}
+                  data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}
+                >
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ── */
+function App() {
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
+
+  useEffect(() => {
+    document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
+
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/017';
+        return prev;
+      }
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '- Corinth, Ephesus, and Achaia · c. AD 50-53'}</span>
+        <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">
+          {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
+        </a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>
+          {INITIAL_LANG === 'da' ? 'En' : 'Da'}
+        </button>
+      </div>
+
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel
+          activeEventId={activeEv}
+          onStep={stepEvent}
+          onEventChange={handleEventChange}
+        />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

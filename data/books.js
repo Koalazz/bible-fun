@@ -127,7 +127,8 @@ window.BOOKS_MANIFEST = {
           "n": 18,
           "title": "The Tentmaker of Corinth",
           "title_da": "Teltmageren fra Korinth",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/018"
         },
         {
           "n": 19,
