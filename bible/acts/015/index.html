@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 15 — The Council That Changed Everything</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script>
+const ACTS_CH15 = {
+  "book": "Acts",
+  "chapter": 15,
+  "chapter_title": "The Council That Changed Everything",
+  "chapter_summary": "A heated controversy erupts in the early church when certain Jewish believers insist that Gentile converts must be circumcised and keep the Law of Moses to be saved. The church sends Paul and Barnabas to Jerusalem, where the apostles and elders hold a formal council, hear testimony from Peter, Paul, Barnabas, and James, and reach a landmark decision: Gentiles are not required to be circumcised, but are asked to observe a short list of practices that will enable fellowship with Jewish believers. The chapter ends with the mission expanding further as Paul and Silas begin the second missionary journey while Barnabas takes John Mark in a separate direction.",
+  "date_range": {
+    "approximate": "AD 48–49",
+    "notes": "The Jerusalem Council is one of the most-discussed chronological anchors in Acts; most scholars date it to AD 48 or 49. Paul's reference to this meeting in Galatians 2 is sometimes identified with this council, though that identification remains debated."
+  },
+  "persons": [
+    {
+      "id": "paul",
+      "name": "Paul",
+      "role": "Apostle, Missionary",
+      "first_mention_verse": "15:2",
+      "summary": "Paul is appointed by the Antioch church to travel to Jerusalem and present the case for Gentile inclusion without circumcision. At the council he reports the signs and wonders God performed among the Gentiles, and afterwards he leads the second missionary journey with Silas.",
+      "significance": "Paul's Gentile mission is the central issue driving the Jerusalem Council, and his vindication there sets the theological foundation for the rest of Acts and for his letters."
+    },
+    {
+      "id": "barnabas",
+      "name": "Barnabas",
+      "role": "Apostle, Missionary",
+      "first_mention_verse": "15:2",
+      "summary": "Barnabas travels with Paul to Jerusalem, co-presents the evidence of God's work among the Gentiles, and is part of the delegation that carries the council's letter to Antioch. At the chapter's end he splits from Paul over the question of John Mark, taking him to Cyprus.",
+      "significance": "This chapter marks Barnabas's final prominent appearance in Acts; his parting with Paul is described as a sharp disagreement, yet God uses it to double the missionary reach."
+    },
+    {
+      "id": "certain_men_from_judea",
+      "name": "Certain Men from Judea",
+      "role": "Group — Judaizing Teachers",
+      "first_mention_verse": "15:1",
+      "summary": "An unnamed group of Jewish believers who travel from Judea to Antioch and teach that Gentile converts must be circumcised according to Moses to be saved. Their teaching triggers the entire controversy that leads to the Jerusalem Council.",
+      "significance": "These figures represent the 'Judaizer' position that Paul combats throughout his letters; their challenge forces the early church to formally define the terms of Gentile salvation."
+    },
+    {
+      "id": "peter",
+      "name": "Peter",
+      "role": "Apostle",
+      "first_mention_verse": "15:7",
+      "summary": "Peter rises at the Jerusalem Council to give pivotal testimony about his own experience with Cornelius (Acts 10), arguing that God made no distinction between Jews and Gentiles but gave the Holy Spirit to both alike, and that neither group should be burdened with a yoke no one could bear.",
+      "significance": "Peter's speech at the council draws on his foundational Cornelius experience to shift the deliberations decisively in favor of Gentile inclusion, marking his last major speech in Acts."
+    },
+    {
+      "id": "james",
+      "name": "James",
+      "role": "Leader of the Jerusalem Church",
+      "first_mention_verse": "15:13",
+      "summary": "James, the brother of Jesus and leader of the Jerusalem church, speaks last and definitively at the council. He cites the prophet Amos to argue that God always intended to include Gentiles, then proposes the practical compromise: abstain from food polluted by idols, sexual immorality, the meat of strangled animals, and blood.",
+      "significance": "James's verdict shapes the entire future of Jewish-Gentile relations in the early church; his citation of Amos demonstrates how the Jerusalem leadership used Scripture to navigate a new pastoral situation."
+    },
+    {
+      "id": "silas",
+      "name": "Silas (Silvanus)",
+      "role": "Prophet, Missionary",
+      "first_mention_verse": "15:22",
+      "summary": "Silas is chosen by the Jerusalem church as one of two leading men to accompany Paul and Barnabas in delivering the council's letter to Antioch. He is described as a prophet who encourages and strengthens the believers, and he becomes Paul's partner for the second missionary journey.",
+      "significance": "Silas's role as Paul's companion on the second journey gives the mission the same dual-witness structure as the first; as a Roman citizen (implied in 16:37), he also proves useful in navigating Roman legal situations."
+    },
+    {
+      "id": "judas_barsabbas",
+      "name": "Judas (called Barsabbas)",
+      "role": "Prophet, Delegate",
+      "first_mention_verse": "15:22",
+      "summary": "Judas Barsabbas is selected alongside Silas as a Jerusalem delegate to accompany Paul and Barnabas to Antioch, bearing the council letter and confirming its contents verbally. He is described as a leading man among the brothers and a prophet.",
+      "significance": "Judas Barsabbas represents the Jerusalem church's endorsement of the council's decision and its willingness to send its own respected members to ensure the Antioch church receives the news authoritatively."
+    },
+    {
+      "id": "john_mark",
+      "name": "John Mark",
+      "role": "Missionary Assistant",
+      "first_mention_verse": "15:37",
+      "summary": "Barnabas's cousin who had accompanied Paul and Barnabas on part of the first journey but turned back at Pamphylia (Acts 13:13). Barnabas wants to give him a second chance on the second journey, but Paul refuses, causing the split between Barnabas and Paul.",
+      "significance": "John Mark's story represents themes of failure, restoration, and second chances; Paul's later commendation of him (Colossians 4:10; 2 Timothy 4:11) suggests he did indeed prove himself valuable."
+    },
+    {
+      "id": "pharisee_believers",
+      "name": "Believing Pharisees",
+      "role": "Group — Traditionalist Jewish Christians",
+      "first_mention_verse": "15:5",
+      "summary": "A group of Pharisees who had become Christians but insisted that Gentile converts must be circumcised and required to keep the entire Law of Moses. They raise their position formally at the Jerusalem Council.",
+      "significance": "Their presence illustrates that the Jerusalem church was theologically diverse; their challenge makes the council's ruling all the more significant as a decision made in the face of powerful internal opposition."
+    }
+  ],
+  "locations": [
+    {
+      "id": "antioch_syria",
+      "name": "Antioch (Syria)",
+      "modern_name": "Antakya, Turkey",
+      "lat": 36.2021,
+      "lng": 36.1604,
+      "description": "The base church of the Gentile mission where the circumcision controversy erupts, prompting the sending of delegates to Jerusalem; Paul and Barnabas return here to deliver the council's letter and later depart for the second missionary journey."
+    },
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The mother church of Christianity and the site of the landmark Jerusalem Council where the apostles and elders formally adjudicate the question of Gentile salvation."
+    },
+    {
+      "id": "phoenicia",
+      "name": "Phoenicia",
+      "modern_name": "Coastal Lebanon",
+      "lat": 34,
+      "lng": 35.65,
+      "description": "The coastal region north of Israel through which Paul and Barnabas pass on their way to Jerusalem, spreading joy among believers by reporting the conversion of Gentiles."
+    },
+    {
+      "id": "samaria",
+      "name": "Samaria",
+      "modern_name": "West Bank, Palestinian Territories",
+      "lat": 32.267,
+      "lng": 35.2,
+      "description": "The region between Judea and Galilee through which Paul and Barnabas also travel, sharing news of Gentile conversions with the churches there."
+    },
+    {
+      "id": "syria_cilicia",
+      "name": "Syria and Cilicia",
+      "modern_name": "Southern Turkey and Northwest Syria",
+      "lat": 36.8,
+      "lng": 36.5,
+      "description": "Churches in these regions receive copies of the Jerusalem Council's letter, confirming that the circumcision-free gospel preached among them had the approval of the mother church in Jerusalem."
+    }
+  ],
+  "events": [
+    {
+      "id": "circumcision_controversy",
+      "sequence": 1,
+      "verses": "15:1-2",
+      "title": "The Circumcision Controversy in Antioch",
+      "description": "Certain men arrive in Antioch from Judea and begin teaching that Gentile believers cannot be saved unless they undergo circumcision according to the custom of Moses. This teaching causes sharp dispute and debate with Paul and Barnabas. The church in Antioch resolves to send Paul and Barnabas, along with some other representatives, to Jerusalem to put the question to the apostles and elders there.",
+      "location_id": "antioch_syria",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "certain_men_from_judea"
+      ],
+      "timeline_label": "Circumcision Dispute Begins",
+      "scroll_anchor": "circumcision-controversy",
+      "visual_notes": "A heated indoor debate in a first-century house church; Paul on one side, men from Judea on the other; the congregation divided in the background."
+    },
+    {
+      "id": "journey_to_jerusalem",
+      "sequence": 2,
+      "verses": "15:3-4",
+      "title": "Travelling to Jerusalem Through Phoenicia and Samaria",
+      "description": "Sent off by the Antioch church, Paul and Barnabas travel through Phoenicia and Samaria, stopping to report to the churches along the way about the conversion of the Gentiles. This news brings great joy to all the believers in those regions. When they arrive in Jerusalem, they are welcomed by the church and the apostles and elders, and they give a full account of everything God has done through them.",
+      "location_id": "phoenicia",
+      "persons_present": [
+        "paul",
+        "barnabas"
+      ],
+      "timeline_label": "Journey South to Jerusalem",
+      "scroll_anchor": "journey-to-jerusalem",
+      "visual_notes": "A map tracing the coastal route through Phoenicia and Samaria; small community gatherings rejoicing as Paul and Barnabas speak; arrival scene at Jerusalem gate."
+    },
+    {
+      "id": "pharisee_challenge",
+      "sequence": 3,
+      "verses": "15:5",
+      "title": "Pharisee Believers Insist on Circumcision",
+      "description": "Within the Jerusalem meeting, some believers who had been Pharisees stand up and insist that the Gentile converts must be circumcised and required to obey the Law of Moses. This formally frames the theological question the council must answer.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "pharisee_believers"
+      ],
+      "timeline_label": "Pharisee Challenge at the Council",
+      "scroll_anchor": "pharisee-challenge",
+      "visual_notes": "Formal assembly setting; several men in traditional Jewish dress rising to speak; serious expressions on the faces of the council members."
+    },
+    {
+      "id": "peter_speech",
+      "sequence": 4,
+      "verses": "15:6-11",
+      "title": "Peter's Speech: God Made No Distinction",
+      "description": "After much debate, Peter stands up and recounts God's choice to use him to bring the gospel to the Gentiles — recalling the Cornelius episode where God gave those Gentiles the Holy Spirit just as he had given it to the Jewish believers at Pentecost. Peter argues that God made no distinction between Jews and Gentiles, purifying the Gentile hearts by faith. He concludes that imposing circumcision would be testing God by placing on Gentile disciples a yoke that even Jewish believers have been unable to bear. Salvation comes through the grace of the Lord Jesus, not through law-keeping.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "peter",
+        "pharisee_believers",
+        "paul",
+        "barnabas",
+        "james"
+      ],
+      "timeline_label": "Peter: No Distinction Between Jew and Gentile",
+      "scroll_anchor": "peter-speech",
+      "visual_notes": "Peter standing before a seated assembly; an earnest, persuasive posture; council members listening with varied expressions of consideration."
+    },
+    {
+      "id": "paul_barnabas_testimony",
+      "sequence": 5,
+      "verses": "15:12",
+      "title": "Paul and Barnabas Report Signs and Wonders Among the Gentiles",
+      "description": "After Peter's speech, the whole assembly falls silent and listens to Paul and Barnabas describe the miraculous signs and wonders God had worked through them among the Gentiles during their recent missionary journey. Their testimony serves as empirical evidence that God was actively blessing Gentile mission.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "peter",
+        "james"
+      ],
+      "timeline_label": "Mission Report: Signs Among the Gentiles",
+      "scroll_anchor": "paul-barnabas-testimony",
+      "visual_notes": "Paul and Barnabas standing together addressing a rapt audience; a few visual elements suggesting miracle stories — a healed figure, a crowd of diverse faces."
+    },
+    {
+      "id": "james_verdict",
+      "sequence": 6,
+      "verses": "15:13-21",
+      "title": "James Delivers the Council's Verdict",
+      "description": "James, the leader of the Jerusalem church, speaks last and carries the decisive weight. He cites the words of the prophet Amos (Amos 9:11–12 in the Greek Septuagint), which foretold that God's people would be rebuilt so that all the Gentile nations might seek the Lord. James concludes that they should not make it difficult for Gentiles turning to God, but should write to them asking them to abstain from food polluted by idols, from sexual immorality, from the meat of strangled animals, and from blood. He notes that Moses is preached in synagogues everywhere, providing context for why these particular items are chosen for Jewish-Gentile fellowship.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "james",
+        "peter",
+        "paul",
+        "barnabas"
+      ],
+      "timeline_label": "James: The Apostolic Decree",
+      "scroll_anchor": "james-verdict",
+      "visual_notes": "James in an authoritative standing posture with an open scroll of Amos; the council nodding; a scribe beginning to write the letter's text."
+    },
+    {
+      "id": "council_letter",
+      "sequence": 7,
+      "verses": "15:22-29",
+      "title": "The Jerusalem Council's Letter Is Written and Sent",
+      "description": "The whole church, together with the apostles and elders, agrees to choose Judas Barsabbas and Silas, two leading men, to go with Paul and Barnabas to Antioch bearing a letter. The letter, addressed to Gentile believers in Antioch, Syria, and Cilicia, explicitly repudiates the unauthorized teachers, declares the council's Spirit-guided decision, and communicates the four requirements: avoid food sacrificed to idols, blood, strangled animals, and sexual immorality. The letter closes with encouragement to the recipients.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "james",
+        "peter",
+        "paul",
+        "barnabas",
+        "silas",
+        "judas_barsabbas"
+      ],
+      "timeline_label": "Council Letter Drafted",
+      "scroll_anchor": "council-letter",
+      "visual_notes": "A scribe writing a scroll; key figures gathered around endorsing the document; Silas and Judas Barsabbas receiving their copies for the journey."
+    },
+    {
+      "id": "letter_delivered_antioch",
+      "sequence": 8,
+      "verses": "15:30-35",
+      "title": "The Letter Delivered and Received with Joy in Antioch",
+      "description": "The delegation — Paul, Barnabas, Silas, and Judas Barsabbas — returns to Antioch and gathers the whole congregation to read them the letter. The community responds with joy and encouragement at the message. Silas and Judas, described as prophets, spend additional time encouraging and strengthening the believers. Eventually Judas returns to Jerusalem while Silas remains in Antioch, and Paul and Barnabas continue teaching and preaching there.",
+      "location_id": "antioch_syria",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "silas",
+        "judas_barsabbas"
+      ],
+      "timeline_label": "Letter Received; Joy in Antioch",
+      "scroll_anchor": "letter-delivered-antioch",
+      "visual_notes": "A congregation listening as the letter is read aloud; relief and happiness on faces; Silas speaking prophecy to a group of believers."
+    },
+    {
+      "id": "paul_silas_split",
+      "sequence": 9,
+      "verses": "15:36-41",
+      "title": "Paul and Barnabas Separate; Second Journey Begins",
+      "description": "After some time, Paul suggests to Barnabas that they return and visit the churches they planted on the first journey. Barnabas wants to take John Mark again, but Paul firmly refuses — because Mark had deserted them in Pamphylia during the first journey. The disagreement becomes so sharp that the two partners separate. Barnabas takes Mark and sails to Cyprus. Paul chooses Silas and sets out through Syria and Cilicia, strengthening the churches. Both mission pairs are thus sent out from Antioch with the church's blessing.",
+      "location_id": "antioch_syria",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "silas",
+        "john_mark"
+      ],
+      "timeline_label": "Paul-Barnabas Split; Two Teams Deployed",
+      "scroll_anchor": "paul-silas-split",
+      "visual_notes": "A tense conversation between Paul and Barnabas; then a split-screen: Barnabas and Mark heading toward a harbor, Paul and Silas heading north along a road."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "antioch_syria",
+          "event_id": "circumcision_controversy",
+          "note": "Paul is based in Antioch when the controversy begins."
+        },
+        {
+          "order": 2,
+          "location_id": "phoenicia",
+          "event_id": "journey_to_jerusalem",
+          "note": "Travels through Phoenicia en route to Jerusalem."
+        },
+        {
+          "order": 3,
+          "location_id": "samaria",
+          "event_id": "journey_to_jerusalem",
+          "note": "Continues through Samaria spreading news of Gentile conversions."
+        },
+        {
+          "order": 4,
+          "location_id": "jerusalem",
+          "event_id": "peter_speech",
+          "note": "Arrives in Jerusalem for the council."
+        },
+        {
+          "order": 5,
+          "location_id": "jerusalem",
+          "event_id": "paul_barnabas_testimony",
+          "note": "Gives testimony of signs and wonders before the council."
+        },
+        {
+          "order": 6,
+          "location_id": "antioch_syria",
+          "event_id": "letter_delivered_antioch",
+          "note": "Returns to Antioch with the council letter."
+        },
+        {
+          "order": 7,
+          "location_id": "syria_cilicia",
+          "event_id": "paul_silas_split",
+          "note": "Departs Antioch northward through Syria and Cilicia with Silas, beginning the second missionary journey."
+        }
+      ]
+    },
+    {
+      "person_id": "barnabas",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "antioch_syria",
+          "event_id": "circumcision_controversy",
+          "note": "Present at Antioch when the controversy erupts."
+        },
+        {
+          "order": 2,
+          "location_id": "jerusalem",
+          "event_id": "paul_barnabas_testimony",
+          "note": "Travels to Jerusalem and gives testimony at the council."
+        },
+        {
+          "order": 3,
+          "location_id": "antioch_syria",
+          "event_id": "letter_delivered_antioch",
+          "note": "Returns to Antioch with the council letter."
+        }
+      ]
+    },
+    {
+      "person_id": "peter",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "peter_speech",
+          "note": "Already in Jerusalem; speaks at the council."
+        }
+      ]
+    },
+    {
+      "person_id": "james",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "james_verdict",
+          "note": "Presides over the Jerusalem Council and delivers its verdict."
+        }
+      ]
+    },
+    {
+      "person_id": "silas",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "council_letter",
+          "note": "Chosen as Jerusalem delegate to carry the council's letter."
+        },
+        {
+          "order": 2,
+          "location_id": "antioch_syria",
+          "event_id": "letter_delivered_antioch",
+          "note": "Delivers the letter and ministers prophetically in Antioch."
+        },
+        {
+          "order": 3,
+          "location_id": "syria_cilicia",
+          "event_id": "paul_silas_split",
+          "note": "Joins Paul as co-missionary for the second journey."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "circumcision_controversy",
+      "position": 1,
+      "label": "Controversy Erupts in Antioch",
+      "relative_time": "After first missionary journey, c. AD 48–49",
+      "absolute_time": "c. AD 48–49"
+    },
+    {
+      "event_id": "journey_to_jerusalem",
+      "position": 2,
+      "label": "Delegates Travel South",
+      "relative_time": "c. AD 49",
+      "absolute_time": "c. AD 49"
+    },
+    {
+      "event_id": "pharisee_challenge",
+      "position": 3,
+      "label": "Pharisee Position Stated",
+      "relative_time": "Jerusalem Council, c. AD 49",
+      "absolute_time": "c. AD 49"
+    },
+    {
+      "event_id": "peter_speech",
+      "position": 4,
+      "label": "Peter's Pivotal Testimony",
+      "relative_time": "Jerusalem Council, c. AD 49",
+      "absolute_time": "c. AD 49"
+    },
+    {
+      "event_id": "paul_barnabas_testimony",
+      "position": 5,
+      "label": "Missionary Evidence Presented",
+      "relative_time": "Jerusalem Council, c. AD 49",
+      "absolute_time": "c. AD 49"
+    },
+    {
+      "event_id": "james_verdict",
+      "position": 6,
+      "label": "James Pronounces the Decree",
+      "relative_time": "Jerusalem Council, c. AD 49",
+      "absolute_time": "c. AD 49"
+    },
+    {
+      "event_id": "council_letter",
+      "position": 7,
+      "label": "Apostolic Letter Written",
+      "relative_time": "Jerusalem Council, c. AD 49",
+      "absolute_time": "c. AD 49"
+    },
+    {
+      "event_id": "letter_delivered_antioch",
+      "position": 8,
+      "label": "Letter Read in Antioch",
+      "relative_time": "c. AD 49",
+      "absolute_time": "c. AD 49"
+    },
+    {
+      "event_id": "paul_silas_split",
+      "position": 9,
+      "label": "Second Journey Launched",
+      "relative_time": "Beginning of second missionary journey, c. AD 49–50",
+      "absolute_time": "c. AD 49–50"
+    }
+  ],
+  "theological_themes": [
+    "Salvation by grace through faith alone, not through works of the Law",
+    "The continuity between Old Testament prophecy and the Gentile mission",
+    "The Holy Spirit as the guide of the church's decision-making process",
+    "Unity amid diversity: maintaining fellowship across cultural and ethnic lines",
+    "Apostolic authority exercised through collegial discernment rather than top-down decree",
+    "Redemption and second chances: John Mark's story as a subplot"
+  ],
+  "discussion_questions": [
+    "James's decision rests partly on a passage from Amos — what does it mean for the church to read Old Testament prophecy as applying to a new situation?",
+    "The council's letter says 'it seemed good to the Holy Spirit and to us' — what does that phrase suggest about how the church understands divine guidance in decision-making?",
+    "Why do you think Paul refused to take John Mark on the second journey, and do you think his decision was right?",
+    "How might the Jerusalem Council serve as a model for how churches today handle theological disagreements?",
+    "The four requirements in the apostolic decree are primarily about enabling Jewish-Gentile table fellowship — what issues of cultural sensitivity in today's church might call for similar 'bridge' practices?"
+  ]
+};
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── PAGE SKELETON ── */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* ── BODY: timeline left, map right ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── TIMELINE COLUMN ── */
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+
+/* Chapter label strip */
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.tl-ch-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; line-height:1.1; color:var(--tl-fg);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+
+/* Scrollable event list */
+.tl-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+/* Vertical spine */
+.tl-spine {
+  padding: 8px 0 80px;
+  position: relative;
+}
+.tl-spine::before {
+  content:'';
+  position:absolute;
+  left: 38px;
+  top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent);
+}
+
+/* Year separator badge */
+.tl-year-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 6px 14px;
+  position: relative;
+  z-index: 2;
+}
+.tl-year-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(22% .018 255);
+  border: 1px solid oklch(36% .015 255);
+  padding: 2px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line {
+  flex: 1;
+  height: 1px;
+  background: oklch(30% .012 255);
+  opacity: .5;
+}
+
+/* Each item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s;
+  padding-right: 4px;
+  min-height: 130px;
+}
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+
+/* left: seq number + dot */
+.tl-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+.tl-seq {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  color: oklch(45% .01 255);
+  margin-bottom:5px;
+  letter-spacing:.05em;
+}
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%;
+  border:2px solid oklch(38% .015 255);
+  background: oklch(16% .018 255);
+  position:relative; z-index:1;
+  transition: all .28s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px oklch(58% .19 46 / .2);
+}
+.tl-dot-pip {
+  width:5px; height:5px; border-radius:50%; background:#fff;
+  opacity:0; transition:opacity .28s;
+}
+.tl-item.active .tl-dot-pip { opacity:1; }
+
+/* right: text */
+.tl-r {
+  padding: 22px 10px 22px 6px;
+  border-bottom: 1px solid oklch(24% .012 255);
+}
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date {
+  font-size:11px; font-weight:800; letter-spacing:.1em;
+  font-family:'Barlow Condensed',sans-serif;
+  color: oklch(70% .018 76); margin-bottom:3px;
+}
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time {
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  line-height:1.35;
+  color: oklch(72% .014 78); margin-bottom:6px;
+}
+.tl-item.active .tl-rel-time { color: oklch(82% .035 74); }
+.tl-ev-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px; font-weight:800; text-transform:uppercase;
+  line-height:1.18; color: var(--tl-fg);
+  margin-bottom: 4px;
+}
+.tl-ev-verses {
+  font-size:10px; font-weight:700; letter-spacing:.1em;
+  color: oklch(68% .018 76); margin-top:2px;
+}
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+
+/* ── MAP COLUMN ── */
+.map-col {
+  position: relative;
+  background: var(--map-land);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Event banner at top of map */
+.map-event-banner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  background: oklch(16% 0.02 55 / 0.92);
+  border-bottom: 2px solid var(--accent);
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 16px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: background .3s;
+}
+.ban-verses {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.ban-content {}
+.ban-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; color:oklch(95% .012 78);
+  line-height:1.1; margin-bottom:4px;
+}
+.ban-desc {
+  font-family:'Lora',serif; font-style:normal;
+  font-size:13px; line-height:1.55;
+  color:oklch(88% .014 78);
+  display: block;
+  overflow: visible;
+}
+.ban-loc {
+  display:flex; align-items:center; gap:5px;
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:oklch(55% .012 70); white-space:nowrap;
+}
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+/* ── MAP SVG ── */
+.map-svg-wrap {
+  position: absolute;
+  inset: 0;
+}
+.map-svg {
+  width:100%; height:100%;
+}
+
+/* Person legend - bottom left of map */
+.map-person-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.map-leg-item {
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; font-weight:600; letter-spacing:.06em;
+  color: var(--fg);
+  background: var(--card);
+  padding: 3px 10px 3px 7px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  transition: opacity .5s, transform .4s;
+}
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-leg-item.entering { animation: legEnter .4s ease forwards; }
+@keyframes legEnter {
+  from { opacity:0; transform:translateX(-8px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+.map-controls-panel { display: contents; }
+
+/* Map overlay labels */
+.map-corner-label {
+  position:absolute; bottom:18px; right:18px;
+  font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
+}
+
+.map-playback {
+  position: absolute;
+  right: 18px;
+  bottom: 42px;
+  z-index: 12;
+  width: min(460px, calc(100% - 36px));
+  background: oklch(99.5% 0.008 80 / .9);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+.playback-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:9px;
+}
+.playback-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.playback-buttons { display:flex; gap:6px; flex-shrink:0; }
+.playback-btn {
+  width:30px;
+  height:26px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--fg);
+  border-radius:3px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  line-height:1;
+}
+.playback-track {
+  position:relative;
+  height:28px;
+  display:grid;
+  grid-template-columns:repeat(var(--step-count), 1fr);
+  align-items:center;
+  gap:0;
+}
+.playback-track::before {
+  content:'';
+  position:absolute;
+  left:10px; right:10px; top:13px;
+  height:2px;
+  background:var(--border);
+}
+.playback-step {
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  width:20px;
+  height:20px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.playback-step::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:var(--fg-muted);
+  opacity:.42;
+  transition:all .24s;
+}
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before {
+  inset:2px;
+  background:var(--accent);
+  opacity:1;
+  box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
+}
+.playback-step-time { display: none; }
+.loc-label {
+  paint-order: stroke;
+  stroke: oklch(98% 0.008 80 / .82);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.person-name-label {
+  display: none;
+  paint-order: stroke;
+  stroke: oklch(16% 0.02 55 / .62);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: 44px auto;
+    overflow: visible;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
+  }
+
+  .map-col {
+    order: -1;
+    overflow: visible;
+  }
+
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+  .home-link,
+  .lang-btn {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .map-event-banner {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    flex: 0 0 auto;
+    padding: 8px 12px 9px;
+    gap: 3px;
+  }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title  { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc {
+    display: block;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow: visible;
+  }
+  .ban-loc    { display: none; }
+  .map-svg-wrap {
+    position: relative;
+    inset: auto;
+    flex: 0 0 clamp(300px, 46dvh, 430px);
+    min-height: clamp(300px, 46dvh, 430px);
+  }
+  .loc-label {
+    font-size: 28px;
+    font-weight: 800;
+    stroke-width: 5px;
+  }
+  .person-name-label { display: block; font-size: 18px; }
+
+  .map-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: oklch(93% 0.025 82);
+    border-top: 1px solid var(--border);
+  }
+
+  .map-person-legend {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    gap: 4px;
+    z-index: 14;
+    max-height: none;
+    overflow-y: auto;
+    padding: 5px;
+    background: oklch(99.5% 0.008 80 / .88);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px oklch(10% 0.02 55 / .12);
+    backdrop-filter: blur(8px);
+  }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
+  .map-leg-dot  { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+  .map-playback {
+    position: relative;
+    right:auto;
+    bottom:auto;
+    width:100%;
+    padding:8px 8px 10px;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track {
+    min-width: max(100%, calc(var(--step-count) * 92px));
+    height: 70px;
+    align-items: start;
+  }
+  .playback-track::before { top:8px; }
+  .playback-step { width:18px; height:18px; }
+  .playback-step-time {
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 84px;
+    color: var(--fg);
+    background: oklch(99.5% 0.008 80 / .92);
+    border: 1px solid oklch(84% 0.022 72 / .8);
+    border-radius: 3px;
+    padding: 3px 4px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    pointer-events: none;
+    box-shadow: 0 2px 8px oklch(10% 0.02 55 / .1);
+  }
+  .playback-step.active .playback-step-time {
+    color: oklch(99% 0.008 80);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .person-name-label { display: none; }
+
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {
+  da: {
+  book: "ApG",
+  chapterTitle: "Rådet der ændrede alt",
+  shortBook: "ApG",
+  headerSub: "- Antiokia, Jerusalem, Syrien og Kilikien · ca. AD 48-49",
+  timelineTitle: [
+    "Rådet der",
+    "ændrede alt"
+  ],
+  mapCorner: "Antiokia · Fønikien · Samaria · Jerusalem · Syrien og Kilikien",
+  yearBadges: [
+    "Antiokia",
+    "Rejsen sydpå",
+    "Rådet i Jerusalem",
+    "Brevet sendes",
+    "Anden rejse"
+  ],
+  persons: {
+    paul: "Paulus",
+    barnabas: "Barnabas",
+    certain_men_from_judea: "Nogle mænd fra Judæa",
+    peter: "Peter",
+    james: "Jakob",
+    silas: "Silas",
+    judas_barsabbas: "Judas Barsabbas",
+    john_mark: "Johannes Markus",
+    pharisee_believers: "Troende farisæere"
+  },
+  locations: {
+    antioch_syria: {
+      name: "Antiokia i Syrien"
+    },
+    jerusalem: {
+      name: "Jerusalem"
+    },
+    phoenicia: {
+      name: "Fønikien"
+    },
+    samaria: {
+      name: "Samaria"
+    },
+    syria_cilicia: {
+      name: "Syrien og Kilikien"
+    }
+  },
+  events: {
+    circumcision_controversy: {
+      title: "Omskærelsesstriden i Antiokia",
+      description: "Nogle mænd kommer fra Judæa til Antiokia og lærer, at hedningetroende ikke kan blive frelst, hvis de ikke bliver omskåret efter Moses skik. Undervisningen skaber en skarp strid med Paulus og Barnabas, og menigheden beslutter at sende dem og andre repræsentanter til Jerusalem for at lægge spørgsmålet frem for apostlene og de ældste.",
+      timeline_label: "Omskærelsesstriden begynder"
+    },
+    journey_to_jerusalem: {
+      title: "Rejsen til Jerusalem gennem Fønikien og Samaria",
+      description: "Menigheden sender Paulus og Barnabas af sted, og på vejen gennem Fønikien og Samaria fortæller de de troende om hedningernes omvendelse. Nyheden vækker stor glæde. Da de når Jerusalem, bliver de modtaget af menigheden, apostlene og de ældste, og de fortæller alt, hvad Gud har gjort gennem dem.",
+      timeline_label: "Rejsen sydpå til Jerusalem"
+    },
+    pharisee_challenge: {
+      title: "Troende farisæere kræver omskærelse",
+      description: "I Jerusalem rejser nogle troende fra farisæernes parti sig og insisterer på, at hedninge skal omskæres og pålægges at holde Moseloven. Dermed bliver rådets centrale teologiske spørgsmål formuleret helt åbent.",
+      timeline_label: "Farisæernes udfordring på rådet"
+    },
+    peter_speech: {
+      title: "Peters tale: Gud gjorde ingen forskel",
+      description: "Efter megen debat rejser Peter sig og minder rådet om, hvordan Gud gennem ham lod hedninger høre evangeliet og gav dem Helligånden ligesom de jødiske troende. Han argumenterer for, at Gud ikke gjorde forskel, men rensede deres hjerter ved tro, og at det ville være at friste Gud at lægge et åg på hedningerne, som Israel selv ikke kunne bære. Frelsen kommer ved Herren Jesu nåde.",
+      timeline_label: "Peter: Ingen forskel på jøde og hedning"
+    },
+    paul_barnabas_testimony: {
+      title: "Paulus og Barnabas fortæller om tegn blandt hedningerne",
+      description: "Efter Peters tale bliver hele forsamlingen stille og lytter til Paulus og Barnabas. De fortæller om de tegn og undere, Gud har gjort gennem dem blandt hedningerne på missionsrejsen. Deres vidnesbyrd viser, at Gud allerede velsigner hedningemissionen.",
+      timeline_label: "Missionsrapport: Tegn blandt hedninger"
+    },
+    james_verdict: {
+      title: "Jakob afsiger rådets kendelse",
+      description: "Jakob, lederen i Jerusalem, taler til sidst og citerer profeten Amos for at vise, at Gud fra begyndelsen havde tænkt at lade hedninger søge Herren. Han konkluderer, at man ikke skal gøre det vanskeligt for hedninger, der vender om til Gud, men skrive til dem, at de skal afholde sig fra afgudsofre, seksuel umoral, kvalte dyr og blod. Kendelsen beskytter fællesskabet mellem jødiske og hedningekristne.",
+      timeline_label: "Jakob: Det apostolske dekret"
+    },
+    council_letter: {
+      title: "Rådets brev skrives og sendes",
+      description: "Hele menigheden sammen med apostlene og de ældste vælger Judas Barsabbas og Silas til at rejse med Paulus og Barnabas til Antiokia. Brevet til hedningetroende i Antiokia, Syrien og Kilikien afviser de uautoriserede lærere, beskriver beslutningen som ledt af Helligånden og gentager de fire krav, der skal fremme fredeligt bordfællesskab.",
+      timeline_label: "Rådets brev udformes"
+    },
+    letter_delivered_antioch: {
+      title: "Brevet læses i Antiokia og modtages med glæde",
+      description: "Delegationen vender tilbage til Antiokia, samler menigheden og læser brevet højt. Budskabet bringer glæde og opmuntring. Judas og Silas, som også er profeter, bliver en tid og styrker de troende, mens Paulus og Barnabas fortsætter med at undervise og forkynde i byen.",
+      timeline_label: "Brevet modtages; glæde i Antiokia"
+    },
+    paul_silas_split: {
+      title: "Paulus og Barnabas skilles; anden rejse begynder",
+      description: "Efter nogen tid foreslår Paulus, at de skal besøge menighederne fra den første rejse igen. Barnabas vil tage Johannes Markus med, men Paulus nægter, fordi Markus tidligere forlod arbejdet i Pamfylien. Uenigheden bliver så skarp, at de skilles: Barnabas sejler til Cypern med Markus, mens Paulus vælger Silas og rejser gennem Syrien og Kilikien for at styrke menighederne.",
+      timeline_label: "Paulus og Barnabas skilles; to hold sendes ud"
+    }
+  },
+  timeline: {
+    circumcision_controversy: {
+      label: "Striden bryder ud i Antiokia",
+      relative_time: "Efter første missionsrejse, ca. AD 48-49"
+    },
+    journey_to_jerusalem: {
+      label: "Delegaterne rejser sydpå",
+      relative_time: "ca. AD 49"
+    },
+    pharisee_challenge: {
+      label: "Farisæernes synspunkt fremsættes",
+      relative_time: "Rådet i Jerusalem, ca. AD 49"
+    },
+    peter_speech: {
+      label: "Peters afgørende vidnesbyrd",
+      relative_time: "Rådet i Jerusalem, ca. AD 49"
+    },
+    paul_barnabas_testimony: {
+      label: "Missionsbeviser lægges frem",
+      relative_time: "Rådet i Jerusalem, ca. AD 49"
+    },
+    james_verdict: {
+      label: "Jakob udtaler dekretet",
+      relative_time: "Rådet i Jerusalem, ca. AD 49"
+    },
+    council_letter: {
+      label: "Det apostolske brev skrives",
+      relative_time: "Rådet i Jerusalem, ca. AD 49"
+    },
+    letter_delivered_antioch: {
+      label: "Brevet læses i Antiokia",
+      relative_time: "ca. AD 49"
+    },
+    paul_silas_split: {
+      label: "Anden missionsrejse begynder",
+      relative_time: "Begyndelsen på anden missionsrejse, ca. AD 49-50"
+    }
+  }
+}
+};
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH15, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shortLabel = value
+    .replace(/^c\.\s*/, '')
+    .replace(/Late /, '')
+    .replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '')
+    .replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '')
+    .trim();
+  return includeYear && marker ? `${marker} ${shortLabel}`.trim() : (shortLabel || marker);
+}
+
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
+
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  if (marker && yearMarker(base) === marker) return base;
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
+/* ── PERSON COLORS ── */
+const PCOLORS = {
+  "paul": "#7A6BB0",
+  "barnabas": "#6B8F71",
+  "certain_men_from_judea": "#A82F1A",
+  "peter": "#4F8FA8",
+  "james": "#A87A2D",
+  "silas": "#4F9A8A",
+  "judas_barsabbas": "#D4A24C",
+  "john_mark": "#B86B8A",
+  "pharisee_believers": "#8D5A3B",
+};
+
+/* ── MAP COORDINATES (SVG 1000x800 viewBox, schematic Asia Minor return route) ── */
+const VW = 1000, VH = 800;
+const locLabel = (id, fallback) => DATA.locations.find(l => l.id === id)?.name || fallback;
+const LOCS = {
+  antioch_syria: { x: 230, y: 185, label: locLabel('antioch_syria', 'Antioch') },
+  phoenicia: { x: 430, y: 350, label: locLabel('phoenicia', 'Phoenicia') },
+  samaria: { x: 520, y: 500, label: locLabel('samaria', 'Samaria') },
+  jerusalem: { x: 590, y: 610, label: locLabel('jerusalem', 'Jerusalem') },
+  syria_cilicia: { x: 155, y: 105, label: locLabel('syria_cilicia', 'Syria and Cilicia') },
+};
+
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
+
+/* Build route stops with pixel coords */
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label || person?.name || r.person_id,
+      stops: r.path.map(s => ({
+        ...s,
+        ...(LOCS[s.location_id] || { x: 360, y: 360 }),
+      })),
+    };
+  });
+
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({
+        order: idx + 1,
+        location_id: ev.location_id,
+        event_id: ev.id,
+        ...(LOCS[ev.location_id] || { x: 360, y: 360 }),
+      }));
+    if (!stops.length) return;
+    out[person.id] = {
+      color: PCOLORS[person.id] || '#888',
+      label: person.name,
+      stops,
+    };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+/* Compute per-event person state */
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = {
+      color: route.color,
+      label: route.label,
+      pos:   { x: lastStop.x, y: lastStop.y },
+      active,
+      faded: !active,
+    };
+  });
+  return result;
+}
+
+/* ── MAP TERRAIN ── */
+function Terrain() {
+  return (
+    <g>
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-water)" opacity=".55" />
+      <path d="M 0 0 H 360 Q 425 120 430 250 Q 438 405 515 545 Q 570 645 610 800 H 0 Z"
+        fill="oklch(87% 0.055 90)" opacity="1" />
+      <path d="M 360 0 H 1000 V 800 H 610 Q 570 645 515 545 Q 438 405 430 250 Q 425 120 360 0 Z"
+        fill="var(--map-water)" opacity=".42" />
+      <path d="M 0 70 Q 110 50 230 65 Q 340 80 420 48"
+        fill="none" stroke="oklch(62% 0.07 88)" strokeWidth="4" opacity=".35" strokeDasharray="4 7" />
+      <text x="168" y="82" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">SYRIA & CILICIA</text>
+      <text x="340" y="280" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">PHOENICIA</text>
+      <text x="470" y="460" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">SAMARIA</text>
+      <text x="610" y="705" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">JUDEA</text>
+      <text x="820" y="430" textAnchor="middle" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(35% 0.06 220)" letterSpacing="4" opacity=".55">MEDITERRANEAN SEA</text>
+      <path d="M 230 185 Q 330 250 430 350 Q 485 420 520 500 Q 560 555 590 610"
+        fill="none" stroke="var(--map-road)" strokeWidth="4" opacity=".62" strokeDasharray="8 5" strokeLinecap="round" />
+      <path d="M 590 610 Q 520 510 430 350 Q 330 250 230 185 Q 180 135 155 105"
+        fill="none" stroke="var(--map-road)" strokeWidth="3.5" opacity=".5" strokeDasharray="8 5" strokeLinecap="round" />
+      <path d="M 420 160 Q 455 260 460 360 Q 463 515 515 690"
+        fill="none" stroke="var(--map-water)" strokeWidth="3" opacity=".45" strokeDasharray="5 7" strokeLinecap="round" />
+      <g transform="translate(70,735)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~150 km</text>
+      </g>
+      <g transform="translate(70,120)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
+          fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+function RouteLines() { return null; }
+
+/* ── LOCATION MARKERS ── */
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7}
+              fill={on ? 'var(--accent)' : 'var(--fg-muted)'}
+              stroke="var(--map-land)" strokeWidth="3"
+              style={{ transition: 'r .3s' }}
+            />
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5}
+              fontSize={on ? 17 : 14}
+              fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
+              fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
+              letterSpacing=".5"
+              style={{ transition: 'font-size .3s' }}
+            >{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/* ── PERSON DOTS ── */
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const cols = Math.min(3, groupSize);
+    const row = Math.floor(myGroupIdx / cols);
+    const col = myGroupIdx % cols;
+    const rows = Math.ceil(groupSize / cols);
+    const spacing = 30;
+    const offsetX = (col - (cols - 1) / 2) * spacing;
+    const offsetY = (row - (rows - 1) / 2) * spacing;
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
+    return { x, y };
+  };
+
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y}
+                  stroke={s.color} strokeWidth="3" strokeLinecap="round"
+                  strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR}
+              fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
+              style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
+            />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle"
+              fontSize={s.active ? 13 : 10} fontWeight="800" fill="white"
+              fontFamily="Barlow Condensed" pointerEvents="none"
+              style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              {(s.label || '?').charAt(0)}
+            </text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle"
+                fontSize="12" fontWeight="800" fill={s.color}
+                fontFamily="Barlow Condensed" pointerEvents="none"
+                style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+              >
+                {s.label}
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+
+/* ── MAP PANEL ── */
+function MapPanel({ activeEventId, onStep, onEventChange }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
+
+  return (
+    <div className="map-col">
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && (
+          <div className="ban-loc">
+            <div className="ban-loc-dot" />
+            {loc.name}
+          </div>
+        )}
+      </div>
+
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+
+      <div className="map-controls-panel">
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="map-playback">
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button
+                key={tl.event_id}
+                type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}
+              >
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Antioch · Phoenicia · Samaria · Jerusalem · Syria and Cilicia'}</div>
+    </div>
+  );
+}
+
+/* ── TIMELINE PANEL ── */
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(false);
+
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) {
+      scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    }
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
+
+  /* Badges mark Antioch, the southbound journey, the council, the letter, and the second journey. */
+  const BADGE_POSITIONS = { 0: 0, 1: 1, 3: 2, 6: 3, 8: 4 };
+  const DEFAULT_BADGES = ['Antioch', 'Journey South', 'Jerusalem Council', 'Letter Sent', 'Second Journey'];
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>The Council <em>That Changed Everything</em></>}</div>
+      </div>
+
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div
+                  ref={el => entryRefs.current[tl.event_id] = el}
+                  data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}
+                >
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ── */
+function App() {
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
+
+  useEffect(() => {
+    document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
+
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/014';
+        return prev;
+      }
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '- Antioch, Jerusalem, Syria, and Cilicia · c. AD 48-49'}</span>
+        <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">
+          {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
+        </a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>
+          {INITIAL_LANG === 'da' ? 'En' : 'Da'}
+        </button>
+      </div>
+
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel
+          activeEventId={activeEv}
+          onStep={stepEvent}
+          onEventChange={handleEventChange}
+        />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

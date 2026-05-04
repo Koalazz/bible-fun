@@ -108,7 +108,8 @@ window.BOOKS_MANIFEST = {
           "n": 15,
           "title": "The Council That Changed Everything",
           "title_da": "Rådet der ændrede alt",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/015"
         },
         {
           "n": 16,
