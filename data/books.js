@@ -196,7 +196,9 @@ window.BOOKS_MANIFEST = {
         {
           "n": 28,
           "title": "Malta, the Viper, and the Gospel Reaches Rome",
-          "status": "soon"
+          "title_da": "Malta, slangen og evangeliet når Rom",
+          "status": "implemented",
+          "href": "/bible/acts/028"
         }
       ]
     }
