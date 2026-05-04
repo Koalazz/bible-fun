@@ -1,0 +1,790 @@
+const ACTS_CH13 = {
+  "book": "Acts",
+  "chapter": 13,
+  "chapter_title": "Sent Out: The Gospel Reaches the Nations",
+  "chapter_summary": "Acts 13 marks a turning point in early Christian history as the Holy Spirit directs the church at Antioch to commission Barnabas and Paul for a pioneering missionary journey. The pair travel through Cyprus—confronting a sorcerer and converting a Roman governor—before crossing into Asia Minor, where Paul delivers a sweeping sermon in the synagogue at Pisidian Antioch tracing Israel's entire history to its fulfillment in Jesus. When Jewish leaders reject the message, Paul boldly announces that the good news will go to the Gentiles, who respond with joy and faith, establishing a pattern that will define the rest of Acts.",
+  "date_range": {
+    "approximate": "c. AD 46–48",
+    "notes": "Scholarly dating of the First Missionary Journey ranges from AD 44–49 depending on how one correlates Acts with Galatians and the Claudius edict. The visit to Pisidian Antioch is most commonly placed around AD 47. Exact seasons within the journey are unknown; the narrative does not supply them."
+  },
+  "persons": [
+    {
+      "id": "paul",
+      "name": "Saul (also called Paul)",
+      "role": "Apostle and Missionary",
+      "first_mention_verse": "13:1",
+      "summary": "A Jewish Pharisee turned follower of Jesus who is formally set apart here for the Gentile mission; he is first called Paul in verse 9, his Roman name, marking a new phase of his identity. He becomes the dominant figure from this chapter onward, preaching in synagogues, performing miracles, and shaping the theological direction of the early church.",
+      "significance": "Paul is the central protagonist of the second half of Acts; his missionary journeys, theological arguments, and trials before governors and kings drive the narrative from chapter 13 through the book's close in Rome."
+    },
+    {
+      "id": "barnabas",
+      "name": "Barnabas",
+      "role": "Apostle and Missionary",
+      "first_mention_verse": "13:1",
+      "summary": "A Levite from Cyprus and founding leader of the Antioch church, Barnabas is co-commissioned with Paul and serves as his senior partner at the mission's outset; his island familiarity likely guided their first destination. By verse 13, the order shifts to 'Paul and his companions,' signaling a change in leadership.",
+      "significance": "Barnabas is a key bridge figure in Acts—first vouching for the converted Paul in Jerusalem, then launching the Gentile mission; his later dispute with Paul over John Mark (Acts 15:36–41) will split the missionary team."
+    },
+    {
+      "id": "simeon_niger",
+      "name": "Simeon called Niger",
+      "role": "Prophet and Teacher",
+      "first_mention_verse": "13:1",
+      "summary": "One of five prophets and teachers at the Antioch church, Simeon's Latin surname Niger ('black') likely indicates African origin; he participates in the worship and fasting that precede the commissioning. He remains in Antioch when Barnabas and Paul depart.",
+      "significance": "His presence on the Antioch leadership team illustrates the multicultural character of the early church, a feature Luke highlights deliberately throughout Acts to show the gospel transcending ethnic boundaries."
+    },
+    {
+      "id": "lucius_cyrene",
+      "name": "Lucius of Cyrene",
+      "role": "Prophet and Teacher",
+      "first_mention_verse": "13:1",
+      "summary": "A prophet and teacher at Antioch from Cyrene on the North African coast, Lucius is part of the fasting and praying community that sends out Barnabas and Paul. His North African origin connects him to the Cyrenians who first carried the gospel to Antioch (Acts 11:20).",
+      "significance": "Represents the North African strand of early Christianity, underscoring that the Antioch church was itself a product of earlier, unnamed missionary activity beyond Jerusalem."
+    },
+    {
+      "id": "manaen",
+      "name": "Manaen",
+      "role": "Prophet and Teacher",
+      "first_mention_verse": "13:1",
+      "summary": "A prophet and teacher at Antioch identified as the syntrophos—foster brother or childhood companion—of Herod Antipas the tetrarch, the ruler who had John the Baptist executed. His presence in a community proclaiming the risen Jesus is remarkable given his court connections.",
+      "significance": "Manaen illustrates that the gospel penetrated even royal households hostile to it; he may also be a source for Luke's uniquely detailed knowledge of Herod Antipas's inner life preserved in the Gospel of Luke."
+    },
+    {
+      "id": "john_mark",
+      "name": "John (also called Mark)",
+      "role": "Missionary Assistant",
+      "first_mention_verse": "13:5",
+      "summary": "A young associate of Barnabas—his cousin (Col 4:10)—who joins the mission as an assistant from its beginning and is present through Cyprus. He departs at Perga and returns to Jerusalem, an action Paul later regards as desertion of the work (Acts 15:38).",
+      "significance": "John Mark's departure and Paul's refusal to take him on the second journey causes the rupture between Paul and Barnabas (Acts 15:36–41); he is later reconciled with Paul (2 Tim 4:11) and is traditionally credited with composing the Gospel of Mark."
+    },
+    {
+      "id": "elymas_barjesus",
+      "name": "Elymas (Bar-Jesus)",
+      "role": "False Prophet and Sorcerer",
+      "first_mention_verse": "13:6",
+      "summary": "A Jewish sorcerer and false prophet attached to the court of the proconsul Sergius Paulus; his Aramaic patronym Bar-Jesus means 'son of Jesus/Joshua,' a name Luke notes with evident irony. He actively opposes the missionaries and attempts to prevent the governor from believing.",
+      "significance": "Elymas represents the first direct supernatural opposition to the Gentile mission and his blinding by Paul deliberately echoes Paul's own blinding at conversion (Acts 9), establishing a pattern of encounter with divine power through judgment."
+    },
+    {
+      "id": "sergius_paulus",
+      "name": "Sergius Paulus",
+      "role": "Roman Proconsul",
+      "first_mention_verse": "13:7",
+      "summary": "The Roman proconsul (provincial governor) of Cyprus, described as an intelligent man who summons Barnabas and Paul because he wants to hear the word of God. He witnesses the blinding of Elymas and becomes the first named senior Roman official to believe the gospel in Acts.",
+      "significance": "His conversion signals that the gospel can penetrate the highest levels of Roman imperial power, anticipating Paul's later encounters with governors Felix and Festus, King Agrippa, and ultimately Caesar's own household (Phil 4:22)."
+    },
+    {
+      "id": "antioch_congregation",
+      "name": "The Church at Antioch (Syria)",
+      "role": "Group — Sending Church",
+      "first_mention_verse": "13:1",
+      "summary": "The multiethnic Christian community at Antioch in Syria, led by the five prophets and teachers named in verse 1, who are worshipping and fasting when the Holy Spirit speaks. They fast again, pray, lay hands on Barnabas and Paul, and send them out.",
+      "significance": "Antioch functions throughout Acts as the strategic base of the Gentile mission; this community—where followers were first called 'Christians' (Acts 11:26)—launches all three of Paul's missionary journeys."
+    },
+    {
+      "id": "pisidian_synagogue_leaders",
+      "name": "Synagogue Rulers of Pisidian Antioch",
+      "role": "Group — Synagogue Leadership",
+      "first_mention_verse": "13:15",
+      "summary": "The leaders of the Jewish synagogue in Pisidian Antioch who, following the scripture readings on the Sabbath, extend routine hospitality to the visiting teachers by inviting them to offer a word of encouragement. Their invitation unwittingly provides Paul with the platform for his most expansive recorded sermon.",
+      "significance": "Their hospitality establishes the recurring Acts pattern—Paul enters the synagogue first in every new city—while their later jealousy (through others of their community) triggers the programmatic turn to Gentile mission."
+    },
+    {
+      "id": "jealous_jews",
+      "name": "Opposing Jewish Leaders",
+      "role": "Group — Antagonists",
+      "first_mention_verse": "13:45",
+      "summary": "Jewish community leaders in Pisidian Antioch who, seeing the enormous crowds drawn to hear Paul on the second Sabbath, are filled with jealousy and begin contradicting and slandering him. They subsequently organize the city's social elite to drive the missionaries out of the region.",
+      "significance": "Their pattern of initial synagogue openness followed by jealous rejection and expulsion recurs in Iconium, Lystra, Thessalonica, and Berea, forming the structural backbone of the Acts narrative about Jewish-Gentile tension in the diaspora mission."
+    },
+    {
+      "id": "gentile_believers",
+      "name": "The Gentile Believers",
+      "role": "Group — New Converts",
+      "first_mention_verse": "13:48",
+      "summary": "Non-Jewish residents of the Pisidian Antioch region who hear Paul's declaration that salvation is now going to them and respond with joy, honoring the word of the Lord; many believe and remain as a Spirit-filled community even after the missionaries are expelled.",
+      "significance": "Their belief fulfills the Isaiah 49:6 quotation Paul invokes and establishes the pattern of Gentile-majority churches that will characterize the remainder of Paul's mission across the Roman Empire."
+    },
+    {
+      "id": "devout_women_leaders",
+      "name": "Devout Women of High Standing",
+      "role": "Group — Persecutors",
+      "first_mention_verse": "13:50",
+      "summary": "Influential women in Pisidian Antioch—likely Gentile 'God-fearers' who attended the synagogue—whom the jealous Jewish leaders incite to participate in driving Paul and Barnabas out of the region. Their high social standing gave them leverage with the city's governing class.",
+      "significance": "Luke's specific mention of their status underscores that opposition to the gospel could be organized through elite social networks, a dynamic Paul would encounter repeatedly in other cities of the Roman world."
+    }
+  ],
+  "locations": [
+    {
+      "id": "antioch_syria",
+      "name": "Antioch (in Syria)",
+      "modern_name": "Antakya, Hatay Province, Turkey",
+      "lat": 36.2021,
+      "lng": 36.1604,
+      "description": "The third-largest city of the Roman Empire and the home base of the Gentile church, from which the Holy Spirit commissions Barnabas and Paul for the first missionary journey outward to the wider Mediterranean world."
+    },
+    {
+      "id": "seleucia",
+      "name": "Seleucia",
+      "modern_name": "Çevlik (near Samandağ), Turkey",
+      "lat": 36.1194,
+      "lng": 35.9297,
+      "description": "The harbor city of Antioch at the mouth of the Orontes River, where the missionary team boards a ship and sets sail westward toward Cyprus."
+    },
+    {
+      "id": "salamis_cyprus",
+      "name": "Salamis",
+      "modern_name": "Near Famagusta (Gazimağusa), Cyprus",
+      "lat": 35.1856,
+      "lng": 33.9022,
+      "description": "The largest and most prosperous city of Cyprus and its primary eastern port, where Barnabas and Paul first land and begin preaching in a network of Jewish synagogues."
+    },
+    {
+      "id": "paphos_cyprus",
+      "name": "Paphos",
+      "modern_name": "Paphos (Ktima), Cyprus",
+      "lat": 34.7707,
+      "lng": 32.4238,
+      "description": "The administrative capital of Roman Cyprus on the island's western tip, seat of the proconsul Sergius Paulus, where Paul's confrontation with the sorcerer Elymas results in a dramatic miracle and the conversion of the governor."
+    },
+    {
+      "id": "perga",
+      "name": "Perga",
+      "modern_name": "Near Aksu, Antalya Province, Turkey",
+      "lat": 36.9583,
+      "lng": 30.8553,
+      "description": "A principal city of the Roman province of Pamphylia on the southern Anatolian coast, where John Mark departs the team and where the missionaries pause before the arduous inland journey northward."
+    },
+    {
+      "id": "pisidian_antioch",
+      "name": "Antioch in Pisidia",
+      "modern_name": "Near Yalvaç, Isparta Province, Turkey",
+      "lat": 38.2992,
+      "lng": 31.2028,
+      "description": "A Roman military colony and regional administrative center set in the highlands of Asia Minor at roughly 1,200 meters elevation, where Paul delivers his first fully recorded synagogue sermon and the Gentile mission achieves its most dramatic early breakthrough."
+    },
+    {
+      "id": "iconium",
+      "name": "Iconium",
+      "modern_name": "Konya, Turkey",
+      "lat": 37.8667,
+      "lng": 32.4833,
+      "description": "A prosperous city in the region of Lycaonia on the Anatolian plateau, the next stop on the missionary route east from Pisidian Antioch, where the journey continues in Acts 14."
+    }
+  ],
+  "events": [
+    {
+      "id": "commissioning_at_antioch",
+      "sequence": 1,
+      "verses": "13:1-3",
+      "title": "The Holy Spirit Commissions Barnabas and Paul",
+      "description": "Five prophets and teachers—Barnabas, Simeon called Niger, Lucius of Cyrene, Manaen, and Saul—are gathered in the Antioch church, engaged in corporate worship and fasting. The Holy Spirit speaks into this gathered assembly, directing the community to 'set apart for me Barnabas and Saul for the work to which I have called them.' After further fasting and prayer, the congregation lays hands on the two men and sends them off. This is the formal inauguration of what scholars call Paul's First Missionary Journey and the first time in Acts that the Spirit explicitly commissions an outward missionary expedition as a community act.",
+      "location_id": "antioch_syria",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "simeon_niger",
+        "lucius_cyrene",
+        "manaen",
+        "antioch_congregation"
+      ],
+      "timeline_label": "Commission at Antioch",
+      "scroll_anchor": "commissioning-at-antioch",
+      "visual_notes": "Illustrate five diverse figures in a first-century meeting room, two of them (Barnabas and Paul) kneeling while the others stand with hands extended in prayer over them; the room lit by oil lamps suggesting a gathered, solemn atmosphere. Map annotation: a glowing origin-point marker at Antioch of Syria with a directional arrow beginning the journey west."
+    },
+    {
+      "id": "departure_seleucia",
+      "sequence": 2,
+      "verses": "13:4",
+      "title": "Setting Sail from Seleucia",
+      "description": "Sent out by the Holy Spirit, Barnabas and Paul travel the approximately 25 kilometers from Antioch downhill to the port of Seleucia. John Mark accompanies them as their assistant. They board a vessel and sail westward across the Mediterranean toward Cyprus. Luke's emphasis that they were 'sent out by the Holy Spirit' frames the entire journey as divine mission rather than human initiative, a framing that recurs throughout the travels in Acts.",
+      "location_id": "seleucia",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "john_mark"
+      ],
+      "timeline_label": "Embarkation at Seleucia",
+      "scroll_anchor": "departure-seleucia",
+      "visual_notes": "A first-century merchant vessel at the docks of Seleucia; the three missionaries carrying provisions and boarding a gangplank. The Orontes mouth and harbor visible in the background. Map annotation: draw a sea-route arrow arcing westward from Seleucia toward the eastern tip of Cyprus."
+    },
+    {
+      "id": "preaching_salamis",
+      "sequence": 3,
+      "verses": "13:5",
+      "title": "Preaching in the Synagogues of Salamis",
+      "description": "The team lands at Salamis, Cyprus's largest city and main eastern port. They go directly to the Jewish synagogues—the plural form suggesting multiple congregations, indicating a substantial diaspora Jewish population. John Mark is identified as their huperetēs, a helper or attendant responsible for logistics and possibly reading the scriptures. Luke records no notable conversions or opposition, presenting Salamis as a transit stage before the drama awaiting them at Paphos.",
+      "location_id": "salamis_cyprus",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "john_mark"
+      ],
+      "timeline_label": "Arrival and Preaching at Salamis",
+      "scroll_anchor": "preaching-salamis",
+      "visual_notes": "Paul and Barnabas speaking inside a colonnaded synagogue hall; a mixed crowd of diaspora Jews and God-fearing Gentiles seated on stone benches. John Mark seated to one side holding scroll cases. Map annotation: mark Salamis at the northeastern tip of Cyprus."
+    },
+    {
+      "id": "travel_through_cyprus",
+      "sequence": 4,
+      "verses": "13:6a",
+      "title": "Crossing Cyprus to Paphos",
+      "description": "Barnabas and Paul travel the roughly 160 kilometers from Salamis westward across the entire island to Paphos, the seat of Roman government. The route likely followed a coastal or inland road through the Mesaoria plain and over the Troodos foothills. Luke's brief account implies no dramatic incidents along the route; his narrative interest is focused entirely on what awaits them at the proconsul's residence in Paphos.",
+      "location_id": "paphos_cyprus",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "john_mark"
+      ],
+      "timeline_label": "Island Crossing to Paphos",
+      "scroll_anchor": "travel-through-cyprus",
+      "visual_notes": "Three travelers on a dusty road against a backdrop of Cyprus highland landscape; distant mountains of the Troodos range to the north. Map annotation: draw an overland arrow crossing Cyprus from east (Salamis) to west (Paphos)."
+    },
+    {
+      "id": "encounter_elymas",
+      "sequence": 5,
+      "verses": "13:6b-8",
+      "title": "Meeting Elymas and Sergius Paulus",
+      "description": "At Paphos, the missionaries encounter a Jewish false prophet and sorcerer named Bar-Jesus, known by the Greek name Elymas—likely meaning 'sorcerer' or 'wise man.' He is a member of the court of the Roman proconsul Sergius Paulus, an intelligent official who summons Barnabas and Paul because he is eager to hear the word of God. Elymas immediately moves to oppose the missionaries, seeking to turn the proconsul away from faith. The scene is a direct power confrontation: Roman imperial authority, Jewish prophetic authority, and the authority of the apostolic mission face each other in one room.",
+      "location_id": "paphos_cyprus",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "elymas_barjesus",
+        "sergius_paulus"
+      ],
+      "timeline_label": "Confrontation at the Governor's Court",
+      "scroll_anchor": "encounter-elymas",
+      "visual_notes": "A formal Roman audience chamber: Sergius Paulus seated on a raised chair flanked by attendants; Paul and Barnabas standing on one side; Elymas positioned between them gesturing to intercept. The architecture should suggest Roman provincial wealth—marble columns, mosaic floor. Map annotation: Paphos marked as the Roman administrative capital of Cyprus with a proconsul's insignia."
+    },
+    {
+      "id": "blinding_of_elymas",
+      "sequence": 6,
+      "verses": "13:9-11",
+      "title": "Paul Strikes Elymas Blind",
+      "description": "Paul—filled with the Holy Spirit and here named 'Paul' for the first time in Acts, marking a narrative shift in his identity—fixes his gaze on Elymas and delivers a severe denunciation: 'You are a child of the devil and an enemy of everything that is right! You are full of all kinds of deceit and trickery. Will you never stop perverting the right ways of the Lord?' He announces divine judgment: immediate blindness. Mist and darkness fall on Elymas and he gropes about seeking someone to lead him. The miracle deliberately mirrors Paul's own experience of blindness at his conversion (Acts 9:8–9), suggesting a merciful invitation disguised as judgment.",
+      "location_id": "paphos_cyprus",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "elymas_barjesus",
+        "sergius_paulus"
+      ],
+      "timeline_label": "Elymas Struck Blind",
+      "scroll_anchor": "blinding-of-elymas",
+      "visual_notes": "High-contrast dramatic scene: Paul with arm outstretched and intense gaze; Elymas clutching his face, groping forward into darkness with one hand extended; Sergius Paulus and attendants watching in shock. Use a shaft of light on Paul to contrast with the visual darkness gathering around Elymas. Map annotation: still at Paphos—no movement."
+    },
+    {
+      "id": "sergius_paulus_believes",
+      "sequence": 7,
+      "verses": "13:12",
+      "title": "The Proconsul Believes",
+      "description": "Witnessing the judgment on Elymas, Sergius Paulus believes, described as being 'astonished at the teaching about the Lord.' Luke's phrasing is carefully weighted: the proconsul was won not merely by the miracle but by the content of the apostolic teaching. This is the first explicit conversion of a senior Roman official in Acts and a symbolic breakthrough for the mission, demonstrating that the gospel can reach the empire's governing class.",
+      "location_id": "paphos_cyprus",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "sergius_paulus"
+      ],
+      "timeline_label": "First Roman Official Converts",
+      "scroll_anchor": "sergius-paulus-believes",
+      "visual_notes": "Sergius Paulus shown rising from his chair or leaning forward with an expression of wonder and conviction; Paul and Barnabas in the foreground. Elymas visible in the background being led away. Map annotation: Paphos highlighted with a conversion marker—cross or star symbol—indicating a strategic breakthrough."
+    },
+    {
+      "id": "departure_to_perga",
+      "sequence": 8,
+      "verses": "13:13a",
+      "title": "Setting Sail for Pamphylia",
+      "description": "Paul—now listed first, with 'his companions' following—and the team sail north from Paphos across the open sea to Perga in Pamphylia on the southern coast of Asia Minor. The subtle shift in naming from 'Barnabas and Saul' to 'Paul and his companions' is Luke's way of signaling that Paul has assumed leadership of the mission. The sea crossing represents a major geographic leap from island to continent, opening the vast interior of Asia Minor to the gospel.",
+      "location_id": "perga",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "john_mark"
+      ],
+      "timeline_label": "Sailing to Pamphylia",
+      "scroll_anchor": "departure-to-perga",
+      "visual_notes": "A ship under sail in open Mediterranean waters; the Anatolian coastline visible on the horizon ahead. Map annotation: draw a sea-route arrow from Paphos northward to the Pamphylian coast at Perga."
+    },
+    {
+      "id": "john_mark_departs",
+      "sequence": 9,
+      "verses": "13:13b",
+      "title": "John Mark Leaves the Team at Perga",
+      "description": "At Perga, John Mark separates from Paul and Barnabas and returns to Jerusalem. Luke records this without explanation, but Paul later calls it a desertion of the work (Acts 15:38). Scholars have proposed several reasons: the grueling high-altitude inland journey ahead, a malarial climate in the coastal lowlands, disagreement with the increasingly Gentile focus of the mission, or personal loyalty to Barnabas over Paul. Whatever the cause, this moment plants a seed of discord that will fracture the missionary partnership in Acts 15.",
+      "location_id": "perga",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "john_mark"
+      ],
+      "timeline_label": "John Mark's Departure at Perga",
+      "scroll_anchor": "john-mark-departs",
+      "visual_notes": "A parting scene at the edge of Perga's city gate or a road junction: John Mark facing south, pack over one shoulder, while Paul faces north toward the inland mountain road and Barnabas stands between them in an ambiguous posture. Visible contrast in the landscape—a coastal plain behind John Mark, a rugged mountain range ahead of Paul. Map annotation: Perga with a fork symbol—one path southward to Jerusalem, one northward to Pisidian Antioch."
+    },
+    {
+      "id": "arrival_pisidian_antioch",
+      "sequence": 10,
+      "verses": "13:14",
+      "title": "Entering the Synagogue at Pisidian Antioch",
+      "description": "Paul and Barnabas travel northward from Perga through the Taurus Mountains—a challenging route at elevations up to 1,200 meters, likely covering over 160 kilometers—and arrive at the Roman colonial city of Antioch near Pisidia. On the Sabbath they enter the local synagogue and sit down among the congregation. Their conduct follows a consistent pattern: in every new city, they go to the synagogue first, honoring both Jewish priority in receiving the gospel and the ready-made biblically literate audience the synagogue provides.",
+      "location_id": "pisidian_antioch",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "pisidian_synagogue_leaders"
+      ],
+      "timeline_label": "Arrival at Pisidian Antioch",
+      "scroll_anchor": "arrival-pisidian-antioch",
+      "visual_notes": "Paul and Barnabas—travel-worn from the mountain crossing—entering a large synagogue in a clearly Roman colonial city; colonnaded streets visible outside; a mixed congregation of Jews and Gentile God-fearers seated inside. Map annotation: draw an overland route arrow north from Perga through mountain passes to Pisidian Antioch, with elevation contours suggested."
+    },
+    {
+      "id": "synagogue_invitation",
+      "sequence": 11,
+      "verses": "13:15",
+      "title": "Invited to Speak",
+      "description": "After the reading of the Law and the Prophets—the standard two-part synagogue scripture lectionary—the synagogue rulers send word to the visiting teachers: 'Brothers, if you have a message of encouragement for the people, please speak.' The invitation is standard hospitality toward traveling teachers; the rulers do not yet suspect the revolutionary content of what they are about to hear. This moment gives Paul a biblically primed audience and a formal platform, ideal conditions for the most sustained theological argument he will make in Acts.",
+      "location_id": "pisidian_antioch",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "pisidian_synagogue_leaders"
+      ],
+      "timeline_label": "Invitation to Speak",
+      "scroll_anchor": "synagogue-invitation",
+      "visual_notes": "A synagogue official approaching Paul who is seated among the congregation; Paul rising to his feet; Barnabas seated beside him. The Torah scroll visible on the bimah (reading platform) behind them. Map annotation: none new."
+    },
+    {
+      "id": "pauls_sermon",
+      "sequence": 12,
+      "verses": "13:16-41",
+      "title": "Paul's Great Sermon: From Israel's Story to the Risen Jesus",
+      "description": "Standing and gesturing with his hand for attention, Paul addresses both the Jews and the God-fearing Gentiles in the congregation. He delivers a sweeping survey of Israel's story: the patriarchs, the Exodus, the forty years in the wilderness, the conquest of Canaan under the judges, the transition to monarchy through Saul, and finally the election of David—'a man after God's own heart.' From David's descendants, he announces, God has brought Israel a Savior: Jesus. Paul explains that John the Baptist prepared his way, that Jerusalem's rulers unknowingly fulfilled the prophets by having Jesus executed, and that God raised him from the dead—the central claim supported by scripture (Psalm 2, Isaiah 55, Psalm 16) and by eyewitness testimony. He closes with both an invitation—forgiveness of sins and justification not available through the law of Moses are offered through faith in Jesus—and a warning from Habakkuk against those who reject what God is doing.",
+      "location_id": "pisidian_antioch",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "pisidian_synagogue_leaders"
+      ],
+      "timeline_label": "Paul's Synagogue Sermon",
+      "scroll_anchor": "pauls-sermon",
+      "visual_notes": "Paul standing before the seated congregation, one arm raised in the classic Roman rhetorical gesture (hinted at by the 'motioned with his hand' of v. 16). Consider flanking the main figure with illustrative vignettes of the events narrated: Israel in Egypt, the cross, an empty tomb. The audience shows a spectrum of reactions—rapt attention, skeptical frowning, quiet tears. Map annotation: none new."
+    },
+    {
+      "id": "invitation_return_sabbath",
+      "sequence": 13,
+      "verses": "13:42-43",
+      "title": "The Congregation Invites Them Back",
+      "description": "As Paul and Barnabas leave the synagogue, the people press them to come back next Sabbath and speak further. A significant number—many Jews and devout converts to Judaism—follow the missionaries out into the street. Paul and Barnabas urge them to continue in the grace of God. The scene is one of genuine spiritual awakening; the congregation has heard something that resonates and wants more.",
+      "location_id": "pisidian_antioch",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "pisidian_synagogue_leaders"
+      ],
+      "timeline_label": "First Sabbath: Enthusiastic Response",
+      "scroll_anchor": "invitation-return-sabbath",
+      "visual_notes": "A group of people—diverse in age and dress—walking out of the synagogue alongside Paul and Barnabas into a sunlit courtyard; animated conversation; some faces lit with wonder or relief. Map annotation: none new."
+    },
+    {
+      "id": "second_sabbath_crowd",
+      "sequence": 14,
+      "verses": "13:44",
+      "title": "Almost the Whole City Gathers",
+      "description": "On the following Sabbath, nearly the entire population of the city assembles to hear the word of the Lord. News of Paul's sermon had clearly spread through every social network during the intervening week—through households, marketplaces, and civic spaces. The massive turnout is both a testament to the message's compelling power and an immediate trigger for alarm among those with invested interests in the existing religious order.",
+      "location_id": "pisidian_antioch",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "pisidian_synagogue_leaders",
+        "jealous_jews",
+        "gentile_believers"
+      ],
+      "timeline_label": "Second Sabbath: City-Wide Assembly",
+      "scroll_anchor": "second-sabbath-crowd",
+      "visual_notes": "An overflowing gathering in and around the synagogue—people packed into doorways, sitting on steps outside, craning to hear; a Roman-colonial cityscape visible. The crowd should visually reflect the entire demographic range of a Roman provincial city. Map annotation: Pisidian Antioch shown as a densely populated hub."
+    },
+    {
+      "id": "jewish_opposition",
+      "sequence": 15,
+      "verses": "13:45",
+      "title": "Jewish Leaders Contradict and Slander Paul",
+      "description": "Seeing the enormous crowds, certain Jewish leaders are consumed with jealousy and begin publicly contradicting Paul's message and hurling insults and abuse. Luke does not specify the content of the theological objections, but they likely included arguments against Jesus as Messiah and concerns about the social implications of including uncircumcised Gentiles on equal footing with Israel. The combination of jealousy at Paul's popularity and genuine theological disagreement creates a volatile confrontation.",
+      "location_id": "pisidian_antioch",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "jealous_jews"
+      ],
+      "timeline_label": "Jewish Opposition Erupts",
+      "scroll_anchor": "jewish-opposition",
+      "visual_notes": "A heated confrontational scene: a cluster of synagogue officials gesturing angrily toward Paul; Paul and Barnabas standing their ground; the crowd visible behind them watching the confrontation. Use body language and facial expressions to convey the intensity of the dispute. Map annotation: none new."
+    },
+    {
+      "id": "turn_to_gentiles",
+      "sequence": 16,
+      "verses": "13:46-47",
+      "title": "The Pivotal Declaration: Turning to the Gentiles",
+      "description": "Paul and Barnabas respond to the opposition with bold directness: 'It was necessary that we speak the word of God to you first. Since you reject it and do not consider yourselves worthy of eternal life, we are turning to the Gentiles.' They support this decision with scripture—Isaiah 49:6, 'I have made you a light for the Gentiles, that you may bring salvation to the ends of the earth'—applying to themselves the vocation of the Isaianic Servant of the Lord. This is one of the most programmatic statements in all of Acts, echoing the universal mission scope of 1:8 and anticipating the future direction of the entire Pauline mission.",
+      "location_id": "pisidian_antioch",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "jealous_jews",
+        "gentile_believers"
+      ],
+      "timeline_label": "Gospel Turns to the Gentiles",
+      "scroll_anchor": "turn-to-gentiles",
+      "visual_notes": "Paul and Barnabas physically turning—a full-body reorientation—from a group of opposing figures toward the Gentile portion of the crowd, who look up with expectant expressions; an open horizon behind the Gentiles suggesting 'the ends of the earth.' This is a key illustration moment—the pivot should be visually dramatic. Map annotation: none new but consider arrows radiating outward from Pisidian Antioch to suggest the spreading word."
+    },
+    {
+      "id": "gentiles_rejoice_believe",
+      "sequence": 17,
+      "verses": "13:48-49",
+      "title": "Gentiles Rejoice and Believe",
+      "description": "The Gentiles present hear Paul's announcement and are filled with joy; they honor the word of the Lord, and all who were 'appointed for eternal life' believe—Luke's phrase tetagmenoi eis zōēn aiōnion is one of the most discussed predestination texts in the New Testament. The word of the Lord spreads throughout the entire surrounding region, indicating that new believers carry the message beyond the city into towns and villages. A new community of faith is forming.",
+      "location_id": "pisidian_antioch",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "gentile_believers"
+      ],
+      "timeline_label": "Gentile Harvest: Mass Belief and Joy",
+      "scroll_anchor": "gentiles-rejoice-believe",
+      "visual_notes": "Joyful, diverse Gentile faces—some raising hands, some embracing, some in reverent posture; a strong contrast in emotional register with the dark confrontation of the previous scene. In the background, figures moving outward through city gates suggesting the word spreading to the region. Map annotation: a spreading glow or radiating circles from Pisidian Antioch indicating regional impact."
+    },
+    {
+      "id": "persecution_and_expulsion",
+      "sequence": 18,
+      "verses": "13:50-51a",
+      "title": "Persecution: Paul and Barnabas Expelled",
+      "description": "The jealous Jewish leaders mobilize the social elite of the city against the missionaries: they incite the devout women of high standing and the leading men of the city, stirring up a formal persecution that results in Paul and Barnabas being driven out of the region. In response the missionaries perform a symbolic act Jesus had commanded his disciples—shaking the dust off their feet against the city as a solemn testimony. The gesture signals that responsibility for rejection now lies with the city, not with those who brought the message.",
+      "location_id": "pisidian_antioch",
+      "persons_present": [
+        "paul",
+        "barnabas",
+        "jealous_jews",
+        "devout_women_leaders"
+      ],
+      "timeline_label": "Expulsion from Pisidian Antioch",
+      "scroll_anchor": "persecution-and-expulsion",
+      "visual_notes": "Paul and Barnabas at the city gate or on the road outside the walls; Paul bending to shake dust from his sandals, a formal and deliberate gesture; a hostile crowd visible at the city gate watching them leave; dust visibly swirling. Map annotation: Pisidian Antioch with a departure arrow pointing east toward Iconium."
+    },
+    {
+      "id": "arrival_iconium",
+      "sequence": 19,
+      "verses": "13:51b",
+      "title": "Moving On to Iconium",
+      "description": "After the dust-shaking, Paul and Barnabas travel eastward along the Roman road known as the Via Sebaste to Iconium, a prosperous city on the Anatolian plateau in the region of Lycaonia. Their forward movement immediately after expulsion demonstrates that opposition does not deter the mission—it redirects it. Iconium will be the next scene of both powerful ministry and intense persecution, narrated at the opening of Acts 14.",
+      "location_id": "iconium",
+      "persons_present": [
+        "paul",
+        "barnabas"
+      ],
+      "timeline_label": "Onward to Iconium",
+      "scroll_anchor": "arrival-iconium",
+      "visual_notes": "Paul and Barnabas walking purposefully eastward along a paved Roman road; a cityscape visible in the middle distance; their posture should convey resolution rather than defeat. Map annotation: draw a road arrow from Pisidian Antioch east/southeast to Iconium."
+    },
+    {
+      "id": "disciples_filled_spirit",
+      "sequence": 20,
+      "verses": "13:52",
+      "title": "The New Disciples Filled with Joy and the Spirit",
+      "description": "Left behind in Pisidian Antioch after the missionaries' expulsion, the new disciples—primarily the Gentile converts—are filled with joy and with the Holy Spirit. Luke closes the chapter on a note of deliberate counter-intuition: the messengers have been driven out, yet the community they leave behind is spiritually thriving. The chapter ends not with defeat but with the portrait of a self-sustaining, Spirit-empowered congregation—proof that the mission has succeeded even in adversity.",
+      "location_id": "pisidian_antioch",
+      "persons_present": [
+        "gentile_believers"
+      ],
+      "timeline_label": "New Church Flourishes",
+      "scroll_anchor": "disciples-filled-spirit",
+      "visual_notes": "A small, joyful gathering of diverse converts—men, women, young and old—in a private home in Pisidian Antioch; quality of warm light suggesting spiritual presence; faces upturned and bright. The empty place where Paul and Barnabas sat is visible but the community fills the room with life. Map annotation: Pisidian Antioch marked with a church or community symbol indicating an established congregation."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "antioch_syria",
+          "event_id": "commissioning_at_antioch",
+          "note": "Commissioned by the Holy Spirit through the Antioch church"
+        },
+        {
+          "order": 2,
+          "location_id": "seleucia",
+          "event_id": "departure_seleucia",
+          "note": "Traveled 25 km from Antioch down to the Orontes port"
+        },
+        {
+          "order": 3,
+          "location_id": "salamis_cyprus",
+          "event_id": "preaching_salamis",
+          "note": "Sailed to Cyprus, landing first at the eastern port of Salamis"
+        },
+        {
+          "order": 4,
+          "location_id": "paphos_cyprus",
+          "event_id": "travel_through_cyprus",
+          "note": "Traveled ~160 km overland across Cyprus to the Roman capital"
+        },
+        {
+          "order": 5,
+          "location_id": "perga",
+          "event_id": "departure_to_perga",
+          "note": "Sailed north from Paphos to the Pamphylian coast; now leading as 'Paul and his companions'"
+        },
+        {
+          "order": 6,
+          "location_id": "pisidian_antioch",
+          "event_id": "arrival_pisidian_antioch",
+          "note": "Traveled inland ~160 km north through the Taurus Mountains to the Roman colony"
+        },
+        {
+          "order": 7,
+          "location_id": "iconium",
+          "event_id": "arrival_iconium",
+          "note": "Expelled from Pisidian Antioch; pressed on eastward along the Via Sebaste to Iconium"
+        }
+      ]
+    },
+    {
+      "person_id": "barnabas",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "antioch_syria",
+          "event_id": "commissioning_at_antioch",
+          "note": "Co-commissioned alongside Paul; listed first in early verses as senior partner"
+        },
+        {
+          "order": 2,
+          "location_id": "seleucia",
+          "event_id": "departure_seleucia",
+          "note": "Departed with Paul and John Mark for Cyprus"
+        },
+        {
+          "order": 3,
+          "location_id": "salamis_cyprus",
+          "event_id": "preaching_salamis",
+          "note": "As a native Cypriot (Acts 4:36), Barnabas likely had personal connections here"
+        },
+        {
+          "order": 4,
+          "location_id": "paphos_cyprus",
+          "event_id": "travel_through_cyprus",
+          "note": "Crossed to the island's administrative capital with Paul and John Mark"
+        },
+        {
+          "order": 5,
+          "location_id": "perga",
+          "event_id": "departure_to_perga",
+          "note": "Sailed to Pamphylia with Paul; John Mark departs here"
+        },
+        {
+          "order": 6,
+          "location_id": "pisidian_antioch",
+          "event_id": "arrival_pisidian_antioch",
+          "note": "Continued with Paul through the mountains to Pisidian Antioch"
+        },
+        {
+          "order": 7,
+          "location_id": "iconium",
+          "event_id": "arrival_iconium",
+          "note": "Expelled alongside Paul; continued the mission to Iconium"
+        }
+      ]
+    },
+    {
+      "person_id": "john_mark",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "antioch_syria",
+          "event_id": "commissioning_at_antioch",
+          "note": "Joined the missionary team as assistant; his role as Barnabas's cousin may have facilitated his inclusion"
+        },
+        {
+          "order": 2,
+          "location_id": "seleucia",
+          "event_id": "departure_seleucia",
+          "note": "Embarked with the team at Seleucia"
+        },
+        {
+          "order": 3,
+          "location_id": "salamis_cyprus",
+          "event_id": "preaching_salamis",
+          "note": "Served as helper in the synagogue ministry at Salamis"
+        },
+        {
+          "order": 4,
+          "location_id": "paphos_cyprus",
+          "event_id": "travel_through_cyprus",
+          "note": "Present at Paphos for the encounter with Elymas and the proconsul"
+        },
+        {
+          "order": 5,
+          "location_id": "perga",
+          "event_id": "john_mark_departs",
+          "note": "Separated from the team at Perga and returned to Jerusalem; reason unspecified by Luke"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "commissioning_at_antioch",
+      "position": 1,
+      "label": "Commission at Antioch",
+      "relative_time": "Journey start",
+      "absolute_time": "c. AD 46–47"
+    },
+    {
+      "event_id": "departure_seleucia",
+      "position": 2,
+      "label": "Embarkation at Seleucia",
+      "relative_time": "Shortly after commissioning",
+      "absolute_time": "c. AD 46–47"
+    },
+    {
+      "event_id": "preaching_salamis",
+      "position": 3,
+      "label": "Preaching at Salamis",
+      "relative_time": "Days later (sea voyage)",
+      "absolute_time": "c. AD 46–47"
+    },
+    {
+      "event_id": "travel_through_cyprus",
+      "position": 4,
+      "label": "Crossing Cyprus",
+      "relative_time": "Days to weeks after landing",
+      "absolute_time": "c. AD 46–47"
+    },
+    {
+      "event_id": "encounter_elymas",
+      "position": 5,
+      "label": "Meeting Elymas at Paphos",
+      "relative_time": "On arrival at Paphos",
+      "absolute_time": "c. AD 46–47"
+    },
+    {
+      "event_id": "blinding_of_elymas",
+      "position": 6,
+      "label": "Elymas Struck Blind",
+      "relative_time": "Same audience at Paphos",
+      "absolute_time": "c. AD 46–47"
+    },
+    {
+      "event_id": "sergius_paulus_believes",
+      "position": 7,
+      "label": "Proconsul Believes",
+      "relative_time": "Immediately after the miracle",
+      "absolute_time": "c. AD 46–47"
+    },
+    {
+      "event_id": "departure_to_perga",
+      "position": 8,
+      "label": "Sailing to Pamphylia",
+      "relative_time": "After leaving Paphos",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "john_mark_departs",
+      "position": 9,
+      "label": "John Mark Leaves at Perga",
+      "relative_time": "On arrival at Perga",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "arrival_pisidian_antioch",
+      "position": 10,
+      "label": "Enter Synagogue at Pisidian Antioch",
+      "relative_time": "Weeks later, after mountain crossing",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "synagogue_invitation",
+      "position": 11,
+      "label": "Invited to Speak",
+      "relative_time": "First Sabbath at Pisidian Antioch",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "pauls_sermon",
+      "position": 12,
+      "label": "Paul's Great Sermon",
+      "relative_time": "First Sabbath — same service",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "invitation_return_sabbath",
+      "position": 13,
+      "label": "Invited Back Next Sabbath",
+      "relative_time": "End of first Sabbath",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "second_sabbath_crowd",
+      "position": 14,
+      "label": "City-Wide Gathering",
+      "relative_time": "One week later — Second Sabbath",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "jewish_opposition",
+      "position": 15,
+      "label": "Jewish Leaders Oppose",
+      "relative_time": "Second Sabbath — same gathering",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "turn_to_gentiles",
+      "position": 16,
+      "label": "Pivot: Gospel to the Gentiles",
+      "relative_time": "Second Sabbath — same confrontation",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "gentiles_rejoice_believe",
+      "position": 17,
+      "label": "Gentile Harvest",
+      "relative_time": "Following days and weeks",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "persecution_and_expulsion",
+      "position": 18,
+      "label": "Missionaries Expelled",
+      "relative_time": "After a period of ministry",
+      "absolute_time": "c. AD 47"
+    },
+    {
+      "event_id": "arrival_iconium",
+      "position": 19,
+      "label": "Depart for Iconium",
+      "relative_time": "After the expulsion",
+      "absolute_time": "c. AD 47–48"
+    },
+    {
+      "event_id": "disciples_filled_spirit",
+      "position": 20,
+      "label": "New Church Filled with the Spirit",
+      "relative_time": "After the missionaries' departure",
+      "absolute_time": "c. AD 47–48"
+    }
+  ],
+  "theological_themes": [
+    "The Holy Spirit as the director of mission",
+    "Salvation for both Jew and Gentile",
+    "Justification through Christ, not the law of Moses",
+    "Rejection by some enables wider proclamation",
+    "Fulfillment of Israel's scriptures in Jesus",
+    "The persevering resilience of Spirit-filled community"
+  ],
+  "discussion_questions": [
+    "The Holy Spirit initiates the mission in Acts 13 not through a vision to an individual but through a community gathered in worship and fasting. What does this communal discernment model suggest about how churches today might make major decisions about mission and direction?",
+    "Paul's sermon traces all of Israel's history as a story pointing to Jesus. How should this approach—reading the entire Old Testament through the lens of Christ—shape how Christians today engage with the Hebrew scriptures?",
+    "When the Jewish leaders reject the gospel, Paul and Barnabas announce they are turning to the Gentiles (v. 46). Is this an act of judgment, pastoral wisdom, grief over rejection, or all three simultaneously? What does Paul's later anguish in Romans 9–11 add to your reading of this moment?",
+    "John Mark's quiet departure at Perga (v. 13) later causes a rift serious enough to split a missionary partnership (Acts 15:37–39). How should Christian communities hold together the values of accountability, grace, and second chances when someone steps back from a commitment?",
+    "The chapter ends with the missionaries expelled yet the disciples 'filled with joy and the Holy Spirit' (v. 52). What does this counter-intuitive ending teach about how to measure success in Christian witness, especially in contexts of hostility or apparent failure?"
+  ]
+};

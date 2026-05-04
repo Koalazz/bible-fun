@@ -94,13 +94,15 @@ window.BOOKS_MANIFEST = {
         {
           "n": 13,
           "title": "Sent Out: The Gospel Reaches the Nations",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/013"
         },
         {
           "n": 14,
           "title": "Gods Among Us",
           "title_da": "Guder iblandt os",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/014"
         },
         {
           "n": 15,
