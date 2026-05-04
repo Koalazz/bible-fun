@@ -183,7 +183,8 @@ window.BOOKS_MANIFEST = {
           "n": 26,
           "title": "Paul Before Agrippa: The Defense of a Life Transformed",
           "title_da": "Paulus foran Agrippa: Forsvaret for et forvandlet liv",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/026"
         },
         {
           "n": 27,
