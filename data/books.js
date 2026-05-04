@@ -155,7 +155,8 @@ window.BOOKS_MANIFEST = {
           "n": 22,
           "title": "Paul's Defense Before the Jerusalem Crowd",
           "title_da": "Paulus' forsvar foran skaren i Jerusalem",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/022"
         },
         {
           "n": 23,
