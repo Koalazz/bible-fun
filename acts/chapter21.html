@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 21 — Warnings, Worship, and Arrest in Jerusalem</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="acts-ch21-data.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── PAGE SKELETON ── */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* ── BODY: timeline left, map right ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── TIMELINE COLUMN ── */
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+
+/* Chapter label strip */
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.tl-ch-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; line-height:1.1; color:var(--tl-fg);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+
+/* Scrollable event list */
+.tl-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+/* Vertical spine */
+.tl-spine {
+  padding: 8px 0 80px;
+  position: relative;
+}
+.tl-spine::before {
+  content:'';
+  position:absolute;
+  left: 38px;
+  top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent);
+}
+
+/* Year separator badge */
+.tl-year-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 6px 14px;
+  position: relative;
+  z-index: 2;
+}
+.tl-year-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(22% .018 255);
+  border: 1px solid oklch(36% .015 255);
+  padding: 2px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line {
+  flex: 1;
+  height: 1px;
+  background: oklch(30% .012 255);
+  opacity: .5;
+}
+
+/* Each item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s;
+  padding-right: 4px;
+  min-height: 130px;
+}
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+
+/* left: seq number + dot */
+.tl-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+.tl-seq {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  color: oklch(45% .01 255);
+  margin-bottom:5px;
+  letter-spacing:.05em;
+}
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%;
+  border:2px solid oklch(38% .015 255);
+  background: oklch(16% .018 255);
+  position:relative; z-index:1;
+  transition: all .28s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px oklch(58% .19 46 / .2);
+}
+.tl-dot-pip {
+  width:5px; height:5px; border-radius:50%; background:#fff;
+  opacity:0; transition:opacity .28s;
+}
+.tl-item.active .tl-dot-pip { opacity:1; }
+
+/* right: text */
+.tl-r {
+  padding: 22px 10px 22px 6px;
+  border-bottom: 1px solid oklch(24% .012 255);
+}
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date {
+  font-size:11px; font-weight:800; letter-spacing:.1em;
+  font-family:'Barlow Condensed',sans-serif;
+  color: oklch(70% .018 76); margin-bottom:3px;
+}
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time {
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  line-height:1.35;
+  color: oklch(72% .014 78); margin-bottom:6px;
+}
+.tl-item.active .tl-rel-time { color: oklch(82% .035 74); }
+.tl-ev-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px; font-weight:800; text-transform:uppercase;
+  line-height:1.18; color: var(--tl-fg);
+  margin-bottom: 4px;
+}
+.tl-ev-verses {
+  font-size:10px; font-weight:700; letter-spacing:.1em;
+  color: oklch(68% .018 76); margin-top:2px;
+}
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+
+/* ── MAP COLUMN ── */
+.map-col {
+  position: relative;
+  background: var(--map-land);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Event banner at top of map */
+.map-event-banner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  background: oklch(16% 0.02 55 / 0.92);
+  border-bottom: 2px solid var(--accent);
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 16px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: background .3s;
+}
+.ban-verses {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.ban-content {}
+.ban-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; color:oklch(95% .012 78);
+  line-height:1.1; margin-bottom:4px;
+}
+.ban-desc {
+  font-family:'Lora',serif; font-style:normal;
+  font-size:13px; line-height:1.55;
+  color:oklch(88% .014 78);
+  display: block;
+  overflow: visible;
+}
+.ban-loc {
+  display:flex; align-items:center; gap:5px;
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:oklch(55% .012 70); white-space:nowrap;
+}
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+/* ── MAP SVG ── */
+.map-svg-wrap {
+  position: absolute;
+  inset: 0;
+}
+.map-svg {
+  width:100%; height:100%;
+}
+
+/* Person legend - bottom left of map */
+.map-person-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.map-leg-item {
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; font-weight:600; letter-spacing:.06em;
+  color: var(--fg);
+  background: var(--card);
+  padding: 3px 10px 3px 7px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  transition: opacity .5s, transform .4s;
+}
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-leg-item.entering { animation: legEnter .4s ease forwards; }
+@keyframes legEnter {
+  from { opacity:0; transform:translateX(-8px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+.map-controls-panel { display: contents; }
+
+/* Map overlay labels */
+.map-corner-label {
+  position:absolute; bottom:18px; right:18px;
+  font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
+}
+
+.map-playback {
+  position: absolute;
+  right: 18px;
+  bottom: 42px;
+  z-index: 12;
+  width: min(460px, calc(100% - 36px));
+  background: oklch(99.5% 0.008 80 / .9);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+.playback-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:9px;
+}
+.playback-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.playback-buttons { display:flex; gap:6px; flex-shrink:0; }
+.playback-btn {
+  width:30px;
+  height:26px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--fg);
+  border-radius:3px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  line-height:1;
+}
+.playback-track {
+  position:relative;
+  height:28px;
+  display:grid;
+  grid-template-columns:repeat(var(--step-count), 1fr);
+  align-items:center;
+  gap:0;
+}
+.playback-track::before {
+  content:'';
+  position:absolute;
+  left:10px; right:10px; top:13px;
+  height:2px;
+  background:var(--border);
+}
+.playback-step {
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  width:20px;
+  height:20px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.playback-step::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:var(--fg-muted);
+  opacity:.42;
+  transition:all .24s;
+}
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before {
+  inset:2px;
+  background:var(--accent);
+  opacity:1;
+  box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
+}
+.playback-step-time { display: none; }
+.loc-label {
+  paint-order: stroke;
+  stroke: oklch(98% 0.008 80 / .82);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.person-name-label {
+  display: none;
+  paint-order: stroke;
+  stroke: oklch(16% 0.02 55 / .62);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: 44px auto;
+    overflow: visible;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
+  }
+
+  .map-col {
+    order: -1;
+    overflow: visible;
+  }
+
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+  .home-link,
+  .lang-btn {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .map-event-banner {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    flex: 0 0 auto;
+    padding: 8px 12px 9px;
+    gap: 3px;
+  }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title  { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc {
+    display: block;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow: visible;
+  }
+  .ban-loc    { display: none; }
+  .map-svg-wrap {
+    position: relative;
+    inset: auto;
+    flex: 0 0 clamp(300px, 46dvh, 430px);
+    min-height: clamp(300px, 46dvh, 430px);
+  }
+  .loc-label {
+    font-size: 28px;
+    font-weight: 800;
+    stroke-width: 5px;
+  }
+  .person-name-label { display: block; font-size: 18px; }
+
+  .map-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: oklch(93% 0.025 82);
+    border-top: 1px solid var(--border);
+  }
+
+  .map-person-legend {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    gap: 4px;
+    z-index: 14;
+    max-height: none;
+    overflow-y: auto;
+    padding: 5px;
+    background: oklch(99.5% 0.008 80 / .88);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px oklch(10% 0.02 55 / .12);
+    backdrop-filter: blur(8px);
+  }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
+  .map-leg-dot  { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+  .map-playback {
+    position: relative;
+    right:auto;
+    bottom:auto;
+    width:100%;
+    padding:8px 8px 10px;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track {
+    min-width: max(100%, calc(var(--step-count) * 92px));
+    height: 70px;
+    align-items: start;
+  }
+  .playback-track::before { top:8px; }
+  .playback-step { width:18px; height:18px; }
+  .playback-step-time {
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 84px;
+    color: var(--fg);
+    background: oklch(99.5% 0.008 80 / .92);
+    border: 1px solid oklch(84% 0.022 72 / .8);
+    border-radius: 3px;
+    padding: 3px 4px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    pointer-events: none;
+    box-shadow: 0 2px 8px oklch(10% 0.02 55 / .1);
+  }
+  .playback-step.active .playback-step-time {
+    color: oklch(99% 0.008 80);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .person-name-label { display: none; }
+
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {
+  da: {
+    book: "Apostlenes Gerninger",
+    chapterTitle: "Advarsler, tilbedelse og arrestation i Jerusalem",
+    chapterSummary: "Paulus og hans ledsagere sejler fra Milet gennem det østlige Middelhav med stop i Tyrus, Ptolemais og Cæsarea, hvor profeten Agabos varsler Paulus' arrestation med en dramatisk tegnhandling. Trods bønner og tårer fortsætter Paulus mod Jerusalem, møder menighedens ledere og går ind i et tempelritual for renselse. Besøget ender i krise, da jøder fra Asia anklager ham for at vanhellige templet, og en voldsom uro fører til, at romerske soldater arresterer ham.",
+    shortBook: "ApG",
+    headerSub: "- Tyrus, Cæsarea og Jerusalem · forår-sommer år 57",
+    mapCorner: "Kos · Tyrus · Cæsarea · Jerusalem",
+    timelineTitle: [
+        "Mod",
+        "Jerusalem"
+    ],
+    yearBadges: [
+        "Sørejsen",
+        "Tyrus",
+        "Cæsarea",
+        "Jerusalem",
+        "Templet"
+    ],
+    persons: {
+        paul: "Paulus",
+        luke_narrator: "Lukas, fortælleren",
+        tyre_disciples: "Disciplene i Tyrus",
+        philip_evangelist: "Evangelisten Filip",
+        philips_daughters: "Filips fire døtre",
+        agabus: "Agabos",
+        james_jerusalem: "Jakob",
+        jerusalem_elders: "De ældste i Jerusalem",
+        four_men_vow: "Fire mænd med et løfte",
+        trophimus: "Trofimus",
+        asian_jews: "Jøder fra Asia",
+        claudius_lysias: "Klaudius Lysias",
+        roman_soldiers: "Romerske soldater",
+        mnason: "Mnason fra Cypern",
+        pauls_companions: "Paulus' rejseledsagere"
+    },
+    locations: {
+        cos: {
+            name: "Kos"
+        },
+        rhodes: {
+            name: "Rhodos"
+        },
+        patara: {
+            name: "Patara"
+        },
+        tyre: {
+            name: "Tyrus"
+        },
+        ptolemais: {
+            name: "Ptolemais"
+        },
+        caesarea: {
+            name: "Cæsarea"
+        },
+        jerusalem: {
+            name: "Jerusalem"
+        },
+        jerusalem_temple: {
+            name: "Templet i Jerusalem"
+        },
+        antonia_fortress: {
+            name: "Borgen Antonia"
+        }
+    },
+    events: {
+        sailing_cos_rhodes: {
+            title: "Afrejse fra Milet: sejlads til Kos og Rhodos",
+            description: "Efter den tårevædede afsked med de ældste fra Efesos i Milet går Paulus og hans ledsagere om bord og sejler direkte til øen Kos for den første nat og derefter videre til Rhodos. Udtrykket for at rive sig løs viser, hvor følelsesmæssigt tung afskeden er. Rejsen følger en almindelig handelsrute gennem de ægæiske øer.",
+            timeline_label: "Rejsedag 1-2"
+        },
+        patara_new_ship: {
+            title: "Patara: et direkte skib mod Fønikien",
+            description: "Fra Rhodos sejler gruppen østpå til Patara, en vigtig havneby på Lykiens kyst. Her finder de et fragtskib, der skal direkte til Fønikien, og skifter skib. Fartøjet passerer Cypern på nordsiden og krydser det åbne Middelhav mod Syriens kyst. Overfarten på omkring 800 kilometer kan have taget fire til fem dage.",
+            timeline_label: "Dag 3 - skibsskifte"
+        },
+        arrival_tyre: {
+            title: "Ankomst til Tyrus: de finder disciplene",
+            description: "Skibet lægger til i den fønikiske havneby Tyrus for at losse lasten, og Paulus' gruppe får tid i land. De opsøger de lokale kristne, en menighed der sandsynligvis voksede frem af troende, som blev spredt efter Stefanus' død, og bliver hos dem i syv dage. At de må lede efter disciplene antyder et lille eller diskret fællesskab.",
+            timeline_label: "Omkring dag 8 - Tyrus"
+        },
+        tyre_warning: {
+            title: "Åndens advarsel i Tyrus",
+            description: "Under opholdet i Tyrus siger disciplene ved Ånden til Paulus, at han ikke skal drage op til Jerusalem. Det er mindst den anden tydelige profetiske advarsel på denne sidste rejse. Spørgsmålet er, om det er et forbud, Paulus overhører, eller en sand forudsigelse om lænker, som vennerne omsætter til en kærlig bøn om at vende om.",
+            timeline_label: "Under de syv dage"
+        },
+        tyre_farewell_beach: {
+            title: "Afskedsbøn på stranden i Tyrus",
+            description: "Da de syv dage er gået, følger hele menigheden Paulus og hans rejsehold ud af byen til stranden, både mænd, kvinder og børn. Alle knæler i sandet og beder sammen, før de tager afsked. Scenen er et af de stærkeste billeder i Apostlenes Gerninger: et helt fællesskab i bøn ved kysten, mens skibet venter. Efter bønnen går Paulus om bord, og menigheden vender hjem.",
+            timeline_label: "Afslutning på de syv dage"
+        },
+        ptolemais_stop: {
+            title: "Kort stop i Ptolemais",
+            description: "Skibet fortsætter sydpå langs kysten og lægger til i Ptolemais, den gamle havneby der i dag kendes som Akko. Paulus og hans ledsagere hilser på de troende og tilbringer én dag sammen med dem. Lukas giver ingen flere detaljer, så stoppet fremstår som en venlig, men rolig transit på vejen mod Cæsarea.",
+            timeline_label: "Én dag i Ptolemais"
+        },
+        caesarea_arrival_philip: {
+            title: "Hos evangelisten Filip i Cæsarea",
+            description: "Fra Ptolemais rejser gruppen til Cæsarea Maritima, den romerske hovedstad i Judæa, og tager ind hos evangelisten Filip. Han er en af de syv fra Apostlenes Gerninger 6 og den mand, der døbte den etiopiske hofmand i kapitel 8. Lukas nævner også Filips fire ugifte døtre, som profeterer, og knytter dermed huset til løftet fra Joel om, at sønner og døtre skal profetere.",
+            timeline_label: "Flere dage i Cæsarea"
+        },
+        agabus_prophecy: {
+            title: "Agabos' tegnhandling: sådan skal denne mand bindes",
+            description: "Efter nogle dage kommer profeten Agabos ned fra Judæa til Filips hus. Han tager Paulus' bælte, binder sine egne hænder og fødder med det og siger, at Helligånden varsler, at ejeren af bæltet skal bindes af jøderne i Jerusalem og overgives til hedningerne. Tegnhandlingen minder om Jeremias og Ezekiels profetiske handlinger og gør Paulus' kommende skæbne umisforståelig.",
+            timeline_label: "Under opholdet i Cæsarea"
+        },
+        paul_refuses_to_turn_back: {
+            title: "Paulus' beslutning: klar til at dø i Jerusalem",
+            description: "Både rejseledsagerne og de lokale troende i Cæsarea græder og beder Paulus om ikke at tage til Jerusalem. Paulus svarer med stærke ord: de knuser hans hjerte med deres gråd, for han er rede ikke bare til at blive fængslet, men også til at dø for Herren Jesu navn. Da de ikke kan overtale ham, bøjer de sig og siger: Herrens vilje ske. Scenen spejler Jesu kamp og overgivelse før arrestationen.",
+            timeline_label: "Før afrejsen fra Cæsarea"
+        },
+        journey_to_jerusalem: {
+            title: "Den sidste opstigning: fra Cæsarea til Jerusalem",
+            description: "Paulus og hans ledsagere pakker deres bagage og begiver sig ud på den omkring 100 kilometer lange landevej fra Cæsarea op gennem Judæas bjerge til Jerusalem. Nogle disciple fra Cæsarea følger med og fører dem til Mnason fra Cypern, en tidlig discipel, hvor de skal bo. At gå op til Jerusalem er både geografisk og teologisk sprog, fordi byen ligger højt og er pilgrimmenes mål.",
+            timeline_label: "Rejsedage mod Jerusalem"
+        },
+        jerusalem_arrival_welcome: {
+            title: "Ankomst til Jerusalem: hjertelig modtagelse",
+            description: "Paulus og hans ledsagere kommer til Jerusalem og bliver modtaget med glæde af de lokale troende. Den enkle bemærkning står i skarp kontrast til de mange advarsler og tårer, der gik forud. I hvert fald menigheden i Jerusalem tager oprigtigt imod Paulus og de repræsentanter for hedningemenighederne, han har med sig.",
+            timeline_label: "Ankomstdagen i Jerusalem"
+        },
+        meeting_james_elders: {
+            title: "Paulus aflægger rapport til Jakob og de ældste",
+            description: "Næste dag besøger Paulus og hans ledsagere Jakob, Jesu bror og lederen af menigheden i Jerusalem, sammen med alle de ældste. Paulus hilser dem og fortæller i detaljer, hvad Gud har gjort blandt hedningerne gennem hans tjeneste, sandsynligvis også om gaven fra hedningemenighederne. Jakob og de ældste svarer ved at prise Gud.",
+            timeline_label: "Dagen efter ankomst"
+        },
+        jewish_concern_proposal: {
+            title: "De ældste rejser en krise: rygter om Paulus",
+            description: "Efter den glædelige rapport beskriver Jakob og de ældste et alvorligt pastoralt problem. Titusinder af jødiske troende i Jerusalem brænder for loven, og de har hørt, at Paulus lærer jøder blandt hedningerne at forlade Moses, omskærelsen og de jødiske skikke. Om rygterne er falske eller fordrejede, skaber de reel uro. Lederne spørger derfor: hvad gør vi nu?",
+            timeline_label: "Dagen efter ankomst"
+        },
+        paul_takes_purification_vow: {
+            title: "Paulus går ind i renselsesritualet",
+            description: "De ældste foreslår en praktisk løsning: fire jødiske troende er ved at afslutte et løfte, og Paulus skal tage del i deres renselse, betale deres udgifter og gå i templet med dem. På den måde skal han offentligt vise, at han selv lever i respekt for den jødiske lov. Paulus går med til det, melder sig i templet med de fire mænd og begynder den syv dage lange ventetid før ofringerne.",
+            timeline_label: "Dag 1-7 i renselsen"
+        },
+        asian_jews_accusation: {
+            title: "Jøder fra Asia genkender Paulus og ophidser folket",
+            description: "Da de syv dage næsten er gået, ser jødiske pilgrimme fra provinsen Asia Paulus på tempelområdet. De griber ham og råber, at han lærer mod folket, loven og templet, og at han endda har ført en hedning ind bag skillemuren til de hellige forgårde. Den sidste anklage er falsk: de havde set Trofimus sammen med Paulus i byen og antog, at han også var kommet med ind i templet. Men anklagen er sprængfarlig.",
+            timeline_label: "Nær løftets syvende dag"
+        },
+        temple_riot: {
+            title: "Tempeloprøret: Paulus slæbes ud gennem portene",
+            description: "Anklagen tænder øjeblikkeligt uro, og hele byen kommer i bevægelse. Folk strømmer sammen, griber Paulus og slæber ham ud af de indre forgårde gennem tempelportene. Vagterne lukker straks de store porte bag ham, enten for at undgå yderligere vanhelligelse eller for at afgrænse uroen. Uden for den hellige grænse begynder mængden at slå Paulus, og situationen bliver livsfarlig.",
+            timeline_label: "Uroen bryder ud"
+        },
+        roman_tribune_arrest: {
+            title: "Klaudius Lysias kommer ned: Paulus arresteres",
+            description: "Beskeden når Klaudius Lysias i borgen Antonia om, at hele Jerusalem er i oprør. Han mobiliserer straks soldater og officerer og løber ned i folkemængden. Da mængden ser soldaterne, holder de op med at slå Paulus. Lysias arresterer ham, lader ham binde med to lænker og forsøger at finde ud af, hvem han er, og hvad han har gjort, men råbene fra folket er modsatrettede og kaotiske.",
+            timeline_label: "Midt under uroen"
+        },
+        crowd_violence_soldiers_carry_paul: {
+            title: "Båret gennem mængden: bort med ham!",
+            description: "Da Lysias fører Paulus mod borgen, bliver presset fra folkemængden så voldsomt, at soldaterne må bære ham op ad trappen. Mængden presser på bag dem og råber: Bort med ham! Ordene klinger bevidst som råbet mod Jesus ved hans romerske retssag. Lukas tegner Paulus' skæbne i samme linjer som hans Herres lidelse.",
+            timeline_label: "Straks efter arrestationen"
+        },
+        paul_requests_to_speak: {
+            title: "Paulus giver sig til kende over for kommandanten",
+            description: "Ved indgangen til borgen taler Paulus til Klaudius Lysias på flydende græsk, og kommandanten bliver overrasket. Han havde troet, at Paulus var den egyptiske oprørsleder, som for nylig førte fire tusind sikarier ud i ørkenen. Paulus korrigerer ham: han er jøde og borger fra Tarsus i Kilikien, en betydelig by. Derefter beder han om lov til at tale til netop den mængde, der lige har villet slå ham ihjel.",
+            timeline_label: "Ved indgangen til borgen"
+        },
+        paul_addresses_crowd: {
+            title: "Paulus får folkemængden til at tie",
+            description: "Paulus står på trappen til borgen Antonia med udsigt over tempelområdet og giver tegn med hånden. Én gestus skaber en slående stilhed i den mængde, der øjeblikke før råbte og pressede på. Han begynder derefter at tale på hebraisk, det vil sige aramæisk, og stilheden bliver endnu dybere, fordi folket hører deres eget sprog fra den mand, de netop ville dræbe. Kapitlet slutter i dette ophængte øjeblik før forsvarstalen i kapitel 22.",
+            timeline_label: "Kapitellets afslutning"
+        }
+    },
+    timeline: {
+        sailing_cos_rhodes: {
+            label: "Kos til Rhodos",
+            relative_time: "Dag 1-2"
+        },
+        patara_new_ship: {
+            label: "Patara: skibsskifte",
+            relative_time: "Dag 3"
+        },
+        arrival_tyre: {
+            label: "Ankomst til Tyrus",
+            relative_time: "Omkring dag 7-8"
+        },
+        tyre_warning: {
+            label: "Profetisk advarsel i Tyrus",
+            relative_time: "Under de syv dage"
+        },
+        tyre_farewell_beach: {
+            label: "Afsked på stranden i Tyrus",
+            relative_time: "Omkring dag 14-15"
+        },
+        ptolemais_stop: {
+            label: "Ptolemais - én dag",
+            relative_time: "Omkring dag 16"
+        },
+        caesarea_arrival_philip: {
+            label: "Ankomst til Filips hus i Cæsarea",
+            relative_time: "Omkring dag 17"
+        },
+        agabus_prophecy: {
+            label: "Agabos profeterer",
+            relative_time: "Under opholdet i Cæsarea"
+        },
+        paul_refuses_to_turn_back: {
+            label: "Paulus fastholder sin beslutning",
+            relative_time: "Før afrejsen fra Cæsarea"
+        },
+        journey_to_jerusalem: {
+            label: "Vejen op til Jerusalem",
+            relative_time: "Omkring dag 20+"
+        },
+        jerusalem_arrival_welcome: {
+            label: "Ankomst til Jerusalem",
+            relative_time: "Ankomstdagen"
+        },
+        meeting_james_elders: {
+            label: "Møde med Jakob og de ældste",
+            relative_time: "Dagen efter ankomst"
+        },
+        jewish_concern_proposal: {
+            label: "Rygtekrisen tages op",
+            relative_time: "Dagen efter ankomst"
+        },
+        paul_takes_purification_vow: {
+            label: "Renselsen i templet begynder",
+            relative_time: "Dag 1 af syv dage"
+        },
+        asian_jews_accusation: {
+            label: "Jøder fra Asia anklager Paulus",
+            relative_time: "Omkring løftets syvende dag"
+        },
+        temple_riot: {
+            label: "Uro i templet",
+            relative_time: "Samme dag - få minutter efter"
+        },
+        roman_tribune_arrest: {
+            label: "Paulus arresteres",
+            relative_time: "Under uroen"
+        },
+        crowd_violence_soldiers_carry_paul: {
+            label: "Båret op til borgen",
+            relative_time: "Straks efter arrestationen"
+        },
+        paul_requests_to_speak: {
+            label: "Paulus taler til kommandanten",
+            relative_time: "Ved borgporten"
+        },
+        paul_addresses_crowd: {
+            label: "Paulus får mængden til at tie",
+            relative_time: "Kapitellets slutning"
+        }
+    }
+}
+};
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    chapter_summary: t.chapterSummary || base.chapter_summary,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH21, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shørtLabel = value
+    .replace(/^c\.\s*/, '')
+    .replace(/Late /, '')
+    .replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '')
+    .replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '')
+    .trim();
+  return includeYear && marker ? `${marker} ${shørtLabel}`.trim() : (shørtLabel || marker);
+}
+
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
+
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  if (marker && yearMarker(base) === marker) return base;
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
+/* ── PERSON COLORS ── */
+const PCOLORS = {
+  paul: '#7A6BB0',
+  luke_narrator: '#4F8FA8',
+  pauls_companions: '#6B8F71',
+  tyre_disciples: '#4F9A8A',
+  philip_evangelist: '#A87A2D',
+  philips_daughters: '#B86B8A',
+  agabus: '#C65A2E',
+  james_jerusalem: '#6E7890',
+  jerusalem_elders: '#8A6BB0',
+  four_men_vow: '#8A7A3D',
+  trophimus: '#D4A24C',
+  asian_jews: '#A82F1A',
+  claudius_lysias: '#596A8A',
+  roman_soldiers: '#7A8FA0',
+  mnason: '#9A7055',
+};
+
+/* ── MAP COORDINATES (SVG 1000x800 viewBox, schematic eastern Mediterranean route) ── */
+const VW = 1000, VH = 800;
+const locLabel = (id, fallback) => DATA.locations.find(l => l.id === id)?.name || fallback;
+const LOCS = {
+  cos: { x: 115, y: 185, label: locLabel('cos', 'Cos') },
+  rhodes: { x: 205, y: 265, label: locLabel('rhodes', 'Rhodes') },
+  patara: { x: 285, y: 210, label: locLabel('patara', 'Patara') },
+  tyre: { x: 665, y: 430, label: locLabel('tyre', 'Tyre') },
+  ptolemais: { x: 700, y: 510, label: locLabel('ptolemais', 'Ptolemais') },
+  caesarea: { x: 735, y: 590, label: locLabel('caesarea', 'Caesarea') },
+  jerusalem: { x: 815, y: 665, label: locLabel('jerusalem', 'Jerusalem') },
+  jerusalem_temple: { x: 845, y: 650, label: locLabel('jerusalem_temple', 'Temple') },
+  antonia_fortress: { x: 870, y: 625, label: locLabel('antonia_fortress', 'Antonia') },
+};
+
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
+
+/* Build route stops with pixel coords */
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label || person?.name || r.person_id,
+      stops: r.path.map(s => ({
+        ...s,
+        ...(LOCS[s.location_id] || { x: 360, y: 360 }),
+      })),
+    };
+  });
+
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({
+        order: idx + 1,
+        location_id: ev.location_id,
+        event_id: ev.id,
+        ...(LOCS[ev.location_id] || { x: 360, y: 360 }),
+      }));
+    if (!stops.length) return;
+    out[person.id] = {
+      color: PCOLORS[person.id] || '#888',
+      label: person.name,
+      stops,
+    };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+/* Compute per-event person state */
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = {
+      color: route.color,
+      label: route.label,
+      pos:   { x: lastStop.x, y: lastStop.y },
+      active,
+      faded: !active,
+    };
+  });
+  return result;
+}
+
+/* ── MAP TERRAIN ── */
+function Terrain() {
+  return (
+    <g>
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-water)" opacity=".58" />
+      <path d="M 0 430 Q 95 375 210 410 Q 290 435 392 520 Q 430 585 372 660 Q 265 760 0 800 Z"
+        fill="oklch(86% 0.048 92)" opacity="1" />
+      <path d="M 520 0 H 1000 V 800 H 742 Q 705 710 748 612 Q 785 525 735 460 Q 675 382 700 290 Q 735 160 520 0 Z"
+        fill="oklch(87% 0.055 90)" opacity="1" />
+      <path d="M 210 700 Q 292 642 355 610 Q 495 535 660 410 Q 740 345 785 235"
+        fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="5" opacity=".5" strokeDasharray="11 7" strokeLinecap="round" />
+      <path d="M 660 410 Q 750 505 795 675"
+        fill="none" stroke="oklch(78% 0.075 225)" strokeWidth="18" opacity=".34" strokeLinecap="round" />
+      <path d="M 430 350 Q 505 315 585 330 Q 655 350 715 285"
+        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".68" strokeDasharray="9 6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 520 410 Q 590 455 660 505"
+        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".68" strokeDasharray="9 6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 205 205 Q 360 260 520 410 Q 595 470 660 505"
+        fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="5" opacity=".48" strokeDasharray="11 7" strokeLinecap="round" />
+      <text x="165" y="650" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">GREECE</text>
+      <text x="675" y="150" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">ASIA MINOR</text>
+      <text x="425" y="535" textAnchor="middle" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(35% 0.06 220)" letterSpacing="4" opacity=".55">AEGEAN SEA</text>
+      <g transform="translate(70,735)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~250 km</text>
+      </g>
+      <g transform="translate(70,120)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
+          fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+function RouteLines() { return null; }
+
+/* ── LOCATION MARKERS ── */
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7}
+              fill={on ? 'var(--accent)' : 'var(--fg-muted)'}
+              stroke="var(--map-land)" strokeWidth="3"
+              style={{ transition: 'r .3s' }}
+            />
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5}
+              fontSize={on ? 17 : 14}
+              fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
+              fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
+              letterSpacing=".5"
+              style={{ transition: 'font-size .3s' }}
+            >{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/* ── PERSON DOTS ── */
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const cols = Math.min(3, groupSize);
+    const row = Math.floor(myGroupIdx / cols);
+    const col = myGroupIdx % cols;
+    const rows = Math.ceil(groupSize / cols);
+    const spacing = 30;
+    const offsetX = (col - (cols - 1) / 2) * spacing;
+    const offsetY = (row - (rows - 1) / 2) * spacing;
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
+    return { x, y };
+  };
+
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y}
+                  stroke={s.color} strokeWidth="3" strokeLinecap="round"
+                  strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR}
+              fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
+              style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
+            />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle"
+              fontSize={s.active ? 13 : 10} fontWeight="800" fill="white"
+              fontFamily="Barlow Condensed" pointerEvents="none"
+              style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              {(s.label || '?').charAt(0)}
+            </text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle"
+                fontSize="12" fontWeight="800" fill={s.color}
+                fontFamily="Barlow Condensed" pointerEvents="none"
+                style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+              >
+                {s.label}
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+
+/* ── MAP PANEL ── */
+function MapPanel({ activeEventId, onStep, onEventChange }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
+
+  return (
+    <div className="map-col">
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && (
+          <div className="ban-loc">
+            <div className="ban-loc-dot" />
+            {loc.name}
+          </div>
+        )}
+      </div>
+
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+
+      <div className="map-controls-panel">
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="map-playback">
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button
+                key={tl.event_id}
+                type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}
+              >
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Cos · Tyre · Caesarea · Jerusalem'}</div>
+    </div>
+  );
+}
+
+/* ── TIMELINE PANEL ── */
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(false);
+
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) {
+      scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    }
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
+
+  /* Badges mark the main phases of Paul's final free Aegean journey. */
+  const BADGE_POSITIONS = { 0: 0, 2: 1, 6: 2, 10: 3, 14: 4 };
+  const DEFAULT_BADGES = ['Voyage', 'Tyre', 'Caesarea', 'Jerusalem', 'Temple'];
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Toward <em>Jerusalem</em></>}</div>
+      </div>
+
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div
+                  ref={el => entryRefs.current[tl.event_id] = el}
+                  data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}
+                >
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ── */
+function App() {
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
+
+  useEffect(() => {
+    document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
+
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/020';
+        return prev;
+      }
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '- Tyre, Caesarea, and Jerusalem · Spring-Summer AD 57'}</span>
+        <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">
+          {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
+        </a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>
+          {INITIAL_LANG === 'da' ? 'En' : 'Da'}
+        </button>
+      </div>
+
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel
+          activeEventId={activeEv}
+          onStep={stepEvent}
+          onEventChange={handleEventChange}
+        />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

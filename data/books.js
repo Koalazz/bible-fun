@@ -147,7 +147,9 @@ window.BOOKS_MANIFEST = {
         {
           "n": 21,
           "title": "Warnings, Worship, and Arrest in Jerusalem",
-          "status": "soon"
+          "title_da": "Advarsler, tilbedelse og arrestation i Jerusalem",
+          "status": "implemented",
+          "href": "/bible/acts/021"
         },
         {
           "n": 22,
