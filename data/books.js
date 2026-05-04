@@ -120,7 +120,8 @@ window.BOOKS_MANIFEST = {
         {
           "n": 17,
           "title": "From Thessalonica to Athens: The Gospel Meets Greek Philosophy",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/017"
         },
         {
           "n": 18,
