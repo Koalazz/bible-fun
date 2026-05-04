@@ -114,7 +114,8 @@ window.BOOKS_MANIFEST = {
         {
           "n": 16,
           "title": "The Macedonian Call and the Church at Philippi",
-          "status": "soon"
+          "status": "implemented",
+          "href": "/bible/acts/016"
         },
         {
           "n": 17,

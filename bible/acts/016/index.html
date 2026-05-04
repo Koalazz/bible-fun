@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 16 — The Macedonian Call and the Church at Philippi</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script>
+const ACTS_CH16 = {
+  "book": "Acts",
+  "chapter": 16,
+  "chapter_title": "The Macedonian Call and the Church at Philippi",
+  "chapter_summary": "The apostle Paul, joined by Silas and a young recruit named Timothy, is steered westward by the Holy Spirit until a night vision summons them across the Aegean Sea to Macedonia in Europe. In the Roman colony of Philippi they find their first European converts—a prosperous cloth merchant named Lydia, a liberated slave girl, and a shaken prison guard—all within days of one another. What begins at a riverside prayer meeting ends with a midnight earthquake, a mass baptism, and a new church founded under the shadow of Roman law.",
+  "date_range": {
+    "approximate": "c. Spring–Summer AD 49",
+    "notes": "Scholars date Paul's second missionary journey broadly to AD 49–52; the Philippi episode is typically placed early in that sequence, c. AD 49. Absolute dates depend primarily on correlation with the Gallio inscription (Acts 18:12, dated to AD 51–52), which anchors the later Corinth stay and allows backward calculation, though uncertainty of several months to a year remains at every stage."
+  },
+  "persons": [
+    {
+      "id": "paul",
+      "name": "Paul",
+      "role": "Apostle",
+      "first_mention_verse": "16:1",
+      "summary": "Paul is the chief missionary protagonist of Acts, here revisiting churches he planted on his first journey before being divinely redirected westward into Europe. In Philippi he preaches at a riverside prayer meeting, casts out a demon, is publicly flogged and imprisoned, leads the jailer to faith through a midnight earthquake, and finally invokes his Roman citizenship to secure an honorable—and legally significant—departure.",
+      "significance": "Paul is the central figure of Acts 13–28; his obedience to the Macedonian vision marks the first deliberate missionary crossing into Europe, a turning point in the book's overarching 'to the ends of the earth' narrative arc (Acts 1:8)."
+    },
+    {
+      "id": "silas",
+      "name": "Silas",
+      "role": "Prophet and Missionary",
+      "first_mention_verse": "16:19",
+      "summary": "Silas, also known as Silvanus, is Paul's missionary partner chosen after the separation from Barnabas; he travels with Paul from Lystra onward even though he is not named by chapter 16 until the arrest scene. He shares Paul's flogging, imprisonment, midnight worship, and the claim of Roman citizenship that embarrasses the Philippian magistrates.",
+      "significance": "Silas bridges the Jerusalem church and the Gentile mission—he was sent from Jerusalem in Acts 15—and his dual Roman citizenship doubles the legal leverage Paul uses to protect the fledgling Philippian church from being branded a criminal movement from its very founding."
+    },
+    {
+      "id": "timothy",
+      "name": "Timothy",
+      "role": "Disciple and Missionary Apprentice",
+      "first_mention_verse": "16:1",
+      "summary": "Timothy is a young disciple at Lystra with a Jewish mother and a Greek father; Paul circumcises him to remove a barrier that would otherwise prevent synagogue audiences from hearing him. He joins Paul and Silas as a traveling companion for the remainder of the second journey and is present throughout the Macedonian mission.",
+      "significance": "Timothy's recruitment launches one of Paul's most enduring relationships; he will later lead the church at Ephesus and be the addressee of two Pauline letters. His circumcision illustrates Paul's pragmatic 'become all things to all people' approach to cross-cultural ministry."
+    },
+    {
+      "id": "luke",
+      "name": "Luke",
+      "role": "Narrator and Eyewitness Companion",
+      "first_mention_verse": "16:10",
+      "summary": "Luke's presence is signaled by the sudden shift to first-person plural ('we') beginning at verse 10 in Troas, indicating he was an eyewitness from that point through the Philippi episode. He travels with the team to Philippi, and the 'we' narrative appears to end at 17:1, suggesting he may have remained behind in Philippi when Paul moved on.",
+      "significance": "Luke is the author of both the Gospel of Luke and Acts; the 'we passages' are primary evidence that he participated directly in portions of Paul's journey, lending particular historical texture and personal vividness to the entire Philippi account."
+    },
+    {
+      "id": "lydia",
+      "name": "Lydia",
+      "role": "Merchant and House-Church Host",
+      "first_mention_verse": "16:14",
+      "summary": "Lydia is a dealer in purple cloth from the city of Thyatira, living in Philippi, who is already a worshiper of God when Paul meets her at a riverside Sabbath gathering. After the Lord opens her heart to Paul's message, she and her entire household are baptized; she then insists that the missionary team stay at her home, which becomes the first meeting place of the Philippian church.",
+      "significance": "Lydia is the first recorded convert on European soil and the founding patron of the Philippian church—the community Paul will later address in his most affectionate letter. Her combination of wealth, piety, and hospitality exemplifies the household network through which early Christianity spread."
+    },
+    {
+      "id": "slave_girl",
+      "name": "Slave girl with a spirit of divination",
+      "role": "Demonized Slave",
+      "first_mention_verse": "16:16",
+      "summary": "An unnamed enslaved girl in Philippi possesses a 'python spirit'—language connecting her to the prophetic oracle at Delphi—that earns money for her owners through fortune-telling. For many days she follows Paul and Silas through the streets, accurately proclaiming them as servants of the Most High God, until Paul commands the spirit out of her in the name of Jesus Christ.",
+      "significance": "Her exorcism is the direct trigger for the legal crisis that jails Paul and Silas; it also continues Acts' recurring pattern of the gospel confronting and dismantling spiritual powers. Her liberation, though costly for everyone involved, is itself a lived illustration of the freedom the gospel announces."
+    },
+    {
+      "id": "philippian_jailer",
+      "name": "Philippian jailer",
+      "role": "Roman Prison Guard",
+      "first_mention_verse": "16:23",
+      "summary": "The jailer receives strict orders to keep Paul and Silas secure and places them in the inner cell with their feet in stocks. When the earthquake opens all the prison doors he draws his sword to kill himself, assuming a fatal escape; Paul stops him with a shout. Trembling, the jailer asks what he must do to be saved, and is baptized with his whole household that same midnight hour.",
+      "significance": "The jailer's conversion, immediately following Lydia's, shows the gospel crossing every social stratum in Philippi—from wealthy merchant to armed soldier. His rapid transformation from torturer to nurse and host, all within a single night, is one of the most dramatic conversion accounts in Acts."
+    },
+    {
+      "id": "slave_girl_owners",
+      "name": "Owners of the slave girl",
+      "role": "Group – Antagonists",
+      "first_mention_verse": "16:19",
+      "summary": "An unnamed group of businessmen who exploit the slave girl's supernatural ability as a revenue stream; when Paul's exorcism destroys their income they seize Paul and Silas and drag them before the magistrates, framing the missionaries as ethnic and civic troublemakers rather than admitting the economic motive.",
+      "significance": "They represent a recurring pattern in Acts where economic interests collide with the gospel's advance (cf. Demetrius the silversmith in Acts 19). Their politically savvy accusation—appealing to Roman identity rather than property loss—introduces the civic and legal dimensions that dominate the chapter's second half."
+    },
+    {
+      "id": "magistrates",
+      "name": "Magistrates of Philippi",
+      "role": "Group – Roman Civic Officials",
+      "first_mention_verse": "16:20",
+      "summary": "The duumviri, the senior civic magistrates of the Roman colony, hear the crowd's accusation, order Paul and Silas stripped and beaten with rods, and commit them to prison. The following morning, when they learn the prisoners are Roman citizens, they come in person to apologize and escort them out—deeply alarmed at the legal exposure they now face.",
+      "significance": "Their alarm at having flogged Roman citizens without trial underscores the legal shield that citizenship provided and ensures the Philippian church's founding is not permanently tainted by a criminal verdict; Paul's refusal to leave quietly forces a public vindication of the missionaries."
+    },
+    {
+      "id": "women_at_river",
+      "name": "Women gathered at the riverside",
+      "role": "Group – First European Audience",
+      "first_mention_verse": "16:13",
+      "summary": "An unnamed gathering of women who assemble for prayer by the river outside Philippi's gate on the Sabbath; their meeting suggests that Philippi lacks a formal synagogue (which required ten Jewish men). Paul and his companions sit down with them and share the gospel, and Lydia emerges from this group as the first convert.",
+      "significance": "This small prayer circle becomes the seed of the first Christian church in Europe; the fact that Paul addresses women in a semi-public, non-synagogue setting signals the socially inclusive character of the Philippian mission from its very first moment."
+    }
+  ],
+  "locations": [
+    {
+      "id": "derbe",
+      "name": "Derbe",
+      "modern_name": "Kerti Höyük (near Karaman, Turkey)",
+      "lat": 37.36,
+      "lng": 33.37,
+      "description": "A city in the region of Lycaonia in south-central Asia Minor that Paul and Silas pass through at the start of the second journey's revisit to previously planted churches."
+    },
+    {
+      "id": "lystra",
+      "name": "Lystra",
+      "modern_name": "Zoldera (near Hatunsaray, Turkey)",
+      "lat": 37.58,
+      "lng": 32.48,
+      "description": "A Roman colony in Lycaonia where Paul was stoned on his first journey; on this return visit he recruits Timothy, whose strong local reputation makes him an ideal new co-worker for the expanding mission."
+    },
+    {
+      "id": "phrygia_galatia",
+      "name": "Region of Phrygia and Galatia",
+      "modern_name": "Central-western Anatolia, Turkey",
+      "lat": 39,
+      "lng": 30.5,
+      "description": "A broad inland territory of Asia Minor through which Paul, Silas, and Timothy travel after Lystra; the Holy Spirit prevents them from turning south into the province of Asia or north into Bithynia, funneling their route westward toward the Aegean coast."
+    },
+    {
+      "id": "troas",
+      "name": "Troas",
+      "modern_name": "Alexandria Troas (near Dalyan, Turkey)",
+      "lat": 39.75,
+      "lng": 26.08,
+      "description": "A major Aegean port city in Mysia near the legendary site of ancient Troy; it becomes the launching point for the gospel's crossing into Europe when Paul receives the Macedonian vision here, and Luke apparently joins the team at this location."
+    },
+    {
+      "id": "samothrace",
+      "name": "Samothrace",
+      "modern_name": "Samothraki, Greece",
+      "lat": 40.48,
+      "lng": 25.53,
+      "description": "A mountainous, dramatically visible island in the northern Aegean used as a navigational overnight waypoint by ancient mariners on the Troas-to-Macedonia sailing route."
+    },
+    {
+      "id": "neapolis",
+      "name": "Neapolis",
+      "modern_name": "Kavala, Greece",
+      "lat": 40.94,
+      "lng": 24.41,
+      "description": "The port city of Philippi and the eastern terminus of the Via Egnatia; Paul and his team land here before traveling the short distance inland to Philippi, making it the first point of European soil in this mission."
+    },
+    {
+      "id": "philippi",
+      "name": "Philippi",
+      "modern_name": "Filippoi (near Kavala, Greece)",
+      "lat": 41.01,
+      "lng": 24.28,
+      "description": "A Roman colony and leading city of the Macedonian district situated on the Via Egnatia; it becomes the site of the first European church, hosting the conversions of Lydia, the liberation of the slave girl, and the Philippian jailer's dramatic midnight baptism."
+    },
+    {
+      "id": "river_philippi",
+      "name": "Place of prayer by the river",
+      "modern_name": "Gangites (Angitis) River, near Filippoi, Greece",
+      "lat": 41.02,
+      "lng": 24.26,
+      "description": "A spot outside Philippi's city gate along the Gangites River where a group of women gathered for Sabbath prayer; Paul meets Lydia here and it serves as the setting for the first Christian gathering in Europe."
+    }
+  ],
+  "events": [
+    {
+      "id": "timothy_recruited",
+      "sequence": 1,
+      "verses": "16:1-5",
+      "title": "Timothy Joins the Mission Team",
+      "description": "Paul and Silas arrive first at Derbe, then at Lystra, where they encounter a young disciple named Timothy who is well regarded by the believers in both Lystra and nearby Iconium. Timothy's mother is a Jewish believer and his father is Greek. Paul wants him as a traveling companion, so he circumcises him—not as a theological requirement for salvation, but as a pragmatic measure to prevent Jewish audiences in the synagogues ahead from dismissing him. As the team travels from city to city, they also deliver the rulings of the Jerusalem Council, and the churches grow in faith and in numbers daily. This passage establishes the team's composition and their method: revisiting and strengthening existing communities before pressing into new territory.",
+      "location_id": "lystra",
+      "persons_present": [
+        "paul",
+        "silas",
+        "timothy"
+      ],
+      "timeline_label": "Journey begins; Timothy recruited",
+      "scroll_anchor": "timothy-recruited",
+      "visual_notes": "Map cluster around Lystra and Derbe with a route line connecting them; show Paul, Silas, and Timothy as three figures departing together. An inset callout could illustrate the Jerusalem Council letter being hand-delivered to a small congregation gathered in a home."
+    },
+    {
+      "id": "spirit_prevents_asia",
+      "sequence": 2,
+      "verses": "16:6-8",
+      "title": "The Spirit Closes Asia and Bithynia",
+      "description": "Paul, Silas, and Timothy travel through the Phrygian and Galatian regions but are forbidden by the Holy Spirit from preaching in the Roman province of Asia—which would have meant heading south and east toward Ephesus. Turning northwest, they attempt to enter Bithynia, only to find the Spirit of Jesus blocking that route as well. The text gives no detail on how these prohibitions were communicated; the missionaries simply obeyed. Redirected, they pass through Mysia and descend to the Aegean port of Troas. The accumulation of two closed doors in quick succession creates narrative tension: God is clearly steering the team somewhere, but where is not yet revealed.",
+      "location_id": "phrygia_galatia",
+      "persons_present": [
+        "paul",
+        "silas",
+        "timothy"
+      ],
+      "timeline_label": "Asia and Bithynia blocked; heading to Troas",
+      "scroll_anchor": "spirit-closes-asia-bithynia",
+      "visual_notes": "Animated map route with two dashed red lines—one arcing south toward Ephesus (Asia), one arcing north toward Bithynia—both shown as blocked or faded out. A solid gold line bends westward through Mysia to Troas. This is ideal for a scrollytelling step that unfolds each blocked path before revealing the actual route."
+    },
+    {
+      "id": "macedonian_vision",
+      "sequence": 3,
+      "verses": "16:9-10",
+      "title": "The Vision: 'Come Over to Macedonia'",
+      "description": "During the night at Troas, Paul receives a vision: a man standing and urging him, 'Come over to Macedonia and help us.' The 'we' pronoun suddenly appears in verse 10—signaling that Luke has joined the group at Troas and is now an eyewitness narrator. The team immediately concludes that God has called them to preach in Macedonia, and without delay they begin making preparations to sail. This brief passage is one of the most pivotal moments in Acts: the gospel is about to cross from Asia into Europe for the first time, not through gradual diffusion but through a direct divine summons.",
+      "location_id": "troas",
+      "persons_present": [
+        "paul",
+        "silas",
+        "timothy",
+        "luke"
+      ],
+      "timeline_label": "Night vision: cross to Macedonia",
+      "scroll_anchor": "macedonian-vision",
+      "visual_notes": "Night harbor scene at Troas; Paul asleep or kneeling with a luminous Macedonian figure gesturing westward across the Aegean. On the map, highlight Troas with a glowing marker and draw a bold westward arrow arching across the sea toward Macedonia. A subtle 'Luke joins here' annotation can appear at this step."
+    },
+    {
+      "id": "sailing_to_samothrace",
+      "sequence": 4,
+      "verses": "16:11",
+      "title": "Setting Sail: Troas to Samothrace",
+      "description": "Setting sail from Troas, the team 'ran a straight course'—a nautical phrase indicating favorable winds that allowed an unusually swift passage—and reached the mountainous island of Samothrace by evening, anchoring there for the night. The island was a standard overnight stop for ancient ships working the northern Aegean route. Luke's detail about the straight course is often read as a providential sign: the same Spirit that closed the Asian roads is now opening the sea lanes. The dramatic peak of Samothrace would have been visible from a great distance as the ship approached.",
+      "location_id": "samothrace",
+      "persons_present": [
+        "paul",
+        "silas",
+        "timothy",
+        "luke"
+      ],
+      "timeline_label": "Day 1 at sea: overnight at Samothrace",
+      "scroll_anchor": "sailing-to-samothrace",
+      "visual_notes": "Map shows a ship icon moving northwest from Troas to Samothrace; an illustration could depict the team on deck at dusk with the volcanic silhouette of Samothrace's peak (Mt. Fengari, ~1611 m) visible against an orange horizon."
+    },
+    {
+      "id": "arrival_neapolis",
+      "sequence": 5,
+      "verses": "16:11",
+      "title": "Landfall at Neapolis",
+      "description": "The following day the ship continues from Samothrace south-southwest to Neapolis, the port city that serves as the Aegean gateway to Philippi and the eastern end of the Via Egnatia. The missionaries step ashore here, becoming—as far as the Acts narrative is concerned—the first Christian missionaries to set foot on European soil. Neapolis itself is not a destination but a transit point; the team's eyes are already on Philippi, visible from the higher ground just beyond the harbor.",
+      "location_id": "neapolis",
+      "persons_present": [
+        "paul",
+        "silas",
+        "timothy",
+        "luke"
+      ],
+      "timeline_label": "Day 2 at sea: first step on European soil",
+      "scroll_anchor": "arrival-neapolis",
+      "visual_notes": "Map pin at Neapolis (modern Kavala) rendered with visual emphasis—a color burst or enlarged icon—to mark the historic crossing into Europe. Show the Via Egnatia as a road line heading west-northwest toward Philippi (approximately 15 km inland)."
+    },
+    {
+      "id": "arrival_philippi",
+      "sequence": 6,
+      "verses": "16:12",
+      "title": "Entering Philippi",
+      "description": "From Neapolis the missionaries travel inland along the Via Egnatia to Philippi, which Luke identifies as 'a leading city of the district of Macedonia and a Roman colony.' As a colonia, Philippi had been settled by Roman veterans; its citizens enjoyed Roman citizenship rights, it was governed on the Roman model, and Latin was its official language. The team stays in the city for several days—observing, learning, and looking for a point of entry before making any public move. This patient reconnaissance is typical of Paul's missionary method in Acts.",
+      "location_id": "philippi",
+      "persons_present": [
+        "paul",
+        "silas",
+        "timothy",
+        "luke"
+      ],
+      "timeline_label": "Arrive Philippi; several days reconnaissance",
+      "scroll_anchor": "arrival-philippi",
+      "visual_notes": "Map marker at Philippi with a Roman eagle or column icon to indicate its colony status. An inset panel could show the city's layout: forum (agora), colonnaded street on the Via Egnatia, and the city gate with the river visible beyond."
+    },
+    {
+      "id": "lydia_converted",
+      "sequence": 7,
+      "verses": "16:13-15",
+      "title": "Lydia Baptized at the Riverside",
+      "description": "On the Sabbath Paul and his companions go outside the city gate to a river where they expect to find a place of prayer—the absence of a synagogue suggests a very small Jewish male population in Philippi. There they sit among a group of women who have gathered and begin to speak. One woman, Lydia—a Gentile God-fearer from Thyatira who deals in expensive purple cloth—is listening, and the text says 'the Lord opened her heart to respond to Paul's message.' She and her entire household are baptized. She then insists with persuasive force that the team accept her home as their base: 'If you consider me a believer in the Lord, come and stay at my house.' Her social standing, commercial success, and initiative make her a natural leader for the new community.",
+      "location_id": "river_philippi",
+      "persons_present": [
+        "paul",
+        "silas",
+        "timothy",
+        "luke",
+        "lydia",
+        "women_at_river"
+      ],
+      "timeline_label": "First Sabbath: Lydia and household baptized",
+      "scroll_anchor": "lydia-converted",
+      "visual_notes": "Riverside scene with women seated under plane trees; Paul speaking while seated, Lydia kneeling at the water's edge for baptism. Map annotation: small pin at the Gangites/Angitis River, just west of the Philippi city wall, with a dotted line connecting it to Lydia's house marker inside the city."
+    },
+    {
+      "id": "slave_girl_exorcism",
+      "sequence": 8,
+      "verses": "16:16-18",
+      "title": "The Python Spirit Cast Out",
+      "description": "As Paul and Silas go to the place of prayer on a subsequent day, an enslaved girl with a 'python spirit'—terminology linking her to the prophetic shrine at Delphi—begins following them and shouting, 'These men are servants of the Most High God, who are telling you the way to be saved.' Though technically accurate, her proclamation persists for many days in a way that apparently framed the missionaries as operators within the existing pagan oracle economy. Paul, 'greatly annoyed,' turns and commands the spirit: 'In the name of Jesus Christ I command you to come out of her!'—and it leaves instantly. The girl is liberated but her owners' lucrative oracle business is destroyed.",
+      "location_id": "philippi",
+      "persons_present": [
+        "paul",
+        "silas",
+        "slave_girl"
+      ],
+      "timeline_label": "Many days later: python spirit exorcised",
+      "scroll_anchor": "slave-girl-exorcism",
+      "visual_notes": "Cobblestone street in Philippi near the forum; the slave girl in worn clothing following behind Paul and Silas as they walk. Show Paul turning, pointing, the girl's expression shifting from possession to sudden stillness. A before/after split panel works well here."
+    },
+    {
+      "id": "paul_silas_arrested",
+      "sequence": 9,
+      "verses": "16:19-24",
+      "title": "Seized, Beaten, and Thrown into Prison",
+      "description": "When the slave girl's owners see that their income is gone they seize Paul and Silas and haul them to the magistrates in the city's marketplace—Timothy and Luke are not arrested, likely because they were not visible participants in the exorcism. The owners frame the charge carefully: not theft of property but civic disturbance—'these men are Jews who are throwing our city into an uproar by advocating customs unlawful for us Romans to practice.' The appeal to Roman identity works: the crowd joins the mob, the magistrates order Paul and Silas stripped and beaten with rods without any trial, and after the flogging they are thrown into the inner prison with their feet locked in the stocks. The speed of the injustice—accusation to beating to imprisonment with no due process—sets up the legal reversal of chapter's end.",
+      "location_id": "philippi",
+      "persons_present": [
+        "paul",
+        "silas",
+        "slave_girl_owners",
+        "magistrates"
+      ],
+      "timeline_label": "Day of exorcism: flogged and jailed",
+      "scroll_anchor": "paul-silas-arrested",
+      "visual_notes": "The Philippian forum (agora) with the magistrates on a raised bema (judgment platform), a hostile crowd pressing forward. A second panel shows the inner prison: stone walls, heavy door, Paul and Silas sitting back-to-back in the stocks with raw wounds visible on their backs."
+    },
+    {
+      "id": "earthquake_and_jailer",
+      "sequence": 10,
+      "verses": "16:25-34",
+      "title": "Midnight Earthquake and the Jailer's Conversion",
+      "description": "Around midnight Paul and Silas are praying aloud and singing hymns while the other prisoners listen—an extraordinary act in the circumstances. Suddenly a violent earthquake shakes the prison to its foundations: all the doors fly open and every prisoner's chains come loose. The jailer wakes to find the doors open, draws his sword to kill himself (since Roman law held guards responsible for escapes with their lives), and is stopped by Paul's shout: 'We are all here!' Trembling, the jailer rushes in, falls before Paul and Silas, and asks, 'Sirs, what must I do to be saved?' They tell him, 'Believe in the Lord Jesus, and you will be saved—you and your household.' That same midnight hour, he washes their wounds, he and his entire household are baptized, he brings them upstairs, sets food before them, and the whole family rejoices—a complete transformation from jailer to host, from torturer to servant, in a single night.",
+      "location_id": "philippi",
+      "persons_present": [
+        "paul",
+        "silas",
+        "philippian_jailer"
+      ],
+      "timeline_label": "Midnight of arrest: earthquake, jailer baptized",
+      "scroll_anchor": "earthquake-and-jailer",
+      "visual_notes": "Split-level illustration: upper half shows the prison cell mid-earthquake—cracked stone walls, iron doors swinging open, chains falling from wrists—illuminated by a dramatic shaft of light; lower half shows the jailer kneeling by lamplight before Paul and Silas, wounds being washed at a basin. The map marker stays at Philippi but shifts to a night/dark overlay to signal the midnight setting."
+    },
+    {
+      "id": "release_from_prison",
+      "sequence": 11,
+      "verses": "16:35-40",
+      "title": "Roman Citizenship Invoked; Honorable Departure",
+      "description": "When morning comes, the magistrates send officers with the instruction 'Release those men.' The jailer passes the good news to Paul, who refuses to leave quietly: 'They beat us publicly without a trial—Roman citizens!—and threw us into prison. And now they want to get rid of us secretly? No! Let them come themselves and escort us out.' The magistrates are alarmed when they hear the word 'Roman citizens'—flogging a Roman citizen without trial was a capital offense. They come in person, apologize, and escort Paul and Silas out, asking them to leave the city. The missionaries first go to Lydia's house, where they meet and encourage the believers who have gathered, and then they depart Philippi. Paul's insistence on a public vindication is not mere pride: it ensures the local church does not begin its existence with a criminal verdict hanging over its founders.",
+      "location_id": "philippi",
+      "persons_present": [
+        "paul",
+        "silas",
+        "philippian_jailer",
+        "magistrates",
+        "lydia"
+      ],
+      "timeline_label": "Morning after earthquake: vindicated and released",
+      "scroll_anchor": "release-from-prison",
+      "visual_notes": "Magistrates in formal toga approaching the prison gate with officers behind them; Paul stands with arms at his sides, Silas beside him, both calm and unbowed. Final map frame shows the group leaving Philippi westward on the Via Egnatia, with a brief stop marked at Lydia's house inside the city before the route line continues toward Amphipolis."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "derbe",
+          "event_id": "timothy_recruited",
+          "note": "Starting point of the revisit to previously planted churches on the second journey"
+        },
+        {
+          "order": 2,
+          "location_id": "lystra",
+          "event_id": "timothy_recruited",
+          "note": "Recruits and circumcises Timothy; delivers Jerusalem Council decisions"
+        },
+        {
+          "order": 3,
+          "location_id": "phrygia_galatia",
+          "event_id": "spirit_prevents_asia",
+          "note": "Spirit prevents entry into Asia; attempt toward Bithynia also blocked; route bends westward"
+        },
+        {
+          "order": 4,
+          "location_id": "troas",
+          "event_id": "macedonian_vision",
+          "note": "Receives the Macedonian vision; Luke joins the group here"
+        },
+        {
+          "order": 5,
+          "location_id": "samothrace",
+          "event_id": "sailing_to_samothrace",
+          "note": "Overnight sailing stop; favorable winds indicate divine confirmation"
+        },
+        {
+          "order": 6,
+          "location_id": "neapolis",
+          "event_id": "arrival_neapolis",
+          "note": "First European landfall; disembarks and proceeds inland"
+        },
+        {
+          "order": 7,
+          "location_id": "philippi",
+          "event_id": "arrival_philippi",
+          "note": "Base of operations; remains through the full Philippi episode"
+        }
+      ]
+    },
+    {
+      "person_id": "silas",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "lystra",
+          "event_id": "timothy_recruited",
+          "note": "Traveling with Paul as his chosen partner from Acts 15:40 onward"
+        },
+        {
+          "order": 2,
+          "location_id": "phrygia_galatia",
+          "event_id": "spirit_prevents_asia",
+          "note": "Travels with Paul through the region under the same divine redirections"
+        },
+        {
+          "order": 3,
+          "location_id": "troas",
+          "event_id": "macedonian_vision",
+          "note": "Present when Paul receives the vision"
+        },
+        {
+          "order": 4,
+          "location_id": "samothrace",
+          "event_id": "sailing_to_samothrace",
+          "note": "Sails with the team toward Macedonia"
+        },
+        {
+          "order": 5,
+          "location_id": "neapolis",
+          "event_id": "arrival_neapolis",
+          "note": "First European landfall"
+        },
+        {
+          "order": 6,
+          "location_id": "philippi",
+          "event_id": "arrival_philippi",
+          "note": "Flogged, imprisoned, and released here; departs after encouraging the church"
+        }
+      ]
+    },
+    {
+      "person_id": "timothy",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "lystra",
+          "event_id": "timothy_recruited",
+          "note": "Recruited here; his home city"
+        },
+        {
+          "order": 2,
+          "location_id": "phrygia_galatia",
+          "event_id": "spirit_prevents_asia",
+          "note": "Travels with Paul and Silas through the region"
+        },
+        {
+          "order": 3,
+          "location_id": "troas",
+          "event_id": "macedonian_vision",
+          "note": "Present when the Macedonian vision is received"
+        },
+        {
+          "order": 4,
+          "location_id": "samothrace",
+          "event_id": "sailing_to_samothrace",
+          "note": "Sails with the team"
+        },
+        {
+          "order": 5,
+          "location_id": "neapolis",
+          "event_id": "arrival_neapolis",
+          "note": "Arrives in Europe"
+        },
+        {
+          "order": 6,
+          "location_id": "philippi",
+          "event_id": "arrival_philippi",
+          "note": "Present in Philippi throughout; not arrested (not named in the exorcism confrontation)"
+        }
+      ]
+    },
+    {
+      "person_id": "luke",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "troas",
+          "event_id": "macedonian_vision",
+          "note": "First appears in the narrative via 'we' pronoun at verse 10; joins team at Troas"
+        },
+        {
+          "order": 2,
+          "location_id": "samothrace",
+          "event_id": "sailing_to_samothrace",
+          "note": "Sails with the team as an eyewitness"
+        },
+        {
+          "order": 3,
+          "location_id": "neapolis",
+          "event_id": "arrival_neapolis",
+          "note": "Lands in Europe with the team"
+        },
+        {
+          "order": 4,
+          "location_id": "philippi",
+          "event_id": "arrival_philippi",
+          "note": "The 'we' narration ends at Acts 17:1, suggesting Luke may remain in Philippi when Paul and Silas move on"
+        }
+      ]
+    },
+    {
+      "person_id": "lydia",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "river_philippi",
+          "event_id": "lydia_converted",
+          "note": "Met Paul at the riverside Sabbath prayer gathering; baptized with her household"
+        },
+        {
+          "order": 2,
+          "location_id": "philippi",
+          "event_id": "release_from_prison",
+          "note": "Her home inside Philippi serves as the meeting place where Paul and Silas encourage the believers before departing"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "timothy_recruited",
+      "position": 1,
+      "label": "Timothy joins at Lystra",
+      "relative_time": "Journey start",
+      "absolute_time": "c. Spring AD 49"
+    },
+    {
+      "event_id": "spirit_prevents_asia",
+      "position": 2,
+      "label": "Spirit closes Asia and Bithynia",
+      "relative_time": "Days to weeks after Lystra",
+      "absolute_time": "c. Spring AD 49"
+    },
+    {
+      "event_id": "macedonian_vision",
+      "position": 3,
+      "label": "Night vision at Troas",
+      "relative_time": "Night at Troas",
+      "absolute_time": "c. Spring AD 49"
+    },
+    {
+      "event_id": "sailing_to_samothrace",
+      "position": 4,
+      "label": "Day 1 at sea — Samothrace",
+      "relative_time": "Day after vision",
+      "absolute_time": "c. Spring AD 49"
+    },
+    {
+      "event_id": "arrival_neapolis",
+      "position": 5,
+      "label": "Day 2 — Neapolis (Europe)",
+      "relative_time": "Two days after leaving Troas",
+      "absolute_time": "c. Spring AD 49"
+    },
+    {
+      "event_id": "arrival_philippi",
+      "position": 6,
+      "label": "Arrive in Philippi",
+      "relative_time": "Shortly after Neapolis; several days in city",
+      "absolute_time": "c. Spring AD 49"
+    },
+    {
+      "event_id": "lydia_converted",
+      "position": 7,
+      "label": "First Sabbath — Lydia baptized",
+      "relative_time": "First Sabbath in Philippi",
+      "absolute_time": "c. Spring AD 49"
+    },
+    {
+      "event_id": "slave_girl_exorcism",
+      "position": 8,
+      "label": "Many days later — exorcism",
+      "relative_time": "Several days after the Sabbath",
+      "absolute_time": "c. Spring–Summer AD 49"
+    },
+    {
+      "event_id": "paul_silas_arrested",
+      "position": 9,
+      "label": "Same day — flogged and jailed",
+      "relative_time": "Day of the exorcism",
+      "absolute_time": "c. Summer AD 49"
+    },
+    {
+      "event_id": "earthquake_and_jailer",
+      "position": 10,
+      "label": "Midnight — earthquake and conversion",
+      "relative_time": "Night of the arrest",
+      "absolute_time": "c. Summer AD 49"
+    },
+    {
+      "event_id": "release_from_prison",
+      "position": 11,
+      "label": "Next morning — vindicated, released",
+      "relative_time": "Morning after the earthquake",
+      "absolute_time": "c. Summer AD 49"
+    }
+  ],
+  "theological_themes": [
+    "Divine guidance and providential redirection",
+    "The gospel crossing geographic and cultural frontiers",
+    "Liberation from spiritual and social bondage",
+    "Household salvation and communal faith",
+    "Suffering, worship, and joy in mission",
+    "Justice, Roman citizenship, and the rule of law"
+  ],
+  "discussion_questions": [
+    "Paul and Silas were blocked from two apparently good mission fields before the path to Macedonia opened. How do you distinguish between a closed door that signals 'not yet,' one that signals 'not this,' and one that signals 'go another way'?",
+    "Lydia was already a worshiper of God before Paul arrived; the text says specifically that 'the Lord opened her heart.' What does that phrase suggest about the relationship between human seeking and divine initiative in conversion?",
+    "The slave girl's owners framed their economic grievance as a civic and religious complaint—never mentioning money. In what ways do financial or power interests today still dress themselves in principled language when opposing the gospel's disruptions?",
+    "Paul and Silas chose to sing hymns at midnight in stocks, bleeding from a flogging. What practices or disciplines have helped you maintain faith and even praise in circumstances where your situation seems to contradict what God has promised?",
+    "Paul waited until after the imprisonment to invoke his Roman citizenship, rather than doing so when first seized. Why might he have made that choice, and what does it suggest about when believers should exercise their legal rights and when they should absorb injustice for a larger purpose?"
+  ]
+};
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── PAGE SKELETON ── */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* ── BODY: timeline left, map right ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── TIMELINE COLUMN ── */
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+
+/* Chapter label strip */
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.tl-ch-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; line-height:1.1; color:var(--tl-fg);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+
+/* Scrollable event list */
+.tl-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+/* Vertical spine */
+.tl-spine {
+  padding: 8px 0 80px;
+  position: relative;
+}
+.tl-spine::before {
+  content:'';
+  position:absolute;
+  left: 38px;
+  top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent);
+}
+
+/* Year separator badge */
+.tl-year-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 6px 14px;
+  position: relative;
+  z-index: 2;
+}
+.tl-year-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(22% .018 255);
+  border: 1px solid oklch(36% .015 255);
+  padding: 2px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line {
+  flex: 1;
+  height: 1px;
+  background: oklch(30% .012 255);
+  opacity: .5;
+}
+
+/* Each item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s;
+  padding-right: 4px;
+  min-height: 130px;
+}
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+
+/* left: seq number + dot */
+.tl-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+.tl-seq {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  color: oklch(45% .01 255);
+  margin-bottom:5px;
+  letter-spacing:.05em;
+}
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%;
+  border:2px solid oklch(38% .015 255);
+  background: oklch(16% .018 255);
+  position:relative; z-index:1;
+  transition: all .28s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px oklch(58% .19 46 / .2);
+}
+.tl-dot-pip {
+  width:5px; height:5px; border-radius:50%; background:#fff;
+  opacity:0; transition:opacity .28s;
+}
+.tl-item.active .tl-dot-pip { opacity:1; }
+
+/* right: text */
+.tl-r {
+  padding: 22px 10px 22px 6px;
+  border-bottom: 1px solid oklch(24% .012 255);
+}
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date {
+  font-size:11px; font-weight:800; letter-spacing:.1em;
+  font-family:'Barlow Condensed',sans-serif;
+  color: oklch(70% .018 76); margin-bottom:3px;
+}
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time {
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  line-height:1.35;
+  color: oklch(72% .014 78); margin-bottom:6px;
+}
+.tl-item.active .tl-rel-time { color: oklch(82% .035 74); }
+.tl-ev-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px; font-weight:800; text-transform:uppercase;
+  line-height:1.18; color: var(--tl-fg);
+  margin-bottom: 4px;
+}
+.tl-ev-verses {
+  font-size:10px; font-weight:700; letter-spacing:.1em;
+  color: oklch(68% .018 76); margin-top:2px;
+}
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+
+/* ── MAP COLUMN ── */
+.map-col {
+  position: relative;
+  background: var(--map-land);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Event banner at top of map */
+.map-event-banner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  background: oklch(16% 0.02 55 / 0.92);
+  border-bottom: 2px solid var(--accent);
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 16px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: background .3s;
+}
+.ban-verses {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.ban-content {}
+.ban-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; color:oklch(95% .012 78);
+  line-height:1.1; margin-bottom:4px;
+}
+.ban-desc {
+  font-family:'Lora',serif; font-style:normal;
+  font-size:13px; line-height:1.55;
+  color:oklch(88% .014 78);
+  display: block;
+  overflow: visible;
+}
+.ban-loc {
+  display:flex; align-items:center; gap:5px;
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:oklch(55% .012 70); white-space:nowrap;
+}
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+/* ── MAP SVG ── */
+.map-svg-wrap {
+  position: absolute;
+  inset: 0;
+}
+.map-svg {
+  width:100%; height:100%;
+}
+
+/* Person legend - bottom left of map */
+.map-person-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.map-leg-item {
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; font-weight:600; letter-spacing:.06em;
+  color: var(--fg);
+  background: var(--card);
+  padding: 3px 10px 3px 7px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  transition: opacity .5s, transform .4s;
+}
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-leg-item.entering { animation: legEnter .4s ease forwards; }
+@keyframes legEnter {
+  from { opacity:0; transform:translateX(-8px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+.map-controls-panel { display: contents; }
+
+/* Map overlay labels */
+.map-corner-label {
+  position:absolute; bottom:18px; right:18px;
+  font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
+}
+
+.map-playback {
+  position: absolute;
+  right: 18px;
+  bottom: 42px;
+  z-index: 12;
+  width: min(460px, calc(100% - 36px));
+  background: oklch(99.5% 0.008 80 / .9);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+.playback-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:9px;
+}
+.playback-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.playback-buttons { display:flex; gap:6px; flex-shrink:0; }
+.playback-btn {
+  width:30px;
+  height:26px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--fg);
+  border-radius:3px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  line-height:1;
+}
+.playback-track {
+  position:relative;
+  height:28px;
+  display:grid;
+  grid-template-columns:repeat(var(--step-count), 1fr);
+  align-items:center;
+  gap:0;
+}
+.playback-track::before {
+  content:'';
+  position:absolute;
+  left:10px; right:10px; top:13px;
+  height:2px;
+  background:var(--border);
+}
+.playback-step {
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  width:20px;
+  height:20px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.playback-step::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:var(--fg-muted);
+  opacity:.42;
+  transition:all .24s;
+}
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before {
+  inset:2px;
+  background:var(--accent);
+  opacity:1;
+  box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
+}
+.playback-step-time { display: none; }
+.loc-label {
+  paint-order: stroke;
+  stroke: oklch(98% 0.008 80 / .82);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.person-name-label {
+  display: none;
+  paint-order: stroke;
+  stroke: oklch(16% 0.02 55 / .62);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: 44px auto;
+    overflow: visible;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
+  }
+
+  .map-col {
+    order: -1;
+    overflow: visible;
+  }
+
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+  .home-link,
+  .lang-btn {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .map-event-banner {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    flex: 0 0 auto;
+    padding: 8px 12px 9px;
+    gap: 3px;
+  }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title  { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc {
+    display: block;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow: visible;
+  }
+  .ban-loc    { display: none; }
+  .map-svg-wrap {
+    position: relative;
+    inset: auto;
+    flex: 0 0 clamp(300px, 46dvh, 430px);
+    min-height: clamp(300px, 46dvh, 430px);
+  }
+  .loc-label {
+    font-size: 28px;
+    font-weight: 800;
+    stroke-width: 5px;
+  }
+  .person-name-label { display: block; font-size: 18px; }
+
+  .map-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: oklch(93% 0.025 82);
+    border-top: 1px solid var(--border);
+  }
+
+  .map-person-legend {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    gap: 4px;
+    z-index: 14;
+    max-height: none;
+    overflow-y: auto;
+    padding: 5px;
+    background: oklch(99.5% 0.008 80 / .88);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px oklch(10% 0.02 55 / .12);
+    backdrop-filter: blur(8px);
+  }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
+  .map-leg-dot  { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+  .map-playback {
+    position: relative;
+    right:auto;
+    bottom:auto;
+    width:100%;
+    padding:8px 8px 10px;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track {
+    min-width: max(100%, calc(var(--step-count) * 92px));
+    height: 70px;
+    align-items: start;
+  }
+  .playback-track::before { top:8px; }
+  .playback-step { width:18px; height:18px; }
+  .playback-step-time {
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 84px;
+    color: var(--fg);
+    background: oklch(99.5% 0.008 80 / .92);
+    border: 1px solid oklch(84% 0.022 72 / .8);
+    border-radius: 3px;
+    padding: 3px 4px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    pointer-events: none;
+    box-shadow: 0 2px 8px oklch(10% 0.02 55 / .1);
+  }
+  .playback-step.active .playback-step-time {
+    color: oklch(99% 0.008 80);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .person-name-label { display: none; }
+
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {};
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH16, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shortLabel = value
+    .replace(/^c\.\s*/, '')
+    .replace(/Late /, '')
+    .replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '')
+    .replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '')
+    .trim();
+  return includeYear && marker ? `${marker} ${shortLabel}`.trim() : (shortLabel || marker);
+}
+
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
+
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  if (marker && yearMarker(base) === marker) return base;
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
+/* ── PERSON COLORS ── */
+const PCOLORS = {
+  paul: "#7A6BB0",
+  silas: "#4F9A8A",
+  timothy: "#6B8F71",
+  luke: "#4F8FA8",
+  lydia: "#B86B8A",
+  slave_girl: "#A87A2D",
+  philippian_jailer: "#8D5A3B",
+  slave_girl_owners: "#A82F1A",
+  magistrates: "#6E7890",
+  women_at_river: "#D4A24C",
+};
+
+/* ── MAP COORDINATES (SVG 1000x800 viewBox, schematic Asia Minor return route) ── */
+const VW = 1000, VH = 800;
+const locLabel = (id, fallback) => DATA.locations.find(l => l.id === id)?.name || fallback;
+const LOCS = {
+  derbe: { x: 805, y: 560, label: locLabel('derbe', 'Derbe') },
+  lystra: { x: 735, y: 515, label: locLabel('lystra', 'Lystra') },
+  phrygia_galatia: { x: 585, y: 415, label: locLabel('phrygia_galatia', 'Phrygia & Galatia') },
+  troas: { x: 360, y: 295, label: locLabel('troas', 'Troas') },
+  samothrace: { x: 285, y: 205, label: locLabel('samothrace', 'Samothrace') },
+  neapolis: { x: 210, y: 220, label: locLabel('neapolis', 'Neapolis') },
+  philippi: { x: 178, y: 260, label: locLabel('philippi', 'Philippi') },
+  river_philippi: { x: 150, y: 292, label: locLabel('river_philippi', 'Riverside Prayer') },
+};
+
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
+
+/* Build route stops with pixel coords */
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label || person?.name || r.person_id,
+      stops: r.path.map(s => ({
+        ...s,
+        ...(LOCS[s.location_id] || { x: 360, y: 360 }),
+      })),
+    };
+  });
+
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({
+        order: idx + 1,
+        location_id: ev.location_id,
+        event_id: ev.id,
+        ...(LOCS[ev.location_id] || { x: 360, y: 360 }),
+      }));
+    if (!stops.length) return;
+    out[person.id] = {
+      color: PCOLORS[person.id] || '#888',
+      label: person.name,
+      stops,
+    };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+/* Compute per-event person state */
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = {
+      color: route.color,
+      label: route.label,
+      pos:   { x: lastStop.x, y: lastStop.y },
+      active,
+      faded: !active,
+    };
+  });
+  return result;
+}
+
+/* ── MAP TERRAIN ── */
+function Terrain() {
+  return (
+    <g>
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-water)" opacity=".58" />
+      <path d="M 430 0 H 1000 V 800 H 690 Q 650 690 690 560 Q 720 470 655 395 Q 595 325 610 225 Q 625 120 540 60 Z"
+        fill="oklch(87% 0.055 90)" opacity="1" />
+      <path d="M 0 0 H 420 Q 335 90 300 170 Q 260 245 200 315 Q 125 405 92 540 Q 58 660 0 800 Z"
+        fill="oklch(86% 0.048 92)" opacity="1" />
+      <path d="M 0 335 Q 120 330 205 295 Q 285 265 350 298 Q 405 326 470 300 Q 545 270 610 225"
+        fill="none" stroke="oklch(78% 0.075 225)" strokeWidth="18" opacity=".36" strokeLinecap="round" />
+      <path d="M 735 515 Q 675 470 585 415 Q 485 350 360 295"
+        fill="none" stroke="var(--map-road)" strokeWidth="4" opacity=".62" strokeDasharray="8 5" strokeLinecap="round" />
+      <path d="M 360 295 Q 325 245 285 205 Q 245 205 210 220 Q 190 240 178 260 Q 164 276 150 292"
+        fill="none" stroke="var(--map-road)" strokeWidth="4" opacity=".62" strokeDasharray="8 5" strokeLinecap="round" />
+      <path d="M 360 295 Q 300 250 285 205 Q 245 205 210 220"
+        fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="5" opacity=".45" strokeDasharray="10 7" strokeLinecap="round" />
+      <text x="610" y="160" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">ASIA MINOR</text>
+      <text x="180" y="150" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">MACEDONIA</text>
+      <text x="430" y="220" textAnchor="middle" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(35% 0.06 220)" letterSpacing="4" opacity=".55">AEGEAN SEA</text>
+      <text x="685" y="455" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="3" opacity=".38">PHRYGIA & GALATIA</text>
+      <g transform="translate(70,735)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~150 km</text>
+      </g>
+      <g transform="translate(70,120)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
+          fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+function RouteLines() { return null; }
+
+/* ── LOCATION MARKERS ── */
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7}
+              fill={on ? 'var(--accent)' : 'var(--fg-muted)'}
+              stroke="var(--map-land)" strokeWidth="3"
+              style={{ transition: 'r .3s' }}
+            />
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5}
+              fontSize={on ? 17 : 14}
+              fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
+              fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
+              letterSpacing=".5"
+              style={{ transition: 'font-size .3s' }}
+            >{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/* ── PERSON DOTS ── */
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const cols = Math.min(3, groupSize);
+    const row = Math.floor(myGroupIdx / cols);
+    const col = myGroupIdx % cols;
+    const rows = Math.ceil(groupSize / cols);
+    const spacing = 30;
+    const offsetX = (col - (cols - 1) / 2) * spacing;
+    const offsetY = (row - (rows - 1) / 2) * spacing;
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
+    return { x, y };
+  };
+
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y}
+                  stroke={s.color} strokeWidth="3" strokeLinecap="round"
+                  strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR}
+              fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
+              style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
+            />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle"
+              fontSize={s.active ? 13 : 10} fontWeight="800" fill="white"
+              fontFamily="Barlow Condensed" pointerEvents="none"
+              style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              {(s.label || '?').charAt(0)}
+            </text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle"
+                fontSize="12" fontWeight="800" fill={s.color}
+                fontFamily="Barlow Condensed" pointerEvents="none"
+                style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+              >
+                {s.label}
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+
+/* ── MAP PANEL ── */
+function MapPanel({ activeEventId, onStep, onEventChange }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
+
+  return (
+    <div className="map-col">
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && (
+          <div className="ban-loc">
+            <div className="ban-loc-dot" />
+            {loc.name}
+          </div>
+        )}
+      </div>
+
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+
+      <div className="map-controls-panel">
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="map-playback">
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button
+                key={tl.event_id}
+                type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}
+              >
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Asia Minor · Aegean Sea · Macedonia · Philippi'}</div>
+    </div>
+  );
+}
+
+/* ── TIMELINE PANEL ── */
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(false);
+
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) {
+      scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    }
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
+
+  /* Badges mark the westward redirection, sea crossing, Philippi, and prison night. */
+  const BADGE_POSITIONS = { 0: 0, 2: 1, 5: 2, 8: 3, 10: 4 };
+  const DEFAULT_BADGES = ['Lystra', 'Macedonian Call', 'Philippi', 'Prison Night', 'Vindication'];
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>The Macedonian <em>Call</em></>}</div>
+      </div>
+
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div
+                  ref={el => entryRefs.current[tl.event_id] = el}
+                  data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}
+                >
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ── */
+function App() {
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
+
+  useEffect(() => {
+    document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
+
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/015';
+        return prev;
+      }
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '- Lystra, Troas, Neapolis, and Philippi · c. AD 49'}</span>
+        <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">
+          {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
+        </a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>
+          {INITIAL_LANG === 'da' ? 'En' : 'Da'}
+        </button>
+      </div>
+
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel
+          activeEventId={activeEv}
+          onStep={stepEvent}
+          onEventChange={handleEventChange}
+        />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
