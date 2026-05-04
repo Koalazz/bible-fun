@@ -168,7 +168,9 @@ window.BOOKS_MANIFEST = {
         {
           "n": 24,
           "title": "Paul Before Felix: Charges, Defense, and Two Years in Limbo",
-          "status": "soon"
+          "title_da": "Paulus foran Felix: anklager, forsvar og to år i venteposition",
+          "status": "implemented",
+          "href": "/bible/acts/024"
         },
         {
           "n": 25,

@@ -1,0 +1,363 @@
+const ACTS_CH24 = {
+  "book": "Acts",
+  "chapter": 24,
+  "chapter_title": "Paul Before Felix: Charges, Defense, and Two Years in Limbo",
+  "chapter_summary": "Five days after Paul's transfer to Caesarea, the High Priest Ananias arrives with a professional orator named Tertullus to prosecute Paul before Governor Felix. Tertullus flatters Felix extravagantly before leveling three charges: instigating sedition among Jews worldwide, leading the Nazarene sect, and defiling the Temple. Paul rebuts each charge methodically, framing his faith as the fulfillment — not the betrayal — of Israel's ancestral hope. Felix, who knows about the Way, postpones his ruling and orders Paul kept in custody with limited freedom. When Felix summons Paul privately with his Jewish wife Drusilla and Paul preaches about righteousness, self-control, and future judgment, Felix grows frightened and dismisses him. For two years Felix keeps Paul in comfortable custody, hoping Paul will pay him a bribe, and occasionally calling for him to talk. When Porcius Festus succeeds Felix, Felix leaves Paul in custody as a favor to the Jewish leaders.",
+  "date_range": {
+    "approximate": "AD 57–59",
+    "notes": "The hearing before Felix is conventionally dated to AD 57; the two-year custody runs to approximately AD 59 when Festus replaced Felix. Felix's tenure (roughly AD 52–60) and his replacement by Festus anchor the chronology."
+  },
+  "persons": [
+    {
+      "id": "paul",
+      "name": "Paul",
+      "role": "Apostle / Prisoner",
+      "first_mention_verse": "24:1",
+      "summary": "Paul responds to formal charges before Felix with a composed, point-by-point rebuttal. He denies stirring up crowds, admits belonging to 'the Way' but insists it represents the fulfillment of Israel's ancestral hope in resurrection, and challenges his accusers to produce actual witnesses. He also spends time in private conversation with Felix and Drusilla, taking the opportunity to preach the gospel to the governor.",
+      "significance": "Paul's legal defense demonstrates both his rhetorical skill and his theological conviction that Christianity is not a break from Judaism but its fulfillment; his two-year custody in Caesarea advances the inevitable journey toward Rome."
+    },
+    {
+      "id": "felix",
+      "name": "Felix (Governor)",
+      "role": "Roman Governor of Judea",
+      "first_mention_verse": "24:1",
+      "summary": "Marcus Antonius Felix is the freedman-born Roman governor of Judea, notorious in ancient sources (Josephus, Tacitus) for cruelty, corruption, and ruling with a slave's mentality. He is familiar with the Christian movement ('the Way'), appears genuinely interested in Paul's teaching, but grows frightened when Paul speaks of judgment. He keeps Paul in custody hoping for a bribe and ultimately leaves him imprisoned as a political concession to Jewish leaders when he is recalled to Rome.",
+      "significance": "Felix represents corrupt worldly power that can recognize truth — even be moved by it — without ever submitting to it; his two-year procrastination is the occasion for Paul's extended imprisonment in Caesarea and sets up the transition to Festus."
+    },
+    {
+      "id": "ananias_high_priest",
+      "name": "Ananias (High Priest)",
+      "role": "High Priest / Prosecution Instigator",
+      "first_mention_verse": "24:1",
+      "summary": "The ruling high priest who travels personally from Jerusalem to Caesarea five days after Paul's transfer, bringing legal counsel with him to prosecute Paul before Felix. He lends the accusation the full authority and urgency of the Jewish high priesthood.",
+      "significance": "Ananias's personal appearance underscores how serious the Jewish establishment considers the Paul problem; his presence with a paid orator signals a formal, organized prosecution rather than a spontaneous complaint."
+    },
+    {
+      "id": "tertullus",
+      "name": "Tertullus",
+      "role": "Professional Orator / Prosecuting Advocate",
+      "first_mention_verse": "24:1",
+      "summary": "A professional legal advocate — possibly a Hellenized Jew or Roman — hired by Ananias and the elders to present the prosecution's case before Felix. He opens with a long flattering address to Felix, then makes three accusations against Paul: sedition among all Jews worldwide, leading the Nazarene sect, and attempted desecration of the Temple. His speech is polished Roman legal rhetoric designed to frame Paul as a political threat.",
+      "significance": "Tertullus is the only named professional lawyer in Acts; his appearance reveals how seriously Paul's opponents are taking the legal proceedings and their willingness to deploy Greco-Roman rhetorical tools to neutralize a Jewish-Christian preacher."
+    },
+    {
+      "id": "drusilla",
+      "name": "Drusilla",
+      "role": "Wife of Felix / Jewish Queen",
+      "first_mention_verse": "24:24",
+      "summary": "Drusilla is the youngest daughter of Herod Agrippa I, a Jewish princess who left her first husband Azizus, king of Emesa, to marry Felix — a union ancient Jewish sources considered scandalous. She is present when Felix summons Paul privately to hear about faith in Christ, making her one of the few Jewish women with royal connections to encounter Paul directly.",
+      "significance": "Drusilla's Jewish background heightens the irony of Paul's imprisonment: a Jewish princess sits with a Roman governor while the Jew who upholds Israel's resurrection hope languishes in chains. Her presence suggests Felix sought her input on the Jewish aspects of Paul's teaching."
+    },
+    {
+      "id": "jewish_elders",
+      "name": "Jewish Elders (Delegation from Jerusalem)",
+      "role": "Group / Accusers",
+      "first_mention_verse": "24:1",
+      "summary": "A delegation of Jewish elders who accompany Ananias and Tertullus to Caesarea to support the formal prosecution of Paul before Felix. They join in the accusations, asserting that Tertullus's charges are true.",
+      "significance": "The elders' presence gives legal weight to the prosecution by providing multiple witnesses and demonstrating communal consensus against Paul within the Jewish leadership structure."
+    },
+    {
+      "id": "lysias",
+      "name": "Claudius Lysias (referenced)",
+      "role": "Roman Tribune (referenced, not present)",
+      "first_mention_verse": "24:7",
+      "summary": "The Roman tribune whose letter introduced Paul's case to Felix is referenced by both sides in the hearing. Tertullus criticizes his intervention; Paul credits him with rescuing a Roman citizen from mob violence. Felix decides to wait until Lysias can testify in person before making a ruling.",
+      "significance": "Though absent, Lysias's letter and his promised testimony give Felix a legal pretext for delay and underscore how Roman military intervention has become the hinge on which Paul's fate turns."
+    }
+  ],
+  "locations": [
+    {
+      "id": "caesarea_maritima",
+      "name": "Caesarea",
+      "modern_name": "Caesarea Maritima (Qesarya), Israel",
+      "lat": 32.5023,
+      "lng": 34.9057,
+      "description": "The Roman administrative capital of Judea on the Mediterranean coast, seat of the governor Felix. All the events of Acts 24 take place here: the formal hearing in the praetorium, the private conversations with Felix and Drusilla, and Paul's two-year custody."
+    },
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel / Palestine",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The city from which Ananias, Tertullus, and the Jewish elders travel to bring their formal prosecution against Paul; also the location Paul references to rebut the charge that he stirred up riots there."
+    },
+    {
+      "id": "herods_praetorium",
+      "name": "Herod's Praetorium (Palace)",
+      "modern_name": "Caesarea Maritima — palace site, Israel",
+      "lat": 32.4997,
+      "lng": 34.9048,
+      "description": "The former palace of Herod the Great, now functioning as the Roman governor's official residence and administrative headquarters. Paul is kept in custody here throughout his two-year Caesarean imprisonment."
+    }
+  ],
+  "events": [
+    {
+      "id": "prosecution_arrives",
+      "sequence": 1,
+      "verses": "24:1",
+      "title": "Ananias and Tertullus Arrive in Caesarea",
+      "description": "Five days after Paul's arrival in Caesarea, the High Priest Ananias leads a delegation — including elders and a professional advocate named Tertullus — from Jerusalem to press formal charges against Paul before Governor Felix. The speed of their arrival (just five days) underscores how urgent the Jewish leadership considers this case and their determination to pursue it at the highest available Roman court.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["ananias_high_priest", "tertullus", "jewish_elders", "felix"],
+      "timeline_label": "Prosecution arrives from Jerusalem",
+      "scroll_anchor": "prosecution-arrives",
+      "visual_notes": "A formal Roman hearing room in the praetorium: Felix seated on a judgment tribunal; Ananias and Tertullus standing with a delegation of robed Jewish elders; Paul in custody to one side with guards."
+    },
+    {
+      "id": "tertullus_flatters_felix",
+      "sequence": 2,
+      "verses": "24:2-4",
+      "title": "Tertullus Opens with Lavish Flattery of Felix",
+      "description": "Tertullus begins with an extended and somewhat exaggerated compliment to Felix, crediting him with bringing great peace to the province, enacting reforms, and doing so with foresight and wisdom — claims that ancient historians like Tacitus and Josephus would sharply contradict. This captatio benevolentiae is standard Roman legal rhetoric, but its excessiveness is notable given Felix's actual reputation for brutality and corruption. Tertullus then promises to be brief in laying out the charges.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["tertullus", "felix", "ananias_high_priest", "jewish_elders", "paul"],
+      "timeline_label": "Flattering exordium",
+      "scroll_anchor": "tertullus-flatters-felix",
+      "visual_notes": "Tertullus gesturing grandly toward Felix with an oration stance; Felix sitting in a posture that suggests he is listening with half-amusement; Paul watching from the side with composed attention."
+    },
+    {
+      "id": "three_charges_against_paul",
+      "sequence": 3,
+      "verses": "24:5-9",
+      "title": "Three Charges: Sedition, Sect Leadership, Temple Desecration",
+      "description": "Tertullus levels three specific charges. First, Paul is 'a plague' who stirs up riots among Jews throughout the entire empire — a charge of sedition that would catch Roman ears as a serious public-order crime. Second, he is a ringleader of the sect of the Nazarenes — framing Christianity as an unauthorized and subversive religious movement. Third, he attempted to desecrate the Temple — touching the Roman interest in maintaining peace around the Temple Mount. Tertullus invites Felix to confirm these facts by interrogating Paul himself. The Jewish delegation adds their support, asserting that all this is true.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["tertullus", "felix", "ananias_high_priest", "jewish_elders", "paul"],
+      "timeline_label": "Three formal charges presented",
+      "scroll_anchor": "three-charges-paul",
+      "visual_notes": "A three-panel split image, each showing one charge illustrated: a crowd riot in a market; a map with the Christian movement spreading; the Jerusalem Temple with Paul being grabbed by a crowd."
+    },
+    {
+      "id": "felix_gives_paul_floor",
+      "sequence": 4,
+      "verses": "24:10",
+      "title": "Felix Signals Paul to Speak",
+      "description": "Felix nods to Paul, giving him the signal to begin his defense. Paul opens — like Tertullus — with a short but genuine acknowledgment of his judge: he notes that Felix has been judge over this nation for several years, giving Paul cause for confidence. Unlike Tertullus's empty flattery, Paul's acknowledgment is grounded in the practical reality that Felix does know Jewish affairs. Paul then launches into his systematic rebuttal.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["paul", "felix"],
+      "timeline_label": "Paul invited to respond",
+      "scroll_anchor": "felix-gives-paul-floor",
+      "visual_notes": "Felix leaning forward and gesturing with an open hand toward Paul; Paul straightening his posture and meeting the governor's eyes calmly before beginning to speak."
+    },
+    {
+      "id": "paul_refutes_sedition_charge",
+      "sequence": 5,
+      "verses": "24:11-13",
+      "title": "Paul Refutes the Sedition Charge",
+      "description": "Paul points out that it is verifiable: he has been in Jerusalem only twelve days — far too short a time to have organized any kind of widespread insurrection. His accusers cannot produce a single witness who saw him arguing with anyone, stirring up a crowd in the Temple, in any synagogue, or anywhere in the city. The charge of sedition crumbles without a single piece of credible evidence. Paul's argument is crisp and empirical: check the facts.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["paul", "felix", "ananias_high_priest", "tertullus", "jewish_elders"],
+      "timeline_label": "Sedition charge rebutted",
+      "scroll_anchor": "paul-refutes-sedition",
+      "visual_notes": "Paul counting on his fingers as he lists the twelve days; a timeline diagram visible as a graphic insert; Paul gesturing toward the Jewish delegation in a 'produce your witnesses' posture."
+    },
+    {
+      "id": "paul_admits_the_way",
+      "sequence": 6,
+      "verses": "24:14-16",
+      "title": "Paul Admits to the Way — and Reframes It as Judaism's Fulfillment",
+      "description": "Paul openly admits what he cannot deny: he worships the God of the fathers according to 'the Way' — which his accusers call a sect. But he insists this is not deviation from Judaism; he believes everything written in the Law and the Prophets, he has the same hope in a resurrection of both the righteous and the wicked that his accusers themselves hold (a direct dig at the Sadducees among his prosecutors, though Pharisees likely also sent representatives). Paul then states his life principle: he strives always to maintain a clear conscience before both God and people.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["paul", "felix", "ananias_high_priest", "tertullus", "jewish_elders"],
+      "timeline_label": "The Way as fulfillment of Israel's hope",
+      "scroll_anchor": "paul-admits-the-way",
+      "visual_notes": "Paul holding an open scroll representing the Hebrew Scriptures; his posture is one of continuity with Jewish tradition, not rebellion; the prosecution delegation shown with unsatisfied expressions."
+    },
+    {
+      "id": "paul_refutes_temple_charge",
+      "sequence": 7,
+      "verses": "24:17-21",
+      "title": "Paul Refutes the Temple Desecration Charge",
+      "description": "Paul explains the context of his Jerusalem visit: he came after several years' absence to bring alms for his people (charitable gifts collected from Gentile churches) and to present offerings — the opposite of desecration. He was found in the Temple purified and without any crowd or disturbance. If there was any issue, it was with some Jews from the province of Asia, and they are conspicuously absent from the present proceedings — they should be the ones testifying, not their proxies. Paul's actual 'crime' — the only thing he might be judged for — was his shout in the Sanhedrin that he was on trial for his belief in the resurrection of the dead.",
+      "location_id": "caesarea_maritima",
+      "persons_present": ["paul", "felix", "ananias_high_priest", "tertullus", "jewish_elders"],
+      "timeline_label": "Temple charge dismantled",
+      "scroll_anchor": "paul-refutes-temple-charge",
+      "visual_notes": "Paul turning toward the Jewish delegation and gesturing in a 'where are they?' posture; the empty space beside the prosecution table highlighted to suggest the missing Asian Jewish witnesses."
+    },
+    {
+      "id": "felix_adjourns_hearing",
+      "sequence": 8,
+      "verses": "24:22-23",
+      "title": "Felix Adjourns: 'When Lysias Comes Down I Will Decide'",
+      "description": "Felix, who is well acquainted with 'the Way,' adjourns the hearing without a verdict. His stated reason is that he will wait until Commander Lysias comes to Caesarea to give his account. This may be a genuine procedural caution or a convenient delay. Practically speaking, Felix orders the centurion to keep Paul in custody but with some liberty — allowing friends to visit him and care for him. The indefinite adjournment begins Paul's extended Caesarean imprisonment.",
+      "location_id": "herods_praetorium",
+      "persons_present": ["paul", "felix", "lysias"],
+      "timeline_label": "Hearing adjourned; Paul under light custody",
+      "scroll_anchor": "felix-adjourns-hearing",
+      "visual_notes": "Felix rising from the tribunal and waving his hand in a dismissive but not hostile gesture; Paul being led away by a single centurion rather than under heavy guard; a 'hearing postponed' atmosphere."
+    },
+    {
+      "id": "felix_hears_paul_privately",
+      "sequence": 9,
+      "verses": "24:24-25",
+      "title": "Felix and Drusilla Summon Paul; He Preaches Until Felix Grows Afraid",
+      "description": "Some days later Felix sends for Paul and listens to him speak about faith in Christ Jesus — accompanied by his Jewish wife Drusilla, a princess who brings Jewish cultural knowledge to the audience. As Paul reasons about righteousness, self-control, and the coming judgment, Felix becomes genuinely frightened. He interrupts: 'That's enough for now. You may leave. When I find it convenient, I will send for you.' The text records his fear as real — but he dismisses Paul rather than responding to the message.",
+      "location_id": "herods_praetorium",
+      "persons_present": ["paul", "felix", "drusilla"],
+      "timeline_label": "Felix frightened by Paul's sermon",
+      "scroll_anchor": "felix-hears-paul-privately",
+      "visual_notes": "An intimate interior scene: Paul seated before Felix and Drusilla on a couch in a private room; Felix visibly tense, gripping the armrest, face showing conflict; Drusilla watching with calculating interest."
+    },
+    {
+      "id": "felix_hopes_for_bribe",
+      "sequence": 10,
+      "verses": "24:26",
+      "title": "Two Years of Conversations Driven by Hope for a Bribe",
+      "description": "Luke gives a frank editorial aside: Felix simultaneously hopes that Paul will offer him money — a bribe for release — and therefore sends for him frequently and talks with him. The detail is historically plausible (Felix's corruption is well-attested) and theologically ironic: the governor who might most easily free Paul is also the one most compromised by greed. Paul is essentially a potential source of income, not a person to be judged fairly. No bribe comes, and Paul remains in custody.",
+      "location_id": "herods_praetorium",
+      "persons_present": ["paul", "felix"],
+      "timeline_label": "Two years: conversations and bribe-hope",
+      "scroll_anchor": "felix-hopes-for-bribe",
+      "visual_notes": "A series of identical recurring scenes — Felix in his chair, Paul across from him — repeated in a grid to suggest many conversations; a subtle gold coin image in Felix's peripheral vision each time."
+    },
+    {
+      "id": "festus_succeeds_felix",
+      "sequence": 11,
+      "verses": "24:27",
+      "title": "Festus Replaces Felix; Paul Left in Custody",
+      "description": "After two years, Felix is replaced as governor by Porcius Festus — recalled to Rome, probably to face charges of misrule related to his violent suppression of Jewish-Samaritan conflict. As a parting gesture to curry favor with the Jewish leadership (and avoid further Jewish complaint against himself), Felix leaves Paul in custody rather than releasing him. The chapter closes on a note of political calculation: Paul is a bargaining chip for a departing governor trying to protect his own reputation.",
+      "location_id": "herods_praetorium",
+      "persons_present": ["paul", "felix"],
+      "timeline_label": "Festus replaces Felix; Paul remains imprisoned",
+      "scroll_anchor": "festus-succeeds-felix",
+      "visual_notes": "The formal handover of the governor's office: Felix handing a bundle of scrolls (official records) to Festus; in the background a figure of Paul still under guard in the praetorium; a calendar showing two years have passed."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "herods_praetorium",
+          "event_id": "prosecution_arrives",
+          "note": "Paul has already been in Herod's Praetorium five days by the time the delegation arrives."
+        },
+        {
+          "order": 2,
+          "location_id": "caesarea_maritima",
+          "event_id": "three_charges_against_paul",
+          "note": "Paul is brought before Felix in the formal hearing chamber."
+        },
+        {
+          "order": 3,
+          "location_id": "herods_praetorium",
+          "event_id": "felix_adjourns_hearing",
+          "note": "After the hearing, Paul is returned to the praetorium under light custody."
+        },
+        {
+          "order": 4,
+          "location_id": "herods_praetorium",
+          "event_id": "felix_hopes_for_bribe",
+          "note": "Paul remains in the praetorium for two years while Felix holds frequent conversations with him."
+        }
+      ]
+    },
+    {
+      "person_id": "ananias_high_priest",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "prosecution_arrives",
+          "note": "Ananias travels from Jerusalem to Caesarea five days after Paul's transfer."
+        },
+        {
+          "order": 2,
+          "location_id": "caesarea_maritima",
+          "event_id": "three_charges_against_paul",
+          "note": "Ananias leads the prosecution before Felix."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "prosecution_arrives",
+      "position": 1,
+      "label": "Prosecution arrives from Jerusalem",
+      "relative_time": "Five days after Paul's arrival",
+      "absolute_time": "c. AD 57"
+    },
+    {
+      "event_id": "tertullus_flatters_felix",
+      "position": 2,
+      "label": "Tertullus's flattering opening",
+      "relative_time": "The hearing — morning",
+      "absolute_time": "c. AD 57"
+    },
+    {
+      "event_id": "three_charges_against_paul",
+      "position": 3,
+      "label": "Three charges leveled",
+      "relative_time": "The hearing",
+      "absolute_time": "c. AD 57"
+    },
+    {
+      "event_id": "paul_refutes_sedition_charge",
+      "position": 4,
+      "label": "Paul: sedition charge rebutted",
+      "relative_time": "The hearing — Paul's defense",
+      "absolute_time": "c. AD 57"
+    },
+    {
+      "event_id": "paul_admits_the_way",
+      "position": 5,
+      "label": "Paul: 'the Way' as Israel's fulfillment",
+      "relative_time": "The hearing — Paul's defense",
+      "absolute_time": "c. AD 57"
+    },
+    {
+      "event_id": "paul_refutes_temple_charge",
+      "position": 6,
+      "label": "Paul: Temple charge dismantled",
+      "relative_time": "The hearing — Paul's defense",
+      "absolute_time": "c. AD 57"
+    },
+    {
+      "event_id": "felix_adjourns_hearing",
+      "position": 7,
+      "label": "Felix adjourns; Paul under light custody",
+      "relative_time": "End of the hearing",
+      "absolute_time": "c. AD 57"
+    },
+    {
+      "event_id": "felix_hears_paul_privately",
+      "position": 8,
+      "label": "Felix frightened by Paul's sermon",
+      "relative_time": "Days later",
+      "absolute_time": "c. AD 57"
+    },
+    {
+      "event_id": "felix_hopes_for_bribe",
+      "position": 9,
+      "label": "Two years of conversations and bribe-hope",
+      "relative_time": "AD 57–59",
+      "absolute_time": "AD 57–59"
+    },
+    {
+      "event_id": "festus_succeeds_felix",
+      "position": 10,
+      "label": "Festus replaces Felix; Paul remains imprisoned",
+      "relative_time": "After two years",
+      "absolute_time": "c. AD 59"
+    }
+  ],
+  "theological_themes": [
+    "The Way as the fulfillment — not the betrayal — of Israel's ancestral hope",
+    "Resurrection as the irreducible center of Paul's faith and the real charge against him",
+    "The corruption of justice by self-interest: Felix's greed and political calculation",
+    "Conscience as a guiding moral principle: Paul's clear conscience before God and people",
+    "The gospel confronting power: truth that frightens but does not compel",
+    "Providence in delay: two years of apparent stagnation advancing the journey toward Rome"
+  ],
+  "discussion_questions": [
+    "Paul frames Christianity as the fulfillment of Judaism rather than a departure from it. How effective is this argument in a secular legal context, and what does it reveal about Paul's self-understanding?",
+    "Felix is genuinely frightened when Paul speaks about righteousness and judgment, yet dismisses him. What does this combination of emotional response and practical rejection tell us about the difference between being moved by truth and being changed by it?",
+    "Tertullus's flattery of Felix is historically absurd given Felix's actual record. What does the choice to hire an orator who uses such rhetoric reveal about the prosecution's strategy and priorities?",
+    "Paul's two years in Caesarean custody produce no recorded converts but set up his voyage to Rome. How do you evaluate a period of ministry that appears outwardly unproductive?",
+    "Felix leaves Paul imprisoned as a favor to the Jewish leaders when he departs. In what ways does this reflect a broader pattern of justice being subordinated to political convenience throughout this narrative?"
+  ]
+};
