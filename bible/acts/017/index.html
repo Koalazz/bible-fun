@@ -1133,7 +1133,108 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 const { useState, useEffect, useRef, useCallback, useMemo } = React;
 const LANGUAGE_KEY = 'bf-language';
 const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
-const CHAPTER_TEXT = {};
+const CHAPTER_TEXT = {
+  da: {
+    book: 'Apostlenes Gerninger',
+    chapterTitle: 'Fra Thessalonika til Athen: Evangeliet møder græsk filosofi',
+    chapterSummary: 'Paulus og hans ledsagere rejser gennem tre græske byer: Thessalonika, Berøa og Athen. De forkynder, at Jesus er den opstandne Messias, og møder både åbne hjerter og voldsom modstand. I Thessalonika og Berøa må modstanden sende Paulus videre, men i Athen holder han sin berømte tale på Areopagos, hvor han tager udgangspunkt i et alter for en ukendt gud og forkynder Skaberen, dommen og Jesu opstandelse.',
+    shortBook: 'ApG',
+    headerSub: '- Thessalonika, Berøa og Athen · ca. år 49-50',
+    mapCorner: 'Makedonien · Det Ægæiske Hav · Athen',
+    timelineTitle: ['Thessalonika til', 'Athen'],
+    yearBadges: ['Thessalonika', 'Berøa', 'Athen', 'Areopagos'],
+    persons: {
+      paul: 'Paulus',
+      silas: 'Silas',
+      timothy: 'Timotheus',
+      jason: 'Jason',
+      dionysius_areopagite: 'Dionysios fra Areopagos',
+      damaris: 'Damaris',
+      thessalonian_jews: 'Jødiske modstandere fra Thessalonika',
+      bereans: 'Berøanerne',
+      epicurean_stoic_philosophers: 'Epikuræiske og stoiske filosoffer',
+      athenians: 'Athenerne'
+    },
+    locations: {
+      thessalonica: { name: 'Thessalonika' },
+      thessalonica_synagogue: { name: 'Synagogen i Thessalonika' },
+      berea: { name: 'Berøa' },
+      athens: { name: 'Athen' },
+      athens_agora: { name: 'Agoraen i Athen' },
+      areopagus: { name: 'Areopagos' }
+    },
+    events: {
+      arrival_thessalonica: {
+        title: 'Paulus og Silas ankommer til Thessalonika',
+        description: 'Paulus og Silas følger Via Egnatia mod vest gennem Makedonien og kommer til Thessalonika efter at have passeret Amfipolis og Apollonia. Byen er Makedoniens største centrum med havn, romersk betydning og en synagoge, hvilket giver Paulus et strategisk udgangspunkt for forkyndelsen.',
+        timeline_label: 'Ankomst til Thessalonika'
+      },
+      preaching_thessalonica_synagogue: {
+        title: 'Tre sabbatters forkyndelse i synagogen',
+        description: 'Som han plejer, går Paulus ind i synagogen og samtaler ud fra Skrifterne i tre sabbatter. Han forklarer, at Messias måtte lide og opstå fra de døde, og at Jesus er denne Messias. Nogle jøder bliver overbevist, sammen med mange gudfrygtige grækere og flere fremtrædende kvinder. Sådan dannes kernen i menigheden i Thessalonika.',
+        timeline_label: 'Tre sabbatter i synagogen'
+      },
+      thessalonian_riot: {
+        title: 'Opløbet, Jasons arrestation og løsladelsen mod sikkerhed',
+        description: 'Nogle jødiske modstandere bliver misundelige, samler folk fra torvet og skaber uro i byen. Da de ikke finder Paulus og Silas, slæber de Jason og andre troende for byens embedsmænd. Anklagen er politisk farlig: missionærerne vender verden på hovedet og siger, at der er en anden konge end kejseren, nemlig Jesus. Embedsmændene bliver urolige, men løslader Jason efter at have taget sikkerhed.',
+        timeline_label: 'Opløb og Jasons arrestation'
+      },
+      night_departure_to_berea: {
+        title: 'Paulus og Silas sendes til Berøa om natten',
+        description: 'Efter Jasons løsladelse handler de troende hurtigt og sender Paulus og Silas af sted samme nat. Rejsen mod Berøa går sydvest gennem Makedonien. Den hemmelige afrejse viser både faren i Thessalonika og den praktiske solidaritet hos de nye kristne, der beskytter missionærerne med personlig risiko.',
+        timeline_label: 'Natterejse til Berøa'
+      },
+      berean_ministry: {
+        title: 'De ædle berøanere undersøger Skrifterne dagligt',
+        description: 'I Berøa møder Paulus og Silas en anden slags reaktion. Lukas kalder berøanerne mere ædle, fordi de tager imod ordet med villighed og samtidig undersøger Skrifterne hver dag for at se, om budskabet stemmer. Mange kommer til tro, både jøder og fremtrædende græske kvinder og mænd. Berøa bliver et forbillede på åbenhed kombineret med prøvende dømmekraft.',
+        timeline_label: 'Berøanerne undersøger Skrifterne'
+      },
+      thessalonians_disrupt_berea: {
+        title: 'Modstandere fra Thessalonika forstyrrer Berøa',
+        description: 'Da modstanderne i Thessalonika hører, at Paulus også forkynder i Berøa, rejser de dertil for at skabe uro igen. De troende handler straks: Paulus føres mod kysten og videre til Athen, mens Silas og Timotheus bliver tilbage i Berøa. Modstanden følger ham fra by til by, men missionen fortsætter.',
+        timeline_label: 'Uro i Berøa; Paulus sendes videre'
+      },
+      paul_arrives_athens: {
+        title: 'Paulus ankommer til Athen og venter på holdet',
+        description: 'Paulus bliver ført til Athen og sender besked om, at Silas og Timotheus skal komme så hurtigt som muligt. Mens han venter, ser han byen fyldt med afguder og bliver dybt oprørt. Athen er berømt for filosofi og kultur, men Paulus oplever også dens religiøse forvirring som et kald til vidnesbyrd.',
+        timeline_label: 'Paulus venter i Athen'
+      },
+      preaching_athens_synagogue_agora: {
+        title: 'Daglige samtaler i synagogen og på agoraen',
+        description: 'Paulus taler både i synagogen med jøder og gudfrygtige og hver dag på agoraen med dem, han møder. Hans mission i Athen foregår derfor på to fronter: blandt mennesker, der kender Israels Skrifter, og i byens offentlige rum, hvor ideer, handel og debat mødes.',
+        timeline_label: 'Daglige samtaler i Athen'
+      },
+      encounter_with_philosophers: {
+        title: 'Epikuræere og stoikere udfordrer Paulus',
+        description: 'Epikuræiske og stoiske filosoffer hører Paulus tale om Jesus og opstandelsen. Nogle afviser ham som en ordsamler, mens andre tror, han forkynder fremmede guder. Nysgerrigheden fører dem til Areopagos, hvor de vil høre nærmere om denne nye lære. Paulus får dermed mulighed for at formulere evangeliet for et græsk filosofisk publikum.',
+        timeline_label: 'Filosofferne fører Paulus til Areopagos'
+      },
+      areopagus_speech: {
+        title: 'Talen på Areopagos: Den ukendte Gud',
+        description: 'På Areopagos tager Paulus udgangspunkt i athenernes egen religiøsitet og alteret for en ukendt gud. Han forkynder den Gud, der skabte verden, ikke bor i templer bygget af hænder og ikke behøver menneskers tjeneste. Gud har skabt alle folk, sat deres tider og grænser og kalder nu alle til omvendelse, fordi han har fastsat en dag for dom ved den mand, han har oprejst fra de døde.',
+        timeline_label: 'Talen om den ukendte Gud'
+      },
+      mixed_response_and_converts: {
+        title: 'Spot, nysgerrighed og omvendelse',
+        description: 'Da Paulus nævner de dødes opstandelse, deler reaktionen sig. Nogle spotter, andre vil høre mere en anden gang, og nogle slutter sig til ham og tror. Blandt de navngivne er Dionysios fra Areopagos og en kvinde ved navn Damaris. Resultatet er mindre dramatisk end i andre byer, men evangeliet har fået fodfæste midt i Athens intellektuelle centrum.',
+        timeline_label: 'Blandet respons og nye troende'
+      }
+    },
+    timeline: {
+      arrival_thessalonica: { label: 'Ankomst til Thessalonika', relative_time: 'Dag 1, ca. efterår år 49' },
+      preaching_thessalonica_synagogue: { label: 'Tre sabbatter i synagogen', relative_time: 'Uge 1-3, ca. efterår år 49' },
+      thessalonian_riot: { label: 'Opløb og Jason arresteres', relative_time: 'Efter tredje sabbat, ca. sent efterår år 49' },
+      night_departure_to_berea: { label: 'Natterejse til Berøa', relative_time: 'Samme nat, ca. sent efterår år 49' },
+      berean_ministry: { label: 'Skriftsøgende tjeneste', relative_time: 'Dage til uger efter ankomst, ca. sent år 49' },
+      thessalonians_disrupt_berea: { label: 'Agitatorer ankommer', relative_time: 'Efter menigheden i Berøa er grundlagt, ca. vinter år 49-50' },
+      paul_arrives_athens: { label: 'Paulus ankommer til Athen', relative_time: 'Kort efter afrejsen fra Berøa, ca. vinter år 49-50' },
+      preaching_athens_synagogue_agora: { label: 'Daglige debatter', relative_time: 'Flere dage mens Paulus venter, ca. vinter år 49-50' },
+      encounter_with_philosophers: { label: 'Filosofferne indkalder Paulus', relative_time: 'Under debatterne på agoraen, ca. vinter år 49-50' },
+      areopagus_speech: { label: 'Talen om den ukendte Gud', relative_time: 'En dag under tjenesten i Athen, ca. vinter år 49-50' },
+      mixed_response_and_converts: { label: 'Blandet respons', relative_time: 'Umiddelbart efter talen, ca. vinter år 49-50' }
+    }
+  }
+};
 
 function localizeChapter(base, lang) {
   const t = CHAPTER_TEXT[lang];
@@ -1142,6 +1243,7 @@ function localizeChapter(base, lang) {
     ...base,
     book: t.book,
     chapter_title: t.chapterTitle,
+    chapter_summary: t.chapterSummary || base.chapter_summary,
     persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
     locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
     events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
@@ -1204,17 +1306,29 @@ const PCOLORS = {
   athenians: "#D4A24C",
 };
 
-/* ── MAP COORDINATES (SVG 1000x800 viewBox, schematic Macedonia-to-Athens route) ── */
+/* ── MAP COORDINATES (SVG 1000x800 viewBox, equirectangular projection of Greek mainland) ──
+   x = (lng - 19.78°) × 155.4   →  lng 19.78°E → 0px,  25.0°E → 812px
+   y = 60 + (41° - lat) × 200    →  lat 41°N → 60px,   37.5°N → 760px
+   Isotropic at ~39°N (px/°-lng ≈ cos(39°) × px/°-lat); pins come from real lat/lng in DATA. */
 const VW = 1000, VH = 800;
-const locLabel = (id, fallback) => DATA.locations.find(l => l.id === id)?.name || fallback;
-const LOCS = {
-  thessalonica: { x: 190, y: 175, label: locLabel('thessalonica', 'Thessalonica') },
-  thessalonica_synagogue: { x: 218, y: 200, label: locLabel('thessalonica_synagogue', 'Synagogue') },
-  berea: { x: 145, y: 305, label: locLabel('berea', 'Berea') },
-  athens: { x: 635, y: 610, label: locLabel('athens', 'Athens') },
-  athens_agora: { x: 665, y: 582, label: locLabel('athens_agora', 'Agora') },
-  areopagus: { x: 698, y: 620, label: locLabel('areopagus', 'Areopagus') },
+const project = (lat, lng) => ({
+  x: (lng - 19.78) * 155.4,
+  y: 60 + (41.0 - lat) * 200,
+});
+// Synagogue, agora, and areopagus project on top of their parent city at this scale,
+// so add small label offsets in the rough real direction to keep them readable.
+const NUDGE = {
+  thessalonica_synagogue: { dx: 16, dy: 18 },   // exact site unknown — small SE offset
+  athens_agora:           { dx: -15, dy: -15 }, // NW of the Acropolis
+  areopagus:              { dx: -28, dy: 2 },   // just W of the Acropolis
 };
+const LOCS = Object.fromEntries(
+  DATA.locations.map(l => {
+    const p = project(l.lat, l.lng);
+    const n = NUDGE[l.id] || { dx: 0, dy: 0 };
+    return [l.id, { x: Math.round(p.x + n.dx), y: Math.round(p.y + n.dy), label: l.name }];
+  })
+);
 
 const ABSOLUTE_TIMES = Object.fromEntries(
   DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
@@ -1281,36 +1395,83 @@ function personStateAt(eventId) {
   return result;
 }
 
-/* ── MAP TERRAIN ── */
+/* ── MAP TERRAIN ── geographic silhouette of mainland Greece (Aegean east, Ionian west) ── */
 function Terrain() {
   return (
     <g>
+      {/* Sea background */}
       <rect x="0" y="0" width={VW} height={VH} fill="var(--map-water)" opacity=".58" />
-      <path d="M 0 0 H 420 Q 335 95 270 180 Q 215 250 150 325 Q 78 410 48 555 Q 18 690 0 800 Z"
+
+      {/* Mainland Greece silhouette — northern Macedonia at top, Chalkidiki bulge,
+          Thessaly + Magnesia mid-east, Attica around Athens, Peloponnese tapering bottom-left */}
+      <path d="
+        M 80 0
+        L 730 0
+        L 695 55
+        Q 645 100 570 135
+        Q 545 168 615 182
+        Q 720 220 685 290
+        Q 660 380 595 450
+        Q 555 515 580 580
+        Q 615 660 685 705
+        L 720 745
+        Q 615 775 525 760
+        Q 460 748 410 770
+        Q 345 798 280 800
+        L 60 800
+        Q 50 600 45 400
+        Q 40 200 80 0
+        Z"
         fill="oklch(86% 0.048 92)" opacity="1" />
-      <path d="M 420 0 H 1000 V 800 H 505 Q 470 710 535 635 Q 605 555 540 460 Q 480 370 510 255 Q 540 135 420 0 Z"
-        fill="oklch(87% 0.055 90)" opacity="1" />
-      <path d="M 0 360 Q 115 355 205 315 Q 310 270 410 315 Q 520 365 585 465 Q 640 548 715 625"
-        fill="none" stroke="oklch(78% 0.075 225)" strokeWidth="18" opacity=".34" strokeLinecap="round" />
-      <path d="M 190 175 L 218 200 L 145 305"
-        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".68" strokeDasharray="9 6" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M 145 305 Q 285 420 500 520 T 635 610"
-        fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="5" opacity=".48" strokeDasharray="11 7" strokeLinecap="round" />
-      <path d="M 635 610 L 665 582 L 698 620"
-        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".68" strokeDasharray="9 6" strokeLinecap="round" strokeLinejoin="round" />
-      <text x="115" y="110" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
-        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">MACEDONIA</text>
-      <text x="595" y="715" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
-        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">ACHAIA</text>
-      <text x="430" y="420" textAnchor="middle" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+
+      {/* Euboea (long island hugging the east coast of central Greece) */}
+      <path d="M 640 460 Q 700 530 685 620 Q 660 645 640 615 Q 625 540 640 460 Z"
+        fill="oklch(86% 0.048 92)" opacity=".95" />
+
+      {/* Via Egnatia (Roman east-west road across Macedonia, passing through Thessalonica) */}
+      <path d="M 90 95 Q 290 115 492 132 Q 620 138 800 128"
+        fill="none" stroke="var(--map-road)" strokeWidth="3" opacity=".32" strokeDasharray="3 5" />
+
+      {/* Branch road: Thessalonica SW to Berea (~70 km, the night journey) */}
+      <path d="M 492 132 Q 440 145 376 155"
+        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".68" strokeDasharray="9 6"
+        strokeLinecap="round" strokeLinejoin="round" />
+
+      {/* Sea voyage: Berean coast → Aegean → Piraeus → Athens */}
+      <path d="M 376 155 Q 470 180 545 205 Q 705 320 720 525 Q 700 655 613 666"
+        fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="5" opacity=".48" strokeDasharray="11 7"
+        strokeLinecap="round" />
+
+      {/* Local Athens cluster: city → agora → areopagus */}
+      <path d="M 613 666 L 598 651 L 585 668"
+        fill="none" stroke="var(--map-road)" strokeWidth="3" opacity=".55" strokeDasharray="6 4"
+        strokeLinecap="round" strokeLinejoin="round" />
+
+      {/* Region labels */}
+      <text x="300" y="60" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".5">MACEDONIA</text>
+      <text x="455" y="370" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".42">THESSALY</text>
+      <text x="555" y="730" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".5">ATTICA</text>
+      <text x="180" y="775" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".5">PELOPONNESE</text>
+      <text x="850" y="380" textAnchor="middle" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
         fill="oklch(35% 0.06 220)" letterSpacing="4" opacity=".55">AEGEAN SEA</text>
-      <g transform="translate(70,735)">
-        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+      <text x="22" y="500" fontSize="11" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(35% 0.06 220)" letterSpacing="3" opacity=".5"
+        transform="rotate(-90, 22, 500)">IONIAN SEA</text>
+
+      {/* Scale bar (~100 km ≈ 180 px in this projection) */}
+      <g transform="translate(770,765)">
+        <line x1="0" y1="0" x2="180" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
         <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
-        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
-        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~150 km</text>
+        <line x1="180" y1="-5" x2="180" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="90" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~100 km</text>
       </g>
-      <g transform="translate(70,120)">
+
+      {/* Compass */}
+      <g transform="translate(880,95)">
         <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
         <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
         <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
