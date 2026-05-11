@@ -1402,14 +1402,15 @@ function Terrain() {
       {/* Sea background */}
       <rect x="0" y="0" width={VW} height={VH} fill="var(--map-water)" opacity=".58" />
 
-      {/* Mainland Greece silhouette — northern Macedonia at top, Chalkidiki bulge,
-          Thessaly + Magnesia mid-east, Attica around Athens, Peloponnese tapering bottom-left */}
+      {/* Mainland Greece silhouette — Strymonic gulf (Amphipolis), Thermaic gulf (Thessalonica),
+          Chalkidiki bulge, Thessaly + Magnesia, Attica around Athens, Peloponnese tapering SW. */}
       <path d="
         M 80 0
-        L 730 0
-        L 695 55
-        Q 645 100 570 135
-        Q 545 168 615 182
+        L 750 0
+        L 725 50
+        Q 700 80 660 95
+        Q 615 115 580 140
+        Q 555 168 615 180
         Q 720 220 685 290
         Q 660 380 595 450
         Q 555 515 580 580
@@ -1425,41 +1426,54 @@ function Terrain() {
         fill="oklch(86% 0.048 92)" opacity="1" />
 
       {/* Euboea (long island hugging the east coast of central Greece) */}
-      <path d="M 640 460 Q 700 530 685 620 Q 660 645 640 615 Q 625 540 640 460 Z"
+      <path d="M 640 460 Q 705 530 690 625 Q 665 650 640 615 Q 625 540 640 460 Z"
         fill="oklch(86% 0.048 92)" opacity=".95" />
 
-      {/* Via Egnatia (Roman east-west road across Macedonia, passing through Thessalonica) */}
-      <path d="M 90 95 Q 290 115 492 132 Q 620 138 800 128"
-        fill="none" stroke="var(--map-road)" strokeWidth="3" opacity=".32" strokeDasharray="3 5" />
+      {/* Via Egnatia: Amphipolis → Apollonia → Thessalonica (overland west; Acts 17:1) */}
+      <path d="M 631 95 L 571 135 L 492 132"
+        fill="none" stroke="var(--accent)" strokeWidth="3.5" opacity=".85"
+        strokeDasharray="8 5" strokeLinecap="round" strokeLinejoin="round" />
 
-      {/* Branch road: Thessalonica SW to Berea (~70 km, the night journey) */}
+      {/* Branch road: Thessalonica SW to Berea (~70 km, the night journey; 17:10) */}
       <path d="M 492 132 Q 440 145 376 155"
-        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".68" strokeDasharray="9 6"
-        strokeLinecap="round" strokeLinejoin="round" />
+        fill="none" stroke="var(--accent)" strokeWidth="3.5" opacity=".85"
+        strokeDasharray="8 5" strokeLinecap="round" strokeLinejoin="round" />
 
-      {/* Sea voyage: Berean coast → Aegean → Piraeus → Athens */}
-      <path d="M 376 155 Q 470 180 545 205 Q 705 320 720 525 Q 700 655 613 666"
-        fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="5" opacity=".48" strokeDasharray="11 7"
-        strokeLinecap="round" />
+      {/* Berea → Athens: long sweeping arc — escorted to coast, then by sea (17:14-15) */}
+      <path d="M 376 155 C 280 320 460 700 613 666"
+        fill="none" stroke="var(--accent)" strokeWidth="3.5" opacity=".85"
+        strokeDasharray="8 5" strokeLinecap="round" />
 
       {/* Local Athens cluster: city → agora → areopagus */}
       <path d="M 613 666 L 598 651 L 585 668"
-        fill="none" stroke="var(--map-road)" strokeWidth="3" opacity=".55" strokeDasharray="6 4"
-        strokeLinecap="round" strokeLinejoin="round" />
+        fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity=".7"
+        strokeDasharray="5 3" strokeLinecap="round" strokeLinejoin="round" />
+
+      {/* Transit-only stops named in 17:1 — small markers, not in DATA.locations */}
+      <g>
+        <circle cx="631" cy="95" r="5" fill="var(--fg-muted)" stroke="var(--map-land)" strokeWidth="2" />
+        <text x="640" y="91" fontSize="13" fontFamily="Barlow Condensed" fontWeight="700"
+          fill="var(--fg-muted)" letterSpacing=".5">Amphipolis</text>
+      </g>
+      <g>
+        <circle cx="571" cy="135" r="5" fill="var(--fg-muted)" stroke="var(--map-land)" strokeWidth="2" />
+        <text x="580" y="131" fontSize="13" fontFamily="Barlow Condensed" fontWeight="700"
+          fill="var(--fg-muted)" letterSpacing=".5">Apollonia</text>
+      </g>
 
       {/* Region labels */}
-      <text x="300" y="60" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
-        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".5">MACEDONIA</text>
+      <text x="280" y="55" fontSize="20" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="5" opacity=".55">MACEDONIA</text>
       <text x="455" y="370" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
         fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".42">THESSALY</text>
       <text x="555" y="730" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
         fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".5">ATTICA</text>
       <text x="180" y="775" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
         fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".5">PELOPONNESE</text>
-      <text x="850" y="380" textAnchor="middle" fontSize="14" fontFamily="Barlow Condensed" fontWeight="800"
-        fill="oklch(35% 0.06 220)" letterSpacing="4" opacity=".55">AEGEAN SEA</text>
-      <text x="22" y="500" fontSize="11" fontFamily="Barlow Condensed" fontWeight="800"
-        fill="oklch(35% 0.06 220)" letterSpacing="3" opacity=".5"
+      <text x="850" y="380" textAnchor="middle" fontSize="16" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(35% 0.06 220)" letterSpacing="5" opacity=".6">AEGEAN SEA</text>
+      <text x="22" y="500" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(35% 0.06 220)" letterSpacing="4" opacity=".55"
         transform="rotate(-90, 22, 500)">IONIAN SEA</text>
 
       {/* Scale bar (~100 km ≈ 180 px in this projection) */}
@@ -1471,7 +1485,7 @@ function Terrain() {
       </g>
 
       {/* Compass */}
-      <g transform="translate(880,95)">
+      <g transform="translate(900,90)">
         <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
         <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
         <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
