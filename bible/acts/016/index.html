@@ -883,8 +883,8 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 
 /* Event banner at top of map */
 .map-event-banner {
-  position: absolute;
-  top: 0; left: 0; right: 0;
+  position: relative;
+  flex: 0 0 auto;
   z-index: 10;
   background: oklch(16% 0.02 55 / 0.92);
   border-bottom: 2px solid var(--accent);
@@ -923,8 +923,9 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 
 /* ── MAP SVG ── */
 .map-svg-wrap {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
 }
 .map-svg {
   width:100%; height:100%;
@@ -1234,7 +1235,110 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 const { useState, useEffect, useRef, useCallback, useMemo } = React;
 const LANGUAGE_KEY = 'bf-language';
 const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
-const CHAPTER_TEXT = {};
+const CHAPTER_TEXT = {
+  da: {
+    book: 'Apostlenes Gerninger',
+    chapterTitle: 'Det makedonske kald og menigheden i Filippi',
+    chapterSummary: 'Paulus rejser sammen med Silas og den unge Timotheus, mens Helligånden leder holdet vestpå. Et nattesyn i Troas kalder dem over Det Ægæiske Hav til Makedonien. I den romerske koloni Filippi møder de de første europæiske troende: purpurhandleren Lydia, en befriet slavepige og en rystet fængselsvogter. Det begynder ved et bønnested ved floden og ender med jordskælv, dåb midt om natten og en ny menighed under romersk lovs skygge.',
+    shortBook: 'ApG',
+    headerSub: '- Lystra, Troas, Neapolis og Filippi · ca. år 49',
+    mapCorner: 'Lilleasien · Det Ægæiske Hav · Makedonien · Filippi',
+    timelineTitle: ['Det makedonske', 'kald'],
+    yearBadges: ['Lystra', 'Troas', 'Europa', 'Filippi', 'Fængslet'],
+    persons: {
+      paul: 'Paulus',
+      silas: 'Silas',
+      timothy: 'Timotheus',
+      luke: 'Lukas',
+      lydia: 'Lydia',
+      slave_girl: 'Slavepige med spådomsånd',
+      philippian_jailer: 'Fængselsvogteren i Filippi',
+      slave_girl_owners: 'Slavepigens ejere',
+      magistrates: 'Byens embedsmænd i Filippi',
+      women_at_river: 'Kvinderne ved floden'
+    },
+    locations: {
+      derbe: { name: 'Derbe' },
+      lystra: { name: 'Lystra' },
+      phrygia_galatia: { name: 'Frygien og Galatien' },
+      troas: { name: 'Troas' },
+      samothrace: { name: 'Samothrake' },
+      neapolis: { name: 'Neapolis' },
+      philippi: { name: 'Filippi' },
+      river_philippi: { name: 'Bønnestedet ved floden' }
+    },
+    events: {
+      timothy_recruited: {
+        title: 'Timotheus slutter sig til missionsteamet',
+        description: 'Paulus og Silas kommer til Derbe og derefter Lystra, hvor de møder Timotheus, en ung discipel med en jødisk mor og en græsk far. De troende i området taler godt om ham. Paulus tager ham med som medarbejder og lader ham omskære for ikke at skabe unødige hindringer i synagogerne. Samtidig bringer holdet beslutningerne fra rådet i Jerusalem videre, og menighederne styrkes i troen og vokser dag for dag.',
+        timeline_label: 'Timotheus rekrutteres i Lystra'
+      },
+      spirit_prevents_asia: {
+        title: 'Ånden lukker vejen til Asien og Bitynien',
+        description: 'Missionsteamet rejser gennem Frygien og Galatien, men Helligånden hindrer dem i at forkynde i provinsen Asien. Da de forsøger at gå mod Bitynien, tillader Jesu Ånd heller ikke det. Lukas forklarer ikke hvordan vejledningen kom; teksten fremhæver bare, at de adlyder. To lukkede veje presser dem vestpå mod Troas og skaber forventning om, hvor Gud egentlig vil sende dem hen.',
+        timeline_label: 'Asien og Bitynien lukkes'
+      },
+      macedonian_vision: {
+        title: 'Synet: Kom over til Makedonien',
+        description: 'Om natten i Troas ser Paulus et syn af en makedonsk mand, der beder ham komme over og hjælpe dem. I næste vers skifter fortællingen til "vi", hvilket viser, at Lukas nu er med på rejsen. Holdet konkluderer straks, at Gud kalder dem til at forkynde i Makedonien, og de gør sig klar til at sejle. Evangeliet er ved at krydse fra Asien til Europa gennem en tydelig guddommelig ledelse.',
+        timeline_label: 'Nattesyn: over til Makedonien'
+      },
+      sailing_to_samothrace: {
+        title: 'Sejladsen fra Troas til Samothrake',
+        description: 'De sejler fra Troas og får en lige kurs mod Samothrake, et tegn på gunstig vind. Øen fungerer som nattestop på ruten over det nordlige Ægæiske Hav. Efter de tidligere lukkede døre fremstår den hurtige sejlads som en åben vej: den samme Ånd, der standsede dem på land, fører dem nu over havet.',
+        timeline_label: 'Første dag til søs: Samothrake'
+      },
+      arrival_neapolis: {
+        title: 'Landgang i Neapolis',
+        description: 'Næste dag fortsætter skibet til Neapolis, havnebyen ved Filippi og den østlige adgang til Via Egnatia. Her sætter missionærerne foden på europæisk jord. Neapolis er ikke målet, men indgangen til Makedonien; fra havnen går rejsen snart videre ind mod den romerske koloni Filippi.',
+        timeline_label: 'Landgang i Europa'
+      },
+      arrival_philippi: {
+        title: 'Ankomst til den romerske koloni Filippi',
+        description: 'Holdet rejser fra Neapolis til Filippi, en vigtig romersk koloni på Via Egnatia. Byens romerske identitet bliver afgørende senere i kapitlet, da Paulus og Silas behandles ulovligt som romerske borgere. Først bliver Filippi dog stedet, hvor evangeliet slår rod i Europa gennem en lille bønnegruppe uden for byporten.',
+        timeline_label: 'Ankomst til Filippi'
+      },
+      lydia_converted: {
+        title: 'Lydia hører evangeliet og bliver døbt',
+        description: 'På sabbatten går Paulus og hans ledsagere uden for byporten til et sted ved floden, hvor de forventer bøn. De taler med de kvinder, der er samlet, og Herren åbner Lydias hjerte, så hun tager imod budskabet. Lydia, en gudfrygtig purpurhandler fra Thyatira, bliver døbt sammen med sin husstand og åbner sit hjem for missionsteamet. Hendes hus bliver den første base for menigheden i Filippi.',
+        timeline_label: 'Lydia og hendes hus døbes'
+      },
+      slave_girl_exorcism: {
+        title: 'Slavepigen befries fra spådomsånden',
+        description: 'En slavepige med en spådomsånd følger Paulus og de andre i flere dage og råber, at de er den højeste Guds tjenere. Hendes ord er sande, men stemmen kommer fra en åndelig magt, der udnytter hende og skaffer hendes ejere indtægt. Til sidst vender Paulus sig om og befaler ånden at forlade hende i Jesu Kristi navn. Befrielsen koster ejerne deres forretning og udløser den konflikt, der følger.',
+        timeline_label: 'Slavepigen sættes fri'
+      },
+      paul_silas_arrested: {
+        title: 'Paulus og Silas arresteres, piskes og fængsles',
+        description: 'Da slavepigens ejere ser, at håbet om indtjening er væk, griber de Paulus og Silas og slæber dem for byens embedsmænd. De skjuler det økonomiske motiv og anklager i stedet missionærerne for at forstyrre byen og indføre skikke, romere ikke må følge. Mængden vender sig imod dem, embedsmændene lader dem piske med stokke, og fængselsvogteren får ordre til at holde dem sikkert indespærret.',
+        timeline_label: 'Pisket og sat i fængsel'
+      },
+      earthquake_and_jailer: {
+        title: 'Jordskælvet og fængselsvogterens omvendelse',
+        description: 'Ved midnat beder Paulus og Silas og synger lovsange, mens fangerne lytter. Pludselig kommer et kraftigt jordskælv, dørene springer op, og lænkerne løsnes. Fængselsvogteren tror, at fangerne er flygtet, og vil tage sit liv, men Paulus råber, at alle er der. Rystet spørger vogteren, hvad han skal gøre for at blive frelst. Samme nat hører han evangeliet, vasker deres sår og bliver døbt med hele sin husstand.',
+        timeline_label: 'Jordskælv; fængselsvogteren tror'
+      },
+      release_from_prison: {
+        title: 'Offentlig undskyldning og afrejse fra Filippi',
+        description: 'Næste morgen vil embedsmændene lade Paulus og Silas gå stille, men Paulus nægter at forlade byen i hemmelighed efter ulovligt at være blevet pisket uden dom som romersk borger. Da embedsmændene hører om borgerskabet, bliver de bange, kommer selv og undskylder. Paulus og Silas går derefter til Lydias hus, opmuntrer de troende og rejser videre.',
+        timeline_label: 'Frigivelse og offentlig oprejsning'
+      }
+    },
+    timeline: {
+      timothy_recruited: { label: 'Timotheus slutter sig til', relative_time: 'Rejsens begyndelse, ca. forår år 49' },
+      spirit_prevents_asia: { label: 'Ånden lukker veje', relative_time: 'Dage til uger efter Lystra, ca. forår år 49' },
+      macedonian_vision: { label: 'Nattesyn i Troas', relative_time: 'Natten i Troas, ca. forår år 49' },
+      sailing_to_samothrace: { label: 'Til Samothrake', relative_time: 'Dagen efter synet, ca. forår år 49' },
+      arrival_neapolis: { label: 'Neapolis, Europa', relative_time: 'To dage efter afrejsen fra Troas, ca. forår år 49' },
+      arrival_philippi: { label: 'Ankomst til Filippi', relative_time: 'Kort efter Neapolis, ca. forår år 49' },
+      lydia_converted: { label: 'Lydia døbes', relative_time: 'Første sabbat i Filippi, ca. forår år 49' },
+      slave_girl_exorcism: { label: 'Slavepigen befries', relative_time: 'Flere dage senere, ca. forår-sommer år 49' },
+      paul_silas_arrested: { label: 'Pisket og fængslet', relative_time: 'Samme dag som befrielsen, ca. sommer år 49' },
+      earthquake_and_jailer: { label: 'Jordskælv ved midnat', relative_time: 'Natten efter arrestationen, ca. sommer år 49' },
+      release_from_prison: { label: 'Frigivet næste morgen', relative_time: 'Morgenen efter jordskælvet, ca. sommer år 49' }
+    }
+  }
+};
 
 function localizeChapter(base, lang) {
   const t = CHAPTER_TEXT[lang];
@@ -1243,6 +1347,7 @@ function localizeChapter(base, lang) {
     ...base,
     book: t.book,
     chapter_title: t.chapterTitle,
+    chapter_summary: t.chapterSummary || base.chapter_summary,
     persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
     locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
     events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),

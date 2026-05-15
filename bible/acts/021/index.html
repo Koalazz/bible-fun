@@ -1099,8 +1099,8 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 
 /* Event banner at top of map */
 .map-event-banner {
-  position: absolute;
-  top: 0; left: 0; right: 0;
+  position: relative;
+  flex: 0 0 auto;
   z-index: 10;
   background: oklch(16% 0.02 55 / 0.92);
   border-bottom: 2px solid var(--accent);
@@ -1139,8 +1139,9 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 
 /* ── MAP SVG ── */
 .map-svg-wrap {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
 }
 .map-svg {
   width:100%; height:100%;

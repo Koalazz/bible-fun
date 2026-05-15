@@ -114,12 +114,14 @@ window.BOOKS_MANIFEST = {
         {
           "n": 16,
           "title": "The Macedonian Call and the Church at Philippi",
+          "title_da": "Det makedonske kald og menigheden i Filippi",
           "status": "implemented",
           "href": "/bible/acts/016"
         },
         {
           "n": 17,
           "title": "From Thessalonica to Athens: The Gospel Meets Greek Philosophy",
+          "title_da": "Fra Thessalonika til Athen: Evangeliet møder græsk filosofi",
           "status": "implemented",
           "href": "/bible/acts/017"
         },

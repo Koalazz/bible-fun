@@ -170,15 +170,15 @@ const ACTS_CH7 = {
       "verses": "7:2-8",
       "title": "Stephen's Survey: Abraham Called Out of Mesopotamia",
       "description": "Stephen begins his defense by addressing the council respectfully as 'brothers and fathers' and then traces God's dealings with Israel starting from Abraham in Mesopotamia. He emphasizes that God appeared to Abraham before he was in the promised land, called him on a journey of faith, and made a covenant of circumcision with him — all before Abraham owned a single square foot of the land. The point is subtle but pointed: God's presence is not tied to any one territory or structure.",
-      "location_id": "mesopotamia",
+      "location_id": "sanhedrin_hall",
       "persons_present": [
         "stephen",
-        "the_council_ch7",
-        "abraham"
+        "high_priest_ch7",
+        "the_council_ch7"
       ],
       "timeline_label": "Abraham Section",
       "scroll_anchor": "speech-abraham-section",
-      "visual_notes": "A map animation showing Abraham's journey from Ur through Haran into Canaan; Stephen gesturing as he speaks; the council listening with cautious attention."
+      "visual_notes": "Stephen gesturing as he speaks in the council hall; the council listening with cautious attention while Abraham's story is treated as spoken testimony, not as a physical map movement."
     },
     {
       "id": "speech_joseph_section",
@@ -186,15 +186,15 @@ const ACTS_CH7 = {
       "verses": "7:9-16",
       "title": "Stephen's Survey: Joseph Rejected by His Brothers",
       "description": "Stephen moves to the story of Joseph, underlining that the patriarchs were jealous of Joseph and sold him into slavery in Egypt. Yet God was with Joseph, rescued him from all his troubles, and gave him wisdom so that Pharaoh made him ruler over Egypt. This establishes the first instance of the rejection-then-vindication pattern that runs through Stephen's argument. Even the family of Israel was capable of rejecting the one God had chosen to save them.",
-      "location_id": "egypt",
+      "location_id": "sanhedrin_hall",
       "persons_present": [
         "stephen",
-        "the_council_ch7",
-        "joseph"
+        "high_priest_ch7",
+        "the_council_ch7"
       ],
       "timeline_label": "Joseph Section",
       "scroll_anchor": "speech-joseph-section",
-      "visual_notes": "Joseph being sold by his brothers in a field; then Joseph standing before Pharaoh in Egyptian court regalia; the contrast of rejection and exaltation."
+      "visual_notes": "Stephen continues speaking before the council; Joseph and Egypt may appear as story imagery, but the map remains anchored to the council hall because no chapter participant travels there."
     },
     {
       "id": "speech_moses_birth_section",
@@ -202,15 +202,15 @@ const ACTS_CH7 = {
       "verses": "7:17-29",
       "title": "Stephen's Survey: Moses Born, Rejected, Flees",
       "description": "Stephen recounts how Moses was born in Egypt during a period of oppression, was beautiful before God, and was raised in Pharaoh's household with all the wisdom of Egypt. At forty he tried to intervene on behalf of an Israelite being beaten, but when he attempted to reconcile two Israelites fighting, one of them said, 'Who made you ruler and judge over us?' Moses was rejected by the very people he was trying to save. This rejection forced him to flee to Midian as a stranger.",
-      "location_id": "egypt",
+      "location_id": "sanhedrin_hall",
       "persons_present": [
         "stephen",
-        "the_council_ch7",
-        "moses"
+        "high_priest_ch7",
+        "the_council_ch7"
       ],
       "timeline_label": "Moses Birth & Rejection",
       "scroll_anchor": "speech-moses-birth-section",
-      "visual_notes": "Moses in Egyptian royal clothing attempting to stop a beating; then confronted by two Israelites with hostile expressions; finally Moses fleeing across the desert toward Sinai."
+      "visual_notes": "Stephen recounts Moses before the council; Egypt and Midian are referenced in the speech, but the map should keep the physical scene in the council hall."
     },
     {
       "id": "speech_burning_bush_section",
@@ -218,15 +218,15 @@ const ACTS_CH7 = {
       "verses": "7:30-38",
       "title": "Stephen's Survey: Burning Bush and the Sent Deliverer",
       "description": "After forty years in Midian, God appears to Moses in a flame of fire in a burning bush in the wilderness of Mount Sinai — holy ground, far from Jerusalem. God commissions Moses as the deliverer of his people from Egypt. Stephen quotes God's words directly and emphasizes that Moses is the one who told the Israelites that God would raise up a prophet like him from their own people — a messianic prophecy the council would have recognized as pointing to Jesus.",
-      "location_id": "sinai_wilderness",
+      "location_id": "sanhedrin_hall",
       "persons_present": [
         "stephen",
-        "the_council_ch7",
-        "moses"
+        "high_priest_ch7",
+        "the_council_ch7"
       ],
       "timeline_label": "Burning Bush",
       "scroll_anchor": "speech-burning-bush-section",
-      "visual_notes": "A blazing bush on a rocky Sinai hillside with Moses kneeling barefoot; divine radiance emanating from the bush; desolate wilderness landscape emphasizing the non-Jerusalem location."
+      "visual_notes": "Stephen describes the burning bush from inside the hearing; Sinai is a narrated place, not a location where the chapter's participants physically stand."
     },
     {
       "id": "speech_wilderness_rejection_section",
@@ -234,15 +234,15 @@ const ACTS_CH7 = {
       "verses": "7:39-43",
       "title": "Stephen's Survey: Israel Rejects Moses in the Wilderness",
       "description": "Stephen makes his sharpest historical accusation: in the wilderness, the ancestors of his accusers refused to obey Moses and pushed him aside. They made a golden calf and offered sacrifice to an idol, rejoicing in what their own hands had made. God turned away from them and handed them over to worship the starry host — and eventually he gave them over to exile beyond Babylon. This section directly indicts the ancestors of the council, showing that rejection of God's appointed messenger is a hereditary pattern.",
-      "location_id": "sinai_wilderness",
+      "location_id": "sanhedrin_hall",
       "persons_present": [
         "stephen",
-        "the_council_ch7",
-        "moses"
+        "high_priest_ch7",
+        "the_council_ch7"
       ],
       "timeline_label": "Israel Rejects Moses",
       "scroll_anchor": "speech-wilderness-rejection-section",
-      "visual_notes": "Israelites dancing around a golden calf while Moses descends from Sinai in the background; a sense of chaos and betrayal; contrast between the divine mountaintop and the idolatrous camp below."
+      "visual_notes": "The council hall remains the physical setting while Stephen narrates Israel's wilderness rebellion as part of his argument."
     },
     {
       "id": "speech_tabernacle_temple_section",
@@ -250,16 +250,15 @@ const ACTS_CH7 = {
       "verses": "7:44-50",
       "title": "Stephen's Survey: Tabernacle, Temple, and God's True Dwelling",
       "description": "Stephen reminds the council that their ancestors had the tabernacle of testimony in the wilderness — a mobile, portable meeting place made according to God's pattern. Joshua brought it into the land; David wanted to build a permanent dwelling. But it was Solomon who built the Temple. Then Stephen delivers the theological climax: quoting Isaiah 66, he declares that the Most High does not live in houses made by human hands — heaven is God's throne and earth is his footstool. This directly answers the charge of speaking against the Temple.",
-      "location_id": "jerusalem_ch7",
+      "location_id": "sanhedrin_hall",
       "persons_present": [
         "stephen",
-        "the_council_ch7",
-        "david",
-        "solomon"
+        "high_priest_ch7",
+        "the_council_ch7"
       ],
       "timeline_label": "Temple Argument",
       "scroll_anchor": "speech-tabernacle-temple-section",
-      "visual_notes": "Split image: the portable wilderness tabernacle on one side, the massive Jerusalem Temple on the other; and above both, an open sky representing God's true dwelling."
+      "visual_notes": "Stephen's Temple argument is spoken in the council hall; tabernacle, David, and Solomon are referenced as testimony rather than physical map stops."
     },
     {
       "id": "stephen_accuses_council",
