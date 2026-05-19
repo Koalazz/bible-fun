@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 11 — Defending the Open Door</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script>
+const ACTS_CH11 = {
+  "book": "Acts",
+  "chapter": 11,
+  "chapter_title": "Defending the Open Door",
+  "chapter_summary": "When Peter returns to Jerusalem, Jewish believers confront him for eating with uncircumcised Gentiles. Peter responds by recounting the entire sequence of visions, the Spirit's command, and the undeniable outpouring of the Holy Spirit on Cornelius's household, and the Jerusalem church accepts the Gentile mission. The chapter then shifts to Antioch in Syria, where unnamed missionaries have already begun preaching to Greeks — the first time the gospel is deliberately offered to non-Jews — creating a vibrant new congregation. Barnabas is sent to assess the work, recruits Paul, and together they teach there for a year; it is in Antioch that followers of Jesus are first called 'Christians.' The chapter closes with a prophet named Agabus predicting a famine and the Antioch church sending relief to Jerusalem.",
+  "date_range": {
+    "approximate": "c. AD 37–46",
+    "notes": "The Jerusalem report likely follows immediately after Acts 10 (c. AD 37–41). The Antioch section probably spans AD 40–46, as Agabus's famine prophecy is linked by Luke to the reign of Claudius (AD 41–54); the famine in Judea is variously dated AD 46–48 by historians including Josephus."
+  },
+  "persons": [
+    {
+      "id": "peter",
+      "name": "Peter",
+      "role": "Apostle, Defender of the Gentile Mission",
+      "first_mention_verse": "11:2",
+      "summary": "Peter returns to Jerusalem and faces criticism from Jewish Christians who object to his association with uncircumcised Gentiles. He defends his actions by recounting the full sequence of divine visions, the Spirit's explicit command, and the visible outpouring of the Holy Spirit on Cornelius's household.",
+      "significance": "Peter's defense establishes the theological and historical precedent that the Jerusalem church accepts as the warrant for the Gentile mission — a precedent Paul will invoke and the council in Acts 15 will confirm."
+    },
+    {
+      "id": "circumcision_party",
+      "name": "The Circumcised Believers",
+      "role": "Group — Jewish Christian Critics",
+      "first_mention_verse": "11:2",
+      "summary": "A group of Jewish Christians in Jerusalem who insist that converts to the Jesus movement must first be circumcised according to Mosaic law; they challenge Peter for entering a Gentile household and eating with uncircumcised men.",
+      "significance": "This group represents a recurring tension in Acts and the broader New Testament about whether Gentiles must become Jews in order to follow Jesus; their challenge forces the first formal theological reckoning with the question."
+    },
+    {
+      "id": "six_jewish_witnesses",
+      "name": "The Six Jewish Believers",
+      "role": "Group — Eyewitnesses",
+      "first_mention_verse": "11:12",
+      "summary": "The six Jewish believers from Joppa who accompanied Peter to Caesarea are cited by Peter as witnesses before the Jerusalem church. Their testimony alongside Peter's account of the visions provides the decisive double-witness.",
+      "significance": "Their role underscores the importance of communal testimony in early Christian discernment; the church reaches its decision based not on one man's experience but on multiple corroborating witnesses."
+    },
+    {
+      "id": "barnabas",
+      "name": "Barnabas",
+      "role": "Apostolic Delegate, Encourager",
+      "first_mention_verse": "11:22",
+      "summary": "Barnabas, a Levite from Cyprus and respected figure in the Jerusalem church, is sent to Antioch to assess the new Gentile congregation. He responds with joy, encourages the believers, and then travels to Tarsus specifically to recruit Paul as a co-teacher.",
+      "significance": "Barnabas is the crucial human bridge between Paul and the wider church; his endorsement rehabilitates Paul, and his decision to include him in the Antioch mission directly initiates the missionary journeys that will occupy the rest of Acts."
+    },
+    {
+      "id": "paul",
+      "name": "Saul (Paul)",
+      "role": "Teacher, Future Missionary",
+      "first_mention_verse": "11:25",
+      "summary": "Barnabas travels to Tarsus to find Saul and brings him to Antioch, where the two of them teach together for an entire year, helping to form and instruct the first explicitly Gentile-majority congregation.",
+      "significance": "Paul's arrival at Antioch marks the beginning of his active partnership in the organized Gentile mission, which will culminate in the three missionary journeys and his eventual journey to Rome."
+    },
+    {
+      "id": "agabus",
+      "name": "Agabus",
+      "role": "Prophet",
+      "first_mention_verse": "11:28",
+      "summary": "Agabus is one of several prophets from Jerusalem who travel to Antioch; he stands up and through the Spirit predicts a severe famine that will strike the entire Roman world, which Luke notes occurred during the reign of Claudius.",
+      "significance": "Agabus reappears in Acts 21 to predict Paul's arrest; his accurate famine prophecy here establishes his credibility and triggers the first organized act of inter-church charitable giving in Christian history."
+    },
+    {
+      "id": "cypriote_and_cyrenian_missionaries",
+      "name": "Missionaries from Cyprus and Cyrene",
+      "role": "Group — Anonymous Evangelists",
+      "first_mention_verse": "11:20",
+      "summary": "Unnamed believers who had been scattered by the persecution after Stephen's death traveled as far as Antioch and, unlike most other refugees who spoke only to Jews, deliberately began speaking to Greeks about the Lord Jesus, sparking the first Gentile church.",
+      "significance": "These unnamed missionaries are among the most consequential figures in Christian history: their informal, unauthorized initiative to preach to Greeks directly creates the congregation that will become the launchpad for the entire Pauline mission."
+    },
+    {
+      "id": "antioch_disciples",
+      "name": "Disciples at Antioch",
+      "role": "Group — First Gentile-Majority Church",
+      "first_mention_verse": "11:21",
+      "summary": "A large number of Gentiles in Antioch believe and turn to the Lord as a result of the preaching of the Cypriot and Cyrenian missionaries. Under the teaching of Barnabas and Paul they are formed into a congregation that will become the base of the missionary movement.",
+      "significance": "The Antioch church is the first community where the name 'Christian' is applied, the first to send intentional missionaries, and the community whose delegate voices set the terms of debate at the Jerusalem Council in Acts 15."
+    },
+    {
+      "id": "jerusalem_prophets",
+      "name": "Prophets from Jerusalem",
+      "role": "Group — Itinerant Prophets",
+      "first_mention_verse": "11:27",
+      "summary": "A group of prophets travels from Jerusalem to Antioch, representing the ongoing connection between the mother church and the new Gentile congregation. Agabus is one of their number.",
+      "significance": "Their visit demonstrates that spiritual gifts and inter-church connection were features of early Christian community; prophets functioned as a recognized mobile ministry linking congregations."
+    },
+    {
+      "id": "elders_of_jerusalem",
+      "name": "Elders of Jerusalem",
+      "role": "Group — Church Leadership",
+      "first_mention_verse": "11:30",
+      "summary": "The elders of the Jerusalem church are the recipients of the famine relief sent by the Antioch congregation via Barnabas and Saul. This is the first mention of 'elders' as a formal leadership body in the Jerusalem church.",
+      "significance": "The Jerusalem elders become the authoritative body that the Antioch church reports to and that convenes the decisive council in Acts 15; their mention here signals a maturing institutional structure in the early movement."
+    }
+  ],
+  "locations": [
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel",
+      "lat": 31.778,
+      "lng": 35.235,
+      "description": "The holy city and headquarters of the earliest Jewish-Christian community; Peter returns here after Caesarea and must defend his actions before the leadership."
+    },
+    {
+      "id": "caesarea",
+      "name": "Caesarea",
+      "modern_name": "Caesarea Maritima (Qesarya, Israel)",
+      "lat": 32.5,
+      "lng": 34.9,
+      "description": "The Roman administrative city where Cornelius lived; referenced in Peter's retelling as the site of the Gentile outpouring."
+    },
+    {
+      "id": "joppa",
+      "name": "Joppa",
+      "modern_name": "Jaffa (Tel Aviv-Yafo, Israel)",
+      "lat": 32.054,
+      "lng": 34.751,
+      "description": "Peter's base before the Cornelius episode; mentioned in his retelling as the place where his rooftop vision occurred."
+    },
+    {
+      "id": "phoenicia",
+      "name": "Phoenicia",
+      "modern_name": "Coastal Lebanon",
+      "lat": 33.9,
+      "lng": 35.5,
+      "description": "The coastal region north of Israel (roughly modern Lebanon); one of the areas reached by scattered believers after the persecution in Jerusalem."
+    },
+    {
+      "id": "cyprus",
+      "name": "Cyprus",
+      "modern_name": "Cyprus",
+      "lat": 35.126,
+      "lng": 33.43,
+      "description": "The large Mediterranean island; origin of some of the scattered missionaries who eventually preached to Gentiles in Antioch, and home island of Barnabas."
+    },
+    {
+      "id": "antioch_syria",
+      "name": "Antioch",
+      "modern_name": "Antakya, Turkey",
+      "lat": 36.206,
+      "lng": 36.156,
+      "description": "The third largest city of the Roman Empire, located in Syria; site of the first deliberate preaching to Gentiles and the congregation where followers of Jesus are first called 'Christians.'"
+    },
+    {
+      "id": "tarsus",
+      "name": "Tarsus",
+      "modern_name": "Tarsus, Mersin Province, Turkey",
+      "lat": 36.917,
+      "lng": 34.892,
+      "description": "A major city in the province of Cilicia and the hometown of Paul; the place Barnabas travels to find Paul and recruit him for the Antioch ministry."
+    }
+  ],
+  "events": [
+    {
+      "id": "peter_confronted_in_jerusalem",
+      "sequence": 1,
+      "verses": "11:1-3",
+      "title": "Jerusalem Believers Challenge Peter",
+      "description": "News of what happened in Caesarea spreads quickly to Judea, and when Peter returns to Jerusalem, the circumcision party confronts him. Their complaint is pointed: Peter entered the house of uncircumcised men and ate with them. This was a serious breach of the social and ritual code that maintained Jewish identity. Their challenge sets the stage for the first theological debate in the Jerusalem church about Gentile inclusion.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "peter",
+        "circumcision_party"
+      ],
+      "timeline_label": "Peter Confronted",
+      "scroll_anchor": "peter-confronted-jerusalem",
+      "visual_notes": "A meeting space in Jerusalem — perhaps a synagogue courtyard or private home; a group of Jewish men in traditional dress facing Peter with gestures of accusation; Peter's posture calm but resolute."
+    },
+    {
+      "id": "peter_recounts_the_visions",
+      "sequence": 2,
+      "verses": "11:4-14",
+      "title": "Peter Retells the Visions in Order",
+      "description": "Peter takes the Jerusalem believers back through the whole sequence: his noon prayer on the rooftop, the vision of the descending sheet filled with unclean animals, the divine voice's three-fold command and explanation, the Spirit's direct instruction to go with the messengers without hesitation, and Cornelius's account of the angel who promised that Peter would bring words by which the household would be saved. He presents the entire chain of events as a coordinated divine initiative, not a personal decision.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "peter",
+        "circumcision_party",
+        "six_jewish_witnesses"
+      ],
+      "timeline_label": "Peter's Defense",
+      "scroll_anchor": "peter-recounts-visions",
+      "visual_notes": "Peter standing in an assembly, hands raised as he describes the sheet vision; listeners leaning forward; the six Joppa witnesses visible at the sides as silent corroboration."
+    },
+    {
+      "id": "peter_cites_holy_spirit_evidence",
+      "sequence": 3,
+      "verses": "11:15-17",
+      "title": "Peter Cites the Spirit as the Decisive Evidence",
+      "description": "Peter reaches the climax of his defense: the Holy Spirit fell on Cornelius's household exactly as it fell on the disciples at Pentecost. He invokes Jesus's own words — 'John baptized with water, but you will be baptized with the Holy Spirit' — and asks the critical question: 'If God gave them the same gift he gave us when we believed in the Lord Jesus Christ, who was I to think that I could stand in God's way?' This frames his action not as human tolerance but as obedience to an act of God.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "peter",
+        "circumcision_party",
+        "six_jewish_witnesses"
+      ],
+      "timeline_label": "Spirit Compared to Pentecost",
+      "scroll_anchor": "peter-cites-spirit-evidence",
+      "visual_notes": "Close-up of Peter's face; expressions of dawning recognition on the faces of his audience; the question hanging in the air — 'who was I to oppose God?'"
+    },
+    {
+      "id": "jerusalem_church_accepts_gentile_mission",
+      "sequence": 4,
+      "verses": "11:18",
+      "title": "Jerusalem Church Accepts the Gentile Mission",
+      "description": "The objectors fall silent; then they praise God, saying: 'So then, even to Gentiles God has granted repentance that leads to life.' Their acceptance is not merely grudging — it is expressed in praise. This brief verse is one of the pivotal moments in the entire book of Acts: the mother church formally endorses the principle that Gentiles can be fully included without circumcision.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "circumcision_party",
+        "peter",
+        "six_jewish_witnesses"
+      ],
+      "timeline_label": "Jerusalem Accepts Gentile Mission",
+      "scroll_anchor": "jerusalem-accepts-gentile-mission",
+      "visual_notes": "A room full of people; expressions shifting from confrontation to wonder; some bowing their heads or looking upward in praise; a moment of relieved breakthrough."
+    },
+    {
+      "id": "scattered_believers_reach_antioch",
+      "sequence": 5,
+      "verses": "11:19-21",
+      "title": "Scattered Believers Plant a Church in Antioch",
+      "description": "The narrative jumps back in time to the persecution that followed Stephen's martyrdom. Scattered believers traveled as far as Phoenicia, Cyprus, and Antioch, preaching only to Jewish audiences. But some men from Cyprus and Cyrene — unnamed and acting on their own initiative — began speaking directly to Greeks in Antioch about the Lord Jesus. Their preaching was accompanied by the Lord's hand of power, and a large number of people believed and turned to the Lord.",
+      "location_id": "antioch_syria",
+      "persons_present": [
+        "cypriote_and_cyrenian_missionaries",
+        "antioch_disciples"
+      ],
+      "timeline_label": "Gospel Reaches Antioch Gentiles",
+      "scroll_anchor": "scattered-believers-antioch",
+      "visual_notes": "A busy Hellenistic marketplace in Antioch; diverse crowds; men in diaspora Jewish dress speaking animatedly to Greek-speaking locals; expressions of curiosity and receptivity."
+    },
+    {
+      "id": "barnabas_sent_to_antioch",
+      "sequence": 6,
+      "verses": "11:22-24",
+      "title": "Barnabas Is Sent to Assess Antioch",
+      "description": "News of the Antioch developments reaches Jerusalem, and the church sends Barnabas to investigate. When Barnabas arrives and sees the evidence of God's grace, he is glad and encourages them all to remain true to the Lord with all their hearts. Luke adds a character note: Barnabas was a good man, full of the Holy Spirit and faith. As a result, a great number of people were brought to the Lord.",
+      "location_id": "antioch_syria",
+      "persons_present": [
+        "barnabas",
+        "antioch_disciples"
+      ],
+      "timeline_label": "Barnabas Arrives at Antioch",
+      "scroll_anchor": "barnabas-sent-antioch",
+      "visual_notes": "Barnabas arriving at a gathering of mixed Jewish and Gentile believers; his face expressing genuine joy; hands raised in blessing or encouragement; the congregation growing as newcomers are drawn in."
+    },
+    {
+      "id": "barnabas_recruits_paul",
+      "sequence": 7,
+      "verses": "11:25-26a",
+      "title": "Barnabas Recruits Paul from Tarsus",
+      "description": "Recognizing that the work is larger than one person can handle, Barnabas travels to Tarsus to find Saul — the former persecutor who had been sent home after his early days in Jerusalem caused controversy. Barnabas brings him back to Antioch, and the two of them spend an entire year meeting with the church and teaching great numbers of people.",
+      "location_id": "tarsus",
+      "persons_present": [
+        "barnabas",
+        "paul"
+      ],
+      "timeline_label": "Barnabas Finds Paul",
+      "scroll_anchor": "barnabas-recruits-paul",
+      "visual_notes": "Barnabas traveling inland through the Taurus foothills; finding Paul in a domestic setting in Tarsus; a handshake or embrace of reunion; then the two walking together on the road back to Antioch."
+    },
+    {
+      "id": "disciples_called_christians",
+      "sequence": 8,
+      "verses": "11:26b",
+      "title": "Disciples First Called 'Christians' in Antioch",
+      "description": "Luke inserts a historically important note: it was in Antioch that the disciples were first called 'Christians.' The term — meaning 'followers of Christ' or 'belonging to Christ's party' — may have been given by outsiders, possibly as a somewhat dismissive label. Whatever its origin, it marks the point at which this movement was recognized as a distinct entity with its own identity, no longer simply a sect within Judaism.",
+      "location_id": "antioch_syria",
+      "persons_present": [
+        "antioch_disciples",
+        "barnabas",
+        "paul"
+      ],
+      "timeline_label": "Name 'Christian' First Used",
+      "scroll_anchor": "disciples-called-christians",
+      "visual_notes": "A street scene or market in Antioch; a Greek-speaking Antiochene gesturing toward a group of believers; an inset text note reading 'Christianoi' in Greek letters; the diverse community of the congregation visible."
+    },
+    {
+      "id": "agabus_predicts_famine",
+      "sequence": 9,
+      "verses": "11:27-28",
+      "title": "Agabus Prophesies a Famine",
+      "description": "A group of prophets travels from Jerusalem to Antioch. One of them, Agabus, stands up and through the Spirit predicts that a severe famine will spread over the entire Roman world. Luke confirms the prophecy's accuracy with an editorial note — this happened during the reign of Claudius. The prediction would have been received as a solemn call to practical action.",
+      "location_id": "antioch_syria",
+      "persons_present": [
+        "agabus",
+        "jerusalem_prophets",
+        "barnabas",
+        "paul",
+        "antioch_disciples"
+      ],
+      "timeline_label": "Agabus's Famine Prophecy",
+      "scroll_anchor": "agabus-predicts-famine",
+      "visual_notes": "Agabus standing in a gathered assembly, arm raised in prophetic gesture; the faces of the congregation showing concern; Barnabas and Paul visible in the crowd, listening intently."
+    },
+    {
+      "id": "antioch_sends_relief_to_jerusalem",
+      "sequence": 10,
+      "verses": "11:29-30",
+      "title": "Antioch Sends Relief to Jerusalem",
+      "description": "The disciples in Antioch, each according to their ability, decide to send relief to the brothers and sisters in Judea. They raise the contribution and send it to the Jerusalem elders via Barnabas and Saul. This action represents the first inter-church financial aid in Christian history and reverses the normal direction of influence: the young Gentile church providing for the mother Jewish church.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "barnabas",
+        "paul",
+        "antioch_disciples",
+        "elders_of_jerusalem"
+      ],
+      "timeline_label": "Antioch Relief Sent to Jerusalem",
+      "scroll_anchor": "antioch-relief-jerusalem",
+      "visual_notes": "Members of the Antioch congregation bringing goods, coins, and provisions; Barnabas and Paul receiving a collected bundle; then depicted on the road south toward Jerusalem carrying the relief; Jerusalem elders receiving the gift with gratitude."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "peter",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "caesarea",
+          "event_id": "peter_confronted_in_jerusalem",
+          "note": "Returns from Caesarea after the Cornelius episode."
+        },
+        {
+          "order": 2,
+          "location_id": "jerusalem",
+          "event_id": "peter_recounts_the_visions",
+          "note": "Arrives in Jerusalem to face the criticism and deliver his defense."
+        }
+      ]
+    },
+    {
+      "person_id": "barnabas",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "barnabas_sent_to_antioch",
+          "note": "Sent by the Jerusalem church to investigate the new Gentile congregation."
+        },
+        {
+          "order": 2,
+          "location_id": "antioch_syria",
+          "event_id": "barnabas_sent_to_antioch",
+          "note": "Arrives in Antioch and is moved by what he sees; begins teaching."
+        },
+        {
+          "order": 3,
+          "location_id": "tarsus",
+          "event_id": "barnabas_recruits_paul",
+          "note": "Travels to Tarsus specifically to find and recruit Saul."
+        },
+        {
+          "order": 4,
+          "location_id": "antioch_syria",
+          "event_id": "disciples_called_christians",
+          "note": "Returns with Paul; they teach together for a year in Antioch."
+        },
+        {
+          "order": 5,
+          "location_id": "jerusalem",
+          "event_id": "antioch_sends_relief_to_jerusalem",
+          "note": "Carries the Antioch relief fund to the Jerusalem elders."
+        }
+      ]
+    },
+    {
+      "person_id": "paul",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "tarsus",
+          "event_id": "barnabas_recruits_paul",
+          "note": "Found by Barnabas in his hometown of Tarsus."
+        },
+        {
+          "order": 2,
+          "location_id": "antioch_syria",
+          "event_id": "disciples_called_christians",
+          "note": "Brought to Antioch and teaches with Barnabas for a year."
+        },
+        {
+          "order": 3,
+          "location_id": "jerusalem",
+          "event_id": "antioch_sends_relief_to_jerusalem",
+          "note": "Travels with Barnabas to deliver the famine relief to Jerusalem."
+        }
+      ]
+    },
+    {
+      "person_id": "agabus",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "agabus_predicts_famine",
+          "note": "Travels as part of a prophetic delegation from Jerusalem to Antioch."
+        },
+        {
+          "order": 2,
+          "location_id": "antioch_syria",
+          "event_id": "agabus_predicts_famine",
+          "note": "Delivers his famine prophecy in the Antioch congregation."
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "scattered_believers_reach_antioch",
+      "position": 1,
+      "label": "Gospel Reaches Antioch",
+      "relative_time": "Background: after Stephen's martyrdom",
+      "absolute_time": "c. AD 36–37"
+    },
+    {
+      "event_id": "peter_confronted_in_jerusalem",
+      "position": 2,
+      "label": "Peter Challenged",
+      "relative_time": "After Cornelius episode",
+      "absolute_time": "c. AD 37–41"
+    },
+    {
+      "event_id": "peter_recounts_the_visions",
+      "position": 3,
+      "label": "Peter's Defense",
+      "relative_time": "Same meeting",
+      "absolute_time": "c. AD 37–41"
+    },
+    {
+      "event_id": "peter_cites_holy_spirit_evidence",
+      "position": 4,
+      "label": "Pentecost Parallel Cited",
+      "relative_time": "Same meeting, climax",
+      "absolute_time": "c. AD 37–41"
+    },
+    {
+      "event_id": "jerusalem_church_accepts_gentile_mission",
+      "position": 5,
+      "label": "Jerusalem Accepts Gentiles",
+      "relative_time": "Conclusion of same meeting",
+      "absolute_time": "c. AD 37–41"
+    },
+    {
+      "event_id": "barnabas_sent_to_antioch",
+      "position": 6,
+      "label": "Barnabas Investigates Antioch",
+      "relative_time": "Shortly after",
+      "absolute_time": "c. AD 40–42"
+    },
+    {
+      "event_id": "barnabas_recruits_paul",
+      "position": 7,
+      "label": "Barnabas Finds Paul",
+      "relative_time": "After establishing ministry",
+      "absolute_time": "c. AD 41–43"
+    },
+    {
+      "event_id": "disciples_called_christians",
+      "position": 8,
+      "label": "'Christian' Name First Used",
+      "relative_time": "During year of teaching",
+      "absolute_time": "c. AD 42–44"
+    },
+    {
+      "event_id": "agabus_predicts_famine",
+      "position": 9,
+      "label": "Famine Prophesied",
+      "relative_time": "Before famine under Claudius",
+      "absolute_time": "c. AD 44–46"
+    },
+    {
+      "event_id": "antioch_sends_relief_to_jerusalem",
+      "position": 10,
+      "label": "Relief Fund Sent",
+      "relative_time": "In response to prophecy",
+      "absolute_time": "c. AD 46"
+    }
+  ],
+  "theological_themes": [
+    "Divine initiative overriding human cultural barriers",
+    "The role of testimony and communal discernment in theological change",
+    "Anonymous, unauthorized mission as the engine of the church's growth",
+    "Identity and naming: what it means to be called 'Christian'",
+    "Material generosity as an expression of spiritual community",
+    "Prophecy as a practical gift serving the welfare of the community"
+  ],
+  "discussion_questions": [
+    "Peter's defense of his actions depended heavily on saying 'I saw what God did — I could not oppose it.' When, if ever, is personal spiritual experience a sufficient basis for challenging established community norms?",
+    "The Antioch church was founded by unnamed, scattered missionaries acting without official authorization. What does this suggest about where innovation in the church comes from, and how established leaders should respond to it?",
+    "Barnabas sought out Paul specifically because the work was too large for one person. What does his willingness to share credit and bring in a potentially threatening figure reveal about his character?",
+    "The disciples were first called 'Christians' in a majority pagan, Hellenistic city. What might it mean that the community needed an external nickname before it had an internal one?",
+    "The Antioch church sent money to Jerusalem — reversing the usual direction of cultural and religious authority. What does this act of inter-church generosity suggest about the relationship between newer and older faith communities?"
+  ]
+};
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── PAGE SKELETON ── */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* ── BODY: timeline left, map right ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── TIMELINE COLUMN ── */
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+
+/* Chapter label strip */
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.tl-ch-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; line-height:1.1; color:var(--tl-fg);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+
+/* Scrollable event list */
+.tl-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+/* Vertical spine */
+.tl-spine {
+  padding: 8px 0 80px;
+  position: relative;
+}
+.tl-spine::before {
+  content:'';
+  position:absolute;
+  left: 38px;
+  top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent);
+}
+
+/* Year separator badge */
+.tl-year-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 6px 14px;
+  position: relative;
+  z-index: 2;
+}
+.tl-year-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(22% .018 255);
+  border: 1px solid oklch(36% .015 255);
+  padding: 2px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line {
+  flex: 1;
+  height: 1px;
+  background: oklch(30% .012 255);
+  opacity: .5;
+}
+
+/* Each item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s;
+  padding-right: 4px;
+  min-height: 130px;
+}
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+
+/* left: seq number + dot */
+.tl-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+.tl-seq {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  color: oklch(45% .01 255);
+  margin-bottom:5px;
+  letter-spacing:.05em;
+}
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%;
+  border:2px solid oklch(38% .015 255);
+  background: oklch(16% .018 255);
+  position:relative; z-index:1;
+  transition: all .28s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px oklch(58% .19 46 / .2);
+}
+.tl-dot-pip {
+  width:5px; height:5px; border-radius:50%; background:#fff;
+  opacity:0; transition:opacity .28s;
+}
+.tl-item.active .tl-dot-pip { opacity:1; }
+
+/* right: text */
+.tl-r {
+  padding: 22px 10px 22px 6px;
+  border-bottom: 1px solid oklch(24% .012 255);
+}
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date {
+  font-size:11px; font-weight:800; letter-spacing:.1em;
+  font-family:'Barlow Condensed',sans-serif;
+  color: oklch(70% .018 76); margin-bottom:3px;
+}
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time {
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  line-height:1.35;
+  color: oklch(72% .014 78); margin-bottom:6px;
+}
+.tl-item.active .tl-rel-time { color: oklch(82% .035 74); }
+.tl-ev-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px; font-weight:800; text-transform:uppercase;
+  line-height:1.18; color: var(--tl-fg);
+  margin-bottom: 4px;
+}
+.tl-ev-verses {
+  font-size:10px; font-weight:700; letter-spacing:.1em;
+  color: oklch(68% .018 76); margin-top:2px;
+}
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+
+/* ── MAP COLUMN ── */
+.map-col {
+  position: relative;
+  background: var(--map-land);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Event banner at top of map */
+.map-event-banner {
+  position: relative;
+  flex: 0 0 auto;
+  z-index: 10;
+  background: oklch(16% 0.02 55 / 0.92);
+  border-bottom: 2px solid var(--accent);
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 16px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: background .3s;
+}
+.ban-verses {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.ban-content {}
+.ban-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; color:oklch(95% .012 78);
+  line-height:1.1; margin-bottom:4px;
+}
+.ban-desc {
+  font-family:'Lora',serif; font-style:normal;
+  font-size:13px; line-height:1.55;
+  color:oklch(88% .014 78);
+  display: block;
+  overflow: visible;
+}
+.ban-loc {
+  display:flex; align-items:center; gap:5px;
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:oklch(55% .012 70); white-space:nowrap;
+}
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+/* ── MAP SVG ── */
+.map-svg-wrap {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+}
+.map-svg {
+  width:100%; height:100%;
+}
+
+/* Person legend - bottom left of map */
+.map-person-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.map-leg-item {
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; font-weight:600; letter-spacing:.06em;
+  color: var(--fg);
+  background: var(--card);
+  padding: 3px 10px 3px 7px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  transition: opacity .5s, transform .4s;
+}
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-leg-item.entering { animation: legEnter .4s ease forwards; }
+@keyframes legEnter {
+  from { opacity:0; transform:translateX(-8px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+.map-controls-panel { display: contents; }
+
+/* Map overlay labels */
+.map-corner-label {
+  position:absolute; bottom:18px; right:18px;
+  font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
+}
+
+.map-playback {
+  position: absolute;
+  right: 18px;
+  bottom: 42px;
+  z-index: 12;
+  width: min(460px, calc(100% - 36px));
+  background: oklch(99.5% 0.008 80 / .9);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+.playback-top {
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:26px;
+  margin-bottom:9px;
+  padding-right:72px;
+}
+.playback-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  min-width:0;
+  width:100%;
+}
+.playback-buttons {
+  position:absolute;
+  top:0;
+  right:0;
+  display:flex;
+  gap:6px;
+  flex-shrink:0;
+}
+.playback-btn {
+  width:30px;
+  height:26px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--fg);
+  border-radius:3px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  line-height:1;
+}
+.playback-track {
+  position:relative;
+  height:28px;
+  display:grid;
+  grid-template-columns:repeat(var(--step-count), 1fr);
+  align-items:center;
+  gap:0;
+}
+.playback-track::before {
+  content:'';
+  position:absolute;
+  left:10px; right:10px; top:13px;
+  height:2px;
+  background:var(--border);
+}
+.playback-step {
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  width:20px;
+  height:20px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.playback-step::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:var(--fg-muted);
+  opacity:.42;
+  transition:all .24s;
+}
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before {
+  inset:2px;
+  background:var(--accent);
+  opacity:1;
+  box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
+}
+.playback-step-time { display: none; }
+.loc-label {
+  paint-order: stroke;
+  stroke: oklch(98% 0.008 80 / .82);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.person-name-label {
+  display: none;
+  paint-order: stroke;
+  stroke: oklch(16% 0.02 55 / .62);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: 44px auto;
+    overflow: visible;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
+  }
+
+  .map-col {
+    order: -1;
+    overflow: visible;
+  }
+
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+  .home-link,
+  .lang-btn {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .map-event-banner {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    flex: 0 0 auto;
+    padding: 8px 12px 9px;
+    gap: 3px;
+  }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title  { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc {
+    display: block;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow: visible;
+  }
+  .ban-loc    { display: none; }
+  .map-svg-wrap {
+    position: relative;
+    inset: auto;
+    flex: 0 0 clamp(300px, 46dvh, 430px);
+    min-height: clamp(300px, 46dvh, 430px);
+  }
+  .loc-label {
+    font-size: 28px;
+    font-weight: 800;
+    stroke-width: 5px;
+  }
+  .person-name-label { display: block; font-size: 18px; }
+
+  .map-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: oklch(93% 0.025 82);
+    border-top: 1px solid var(--border);
+  }
+
+  .map-person-legend {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    gap: 4px;
+    z-index: 14;
+    max-height: none;
+    overflow-y: auto;
+    padding: 5px;
+    background: oklch(99.5% 0.008 80 / .88);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px oklch(10% 0.02 55 / .12);
+    backdrop-filter: blur(8px);
+  }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
+  .map-leg-dot  { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+  .map-playback {
+    position: relative;
+    right:auto;
+    bottom:auto;
+    width:100%;
+    padding:8px 8px 10px;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+  .playback-top { min-height:34px; padding-right:88px; }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track {
+    min-width: max(100%, calc(var(--step-count) * 92px));
+    height: 70px;
+    align-items: start;
+  }
+  .playback-track::before { top:8px; }
+  .playback-step { width:18px; height:18px; }
+  .playback-step-time {
+    display: none;
+    position: absolute;
+    top: 22px;
+    left: auto;
+    right: 50%;
+    transform: none;
+    width: 84px;
+    color: var(--fg);
+    background: oklch(99.5% 0.008 80 / .92);
+    border: 1px solid oklch(84% 0.022 72 / .8);
+    border-radius: 3px;
+    padding: 3px 4px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.15;
+    text-align: right;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    pointer-events: none;
+    box-shadow: 0 2px 8px oklch(10% 0.02 55 / .1);
+  }
+  .playback-step:first-child .playback-step-time {
+    left: 50%;
+    right: auto;
+    text-align: left;
+  }
+  .playback-step.active .playback-step-time {
+    display: block;
+    color: oklch(99% 0.008 80);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .person-name-label { display: none; }
+
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {
+  da: {
+    book: 'Apostlenes Gerninger',
+    shortBook: 'ApG',
+    chapterTitle: 'Forsvar for den åbne dør',
+    headerSub: '- Jerusalem, Caesarea, Antiokia og Tarsus · ca. år 37-46',
+    timelineTitle: ['Døren', 'forsvares'],
+    mapCorner: 'Jerusalem · Caesarea · Antiokia · Tarsus',
+    yearBadges: ['Antiokia begynder', 'Peter forsvarer', 'Jerusalem lovpriser', 'Barnabas og Paulus', 'Hjælp sendes'],
+    map: {
+      JUDEA: 'JUDÆA',
+      PERAEA: 'PERÆA',
+      SAMARIA: 'SAMARIA',
+      DEAD_SEA: 'DET DØDE HAV',
+      JORDAN_RIVER: 'Jordanfloden',
+      MEDITERRANEAN: 'MIDDELHAVET',
+      KIDRON_VALLEY: 'Kidrondalen',
+      TEMPLE: 'TEMPLET',
+      WALK: 'vejen',
+      HINNOM_VALLEY: 'Hinnoms dal',
+      MOUNT_OF_OLIVES: 'OLIEBJERGET',
+      BETHANY: 'Betania',
+      BETHLEHEM: 'Betlehem'
+    },
+    persons: {
+      peter: 'Peter',
+      circumcision_party: 'De omskårne troende',
+      six_jewish_witnesses: 'De seks jødiske vidner',
+      barnabas: 'Barnabas',
+      paul: 'Saul (Paulus)',
+      agabus: 'Agabus',
+      cypriote_and_cyrenian_missionaries: 'Missionærer fra Cypern og Kyrene',
+      antioch_disciples: 'Disciplene i Antiokia',
+      jerusalem_prophets: 'Profeter fra Jerusalem',
+      elders_of_jerusalem: 'De ældste i Jerusalem'
+    },
+    locations: {
+      jerusalem: { name: 'Jerusalem' },
+      caesarea: { name: 'Caesarea' },
+      joppa: { name: 'Joppe' },
+      phoenicia: { name: 'Fønikien' },
+      cyprus: { name: 'Cypern' },
+      antioch_syria: { name: 'Antiokia' },
+      tarsus: { name: 'Tarsus' }
+    },
+    events: {
+      peter_confronted_in_jerusalem: {
+        title: 'Troende i Jerusalem udfordrer Peter',
+        description: 'Rygtet om det, der skete i Caesarea, når hurtigt til Judæa. Da Peter kommer tilbage til Jerusalem, konfronterer de omskårne troende ham. Deres anklage er skarp: han gik ind hos uomskårne mænd og spiste sammen med dem. Det var et alvorligt brud på de sociale og rituelle grænser, der markerede jødisk identitet, og det tvinger menigheden til at tage stilling til hedningernes plads.',
+        timeline_label: 'Peter konfronteres'
+      },
+      peter_recounts_the_visions: {
+        title: 'Peter fortæller synene i rækkefølge',
+        description: 'Peter gennemgår hele forløbet for menigheden: bønnen på taget, synet af lagenet med urene dyr, den tredobbelte befaling fra himlen, Åndens direkte ordre om at gå med sendebuddene uden at tøve, og Cornelius\' beretning om englen. Peter fremstiller det som Guds sammenhængende initiativ, ikke som sin egen private beslutning.',
+        timeline_label: 'Peters forsvar'
+      },
+      peter_cites_holy_spirit_evidence: {
+        title: 'Peter peger på Ånden som afgørende bevis',
+        description: 'Peter når højdepunktet i sit forsvar: Helligånden faldt over Cornelius\' husstand på samme måde, som den faldt over disciplene ved pinsen. Han husker Jesu ord om dåb med Helligånden og stiller spørgsmålet, der afgør sagen: Hvis Gud gav dem samme gave som os, hvem var Peter da til at stå Gud i vejen?',
+        timeline_label: 'Ånden sammenlignes med pinsen'
+      },
+      jerusalem_church_accepts_gentile_mission: {
+        title: 'Jerusalems menighed accepterer hedningemissionen',
+        description: 'Indvendingerne forstummer. Derefter priser menigheden Gud og erkender, at Gud også har givet hedningerne den omvendelse, der fører til liv. Verset er kort, men afgørende: modermenigheden accepterer, at hedninger kan modtages fuldt ud uden først at blive omskåret.',
+        timeline_label: 'Jerusalem accepterer hedningemissionen'
+      },
+      scattered_believers_reach_antioch: {
+        title: 'Spredte troende planter en menighed i Antiokia',
+        description: 'Fortællingen springer tilbage til forfølgelsen efter Stefanus\' død. Spredte troende rejste til Fønikien, Cypern og Antiokia og talte først kun til jøder. Men nogle mænd fra Cypern og Kyrene begyndte i Antiokia også at forkynde Herren Jesus for grækere. Herrens hånd var med dem, og mange kom til tro og vendte sig til Herren.',
+        timeline_label: 'Evangeliet når hedninger i Antiokia'
+      },
+      barnabas_sent_to_antioch: {
+        title: 'Barnabas sendes for at undersøge Antiokia',
+        description: 'Nyheden om Antiokia når Jerusalem, og menigheden sender Barnabas af sted. Da han kommer frem og ser Guds nåde, bliver han glad og opmuntrer alle til at holde fast ved Herren af hele hjertet. Lukas understreger Barnabas\' karakter: han var en god mand, fuld af Helligånden og tro. Endnu flere føres til Herren.',
+        timeline_label: 'Barnabas kommer til Antiokia'
+      },
+      barnabas_recruits_paul: {
+        title: 'Barnabas henter Paulus fra Tarsus',
+        description: 'Barnabas ser, at arbejdet er større end én person kan bære. Han rejser derfor til Tarsus for at finde Saul, den tidligere forfølger, som var vendt hjem efter de urolige første dage i Jerusalem. Barnabas fører ham til Antiokia, hvor de sammen underviser menigheden og mange andre gennem et helt år.',
+        timeline_label: 'Barnabas finder Paulus'
+      },
+      disciples_called_christians: {
+        title: 'Disciplene kaldes først kristne i Antiokia',
+        description: 'Lukas tilføjer en vigtig historisk note: det var i Antiokia, at disciplene først blev kaldt kristne. Navnet kan være givet af udenforstående og betyder mennesker, der tilhører Kristus eller Kristus-partiet. Det markerer, at bevægelsen nu bliver genkendt som en tydelig, selvstændig identitet i en hedensk storby.',
+        timeline_label: 'Navnet kristen bruges først'
+      },
+      agabus_predicts_famine: {
+        title: 'Agabus profeterer om hungersnød',
+        description: 'En gruppe profeter kommer fra Jerusalem til Antiokia. En af dem, Agabus, rejser sig og forudsiger ved Ånden, at en alvorlig hungersnød vil ramme hele den romerske verden. Lukas bemærker, at det skete under Claudius. Profetien bliver ikke behandlet som sensation, men som en praktisk kaldelse til handling.',
+        timeline_label: 'Agabus\' hungersnødsprofeti'
+      },
+      antioch_sends_relief_to_jerusalem: {
+        title: 'Antiokia sender hjælp til Jerusalem',
+        description: 'Disciplene i Antiokia beslutter, at hver især efter evne vil sende hjælp til brødrene og søstrene i Judæa. De samler gaven og sender den til de ældste i Jerusalem gennem Barnabas og Saul. Den unge, overvejende hedningekristne menighed hjælper dermed modermenigheden og viser, at fællesskab også er materielt ansvar.',
+        timeline_label: 'Antiokia sender nødhjælp til Jerusalem'
+      }
+    },
+    timeline: {
+      scattered_believers_reach_antioch: { label: 'Evangeliet når Antiokia', relative_time: 'Baggrund: efter Stefanus\' martyrdød' },
+      peter_confronted_in_jerusalem: { label: 'Peter udfordres', relative_time: 'Efter Cornelius-begivenheden' },
+      peter_recounts_the_visions: { label: 'Peters forsvar', relative_time: 'Samme møde' },
+      peter_cites_holy_spirit_evidence: { label: 'Pinsens parallel nævnes', relative_time: 'Samme møde, klimaks' },
+      jerusalem_church_accepts_gentile_mission: { label: 'Jerusalem accepterer hedninger', relative_time: 'Mødets afslutning' },
+      barnabas_sent_to_antioch: { label: 'Barnabas undersøger Antiokia', relative_time: 'Kort efter' },
+      barnabas_recruits_paul: { label: 'Barnabas finder Paulus', relative_time: 'Efter arbejdet er begyndt' },
+      disciples_called_christians: { label: 'Navnet kristen bruges først', relative_time: 'I undervisningsåret' },
+      agabus_predicts_famine: { label: 'Hungersnød profeteres', relative_time: 'Før hungersnøden under Claudius' },
+      antioch_sends_relief_to_jerusalem: { label: 'Hjælpen sendes', relative_time: 'Som svar på profetien' }
+    }
+  }
+};
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH11, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shortLabel = value
+    .replace(/^c\.\s*/, '')
+    .replace(/Late /, '')
+    .replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '')
+    .replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '')
+    .trim();
+  return includeYear && marker ? `${marker} ${shortLabel}`.trim() : (shortLabel || marker);
+}
+
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
+
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  if (marker && yearMarker(base) === marker) return base;
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
+/* ── PERSON COLORS ── */
+const PCOLORS = {
+  "peter": "#E8591A",
+  "circumcision_party": "#8C6F5A",
+  "six_jewish_witnesses": "#5B8FA8",
+  "barnabas": "#6B8F71",
+  "paul": "#7A6BB0",
+  "agabus": "#D4A24C",
+  "cypriote_and_cyrenian_missionaries": "#4F9A8A",
+  "antioch_disciples": "#9B7EB0",
+  "jerusalem_prophets": "#A46A6A",
+  "elders_of_jerusalem": "#6F8790",
+};
+
+/* ── MAP COORDINATES (SVG 1000x800 viewBox, schematic eastern Mediterranean route map) ── */
+const VW = 1000, VH = 800;
+const locLabel = (id, fallback) => DATA.locations.find(l => l.id === id)?.name || fallback;
+const LOCS = {
+  jerusalem: { x: 365, y: 410, label: locLabel('jerusalem', 'Jerusalem') },
+  caesarea: { x: 190, y: 275, label: locLabel('caesarea', 'Caesarea') },
+  joppa: { x: 165, y: 475, label: locLabel('joppa', 'Joppa') },
+  phoenicia: { x: 150, y: 135, label: locLabel('phoenicia', 'Phoenicia') },
+  cyprus: { x: 360, y: 110, label: locLabel('cyprus', 'Cyprus') },
+  antioch_syria: { x: 610, y: 95, label: locLabel('antioch_syria', 'Antioch') },
+  tarsus: { x: 745, y: 135, label: locLabel('tarsus', 'Tarsus') },
+};
+
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
+
+/* Build route stops with pixel coords */
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label || person?.name || r.person_id,
+      stops: r.path.map(s => ({
+        ...s,
+        ...(LOCS[s.location_id] || { x: 360, y: 360 }),
+      })),
+    };
+  });
+
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({
+        order: idx + 1,
+        location_id: ev.location_id,
+        event_id: ev.id,
+        ...(LOCS[ev.location_id] || { x: 360, y: 360 }),
+      }));
+    if (!stops.length) return;
+    out[person.id] = {
+      color: PCOLORS[person.id] || '#888',
+      label: person.name,
+      stops,
+    };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+/* Compute per-event person state */
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = {
+      color: route.color,
+      label: route.label,
+      pos:   { x: lastStop.x, y: lastStop.y },
+      active,
+      faded: !active,
+    };
+  });
+  return result;
+}
+
+/* ── MAP TERRAIN ── */
+function Terrain() {
+  return (
+    <g>
+      {/* Base land */}
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-land)" />
+
+      {/* Judea */}
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 700 320 780 360 Q 820 380 820 440 Q 820 520 760 560 Q 700 600 580 620 Q 450 640 300 630 Q 180 620 100 580 Q 40 550 30 480 Q 20 420 50 300 Z"
+        fill="oklch(87% 0.055 90)" opacity="1" />
+      <text x="160" y="580" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(48% 0.07 75)" letterSpacing="3" opacity=".7">{mapText('JUDEA')}</text>
+
+      {/* Peraea */}
+      <path d="M 820 200 Q 860 220 920 260 Q 970 300 980 380 Q 990 450 960 520 Q 940 570 900 600 Q 870 620 840 600 Q 820 560 820 500 Q 820 420 820 360 Q 820 280 820 200 Z"
+        fill="oklch(82% 0.045 110)" opacity=".85" />
+      <text x="880" y="380" fontSize="11" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(42% 0.06 90)" letterSpacing="2" opacity=".65" transform="rotate(90,880,380)">{mapText('PERAEA')}</text>
+
+      {/* Northern region */}
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 650 310 720 290 Q 780 270 820 200 Q 820 120 780 70 Q 700 30 500 20 Q 300 10 150 50 Q 60 80 40 160 Q 20 230 50 300 Z"
+        fill="oklch(85% 0.04 130)" opacity=".6" />
+      <text x="200" y="120" fontSize="12" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(40% 0.06 120)" letterSpacing="2" opacity=".55">{mapText('SAMARIA')}</text>
+
+      {/* Region borders */}
+      <path d="M 50 300 Q 200 265 380 272 Q 520 278 650 295 Q 730 308 790 330"
+        fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      <path d="M 790 330 Q 818 370 820 430 Q 820 500 800 560"
+        fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      <path d="M 820 140 Q 828 220 825 320 Q 822 420 818 520 Q 815 580 820 650"
+        fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".7" strokeLinecap="round" />
+
+      {/* Dead Sea */}
+      <path d="M 818 400 Q 835 390 870 400 Q 920 420 940 470 Q 960 520 940 570 Q 920 620 880 640 Q 850 650 830 630 Q 815 610 815 570 Q 814 500 818 400 Z"
+        fill="var(--map-water)" opacity=".85" />
+      <text x="880" y="520" textAnchor="middle" fontSize="11"
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(35% 0.06 220)"
+        letterSpacing="1.5" opacity=".8">{mapText('DEAD_SEA')}</text>
+
+      {/* Jordan River */}
+      <path d="M 825 30 C 832 120 830 220 825 320 C 821 390 818 420 818 450"
+        fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".75" strokeLinecap="round" />
+      <text x="842" y="200" fontSize="10" fill="oklch(38% 0.07 220)" opacity=".65"
+        fontFamily="Barlow" fontWeight="500" transform="rotate(84,842,200)">{mapText('JORDAN_RIVER')}</text>
+
+      {/* Mediterranean Sea */}
+      <path d="M 0 0 L 0 800 L 40 800 Q 30 600 25 400 Q 20 200 40 0 Z"
+        fill="var(--map-water)" opacity=".5" />
+      <text x="18" y="400" fontSize="9" fill="oklch(35% 0.06 220)" opacity=".55"
+        fontFamily="Barlow Condensed" fontWeight="700" letterSpacing="1"
+        transform="rotate(-90,18,400)">{mapText('MEDITERRANEAN')}</text>
+
+      {/* Kidron Valley */}
+      <path d="M 660 80 Q 590 170 550 260 Q 525 330 515 400 Q 508 460 510 520"
+        fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="3.5" opacity=".4" />
+      <text x="560" y="290" fontSize="10" fill="oklch(42% 0.05 80)" opacity=".55"
+        fontFamily="Barlow" transform="rotate(68,560,290)">{mapText('KIDRON_VALLEY')}</text>
+
+      {/* Jerusalem city walls */}
+      <rect x="292" y="345" width="165" height="125" rx="8"
+        fill="oklch(80% 0.06 80)" opacity=".3"
+        stroke="oklch(42% 0.08 60)" strokeWidth="3" />
+      <rect x="292" y="345" width="165" height="125" rx="8"
+        fill="none" stroke="oklch(62% 0.09 55)" strokeWidth="1.5" opacity=".6" strokeDasharray="6 4" />
+
+      {/* Temple Mount */}
+      <rect x="382" y="358" width="68" height="52" rx="4"
+        fill="oklch(75% 0.08 75)" opacity=".45"
+        stroke="oklch(48% 0.08 60)" strokeWidth="2" />
+      <text x="416" y="388" textAnchor="middle" fontSize="9.5"
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(30% 0.06 55)" opacity=".9">{mapText('TEMPLE')}</text>
+
+      {/* Road: Mt Olives → Jerusalem */}
+      <path d="M 648 228 Q 600 275 560 315 Q 520 352 475 382 Q 445 400 410 413"
+        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".6"
+        strokeDasharray="10 6" strokeLinecap="round" />
+      <text x="545" y="335" fontSize="10" fill="oklch(38% 0.06 70)" opacity=".55"
+        fontFamily="Barlow" transform="rotate(44,545,335)">{mapText('WALK')}</text>
+
+      {/* Hinnom Valley */}
+      <path d="M 140 565 Q 220 598 305 590 Q 348 586 378 572 Q 398 560 408 542"
+        fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="2.5" opacity=".35" />
+      <text x="220" y="625" fontSize="9.5" fill="oklch(42% 0.05 80)" opacity=".45"
+        fontFamily="Barlow">{mapText('HINNOM_VALLEY')}</text>
+
+      {/* Akeldama */}
+      <circle cx="355" cy="572" r="10"
+        fill="oklch(60% 0.14 30)" opacity=".25"
+        stroke="var(--accent)" strokeWidth="2" />
+      <text x="372" y="577" fontSize="10"
+        fill="var(--accent)" opacity=".7"
+        fontFamily="Barlow" fontStyle="italic" fontWeight="500">Akeldama</text>
+
+      {/* Mount of Olives */}
+      <ellipse cx="668" cy="255" rx="115" ry="85"
+        fill="oklch(82% 0.05 100)" opacity=".45"
+        stroke="oklch(55% 0.06 80)" strokeWidth="1.5" />
+      <text x="668" y="148" textAnchor="middle" fontSize="13"
+        fontFamily="Barlow Condensed" fontWeight="800" fill="oklch(35% 0.07 70)"
+        letterSpacing="1.5" opacity=".75">{mapText('MOUNT_OF_OLIVES')}</text>
+
+      {/* Bethany */}
+      <circle cx="790" cy="240" r="6" fill="oklch(55% 0.07 80)" opacity=".45" />
+      <text x="802" y="244" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".6"
+        fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHANY')}</text>
+
+      {/* Bethlehem */}
+      <circle cx="310" cy="720" r="6" fill="oklch(55% 0.07 80)" opacity=".4" />
+      <text x="322" y="724" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".5"
+        fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHLEHEM')}</text>
+
+      {/* Scale bar */}
+      <g transform="translate(60,755)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~1 km</text>
+      </g>
+
+      {/* North arrow */}
+      <g transform="translate(60,95)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
+          fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+
+function RouteLines() { return null; }
+
+/* ── LOCATION MARKERS ── */
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7}
+              fill={on ? 'var(--accent)' : 'var(--fg-muted)'}
+              stroke="var(--map-land)" strokeWidth="3"
+              style={{ transition: 'r .3s' }}
+            />
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5}
+              fontSize={on ? 17 : 14}
+              fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
+              fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
+              letterSpacing=".5"
+              style={{ transition: 'font-size .3s' }}
+            >{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/* ── PERSON DOTS ── */
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const cols = Math.min(3, groupSize);
+    const row = Math.floor(myGroupIdx / cols);
+    const col = myGroupIdx % cols;
+    const rows = Math.ceil(groupSize / cols);
+    const spacing = 30;
+    const offsetX = (col - (cols - 1) / 2) * spacing;
+    const offsetY = (row - (rows - 1) / 2) * spacing;
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
+    return { x, y };
+  };
+
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y}
+                  stroke={s.color} strokeWidth="3" strokeLinecap="round"
+                  strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR}
+              fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
+              style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
+            />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle"
+              fontSize={s.active ? 13 : 10} fontWeight="800" fill="white"
+              fontFamily="Barlow Condensed" pointerEvents="none"
+              style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              {(s.label || '?').charAt(0)}
+            </text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle"
+                fontSize="12" fontWeight="800" fill={s.color}
+                fontFamily="Barlow Condensed" pointerEvents="none"
+                style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+              >
+                {s.label}
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+
+/* ── MAP PANEL ── */
+function MapPanel({ activeEventId, onStep, onEventChange }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+  const playbackRef = useRef(null);
+
+  useEffect(() => {
+    const root = playbackRef.current;
+    if (!root) return;
+    const activeStep = root.querySelector(".playback-step.active");
+    if (!activeStep) return;
+    const rootRect = root.getBoundingClientRect();
+    const stepRect = activeStep.getBoundingClientRect();
+    const inset = 24;
+    if (stepRect.left < rootRect.left + inset || stepRect.right > rootRect.right - inset) {
+      const targetLeft = activeStep.offsetLeft + activeStep.offsetWidth / 2 - root.clientWidth / 2;
+      root.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+    }
+  }, [activeIndex]);
+
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
+
+  return (
+    <div className="map-col">
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && (
+          <div className="ban-loc">
+            <div className="ban-loc-dot" />
+            {loc.name}
+          </div>
+        )}
+      </div>
+
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+
+      <div className="map-controls-panel">
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="map-playback" ref={playbackRef}>
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button
+                key={tl.event_id}
+                type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}
+              >
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Caesarea · Antioch · Tarsus'}</div>
+    </div>
+  );
+}
+
+/* ── TIMELINE PANEL ── */
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(false);
+
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) {
+      scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    }
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
+
+  /* Badge positions mark Antioch, Peter's defense, Jerusalem acceptance, teaching, and relief. */
+  const BADGE_POSITIONS = { 0: 0, 1: 1, 4: 2, 6: 3, 9: 4 };
+  const DEFAULT_BADGES = ['Antioch Begins', 'Peter Defends', 'Jerusalem Praises', 'Barnabas and Paul', 'Relief Sent'];
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Open <em>Door</em></>}</div>
+      </div>
+
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div
+                  ref={el => entryRefs.current[tl.event_id] = el}
+                  data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}
+                >
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ── */
+function App() {
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
+
+  useEffect(() => {
+    document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
+
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/010';
+        return prev;
+      }
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '— Jerusalem, Caesarea, Antioch, and Tarsus · c. AD 37-46'}</span>
+        <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">
+          {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
+        </a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>
+          {INITIAL_LANG === 'da' ? 'En' : 'Da'}
+        </button>
+      </div>
+
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel
+          activeEventId={activeEv}
+          onStep={stepEvent}
+          onEventChange={handleEventChange}
+        />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

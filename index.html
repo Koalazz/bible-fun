@@ -8,7 +8,7 @@
 (() => {
   const match = window.location.pathname.replace(/\/+$/, '').match(/^\/bible\/acts\/(\d{3})$/);
   if (match) {
-    window.location.replace(`/bible/acts/${match[1]}.html${window.location.search}${window.location.hash}`);
+    window.location.replace(`/bible/acts/static/${match[1]}/${window.location.search}${window.location.hash}`);
   }
 })();
 </script>
