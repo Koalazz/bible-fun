@@ -263,35 +263,35 @@ const ACTS_CH3 = {
       "position": 1,
       "label": "Heading to Prayer",
       "relative_time": "3pm (ninth hour)",
-      "absolute_time": "Sometime after Pentecost, AD 30 or 33"
+      "absolute_time": "Summer–Autumn AD 30 (or AD 33)"
     },
     {
       "event_id": "lame_man_begging",
       "position": 2,
       "label": "Beggar Encountered",
       "relative_time": "At 3pm prayer hour",
-      "absolute_time": "Same day"
+      "absolute_time": "Summer–Autumn AD 30 (or AD 33)"
     },
     {
       "event_id": "healing_of_lame_man",
       "position": 3,
       "label": "Healing Performed",
       "relative_time": "3pm, at the gate",
-      "absolute_time": "Same day"
+      "absolute_time": "Summer–Autumn AD 30 (or AD 33)"
     },
     {
       "event_id": "crowd_amazed",
       "position": 4,
       "label": "Crowd Recognizes Miracle",
       "relative_time": "Immediately after healing",
-      "absolute_time": "Same day"
+      "absolute_time": "Summer–Autumn AD 30 (or AD 33)"
     },
     {
       "event_id": "peters_second_sermon",
       "position": 5,
       "label": "Sermon in the Portico",
       "relative_time": "Shortly after the healing",
-      "absolute_time": "Same afternoon"
+      "absolute_time": "Summer–Autumn AD 30 (or AD 33)"
     }
   ],
   "theological_themes": [
