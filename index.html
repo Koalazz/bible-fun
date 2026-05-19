@@ -4,14 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Bible Fun</title>
-<script>
-(() => {
-  const match = window.location.pathname.replace(/\/+$/, '').match(/^\/bible\/acts\/(\d{3})$/);
-  if (match) {
-    window.location.replace(`/bible/acts/${match[1]}.html${window.location.search}${window.location.hash}`);
-  }
-})();
-</script>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
