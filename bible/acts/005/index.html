@@ -249,9 +249,16 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
 .map-controls-panel { display: contents; }
 .map-corner-label { position:absolute; bottom:18px; right:18px; font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none; }
 .map-playback { position: absolute; right: 18px; bottom: 42px; z-index: 12; width: min(460px, calc(100% - 36px)); background: oklch(99.5% 0.008 80 / .9); border: 1px solid var(--border); box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14); padding: 10px 12px; backdrop-filter: blur(8px); }
-.playback-top { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:9px; }
-.playback-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--fg-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.playback-buttons { display:flex; gap:6px; flex-shrink:0; }
+.playback-top { position:relative; display:flex; align-items:center; gap:10px; min-height:26px; margin-bottom:9px; padding-right:72px; }
+.playback-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--fg-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; width:100%; }
+.playback-buttons {
+  position:absolute;
+  top:0;
+  right:0;
+  display:flex;
+  gap:6px;
+  flex-shrink:0;
+}
 .playback-btn { width:30px; height:26px; border:1px solid var(--border); background:var(--card); color:var(--fg); border-radius:3px; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:800; cursor:pointer; line-height:1; }
 .playback-track { position:relative; height:28px; display:grid; grid-template-columns:repeat(var(--step-count), 1fr); align-items:center; gap:0; }
 .playback-track::before { content:''; position:absolute; left:10px; right:10px; top:13px; height:2px; background:var(--border); }
@@ -286,13 +293,19 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   .map-leg-dot { width: 6px; height: 6px; }
   .map-corner-label { display: none; }
   .map-playback { position: relative; right:auto; bottom:auto; width:100%; padding:7px 8px; }
+  .playback-top { min-height:34px; padding-right:88px; }
   .playback-label { font-size:10px; }
   .playback-btn { width:38px; height:34px; font-size:20px; }
   .playback-track { height: 38px; align-items: start; }
   .playback-track::before { top:8px; }
   .playback-step { width:18px; height:18px; }
-  .playback-step-time { display: block; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 42px; color: var(--fg-muted); font-size: 7px; font-weight: 800; letter-spacing: .02em; line-height: 1.05; text-align: center; pointer-events: none; }
-  .playback-step.active .playback-step-time { color: var(--accent); }
+  .playback-step-time { display: none; position: absolute; top: 20px; left: auto; right: 50%; transform: none; width: 42px; color: var(--fg-muted); font-size: 7px; font-weight: 800; letter-spacing: .02em; line-height: 1.05; text-align: right; pointer-events: none; }
+  .playback-step:first-child .playback-step-time {
+    left: 50%;
+    right: auto;
+    text-align: left;
+  }
+  .playback-step.active .playback-step-time { display: block; color: var(--accent); }
   .person-name-label { display: none; }
   .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
   .tl-chapter-strip { padding: 10px 14px 8px; }
@@ -614,6 +627,22 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
   const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
   const loc     = DATA.locations.find(l => l.id === locId);
   const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+  const playbackRef = useRef(null);
+
+  useEffect(() => {
+    const root = playbackRef.current;
+    if (!root) return;
+    const activeStep = root.querySelector(".playback-step.active");
+    if (!activeStep) return;
+    const rootRect = root.getBoundingClientRect();
+    const stepRect = activeStep.getBoundingClientRect();
+    const inset = 24;
+    if (stepRect.left < rootRect.left + inset || stepRect.right > rootRect.right - inset) {
+      const targetLeft = activeStep.offsetLeft + activeStep.offsetWidth / 2 - root.clientWidth / 2;
+      root.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+    }
+  }, [activeIndex]);
+
   const prevStatesRef = useRef(null);
   const prevEventRef  = useRef(null);
   const [prevStates, setPrevStates] = useState(null);
@@ -651,7 +680,7 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
             </div>
           ))}
         </div>
-        <div className="map-playback">
+        <div className="map-playback" ref={playbackRef}>
           <div className="playback-top">
             <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
             <div className="playback-buttons">

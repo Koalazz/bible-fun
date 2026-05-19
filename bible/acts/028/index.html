@@ -813,11 +813,13 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   backdrop-filter: blur(8px);
 }
 .playback-top {
+  position:relative;
   display:flex;
   align-items:center;
-  justify-content:space-between;
   gap:10px;
+  min-height:26px;
   margin-bottom:9px;
+  padding-right:72px;
 }
 .playback-label {
   font-family:'Barlow Condensed',sans-serif;
@@ -829,8 +831,17 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
+  min-width:0;
+  width:100%;
 }
-.playback-buttons { display:flex; gap:6px; flex-shrink:0; }
+.playback-buttons {
+  position:absolute;
+  top:0;
+  right:0;
+  display:flex;
+  gap:6px;
+  flex-shrink:0;
+}
 .playback-btn {
   width:30px;
   height:26px;
@@ -1005,6 +1016,7 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
     overflow-x: auto;
     overflow-y: visible;
   }
+  .playback-top { min-height:34px; padding-right:88px; }
   .playback-label { font-size:10px; }
   .playback-btn { width:38px; height:34px; font-size:20px; }
   .playback-track {
@@ -1015,11 +1027,12 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   .playback-track::before { top:8px; }
   .playback-step { width:18px; height:18px; }
   .playback-step-time {
-    display: block;
+    display: none;
     position: absolute;
     top: 22px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: auto;
+    right: 50%;
+    transform: none;
     width: 84px;
     color: var(--fg);
     background: oklch(99.5% 0.008 80 / .92);
@@ -1030,14 +1043,20 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
     font-weight: 800;
     letter-spacing: 0;
     line-height: 1.15;
-    text-align: center;
+    text-align: right;
     white-space: normal;
     overflow-wrap: anywhere;
     hyphens: auto;
     pointer-events: none;
     box-shadow: 0 2px 8px oklch(10% 0.02 55 / .1);
   }
+  .playback-step:first-child .playback-step-time {
+    left: 50%;
+    right: auto;
+    text-align: left;
+  }
   .playback-step.active .playback-step-time {
+    display: block;
     color: oklch(99% 0.008 80);
     background: var(--accent);
     border-color: var(--accent);
@@ -1524,6 +1543,21 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
   const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
   const loc     = DATA.locations.find(l => l.id === locId);
   const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+  const playbackRef = useRef(null);
+
+  useEffect(() => {
+    const root = playbackRef.current;
+    if (!root) return;
+    const activeStep = root.querySelector(".playback-step.active");
+    if (!activeStep) return;
+    const rootRect = root.getBoundingClientRect();
+    const stepRect = activeStep.getBoundingClientRect();
+    const inset = 24;
+    if (stepRect.left < rootRect.left + inset || stepRect.right > rootRect.right - inset) {
+      const targetLeft = activeStep.offsetLeft + activeStep.offsetWidth / 2 - root.clientWidth / 2;
+      root.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+    }
+  }, [activeIndex]);
 
   const prevStatesRef = useRef(null);
   const prevEventRef  = useRef(null);
@@ -1573,7 +1607,7 @@ function MapPanel({ activeEventId, onStep, onEventChange }) {
           ))}
         </div>
 
-        <div className="map-playback">
+        <div className="map-playback" ref={playbackRef}>
           <div className="playback-top">
             <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
             <div className="playback-buttons">
