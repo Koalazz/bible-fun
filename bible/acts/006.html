@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 6 — Seven Chosen, One Accused</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script>
+const ACTS_CH6 = {
+  "book": "Acts",
+  "chapter": 6,
+  "chapter_title": "Seven Chosen, One Accused",
+  "chapter_summary": "As the Jerusalem church grows rapidly, a dispute breaks out between two groups of Jewish believers over the fair distribution of food to widows. The apostles respond by appointing seven trusted men to manage this practical ministry, freeing the apostles to focus on prayer and preaching. One of the seven, a man named Stephen, begins performing miracles and debating in synagogues, which leads to false accusations and his arrest before the high council.",
+  "date_range": {
+    "approximate": "AD 31–33",
+    "notes": "Most scholars place the early Jerusalem church events of Acts 6 within two to three years of the crucifixion, though precise dating depends on whether AD 30 or AD 33 is accepted for the Passion."
+  },
+  "persons": [
+    {
+      "id": "the_twelve",
+      "name": "The Twelve (Apostles)",
+      "role": "Group — Apostles",
+      "first_mention_verse": "6:2",
+      "summary": "The twelve apostles, led by Peter, convene the whole community to address the widows dispute and propose the appointment of seven helpers. They clarify that their own calling is to prayer and the ministry of the word, not table service.",
+      "significance": "Their structured response to a social conflict reveals the early church's organizational maturity and sets a pattern of delegated leadership that will recur throughout Acts."
+    },
+    {
+      "id": "hellenistic_widows",
+      "name": "Hellenistic Widows",
+      "role": "Group — Marginalized Believers",
+      "first_mention_verse": "6:1",
+      "summary": "Greek-speaking Jewish Christian widows who were being overlooked in the daily distribution of food, sparking a complaint against the Hebrew-speaking majority. Their grievance triggers the first internal conflict recorded in Acts.",
+      "significance": "They represent the cultural diversity and social tensions already present in the early church, and their situation prompts an important structural reform."
+    },
+    {
+      "id": "hebrew_widows",
+      "name": "Hebrew-Speaking Widows",
+      "role": "Group — Believers",
+      "first_mention_verse": "6:1",
+      "summary": "Aramaic-speaking Jewish Christian widows who were receiving food distribution without complaint, belonging to the cultural majority of the Jerusalem church. Their favored position highlights the ethnic fault line within the community.",
+      "significance": "The contrast between the two groups of widows illustrates how cultural divisions from the broader Jewish world were replicated inside the early church."
+    },
+    {
+      "id": "stephen",
+      "name": "Stephen",
+      "role": "Deacon, Evangelist",
+      "first_mention_verse": "6:5",
+      "summary": "The first of the seven men chosen, described as full of faith and the Holy Spirit, Stephen quickly becomes far more than a table-server — he performs great wonders and signs among the people and engages in public theological debate. False witnesses are brought against him, accusing him of speaking against Moses and the Temple, leading to his arrest.",
+      "significance": "Stephen is the pivotal figure bridging Acts 6–7; his arrest, speech, and martyrdom mark the first Christian martyrdom and trigger the persecution that scatters the church, propelling the gospel outward."
+    },
+    {
+      "id": "philip_the_deacon",
+      "name": "Philip",
+      "role": "Deacon, Evangelist",
+      "first_mention_verse": "6:5",
+      "summary": "Listed second among the Seven, Philip is noted as part of the trusted group selected by the community. Though he has no active speaking role in chapter 6, his selection here sets up his major evangelistic work in chapter 8.",
+      "significance": "Philip will become the first evangelist to preach outside Jerusalem, reaching Samaria and an Ethiopian official, making him a key figure in the geographic expansion of Acts."
+    },
+    {
+      "id": "prochorus",
+      "name": "Prochorus",
+      "role": "Deacon",
+      "first_mention_verse": "6:5",
+      "summary": "One of the Seven chosen to oversee the food distribution, Prochorus is listed third in the group but receives no individual action in the text. He is presented as a trusted, Spirit-filled member of the community.",
+      "significance": "His inclusion among the Seven represents the church's choice to share leadership broadly and trust people outside the apostolic inner circle with official responsibility."
+    },
+    {
+      "id": "nicanor",
+      "name": "Nicanor",
+      "role": "Deacon",
+      "first_mention_verse": "6:5",
+      "summary": "Listed fourth among the Seven, Nicanor is chosen by the congregation as a man of good repute and full of the Spirit. He has no individual narrative role within this chapter.",
+      "significance": "His Greek name, like most of the Seven, suggests the deacons were drawn predominantly from the Hellenistic wing of the church, responding directly to where the complaint arose."
+    },
+    {
+      "id": "timon",
+      "name": "Timon",
+      "role": "Deacon",
+      "first_mention_verse": "6:5",
+      "summary": "Fifth in the list of the Seven, Timon is presented as meeting the community's criteria of good reputation and being Spirit-filled. He plays no individual speaking or action role in this chapter.",
+      "significance": "Along with the other deacons, Timon represents the principle that practical service in the church requires spiritual character, not merely administrative ability."
+    },
+    {
+      "id": "parmenas",
+      "name": "Parmenas",
+      "role": "Deacon",
+      "first_mention_verse": "6:5",
+      "summary": "Sixth in the list of the Seven, Parmenas meets the qualifications and is presented to the apostles with the others for the laying on of hands. He has no individual action in the chapter.",
+      "significance": "His presence in the list completes the picture of a diverse, Hellenistic-leaning deacon group entrusted to resolve a cultural conflict within the church."
+    },
+    {
+      "id": "nicolas_of_antioch",
+      "name": "Nicolas of Antioch",
+      "role": "Deacon, Proselyte",
+      "first_mention_verse": "6:5",
+      "summary": "The seventh and last named, Nicolas is specifically identified as a proselyte from Antioch — that is, a Gentile convert to Judaism who then became a Christian. This makes him the most ethnically distinctive of the Seven.",
+      "significance": "Nicolas's inclusion foreshadows the expansion of the church toward Gentiles and non-Jerusalem communities, a theme that dominates the rest of Acts."
+    },
+    {
+      "id": "synagogue_of_freedmen",
+      "name": "Members of the Synagogue of the Freedmen",
+      "role": "Group — Opponents",
+      "first_mention_verse": "6:9",
+      "summary": "Jews from the diaspora — from Cyrene, Alexandria, Cilicia, and Asia — who worshipped in a synagogue in Jerusalem and engaged Stephen in debate. Unable to refute his arguments, they secretly persuaded men to falsely accuse him of blasphemy.",
+      "significance": "This group represents the organized Jewish opposition that will escalate into the persecution of chapter 8; their tactics of false witness echo the trial of Jesus."
+    },
+    {
+      "id": "false_witnesses_ch6",
+      "name": "False Witnesses",
+      "role": "Group — Accusers",
+      "first_mention_verse": "6:13",
+      "summary": "Men stirred up by Stephen's synagogue opponents who stand before the Sanhedrin and claim that Stephen constantly spoke against the Temple and the Law of Moses. Their testimony is described as false, mirroring the false witnesses at Jesus's trial.",
+      "significance": "The false accusations set the legal and rhetorical stage for Stephen's great speech in chapter 7, in which he will reframe the entire history of Israel."
+    },
+    {
+      "id": "the_council_ch6",
+      "name": "The Council (Sanhedrin)",
+      "role": "Group — Jewish Ruling Body",
+      "first_mention_verse": "6:12",
+      "summary": "The supreme Jewish council of Jerusalem, composed of elders, scribes, and the high priest, who receive the charges brought against Stephen. They observe that his face looks like the face of an angel as he stands before them.",
+      "significance": "The Sanhedrin is the recurring institutional opponent in Acts, representing the religious establishment that repeatedly clashes with the apostles and now with Stephen."
+    }
+  ],
+  "locations": [
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The holy city and center of the early Christian community, where the dispute over widows, the appointment of the Seven, Stephen's debates, and his arrest all take place."
+    },
+    {
+      "id": "synagogue_of_freedmen",
+      "name": "Synagogue of the Freedmen",
+      "modern_name": "disputed",
+      "lat": 31.775,
+      "lng": 35.2354,
+      "description": "A Jerusalem synagogue attended by diaspora Jews from Cyrene, Alexandria, Cilicia, and Asia, where Stephen's public debates sparked the opposition that led to his arrest."
+    },
+    {
+      "id": "sanhedrin_hall",
+      "name": "The Council (Sanhedrin Hall)",
+      "modern_name": "disputed",
+      "lat": 31.7754,
+      "lng": 35.2342,
+      "description": "The meeting hall of the supreme Jewish council in Jerusalem, where Stephen is brought to face the false accusations and where his face appears to shine like an angel."
+    }
+  ],
+  "events": [
+    {
+      "id": "widows_dispute",
+      "sequence": 1,
+      "verses": "6:1",
+      "title": "Complaint Over Widows' Food Distribution",
+      "description": "As the number of disciples multiplies in Jerusalem, Hellenistic (Greek-speaking) Jewish Christians raise a complaint that their widows are being overlooked in the daily food distribution, while the Hebrew-speaking widows are properly served. This is the first recorded internal conflict in the early church, revealing tension between two cultural communities within the same faith. The dispute is serious enough to require immediate attention from the apostles. It highlights the challenge of caring for vulnerable people across cultural lines.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "hellenistic_widows",
+        "hebrew_widows",
+        "the_twelve"
+      ],
+      "timeline_label": "Widows' Dispute",
+      "scroll_anchor": "widows-dispute",
+      "visual_notes": "Illustrate two groups of women on opposite sides; stacks of bread or food bowls in the center with an unequal distribution; Jerusalem street market background."
+    },
+    {
+      "id": "seven_appointed",
+      "sequence": 2,
+      "verses": "6:2-6",
+      "title": "The Seven Deacons Appointed",
+      "description": "The Twelve gather the whole community and propose that seven men of good reputation, full of the Spirit and wisdom, be selected to oversee the practical food ministry, while the apostles focus on prayer and preaching the word. The whole community is pleased by this plan and chooses Stephen, Philip, Prochorus, Nicanor, Timon, Parmenas, and Nicolas. They are brought to the apostles, who pray and lay their hands on them as a formal commissioning. This act is one of the earliest examples of structured ministerial delegation in the church.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "the_twelve",
+        "stephen",
+        "philip_the_deacon",
+        "prochorus",
+        "nicanor",
+        "timon",
+        "parmenas",
+        "nicolas_of_antioch"
+      ],
+      "timeline_label": "Seven Appointed",
+      "scroll_anchor": "seven-appointed",
+      "visual_notes": "Show the apostles laying hands on seven men kneeling in a row; a large gathering of the community in the background watching; golden light suggesting the Spirit's presence."
+    },
+    {
+      "id": "church_growth_summary",
+      "sequence": 3,
+      "verses": "6:7",
+      "title": "The Word Spreads; Many Priests Believe",
+      "description": "Luke provides a brief summary statement noting that the word of God continued to spread and the number of disciples in Jerusalem increased greatly. Remarkably, a large number of Jewish priests also became obedient to the faith. This summary serves as a narrative marker, closing one phase of the Jerusalem story before the focus shifts to Stephen's individual ministry and crisis.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "the_twelve"
+      ],
+      "timeline_label": "Church Grows",
+      "scroll_anchor": "church-growth-summary",
+      "visual_notes": "A wide-angle view of crowded Jerusalem streets with people streaming toward a gathering place; perhaps a priest in Temple robes walking toward the group."
+    },
+    {
+      "id": "stephen_signs_and_wonders",
+      "sequence": 4,
+      "verses": "6:8",
+      "title": "Stephen Performs Signs and Wonders",
+      "description": "Stephen, described as full of grace and power, begins performing great wonders and signs among the people of Jerusalem. This activity goes far beyond his appointed role of food distribution and marks him as a Spirit-empowered figure comparable to the apostles themselves. His public ministry makes him visible and controversial. The narrative signals that Stephen is not merely a social administrator but a powerful evangelist.",
+      "location_id": "jerusalem",
+      "persons_present": [
+        "stephen"
+      ],
+      "timeline_label": "Stephen's Miracles",
+      "scroll_anchor": "stephen-signs-and-wonders",
+      "visual_notes": "Stephen standing in a Jerusalem plaza with hands raised; a crowd watching in amazement; visual cues of healing (someone rising from the ground) or exorcism."
+    },
+    {
+      "id": "synagogue_debate",
+      "sequence": 5,
+      "verses": "6:9-10",
+      "title": "Stephen Debates in the Synagogue",
+      "description": "Members of the Synagogue of the Freedmen — diaspora Jews from Cyrene, Alexandria, Cilicia, and Asia — begin arguing with Stephen. They are unable to withstand the wisdom and the Spirit with which he speaks. This public debate in a recognized religious venue intensifies opposition because Stephen is defeating his opponents on their own theological ground. The failure to rebut him drives his opponents to escalate their tactics.",
+      "location_id": "synagogue_of_freedmen",
+      "persons_present": [
+        "stephen",
+        "synagogue_of_freedmen"
+      ],
+      "timeline_label": "Synagogue Debate",
+      "scroll_anchor": "synagogue-debate",
+      "visual_notes": "Interior of a first-century synagogue; Stephen standing and gesturing while a group of robed men faces him with frustrated expressions; scrolls visible in the background."
+    },
+    {
+      "id": "false_accusation_arranged",
+      "sequence": 6,
+      "verses": "6:11-14",
+      "title": "False Witnesses Brought Against Stephen",
+      "description": "Unable to defeat Stephen in open debate, his opponents secretly persuade men to claim they heard him blaspheme Moses and God. They stir up the people, the elders, and the scribes, and have Stephen seized and brought before the Sanhedrin. False witnesses then testify that Stephen never stopped speaking against the holy place and the Law, alleging he claimed Jesus of Nazareth would destroy the Temple and change the customs Moses handed down. The accusations closely echo those made against Jesus at his own trial.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "synagogue_of_freedmen",
+        "false_witnesses_ch6",
+        "the_council_ch6"
+      ],
+      "timeline_label": "Stephen Accused",
+      "scroll_anchor": "false-accusation-arranged",
+      "visual_notes": "Stephen standing calm before the semicircle of the Sanhedrin; accusers pointing fingers; the high priest seated at center looking stern."
+    },
+    {
+      "id": "stephens_face_shines",
+      "sequence": 7,
+      "verses": "6:15",
+      "title": "Stephen's Face Shines Like an Angel",
+      "description": "As all the members of the council stare at Stephen, they see that his face looks like the face of an angel. This supernatural detail at the close of the chapter creates a moment of awe before Stephen's long speech begins. It echoes Moses's shining face after meeting God on Sinai, subtly foreshadowing Stephen's argument in chapter 7 that he stands in the prophetic tradition of Moses. The image also contrasts his divine radiance with the corrupt proceedings against him.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "the_council_ch6"
+      ],
+      "timeline_label": "Stephen's Angel Face",
+      "scroll_anchor": "stephens-face-shines",
+      "visual_notes": "Close-up of Stephen's face glowing with soft golden light; the council members shielding their eyes or leaning back in astonishment; dark stone hall contrasting the light."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "stephen",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "jerusalem",
+          "event_id": "seven_appointed",
+          "note": "Commissioned by the apostles in Jerusalem as one of the Seven"
+        },
+        {
+          "order": 2,
+          "location_id": "jerusalem",
+          "event_id": "stephen_signs_and_wonders",
+          "note": "Ministers publicly with miracles among the Jerusalem population"
+        },
+        {
+          "order": 3,
+          "location_id": "synagogue_of_freedmen",
+          "event_id": "synagogue_debate",
+          "note": "Engages diaspora Jews in theological debate at their synagogue"
+        },
+        {
+          "order": 4,
+          "location_id": "sanhedrin_hall",
+          "event_id": "stephens_face_shines",
+          "note": "Brought under arrest before the Sanhedrin to face false charges"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "widows_dispute",
+      "position": 1,
+      "label": "Widows' Complaint",
+      "relative_time": "AD 31–33",
+      "absolute_time": "AD 31–33"
+    },
+    {
+      "event_id": "seven_appointed",
+      "position": 2,
+      "label": "Seven Deacons Chosen",
+      "relative_time": "Shortly after",
+      "absolute_time": "AD 31–33"
+    },
+    {
+      "event_id": "church_growth_summary",
+      "position": 3,
+      "label": "Church Grows; Priests Believe",
+      "relative_time": "Ongoing",
+      "absolute_time": "AD 31–33"
+    },
+    {
+      "event_id": "stephen_signs_and_wonders",
+      "position": 4,
+      "label": "Stephen Works Miracles",
+      "relative_time": "AD 31–33",
+      "absolute_time": "AD 31–33"
+    },
+    {
+      "event_id": "synagogue_debate",
+      "position": 5,
+      "label": "Stephen Debates Freedmen",
+      "relative_time": "Shortly after",
+      "absolute_time": "AD 31–33"
+    },
+    {
+      "event_id": "false_accusation_arranged",
+      "position": 6,
+      "label": "False Charges Brought",
+      "relative_time": "Shortly after",
+      "absolute_time": "AD 31–33"
+    },
+    {
+      "event_id": "stephens_face_shines",
+      "position": 7,
+      "label": "Angel Face Before Council",
+      "relative_time": "Same day as arrest",
+      "absolute_time": "AD 31–33"
+    }
+  ],
+  "theological_themes": [
+    "The church's responsibility to care for the vulnerable and marginalized",
+    "Delegation of leadership and the origin of the diaconate",
+    "Cultural and ethnic tensions within the body of Christ",
+    "The Holy Spirit equipping ordinary believers for extraordinary witness",
+    "The pattern of opposition: legitimate debate escalating into false accusation",
+    "The glory of God visible in a faithful witness facing unjust trial"
+  ],
+  "discussion_questions": [
+    "What does the dispute over widows reveal about the challenges of unity in a diverse community, and how does the church's response model conflict resolution?",
+    "Why do you think the apostles chose to delegate table service rather than handle it themselves, and what does this say about different types of ministry?",
+    "Stephen was chosen to serve tables but ended up preaching and working miracles. What does this suggest about how God uses people beyond their assigned roles?",
+    "The false witnesses used distorted versions of Stephen's real teachings. How should a community protect itself and its leaders from misrepresentation?",
+    "What is the significance of Stephen's face shining 'like an angel' as he stands before the council?"
+  ]
+};
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── PAGE SKELETON ── */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* ── BODY: timeline left, map right ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── TIMELINE COLUMN ── */
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+
+/* Chapter label strip */
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.tl-ch-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; line-height:1.1; color:var(--tl-fg);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+
+/* Scrollable event list */
+.tl-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+/* Vertical spine */
+.tl-spine {
+  padding: 8px 0 80px;
+  position: relative;
+}
+.tl-spine::before {
+  content:'';
+  position:absolute;
+  left: 38px;
+  top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent);
+}
+
+/* Year separator badge */
+.tl-year-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 6px 14px;
+  position: relative;
+  z-index: 2;
+}
+.tl-year-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(22% .018 255);
+  border: 1px solid oklch(36% .015 255);
+  padding: 2px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line {
+  flex: 1;
+  height: 1px;
+  background: oklch(30% .012 255);
+  opacity: .5;
+}
+
+/* Each item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s;
+  padding-right: 4px;
+  min-height: 130px;
+}
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+
+/* left: seq number + dot */
+.tl-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+.tl-seq {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  color: oklch(45% .01 255);
+  margin-bottom:5px;
+  letter-spacing:.05em;
+}
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%;
+  border:2px solid oklch(38% .015 255);
+  background: oklch(16% .018 255);
+  position:relative; z-index:1;
+  transition: all .28s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px oklch(58% .19 46 / .2);
+}
+.tl-dot-pip {
+  width:5px; height:5px; border-radius:50%; background:#fff;
+  opacity:0; transition:opacity .28s;
+}
+.tl-item.active .tl-dot-pip { opacity:1; }
+
+/* right: text */
+.tl-r {
+  padding: 22px 10px 22px 6px;
+  border-bottom: 1px solid oklch(24% .012 255);
+}
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date {
+  font-size:11px; font-weight:800; letter-spacing:.1em;
+  font-family:'Barlow Condensed',sans-serif;
+  color: oklch(70% .018 76); margin-bottom:3px;
+}
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time {
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  line-height:1.35;
+  color: oklch(72% .014 78); margin-bottom:6px;
+}
+.tl-item.active .tl-rel-time { color: oklch(82% .035 74); }
+.tl-ev-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px; font-weight:800; text-transform:uppercase;
+  line-height:1.18; color: var(--tl-fg);
+  margin-bottom: 4px;
+}
+.tl-ev-verses {
+  font-size:10px; font-weight:700; letter-spacing:.1em;
+  color: oklch(68% .018 76); margin-top:2px;
+}
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+
+/* ── MAP COLUMN ── */
+.map-col {
+  position: relative;
+  background: var(--map-land);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Event banner at top of map */
+.map-event-banner {
+  position: relative;
+  flex: 0 0 auto;
+  z-index: 10;
+  background: oklch(16% 0.02 55 / 0.92);
+  border-bottom: 2px solid var(--accent);
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 16px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: background .3s;
+}
+.ban-verses {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.ban-content {}
+.ban-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; color:oklch(95% .012 78);
+  line-height:1.1; margin-bottom:4px;
+}
+.ban-desc {
+  font-family:'Lora',serif; font-style:normal;
+  font-size:13px; line-height:1.55;
+  color:oklch(88% .014 78);
+  display: block;
+  overflow: visible;
+}
+.ban-loc {
+  display:flex; align-items:center; gap:5px;
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:oklch(55% .012 70); white-space:nowrap;
+}
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+/* ── MAP SVG ── */
+.map-svg-wrap {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+}
+.map-svg {
+  width:100%; height:100%;
+}
+
+/* Person legend - bottom left of map */
+.map-person-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.map-leg-item {
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; font-weight:600; letter-spacing:.06em;
+  color: var(--fg);
+  background: var(--card);
+  padding: 3px 10px 3px 7px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  transition: opacity .5s, transform .4s;
+}
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-leg-item.entering { animation: legEnter .4s ease forwards; }
+@keyframes legEnter {
+  from { opacity:0; transform:translateX(-8px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+.map-controls-panel { display: contents; }
+
+/* Map overlay labels */
+.map-corner-label {
+  position:absolute; bottom:18px; right:18px;
+  font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
+}
+
+.map-playback {
+  position: absolute;
+  right: 18px;
+  bottom: 42px;
+  z-index: 12;
+  width: min(460px, calc(100% - 36px));
+  background: oklch(99.5% 0.008 80 / .9);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+.playback-top {
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:26px;
+  margin-bottom:9px;
+  padding-right:72px;
+}
+.playback-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  min-width:0;
+  width:100%;
+}
+.playback-buttons {
+  position:absolute;
+  top:0;
+  right:0;
+  display:flex;
+  gap:6px;
+  flex-shrink:0;
+}
+.playback-btn {
+  width:30px;
+  height:26px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--fg);
+  border-radius:3px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  line-height:1;
+}
+.playback-track {
+  position:relative;
+  height:28px;
+  display:grid;
+  grid-template-columns:repeat(var(--step-count), 1fr);
+  align-items:center;
+  gap:0;
+}
+.playback-track::before {
+  content:'';
+  position:absolute;
+  left:10px; right:10px; top:13px;
+  height:2px;
+  background:var(--border);
+}
+.playback-step {
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  width:20px;
+  height:20px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.playback-step::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:var(--fg-muted);
+  opacity:.42;
+  transition:all .24s;
+}
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before {
+  inset:2px;
+  background:var(--accent);
+  opacity:1;
+  box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
+}
+.playback-step-time { display: none; }
+.loc-label {
+  paint-order: stroke;
+  stroke: oklch(98% 0.008 80 / .82);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.person-name-label {
+  display: none;
+  paint-order: stroke;
+  stroke: oklch(16% 0.02 55 / .62);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: 44px auto;
+    overflow: visible;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
+  }
+
+  .map-col {
+    order: -1;
+    overflow: visible;
+  }
+
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+  .home-link,
+  .lang-btn {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .map-event-banner {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    flex: 0 0 auto;
+    padding: 8px 12px 9px;
+    gap: 3px;
+  }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title  { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc {
+    display: block;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow: visible;
+  }
+  .ban-loc    { display: none; }
+  .map-svg-wrap {
+    position: relative;
+    inset: auto;
+    flex: 0 0 clamp(300px, 46dvh, 430px);
+    min-height: clamp(300px, 46dvh, 430px);
+  }
+  .loc-label {
+    font-size: 28px;
+    font-weight: 800;
+    stroke-width: 5px;
+  }
+  .person-name-label { display: block; font-size: 18px; }
+
+  .map-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: oklch(93% 0.025 82);
+    border-top: 1px solid var(--border);
+  }
+
+  .map-person-legend {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    gap: 4px;
+    z-index: 14;
+    max-height: none;
+    overflow-y: auto;
+    padding: 5px;
+    background: oklch(99.5% 0.008 80 / .88);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px oklch(10% 0.02 55 / .12);
+    backdrop-filter: blur(8px);
+  }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
+  .map-leg-dot  { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+  .map-playback {
+    position: relative;
+    right:auto;
+    bottom:auto;
+    width:100%;
+    padding:7px 8px;
+  }
+  .playback-top { min-height:34px; padding-right:88px; }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track {
+    height: 38px;
+    align-items: start;
+  }
+  .playback-track::before { top:8px; }
+  .playback-step { width:18px; height:18px; }
+  .playback-step-time {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: auto;
+    right: 50%;
+    transform: none;
+    width: 42px;
+    color: var(--fg-muted);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: .02em;
+    line-height: 1.05;
+    text-align: right;
+    pointer-events: none;
+  }
+  .playback-step:first-child .playback-step-time {
+    left: 50%;
+    right: auto;
+    text-align: left;
+  }
+  .playback-step.active .playback-step-time { display: block; color: var(--accent); }
+  .person-name-label { display: none; }
+
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {
+  da: {
+    book: 'Apostlenes Gerninger',
+    shortBook: 'ApG',
+    chapterTitle: 'Syv udvælges, én anklages',
+    headerSub: '— Jerusalem · år 31-33',
+    timelineTitle: ['Tjeneste, visdom og', 'falsk anklage'],
+    mapCorner: 'Jerusalem · råd og synagoge',
+    yearBadges: ['Menighedens omsorg', 'Stefanus offentlige vidnesbyrd', 'Forhøret for rådet'],
+    map: {
+      JUDEA: 'JUDÆA',
+      PERAEA: 'PERÆA',
+      SAMARIA: 'SAMARIA ↑',
+      DEAD_SEA: 'DET DØDE HAV',
+      JORDAN_RIVER: 'Jordanfloden',
+      MEDITERRANEAN: 'MIDDELHAVET ←',
+      KIDRON_VALLEY: 'Kidrondalen',
+      TEMPLE: 'TEMPLET',
+      WALK: 'bevægelse gennem byen',
+      HINNOM_VALLEY: 'Hinnoms dal',
+      MOUNT_OF_OLIVES: 'OLIEBJERGET',
+      BETHANY: 'Betania',
+      BETHLEHEM: 'Betlehem'
+    },
+    locations: {
+      jerusalem: { name: 'Jerusalem' },
+      synagogue_of_freedmen: { name: 'De Frigivnes synagoge' },
+      sanhedrin_hall: { name: 'Rådet (Sanhedrin)' }
+    },
+    persons: {
+      the_twelve: 'De Tolv',
+      hellenistic_widows: 'De hellenistiske enker',
+      hebrew_widows: 'De hebraisktalende enker',
+      stephen: 'Stefanus',
+      philip_the_deacon: 'Filip',
+      prochorus: 'Prokoros',
+      nicanor: 'Nikanor',
+      timon: 'Timon',
+      parmenas: 'Parmenas',
+      nicolas_of_antioch: 'Nikolaus fra Antiokia',
+      synagogue_of_freedmen: 'Medlemmer af De Frigivnes synagoge',
+      false_witnesses_ch6: 'Falske vidner',
+      the_council_ch6: 'Rådet'
+    },
+    events: {
+      widows_dispute: { title: 'Klager over enkernes uddeling', description: 'Mens antallet af disciple vokser i Jerusalem, klager de græsktalende jødekristne over, at deres enker bliver overset i den daglige maduddeling, mens de hebraisktalende enker får hjælp. Det er den første interne konflikt, Apostlenes Gerninger beskriver, og den afslører spændinger mellem to kulturelle grupper i samme tro. Sagen er alvorlig nok til, at apostlene må handle med det samme. Den viser, hvor krævende det er at tage vare på sårbare mennesker på tværs af kultur og sprog.', timeline_label: 'Enkernes klage' },
+      seven_appointed: { title: 'De Syv udpeges', description: 'De Tolv samler hele menigheden og foreslår, at syv mænd med godt omdømme, fulde af Ånden og visdom, skal vælges til at tage sig af den praktiske madtjeneste, mens apostlene kan hellige sig bønnen og ordets tjeneste. Forslaget glæder hele menigheden, og de vælger Stefanus, Filip, Prokoros, Nikanor, Timon, Parmenas og Nikolaus. De bliver ført frem for apostlene, som beder og lægger hænderne på dem. Handlingen er et tidligt eksempel på ordnet delegation af tjeneste i kirken.', timeline_label: 'De Syv udpeges' },
+      church_growth_summary: { title: 'Ordet breder sig; mange præster tror', description: 'Lukas giver en kort opsummering: Guds ord fortsætter med at brede sig, og antallet af disciple i Jerusalem vokser stærkt. Bemærkelsesværdigt bliver også en stor skare af jødiske præster lydige mod troen. Opsummeringen markerer afslutningen på en fase i Jerusalem-fortællingen, før fokus flyttes til Stefanus’ personlige tjeneste og den krise, der følger.', timeline_label: 'Menigheden vokser' },
+      stephen_signs_and_wonders: { title: 'Stefanus gør tegn og undere', description: 'Stefanus beskrives som fuld af nåde og kraft og begynder at gøre store undere og tegn blandt folket i Jerusalem. Hans tjeneste rækker langt ud over den maduddeling, han blev udpeget til, og viser ham som en åndsfyldt skikkelse på linje med apostlene. Hans offentlige virke gør ham både synlig og kontroversiel. Fortællingen viser, at Stefanus ikke blot er administrator, men en kraftfuld evangelist.', timeline_label: 'Stefanus undere' },
+      synagogue_debate: { title: 'Stefanus diskuterer i synagogen', description: 'Medlemmer af De Frigivnes synagoge, diaspora-jøder fra Kyrene, Alexandria, Kilikien og Asien, begynder at diskutere med Stefanus. De kan ikke stå sig mod den visdom og den Ånd, han taler med. Den offentlige debat i et anerkendt religiøst rum skærper modstanden, fordi Stefanus imødegår sine modstandere på deres egen teologiske grund. Da de ikke kan gendrive ham, eskalerer de konflikten.', timeline_label: 'Synagogedebat' },
+      false_accusation_arranged: { title: 'Falske vidner føres frem mod Stefanus', description: 'Da modstanderne ikke kan besejre Stefanus i åben debat, overtaler de i hemmelighed mænd til at påstå, at de har hørt ham spotte Moses og Gud. De ophidser folket, de ældste og de skriftkloge, griber Stefanus og fører ham for Sanhedrinet. Falske vidner hævder, at han hele tiden taler imod det hellige sted og loven og siger, at Jesus fra Nazaret vil ødelægge templet og ændre Moses’ skikke. Anklagerne minder tydeligt om dem, der blev rettet mod Jesus.', timeline_label: 'Stefanus anklages' },
+      stephens_face_shines: { title: 'Stefanus ansigt skinner som en engels', description: 'Mens alle rådsmedlemmerne stirrer på Stefanus, ser de, at hans ansigt er som en engels ansigt. Det overnaturlige tegn ved kapitlets afslutning skaber et øjeblik af ærefrygt, før Stefanus’ lange tale begynder. Det minder om Moses’ strålende ansigt efter mødet med Gud på Sinai og antyder, at Stefanus står i Moses’ profetiske tradition. Samtidig står hans gudgivne glans i skarp kontrast til den korrupte retssag imod ham.', timeline_label: 'Ansigt som en engel' }
+    },
+    timeline: {
+      widows_dispute: { label: 'Enkernes klage', relative_time: 'år 31-33' },
+      seven_appointed: { label: 'De Syv vælges', relative_time: 'kort efter' },
+      church_growth_summary: { label: 'Menigheden vokser', relative_time: 'løbende' },
+      stephen_signs_and_wonders: { label: 'Stefanus gør undere', relative_time: 'år 31-33' },
+      synagogue_debate: { label: 'Stefanus debatterer', relative_time: 'kort efter' },
+      false_accusation_arranged: { label: 'Falske anklager', relative_time: 'kort efter' },
+      stephens_face_shines: { label: 'Ansigt som en engel', relative_time: 'samme dag som arrestationen' }
+    }
+  }
+};
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH6, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shortLabel = value
+    .replace(/^c\.\s*/, '')
+    .replace(/Late /, '')
+    .replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '')
+    .replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '')
+    .trim();
+  return includeYear && marker ? `${marker} ${shortLabel}`.trim() : (shortLabel || marker);
+}
+
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
+
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  if (marker && yearMarker(base) === marker) return base;
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
+/* ── PERSON COLORS ── */
+const PCOLORS = {
+  peter:                  '#5B8FA8',
+  john:                   '#A09070',
+  the_apostles:           '#6B9B7E',
+  ananias:                '#C47A5A',
+  sapphira:               '#B87090',
+  high_priest:            '#8C6F5A',
+  sadducees:              '#7A8FA0',
+  angel_of_the_lord:      '#D4C060',
+  gamaliel:               '#9B7EB0',
+  captain_of_the_temple:  '#A0746A',
+  young_men:              '#7A8A7A',
+};
+
+/* ── MAP COORDINATES (SVG 1000×800 viewBox, zoomed tight to Jerusalem area) ── */
+const VW = 1000, VH = 800;
+const LOCS = {
+  jerusalem:          { x: 318, y: 438, label: DATA.locations.find(l => l.id === 'jerusalem')?.name || 'Jerusalem' },
+  synagogue_of_freedmen: { x: 518, y: 372, label: DATA.locations.find(l => l.id === 'synagogue_of_freedmen')?.name || 'Synagogue of the Freedmen' },
+  sanhedrin_hall:       { x: 428, y: 408, label: DATA.locations.find(l => l.id === 'sanhedrin_hall')?.name || 'The Council' },
+};
+
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
+
+/* Build route stops with pixel coords */
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label || person?.name || r.person_id,
+      stops: r.path.map(s => ({
+        ...s,
+        ...(LOCS[s.location_id] || { x: 360, y: 360 }),
+      })),
+    };
+  });
+
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({
+        order: idx + 1,
+        location_id: ev.location_id,
+        event_id: ev.id,
+        ...(LOCS[ev.location_id] || { x: 360, y: 360 }),
+      }));
+    if (!stops.length) return;
+    out[person.id] = {
+      color: PCOLORS[person.id] || '#888',
+      label: person.name,
+      stops,
+    };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+/* Compute per-event person state */
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = {
+      color: route.color,
+      label: route.label,
+      pos:   { x: lastStop.x, y: lastStop.y },
+      active,
+      faded: !active,
+    };
+  });
+  return result;
+}
+
+/* ── MAP TERRAIN ── */
+function Terrain() {
+  return (
+    <g>
+      {/* Base land */}
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-land)" />
+
+      {/* Judea */}
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 700 320 780 360 Q 820 380 820 440 Q 820 520 760 560 Q 700 600 580 620 Q 450 640 300 630 Q 180 620 100 580 Q 40 550 30 480 Q 20 420 50 300 Z"
+        fill="oklch(87% 0.055 90)" opacity="1" />
+      <text x="160" y="580" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(48% 0.07 75)" letterSpacing="3" opacity=".7">{mapText('JUDEA')}</text>
+
+      {/* Peraea */}
+      <path d="M 820 200 Q 860 220 920 260 Q 970 300 980 380 Q 990 450 960 520 Q 940 570 900 600 Q 870 620 840 600 Q 820 560 820 500 Q 820 420 820 360 Q 820 280 820 200 Z"
+        fill="oklch(82% 0.045 110)" opacity=".85" />
+      <text x="880" y="380" fontSize="11" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(42% 0.06 90)" letterSpacing="2" opacity=".65" transform="rotate(90,880,380)">{mapText('PERAEA')}</text>
+
+      {/* Northern region */}
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 650 310 720 290 Q 780 270 820 200 Q 820 120 780 70 Q 700 30 500 20 Q 300 10 150 50 Q 60 80 40 160 Q 20 230 50 300 Z"
+        fill="oklch(85% 0.04 130)" opacity=".6" />
+      <text x="200" y="120" fontSize="12" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(40% 0.06 120)" letterSpacing="2" opacity=".55">{mapText('SAMARIA')}</text>
+
+      {/* Region borders */}
+      <path d="M 50 300 Q 200 265 380 272 Q 520 278 650 295 Q 730 308 790 330"
+        fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      <path d="M 790 330 Q 818 370 820 430 Q 820 500 800 560"
+        fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      <path d="M 820 140 Q 828 220 825 320 Q 822 420 818 520 Q 815 580 820 650"
+        fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".7" strokeLinecap="round" />
+
+      {/* Dead Sea */}
+      <path d="M 818 400 Q 835 390 870 400 Q 920 420 940 470 Q 960 520 940 570 Q 920 620 880 640 Q 850 650 830 630 Q 815 610 815 570 Q 814 500 818 400 Z"
+        fill="var(--map-water)" opacity=".85" />
+      <text x="880" y="520" textAnchor="middle" fontSize="11"
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(35% 0.06 220)"
+        letterSpacing="1.5" opacity=".8">{mapText('DEAD_SEA')}</text>
+
+      {/* Jordan River */}
+      <path d="M 825 30 C 832 120 830 220 825 320 C 821 390 818 420 818 450"
+        fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".75" strokeLinecap="round" />
+      <text x="842" y="200" fontSize="10" fill="oklch(38% 0.07 220)" opacity=".65"
+        fontFamily="Barlow" fontWeight="500" transform="rotate(84,842,200)">{mapText('JORDAN_RIVER')}</text>
+
+      {/* Mediterranean Sea */}
+      <path d="M 0 0 L 0 800 L 40 800 Q 30 600 25 400 Q 20 200 40 0 Z"
+        fill="var(--map-water)" opacity=".5" />
+      <text x="18" y="400" fontSize="9" fill="oklch(35% 0.06 220)" opacity=".55"
+        fontFamily="Barlow Condensed" fontWeight="700" letterSpacing="1"
+        transform="rotate(-90,18,400)">{mapText('MEDITERRANEAN')}</text>
+
+      {/* Kidron Valley */}
+      <path d="M 660 80 Q 590 170 550 260 Q 525 330 515 400 Q 508 460 510 520"
+        fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="3.5" opacity=".4" />
+      <text x="560" y="290" fontSize="10" fill="oklch(42% 0.05 80)" opacity=".55"
+        fontFamily="Barlow" transform="rotate(68,560,290)">{mapText('KIDRON_VALLEY')}</text>
+
+      {/* Jerusalem city walls */}
+      <rect x="292" y="345" width="165" height="125" rx="8"
+        fill="oklch(80% 0.06 80)" opacity=".3"
+        stroke="oklch(42% 0.08 60)" strokeWidth="3" />
+      <rect x="292" y="345" width="165" height="125" rx="8"
+        fill="none" stroke="oklch(62% 0.09 55)" strokeWidth="1.5" opacity=".6" strokeDasharray="6 4" />
+
+      {/* Temple Mount */}
+      <rect x="382" y="358" width="68" height="52" rx="4"
+        fill="oklch(75% 0.08 75)" opacity=".45"
+        stroke="oklch(48% 0.08 60)" strokeWidth="2" />
+      <text x="416" y="388" textAnchor="middle" fontSize="9.5"
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(30% 0.06 55)" opacity=".9">{mapText('TEMPLE')}</text>
+
+      {/* Road: Mt Olives → Jerusalem */}
+      <path d="M 648 228 Q 600 275 560 315 Q 520 352 475 382 Q 445 400 410 413"
+        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".6"
+        strokeDasharray="10 6" strokeLinecap="round" />
+      <text x="545" y="335" fontSize="10" fill="oklch(38% 0.06 70)" opacity=".55"
+        fontFamily="Barlow" transform="rotate(44,545,335)">{mapText('WALK')}</text>
+
+      {/* Hinnom Valley */}
+      <path d="M 140 565 Q 220 598 305 590 Q 348 586 378 572 Q 398 560 408 542"
+        fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="2.5" opacity=".35" />
+      <text x="220" y="625" fontSize="9.5" fill="oklch(42% 0.05 80)" opacity=".45"
+        fontFamily="Barlow">{mapText('HINNOM_VALLEY')}</text>
+
+      {/* Akeldama */}
+      <circle cx="355" cy="572" r="10"
+        fill="oklch(60% 0.14 30)" opacity=".25"
+        stroke="var(--accent)" strokeWidth="2" />
+      <text x="372" y="577" fontSize="10"
+        fill="var(--accent)" opacity=".7"
+        fontFamily="Barlow" fontStyle="italic" fontWeight="500">Akeldama</text>
+
+      {/* Mount of Olives */}
+      <ellipse cx="668" cy="255" rx="115" ry="85"
+        fill="oklch(82% 0.05 100)" opacity=".45"
+        stroke="oklch(55% 0.06 80)" strokeWidth="1.5" />
+      <text x="668" y="148" textAnchor="middle" fontSize="13"
+        fontFamily="Barlow Condensed" fontWeight="800" fill="oklch(35% 0.07 70)"
+        letterSpacing="1.5" opacity=".75">{mapText('MOUNT_OF_OLIVES')}</text>
+
+      {/* Bethany */}
+      <circle cx="790" cy="240" r="6" fill="oklch(55% 0.07 80)" opacity=".45" />
+      <text x="802" y="244" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".6"
+        fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHANY')}</text>
+
+      {/* Bethlehem */}
+      <circle cx="310" cy="720" r="6" fill="oklch(55% 0.07 80)" opacity=".4" />
+      <text x="322" y="724" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".5"
+        fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHLEHEM')}</text>
+
+      {/* Scale bar */}
+      <g transform="translate(60,755)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~1 km</text>
+      </g>
+
+      {/* North arrow */}
+      <g transform="translate(60,95)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
+          fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+
+function RouteLines() { return null; }
+
+/* ── LOCATION MARKERS ── */
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7}
+              fill={on ? 'var(--accent)' : 'var(--fg-muted)'}
+              stroke="var(--map-land)" strokeWidth="3"
+              style={{ transition: 'r .3s' }}
+            />
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5}
+              fontSize={on ? 17 : 14}
+              fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
+              fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
+              letterSpacing=".5"
+              style={{ transition: 'font-size .3s' }}
+            >{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/* ── PERSON DOTS ── */
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const cols = Math.min(3, groupSize);
+    const row = Math.floor(myGroupIdx / cols);
+    const col = myGroupIdx % cols;
+    const rows = Math.ceil(groupSize / cols);
+    const spacing = 30;
+    const offsetX = (col - (cols - 1) / 2) * spacing;
+    const offsetY = (row - (rows - 1) / 2) * spacing;
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
+    return { x, y };
+  };
+
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y}
+                  stroke={s.color} strokeWidth="3" strokeLinecap="round"
+                  strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR}
+              fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
+              style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
+            />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle"
+              fontSize={s.active ? 13 : 10} fontWeight="800" fill="white"
+              fontFamily="Barlow Condensed" pointerEvents="none"
+              style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              {(s.label || '?').charAt(0)}
+            </text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle"
+                fontSize="12" fontWeight="800" fill={s.color}
+                fontFamily="Barlow Condensed" pointerEvents="none"
+                style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+              >
+                {s.label}
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+
+/* ── MAP PANEL ── */
+function MapPanel({ activeEventId, onStep, onEventChange }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+  const playbackRef = useRef(null);
+
+  useEffect(() => {
+    const root = playbackRef.current;
+    if (!root) return;
+    const activeStep = root.querySelector(".playback-step.active");
+    if (!activeStep) return;
+    const rootRect = root.getBoundingClientRect();
+    const stepRect = activeStep.getBoundingClientRect();
+    const inset = 24;
+    if (stepRect.left < rootRect.left + inset || stepRect.right > rootRect.right - inset) {
+      const targetLeft = activeStep.offsetLeft + activeStep.offsetWidth / 2 - root.clientWidth / 2;
+      root.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+    }
+  }, [activeIndex]);
+
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
+
+  return (
+    <div className="map-col">
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && (
+          <div className="ban-loc">
+            <div className="ban-loc-dot" />
+            {loc.name}
+          </div>
+        )}
+      </div>
+
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+
+      <div className="map-controls-panel">
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="map-playback" ref={playbackRef}>
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button
+                key={tl.event_id}
+                type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}
+              >
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Temple Area'}</div>
+    </div>
+  );
+}
+
+/* ── TIMELINE PANEL ── */
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(false);
+
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) {
+      scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    }
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
+
+  /* Badge positions: 0=care issue, 3=Stephen's ministry, 5=council hearing */
+  const BADGE_POSITIONS = { 0: 0, 3: 1, 5: 2 };
+  const DEFAULT_BADGES = ['Community Care', "Stephen's Public Witness", 'Council Hearing'];
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>Service, Wisdom, <em>False Accusation</em></>}</div>
+      </div>
+
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div
+                  ref={el => entryRefs.current[tl.event_id] = el}
+                  data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}
+                >
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ── */
+function App() {
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
+
+  useEffect(() => {
+    document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
+
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/005';
+        return prev;
+      }
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '— Jerusalem · AD 31-33'}</span>
+        <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">
+          {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
+        </a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>
+          {INITIAL_LANG === 'da' ? 'En' : 'Da'}
+        </button>
+      </div>
+
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel
+          activeEventId={activeEv}
+          onStep={stepEvent}
+          onEventChange={handleEventChange}
+        />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acts Chapter 7 — The Speech That Cost Everything</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script>
+const ACTS_CH7 = {
+  "book": "Acts",
+  "chapter": 7,
+  "chapter_title": "The Speech That Cost Everything",
+  "chapter_summary": "Standing before the Jewish high council, Stephen delivers the longest speech in the book of Acts — a sweeping retelling of Israel's history from Abraham to Solomon that argues the Jewish establishment has always resisted God's messengers. He accuses the council of murdering Jesus, the Righteous One, just as their ancestors killed the prophets. The enraged council drives Stephen out of the city and stones him to death, making him the first Christian martyr, while a young man named Saul looks on in approval.",
+  "date_range": {
+    "approximate": "AD 31–34",
+    "notes": "Stephen's martyrdom is placed by most scholars within the first years of the Jerusalem church; the exact year is uncertain, with estimates ranging from AD 31 to AD 36 depending on the dating of Paul's subsequent conversion."
+  },
+  "persons": [
+    {
+      "id": "stephen",
+      "name": "Stephen",
+      "role": "Deacon, Martyr",
+      "first_mention_verse": "7:1",
+      "summary": "Stephen stands before the Sanhedrin and delivers a masterful historical sermon that reframes Israel's entire story as a pattern of rejecting God's chosen deliverers. He ends with a direct accusation against his accusers, sees a vision of Jesus standing at God's right hand, and dies forgiving his killers — the first person recorded as dying for faith in Jesus.",
+      "significance": "Stephen's martyrdom is the catalytic event that scatters the Jerusalem church, launches Philip's mission to Samaria, and introduces Saul of Tarsus — making his death the hinge on which the entire second half of Acts turns."
+    },
+    {
+      "id": "high_priest_ch7",
+      "name": "The High Priest",
+      "role": "Religious Authority",
+      "first_mention_verse": "7:1",
+      "summary": "The high priest opens the proceedings by asking Stephen whether the charges against him are true, giving him the floor for his defense. He presides over the council that will ultimately condemn Stephen but is not individually named in this chapter.",
+      "significance": "The high priest represents the institutional religious authority of Israel that, in Acts, repeatedly positions itself against the followers of Jesus."
+    },
+    {
+      "id": "the_council_ch7",
+      "name": "The Council (Sanhedrin)",
+      "role": "Group — Jewish Ruling Body",
+      "first_mention_verse": "7:1",
+      "summary": "The seventy-plus members of the supreme Jewish council hear Stephen's speech, becoming increasingly agitated as he indicts their ancestors. When he accuses them directly of betraying the Messiah, they rush at him in fury, drag him out of the city, and stone him.",
+      "significance": "Their violent rejection of Stephen exemplifies the recurring Acts pattern where the Jewish leadership rejects the gospel, propelling it outward to new audiences."
+    },
+    {
+      "id": "saul_of_tarsus_ch7",
+      "name": "Saul",
+      "role": "Witness, Persecutor",
+      "first_mention_verse": "7:58",
+      "summary": "A young man named Saul stands holding the outer garments of those stoning Stephen, explicitly approving of his execution. This brief appearance is his introduction to the narrative, and it plants the seed for one of history's most dramatic reversals.",
+      "significance": "Saul's introduction here is essential: the man who approves of the first martyr's death will himself become the church's greatest missionary, and Acts will spend its entire second half following his journeys."
+    },
+    {
+      "id": "abraham",
+      "name": "Abraham",
+      "role": "Historical Figure (cited in speech)",
+      "first_mention_verse": "7:2",
+      "summary": "Stephen begins his historical survey with Abraham, whom God called out of Mesopotamia before he had any land, any descendants, or any covenant sign. Abraham's story establishes the pattern: God's promises are fulfilled through journey and faith, not territorial possession.",
+      "significance": "By starting with Abraham's call in a foreign land, Stephen undercuts the assumption that God is tied to the Jerusalem Temple or the land of Israel."
+    },
+    {
+      "id": "joseph",
+      "name": "Joseph",
+      "role": "Historical Figure (cited in speech)",
+      "first_mention_verse": "7:9",
+      "summary": "Stephen recounts how the patriarchs, jealous of Joseph, sold him into slavery in Egypt — yet God was with him, rescued him, and made him ruler over Egypt. Joseph's story is cited as the first example of Israel's pattern of rejecting its own divinely appointed deliverer.",
+      "significance": "Joseph's rejection by his brothers foreshadows Moses's rejection, and ultimately Jesus's — establishing a typological argument that runs through Stephen's entire speech."
+    },
+    {
+      "id": "moses",
+      "name": "Moses",
+      "role": "Historical Figure (cited in speech)",
+      "first_mention_verse": "7:20",
+      "summary": "Moses occupies the center of Stephen's speech: born beautifully, raised in Pharaoh's house, rejected by the very Israelites he tried to rescue, then sent back by God as a deliverer. Stephen emphasizes that Moses himself predicted a prophet like him would come — a clear reference to Jesus.",
+      "significance": "Moses is the supreme deliverer-figure in Israel's history, and Stephen's detailed retelling argues that Jesus is the final prophet Moses predicted, making rejection of Jesus equivalent to rejecting Moses."
+    },
+    {
+      "id": "david",
+      "name": "David",
+      "role": "Historical Figure (cited in speech)",
+      "first_mention_verse": "7:45",
+      "summary": "Stephen mentions David, who found favor with God and wanted to build a dwelling place for the God of Jacob, but notes it was Solomon who actually built the Temple. David serves as a bridge between the wilderness tabernacle era and the Temple era.",
+      "significance": "By noting that even David did not build the Temple, Stephen sets up his key argument that the Most High does not dwell in houses made by human hands."
+    },
+    {
+      "id": "solomon",
+      "name": "Solomon",
+      "role": "Historical Figure (cited in speech)",
+      "first_mention_verse": "7:47",
+      "summary": "Solomon built the Temple for God, but Stephen immediately quotes Isaiah to show that even Solomon's Temple cannot contain God. Solomon's Temple, though magnificent, is used as evidence that fixation on a physical structure misunderstands God's nature.",
+      "significance": "Stephen's treatment of Solomon's Temple is the theological climax of his speech, directly challenging the charge that he spoke against the Temple."
+    }
+  ],
+  "locations": [
+    {
+      "id": "sanhedrin_hall",
+      "name": "The Council Hall (Sanhedrin)",
+      "modern_name": "disputed",
+      "lat": 31.7754,
+      "lng": 35.2342,
+      "description": "The meeting hall of the supreme Jewish council in Jerusalem, where Stephen stands to deliver his defense speech before being condemned."
+    },
+    {
+      "id": "outside_jerusalem",
+      "name": "Outside Jerusalem (stoning site)",
+      "modern_name": "disputed",
+      "lat": 31.7827,
+      "lng": 35.234,
+      "description": "The location outside the city walls where Stephen is dragged and stoned to death; Jewish law required executions to take place outside the city."
+    },
+    {
+      "id": "mesopotamia",
+      "name": "Mesopotamia",
+      "modern_name": "Iraq / Syria (Tigris-Euphrates region)",
+      "lat": 33.3408,
+      "lng": 44.4009,
+      "description": "The region between the Tigris and Euphrates rivers where Abraham originally lived before God called him to leave, the starting point of Stephen's historical survey."
+    },
+    {
+      "id": "haran",
+      "name": "Haran",
+      "modern_name": "Harran, southeastern Turkey",
+      "lat": 36.8631,
+      "lng": 39.0169,
+      "description": "The city in northern Mesopotamia where Abraham's family settled after leaving Ur, and where his father Terah died before Abraham continued his journey to Canaan."
+    },
+    {
+      "id": "canaan",
+      "name": "Canaan",
+      "modern_name": "Israel / Palestine region",
+      "lat": 31.5,
+      "lng": 35,
+      "description": "The land God promised to Abraham and his descendants, which Abraham traveled through as a stranger without inheriting even a foot of it during his lifetime."
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "modern_name": "Egypt",
+      "lat": 26.8206,
+      "lng": 30.8025,
+      "description": "The land where Joseph was sold into slavery, rose to power, and later welcomed Jacob's family — and where Israel grew from seventy people into a great nation under eventual oppression."
+    },
+    {
+      "id": "sinai_wilderness",
+      "name": "The Wilderness / Mount Sinai",
+      "modern_name": "Sinai Peninsula, Egypt",
+      "lat": 28.5396,
+      "lng": 33.985,
+      "description": "The desert region where Moses encountered God in the burning bush and received the Law, and where Israel camped for forty years — a place of divine encounter far from the Temple."
+    },
+    {
+      "id": "jerusalem_ch7",
+      "name": "Jerusalem",
+      "modern_name": "Jerusalem, Israel",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "description": "The city where Solomon built the Temple and where Stephen is tried and condemned, representing both the center of Jewish worship and the place of rejection of God's messengers."
+    }
+  ],
+  "events": [
+    {
+      "id": "high_priest_questions_stephen",
+      "sequence": 1,
+      "verses": "7:1",
+      "title": "High Priest Asks Stephen to Respond",
+      "description": "The high priest formally opens the proceedings by asking Stephen whether the accusations against him — that he spoke against the Temple and the Law — are true. This is standard council procedure, giving the accused a chance to speak in their own defense. Stephen's answer will be anything but a simple denial; he will instead deliver a comprehensive re-reading of Israel's history.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "high_priest_ch7",
+        "the_council_ch7"
+      ],
+      "timeline_label": "Trial Begins",
+      "scroll_anchor": "high-priest-questions-stephen",
+      "visual_notes": "The high priest in ornate robes seated on an elevated chair; Stephen standing calmly before him in the stone hall; council members arranged in a semicircle."
+    },
+    {
+      "id": "speech_abraham_section",
+      "sequence": 2,
+      "verses": "7:2-8",
+      "title": "Stephen's Survey: Abraham Called Out of Mesopotamia",
+      "description": "Stephen begins his defense by addressing the council respectfully as 'brothers and fathers' and then traces God's dealings with Israel starting from Abraham in Mesopotamia. He emphasizes that God appeared to Abraham before he was in the promised land, called him on a journey of faith, and made a covenant of circumcision with him — all before Abraham owned a single square foot of the land. The point is subtle but pointed: God's presence is not tied to any one territory or structure.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "high_priest_ch7",
+        "the_council_ch7"
+      ],
+      "timeline_label": "Abraham Section",
+      "scroll_anchor": "speech-abraham-section",
+      "visual_notes": "Stephen gesturing as he speaks in the council hall; the council listening with cautious attention while Abraham's story is treated as spoken testimony, not as a physical map movement."
+    },
+    {
+      "id": "speech_joseph_section",
+      "sequence": 3,
+      "verses": "7:9-16",
+      "title": "Stephen's Survey: Joseph Rejected by His Brothers",
+      "description": "Stephen moves to the story of Joseph, underlining that the patriarchs were jealous of Joseph and sold him into slavery in Egypt. Yet God was with Joseph, rescued him from all his troubles, and gave him wisdom so that Pharaoh made him ruler over Egypt. This establishes the first instance of the rejection-then-vindication pattern that runs through Stephen's argument. Even the family of Israel was capable of rejecting the one God had chosen to save them.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "high_priest_ch7",
+        "the_council_ch7"
+      ],
+      "timeline_label": "Joseph Section",
+      "scroll_anchor": "speech-joseph-section",
+      "visual_notes": "Stephen continues speaking before the council; Joseph and Egypt may appear as story imagery, but the map remains anchored to the council hall because no chapter participant travels there."
+    },
+    {
+      "id": "speech_moses_birth_section",
+      "sequence": 4,
+      "verses": "7:17-29",
+      "title": "Stephen's Survey: Moses Born, Rejected, Flees",
+      "description": "Stephen recounts how Moses was born in Egypt during a period of oppression, was beautiful before God, and was raised in Pharaoh's household with all the wisdom of Egypt. At forty he tried to intervene on behalf of an Israelite being beaten, but when he attempted to reconcile two Israelites fighting, one of them said, 'Who made you ruler and judge over us?' Moses was rejected by the very people he was trying to save. This rejection forced him to flee to Midian as a stranger.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "high_priest_ch7",
+        "the_council_ch7"
+      ],
+      "timeline_label": "Moses Birth & Rejection",
+      "scroll_anchor": "speech-moses-birth-section",
+      "visual_notes": "Stephen recounts Moses before the council; Egypt and Midian are referenced in the speech, but the map should keep the physical scene in the council hall."
+    },
+    {
+      "id": "speech_burning_bush_section",
+      "sequence": 5,
+      "verses": "7:30-38",
+      "title": "Stephen's Survey: Burning Bush and the Sent Deliverer",
+      "description": "After forty years in Midian, God appears to Moses in a flame of fire in a burning bush in the wilderness of Mount Sinai — holy ground, far from Jerusalem. God commissions Moses as the deliverer of his people from Egypt. Stephen quotes God's words directly and emphasizes that Moses is the one who told the Israelites that God would raise up a prophet like him from their own people — a messianic prophecy the council would have recognized as pointing to Jesus.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "high_priest_ch7",
+        "the_council_ch7"
+      ],
+      "timeline_label": "Burning Bush",
+      "scroll_anchor": "speech-burning-bush-section",
+      "visual_notes": "Stephen describes the burning bush from inside the hearing; Sinai is a narrated place, not a location where the chapter's participants physically stand."
+    },
+    {
+      "id": "speech_wilderness_rejection_section",
+      "sequence": 6,
+      "verses": "7:39-43",
+      "title": "Stephen's Survey: Israel Rejects Moses in the Wilderness",
+      "description": "Stephen makes his sharpest historical accusation: in the wilderness, the ancestors of his accusers refused to obey Moses and pushed him aside. They made a golden calf and offered sacrifice to an idol, rejoicing in what their own hands had made. God turned away from them and handed them over to worship the starry host — and eventually he gave them over to exile beyond Babylon. This section directly indicts the ancestors of the council, showing that rejection of God's appointed messenger is a hereditary pattern.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "high_priest_ch7",
+        "the_council_ch7"
+      ],
+      "timeline_label": "Israel Rejects Moses",
+      "scroll_anchor": "speech-wilderness-rejection-section",
+      "visual_notes": "The council hall remains the physical setting while Stephen narrates Israel's wilderness rebellion as part of his argument."
+    },
+    {
+      "id": "speech_tabernacle_temple_section",
+      "sequence": 7,
+      "verses": "7:44-50",
+      "title": "Stephen's Survey: Tabernacle, Temple, and God's True Dwelling",
+      "description": "Stephen reminds the council that their ancestors had the tabernacle of testimony in the wilderness — a mobile, portable meeting place made according to God's pattern. Joshua brought it into the land; David wanted to build a permanent dwelling. But it was Solomon who built the Temple. Then Stephen delivers the theological climax: quoting Isaiah 66, he declares that the Most High does not live in houses made by human hands — heaven is God's throne and earth is his footstool. This directly answers the charge of speaking against the Temple.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "high_priest_ch7",
+        "the_council_ch7"
+      ],
+      "timeline_label": "Temple Argument",
+      "scroll_anchor": "speech-tabernacle-temple-section",
+      "visual_notes": "Stephen's Temple argument is spoken in the council hall; tabernacle, David, and Solomon are referenced as testimony rather than physical map stops."
+    },
+    {
+      "id": "stephen_accuses_council",
+      "sequence": 8,
+      "verses": "7:51-53",
+      "title": "Stephen Turns and Directly Accuses the Council",
+      "description": "Stephen abruptly shifts from historical survey to direct accusation, calling the council stiff-necked people with uncircumcised hearts and ears who always resist the Holy Spirit. He tells them that their ancestors persecuted every prophet who announced the coming of the Righteous One — and now they themselves have betrayed and murdered that Righteous One, Jesus. They received the Law through angels but have not kept it. This is no longer a defense — it is a prophetic indictment.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "the_council_ch7",
+        "high_priest_ch7"
+      ],
+      "timeline_label": "Stephen Indicts Council",
+      "scroll_anchor": "stephen-accuses-council",
+      "visual_notes": "Stephen pointing directly at the council with fierce intensity; council members gripping their robes in rage; the stone hall crackling with tension."
+    },
+    {
+      "id": "stephen_sees_heaven_open",
+      "sequence": 9,
+      "verses": "7:54-56",
+      "title": "Stephen Sees Jesus Standing at God's Right Hand",
+      "description": "As the council grinds their teeth in fury at his words, Stephen, full of the Holy Spirit, gazes into heaven and sees the glory of God and Jesus standing at the right hand of God. He announces what he sees: 'Look, I see heaven open and the Son of Man standing at the right hand of God!' Notably, Jesus is described as standing — not seated — suggesting he rises to receive his faithful witness. The council covers their ears, unable to bear his words.",
+      "location_id": "sanhedrin_hall",
+      "persons_present": [
+        "stephen",
+        "the_council_ch7"
+      ],
+      "timeline_label": "Stephen's Vision",
+      "scroll_anchor": "stephen-sees-heaven-open",
+      "visual_notes": "Stephen's eyes lifted upward, face radiant; above him a visual representation of an open sky revealing a figure of Jesus in glory; council members below covering their ears and turning away."
+    },
+    {
+      "id": "stephen_stoned",
+      "sequence": 10,
+      "verses": "7:57-60",
+      "title": "Stephen Stoned to Death",
+      "description": "The council rushes at Stephen together, drags him out of the city, and begins stoning him. The witnesses lay their outer garments at the feet of a young man named Saul. As the stones fall, Stephen cries out, 'Lord Jesus, receive my spirit!' Then he kneels and shouts at the top of his voice, 'Lord, do not hold this sin against them!' With these words — the last a conscious echo of Jesus's prayer of forgiveness from the cross — Stephen dies. He is the first Christian martyr.",
+      "location_id": "outside_jerusalem",
+      "persons_present": [
+        "stephen",
+        "the_council_ch7",
+        "saul_of_tarsus_ch7"
+      ],
+      "timeline_label": "Stephen Martyred",
+      "scroll_anchor": "stephen-stoned",
+      "visual_notes": "Stephen kneeling outside Jerusalem's walls, arms raised in prayer as stones fly toward him; Saul standing to one side holding a pile of cloaks, watching calmly; rocky terrain and a city wall in the background."
+    }
+  ],
+  "routes": [
+    {
+      "person_id": "stephen",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "sanhedrin_hall",
+          "event_id": "high_priest_questions_stephen",
+          "note": "Brought before the Sanhedrin to answer charges"
+        },
+        {
+          "order": 2,
+          "location_id": "outside_jerusalem",
+          "event_id": "stephen_stoned",
+          "note": "Dragged outside the city walls for execution by stoning"
+        }
+      ]
+    },
+    {
+      "person_id": "saul_of_tarsus_ch7",
+      "path": [
+        {
+          "order": 1,
+          "location_id": "outside_jerusalem",
+          "event_id": "stephen_stoned",
+          "note": "Present at the stoning site, holding the garments of those throwing stones"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "high_priest_questions_stephen",
+      "position": 1,
+      "label": "Trial Opens",
+      "relative_time": "AD 31–34",
+      "absolute_time": "AD 31–34"
+    },
+    {
+      "event_id": "speech_abraham_section",
+      "position": 2,
+      "label": "Abraham Section",
+      "relative_time": "Same day",
+      "absolute_time": "AD 31–34"
+    },
+    {
+      "event_id": "speech_joseph_section",
+      "position": 3,
+      "label": "Joseph Section",
+      "relative_time": "Same day",
+      "absolute_time": "AD 31–34"
+    },
+    {
+      "event_id": "speech_moses_birth_section",
+      "position": 4,
+      "label": "Moses Section",
+      "relative_time": "Same day",
+      "absolute_time": "AD 31–34"
+    },
+    {
+      "event_id": "speech_burning_bush_section",
+      "position": 5,
+      "label": "Burning Bush",
+      "relative_time": "Same day",
+      "absolute_time": "AD 31–34"
+    },
+    {
+      "event_id": "speech_wilderness_rejection_section",
+      "position": 6,
+      "label": "Wilderness Rebellion",
+      "relative_time": "Same day",
+      "absolute_time": "AD 31–34"
+    },
+    {
+      "event_id": "speech_tabernacle_temple_section",
+      "position": 7,
+      "label": "Temple Argument",
+      "relative_time": "Same day",
+      "absolute_time": "AD 31–34"
+    },
+    {
+      "event_id": "stephen_accuses_council",
+      "position": 8,
+      "label": "Direct Accusation",
+      "relative_time": "Same day",
+      "absolute_time": "AD 31–34"
+    },
+    {
+      "event_id": "stephen_sees_heaven_open",
+      "position": 9,
+      "label": "Heavenly Vision",
+      "relative_time": "Same day",
+      "absolute_time": "AD 31–34"
+    },
+    {
+      "event_id": "stephen_stoned",
+      "position": 10,
+      "label": "Stephen Martyred",
+      "relative_time": "AD 31–34",
+      "absolute_time": "AD 31–34"
+    }
+  ],
+  "theological_themes": [
+    "The pattern of Israel rejecting its God-appointed deliverers, fulfilled finally in the rejection of Jesus",
+    "God's presence is not confined to any building, land, or institution",
+    "The prophetic tradition of speaking truth to power at personal cost",
+    "Martyrdom as the ultimate act of faithful witness",
+    "Forgiveness of enemies as the mark of a Spirit-filled life",
+    "The fulfillment of Mosaic prophecy in the person of Jesus"
+  ],
+  "discussion_questions": [
+    "Stephen traces a pattern of rejection through Abraham, Joseph, and Moses before landing on Jesus. What is the effect of this strategy, and why is it more powerful than a direct defense of his innocence?",
+    "Stephen quotes Isaiah to argue that God cannot be confined to a Temple made by human hands. How does this challenge assumptions about where and how God is present?",
+    "Stephen's last words closely echo Jesus's final prayers from the cross. Why do you think Luke draws this parallel, and what does it say about what it means to be a disciple?",
+    "Saul is introduced standing silently at the edge of a murder, approving it. What does this tell us about complicity, and how does it set up the rest of his story in Acts?",
+    "Is Stephen's speech a defense, a sermon, or a prosecution? What genre best describes it, and does the distinction matter?"
+  ]
+};
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+
+/* ── THEMES ── */
+body.theme-a {
+  --bg:        oklch(96% 0.018 78);
+  --bg-alt:    oklch(91% 0.022 74);
+  --bg-dark:   oklch(16% 0.02 55);
+  --fg:        oklch(18% 0.02 55);
+  --fg-muted:  oklch(50% 0.018 60);
+  --accent:    oklch(58% 0.19 46);
+  --border:    oklch(84% 0.022 72);
+  --card:      oklch(99.5% 0.008 80);
+  --map-water: oklch(72% 0.08 220);
+  --map-land:  oklch(88% 0.04 94);
+  --map-road:  oklch(68% 0.06 70);
+  --map-judea: oklch(85% 0.05 88);
+  --map-border:oklch(55% 0.06 50);
+  --tl-bg:     oklch(18% 0.02 55);
+  --tl-fg:     oklch(95% 0.012 78);
+}
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg); }
+
+/* ── PAGE SKELETON ── */
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--accent);
+  z-index: 20;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
+.hdr-space { flex:1; }
+.home-link {
+  color: oklch(95% .012 78);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  border-radius: 3px;
+  background: oklch(22% 0.02 55);
+}
+.lang-btn {
+  border: 1px solid oklch(58% 0.19 46 / .65);
+  background: oklch(22% 0.02 55);
+  color: oklch(95% .012 78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* ── BODY: timeline left, map right ── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  overflow: hidden;
+}
+
+/* ── TIMELINE COLUMN ── */
+.tl-col {
+  background: var(--tl-bg);
+  color: var(--tl-fg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid oklch(28% .015 255);
+  min-width: 0;
+}
+
+/* Chapter label strip */
+.tl-chapter-strip {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid oklch(28% .015 255);
+  flex-shrink: 0;
+}
+.tl-ch-label {
+  font-size: 9px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:4px;
+}
+.tl-ch-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800;
+  text-transform:uppercase; line-height:1.1; color:var(--tl-fg);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.tl-ch-title em { color:var(--accent); font-style:normal; }
+
+/* Scrollable event list */
+.tl-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.tl-list::-webkit-scrollbar { width:3px; }
+.tl-list::-webkit-scrollbar-thumb { background:oklch(36% .015 255); border-radius:2px; }
+
+/* Vertical spine */
+.tl-spine {
+  padding: 8px 0 80px;
+  position: relative;
+}
+.tl-spine::before {
+  content:'';
+  position:absolute;
+  left: 38px;
+  top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, transparent, oklch(36% .015 255) 5%, oklch(36% .015 255) 95%, transparent);
+}
+
+/* Year separator badge */
+.tl-year-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 6px 14px;
+  position: relative;
+  z-index: 2;
+}
+.tl-year-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: oklch(22% .018 255);
+  border: 1px solid oklch(36% .015 255);
+  padding: 2px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+body.theme-a .tl-year-badge { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-year-line {
+  flex: 1;
+  height: 1px;
+  background: oklch(30% .012 255);
+  opacity: .5;
+}
+
+/* Each item */
+.tl-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  cursor: pointer;
+  position: relative;
+  transition: background .15s;
+  padding-right: 4px;
+  min-height: 130px;
+}
+.tl-item:hover { background: oklch(22% .015 255 / 0.6); }
+.tl-item.active { background: oklch(22% .018 255 / 0.8); }
+body.theme-a .tl-item:hover { background: oklch(22% .015 255 / 0.5); }
+body.theme-a .tl-item.active { background: oklch(20% .018 55 / 0.8); }
+
+/* left: seq number + dot */
+.tl-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+.tl-seq {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700;
+  color: oklch(45% .01 255);
+  margin-bottom:5px;
+  letter-spacing:.05em;
+}
+.tl-item.active .tl-seq { color: var(--accent); }
+.tl-dot {
+  width:16px; height:16px; border-radius:50%;
+  border:2px solid oklch(38% .015 255);
+  background: oklch(16% .018 255);
+  position:relative; z-index:1;
+  transition: all .28s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .015 55); }
+.tl-item.active .tl-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px oklch(58% .19 46 / .2);
+}
+.tl-dot-pip {
+  width:5px; height:5px; border-radius:50%; background:#fff;
+  opacity:0; transition:opacity .28s;
+}
+.tl-item.active .tl-dot-pip { opacity:1; }
+
+/* right: text */
+.tl-r {
+  padding: 22px 10px 22px 6px;
+  border-bottom: 1px solid oklch(24% .012 255);
+}
+.tl-item:last-child .tl-r { border-bottom: none; }
+.tl-date {
+  font-size:11px; font-weight:800; letter-spacing:.1em;
+  font-family:'Barlow Condensed',sans-serif;
+  color: oklch(70% .018 76); margin-bottom:3px;
+}
+.tl-item.active .tl-date { color: var(--accent); }
+.tl-rel-time {
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  line-height:1.35;
+  color: oklch(72% .014 78); margin-bottom:6px;
+}
+.tl-item.active .tl-rel-time { color: oklch(82% .035 74); }
+.tl-ev-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px; font-weight:800; text-transform:uppercase;
+  line-height:1.18; color: var(--tl-fg);
+  margin-bottom: 4px;
+}
+.tl-ev-verses {
+  font-size:10px; font-weight:700; letter-spacing:.1em;
+  color: oklch(68% .018 76); margin-top:2px;
+}
+.tl-item.active .tl-ev-verses { color: var(--accent); }
+
+/* ── MAP COLUMN ── */
+.map-col {
+  position: relative;
+  background: var(--map-land);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Event banner at top of map */
+.map-event-banner {
+  position: relative;
+  flex: 0 0 auto;
+  z-index: 10;
+  background: oklch(16% 0.02 55 / 0.92);
+  border-bottom: 2px solid var(--accent);
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 16px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: background .3s;
+}
+.ban-verses {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.ban-content {}
+.ban-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.04em; color:oklch(95% .012 78);
+  line-height:1.1; margin-bottom:4px;
+}
+.ban-desc {
+  font-family:'Lora',serif; font-style:normal;
+  font-size:13px; line-height:1.55;
+  color:oklch(88% .014 78);
+  display: block;
+  overflow: visible;
+}
+.ban-loc {
+  display:flex; align-items:center; gap:5px;
+  font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:oklch(55% .012 70); white-space:nowrap;
+}
+.ban-loc-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+/* ── MAP SVG ── */
+.map-svg-wrap {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+}
+.map-svg {
+  width:100%; height:100%;
+}
+
+/* Person legend - bottom left of map */
+.map-person-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.map-leg-item {
+  display:flex; align-items:center; gap:7px;
+  font-size:10px; font-weight:600; letter-spacing:.06em;
+  color: var(--fg);
+  background: var(--card);
+  padding: 3px 10px 3px 7px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  transition: opacity .5s, transform .4s;
+}
+.map-leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.map-leg-item.faded { opacity:.3; }
+.map-leg-item.entering { animation: legEnter .4s ease forwards; }
+@keyframes legEnter {
+  from { opacity:0; transform:translateX(-8px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+.map-controls-panel { display: contents; }
+
+/* Map overlay labels */
+.map-corner-label {
+  position:absolute; bottom:18px; right:18px;
+  font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-muted); opacity:.5; z-index:5; pointer-events:none;
+}
+
+.map-playback {
+  position: absolute;
+  right: 18px;
+  bottom: 42px;
+  z-index: 12;
+  width: min(460px, calc(100% - 36px));
+  background: oklch(99.5% 0.008 80 / .9);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px oklch(10% 0.02 55 / .14);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+.playback-top {
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:26px;
+  margin-bottom:9px;
+  padding-right:72px;
+}
+.playback-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  min-width:0;
+  width:100%;
+}
+.playback-buttons {
+  position:absolute;
+  top:0;
+  right:0;
+  display:flex;
+  gap:6px;
+  flex-shrink:0;
+}
+.playback-btn {
+  width:30px;
+  height:26px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--fg);
+  border-radius:3px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  line-height:1;
+}
+.playback-track {
+  position:relative;
+  height:28px;
+  display:grid;
+  grid-template-columns:repeat(var(--step-count), 1fr);
+  align-items:center;
+  gap:0;
+}
+.playback-track::before {
+  content:'';
+  position:absolute;
+  left:10px; right:10px; top:13px;
+  height:2px;
+  background:var(--border);
+}
+.playback-step {
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  width:20px;
+  height:20px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.playback-step::before {
+  content:'';
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:var(--fg-muted);
+  opacity:.42;
+  transition:all .24s;
+}
+.playback-step.done::before { background:var(--accent); opacity:.55; }
+.playback-step.active::before {
+  inset:2px;
+  background:var(--accent);
+  opacity:1;
+  box-shadow:0 0 0 5px oklch(58% .19 46 / .18);
+}
+.playback-step-time { display: none; }
+.loc-label {
+  paint-order: stroke;
+  stroke: oklch(98% 0.008 80 / .82);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.person-name-label {
+  display: none;
+  paint-order: stroke;
+  stroke: oklch(16% 0.02 55 / .62);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100svh;
+    grid-template-rows: 44px auto;
+    overflow: visible;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
+  }
+
+  .map-col {
+    order: -1;
+    overflow: visible;
+  }
+
+  .header { padding: 0 14px; gap: 8px; }
+  .hdr-sub { display: none; }
+  .hdr-title { font-size: 16px; }
+  .home-link,
+  .lang-btn {
+    padding: 5px 7px;
+    font-size: 9px;
+  }
+
+  .map-event-banner {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    flex: 0 0 auto;
+    padding: 8px 12px 9px;
+    gap: 3px;
+  }
+  .ban-verses { font-size: 9px; margin-bottom: 1px; }
+  .ban-title  { font-size: 16px; margin-bottom: 2px; }
+  .ban-desc {
+    display: block;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow: visible;
+  }
+  .ban-loc    { display: none; }
+  .map-svg-wrap {
+    position: relative;
+    inset: auto;
+    flex: 0 0 clamp(300px, 46dvh, 430px);
+    min-height: clamp(300px, 46dvh, 430px);
+  }
+  .loc-label {
+    font-size: 28px;
+    font-weight: 800;
+    stroke-width: 5px;
+  }
+  .person-name-label { display: block; font-size: 18px; }
+
+  .map-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: oklch(93% 0.025 82);
+    border-top: 1px solid var(--border);
+  }
+
+  .map-person-legend {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    gap: 4px;
+    z-index: 14;
+    max-height: none;
+    overflow-y: auto;
+    padding: 5px;
+    background: oklch(99.5% 0.008 80 / .88);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px oklch(10% 0.02 55 / .12);
+    backdrop-filter: blur(8px);
+  }
+  .map-leg-item { font-size: 10px; padding: 3px 8px 3px 5px; }
+  .map-leg-dot  { width: 6px; height: 6px; }
+  .map-corner-label { display: none; }
+  .map-playback {
+    position: relative;
+    right:auto;
+    bottom:auto;
+    width:100%;
+    padding:7px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .playback-top { min-height:34px; padding-right:88px; }
+  .playback-label { font-size:10px; }
+  .playback-btn { width:38px; height:34px; font-size:20px; }
+  .playback-track {
+    min-width: max(100%, calc(var(--step-count) * 56px));
+    height: 48px;
+    align-items: start;
+  }
+  .playback-track::before { top:8px; }
+  .playback-step { width:18px; height:18px; }
+  .playback-step-time {
+    display: none;
+    position: absolute;
+    top: 22px;
+    left: auto;
+    right: 50%;
+    transform: none;
+    width: 52px;
+    color: var(--fg);
+    background: oklch(99.5% 0.008 80 / .92);
+    border: 1px solid oklch(84% 0.022 72 / .8);
+    border-radius: 3px;
+    padding: 2px 3px;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.1;
+    text-align: right;
+    pointer-events: none;
+    box-shadow: 0 2px 8px oklch(10% 0.02 55 / .1);
+  }
+  .playback-step:first-child .playback-step-time {
+    left: 50%;
+    right: auto;
+    text-align: left;
+  }
+  .playback-step.active .playback-step-time {
+    display: block;
+    color: oklch(99% 0.008 80);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .person-name-label { display: none; }
+
+  .tl-col { border-right: none; border-top: 1px solid oklch(28% .015 255); }
+  .tl-chapter-strip { padding: 10px 14px 8px; }
+  .tl-ch-title { font-size: 13px; }
+
+  .tl-item { min-height: 80px; grid-template-columns: 56px 1fr; }
+  .tl-r { padding: 12px 8px 12px 4px; }
+  .tl-ev-title { font-size: 12px; }
+  .tl-date { font-size: 9px; }
+  .tl-rel-time { display: none; }
+
+  .tl-spine::before { left: 28px; }
+  .tl-l { padding-top: 10px; }
+  .tl-seq { font-size: 9px; }
+}
+</style>
+</head>
+<body class="theme-a">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+const LANGUAGE_KEY = 'bf-language';
+const INITIAL_LANG = localStorage.getItem(LANGUAGE_KEY) || 'en';
+const CHAPTER_TEXT = {
+  da: {
+    book: 'Apostlenes Gerninger',
+    shortBook: 'ApG',
+    chapterTitle: 'Talen der kostede alt',
+    headerSub: '— Jerusalem · år 31-34',
+    timelineTitle: ['Talen der', 'kostede alt'],
+    mapCorner: 'Jerusalem · råd og martyrsted',
+    yearBadges: ['Rådsforhøret åbner', 'Israels historie genfortalt', 'Moses og afvisningen', 'Profetisk anklage', 'Stefanus bliver martyr'],
+    map: {
+      JUDEA: 'JUDÆA',
+      PERAEA: 'PERÆA',
+      SAMARIA: 'SAMARIA ↑',
+      DEAD_SEA: 'DET DØDE HAV',
+      JORDAN_RIVER: 'Jordanfloden',
+      MEDITERRANEAN: 'MIDDELHAVET ←',
+      KIDRON_VALLEY: 'Kidrondalen',
+      TEMPLE: 'TEMPLET',
+      WALK: 'uden for byen',
+      HINNOM_VALLEY: 'Hinnoms dal',
+      MOUNT_OF_OLIVES: 'OLIEBJERGET',
+      BETHANY: 'Betania',
+      BETHLEHEM: 'Betlehem'
+    },
+    locations: {
+      sanhedrin_hall: { name: 'Rådssalen (Sanhedrin)' },
+      outside_jerusalem: { name: 'Uden for Jerusalem' },
+      mesopotamia: { name: 'Mesopotamien' },
+      haran: { name: 'Haran' },
+      canaan: { name: 'Kanaan' },
+      egypt: { name: 'Egypten' },
+      sinai_wilderness: { name: 'Ørkenen / Sinai' },
+      jerusalem_ch7: { name: 'Jerusalem' }
+    },
+    persons: {
+      stephen: 'Stefanus',
+      high_priest_ch7: 'Ypperstepræsten',
+      the_council_ch7: 'Rådet',
+      saul_of_tarsus_ch7: 'Saulus',
+      abraham: 'Abraham',
+      joseph: 'Josef',
+      moses: 'Moses',
+      david: 'David',
+      solomon: 'Salomo'
+    },
+    events: {
+      high_priest_questions_stephen: { title: 'Ypperstepræsten beder Stefanus svare', description: 'Ypperstepræsten åbner den formelle høring ved at spørge Stefanus, om anklagerne mod ham er sande: at han har talt imod templet og loven. Det er almindelig rådsprocedure og giver den anklagede mulighed for at forsvare sig. Stefanus svarer dog ikke med en enkel benægtelse, men med en omfattende genlæsning af Israels historie.', timeline_label: 'Forhøret begynder' },
+      speech_abraham_section: { title: 'Stefanus fortæller om Abraham kaldet fra Mesopotamien', description: 'Stefanus begynder sit forsvar respektfuldt med ordene brødre og fædre og fører rådet tilbage til Guds kaldelse af Abraham i Mesopotamien. Han understreger, at Gud viste sig for Abraham, før han kom til det lovede land, kaldte ham ud på en trosrejse og gav ham omskærelsens pagt, længe før Abraham ejede så meget som en fodsbred jord. Pointen er diskret, men skarp: Guds nærvær er ikke bundet til et bestemt land eller en bestemt bygning.', timeline_label: 'Abraham' },
+      speech_joseph_section: { title: 'Stefanus fortæller om Josef, afvist af sine brødre', description: 'Stefanus går videre til Josef og fremhæver, at patriarkerne blev jaloux på ham og solgte ham som slave til Egypten. Men Gud var med Josef, reddede ham ud af alle hans trængsler og gav ham visdom, så Farao satte ham til hersker over Egypten. Dermed etablerer Stefanus det første eksempel på mønsteret af afvisning og efterfølgende ophøjelse. Selv Israels egen familie kunne afvise den, Gud havde valgt til at redde dem.', timeline_label: 'Josef' },
+      speech_moses_birth_section: { title: 'Stefanus fortæller om Moses: født, afvist og på flugt', description: 'Stefanus fortæller, hvordan Moses blev født i Egypten under undertrykkelse, var smuk for Gud og blev oplært i Faraos hus med al Egyptens visdom. Da han var fyrre år, forsøgte han at hjælpe en israelit, der blev mishandlet, men da han derefter ville forlige to israelitter, svarede en af dem: Hvem har sat dig til hersker og dommer over os? Moses blev afvist af netop det folk, han ville frelse. Afvisningen tvang ham til at flygte til Midjan som fremmed.', timeline_label: 'Moses afvises' },
+      speech_burning_bush_section: { title: 'Stefanus fortæller om tornebusken og befrieren', description: 'Efter fyrre år i Midjan viser Gud sig for Moses i en flammende ild i en brændende tornebusk i ørkenen ved Sinaj, på hellig jord langt fra Jerusalem. Gud sender Moses som befrier for sit folk i Egypten. Stefanus citerer Guds ord direkte og understreger, at Moses er den, der sagde, at Gud ville oprejse en profet som ham blandt folket. Rådet ville kende denne messianske profeti som en henvisning til Jesus.', timeline_label: 'Tornebusken' },
+      speech_wilderness_rejection_section: { title: 'Israel afviser Moses i ørkenen', description: 'Stefanus kommer med sin skarpeste historiske anklage: i ørkenen nægtede deres fædre at adlyde Moses og skubbede ham fra sig. De lavede en guldkalv, ofrede til et afgudsbillede og glædede sig over det, deres egne hænder havde skabt. Gud vendte sig bort fra dem og overlod dem til at dyrke himlens hær, og til sidst til landflygtighed hinsides Babylon. Afsnittet anklager rådets forfædre direkte og viser, at afvisningen af Guds udvalgte budbringer er et gennemgående mønster.', timeline_label: 'Ørkenoprør' },
+      speech_tabernacle_temple_section: { title: 'Teltet, templet og Guds sande bolig', description: 'Stefanus minder rådet om, at deres fædre havde vidnesbyrdets telt i ørkenen, et mobilt mødested lavet efter Guds forbillede. Josva førte det ind i landet, David ønskede at bygge en fast bolig, men det var Salomo, der byggede templet. Derefter kommer Stefanus til den teologiske kulmination: med Esajas 66 erklærer han, at Den Højeste ikke bor i huse bygget af menneskehænder. Himlen er Guds trone, og jorden er hans fodskammel. Det svarer direkte på anklagen om, at han taler imod templet.', timeline_label: 'Tempelargumentet' },
+      stephen_accuses_council: { title: 'Stefanus anklager rådet direkte', description: 'Stefanus skifter brat fra historisk gennemgang til direkte anklage og kalder rådet stivnakkede mennesker med uomskårne hjerter og ører, som altid står Helligånden imod. Han siger, at deres fædre forfulgte enhver profet, der forkyndte Den Retfærdiges komme, og at de selv har forrådt og myrdet denne Retfærdige, Jesus. De modtog loven ved engle, men holdt den ikke. Forsvaret er blevet til en profetisk domstale.', timeline_label: 'Direkte anklage' },
+      stephen_sees_heaven_open: { title: 'Stefanus ser Jesus ved Guds højre hånd', description: 'Mens rådet skærer tænder i raseri over hans ord, ser Stefanus, fuld af Helligånden, ind i himlen og ser Guds herlighed og Jesus stående ved Guds højre hånd. Han fortæller, hvad han ser: Se, jeg ser himlen åben og Menneskesønnen stå ved Guds højre hånd. Det er bemærkelsesværdigt, at Jesus står, ikke sidder, som om han rejser sig for at tage imod sit trofaste vidne. Rådet holder sig for ørerne, fordi de ikke kan bære hans ord.', timeline_label: 'Himmelsk syn' },
+      stephen_stoned: { title: 'Stefanus stenes til døde', description: 'Rådet stormer samlet imod Stefanus, slæber ham ud af byen og begynder at stene ham. Vidnerne lægger deres kapper ved fødderne af en ung mand ved navn Saulus. Mens stenene falder, råber Stefanus: Herre Jesus, tag imod min ånd! Derefter falder han på knæ og råber med høj stemme: Herre, tilregn dem ikke denne synd! Med disse ord, der tydeligt spejler Jesu bøn om tilgivelse fra korset, dør Stefanus. Han er den første kristne martyr.', timeline_label: 'Stefanus bliver martyr' }
+    },
+    timeline: {
+      high_priest_questions_stephen: { label: 'Forhøret åbner', relative_time: 'år 31-34' },
+      speech_abraham_section: { label: 'Abraham', relative_time: 'samme dag' },
+      speech_joseph_section: { label: 'Josef', relative_time: 'samme dag' },
+      speech_moses_birth_section: { label: 'Moses afvises', relative_time: 'samme dag' },
+      speech_burning_bush_section: { label: 'Tornebusken', relative_time: 'samme dag' },
+      speech_wilderness_rejection_section: { label: 'Ørkenoprør', relative_time: 'samme dag' },
+      speech_tabernacle_temple_section: { label: 'Templet', relative_time: 'samme dag' },
+      stephen_accuses_council: { label: 'Anklagen', relative_time: 'samme dag' },
+      stephen_sees_heaven_open: { label: 'Synet', relative_time: 'samme dag' },
+      stephen_stoned: { label: 'Martyriet', relative_time: 'år 31-34' }
+    }
+  }
+};
+
+function localizeChapter(base, lang) {
+  const t = CHAPTER_TEXT[lang];
+  if (!t) return base;
+  return {
+    ...base,
+    book: t.book,
+    chapter_title: t.chapterTitle,
+    persons: base.persons.map(p => ({ ...p, name: t.persons[p.id] || p.name })),
+    locations: base.locations.map(l => ({ ...l, ...(t.locations[l.id] || {}) })),
+    events: base.events.map(e => ({ ...e, ...(t.events[e.id] || {}) })),
+    routes: base.routes.map(r => ({ ...r, label: t.persons[r.person_id] || r.label })),
+    timeline: base.timeline.map(tl => ({ ...tl, ...(t.timeline[tl.event_id] || {}) }))
+  };
+}
+
+const DATA = localizeChapter(ACTS_CH7, INITIAL_LANG);
+const UI_TEXT = CHAPTER_TEXT[INITIAL_LANG] || {};
+const MAP_TEXT = UI_TEXT.map || {};
+const mapText = key => MAP_TEXT[key] || key;
+function setLanguage(lang) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  window.location.reload();
+}
+function yearMarker(value = '') {
+  const match = value.match(/AD\s*\d+(?:[–-]\d+)?/) || value.match(/år\s*\d+(?:[–-]\d+)?/);
+  return match ? match[0].trim() : '';
+}
+
+function compactTimeLabel(value = '', includeYear = false) {
+  const marker = yearMarker(value);
+  const shortLabel = value
+    .replace(/^c\.\s*/, '')
+    .replace(/Late /, '')
+    .replace(/sidst i /, '')
+    .replace(/,?\s*AD\s*\d+(?:[–-]\d+)?\b/g, '')
+    .replace(/\s*år\s*\d+(?:[–-]\d+)?\b/g, '')
+    .trim();
+  return includeYear && marker ? `${marker} ${shortLabel}`.trim() : (shortLabel || marker);
+}
+
+function shouldShowYear(tl, idx) {
+  const current = yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || tl.relative_time);
+  if (!current) return false;
+  const previous = DATA.timeline[idx - 1];
+  if (!previous) return true;
+  return current !== yearMarker(ABSOLUTE_TIMES[previous.event_id]?.date || previous.relative_time);
+}
+
+function dotTimeLabel(tl, idx) {
+  const base = (tl.relative_time || '').replace(/\s*[—–]\s.*$/, '').trim();
+  const marker = shouldShowYear(tl, idx) ? yearMarker(ABSOLUTE_TIMES[tl.event_id]?.date || '') : '';
+  if (marker && yearMarker(base) === marker) return base;
+  return marker ? `${marker} ${base}`.trim() : base;
+}
+
+/* ── PERSON COLORS ── */
+const PCOLORS = {
+  stephen:              '#E8591A',
+  high_priest_ch7:      '#8C6F5A',
+  the_council_ch7:      '#7A8FA0',
+  saul_of_tarsus_ch7:   '#5B8FA8',
+  abraham:              '#A09070',
+  joseph:               '#6B8F71',
+  moses:                '#9B7EB0',
+  david:                '#C47A5A',
+  solomon:              '#D4A24C',
+};
+
+/* ── MAP COORDINATES (SVG 1000×800 viewBox, zoomed tight to Jerusalem area) ── */
+const VW = 1000, VH = 800;
+const LOCS = {
+  sanhedrin_hall:    { x: 428, y: 408, label: DATA.locations.find(l => l.id === 'sanhedrin_hall')?.name || 'Council Hall' },
+  outside_jerusalem: { x: 240, y: 566, label: DATA.locations.find(l => l.id === 'outside_jerusalem')?.name || 'Outside Jerusalem' },
+  mesopotamia:       { x: 830, y: 190, label: DATA.locations.find(l => l.id === 'mesopotamia')?.name || 'Mesopotamia' },
+  haran:             { x: 710, y: 145, label: DATA.locations.find(l => l.id === 'haran')?.name || 'Haran' },
+  canaan:            { x: 365, y: 430, label: DATA.locations.find(l => l.id === 'canaan')?.name || 'Canaan' },
+  egypt:             { x: 250, y: 690, label: DATA.locations.find(l => l.id === 'egypt')?.name || 'Egypt' },
+  sinai_wilderness:  { x: 465, y: 670, label: DATA.locations.find(l => l.id === 'sinai_wilderness')?.name || 'Sinai' },
+  jerusalem_ch7:     { x: 428, y: 408, label: DATA.locations.find(l => l.id === 'jerusalem_ch7')?.name || 'Jerusalem' },
+};
+
+/* Map rule: only show places where chapter participants are physically present. */
+const PHYSICAL_LOCATION_IDS = new Set([
+  ...DATA.events.map(ev => ev.location_id).filter(Boolean),
+  ...DATA.routes.flatMap(route => route.path.map(stop => stop.location_id).filter(Boolean)),
+]);
+
+const ABSOLUTE_TIMES = Object.fromEntries(
+  DATA.timeline.map(t => [t.event_id, { date: t.absolute_time || '', period: t.relative_time || '' }])
+);
+
+/* Build route stops with pixel coords */
+function buildRoutes() {
+  const out = {};
+  DATA.routes.forEach(r => {
+    const person = DATA.persons.find(p => p.id === r.person_id);
+    out[r.person_id] = {
+      color: PCOLORS[r.person_id] || '#888',
+      label: r.label || person?.name || r.person_id,
+      stops: r.path.map(s => ({
+        ...s,
+        ...(LOCS[s.location_id] || { x: 360, y: 360 }),
+      })),
+    };
+  });
+
+  DATA.persons.forEach(person => {
+    if (out[person.id]) return;
+    const stops = DATA.events
+      .filter(ev => ev.location_id && ev.persons_present?.includes(person.id))
+      .map((ev, idx) => ({
+        order: idx + 1,
+        location_id: ev.location_id,
+        event_id: ev.id,
+        ...(LOCS[ev.location_id] || { x: 360, y: 360 }),
+      }));
+    if (!stops.length) return;
+    out[person.id] = {
+      color: PCOLORS[person.id] || '#888',
+      label: person.name,
+      stops,
+    };
+  });
+  return out;
+}
+const ROUTES = buildRoutes();
+
+/* Compute per-event person state */
+function personStateAt(eventId) {
+  const evIdx = DATA.events.findIndex(e => e.id === eventId);
+  const ev    = DATA.events[evIdx];
+  const result = {};
+
+  Object.entries(ROUTES).forEach(([pid, route]) => {
+    let lastStop = null;
+    route.stops.forEach(stop => {
+      const si = DATA.events.findIndex(e => e.id === stop.event_id);
+      if (si <= evIdx) lastStop = stop;
+    });
+    if (!lastStop) return;
+    const active = ev?.persons_present?.includes(pid) ?? false;
+    result[pid] = {
+      color: route.color,
+      label: route.label,
+      pos:   { x: lastStop.x, y: lastStop.y },
+      active,
+      faded: !active,
+    };
+  });
+  return result;
+}
+
+/* ── MAP TERRAIN ── */
+function Terrain() {
+  return (
+    <g>
+      {/* Base land */}
+      <rect x="0" y="0" width={VW} height={VH} fill="var(--map-land)" />
+
+      {/* Judea */}
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 700 320 780 360 Q 820 380 820 440 Q 820 520 760 560 Q 700 600 580 620 Q 450 640 300 630 Q 180 620 100 580 Q 40 550 30 480 Q 20 420 50 300 Z"
+        fill="oklch(87% 0.055 90)" opacity="1" />
+      <text x="160" y="580" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(48% 0.07 75)" letterSpacing="3" opacity=".7">{mapText('JUDEA')}</text>
+
+      {/* Peraea */}
+      <path d="M 820 200 Q 860 220 920 260 Q 970 300 980 380 Q 990 450 960 520 Q 940 570 900 600 Q 870 620 840 600 Q 820 560 820 500 Q 820 420 820 360 Q 820 280 820 200 Z"
+        fill="oklch(82% 0.045 110)" opacity=".85" />
+      <text x="880" y="380" fontSize="11" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(42% 0.06 90)" letterSpacing="2" opacity=".65" transform="rotate(90,880,380)">{mapText('PERAEA')}</text>
+
+      {/* Northern region */}
+      <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 650 310 720 290 Q 780 270 820 200 Q 820 120 780 70 Q 700 30 500 20 Q 300 10 150 50 Q 60 80 40 160 Q 20 230 50 300 Z"
+        fill="oklch(85% 0.04 130)" opacity=".6" />
+      <text x="200" y="120" fontSize="12" fontFamily="Barlow Condensed" fontWeight="700"
+        fill="oklch(40% 0.06 120)" letterSpacing="2" opacity=".55">{mapText('SAMARIA')}</text>
+
+      {/* Region borders */}
+      <path d="M 50 300 Q 200 265 380 272 Q 520 278 650 295 Q 730 308 790 330"
+        fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      <path d="M 790 330 Q 818 370 820 430 Q 820 500 800 560"
+        fill="none" stroke="var(--map-border)" strokeWidth="2.5" opacity=".55" strokeDasharray="12 5" />
+      <path d="M 820 140 Q 828 220 825 320 Q 822 420 818 520 Q 815 580 820 650"
+        fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".7" strokeLinecap="round" />
+
+      {/* Dead Sea */}
+      <path d="M 818 400 Q 835 390 870 400 Q 920 420 940 470 Q 960 520 940 570 Q 920 620 880 640 Q 850 650 830 630 Q 815 610 815 570 Q 814 500 818 400 Z"
+        fill="var(--map-water)" opacity=".85" />
+      <text x="880" y="520" textAnchor="middle" fontSize="11"
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(35% 0.06 220)"
+        letterSpacing="1.5" opacity=".8">{mapText('DEAD_SEA')}</text>
+
+      {/* Jordan River */}
+      <path d="M 825 30 C 832 120 830 220 825 320 C 821 390 818 420 818 450"
+        fill="none" stroke="var(--map-water)" strokeWidth="6" opacity=".75" strokeLinecap="round" />
+      <text x="842" y="200" fontSize="10" fill="oklch(38% 0.07 220)" opacity=".65"
+        fontFamily="Barlow" fontWeight="500" transform="rotate(84,842,200)">{mapText('JORDAN_RIVER')}</text>
+
+      {/* Mediterranean Sea */}
+      <path d="M 0 0 L 0 800 L 40 800 Q 30 600 25 400 Q 20 200 40 0 Z"
+        fill="var(--map-water)" opacity=".5" />
+      <text x="18" y="400" fontSize="9" fill="oklch(35% 0.06 220)" opacity=".55"
+        fontFamily="Barlow Condensed" fontWeight="700" letterSpacing="1"
+        transform="rotate(-90,18,400)">{mapText('MEDITERRANEAN')}</text>
+
+      {/* Kidron Valley */}
+      <path d="M 660 80 Q 590 170 550 260 Q 525 330 515 400 Q 508 460 510 520"
+        fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="3.5" opacity=".4" />
+      <text x="560" y="290" fontSize="10" fill="oklch(42% 0.05 80)" opacity=".55"
+        fontFamily="Barlow" transform="rotate(68,560,290)">{mapText('KIDRON_VALLEY')}</text>
+
+      {/* Jerusalem city walls */}
+      <rect x="292" y="345" width="165" height="125" rx="8"
+        fill="oklch(80% 0.06 80)" opacity=".3"
+        stroke="oklch(42% 0.08 60)" strokeWidth="3" />
+      <rect x="292" y="345" width="165" height="125" rx="8"
+        fill="none" stroke="oklch(62% 0.09 55)" strokeWidth="1.5" opacity=".6" strokeDasharray="6 4" />
+
+      {/* Temple Mount */}
+      <rect x="382" y="358" width="68" height="52" rx="4"
+        fill="oklch(75% 0.08 75)" opacity=".45"
+        stroke="oklch(48% 0.08 60)" strokeWidth="2" />
+      <text x="416" y="388" textAnchor="middle" fontSize="9.5"
+        fontFamily="Barlow Condensed" fontWeight="700" fill="oklch(30% 0.06 55)" opacity=".9">{mapText('TEMPLE')}</text>
+
+      {/* Road: Mt Olives → Jerusalem */}
+      <path d="M 648 228 Q 600 275 560 315 Q 520 352 475 382 Q 445 400 410 413"
+        fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".6"
+        strokeDasharray="10 6" strokeLinecap="round" />
+      <text x="545" y="335" fontSize="10" fill="oklch(38% 0.06 70)" opacity=".55"
+        fontFamily="Barlow" transform="rotate(44,545,335)">{mapText('WALK')}</text>
+
+      {/* Hinnom Valley */}
+      <path d="M 140 565 Q 220 598 305 590 Q 348 586 378 572 Q 398 560 408 542"
+        fill="none" stroke="oklch(55% 0.05 80)" strokeWidth="2.5" opacity=".35" />
+      <text x="220" y="625" fontSize="9.5" fill="oklch(42% 0.05 80)" opacity=".45"
+        fontFamily="Barlow">{mapText('HINNOM_VALLEY')}</text>
+
+      {/* Akeldama */}
+      <circle cx="355" cy="572" r="10"
+        fill="oklch(60% 0.14 30)" opacity=".25"
+        stroke="var(--accent)" strokeWidth="2" />
+      <text x="372" y="577" fontSize="10"
+        fill="var(--accent)" opacity=".7"
+        fontFamily="Barlow" fontStyle="italic" fontWeight="500">Akeldama</text>
+
+      {/* Mount of Olives */}
+      <ellipse cx="668" cy="255" rx="115" ry="85"
+        fill="oklch(82% 0.05 100)" opacity=".45"
+        stroke="oklch(55% 0.06 80)" strokeWidth="1.5" />
+      <text x="668" y="148" textAnchor="middle" fontSize="13"
+        fontFamily="Barlow Condensed" fontWeight="800" fill="oklch(35% 0.07 70)"
+        letterSpacing="1.5" opacity=".75">{mapText('MOUNT_OF_OLIVES')}</text>
+
+      {/* Bethany */}
+      <circle cx="790" cy="240" r="6" fill="oklch(55% 0.07 80)" opacity=".45" />
+      <text x="802" y="244" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".6"
+        fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHANY')}</text>
+
+      {/* Bethlehem */}
+      <circle cx="310" cy="720" r="6" fill="oklch(55% 0.07 80)" opacity=".4" />
+      <text x="322" y="724" fontSize="11" fill="oklch(38% 0.06 75)" opacity=".5"
+        fontFamily="Barlow Condensed" fontWeight="600">{mapText('BETHLEHEM')}</text>
+
+      {/* Scale bar */}
+      <g transform="translate(60,755)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <line x1="90" y1="-5" x2="90" y2="5" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
+        <text x="45" y="18" textAnchor="middle" fontSize="11" fill="var(--fg-muted)" opacity=".55" fontFamily="Barlow">~1 km</text>
+      </g>
+
+      {/* North arrow */}
+      <g transform="translate(60,95)">
+        <circle cx="0" cy="0" r="22" fill="oklch(50% 0 0 / .08)" stroke="var(--fg-muted)" strokeWidth="1.5" opacity=".4" />
+        <path d="M0,-16 L-6,8 L0,4 L6,8 Z" fill="var(--fg-muted)" opacity=".55" />
+        <text y="38" textAnchor="middle" fontSize="13" fill="var(--fg-muted)" opacity=".55"
+          fontFamily="Barlow Condensed" fontWeight="800">N</text>
+      </g>
+    </g>
+  );
+}
+
+function RouteLines() { return null; }
+
+/* ── LOCATION MARKERS ── */
+function LocationMarkers({ activeLocId }) {
+  return (
+    <g>
+      {Object.entries(LOCS).filter(([id]) => PHYSICAL_LOCATION_IDS.has(id)).map(([id, loc]) => {
+        const on = id === activeLocId;
+        return (
+          <g key={id}>
+            {on && <circle cx={loc.x} cy={loc.y} r="36" fill="var(--accent)" opacity=".09" />}
+            {on && <circle cx={loc.x} cy={loc.y} r="22" fill="var(--accent)" opacity=".07" />}
+            <circle cx={loc.x} cy={loc.y} r={on ? 10 : 7}
+              fill={on ? 'var(--accent)' : 'var(--fg-muted)'}
+              stroke="var(--map-land)" strokeWidth="3"
+              style={{ transition: 'r .3s' }}
+            />
+            <text className="loc-label" x={loc.x + 16} y={loc.y + 5}
+              fontSize={on ? 17 : 14}
+              fontFamily="Barlow Condensed" fontWeight={on ? '800' : '600'}
+              fill={on ? 'var(--fg)' : 'var(--fg-muted)'}
+              letterSpacing=".5"
+              style={{ transition: 'font-size .3s' }}
+            >{loc.label}</text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/* ── PERSON DOTS ── */
+function PersonDots({ personStates, prevStates }) {
+  const pids = Object.keys(ROUTES);
+
+  const computePos = (states, pid) => {
+    const s = states?.[pid];
+    if (!s || !s.pos) return null;
+    const snapX = Math.round(s.pos.x / 20) * 20;
+    const snapY = Math.round(s.pos.y / 20) * 20;
+    const siblings = pids.filter(p => {
+      const ps = states[p];
+      if (!ps || !ps.pos) return false;
+      return Math.round(ps.pos.x/20)*20 === snapX && Math.round(ps.pos.y/20)*20 === snapY;
+    });
+    const myGroupIdx = siblings.indexOf(pid);
+    const groupSize  = siblings.length;
+    const cols = Math.min(3, groupSize);
+    const row = Math.floor(myGroupIdx / cols);
+    const col = myGroupIdx % cols;
+    const rows = Math.ceil(groupSize / cols);
+    const spacing = 30;
+    const offsetX = (col - (cols - 1) / 2) * spacing;
+    const offsetY = (row - (rows - 1) / 2) * spacing;
+    const labelAvoidance = s.pos.y < 300 ? { x: 0, y: 46 } : { x: 0, y: -46 };
+    const x = Math.max(70, Math.min(VW - 70, s.pos.x + labelAvoidance.x + offsetX));
+    const y = Math.max(120, Math.min(VH - 70, s.pos.y + labelAvoidance.y + offsetY));
+    return { x, y };
+  };
+
+  return (
+    <g>
+      {pids.map((pid) => {
+        const s = personStates[pid];
+        if (!s || !s.pos) return null;
+        const cur  = computePos(personStates, pid);
+        const prev = computePos(prevStates, pid);
+        if (!cur) return null;
+        const hasMoved = prev && (Math.abs(prev.x - cur.x) > 8 || Math.abs(prev.y - cur.y) > 8);
+        const dotR = s.active ? 14 : 10;
+        return (
+          <g key={pid} style={{ opacity: s.faded ? 0.22 : 1, transition: 'opacity 0.7s ease' }}>
+            {hasMoved && (
+              <g>
+                <line x1={prev.x} y1={prev.y} x2={cur.x} y2={cur.y}
+                  stroke={s.color} strokeWidth="3" strokeLinecap="round"
+                  strokeDasharray="5 7" opacity=".28" />
+                <circle cx={prev.x} cy={prev.y} r={dotR * 0.55} fill={s.color} opacity=".2" />
+                <circle cx={(prev.x*2+cur.x)/3} cy={(prev.y*2+cur.y)/3} r={dotR * 0.38} fill={s.color} opacity=".13" />
+                <circle cx={(prev.x+cur.x*2)/3} cy={(prev.y+cur.y*2)/3} r={dotR * 0.25} fill={s.color} opacity=".08" />
+              </g>
+            )}
+            <circle cx={cur.x} cy={cur.y} r={dotR}
+              fill={s.color} stroke="var(--map-land)" strokeWidth="2.5"
+              style={{ transition: 'cx 0.9s cubic-bezier(0.4,0,0.2,1), cy 0.9s cubic-bezier(0.4,0,0.2,1), r 0.35s' }}
+            />
+            <text x={cur.x} y={cur.y + 5} textAnchor="middle"
+              fontSize={s.active ? 13 : 10} fontWeight="800" fill="white"
+              fontFamily="Barlow Condensed" pointerEvents="none"
+              style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+            >
+              {(s.label || '?').charAt(0)}
+            </text>
+            {s.active && (
+              <text className="person-name-label" x={cur.x} y={cur.y + dotR + 16} textAnchor="middle"
+                fontSize="12" fontWeight="800" fill={s.color}
+                fontFamily="Barlow Condensed" pointerEvents="none"
+                style={{ transition: 'x 0.9s cubic-bezier(0.4,0,0.2,1), y 0.9s cubic-bezier(0.4,0,0.2,1)' }}
+              >
+                {s.label}
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+
+/* ── MAP PANEL ── */
+function MapPanel({ activeEventId, onStep, onEventChange }) {
+  const ev      = DATA.events.find(e => e.id === activeEventId);
+  const locId   = ev?.location_id;
+  const states  = useMemo(() => personStateAt(activeEventId), [activeEventId]);
+  const loc     = DATA.locations.find(l => l.id === locId);
+  const activeIndex = DATA.timeline.findIndex(t => t.event_id === activeEventId);
+  const playbackRef = useRef(null);
+
+  useEffect(() => {
+    const root = playbackRef.current;
+    if (!root) return;
+    const activeStep = root.querySelector(".playback-step.active");
+    if (!activeStep) return;
+    const rootRect = root.getBoundingClientRect();
+    const stepRect = activeStep.getBoundingClientRect();
+    const inset = 24;
+    if (stepRect.left < rootRect.left + inset || stepRect.right > rootRect.right - inset) {
+      const targetLeft = activeStep.offsetLeft + activeStep.offsetWidth / 2 - root.clientWidth / 2;
+      root.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+    }
+  }, [activeIndex]);
+
+  const prevStatesRef = useRef(null);
+  const prevEventRef  = useRef(null);
+  const [prevStates, setPrevStates] = useState(null);
+
+  useEffect(() => {
+    if (prevEventRef.current !== activeEventId) {
+      setPrevStates(prevStatesRef.current);
+      prevStatesRef.current = states;
+      prevEventRef.current  = activeEventId;
+    }
+  }, [activeEventId, states]);
+
+  const legendItems = Object.entries(states).filter(([, s]) => s.active);
+
+  return (
+    <div className="map-col">
+      <div className="map-event-banner">
+        <div className="ban-verses">{ev?.verses}</div>
+        <div className="ban-content">
+          <div className="ban-title">{ev?.title}</div>
+          <div className="ban-desc">{ev?.description}</div>
+        </div>
+        {loc && (
+          <div className="ban-loc">
+            <div className="ban-loc-dot" />
+            {loc.name}
+          </div>
+        )}
+      </div>
+
+      <div className="map-svg-wrap">
+        <svg className="map-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid meet">
+          <Terrain />
+          <LocationMarkers activeLocId={locId} />
+          <PersonDots personStates={states} prevStates={prevStates} />
+        </svg>
+      </div>
+
+      <div className="map-controls-panel">
+        <div className="map-person-legend">
+          {legendItems.map(([pid, s]) => (
+            <div key={pid} className={`map-leg-item ${s.faded ? 'faded' : ''}`}>
+              <div className="map-leg-dot" style={{ background: s.color }} />
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="map-playback" ref={playbackRef}>
+          <div className="playback-top">
+            <div className="playback-label">{activeIndex + 1}. {ev?.timeline_label || ev?.title}</div>
+            <div className="playback-buttons">
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Forrige begivenhed' : 'Previous event'} onClick={() => onStep(-1)}>‹</button>
+              <button className="playback-btn" type="button" aria-label={INITIAL_LANG === 'da' ? 'Næste begivenhed' : 'Next event'} onClick={() => onStep(1)}>›</button>
+            </div>
+          </div>
+          <div className="playback-track" style={{ '--step-count': DATA.timeline.length }}>
+            {DATA.timeline.map((tl, idx) => (
+              <button
+                key={tl.event_id}
+                type="button"
+                className={`playback-step${idx < activeIndex ? ' done' : ''}${idx === activeIndex ? ' active' : ''}`}
+                aria-label={`${INITIAL_LANG === 'da' ? 'Gå til' : 'Go to'} ${tl.label}`}
+                onClick={() => onEventChange(tl.event_id)}
+              >
+                <span className="playback-step-time">{dotTimeLabel(tl, idx)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="map-corner-label">{UI_TEXT.mapCorner || 'Jerusalem · Temple Area'}</div>
+    </div>
+  );
+}
+
+/* ── TIMELINE PANEL ── */
+function TimelinePanel({ activeEventId, onEventChange }) {
+  const scrollRef = useRef(null);
+  const entryRefs = useRef({});
+  const observing = useRef(false);
+
+  useEffect(() => {
+    const root = scrollRef.current;
+    if (!root) return;
+    const scores = {};
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { scores[e.target.dataset.eid] = e.intersectionRatio; });
+      if (!observing.current) return;
+      const best = Object.entries(scores).sort((a,b) => b[1]-a[1])[0];
+      if (best && best[1] > 0.15) onEventChange(best[0]);
+    }, { root, threshold: [0.1, 0.3, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+    Object.values(entryRefs.current).forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, [onEventChange]);
+
+  const handleClick = useCallback((eid) => {
+    observing.current = false;
+    onEventChange(eid);
+    const el = entryRefs.current[eid];
+    if (el && scrollRef.current) {
+      scrollRef.current.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+    }
+    setTimeout(() => { observing.current = true; }, 800);
+  }, [onEventChange]);
+
+  useEffect(() => {
+    const el = entryRefs.current[activeEventId];
+    const root = scrollRef.current;
+    if (!el || !root) return;
+    observing.current = false;
+    root.scrollTo({ top: Math.max(0, el.offsetTop - 46), behavior: 'smooth' });
+    const timer = setTimeout(() => { observing.current = true; }, 900);
+    return () => clearTimeout(timer);
+  }, [activeEventId]);
+
+  /* Badge positions mark major movements in Stephen's defense and martyrdom. */
+  const BADGE_POSITIONS = { 0: 0, 1: 1, 3: 2, 7: 3, 9: 4 };
+  const DEFAULT_BADGES = ['Council Hearing', "Israel's Story Retold", 'Moses and Rejection', 'Prophetic Indictment', 'Stephen Martyred'];
+
+  return (
+    <div className="tl-col">
+      <div className="tl-chapter-strip">
+        <div className="tl-ch-label">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kapitel' : 'Chapter'} {DATA.chapter}</div>
+        <div className="tl-ch-title">{UI_TEXT.timelineTitle ? <>{UI_TEXT.timelineTitle[0]} <em>{UI_TEXT.timelineTitle[1]}</em></> : <>The Speech That <em>Cost Everything</em></>}</div>
+      </div>
+
+      <div className="tl-list" ref={scrollRef}>
+        <div className="tl-spine">
+          {DATA.timeline.map((tl, idx) => {
+            const ev = DATA.events.find(e => e.id === tl.event_id);
+            if (!ev) return null;
+            const active = activeEventId === tl.event_id;
+            const timeInfo = ABSOLUTE_TIMES[tl.event_id];
+            const showYearBadge = idx in BADGE_POSITIONS;
+            const yearLabel = showYearBadge
+              ? (UI_TEXT.yearBadges?.[BADGE_POSITIONS[idx]] ?? DEFAULT_BADGES[BADGE_POSITIONS[idx]])
+              : '';
+            return (
+              <React.Fragment key={tl.event_id}>
+                {showYearBadge && (
+                  <div className="tl-year-sep">
+                    <div className="tl-year-badge">{yearLabel}</div>
+                    <div className="tl-year-line" />
+                  </div>
+                )}
+                <div
+                  ref={el => entryRefs.current[tl.event_id] = el}
+                  data-eid={tl.event_id}
+                  data-screen-label={`${idx+1}. ${tl.label}`}
+                  className={`tl-item${active ? ' active' : ''}`}
+                  onClick={() => handleClick(tl.event_id)}
+                >
+                  <div className="tl-l">
+                    <div className="tl-seq">{String(tl.position).padStart(2,'0')}</div>
+                    <div className="tl-dot"><div className="tl-dot-pip" /></div>
+                  </div>
+                  <div className="tl-r">
+                    <div className="tl-date">{timeInfo?.date || ''}</div>
+                    <div className="tl-rel-time">{timeInfo?.period || tl.relative_time}</div>
+                    <div className="tl-ev-title">{tl.label}</div>
+                    <div className="tl-ev-verses">{ev.verses}</div>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+          <div style={{ height: 'calc(100vh - 200px)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ── */
+function App() {
+  const firstTimelineEvent = DATA.timeline[0]?.event_id || DATA.events[0]?.id;
+  const [activeEv, setActiveEv] = useState(firstTimelineEvent);
+
+  useEffect(() => {
+    document.body.className = 'theme-a';
+    document.documentElement.lang = INITIAL_LANG;
+    document.title = `${DATA.book} ${INITIAL_LANG === 'da' ? 'kapitel' : 'Chapter'} ${DATA.chapter} — ${DATA.chapter_title}`;
+    localStorage.setItem('bf-theme', 'a');
+  }, []);
+
+  const handleEventChange = useCallback(id => setActiveEv(id), []);
+  const stepEvent = useCallback((dir) => {
+    setActiveEv(prev => {
+      const current = DATA.timeline.findIndex(t => t.event_id === prev);
+      if (dir < 0 && current === 0) {
+        window.top.location.href = '/bible/acts/006';
+        return prev;
+      }
+      const next = (current + dir + DATA.timeline.length) % DATA.timeline.length;
+      return DATA.timeline[next].event_id;
+    });
+  }, []);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <span className="hdr-book">{UI_TEXT.shortBook || 'Acts'} · {INITIAL_LANG === 'da' ? 'Kap.' : 'Ch.'} {DATA.chapter}</span>
+        <span className="hdr-title">{DATA.chapter_title}</span>
+        <span className="hdr-sub">{UI_TEXT.headerSub || '— Jerusalem · AD 31-34'}</span>
+        <div className="hdr-space" />
+        <a className="home-link" href="/bible" target="_top">
+          {INITIAL_LANG === 'da' ? 'Hjem' : 'Home'}
+        </a>
+        <button className="lang-btn" type="button" onClick={() => setLanguage(INITIAL_LANG === 'da' ? 'en' : 'da')}>
+          {INITIAL_LANG === 'da' ? 'En' : 'Da'}
+        </button>
+      </div>
+
+      <div className="body">
+        <TimelinePanel activeEventId={activeEv} onEventChange={handleEventChange} />
+        <MapPanel
+          activeEventId={activeEv}
+          onStep={stepEvent}
+          onEventChange={handleEventChange}
+        />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
