@@ -158,8 +158,8 @@
       "id": "mitylene",
       "name": "Mitylene",
       "modern_name": "Mytilene, Lesbos, Greece",
-      "lat": 39.1000,
-      "lng": 26.5500,
+      "lat": 39.1,
+      "lng": 26.55,
       "description": "The principal harbor city of the island of Lesbos in the northeastern Aegean, where Paul's ship anchored for the night as the first overnight stop of the southward coastal passage."
     },
     {
@@ -174,7 +174,7 @@
       "id": "samos",
       "name": "Samos",
       "modern_name": "Samos island, Greece",
-      "lat": 37.7500,
+      "lat": 37.75,
       "lng": 26.9833,
       "description": "An Aegean island lying close to the Asian coast near Miletus; the ship called here on the third day of the coastal voyage before the final approach to Miletus—some manuscripts add a stop at nearby Trogyllium."
     },
@@ -200,13 +200,15 @@
       "id": "departure_from_ephesus",
       "sequence": 1,
       "verses": "20:1",
-      "title": "Paul Departs Ephesus for Macedonia",
+      "title": "Paul Sets Out for Macedonia",
       "description": "After the riot instigated by the silversmith Demetrius subsided, Paul gathered the Ephesian believers, encouraged them at length, said his farewells, and set out northward toward the province of Macedonia. This departure marks the end of his longest recorded stay in any city—roughly three years in Ephesus. The parting was deliberate and unhurried, not a flight, signaling that the immediate crisis had passed. Paul would never return to Ephesus as a free man.",
-      "location_id": "ephesus",
-      "persons_present": ["paul"],
-      "timeline_label": "Departure from Ephesus",
+      "location_id": "macedonia",
+      "persons_present": [
+        "paul"
+      ],
+      "timeline_label": "Sets out for Macedonia",
       "scroll_anchor": "departure-from-ephesus",
-      "visual_notes": "Map: bold arrow sweeping northwest from Ephesus toward Macedonia; illustration: Paul at the city gates with a small group of believers, clasping hands in farewell."
+      "visual_notes": "Map: Paul's travel now begins with Macedonia as the first displayed route region; illustration: Paul encouraging believers before continuing the journey."
     },
     {
       "id": "ministry_in_macedonia",
@@ -215,7 +217,9 @@
       "title": "Paul Encourages the Macedonian Churches",
       "description": "Paul traveled through the cities and towns of Macedonia—almost certainly revisiting Philippi, Thessalonica, and Berea—delivering 'many words of encouragement' to the believers. This tour was likely also the final phase of collecting contributions from the Macedonian churches for the relief fund destined for Jerusalem. No dramatic incidents are recorded; the emphasis falls on the relational and pastoral character of the visit. The journey probably spanned several weeks or months.",
       "location_id": "macedonia",
-      "persons_present": ["paul"],
+      "persons_present": [
+        "paul"
+      ],
       "timeline_label": "Pastoral tour through Macedonia",
       "scroll_anchor": "ministry-in-macedonia",
       "visual_notes": "Map: dotted line threading through Philippi, Thessalonica, and Berea with small church icons at each city; illustration: Paul speaking to a house-church gathering, warm and informal in tone."
@@ -227,7 +231,9 @@
       "title": "Three Months in Greece",
       "description": "After Macedonia, Paul traveled south into the province of Achaia (Greece) and remained there for three months, almost certainly based in Corinth. This extended stay, spanning the winter sailing season when sea travel was suspended, allowed him to strengthen the Corinthian church, conduct correspondence, and finalize the collection of funds. It is widely believed he wrote the letter to the Romans during this period—the most theologically systematic of all his letters. The community work was quiet but foundational.",
       "location_id": "greece",
-      "persons_present": ["paul"],
+      "persons_present": [
+        "paul"
+      ],
       "timeline_label": "Three-month winter stay in Corinth",
       "scroll_anchor": "three-months-in-greece",
       "visual_notes": "Map: Paul icon settled at Corinth for an extended stay; illustration: Paul writing by lamplight in a modest room, evoking the composition of a major letter."
@@ -239,7 +245,9 @@
       "title": "A Jewish Plot Forces a Route Change",
       "description": "As Paul prepared to board a ship sailing directly from a Greek port to Syria, he received intelligence of a Jewish conspiracy against his life—likely a plan to attack him aboard ship or ambush him in a Syrian port. Rather than risk the trap, Paul abandoned the direct sea route entirely and reversed course northward through Macedonia. The decision was both prudent and costly in time: the overland route added weeks to the journey. It also reveals the escalating danger Paul faced as he moved toward Jerusalem.",
       "location_id": "greece",
-      "persons_present": ["paul"],
+      "persons_present": [
+        "paul"
+      ],
       "timeline_label": "Plot uncovered; route reversed to Macedonia",
       "scroll_anchor": "jewish-plot-route-change",
       "visual_notes": "Map: canceled arrow toward Syria replaced by northward arrow back through Macedonia; a danger icon near the Greek port; illustration: Paul receiving a hushed warning from a trusted contact."
@@ -251,7 +259,17 @@
       "title": "The Seven-Member Delegation Is Listed",
       "description": "Luke pauses to name the seven men who accompanied Paul: Sopater of Berea, Aristarchus and Secundus of Thessalonica, Gaius of Derbe, Timothy, and Tychicus and Trophimus from Asia. These men almost certainly served as the official delegates of their respective churches, ensuring proper accountability for the collection funds they were carrying to Jerusalem. They traveled ahead to Troas while Paul and Luke remained temporarily in Philippi. The multinational composition of the group—spanning Macedonia, south Galatia, and Asia—is itself a visual embodiment of Gentile-church unity.",
       "location_id": "philippi",
-      "persons_present": ["paul", "luke", "sopater", "aristarchus", "secundus", "gaius_derbe", "timothy", "tychicus", "trophimus"],
+      "persons_present": [
+        "paul",
+        "luke",
+        "sopater",
+        "aristarchus",
+        "secundus",
+        "gaius_derbe",
+        "timothy",
+        "tychicus",
+        "trophimus"
+      ],
       "timeline_label": "Seven delegates depart ahead for Troas",
       "scroll_anchor": "delegation-assembles",
       "visual_notes": "Map: seven labeled arrows fanning from their home cities toward Troas, then converging; illustration: a group portrait or annotated list of the seven delegates with their origin cities."
@@ -263,7 +281,10 @@
       "title": "Paul and Luke Sail from Philippi",
       "description": "After the Feast of Unleavened Bread (Passover week), Paul and Luke—whose return to first-person 'we' signals his physical presence—boarded a ship at Philippi's port of Neapolis and set sail for Troas. The Passover timing is deliberate: it marks the resumption of Mediterranean sailing season and ties the journey to the Jewish liturgical calendar Paul continued to observe. They were joining the rest of the party who had already gone ahead. The voyage across the northern Aegean covered roughly 230 kilometers.",
       "location_id": "philippi",
-      "persons_present": ["paul", "luke"],
+      "persons_present": [
+        "paul",
+        "luke"
+      ],
       "timeline_label": "After Passover — sail from Philippi",
       "scroll_anchor": "sail-from-philippi",
       "visual_notes": "Map: ship icon departing Neapolis (Philippi's port) eastward across the northern Aegean toward Troas; date annotation 'After Unleavened Bread, c. April AD 57'."
@@ -275,7 +296,17 @@
       "title": "Arrival at Troas After Five Days",
       "description": "Paul and Luke arrived at Troas five days after departing Philippi, where they rejoined the seven companions who had gone ahead. The five-day crossing contrasts with an earlier two-day passage in Acts 16, likely reflecting less favorable winds on this occasion. The entire party then remained together in Troas for seven days. Troas was both a major Roman port and a growing Christian community, providing ample opportunity for fellowship and ministry before the southward voyage resumed.",
       "location_id": "troas",
-      "persons_present": ["paul", "luke", "sopater", "aristarchus", "secundus", "gaius_derbe", "timothy", "tychicus", "trophimus"],
+      "persons_present": [
+        "paul",
+        "luke",
+        "sopater",
+        "aristarchus",
+        "secundus",
+        "gaius_derbe",
+        "timothy",
+        "tychicus",
+        "trophimus"
+      ],
       "timeline_label": "Arrive Troas — five-day crossing",
       "scroll_anchor": "arrival-at-troas",
       "visual_notes": "Map: ship icon docking at Troas harbor; annotation '5 days' on the sea lane; illustration: a reunion scene with Paul and Luke meeting the delegation on the dock."
@@ -287,7 +318,12 @@
       "title": "Paul Preaches Until Midnight; Eutychus Falls",
       "description": "On the first day of the week (Sunday), the Troas believers gathered in a third-floor upper room lit with many oil lamps to break bread together and hear Paul teach. Knowing he was leaving the next morning, Paul spoke on and on—well past midnight. A young man named Eutychus, sitting on a windowsill to catch the cool air, gradually sank into deep sleep under the heat of the lamps and the length of the discourse. He fell from the third-floor window and was found dead on the ground below. The scene is remarkably human: the smoky, crowded room, the drowsy young man, the sudden gasping horror of the crowd.",
       "location_id": "troas",
-      "persons_present": ["paul", "luke", "eutychus", "disciples_troas"],
+      "persons_present": [
+        "paul",
+        "luke",
+        "eutychus",
+        "disciples_troas"
+      ],
       "timeline_label": "Sunday night — midnight sermon, Eutychus falls",
       "scroll_anchor": "eutychus-falls",
       "visual_notes": "Illustration: packed upper room glowing with oil lamps, Eutychus visible slumped in an arched window opening against a dark night sky; architectural cross-section showing three-story drop."
@@ -299,7 +335,12 @@
       "title": "Paul Restores Eutychus to Life",
       "description": "Paul went down to the street, threw himself on the young man's body in the manner of the prophets Elijah and Elisha, and declared: 'Don't be alarmed—he's alive!' The crowd's panic turned to relief. Paul returned to the upper room, broke bread, ate, and continued talking until dawn before he finally departed. Eutychus was carried home alive, and the community was 'greatly comforted.' Luke's matter-of-fact narration—'picked up dead' and then 'taken home alive'—signals this as a genuine resurrection rather than a recovery from unconsciousness.",
       "location_id": "troas",
-      "persons_present": ["paul", "luke", "eutychus", "disciples_troas"],
+      "persons_present": [
+        "paul",
+        "luke",
+        "eutychus",
+        "disciples_troas"
+      ],
       "timeline_label": "Eutychus raised; fellowship continues till dawn",
       "scroll_anchor": "eutychus-restored",
       "visual_notes": "Illustration: Paul kneeling over Eutychus on the stone street below the building, torchlight, anxious crowd; second panel: warm upper-room scene at dawn, bread on the table, faces relieved."
@@ -311,7 +352,9 @@
       "title": "Paul Walks Overland to Assos",
       "description": "While the rest of the party boarded the ship and sailed the coastal route around Cape Lectum to Assos, Paul made a deliberate choice to walk the approximately 50-kilometer overland road. Luke offers no explicit explanation, but the choice likely reflects Paul's desire for solitude and prayer before the demanding days ahead—an intentional withdrawal from the company of his companions for reflection. The road was well-traveled and would have taken most of a day to walk. Paul met the ship in Assos harbor and boarded there.",
       "location_id": "assos",
-      "persons_present": ["paul"],
+      "persons_present": [
+        "paul"
+      ],
       "timeline_label": "Paul walks alone to Assos",
       "scroll_anchor": "paul-walks-to-assos",
       "visual_notes": "Map: split visual—dashed overland foot-path from Troas to Assos labeled 'Paul on foot ~50 km' and a solid ship route around the cape labeled 'companions by sea'; both converge at Assos harbor."
@@ -323,7 +366,17 @@
       "title": "Day Sail to Mitylene",
       "description": "Paul boarded at Assos and the reunited party sailed south to Mitylene, the principal city and port of the island of Lesbos. Ancient coastal navigation typically meant sailing by day and anchoring in harbors at night to avoid rocks and shoals; Mitylene provided a natural overnight anchorage. The voyage from Assos to Mitylene was approximately 65 kilometers. No missionary activity at Mitylene is mentioned; this was a transit stop on the urgent journey toward Pentecost.",
       "location_id": "mitylene",
-      "persons_present": ["paul", "luke", "sopater", "aristarchus", "secundus", "gaius_derbe", "timothy", "tychicus", "trophimus"],
+      "persons_present": [
+        "paul",
+        "luke",
+        "sopater",
+        "aristarchus",
+        "secundus",
+        "gaius_derbe",
+        "timothy",
+        "tychicus",
+        "trophimus"
+      ],
       "timeline_label": "Voyage Day 1 — Assos to Mitylene",
       "scroll_anchor": "voyage-to-mitylene",
       "visual_notes": "Map: ship route arcing southeast from Assos to Lesbos/Mitylene; day-leg label 'Day 1'; illustration: the ship at anchor in Mitylene's harbor at dusk."
@@ -335,7 +388,17 @@
       "title": "Coastal Voyage Past Chios and Samos to Miletus",
       "description": "Over the following days the ship continued southward: arriving opposite Chios on the second day (using the island as a landmark rather than a stop), crossing to Samos on the third day, and reaching Miletus on the fourth. Paul had deliberately chosen to bypass Ephesus—only 60 kilometers north of Miletus—to avoid the time that an emotional reunion with the Ephesian church would cost him. He was pressing urgently to reach Jerusalem in time for Pentecost, approximately 50 days after Passover. Some manuscripts add a stop at Trogyllium between Samos and Miletus.",
       "location_id": "miletus",
-      "persons_present": ["paul", "luke", "sopater", "aristarchus", "secundus", "gaius_derbe", "timothy", "tychicus", "trophimus"],
+      "persons_present": [
+        "paul",
+        "luke",
+        "sopater",
+        "aristarchus",
+        "secundus",
+        "gaius_derbe",
+        "timothy",
+        "tychicus",
+        "trophimus"
+      ],
       "timeline_label": "Days 2–4 — Chios, Samos, Miletus",
       "scroll_anchor": "coastal-voyage-to-miletus",
       "visual_notes": "Map: multi-day ship track threading past Chios (labeled 'Day 2, opposite Chios'), to Samos ('Day 3'), to Miletus ('Day 4'); note 'Ephesus bypassed' with a dotted spur and annotation."
@@ -347,10 +410,14 @@
       "title": "Ephesian Elders Are Summoned",
       "description": "From Miletus, Paul sent messengers north to Ephesus—roughly a day's journey—to call the church elders to come to him. He could not risk the time a visit to Ephesus would require, but he felt an urgent need to speak personally with the leaders he had trained and commissioned. The elders' willingness to make the 60-kilometer journey south to Miletus is itself a statement of the depth of their bond with Paul. When they arrived, Paul was ready to deliver the most intimate and personal speech recorded anywhere in Acts.",
       "location_id": "miletus",
-      "persons_present": ["paul", "luke", "ephesian_elders"],
+      "persons_present": [
+        "paul",
+        "luke",
+        "ephesian_elders"
+      ],
       "timeline_label": "Messengers sent to Ephesus; elders travel south",
       "scroll_anchor": "elders-summoned-to-miletus",
-      "visual_notes": "Map: dotted arrow north from Miletus to Ephesus labeled 'messengers sent'; return solid arrow labeled 'elders ~60 km south'; illustration: a group of men setting out on a road, purposeful."
+      "visual_notes": "Map: keep the event anchored at Miletus, where Paul is physically waiting and speaking; Ephesus is mentioned in the text but not plotted as a travel location. Illustration: elders arriving at the Miletus waterfront for the meeting."
     },
     {
       "id": "farewell_address_past_ministry",
@@ -359,7 +426,10 @@
       "title": "Paul Reviews His Ministry and Announces His Fate",
       "description": "Paul opens by appealing to what the elders themselves witnessed: he lived among them with humility and tears, serving despite plots against him, teaching publicly and from house to house without holding anything back. He then announces that he is going to Jerusalem 'compelled by the Spirit,' knowing only that imprisonment and hardships await him there. He declares himself unafraid to die if it means completing the mission given to him. In a solemn declaration of clear conscience, he says he is 'innocent of the blood of all' because he proclaimed the full counsel of God faithfully. The speech has the gravity of a final testament.",
       "location_id": "miletus",
-      "persons_present": ["paul", "ephesian_elders"],
+      "persons_present": [
+        "paul",
+        "ephesian_elders"
+      ],
       "timeline_label": "Farewell speech — Paul's past ministry",
       "scroll_anchor": "farewell-address-past-ministry",
       "visual_notes": "Illustration: Paul standing before the seated elders on a stone platform near the Miletus waterfront, his posture earnest and open-handed; elders' faces attentive and somber."
@@ -371,7 +441,10 @@
       "title": "The Pastoral Charge and Warning",
       "description": "Paul turns from autobiography to commission: the elders must 'keep watch over yourselves and all the flock' that the Holy Spirit has placed in their care—a flock God purchased with his own blood. He warns them of two threats: external wolves who will attack the community after his departure, and internal men who will rise from within the congregation and 'distort the truth' to draw disciples after themselves. He urges them to stay alert and to follow his own example of working hard rather than coveting others' possessions. He closes by citing an otherwise unrecorded saying of Jesus: 'It is more blessed to give than to receive.'",
       "location_id": "miletus",
-      "persons_present": ["paul", "ephesian_elders"],
+      "persons_present": [
+        "paul",
+        "ephesian_elders"
+      ],
       "timeline_label": "Farewell speech — charge and warnings",
       "scroll_anchor": "farewell-address-charge",
       "visual_notes": "Illustration: Paul with hands extended toward the elders in a gesture of transfer and responsibility; a subtle wolf silhouette could appear in a background panel to visualize the warning."
@@ -383,7 +456,11 @@
       "title": "Prayer, Weeping, and Final Departure",
       "description": "Paul knelt and prayed aloud with all of them. What followed was a scene of unrestrained grief: everyone wept, they threw their arms around Paul's neck and kissed him repeatedly. What grieved them most was his word that they would never see his face again. They walked with him down to the harbor—a final procession of love and sorrow—and watched as he boarded the ship. The scene is the most emotionally charged in the entire book of Acts, presenting Paul not as a remote authority figure but as a deeply beloved pastor surrounded by friends he would not see again in this life.",
       "location_id": "miletus",
-      "persons_present": ["paul", "luke", "ephesian_elders"],
+      "persons_present": [
+        "paul",
+        "luke",
+        "ephesian_elders"
+      ],
       "timeline_label": "Kneeling prayer, weeping farewell, departure",
       "scroll_anchor": "tears-and-farewell-miletus",
       "visual_notes": "Illustration: Paul kneeling in the center of a ring of kneeling elders on the Miletus waterfront, hands joined; follow-up panel: Paul walking up the gangway, elders weeping on the dock behind him."
@@ -395,9 +472,9 @@
       "path": [
         {
           "order": 1,
-          "location_id": "ephesus",
+          "location_id": "macedonia",
           "event_id": "departure_from_ephesus",
-          "note": "Departs at chapter open after three years; end of his Ephesian ministry"
+          "note": "Sets out into Macedonia; the chapter map tracks Paul's travel locations rather than places merely mentioned"
         },
         {
           "order": 2,
@@ -537,9 +614,9 @@
       "path": [
         {
           "order": 1,
-          "location_id": "ephesus",
+          "location_id": "miletus",
           "event_id": "elders_summoned_to_miletus",
-          "note": "Receive Paul's summons via messengers sent from Miletus"
+          "note": "Shown at Miletus for the meeting with Paul; Ephesus is mentioned but not displayed as Paul's travel location"
         },
         {
           "order": 2,
@@ -577,7 +654,7 @@
     {
       "event_id": "departure_from_ephesus",
       "position": 1,
-      "label": "Departure from Ephesus",
+      "label": "Sets Out for Macedonia",
       "relative_time": "Chapter start",
       "absolute_time": "Late autumn AD 56 (approx.)"
     },

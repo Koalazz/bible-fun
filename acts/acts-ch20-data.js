@@ -200,15 +200,15 @@ const ACTS_CH20 = {
       "id": "departure_from_ephesus",
       "sequence": 1,
       "verses": "20:1",
-      "title": "Paul Departs Ephesus for Macedonia",
+      "title": "Paul Sets Out for Macedonia",
       "description": "After the riot instigated by the silversmith Demetrius subsided, Paul gathered the Ephesian believers, encouraged them at length, said his farewells, and set out northward toward the province of Macedonia. This departure marks the end of his longest recorded stay in any city—roughly three years in Ephesus. The parting was deliberate and unhurried, not a flight, signaling that the immediate crisis had passed. Paul would never return to Ephesus as a free man.",
-      "location_id": "ephesus",
+      "location_id": "macedonia",
       "persons_present": [
         "paul"
       ],
-      "timeline_label": "Departure from Ephesus",
+      "timeline_label": "Sets out for Macedonia",
       "scroll_anchor": "departure-from-ephesus",
-      "visual_notes": "Map: bold arrow sweeping northwest from Ephesus toward Macedonia; illustration: Paul at the city gates with a small group of believers, clasping hands in farewell."
+      "visual_notes": "Map: Paul's travel now begins with Macedonia as the first displayed route region; illustration: Paul encouraging believers before continuing the journey."
     },
     {
       "id": "ministry_in_macedonia",
@@ -417,7 +417,7 @@ const ACTS_CH20 = {
       ],
       "timeline_label": "Messengers sent to Ephesus; elders travel south",
       "scroll_anchor": "elders-summoned-to-miletus",
-      "visual_notes": "Map: dotted arrow north from Miletus to Ephesus labeled 'messengers sent'; return solid arrow labeled 'elders ~60 km south'; illustration: a group of men setting out on a road, purposeful."
+      "visual_notes": "Map: keep the event anchored at Miletus, where Paul is physically waiting and speaking; Ephesus is mentioned in the text but not plotted as a travel location. Illustration: elders arriving at the Miletus waterfront for the meeting."
     },
     {
       "id": "farewell_address_past_ministry",
@@ -472,9 +472,9 @@ const ACTS_CH20 = {
       "path": [
         {
           "order": 1,
-          "location_id": "ephesus",
+          "location_id": "macedonia",
           "event_id": "departure_from_ephesus",
-          "note": "Departs at chapter open after three years; end of his Ephesian ministry"
+          "note": "Sets out into Macedonia; the chapter map tracks Paul's travel locations rather than places merely mentioned"
         },
         {
           "order": 2,
@@ -614,9 +614,9 @@ const ACTS_CH20 = {
       "path": [
         {
           "order": 1,
-          "location_id": "ephesus",
+          "location_id": "miletus",
           "event_id": "elders_summoned_to_miletus",
-          "note": "Receive Paul's summons via messengers sent from Miletus"
+          "note": "Shown at Miletus for the meeting with Paul; Ephesus is mentioned but not displayed as Paul's travel location"
         },
         {
           "order": 2,
@@ -654,7 +654,7 @@ const ACTS_CH20 = {
     {
       "event_id": "departure_from_ephesus",
       "position": 1,
-      "label": "Departure from Ephesus",
+      "label": "Sets Out for Macedonia",
       "relative_time": "Chapter start",
       "absolute_time": "Late autumn AD 56 (approx.)"
     },
