@@ -54,10 +54,10 @@ body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg
   overflow: hidden;
   white-space: nowrap;
 }
-.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
-.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); flex:0 0 auto; }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; flex:0 1 auto; }
 .hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
-.hdr-space { flex:1; }
+.hdr-space { flex:1 1 auto; min-width:0; }
 .home-link {
   color: oklch(95% .012 78);
   text-decoration: none;
@@ -381,6 +381,7 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   overflow:hidden;
   text-overflow:ellipsis;
 }
+  flex: 0 0 auto;
 .playback-buttons { display:flex; gap:6px; flex-shrink:0; }
 .playback-btn {
   width:30px;
@@ -393,6 +394,7 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   font-size:13px;
   font-weight:800;
   cursor:pointer;
+  flex: 0 0 auto;
   line-height:1;
 }
 .playback-track {
@@ -482,9 +484,9 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
   }
 
   /* Tighten header */
-  .header { padding: 0 14px; gap: 8px; }
+  .header { padding: 0 10px; gap: 6px; }
   .hdr-sub { display: none; }
-  .hdr-title { font-size: 16px; }
+  .hdr-title { font-size: 16px; flex:1 1 auto; }
   .home-link,
   .lang-btn {
     padding: 5px 7px;
@@ -809,6 +811,7 @@ function Terrain() {
 
       {/* ── REGION FILLS with distinct colors ── */}
       {/* Judea — central region around Jerusalem */}
+    flex: 0 0 auto;
       <path d="M 50 300 Q 150 260 300 270 Q 450 280 580 300 Q 700 320 780 360 Q 820 380 820 440 Q 820 520 760 560 Q 700 600 580 620 Q 450 640 300 630 Q 180 620 100 580 Q 40 550 30 480 Q 20 420 50 300 Z"
         fill="oklch(87% 0.055 90)" opacity="1" />
       <text x="160" y="580" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"

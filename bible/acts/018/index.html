@@ -698,11 +698,12 @@ body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg
   overflow: hidden;
   white-space: nowrap;
 }
-.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
-.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; }
+.hdr-book { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); flex:0 0 auto; }
+.hdr-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:oklch(95% .012 78); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; flex:0 1 auto; }
 .hdr-sub { font-family:'Lora',serif; font-style:italic; font-size:12px; color:oklch(65% .012 70); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:200px; }
-.hdr-space { flex:1; }
+.hdr-space { flex:1 1 auto; min-width:0; }
 .home-link {
+  flex: 0 0 auto;
   color: oklch(95% .012 78);
   text-decoration: none;
   font-size: 10px;
@@ -715,6 +716,7 @@ body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--fg
   background: oklch(22% 0.02 55);
 }
 .lang-btn {
+  flex: 0 0 auto;
   border: 1px solid oklch(58% 0.19 46 / .65);
   background: oklch(22% 0.02 55);
   color: oklch(95% .012 78);
@@ -1123,11 +1125,12 @@ body.theme-a .tl-dot { background: oklch(22% .018 55); border-color: oklch(36% .
     overflow: visible;
   }
 
-  .header { padding: 0 14px; gap: 8px; }
+  .header { padding: 0 10px; gap: 6px; }
   .hdr-sub { display: none; }
-  .hdr-title { font-size: 16px; }
+  .hdr-title { font-size: 16px; flex:1 1 auto; }
   .home-link,
   .lang-btn {
+    flex: 0 0 auto;
     padding: 5px 7px;
     font-size: 9px;
   }
