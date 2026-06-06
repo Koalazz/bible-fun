@@ -907,20 +907,20 @@ const PCOLORS = {
   ephesian_crowd: '#7A8FA0',
 };
 
-/* ── MAP COORDINATES (SVG 1000x800 viewBox, schematic Aegean route) ── */
+/* ── MAP COORDINATES (SVG 1000x800 viewBox, proportional Aegean crop) ── */
 const VW = 1000, VH = 800;
 const locLabel = (id, fallback) => DATA.locations.find(l => l.id === id)?.name || fallback;
 const LOCS = {
-  macedonia: { x: 180, y: 210, label: locLabel('macedonia', 'Macedonia') },
-  greece: { x: 210, y: 575, label: locLabel('greece', 'Greece') },
-  philippi: { x: 330, y: 255, label: locLabel('philippi', 'Philippi') },
-  troas: { x: 560, y: 275, label: locLabel('troas', 'Troas') },
-  assos: { x: 585, y: 350, label: locLabel('assos', 'Assos') },
-  mitylene: { x: 540, y: 435, label: locLabel('mitylene', 'Mitylene') },
-  chios: { x: 600, y: 540, label: locLabel('chios', 'Chios') },
-  samos: { x: 680, y: 620, label: locLabel('samos', 'Samos') },
-  miletus: { x: 725, y: 675, label: locLabel('miletus', 'Miletus') },
-  ephesus: { x: 750, y: 580, label: locLabel('ephesus', 'Ephesus') },
+  macedonia: { x: 229, y: 195, label: locLabel('macedonia', 'Macedonia') },
+  greece: { x: 273, y: 586, label: locLabel('greece', 'Greece') },
+  philippi: { x: 425, y: 226, label: locLabel('philippi', 'Philippi') },
+  troas: { x: 632, y: 372, label: locLabel('troas', 'Troas') },
+  assos: { x: 647, y: 410, label: locLabel('assos', 'Assos') },
+  mitylene: { x: 670, y: 458, label: locLabel('mitylene', 'Mitylene') },
+  chios: { x: 626, y: 547, label: locLabel('chios', 'Chios') },
+  samos: { x: 716, y: 623, label: locLabel('samos', 'Samos') },
+  ephesus: { x: 756, y: 600, label: locLabel('ephesus', 'Ephesus') },
+  miletus: { x: 750, y: 650, label: locLabel('miletus', 'Miletus') },
   jerusalem: { x: 910, y: 735, label: locLabel('jerusalem', 'Jerusalem') },
 };
 
@@ -994,25 +994,35 @@ function Terrain() {
   return (
     <g>
       <rect x="0" y="0" width={VW} height={VH} fill="var(--map-water)" opacity=".58" />
-      <path d="M 0 430 Q 95 375 210 410 Q 290 435 392 520 Q 430 585 372 660 Q 265 760 0 800 Z"
+      {/* Greek mainland: Macedonia above, Achaia/Greece below, with the Aegean to the east. */}
+      <path d="M 0 0 H 520 Q 470 70 455 150 Q 443 215 475 270 Q 510 330 458 384 Q 405 440 372 515 Q 345 580 386 640 Q 332 735 205 800 H 0 Z"
         fill="oklch(86% 0.048 92)" opacity="1" />
-      <path d="M 520 0 H 1000 V 800 H 742 Q 705 710 748 612 Q 785 525 735 460 Q 675 382 700 290 Q 735 160 520 0 Z"
+      <path d="M 230 610 Q 292 565 330 585 Q 370 610 350 660 Q 325 730 240 785 Q 205 752 217 695 Q 222 660 230 610 Z"
+        fill="oklch(84% 0.05 88)" opacity="1" />
+      {/* Asia Minor / western Anatolia, kept on the east side of the Aegean. */}
+      <path d="M 585 0 H 1000 V 800 H 770 Q 742 724 750 650 Q 756 592 725 544 Q 690 492 650 445 Q 603 390 612 318 Q 622 236 575 172 Q 535 118 585 0 Z"
         fill="oklch(87% 0.055 90)" opacity="1" />
-      <path d="M 210 700 Q 292 642 355 610 Q 495 535 660 410 Q 740 345 785 235"
+      {/* Lesbos, Chios, and Samos — islands in the Aegean, not mainland cities floating alone. */}
+      <ellipse cx="652" cy="462" rx="46" ry="25" transform="rotate(-22 652 462)" fill="oklch(85% 0.047 91)" opacity="1" />
+      <ellipse cx="626" cy="548" rx="18" ry="36" transform="rotate(11 626 548)" fill="oklch(85% 0.047 91)" opacity="1" />
+      <ellipse cx="704" cy="625" rx="42" ry="16" transform="rotate(-9 704 625)" fill="oklch(85% 0.047 91)" opacity="1" />
+      <path d="M 284 595 Q 355 548 430 512 Q 520 468 647 410 Q 710 382 790 345"
         fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="5" opacity=".5" strokeDasharray="11 7" strokeLinecap="round" />
-      <path d="M 660 410 Q 750 505 795 675"
+      <path d="M 647 410 Q 672 476 626 547 Q 692 580 750 650"
         fill="none" stroke="oklch(78% 0.075 225)" strokeWidth="18" opacity=".34" strokeLinecap="round" />
-      <path d="M 430 350 Q 505 315 585 330 Q 655 350 715 285"
+      <path d="M 632 372 Q 642 392 647 410"
         fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".68" strokeDasharray="9 6" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M 520 410 Q 590 455 660 505"
+      <path d="M 750 650 Q 748 624 756 600"
         fill="none" stroke="var(--map-road)" strokeWidth="5" opacity=".68" strokeDasharray="9 6" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M 205 205 Q 360 260 520 410 Q 595 470 660 505"
+      <path d="M 425 226 Q 510 268 595 338 Q 626 365 632 372"
         fill="none" stroke="oklch(58% 0.11 220)" strokeWidth="5" opacity=".48" strokeDasharray="11 7" strokeLinecap="round" />
-      <text x="165" y="650" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+      <text x="145" y="190" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+        fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">MACEDONIA</text>
+      <text x="160" y="690" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
         fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">GREECE</text>
-      <text x="675" y="150" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
+      <text x="735" y="165" fontSize="18" fontFamily="Barlow Condensed" fontWeight="800"
         fill="oklch(42% 0.07 70)" letterSpacing="4" opacity=".45">ASIA MINOR</text>
-      <text x="425" y="535" textAnchor="middle" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
+      <text x="520" y="560" textAnchor="middle" fontSize="13" fontFamily="Barlow Condensed" fontWeight="800"
         fill="oklch(35% 0.06 220)" letterSpacing="4" opacity=".55">AEGEAN SEA</text>
       <g transform="translate(70,735)">
         <line x1="0" y1="0" x2="90" y2="0" stroke="var(--fg-muted)" strokeWidth="2" opacity=".5" />
